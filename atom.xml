@@ -442,6 +442,29 @@
   </entry>
   
   <entry>
+    <title>DHT11dht11.c(18) error C174 return-expression on void-function</title>
+    <link href="http://example.com/post/c4236caa.html"/>
+    <id>http://example.com/post/c4236caa.html</id>
+    <published>2024-08-03T08:46:17.000Z</published>
+    <updated>2024-08-19T05:37:28.569Z</updated>
+    
+    <content type="html"><![CDATA[<p>表示在函数dht11.c的第18行，有一个返回表达式出现在了一个返回类型为void的函数中。在C语言中，如果一个函数的声明或定义中指定了返回类型为void，那么这个函数不能有任何返回值。</p><p>​    要解决这个问题，你需要检查dht11.c文件中第18行的代码，确保没有返回值。如果该行代码确实需要返回一个值，那么你需要将该函数的返回类型修改为非void类型</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;表示在函数dht11.c的第18行，有一个返回表达式出现在了一个返回类型为void的函数中。在C语言中，如果一个函数的声明或定义中指定了返回类型为void，那么这个函数不能有任何返回值。&lt;/p&gt;
+&lt;p&gt;​    要解决这个问题，你需要检查dht11.c文件中第18行的代码，</summary>
+      
+    
+    
+    
+    <category term="错误记录" scheme="http://example.com/categories/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>STM32烧录的时候报错：Error :Flash Download failed -“Cortex-M3“</title>
     <link href="http://example.com/post/63d3dd68.html"/>
     <id>http://example.com/post/63d3dd68.html</id>
@@ -458,29 +481,6 @@
 
 &lt;p&gt;按图中标序，进入添加页面&lt;/p&gt;
 &lt;</summary>
-      
-    
-    
-    
-    <category term="错误记录" scheme="http://example.com/categories/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>DHT11dht11.c(18) error C174 return-expression on void-function</title>
-    <link href="http://example.com/post/c4236caa.html"/>
-    <id>http://example.com/post/c4236caa.html</id>
-    <published>2024-08-03T08:46:17.000Z</published>
-    <updated>2024-08-19T05:37:28.569Z</updated>
-    
-    <content type="html"><![CDATA[<p>表示在函数dht11.c的第18行，有一个返回表达式出现在了一个返回类型为void的函数中。在C语言中，如果一个函数的声明或定义中指定了返回类型为void，那么这个函数不能有任何返回值。</p><p>​    要解决这个问题，你需要检查dht11.c文件中第18行的代码，确保没有返回值。如果该行代码确实需要返回一个值，那么你需要将该函数的返回类型修改为非void类型</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;表示在函数dht11.c的第18行，有一个返回表达式出现在了一个返回类型为void的函数中。在C语言中，如果一个函数的声明或定义中指定了返回类型为void，那么这个函数不能有任何返回值。&lt;/p&gt;
-&lt;p&gt;​    要解决这个问题，你需要检查dht11.c文件中第18行的代码，</summary>
       
     
     
