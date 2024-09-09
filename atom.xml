@@ -3,11 +3,11 @@
   <title>星仔人生录</title>
   
   <subtitle>珍惜当下 不负此生</subtitle>
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://d3iiz.top/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://d3iiz.top/"/>
   <updated>2024-08-19T02:03:02.952Z</updated>
-  <id>http://example.com/</id>
+  <id>https://d3iiz.top/</id>
   
   <author>
     <name>星仔</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>11.SPI通信</title>
-    <link href="http://example.com/post/bd740709.html"/>
-    <id>http://example.com/post/bd740709.html</id>
+    <link href="https://d3iiz.top/post/bd740709.html"/>
+    <id>https://d3iiz.top/post/bd740709.html</id>
     <published>2024-08-17T08:28:32.000Z</published>
     <updated>2024-08-19T02:03:02.952Z</updated>
     
@@ -34,17 +34,17 @@
     
     
     
-    <category term="32单片机" scheme="http://example.com/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://d3iiz.top/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
     
-    <category term="32单片机" scheme="http://example.com/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://d3iiz.top/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>10.DMA</title>
-    <link href="http://example.com/post/acb77072.html"/>
-    <id>http://example.com/post/acb77072.html</id>
+    <link href="https://d3iiz.top/post/acb77072.html"/>
+    <id>https://d3iiz.top/post/acb77072.html</id>
     <published>2024-08-16T07:49:08.000Z</published>
     <updated>2024-08-22T02:57:06.269Z</updated>
     
@@ -59,17 +59,17 @@
     
     
     
-    <category term="32单片机" scheme="http://example.com/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://d3iiz.top/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
     
-    <category term="32单片机" scheme="http://example.com/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://d3iiz.top/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>9.DAC(数字信号转模拟信号)</title>
-    <link href="http://example.com/post/52772f76.html"/>
-    <id>http://example.com/post/52772f76.html</id>
+    <link href="https://d3iiz.top/post/52772f76.html"/>
+    <id>https://d3iiz.top/post/52772f76.html</id>
     <published>2024-08-15T14:22:06.000Z</published>
     <updated>2024-08-19T01:57:56.531Z</updated>
     
@@ -83,17 +83,17 @@
     
     
     
-    <category term="32单片机" scheme="http://example.com/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://d3iiz.top/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
     
-    <category term="32单片机" scheme="http://example.com/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://d3iiz.top/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>8.看门狗(WDG)</title>
-    <link href="http://example.com/post/f0812160.html"/>
-    <id>http://example.com/post/f0812160.html</id>
+    <link href="https://d3iiz.top/post/f0812160.html"/>
+    <id>https://d3iiz.top/post/f0812160.html</id>
     <published>2024-08-15T14:05:49.000Z</published>
     <updated>2024-08-22T02:42:36.299Z</updated>
     
@@ -109,17 +109,17 @@
     
     
     
-    <category term="32单片机" scheme="http://example.com/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://d3iiz.top/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
     
-    <category term="32单片机" scheme="http://example.com/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://d3iiz.top/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>7.实时时钟(RTC)</title>
-    <link href="http://example.com/post/e8bc8f26.html"/>
-    <id>http://example.com/post/e8bc8f26.html</id>
+    <link href="https://d3iiz.top/post/e8bc8f26.html"/>
+    <id>https://d3iiz.top/post/e8bc8f26.html</id>
     <published>2024-08-14T13:12:02.000Z</published>
     <updated>2024-08-19T01:55:57.275Z</updated>
     
@@ -134,17 +134,17 @@
     
     
     
-    <category term="32单片机" scheme="http://example.com/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://d3iiz.top/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
     
-    <category term="32单片机" scheme="http://example.com/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://d3iiz.top/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>6.IIC通信</title>
-    <link href="http://example.com/post/f5fba2c3.html"/>
-    <id>http://example.com/post/f5fba2c3.html</id>
+    <link href="https://d3iiz.top/post/f5fba2c3.html"/>
+    <id>https://d3iiz.top/post/f5fba2c3.html</id>
     <published>2024-08-13T09:53:28.000Z</published>
     <updated>2024-08-19T01:54:15.291Z</updated>
     
@@ -158,17 +158,17 @@
     
     
     
-    <category term="32单片机" scheme="http://example.com/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://d3iiz.top/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
     
-    <category term="32单片机" scheme="http://example.com/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://d3iiz.top/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>office无法初始化VisualBasic</title>
-    <link href="http://example.com/post/6928cd3f.html"/>
-    <id>http://example.com/post/6928cd3f.html</id>
+    <link href="https://d3iiz.top/post/6928cd3f.html"/>
+    <id>https://d3iiz.top/post/6928cd3f.html</id>
     <published>2024-08-12T15:37:39.000Z</published>
     <updated>2024-08-19T05:27:02.980Z</updated>
     
@@ -184,17 +184,17 @@
     
     
     
-    <category term="Windows使用技巧" scheme="http://example.com/categories/Windows%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    <category term="Windows使用技巧" scheme="https://d3iiz.top/categories/Windows%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
     
     
-    <category term="office无法初始化VisualBasic" scheme="http://example.com/tags/office%E6%97%A0%E6%B3%95%E5%88%9D%E5%A7%8B%E5%8C%96VisualBasic/"/>
+    <category term="office无法初始化VisualBasic" scheme="https://d3iiz.top/tags/office%E6%97%A0%E6%B3%95%E5%88%9D%E5%A7%8B%E5%8C%96VisualBasic/"/>
     
   </entry>
   
   <entry>
     <title>5.ADC(模拟信号转数字信号)</title>
-    <link href="http://example.com/post/bfd038f5.html"/>
-    <id>http://example.com/post/bfd038f5.html</id>
+    <link href="https://d3iiz.top/post/bfd038f5.html"/>
+    <id>https://d3iiz.top/post/bfd038f5.html</id>
     <published>2024-08-10T06:45:10.000Z</published>
     <updated>2024-08-19T01:52:03.866Z</updated>
     
@@ -209,17 +209,17 @@
     
     
     
-    <category term="32单片机" scheme="http://example.com/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://d3iiz.top/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
     
-    <category term="32单片机" scheme="http://example.com/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://d3iiz.top/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>4.定时器(TIMER)</title>
-    <link href="http://example.com/post/f71d0ad2.html"/>
-    <id>http://example.com/post/f71d0ad2.html</id>
+    <link href="https://d3iiz.top/post/f71d0ad2.html"/>
+    <id>https://d3iiz.top/post/f71d0ad2.html</id>
     <published>2024-08-06T08:19:27.000Z</published>
     <updated>2024-08-19T01:45:46.227Z</updated>
     
@@ -233,17 +233,17 @@
     
     
     
-    <category term="32单片机" scheme="http://example.com/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://d3iiz.top/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
     
-    <category term="32单片机" scheme="http://example.com/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://d3iiz.top/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>3.串口(UART)</title>
-    <link href="http://example.com/post/2c4c3bc3.html"/>
-    <id>http://example.com/post/2c4c3bc3.html</id>
+    <link href="https://d3iiz.top/post/2c4c3bc3.html"/>
+    <id>https://d3iiz.top/post/2c4c3bc3.html</id>
     <published>2024-08-05T10:02:46.000Z</published>
     <updated>2024-08-22T08:23:49.640Z</updated>
     
@@ -257,17 +257,17 @@
     
     
     
-    <category term="32单片机" scheme="http://example.com/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://d3iiz.top/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
     
-    <category term="32单片机" scheme="http://example.com/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://d3iiz.top/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>完美解决443端口被vmware占用的问题</title>
-    <link href="http://example.com/post/b94c2cf2.html"/>
-    <id>http://example.com/post/b94c2cf2.html</id>
+    <link href="https://d3iiz.top/post/b94c2cf2.html"/>
+    <id>https://d3iiz.top/post/b94c2cf2.html</id>
     <published>2024-08-04T14:54:51.000Z</published>
     <updated>2024-08-19T05:23:51.640Z</updated>
     
@@ -284,17 +284,17 @@
     
     
     
-    <category term="Windows使用技巧" scheme="http://example.com/categories/Windows%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    <category term="Windows使用技巧" scheme="https://d3iiz.top/categories/Windows%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
     
     
-    <category term="解决443端口被vmware占用" scheme="http://example.com/tags/%E8%A7%A3%E5%86%B3443%E7%AB%AF%E5%8F%A3%E8%A2%ABvmware%E5%8D%A0%E7%94%A8/"/>
+    <category term="解决443端口被vmware占用" scheme="https://d3iiz.top/tags/%E8%A7%A3%E5%86%B3443%E7%AB%AF%E5%8F%A3%E8%A2%ABvmware%E5%8D%A0%E7%94%A8/"/>
     
   </entry>
   
   <entry>
     <title>win10桌面图标变白</title>
-    <link href="http://example.com/post/a06b5fda.html"/>
-    <id>http://example.com/post/a06b5fda.html</id>
+    <link href="https://d3iiz.top/post/a06b5fda.html"/>
+    <id>https://d3iiz.top/post/a06b5fda.html</id>
     <published>2024-08-04T14:54:31.000Z</published>
     <updated>2024-08-19T05:29:50.464Z</updated>
     
@@ -309,17 +309,17 @@
     
     
     
-    <category term="Windows使用技巧" scheme="http://example.com/categories/Windows%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    <category term="Windows使用技巧" scheme="https://d3iiz.top/categories/Windows%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
     
     
-    <category term="win10桌面图标变白" scheme="http://example.com/tags/win10%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E5%8F%98%E7%99%BD/"/>
+    <category term="win10桌面图标变白" scheme="https://d3iiz.top/tags/win10%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E5%8F%98%E7%99%BD/"/>
     
   </entry>
   
   <entry>
     <title>通过 Cloudflare 和 JsDelivr 免费加速博客 GitHub 图床等静态资源</title>
-    <link href="http://example.com/post/3e643b17.html"/>
-    <id>http://example.com/post/3e643b17.html</id>
+    <link href="https://d3iiz.top/post/3e643b17.html"/>
+    <id>https://d3iiz.top/post/3e643b17.html</id>
     <published>2024-08-03T09:25:05.000Z</published>
     <updated>2024-08-19T09:36:54.646Z</updated>
     
@@ -333,17 +333,17 @@
     
     
     
-    <category term="技术积累记录" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/"/>
+    <category term="技术积累记录" scheme="https://d3iiz.top/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="博客加速图床" scheme="http://example.com/tags/%E5%8D%9A%E5%AE%A2%E5%8A%A0%E9%80%9F%E5%9B%BE%E5%BA%8A/"/>
+    <category term="博客加速图床" scheme="https://d3iiz.top/tags/%E5%8D%9A%E5%AE%A2%E5%8A%A0%E9%80%9F%E5%9B%BE%E5%BA%8A/"/>
     
   </entry>
   
   <entry>
     <title>利用cloudflare加速github博客访问</title>
-    <link href="http://example.com/post/b7e3ace9.html"/>
-    <id>http://example.com/post/b7e3ace9.html</id>
+    <link href="https://d3iiz.top/post/b7e3ace9.html"/>
+    <id>https://d3iiz.top/post/b7e3ace9.html</id>
     <published>2024-08-03T09:24:43.000Z</published>
     <updated>2024-08-19T08:41:53.268Z</updated>
     
@@ -357,17 +357,17 @@
     
     
     
-    <category term="技术积累记录" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/"/>
+    <category term="技术积累记录" scheme="https://d3iiz.top/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="加速github博客访问" scheme="http://example.com/tags/%E5%8A%A0%E9%80%9Fgithub%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE/"/>
+    <category term="加速github博客访问" scheme="https://d3iiz.top/tags/%E5%8A%A0%E9%80%9Fgithub%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE/"/>
     
   </entry>
   
   <entry>
     <title>2.外部中断(EXTI)</title>
-    <link href="http://example.com/post/eb0bc4a3.html"/>
-    <id>http://example.com/post/eb0bc4a3.html</id>
+    <link href="https://d3iiz.top/post/eb0bc4a3.html"/>
+    <id>https://d3iiz.top/post/eb0bc4a3.html</id>
     <published>2024-08-03T09:21:42.000Z</published>
     <updated>2024-08-30T08:14:36.986Z</updated>
     
@@ -381,17 +381,17 @@
     
     
     
-    <category term="32单片机" scheme="http://example.com/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://d3iiz.top/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
     
-    <category term="32单片机" scheme="http://example.com/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://d3iiz.top/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>ST-LINK未能串口keil识别的一个可能解决方案（前提驱动安装无问题）</title>
-    <link href="http://example.com/post/a3ad0b3a.html"/>
-    <id>http://example.com/post/a3ad0b3a.html</id>
+    <link href="https://d3iiz.top/post/a3ad0b3a.html"/>
+    <id>https://d3iiz.top/post/a3ad0b3a.html</id>
     <published>2024-08-03T08:56:06.000Z</published>
     <updated>2024-08-19T09:22:11.129Z</updated>
     
@@ -406,17 +406,17 @@
     
     
     
-    <category term="技术积累记录" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/"/>
+    <category term="技术积累记录" scheme="https://d3iiz.top/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="ST-LINK未能串口keil识别解决方案" scheme="http://example.com/tags/ST-LINK%E6%9C%AA%E8%83%BD%E4%B8%B2%E5%8F%A3keil%E8%AF%86%E5%88%AB%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <category term="ST-LINK未能串口keil识别解决方案" scheme="https://d3iiz.top/tags/ST-LINK%E6%9C%AA%E8%83%BD%E4%B8%B2%E5%8F%A3keil%E8%AF%86%E5%88%AB%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
   </entry>
   
   <entry>
     <title>STM32CubeIDE代码字体大小</title>
-    <link href="http://example.com/post/43a9b762.html"/>
-    <id>http://example.com/post/43a9b762.html</id>
+    <link href="https://d3iiz.top/post/43a9b762.html"/>
+    <id>https://d3iiz.top/post/43a9b762.html</id>
     <published>2024-08-03T08:52:40.000Z</published>
     <updated>2024-08-19T09:24:31.738Z</updated>
     
@@ -434,17 +434,40 @@
     
     
     
-    <category term="技术积累记录" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/"/>
+    <category term="技术积累记录" scheme="https://d3iiz.top/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="STM32CubeIDE代码字体大小" scheme="http://example.com/tags/STM32CubeIDE%E4%BB%A3%E7%A0%81%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F/"/>
+    <category term="STM32CubeIDE代码字体大小" scheme="https://d3iiz.top/tags/STM32CubeIDE%E4%BB%A3%E7%A0%81%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DHT11dht11.c(18) error C174 return-expression on void-function</title>
+    <link href="https://d3iiz.top/post/c4236caa.html"/>
+    <id>https://d3iiz.top/post/c4236caa.html</id>
+    <published>2024-08-03T08:46:17.000Z</published>
+    <updated>2024-08-19T05:37:28.569Z</updated>
+    
+    <content type="html"><![CDATA[<p>表示在函数dht11.c的第18行，有一个返回表达式出现在了一个返回类型为void的函数中。在C语言中，如果一个函数的声明或定义中指定了返回类型为void，那么这个函数不能有任何返回值。</p><p>​    要解决这个问题，你需要检查dht11.c文件中第18行的代码，确保没有返回值。如果该行代码确实需要返回一个值，那么你需要将该函数的返回类型修改为非void类型</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;表示在函数dht11.c的第18行，有一个返回表达式出现在了一个返回类型为void的函数中。在C语言中，如果一个函数的声明或定义中指定了返回类型为void，那么这个函数不能有任何返回值。&lt;/p&gt;
+&lt;p&gt;​    要解决这个问题，你需要检查dht11.c文件中第18行的代码，</summary>
+      
+    
+    
+    
+    <category term="错误记录" scheme="https://d3iiz.top/categories/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/"/>
+    
     
   </entry>
   
   <entry>
     <title>STM32烧录的时候报错：Error :Flash Download failed -“Cortex-M3“</title>
-    <link href="http://example.com/post/63d3dd68.html"/>
-    <id>http://example.com/post/63d3dd68.html</id>
+    <link href="https://d3iiz.top/post/63d3dd68.html"/>
+    <id>https://d3iiz.top/post/63d3dd68.html</id>
     <published>2024-08-03T08:46:17.000Z</published>
     <updated>2024-08-19T05:41:10.459Z</updated>
     
@@ -462,38 +485,15 @@
     
     
     
-    <category term="错误记录" scheme="http://example.com/categories/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>DHT11dht11.c(18) error C174 return-expression on void-function</title>
-    <link href="http://example.com/post/c4236caa.html"/>
-    <id>http://example.com/post/c4236caa.html</id>
-    <published>2024-08-03T08:46:17.000Z</published>
-    <updated>2024-08-19T05:37:28.569Z</updated>
-    
-    <content type="html"><![CDATA[<p>表示在函数dht11.c的第18行，有一个返回表达式出现在了一个返回类型为void的函数中。在C语言中，如果一个函数的声明或定义中指定了返回类型为void，那么这个函数不能有任何返回值。</p><p>​    要解决这个问题，你需要检查dht11.c文件中第18行的代码，确保没有返回值。如果该行代码确实需要返回一个值，那么你需要将该函数的返回类型修改为非void类型</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;表示在函数dht11.c的第18行，有一个返回表达式出现在了一个返回类型为void的函数中。在C语言中，如果一个函数的声明或定义中指定了返回类型为void，那么这个函数不能有任何返回值。&lt;/p&gt;
-&lt;p&gt;​    要解决这个问题，你需要检查dht11.c文件中第18行的代码，</summary>
-      
-    
-    
-    
-    <category term="错误记录" scheme="http://example.com/categories/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/"/>
+    <category term="错误记录" scheme="https://d3iiz.top/categories/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/"/>
     
     
   </entry>
   
   <entry>
     <title>stm32cubeIDE与stm32cubeMX库文件安装路径自定义设置</title>
-    <link href="http://example.com/post/32e9e993.html"/>
-    <id>http://example.com/post/32e9e993.html</id>
+    <link href="https://d3iiz.top/post/32e9e993.html"/>
+    <id>https://d3iiz.top/post/32e9e993.html</id>
     <published>2024-08-03T08:44:26.000Z</published>
     <updated>2024-08-19T09:27:01.694Z</updated>
     
@@ -507,10 +507,10 @@
     
     
     
-    <category term="技术积累记录" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/"/>
+    <category term="技术积累记录" scheme="https://d3iiz.top/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="IDE与MX库文件安装路径自定义设置" scheme="http://example.com/tags/IDE%E4%B8%8EMX%E5%BA%93%E6%96%87%E4%BB%B6%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AE%BE%E7%BD%AE/"/>
+    <category term="IDE与MX库文件安装路径自定义设置" scheme="https://d3iiz.top/tags/IDE%E4%B8%8EMX%E5%BA%93%E6%96%87%E4%BB%B6%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AE%BE%E7%BD%AE/"/>
     
   </entry>
   
