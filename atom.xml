@@ -6,7 +6,7 @@
   <link href="https://d3iiz.top/atom.xml" rel="self"/>
   
   <link href="https://d3iiz.top/"/>
-  <updated>2024-08-19T02:03:02.952Z</updated>
+  <updated>2024-09-11T05:46:00.286Z</updated>
   <id>https://d3iiz.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>0.线程创建与删除</title>
+    <link href="https://d3iiz.top/post/520176db.html"/>
+    <id>https://d3iiz.top/post/520176db.html</id>
+    <published>2024-09-11T05:41:21.000Z</published>
+    <updated>2024-09-11T05:46:00.286Z</updated>
+    
+    <content type="html"><![CDATA[<p>1</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;1&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="RT-Thread" scheme="https://d3iiz.top/categories/RT-Thread/"/>
+    
+    
+    <category term="RT-Thread" scheme="https://d3iiz.top/tags/RT-Thread/"/>
+    
+  </entry>
   
   <entry>
     <title>11.SPI通信</title>
@@ -442,29 +467,6 @@
   </entry>
   
   <entry>
-    <title>DHT11dht11.c(18) error C174 return-expression on void-function</title>
-    <link href="https://d3iiz.top/post/c4236caa.html"/>
-    <id>https://d3iiz.top/post/c4236caa.html</id>
-    <published>2024-08-03T08:46:17.000Z</published>
-    <updated>2024-08-19T05:37:28.569Z</updated>
-    
-    <content type="html"><![CDATA[<p>表示在函数dht11.c的第18行，有一个返回表达式出现在了一个返回类型为void的函数中。在C语言中，如果一个函数的声明或定义中指定了返回类型为void，那么这个函数不能有任何返回值。</p><p>​    要解决这个问题，你需要检查dht11.c文件中第18行的代码，确保没有返回值。如果该行代码确实需要返回一个值，那么你需要将该函数的返回类型修改为非void类型</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;表示在函数dht11.c的第18行，有一个返回表达式出现在了一个返回类型为void的函数中。在C语言中，如果一个函数的声明或定义中指定了返回类型为void，那么这个函数不能有任何返回值。&lt;/p&gt;
-&lt;p&gt;​    要解决这个问题，你需要检查dht11.c文件中第18行的代码，</summary>
-      
-    
-    
-    
-    <category term="错误记录" scheme="https://d3iiz.top/categories/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>STM32烧录的时候报错：Error :Flash Download failed -“Cortex-M3“</title>
     <link href="https://d3iiz.top/post/63d3dd68.html"/>
     <id>https://d3iiz.top/post/63d3dd68.html</id>
@@ -491,26 +493,25 @@
   </entry>
   
   <entry>
-    <title>stm32cubeIDE与stm32cubeMX库文件安装路径自定义设置</title>
-    <link href="https://d3iiz.top/post/32e9e993.html"/>
-    <id>https://d3iiz.top/post/32e9e993.html</id>
-    <published>2024-08-03T08:44:26.000Z</published>
-    <updated>2024-08-19T09:27:01.694Z</updated>
+    <title>DHT11dht11.c(18) error C174 return-expression on void-function</title>
+    <link href="https://d3iiz.top/post/c4236caa.html"/>
+    <id>https://d3iiz.top/post/c4236caa.html</id>
+    <published>2024-08-03T08:46:17.000Z</published>
+    <updated>2024-08-19T05:37:28.569Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="1、-stm32cubeMX库文件安装路径自定义设置"><a href="#1、-stm32cubeMX库文件安装路径自定义设置" class="headerlink" title="1、 stm32cubeMX库文件安装路径自定义设置"></a>1、 stm32cubeMX库文件安装路径自定义设置</h1><p>打开stm32cubeMX软件，依次点击标题栏【Help】→【Updater Settings】 </p><img src="https://s2.loli.net/2024/08/19/JLheYWSMProxE9N.png" style="zoom:50%;"><hr><p>点击图中的【Browser】，选择自己想要存放库文件的文件夹，选择完成后点击【OK】即可设置成功。 </p><img src="https://s2.loli.net/2024/08/19/vfIDTXqhRkMzLuG.png" style="zoom:50%;"><p> PS：这里的路径建议选择软件的安装目录</p><h1 id="2、-stm32cubeIDE库安装路径自定义设置"><a href="#2、-stm32cubeIDE库安装路径自定义设置" class="headerlink" title="2、 stm32cubeIDE库安装路径自定义设置"></a>2、 stm32cubeIDE库安装路径自定义设置</h1><p>首先打开 stm32cubeIDE软件，然后依次点击【Window】→【Preference】</p><img src="https://s2.loli.net/2024/08/19/fFpBHGnV5LtIaQr.png" style="zoom:50%;"><hr><p> 依次点击左侧【STM32Cube】→【Firmware Updater】，点击上图中的【Browser】，选择自己想要存放库文件的文件夹，选择完成后点击【Apply and Close】即可设置成功</p><img src="https://s2.loli.net/2024/08/19/1CisUhRVynDZS4j.png" style="zoom: 67%;"><p>PS：stm32cubeIDE与stm32cubeMX的库文件是通用的，也可以直接选择了stm32cubeMX的库文件路径，这样stm32cubeIDE就可以自动识别文件夹中已有的库文件，避免库文件重复下载，节省了内存。</p>]]></content>
+    <content type="html"><![CDATA[<p>表示在函数dht11.c的第18行，有一个返回表达式出现在了一个返回类型为void的函数中。在C语言中，如果一个函数的声明或定义中指定了返回类型为void，那么这个函数不能有任何返回值。</p><p>​    要解决这个问题，你需要检查dht11.c文件中第18行的代码，确保没有返回值。如果该行代码确实需要返回一个值，那么你需要将该函数的返回类型修改为非void类型</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;1、-stm32cubeMX库文件安装路径自定义设置&quot;&gt;&lt;a href=&quot;#1、-stm32cubeMX库文件安装路径自定义设置&quot; class=&quot;headerlink&quot; title=&quot;1、 stm32cubeMX库文件安装路径自定义设置&quot;&gt;&lt;/a&gt;1、 stm32</summary>
+    <summary type="html">&lt;p&gt;表示在函数dht11.c的第18行，有一个返回表达式出现在了一个返回类型为void的函数中。在C语言中，如果一个函数的声明或定义中指定了返回类型为void，那么这个函数不能有任何返回值。&lt;/p&gt;
+&lt;p&gt;​    要解决这个问题，你需要检查dht11.c文件中第18行的代码，</summary>
       
     
     
     
-    <category term="技术积累记录" scheme="https://d3iiz.top/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/"/>
+    <category term="错误记录" scheme="https://d3iiz.top/categories/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/"/>
     
-    
-    <category term="IDE与MX库文件安装路径自定义设置" scheme="https://d3iiz.top/tags/IDE%E4%B8%8EMX%E5%BA%93%E6%96%87%E4%BB%B6%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AE%BE%E7%BD%AE/"/>
     
   </entry>
   
