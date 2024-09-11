@@ -6,7 +6,7 @@
   <link href="https://d3iiz.top/atom.xml" rel="self"/>
   
   <link href="https://d3iiz.top/"/>
-  <updated>2024-09-11T05:54:42.616Z</updated>
+  <updated>2024-09-11T06:54:45.844Z</updated>
   <id>https://d3iiz.top/</id>
   
   <author>
@@ -17,19 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>RT-Thread Studio请修改链接脚本以扩大ROM大小</title>
+    <link href="https://d3iiz.top/post/13e71a6f.html"/>
+    <id>https://d3iiz.top/post/13e71a6f.html</id>
+    <published>2024-09-11T06:40:44.000Z</published>
+    <updated>2024-09-11T06:54:45.844Z</updated>
+    
+    <content type="html"><![CDATA[<p>错误：请修改链接脚本以扩大ROM大小</p><p>解决：选择对应项目，将ROM改大</p><img src="https://s2.loli.net/2024/09/11/n87GXrBxIwq3CkD.webp" alt="解决" style="zoom:50%;">]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;错误：请修改链接脚本以扩大ROM大小&lt;/p&gt;
+&lt;p&gt;解决：选择对应项目，将ROM改大&lt;/p&gt;
+&lt;img src=&quot;https://s2.loli.net/2024/09/11/n87GXrBxIwq3CkD.webp&quot; alt=&quot;解决&quot; style=&quot;zoom:50%;&quot;&gt;</summary>
+      
+    
+    
+    
+    <category term="错误记录" scheme="https://d3iiz.top/categories/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>0.线程创建与删除</title>
     <link href="https://d3iiz.top/post/520176db.html"/>
     <id>https://d3iiz.top/post/520176db.html</id>
     <published>2024-09-11T05:41:21.000Z</published>
-    <updated>2024-09-11T05:54:42.616Z</updated>
+    <updated>2024-09-11T07:21:43.891Z</updated>
     
-    <content type="html"><![CDATA[<p>1</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="动态创建"><a href="#动态创建" class="headerlink" title="动态创建"></a><center>动态创建</center></h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * name：线程名字，entry：线程的入口函数，parameter：函数参数</span></span><br><span class="line"><span class="comment"> * stack_size：线程堆栈的大小，priority：优先级，tick：时间片(运行长短)(相同优先级的线程)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="type">rt_thread_t</span> <span class="title function_">rt_thread_create</span><span class="params">(<span class="type">const</span> <span class="type">char</span> *name,</span></span><br><span class="line"><span class="params">                             <span class="type">void</span> (*entry)(<span class="type">void</span> *parameter),</span></span><br><span class="line"><span class="params">                             <span class="type">void</span>       *parameter,</span></span><br><span class="line"><span class="params">                             <span class="type">rt_uint32_t</span> stack_size,</span></span><br><span class="line"><span class="params">                             <span class="type">rt_uint8_t</span>  priority,</span></span><br><span class="line"><span class="params">                             <span class="type">rt_uint32_t</span> tick)</span></span><br><span class="line"><span class="comment">//创建</span></span><br><span class="line"><span class="title function_">rt_thread_create</span><span class="params">(<span class="string">&quot;th1&quot;</span>, th1_printf, <span class="literal">NULL</span>, <span class="number">1024</span>, <span class="number">20</span>, <span class="number">10</span>)</span>;</span><br></pre></td></tr></table></figure>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;1&lt;/p&gt;
-</summary>
+    <summary type="html">&lt;h1 id=&quot;动态创建&quot;&gt;&lt;a href=&quot;#动态创建&quot; class=&quot;headerlink&quot; title=&quot;动态创建&quot;&gt;&lt;/a&gt;&lt;center&gt;动态创建&lt;/center&gt;&lt;/h1&gt;&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class</summary>
       
     
     
@@ -467,34 +490,11 @@
   </entry>
   
   <entry>
-    <title>DHT11dht11.c(18) error C174 return-expression on void-function</title>
-    <link href="https://d3iiz.top/post/c4236caa.html"/>
-    <id>https://d3iiz.top/post/c4236caa.html</id>
-    <published>2024-08-03T08:46:17.000Z</published>
-    <updated>2024-08-19T05:37:28.569Z</updated>
-    
-    <content type="html"><![CDATA[<p>表示在函数dht11.c的第18行，有一个返回表达式出现在了一个返回类型为void的函数中。在C语言中，如果一个函数的声明或定义中指定了返回类型为void，那么这个函数不能有任何返回值。</p><p>​    要解决这个问题，你需要检查dht11.c文件中第18行的代码，确保没有返回值。如果该行代码确实需要返回一个值，那么你需要将该函数的返回类型修改为非void类型</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;表示在函数dht11.c的第18行，有一个返回表达式出现在了一个返回类型为void的函数中。在C语言中，如果一个函数的声明或定义中指定了返回类型为void，那么这个函数不能有任何返回值。&lt;/p&gt;
-&lt;p&gt;​    要解决这个问题，你需要检查dht11.c文件中第18行的代码，</summary>
-      
-    
-    
-    
-    <category term="错误记录" scheme="https://d3iiz.top/categories/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>STM32烧录的时候报错：Error :Flash Download failed -“Cortex-M3“</title>
     <link href="https://d3iiz.top/post/63d3dd68.html"/>
     <id>https://d3iiz.top/post/63d3dd68.html</id>
     <published>2024-08-03T08:46:17.000Z</published>
-    <updated>2024-08-19T05:41:10.459Z</updated>
+    <updated>2024-09-11T06:51:42.298Z</updated>
     
     <content type="html"><![CDATA[<p> 点击图中标号1，按顺序点击进入设置</p><img src="https://s2.loli.net/2024/08/19/HUSwrAaseI4LKOD.png" alt="进入设置" style="zoom:50%;"><p>按图中标序，进入添加页面</p><img src="https://s2.loli.net/2024/08/19/6w1Kh5v2Bg74qud.png" alt="添加页面" style="zoom:50%;"><p>添加图中所选，然后一直确定退出即可，若没有图中所示选项，可能软件没下载对</p><img src="https://s2.loli.net/2024/08/19/t5pIKjw6uFSZmc1.png" alt="确定" style="zoom:50%;"><p>添加后，即可烧录成功。</p>]]></content>
     
