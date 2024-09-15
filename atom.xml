@@ -6,7 +6,7 @@
   <link href="https://d3iiz.top/atom.xml" rel="self"/>
   
   <link href="https://d3iiz.top/"/>
-  <updated>2024-09-15T04:50:47.287Z</updated>
+  <updated>2024-09-15T11:41:55.688Z</updated>
   <id>https://d3iiz.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HurricaneDNS解析博客</title>
+    <link href="https://d3iiz.top/post/e9f3074a.html"/>
+    <id>https://d3iiz.top/post/e9f3074a.html</id>
+    <published>2024-09-15T10:09:50.000Z</published>
+    <updated>2024-09-15T11:41:55.688Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先需要一个域名，之前已经写过域名怎么注册，参考<a href="https://d3iiz.top/post/b7e3ace9.html">地址</a>。这只是个人推荐购买的地方，没有商业目的</p><p>购买完域名之后，我们打开HurricaneDNS：<a href="https://dns.he.net/">地址</a></p><p>先注册账号，注册过程按照提示填写注册即可</p><img src="https://s2.loli.net/2024/09/15/9rHzZocQWgap48L.webp" alt="注册账号" style="zoom:50%;"><p>注册好之后，我们直接登陆，直接添加域名</p><img src="https://s2.loli.net/2024/09/15/4ILlDvqd7FkwuA1.webp" alt="添加域名" style="zoom: 40%;"><p>输入购买的域名</p><img src="https://s2.loli.net/2024/09/15/VsTESFPkj387ZMH.webp" alt="输入域名" style="zoom:50%;"><p>进入添加记录</p><img src="https://s2.loli.net/2024/09/15/Kl28CdUDrSFE1aL.webp" alt="进入添加" style="zoom: 40%;"><p>添加对应的类型添加，按照如下方式添加<code>类型为A</code>，名称为<code>@</code>，IPv4地址为<code>185.199.108.153</code>，<strong>按照上述方式再添加以下三条记录，类型和名称和上述相同，IPv4地址分别为</strong>：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">185.199.109.153</span><br><span class="line">185.199.110.153</span><br><span class="line">185.199.111.153</span><br></pre></td></tr></table></figure><img src="https://s2.loli.net/2024/09/15/g3k21tdcvyoixLP.webp" alt="添加" style="zoom:50%;"><p>添加好后我们去购买域名的地方，<a href="https://mi.aliyun.com/?spm=5176.29045373.J_2177541330.5.3d1d183838ot1j#eyJwcm9kdWN0VHlwZSI6MiwicXVpY2tTZWFyY2giOiJbXCJcIl0iLCJrZXl3b3JkIjoiIiwiY29uc3RpdHV0ZUFyciI6WyIiXSwiZml4ZWRQcmljZVNlYXJjaFR5cGUiOiIiLCJxdWlja1NvcnQiOlsicHJpY2UiLCJhc2NlbmQiXSwibWF4U2FsZUF2YWlsRGF5IjoiIiwic2FsZUF2YWlsRGF5UmFuZ2UiOnsibWluU2FsZUF2YWlsRGF5IjoiIiwibWF4U2FsZUF2YWlsRGF5IjoiIn0sIm1pbkRvbWFpbkF2YWlsRGF5IjozMDAsImRvbWFpbkF2YWlsRGF5UmFuZ2UiOnsibWluRG9tYWluQXZhaWxEYXkiOjMwMCwibWF4RG9tYWluQXZhaWxEYXkiOiIifSwic2Vzc2lvbkNvZGUiOiIxZXhsWEVsYTZsRGhfb21sT2M5ZzUiLCJjb25zdGl0dXRlIjoiIiwibWluU2FsZUF2YWlsRGF5IjoiIiwibWF4RG9tYWluQXZhaWxEYXkiOiIiLCJ0YWIiOiJzZWxlY3RlZCJ9">地址</a>，进入控制台</p><img src="https://s2.loli.net/2024/09/15/aeqmkODdHWJR2Tt.webp" alt="进入控制台" style="zoom:50%;"><p>进入域名管理</p><img src="https://s2.loli.net/2024/09/15/MJcFN2Q1eI7Wskq.webp" alt="域名管理" style="zoom: 40%;"><p>进入域名列表，点击管理</p><img src="https://s2.loli.net/2024/09/15/rnDvMPG4HOz3cKu.webp" alt="进入管理" style="zoom:40%;"><p>进入DSN管理，修改DNS</p><img src="https://s2.loli.net/2024/09/15/MJa9YqTlo5r7ykf.webp" alt="修改DNS" style="zoom:50%;"><p>将以下这些全部填入</p><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NS1.HE.NET、NS2.HE.NET、NS3.HE.NET、NS4.HE.NET、NE5.HE.NET</span><br></pre></td></tr></table></figure><img src="https://s2.loli.net/2024/09/15/I64lukWEKFfXGTQ.webp" alt="填入" style="zoom:50%;"><p>每次上传好之后，需要去GitHub对应项目里面，进入设置，进入pages，设置一下域名</p><img src="https://s2.loli.net/2024/09/15/mO3v1W6yClHwI4s.webp" alt="设置域名" style="zoom:40%;">]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;首先需要一个域名，之前已经写过域名怎么注册，参考&lt;a href=&quot;https://d3iiz.top/post/b7e3ace9.html&quot;&gt;地址&lt;/a&gt;。这只是个人推荐购买的地方，没有商业目的&lt;/p&gt;
+&lt;p&gt;购买完域名之后，我们打开HurricaneDNS：&lt;a href</summary>
+      
+    
+    
+    
+    <category term="技术积累记录" scheme="https://d3iiz.top/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="HurricaneDNS解析博客" scheme="https://d3iiz.top/tags/HurricaneDNS%E8%A7%A3%E6%9E%90%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>2.线程同步</title>
@@ -96,7 +121,7 @@
     <link href="https://d3iiz.top/post/96c26968.html"/>
     <id>https://d3iiz.top/post/96c26968.html</id>
     <published>2024-09-12T05:42:36.000Z</published>
-    <updated>2024-09-14T12:57:55.183Z</updated>
+    <updated>2024-09-15T11:40:12.641Z</updated>
     
     <content type="html"><![CDATA[<h1 id="设置Ubuntu中文界面"><a href="#设置Ubuntu中文界面" class="headerlink" title="设置Ubuntu中文界面"></a><center>设置Ubuntu中文界面</center></h1><p>进入语言设置</p><img src="https://s2.loli.net/2024/09/12/CsSj7RbPhx2HGwD.webp" alt="进入语言设置" style="zoom:50%;"><p>进入语言下载，打勾简体中文，点击应用下载</p><img src="https://s2.loli.net/2024/09/12/WTuOsodlyKNDGf3.webp" alt="下载语言包" style="zoom: 67%;"><p>更换中文语言</p><img src="https://s2.loli.net/2024/09/12/SFU2CkZPBqYuKs4.webp" alt="更换中文语言" style="zoom:50%;"><p>重启更新语言，输入密码重启</p><img src="https://s2.loli.net/2024/09/12/PQja9sUpwTcIdyJ.webp" alt="更新语言" style="zoom:50%;"><p>根据需求选择，推荐保留就的名称</p><img src="https://s2.loli.net/2024/09/12/H7DRydPuovct6mT.webp" alt="自行选择对应" style="zoom:60%;"><h1 id="设置Ubuntu字体大小"><a href="#设置Ubuntu字体大小" class="headerlink" title="设置Ubuntu字体大小"></a><center>设置Ubuntu字体大小</center></h1><p>打开终端，安装gnome-tweaks</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install gnome-tweaks</span><br></pre></td></tr></table></figure><p>安装完成之后，输入</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gnome-tweaks</span><br></pre></td></tr></table></figure><p>根据需求调整字体大小</p><img src="https://s2.loli.net/2024/09/12/6AnpSRgylNv3JKT.webp" alt="调整字体大小" style="zoom:50%;"><h1 id="设置Ubuntu鼠标大小"><a href="#设置Ubuntu鼠标大小" class="headerlink" title="设置Ubuntu鼠标大小"></a><center>设置Ubuntu鼠标大小</center></h1><p>进入设置，按照图片指示按需修改</p><img src="https://s2.loli.net/2024/09/12/CiwO4hgvVLcIHop.webp" alt="修改鼠标大小" style="zoom:50%;">]]></content>
     
@@ -465,11 +490,11 @@
   </entry>
   
   <entry>
-    <title>通过 Cloudflare 和 JsDelivr 免费加速博客 GitHub 图床等静态资源</title>
+    <title>Cloudflare 和 JsDelivr 免费加速博客 GitHub 图床等静态资源</title>
     <link href="https://d3iiz.top/post/3e643b17.html"/>
     <id>https://d3iiz.top/post/3e643b17.html</id>
     <published>2024-08-03T09:25:05.000Z</published>
-    <updated>2024-09-15T09:56:11.652Z</updated>
+    <updated>2024-09-15T11:43:55.921Z</updated>
     
     <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><center>前言</center></h1><p>本文通过学习此博客编写：<a href="https://www.haoyep.com/posts/github-graph-beds-cdn/#%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D">地址</a>，通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 静态资源(GitHub图床)，自动实现 CDN 资源的海内外分流，加速博客访问速度。</p><h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a><center>配置</center></h1><p>首先，要配置好域名以及DNS，本人已经写了配置域名以及 Cloudflare DNS加速部署博客：<a href="https://d3iiz.top/post/b7e3ace9.html">地址</a></p><p>进入部署好的DNS</p><img src="https://s2.loli.net/2024/08/19/wByunPAEVNeRHhr.png" alt="进入" style="zoom:50%;"><p>在 DNS 配置中，新增一条 CNAME 解析记录，并启用代理。 如图，我这里是将 cdn.haoyep.com 解析到了 jsd.cdn.zzko.cn，并使用 Cloudflare 代理（点亮小云朵）</p><img src="https://s2.loli.net/2024/08/19/sWP96IXVZEliOY2.png" alt="添加记录" style="zoom: 33%;"><p>目标：资源链接都使用 cdn.haoyep.com，Cloudflare 在代理 cdn.haoyep.com 时，判断请求来源是国内，则将 cdn.haoyep.com 重定向到 jsd.cdn.zzko.cn；国外的请求则重定向到 cdn.jsdelivr.net。</p><h2 id="配置国内重定向"><a href="#配置国内重定向" class="headerlink" title="配置国内重定向"></a><center>配置国内重定向</center></h2><p>规则名称 （必需）：标注国内，方便区分</p><p>自定义筛选表达式：<code>(http.host eq &quot;cdn.haoyep.com&quot; and ip.geoip.country eq &quot;CN&quot;)</code></p><p>URL 重定向</p><ul><li>类型：<code>动态</code></li><li>表达式：<code>concat(&quot;https://jsd.cdn.zzko.cn&quot;, http.request.uri.path)</code></li><li>状态代码：<code>302</code></li></ul><img src="https://s2.loli.net/2024/08/19/RtB3Af12IjbdZa7.png" alt="配置国内重定向" style="zoom:50%;"><h2 id="配置国外重定向"><a href="#配置国外重定向" class="headerlink" title="配置国外重定向"></a><center>配置国外重定向</center></h2><p>规则名称 （必需）：标注国外，方便区分</p><p>自定义筛选表达式：(<code>http.host eq &quot;cdn.haoyep.com&quot; and ip.geoip.country ne &quot;CN&quot;</code>)</p><p>URL 重定向</p><ul><li>类型：<code>动态</code></li><li>表达式：<code>concat(&quot;https://cdn.jsdelivr.net&quot;, http.request.uri.path)</code></li><li>状态代码：<code>302</code></li></ul><img src="https://s2.loli.net/2024/08/19/kcNSnDshqaTyHrU.png" alt="配置国外重定向" style="zoom:50%;"><blockquote><p>技巧：<br>HTTP 重定向状态选择302而不是301。虽然两类请求都会被 Cloudflare 缓存，但301理论上是永久跳转而302是临时跳转，因此301可能会导致长时间缓存，不利于今后修改重定向到新地址。</p></blockquote><h2 id="PicGo-设置"><a href="#PicGo-设置" class="headerlink" title="PicGo 设置"></a><center>PicGo 设置</center></h2><p>我们已经除了GitHub上传图片教程：<a href="https://blog.csdn.net/qq_65047384/article/details/140401010">地址</a></p><p>这里只需修改，自定义域名连接里面的<code>cdn.haoyep.com</code>，修改成自己的，其它按之前的配置即可</p><img src="https://s2.loli.net/2024/08/19/lGdpRj7S5ngZ9XA.png" alt="PicGo配置" style="zoom:50%;"><p>之前已经上传的图片，也只需要将图片链接中的<code>cdn.haoyep.com</code>，修改成自己的，在Typora可以ctrl+f，直接全部替换即可</p><p>后续没有什么效果，已转至云图床</p>]]></content>
     
@@ -485,30 +510,6 @@
     
     
     <category term="博客加速图床" scheme="https://d3iiz.top/tags/%E5%8D%9A%E5%AE%A2%E5%8A%A0%E9%80%9F%E5%9B%BE%E5%BA%8A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>利用cloudflare加速github博客访问</title>
-    <link href="https://d3iiz.top/post/b7e3ace9.html"/>
-    <id>https://d3iiz.top/post/b7e3ace9.html</id>
-    <published>2024-08-03T09:24:43.000Z</published>
-    <updated>2024-08-19T08:41:53.268Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="域名购买"><a href="#域名购买" class="headerlink" title="域名购买"></a><center>域名购买</center></h1><p>阿里可能需要实名认证等，在注册账号是，按照提示注册即可，购买期间若需补充其它信息，按要求补充即可</p><p>这里选择阿里云的域名，提供的这个的非常便宜实惠的域名，但是续费可能就是原价，可以一年换一次，购买：<a href="https://mi.aliyun.com/?spm=5176.29045373.J_2177541330.5.3d1d183838ot1j#eyJwcm9kdWN0VHlwZSI6MiwicXVpY2tTZWFyY2giOiJbXCJcIl0iLCJrZXl3b3JkIjoiIiwiY29uc3RpdHV0ZUFyciI6WyIiXSwiZml4ZWRQcmljZVNlYXJjaFR5cGUiOiJzZWxlY3RlZCIsInF1aWNrU29ydCI6WyJwcmljZSIsImFzY2VuZCJdLCJtYXhTYWxlQXZhaWxEYXkiOiIiLCJzYWxlQXZhaWxEYXlSYW5nZSI6eyJtaW5TYWxlQXZhaWxEYXkiOiIiLCJtYXhTYWxlQXZhaWxEYXkiOiIifSwibWluRG9tYWluQXZhaWxEYXkiOjMwMCwiZG9tYWluQXZhaWxEYXlSYW5nZSI6eyJtaW5Eb21haW5BdmFpbERheSI6MzAwLCJtYXhEb21haW5BdmFpbERheSI6IiJ9LCJzZXNzaW9uQ29kZSI6ImV6bXZHaF81WWEyVGtxNXZGMEs5cyIsImNvbnN0aXR1dGUiOiIiLCJtaW5TYWxlQXZhaWxEYXkiOiIiLCJtYXhEb21haW5BdmFpbERheSI6IiIsInRhYiI6InNlbGVjdGVkIn0=">地址</a>。</p><p>购买完成后，在控制台看是否成功，可能需要等待几分钟</p><img src="https://s2.loli.net/2024/08/19/PCDavO6Ws24dxqF.png" alt="控制台" style="zoom: 33%;"><p>进入控制台后，进入域名控制台</p><img src="https://s2.loli.net/2024/08/19/nxbOyZ9dekuaqiQ.png" alt="查看域名" style="zoom: 33%;"><p>这里可查看域名</p><img src="https://s2.loli.net/2024/08/19/C6uaRMOSYngUb3A.png" alt="域名列表" style="zoom:33%;"><h1 id="修改DNS"><a href="#修改DNS" class="headerlink" title="修改DNS"></a><center>修改DNS</center></h1><p>在域名列表点击 管理</p><img src="https://s2.loli.net/2024/08/19/JHVeQP26MWrxYlF.png" alt="第一步" style="zoom: 33%;"><p>修改DNS，添加需要的</p><img src="https://s2.loli.net/2024/08/19/praL8wKd2TtJoqx.png" alt="修改DSN" style="zoom:33%;"><h1 id="域名购买-1"><a href="#域名购买-1" class="headerlink" title="域名购买"></a><center>域名购买</center></h1><p><a href="https://www.cloudflare-cn.com/">cloudflare地址</a>，进入后直接先注册账号</p><p>设置成中文，进入网站绑定域名</p><img src="https://s2.loli.net/2024/08/19/3dOVXtECnAIUvuM.png" alt="进入网站选项" style="zoom:33%;"><p>在左侧栏中进入网站一栏，点击右方添加站点，第一次可能没有这个，但中间有一个可以直接添加</p><img src="https://s2.loli.net/2024/08/19/2g4ZDBu73IUnQzL.png" alt="添加站点" style="zoom:33%;"><p>输入自己的域名，注意不要带<code>www</code>或者<code>https</code>，比如我的就直接填写<code>qinyu.space</code></p><img src="https://s2.loli.net/2024/08/19/eOshYyxlUoM3JpP.png" alt="添加域名" style="zoom:50%;"><p>选择套餐，<code>free</code>即可</p><img src="https://s2.loli.net/2024/08/19/CmZ18OLqXItDFw7.png" alt="选择套餐" style="zoom: 33%;"><p>点击继续后 cloudflare 会自动扫描域名的 dns 记录，如果是刚刚创建的域名，可能扫描的结果为空。<strong>截图中的几条记录可以不用管</strong></p><img src="https://s2.loli.net/2024/08/19/vQ3KEqijzxAnGm4.png" alt="添加DNS记录" style="zoom: 33%;"><p>这一步很重要，点击添加记录，按照如下方式添加<code>类型为A</code>，名称为<code>@</code>，IPv4地址为<code>185.199.108.153</code>，<strong>按照上述方式再添加以下三条记录，类型和名称和上述相同，IPv4地址分别为</strong>：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">185.199.109.153</span><br><span class="line">185.199.110.153</span><br><span class="line">185.199.111.153</span><br></pre></td></tr></table></figure><p>完成之后应该能看到列表中有以下四条这样的记录，除了名称是自己的域名外其他应该都和图中相同</p><img src="https://s2.loli.net/2024/08/19/tKYZCgTSnbExFhm.png" alt="添加后" style="zoom:50%;"><p>上述添加的4条ip地址均是GitHub Pages 的 IP 地址，具体可查看<a href="https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">地址</a></p><p>点击继续后，往下滑 cloudflare 会要求将我们DNS服务器修改为以下图中所示的的服务器，可以先截个图或者存文档里</p><img src="https://s2.loli.net/2024/08/19/XynqkHMOZBagd6Y.png" alt="DNS服务器" style="zoom:50%;"> <p>点击下方继续后会有一个快速入门指南，里面的配置可以都开启：</p><img src="https://s2.loli.net/2024/08/19/yZEQ6RPhUNkgYfn.png" alt="配置都开启" style="zoom: 50%;"><p>回到上面讲述修改DNS，DNS服务器更改后生效需要一段时间，少则几分钟，慢则需要几个小时</p><p>返回 cloudflare，如果看到 “Cloudflare 正在保护您的站点”说明已经配置成功了：</p><img src="https://s2.loli.net/2024/08/19/cO1BGk7CXFNMeTU.png" alt="配置成功" style="zoom:50%;"><h1 id="设置Github-page"><a href="#设置Github-page" class="headerlink" title="设置Github page"></a><center>设置Github page</center></h1><p>进入github.io对应的仓库，进入 <code>Settings</code>：</p><img src="https://s2.loli.net/2024/08/19/oe5MBzLKwDOriES.png" alt="进入设置" style="zoom: 33%;"><p>进入左栏中的<code>pages</code>，在 <code>Custom domain</code>中输入自己的域名，点击<code>save</code>，如果成功会显示下图：</p><img src="https://s2.loli.net/2024/08/19/x7vT54ZHGwgaWCM.png" alt="添加域名" style="zoom: 33%;"><p>这样就可以通过域名来访问自己的博客了，还可以在上图中勾选 <code>Enforcrs HTTPS</code>，这样网站仅会通过https提供服务。</p><blockquote><p>如果如下图显示dns配置不正确，推测可能是使用了cloudflare后，GitHub验证DNS时返回的是cdn服务器的ip地址，而不是在cloudflare上开始配置的4个GitHub page的ip地址，可以在线dig一下自己的域名验证一下。不过只要网站能通过域名正常访问就没什么问题。</p><img src="https://s2.loli.net/2024/08/19/1aWPU4ry8Obgj9l.png" alt="提示" style="zoom:50%;"></blockquote><p>本文参考：<a href="https://qinyu.space/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%88%A9%E7%94%A8cloudflare%E5%8A%A0%E9%80%9Fgithub%E4%B8%BB%E9%A1%B5%E8%AE%BF%E9%97%AE/#%E9%85%8D%E7%BD%AE-cloudflare">地址</a></p><h1 id="cloudflare自动部署博客"><a href="#cloudflare自动部署博客" class="headerlink" title="cloudflare自动部署博客"></a><center>cloudflare自动部署博客</center></h1><p>新建部署，绑定GitHub账号选择对应仓库绑定即可</p><img src="https://s2.loli.net/2024/08/19/uFgSrPBvxpLb4zK.png" alt="新建部署" style="zoom:33%;"><p>绑定自己的域名</p><img src="https://s2.loli.net/2024/08/19/sF9ChQeiypZRMO7.png" alt="绑定域名" style="zoom: 33%;"><p>关于GitHub仓库图片加速参考：<a href="https://d3iiz.top/post/3e643b17">链接</a>，不一定有作用，可以将图片编成格式：<code>WebP</code></p><p>可以把机器人导入仓库压缩图片：<a href="https://imgbot.net/">链接</a></p><p>或者使用免费图床，参考已写博文：<a href="https://d3iiz.top/post/2ec6e870">链接</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;域名购买&quot;&gt;&lt;a href=&quot;#域名购买&quot; class=&quot;headerlink&quot; title=&quot;域名购买&quot;&gt;&lt;/a&gt;&lt;center&gt;域名购买&lt;/center&gt;&lt;/h1&gt;&lt;p&gt;阿里可能需要实名认证等，在注册账号是，按照提示注册即可，购买期间若需补充其它信息，按要求补</summary>
-      
-    
-    
-    
-    <category term="技术积累记录" scheme="https://d3iiz.top/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/"/>
-    
-    
-    <category term="加速github博客访问" scheme="https://d3iiz.top/tags/%E5%8A%A0%E9%80%9Fgithub%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE/"/>
     
   </entry>
   
