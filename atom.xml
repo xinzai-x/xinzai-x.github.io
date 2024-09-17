@@ -6,7 +6,7 @@
   <link href="https://d3iiz.top/atom.xml" rel="self"/>
   
   <link href="https://d3iiz.top/"/>
-  <updated>2024-09-17T06:24:30.684Z</updated>
+  <updated>2024-09-17T08:34:09.516Z</updated>
   <id>https://d3iiz.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://d3iiz.top/post/49f85af0.html"/>
     <id>https://d3iiz.top/post/49f85af0.html</id>
     <published>2024-09-17T06:23:59.000Z</published>
-    <updated>2024-09-17T06:24:30.684Z</updated>
+    <updated>2024-09-17T08:34:09.516Z</updated>
     
     
     
@@ -356,7 +356,7 @@
     <link href="https://d3iiz.top/post/6928cd3f.html"/>
     <id>https://d3iiz.top/post/6928cd3f.html</id>
     <published>2024-08-12T15:37:39.000Z</published>
-    <updated>2024-08-19T05:27:02.980Z</updated>
+    <updated>2024-09-17T09:02:01.488Z</updated>
     
     <content type="html"><![CDATA[<p>1.打开word，将 无法初始化visual basic 的弹出框先关掉</p><p>2.点击左上角的 <code>文件</code></p><img src="https://s2.loli.net/2024/08/19/dR4COBbWFSykfKn.png" alt="点击文件" style="zoom:50%;"><p>3.点击帮助栏目下的 <code>选项</code>，然后点击 <code>加载项</code></p><img src="https://s2.loli.net/2024/08/19/ONbW38nYyapSMA2.png" alt="进入选项" style="zoom:50%;"><hr><img src="https://s2.loli.net/2024/08/19/nBGQD25ZUHhFfsi.png" alt="进入设置" style="zoom:50%;"><p>4.在弹出的com加载项中将所有带√的选项都去掉(此处不是删除，只是将<code>√去掉</code>)，最后点击<code>确定</code>，重新打开文件</p><img src="https://s2.loli.net/2024/08/19/JDBRsFjE6aICH7h.png" alt="取消" style="zoom:50%;"><p>5.大功告成</p>]]></content>
     
@@ -455,7 +455,7 @@
     <link href="https://d3iiz.top/post/b94c2cf2.html"/>
     <id>https://d3iiz.top/post/b94c2cf2.html</id>
     <published>2024-08-04T14:54:51.000Z</published>
-    <updated>2024-08-19T05:23:51.640Z</updated>
+    <updated>2024-09-17T09:01:53.573Z</updated>
     
     <content type="html"><![CDATA[<p> 第一步，打开虚拟机，找到首选项</p><img src="https://s2.loli.net/2024/08/19/cUmt1MFpeDLVAxg.png" alt="进入首选项" style="zoom:50%;"><p>第二步，选择共享虚拟机，修改端口号，保存</p><img src="https://s2.loli.net/2024/08/19/5tJrqO2o3cSTYQH.png" alt="修改端口" style="zoom:50%;">]]></content>
     
@@ -482,7 +482,7 @@
     <link href="https://d3iiz.top/post/a06b5fda.html"/>
     <id>https://d3iiz.top/post/a06b5fda.html</id>
     <published>2024-08-04T14:54:31.000Z</published>
-    <updated>2024-08-19T05:29:50.464Z</updated>
+    <updated>2024-09-17T09:02:08.478Z</updated>
     
     <content type="html"><![CDATA[<p> 1、双击打开此电脑，点击【查看】，勾选<strong>【隐藏的项目】</strong></p><img src="https://s2.loli.net/2024/08/19/bHVnR4fCvKPWkdU.png" alt="关闭隐藏" style="zoom:50%;"><p>2、同时按 【Win + R】键打开运行，输入<strong>【%localappdata%】</strong>回车确定</p><img src="https://s2.loli.net/2024/08/19/zS47mboVWUT2t8L.png" alt="打开命令" style="zoom:50%;"><p>3、右键选择删除<strong>lconCache.db</strong>文件</p><img src="https://s2.loli.net/2024/08/19/xVD4t6Z2waeOobJ.png" alt="删除文件" style="zoom:50%;"><p>4、同时按【Shift + Ctrl + Esc】键打开任务管理器，找到<strong>Windows 资源管理器</strong>，右键选择重新启动</p><img src="https://s2.loli.net/2024/08/19/Br4WZfbVKH3ahiy.png" alt="资源管理器" style="zoom:50%;">]]></content>
     
