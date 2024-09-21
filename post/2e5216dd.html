@@ -1,196 +1,147 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>4.定时器/计数器 | 星仔人生录</title><meta name="keywords" content="51单片机"><meta name="author" content="星仔"><meta name="copyright" content="星仔"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#18171d"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="4.定时器/计数器"><meta name="application-name" content="4.定时器/计数器"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#18171d"><meta property="og:type" content="article"><meta property="og:title" content="4.定时器/计数器"><meta property="og:url" content="https://d3iiz.top/post/2e5216dd.html"><meta property="og:site_name" content="星仔人生录"><meta property="og:description" content="原理 时钟源：定时器是内部时钟源（晶振），计数器是外部 计时长度：对应TH  TL计数器初值寄存器(高八位,低八位) 对应的中断触发函数     中断源 定时中断处理函数    Timer0 Timer0_Routine(void)      interrupt 1   Timer1 Timer1_"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg"><meta property="article:author" content="星仔"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg"><meta name="description" content="原理 时钟源：定时器是内部时钟源（晶振），计数器是外部 计时长度：对应TH  TL计数器初值寄存器(高八位,低八位) 对应的中断触发函数     中断源 定时中断处理函数    Timer0 Timer0_Routine(void)      interrupt 1   Timer1 Timer1_"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://d3iiz.top/post/2e5216dd"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
-  linkPageTop: undefined,
-  peoplecanvas: undefined,
-  postHeadAiDescription: undefined,
-  diytitle: undefined,
-  LA51: {"enable":true,"ck":"3HZ1UVjhMEV6g7Lg","LingQueMonitorID":"3HZ1UVjhMEV6g7Lg"},
-  greetingBox: undefined,
-  twikooEnvId: '',
-  commentBarrageConfig:undefined,
-  root: '/',
-  preloader: undefined,
-  friends_vue_info: undefined,
-  navMusic: false,
-  mainTone: undefined,
-  authorStatus: undefined,
-  algolia: undefined,
-  localSearch: {"path":"/search.json","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    simplehomepage: true,
-    post: false
-  },
-  runtime: '天',
-  date_suffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 星仔","link":"链接: ","source":"来源: 星仔人生录","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
-  lightbox: 'fancybox',
-  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
-      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
-    }
-  },
-  isPhotoFigcaption: true,
-  islazyload: true,
-  isAnchor: false,
-  shortcutKey: undefined,
-  autoDarkmode: true
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  configTitle: '星仔人生录',
-  title: '4.定时器/计数器',
-  postAI: '',
-  pageFillDescription: '原理, 相关寄存器, TCON：定时器控制寄存器, TMOD：定时器模式寄存器, 定时器计算初值, 中断允许寄存器, 代码编写原理时钟源定时器是内部时钟源晶振计数器是外部计时长度对应计数器初值寄存器高八位低八位对应的中断触发函数中断源定时中断处理函数相关寄存器定时器控制寄存器只需用到定时器计数器运行控制位代码中断触发标志位内部定时器模式寄存器两个定时器计数器任选一个即可工作模式模式位定时器计数器模式位定时器计数器模式位自动重装初值模式两个位定时器计数器我们学的是定时器计数器是外部计数则地址是计数器的置置为定时器模式这里我们选位定时器不自动重装初值如果不会自动重装载寄存器不会自动赋初值则要触发中断处理函数时重新手动赋初值定时器计算初值需要定时的时间带入公式求出中断允许寄存器总中断允许控制位定时计数器的溢出中断允许位定时计数器的溢出中断允许位定时计数器的溢出中断允许位需要外部定时器串口那个则赋值那个为代码编写每翻转灯状态模式选择定时器工作模式定时器初值打开定时器运行控制位打开定时器中断允许位打开总中断允许控制位编写中断服务函数当溢出时触发中断执行中断函数执行完之后回到主函数继续执行定义灯由于单片机没办法定时只能通过计数达到效果配置定时器工作模式使用定时器使用位定时器模式不自动重装初值定时给寄存器赋初值打开定时器运行控制位打开定时器中断允许位打开总中断允许控制位大于时则取反状态定时中断处理函数触发中断函数需要重新给定时器赋初值',
-  isPost: true,
-  isHome: false,
-  isHighlightShrink: false,
-  isToc: true,
-  postUpdate: '2024-08-19 21:58:36',
-  postMainColor: '',
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>4.定时器/计数器 | 星仔人生录</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="/img/pwa/favicon.ico"><!-- index.css--><link rel="stylesheet" href="/css/index.css?v=2.0.13"><!-- inject head--><link rel="canonical" href="https://d3iiz.top/post/2e5216dd.html"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"><!-- aplayer--><!-- swiper--><!-- fancybox ui--><!-- katex--><!-- Open Graph--><meta name="description" content="原理 时钟源：定时器是内部时钟源（晶振），计数器是外部 计时长度：对应TH TL计数器初值寄存器(高八位,低八位) 对应的中断触发函数 中断源 定时中断处理函数 Timer0 Timer0_Routine(void) interrupt 1 Timer1 Timer1_"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="星仔人生录"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/img/pwa/favicon.ico"><link rel="apple-touch-icon" href="/img/pwa/favicon.ico" sizes="180x180"><script>console.log(' %c Solitude %c ' + '2.0.13' + ' %c https://github.com/everfu/hexo-theme-solitude',
+    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
+</script><script>(()=>{
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
 
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-      win.saveToLocal = {
-        set: (key, value, ttl) => {
-          if (ttl === 0) return
-          const now = Date.now()
-          const expiry = now + ttl * 86400000
-          const item = {
-            value,
-            expiry
-          }
-          localStorage.setItem(key, JSON.stringify(item))
-        },
-      
-        get: key => {
-          const itemStr = localStorage.getItem(key)
-      
-          if (!itemStr) {
-            return undefined
-          }
-          const item = JSON.parse(itemStr)
-          const now = Date.now()
-      
-          if (now > item.expiry) {
-            localStorage.removeItem(key)
-            return undefined
-          }
-          return item.value
-        }
-      }
-    
-      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        script.onerror = reject
-        script.onload = script.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          script.onload = script.onreadystatechange = null
-          resolve()
-        }
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
 
-        Object.keys(attr).forEach(key => {
-          script.setAttribute(key, attr[key])
-        })
-
-        document.head.appendChild(script)
-      })
-    
-      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onerror = reject
-        link.onload = link.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          link.onload = link.onreadystatechange = null
-          resolve()
-        }
-        document.head.appendChild(link)
-      })
-    
-      win.activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
-        }
-      }
-      win.activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
-          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
-          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
-
-          if (t === undefined) {
-            if (isLightMode) activateLightMode()
-            else if (isDarkMode) activateDarkMode()
-            else if (isNotSpecified || hasNoSupport) {
-              const now = new Date()
-              const hour = now.getHours()
-              const isNight = hour <= 6 || hour >= 18
-              isNight ? activateDarkMode() : activateLightMode()
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
             }
-            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
-              if (saveToLocal.get('theme') === undefined) {
-                e.matches ? activateDarkMode() : activateLightMode()
+        };
+        window.utils = {
+            saveToLocal: saveToLocal,
+            getCSS: (url, id = false) => new Promise((resolve, reject) => {
+              const link = document.createElement('link')
+              link.rel = 'stylesheet'
+              link.href = url
+              if (id) link.id = id
+              link.onerror = reject
+              link.onload = link.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                link.onload = link.onreadystatechange = null
+                resolve()
               }
-            })
-          } else if (t === 'light') activateLightMode()
-          else activateDarkMode()
-        
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
+              document.head.appendChild(link)
+            }),
+            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+              const script = document.createElement('script')
+              script.src = url
+              script.async = true
+              script.onerror = reject
+              script.onload = script.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                script.onload = script.onreadystatechange = null
+                resolve()
+              }
+
+              Object.keys(attr).forEach(key => {
+                script.setAttribute(key, attr[key])
+              })
+
+              document.head.appendChild(script)
+            }),
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
+
+                if (name && keyObj[name]) return
+
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+            addEventListenerPjax: (ele, event, fn, option = false) => {
+              ele.addEventListener(event, fn, option)
+              utils.addGlobalFn('pjax', () => {
+                  ele.removeEventListener(event, fn, option)
+              })
+          },
         }
-      }
-    
-      const detectApple = () => {
-        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-          document.documentElement.classList.add('apple')
-        }
-      }
-      detectApple()
-    })(window)</script><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="星仔人生录" type="application/atom+xml">
-<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">星仔人生录</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 小伙伴</span></a></li><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener" href="https://link3.cc/xinzai_x"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 个人资源</span></a></li><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener" href="http://ainm.cc/c/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐网</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 常用文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="https://d3iiz.top/post/1f293ccb"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 资源搜索</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 1.05rem;">32单片机<sup>12</sup></a><a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 1.05rem;">51单片机<sup>9</sup></a><a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 1.05rem;">C语言<sup>13</sup></a><a href="/tags/GitHub-Picgo%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/" style="font-size: 1.05rem;">GitHub+Picgo图片上传<sup>1</sup></a><a href="/tags/GitHub%E5%90%8C%E6%AD%A5gitee%E5%B9%B6%E9%83%A8%E7%BD%B2/" style="font-size: 1.05rem;">GitHub同步gitee并部署<sup>1</sup></a><a href="/tags/HurricaneDNS%E8%A7%A3%E6%9E%90%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem;">HurricaneDNS解析博客<sup>1</sup></a><a href="/tags/IDE%E4%B8%8EMX%E5%BA%93%E6%96%87%E4%BB%B6%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AE%BE%E7%BD%AE/" style="font-size: 1.05rem;">IDE与MX库文件安装路径自定义设置<sup>1</sup></a><a href="/tags/Java%E8%AF%AD%E8%A8%80/" style="font-size: 1.05rem;">Java语言<sup>25</sup></a><a href="/tags/RT-Thread/" style="font-size: 1.05rem;">RT-Thread<sup>4</sup></a><a href="/tags/ST-LINK%E6%9C%AA%E8%83%BD%E4%B8%B2%E5%8F%A3keil%E8%AF%86%E5%88%AB%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" style="font-size: 1.05rem;">ST-LINK未能串口keil识别解决方案<sup>1</sup></a><a href="/tags/STM32CubeIDE%E4%BB%A3%E7%A0%81%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F/" style="font-size: 1.05rem;">STM32CubeIDE代码字体大小<sup>1</sup></a><a href="/tags/office%E6%97%A0%E6%B3%95%E5%88%9D%E5%A7%8B%E5%8C%96VisualBasic/" style="font-size: 1.05rem;">office无法初始化VisualBasic<sup>1</sup></a><a href="/tags/ubuntu%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" style="font-size: 1.05rem;">ubuntu相关设置<sup>1</sup></a><a href="/tags/win10%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E5%8F%98%E7%99%BD/" style="font-size: 1.05rem;">win10桌面图标变白<sup>1</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/" style="font-size: 1.05rem;">个人博客迁移<sup>1</sup></a><a href="/tags/%E4%BA%91%E5%9B%BE%E5%BA%8A/" style="font-size: 1.05rem;">云图床<sup>1</sup></a><a href="/tags/%E5%8A%A0%E9%80%9Fgithub%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE/" style="font-size: 1.05rem;">加速github博客访问<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" style="font-size: 1.05rem;">博客使用手册<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E5%8A%A0%E9%80%9F%E5%9B%BE%E5%BA%8A/" style="font-size: 1.05rem;">博客加速图床<sup>1</sup></a><a href="/tags/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/" style="font-size: 1.05rem;">图片压缩在线工具<sup>1</sup></a><a href="/tags/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/" style="font-size: 1.05rem;">小狼毫输入法<sup>1</sup></a><a href="/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 1.05rem;">插件<sup>1</sup></a><a href="/tags/%E6%94%BF%E6%B2%BB/" style="font-size: 1.05rem;">政治<sup>14</sup></a><a href="/tags/%E8%A7%A3%E5%86%B3443%E7%AB%AF%E5%8F%A3%E8%A2%ABvmware%E5%8D%A0%E7%94%A8/" style="font-size: 1.05rem;">解决443端口被vmware占用<sup>1</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E4%B8%8E%E5%9F%BA%E7%A1%80/" style="font-size: 1.05rem;">计算机程序与基础<sup>1</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2/" style="font-size: 1.05rem;">资源搜索<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
-    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">九月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/08/"><span class="card-archive-list-date">八月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">24</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">七月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">四月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">二月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" itemprop="url">51单片机</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>51单片机</span></a></span></div></div><h1 class="post-title" itemprop="name headline">4.定时器/计数器</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2024-04-12T02:13:46.000Z" title="发表于 2024-04-12 10:13:46">2024-04-12</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-08-19T13:58:36.674Z" title="更新于 2024-08-19 21:58:36">2024-08-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为揭阳"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>揭阳</span></div></div></div><article class="post-content" id="article-container" itemscope itemtype="https://d3iiz.top/post/2e5216dd.html"><header><a class="post-meta-categories" href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" itemprop="url">51单片机</a><a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" tabindex="-1" itemprop="url">51单片机</a><h1 id="CrawlerTitle" itemprop="name headline">4.定时器/计数器</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">星仔</span><time itemprop="dateCreated datePublished" datetime="2024-04-12T02:13:46.000Z" title="发表于 2024-04-12 10:13:46">2024-04-12</time><time itemprop="dateCreated datePublished" datetime="2024-08-19T13:58:36.674Z" title="更新于 2024-08-19 21:58:36">2024-08-19</time></header><h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a><center>原理</center></h1><ol>
+    })()</script><!-- theme--><script>initTheme = () => {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const cachedMode = utils.saveToLocal.get('theme');
+    if (cachedMode === undefined) {
+        const nowMode =
+            isDarkMode ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', nowMode);
+    } else {
+        document.documentElement.setAttribute('data-theme', cachedMode);
+    }
+    typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
+}
+initTheme()</script><!-- global head--><script>const GLOBAL_CONFIG = {
+    root: '/',
+    algolia: undefined,
+    localsearch: {"preload":false,"path":"/search.xml"},
+    runtime: '2023-12-07 00:00:00',
+    lazyload: {
+        enable: false,
+        error: '/img/error_load.avif'
+    },
+    copyright: false,
+    highlight: {"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},
+    randomlink: false,
+    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可","search":{"empty":"找不到你查询的内容：${query}","hit":"找到 ${hits} 条结果，用时 ${time} 毫秒","placeholder":"输入关键词快速查找","count":"共 <b>${count}</b> 条结果。"}},
+    aside: {
+        sayhello: {
+            morning: "✨ Good morning. It's a new day",
+            noon: "It's time for a midday break",
+            afternoon: "Tea time. 🍵",
+            night: "early bedtime",
+            goodnight: "Good night 😴",
+        },
+        sayhello2: [],
+        sayhello3: {
+            prefix: '好久不见，',
+            back: '欢迎再次回来，',
+        },
+    },
+    covercolor: {
+        enable: true
+    },
+    comment: false,
+    lightbox: 'null',
+    post_ai: false,
+    right_menu: {"mode":{"dark":"深色模式","light":"浅色模式"},"img_error":"此图片无法复制与下载"},
+    lure: false,
+    expire: false,
+};</script><!-- page-config head--><script id="config-diff">var PAGE_CONFIG = {
+    is_post: true,
+    is_page: false,
+    is_home: false,
+    page: '',
+    toc: true,
+    comment: false,
+    ai_text: false,
+    color: false,
+}</script><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="星仔人生录" type="application/atom+xml">
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head><body id="body"><!-- universe--><!-- background img--><!-- loading--><!-- console--><div id="console"><div class="close-btn" onclick="sco.hideConsole()"><i class="solitude fa-solid fa-xmark"></i></div><div class="console-card-group"><div class="console-card-group-right"><div class="console-card tags" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">标签</div><div class="author-content-item-title">寻找感兴趣的领域</div></div><div class="card-tag-cloud"><a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/">51单片机<sup>9</sup></a><a href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/">32单片机<sup>12</sup></a><a href="/tags/RT-Thread/">RT-Thread<sup>5</sup></a><a href="/tags/C%E8%AF%AD%E8%A8%80/">C语言<sup>13</sup></a><a href="/tags/Java%E8%AF%AD%E8%A8%80/">Java语言<sup>24</sup></a><a href="/tags/%E4%BA%91%E5%9B%BE%E5%BA%8A/">云图床<sup>1</sup></a><a href="/tags/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/">图片压缩在线工具<sup>1</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2/">资源搜索<sup>1</sup></a><a href="/tags/%E6%8F%92%E4%BB%B6/">插件<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E5%8A%A0%E9%80%9F%E5%9B%BE%E5%BA%8A/">博客加速图床<sup>1</sup></a><a href="/tags/GitHub-Picgo%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/">GitHub+Picgo图片上传<sup>1</sup></a><a href="/tags/office%E6%97%A0%E6%B3%95%E5%88%9D%E5%A7%8B%E5%8C%96VisualBasic/">office无法初始化VisualBasic<sup>1</sup></a><a href="/tags/GitHub%E5%90%8C%E6%AD%A5gitee%E5%B9%B6%E9%83%A8%E7%BD%B2/">GitHub同步gitee并部署<sup>1</sup></a><a href="/tags/HurricaneDNS%E8%A7%A3%E6%9E%90%E5%8D%9A%E5%AE%A2/">HurricaneDNS解析博客<sup>1</sup></a><a href="/tags/%E8%A7%A3%E5%86%B3443%E7%AB%AF%E5%8F%A3%E8%A2%ABvmware%E5%8D%A0%E7%94%A8/">解决443端口被vmware占用<sup>1</sup></a><a href="/tags/STM32CubeIDE%E4%BB%A3%E7%A0%81%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F/">STM32CubeIDE代码字体大小<sup>1</sup></a><a href="/tags/win10%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E5%8F%98%E7%99%BD/">win10桌面图标变白<sup>1</sup></a><a href="/tags/IDE%E4%B8%8EMX%E5%BA%93%E6%96%87%E4%BB%B6%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AE%BE%E7%BD%AE/">IDE与MX库文件安装路径自定义设置<sup>1</sup></a><a href="/tags/ubuntu%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/">ubuntu相关设置<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">博客使用手册<sup>1</sup></a><a href="/tags/%E5%8A%A0%E9%80%9Fgithub%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE/">加速github博客访问<sup>1</sup></a><a href="/tags/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/">小狼毫输入法<sup>1</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/">个人博客迁移<sup>1</sup></a><a href="/tags/ST-LINK%E6%9C%AA%E8%83%BD%E4%B8%B2%E5%8F%A3keil%E8%AF%86%E5%88%AB%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">ST-LINK未能串口keil识别解决方案<sup>1</sup></a><a href="/tags/%E6%94%BF%E6%B2%BB/">政治<sup>14</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E4%B8%8E%E5%9F%BA%E7%A1%80/">计算机程序与基础<sup>1</sup></a></div></div><div class="console-card history" onclick="sco.hideConsole()"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">2024/09</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">9</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/08/"><span class="card-archive-list-date">2024/08</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">24</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">2024/07</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">2024/06</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">2024/04</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">2024/03</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">2024/02</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">2024/01</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">2023/12</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">52</span><span class="card-archive-list-count-unit">篇</span></div></a></li></ul></div></div></div><div class="button-group"><div class="console-btn-item"><span class="darkmode_switchbutton" onclick="sco.switchDarkMode()" title="昼夜切换"><i class="solitude fa-solid fa-circle-half-stroke"></i></span></div><div class="console-btn-item" id="consoleHideAside"><span class="asideSwitch" onclick="sco.switchHideAside()" title="边栏显示控制"><i class="solitude fas fa-arrows-left-right-to-line"></i></span></div></div><div class="console-mask" onclick="sco.hideConsole()"></div></div><!-- sidebar--><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">101</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fa-solid fa-circle-half-stroke"></i><span>显示模式</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>Home</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>Article</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>Archives</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>Categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>Tags</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>Friends</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>Links</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="card-tag-cloud"><a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/">51单片机<sup>9</sup></a><a href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/">32单片机<sup>12</sup></a><a href="/tags/RT-Thread/">RT-Thread<sup>5</sup></a><a href="/tags/C%E8%AF%AD%E8%A8%80/">C语言<sup>13</sup></a><a href="/tags/Java%E8%AF%AD%E8%A8%80/">Java语言<sup>24</sup></a><a href="/tags/%E4%BA%91%E5%9B%BE%E5%BA%8A/">云图床<sup>1</sup></a><a href="/tags/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/">图片压缩在线工具<sup>1</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2/">资源搜索<sup>1</sup></a><a href="/tags/%E6%8F%92%E4%BB%B6/">插件<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E5%8A%A0%E9%80%9F%E5%9B%BE%E5%BA%8A/">博客加速图床<sup>1</sup></a><a href="/tags/GitHub-Picgo%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/">GitHub+Picgo图片上传<sup>1</sup></a><a href="/tags/office%E6%97%A0%E6%B3%95%E5%88%9D%E5%A7%8B%E5%8C%96VisualBasic/">office无法初始化VisualBasic<sup>1</sup></a><a href="/tags/GitHub%E5%90%8C%E6%AD%A5gitee%E5%B9%B6%E9%83%A8%E7%BD%B2/">GitHub同步gitee并部署<sup>1</sup></a><a href="/tags/HurricaneDNS%E8%A7%A3%E6%9E%90%E5%8D%9A%E5%AE%A2/">HurricaneDNS解析博客<sup>1</sup></a><a href="/tags/%E8%A7%A3%E5%86%B3443%E7%AB%AF%E5%8F%A3%E8%A2%ABvmware%E5%8D%A0%E7%94%A8/">解决443端口被vmware占用<sup>1</sup></a><a href="/tags/STM32CubeIDE%E4%BB%A3%E7%A0%81%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F/">STM32CubeIDE代码字体大小<sup>1</sup></a><a href="/tags/win10%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E5%8F%98%E7%99%BD/">win10桌面图标变白<sup>1</sup></a><a href="/tags/IDE%E4%B8%8EMX%E5%BA%93%E6%96%87%E4%BB%B6%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AE%BE%E7%BD%AE/">IDE与MX库文件安装路径自定义设置<sup>1</sup></a><a href="/tags/ubuntu%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/">ubuntu相关设置<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">博客使用手册<sup>1</sup></a><a href="/tags/%E5%8A%A0%E9%80%9Fgithub%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE/">加速github博客访问<sup>1</sup></a><a href="/tags/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/">小狼毫输入法<sup>1</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/">个人博客迁移<sup>1</sup></a><a href="/tags/ST-LINK%E6%9C%AA%E8%83%BD%E4%B8%B2%E5%8F%A3keil%E8%AF%86%E5%88%AB%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">ST-LINK未能串口keil识别解决方案<sup>1</sup></a><a href="/tags/%E6%94%BF%E6%B2%BB/">政治<sup>14</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E4%B8%8E%E5%9F%BA%E7%A1%80/">计算机程序与基础<sup>1</sup></a></div></div></div></div><!-- keyboard--><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><a id="site-name" href="/" title="返回博客主页"><span class="title">Solitude</span><i class="solitude fa-solid fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">4.定时器/计数器</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>Home</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>Article</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>Archives</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>Categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>Tags</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>Friends</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>Links</span></a></li></ul></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索"><i class="solitude fa-solid fa-magnifying-glass"></i></a></div><div class="nav-button" id="nav-console"><a class="console_switchbutton" onclick="sco.showConsole()" title="中控台" href="javascript:void(0);"><label><i class="left"></i><i class="center"></i><i class="right"></i></label></a></div><div class="nav-button" id="nav-totop" onclick="sco.toTop()"><a class="totopbtn"><i class="solitude fa-solid fa-arrow-up"></i><span id="percent">0</span></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fa-solid fa-bars"></i></a></div></div></div></nav><div class="coverdiv" id="coverdiv"><img class="nolazyload" id="post-cover" src="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg" alt="4.定时器/计数器"></div><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original" title="该文章为原创文章，注意版权协议">原创</a><span class="post-meta-categories"><a class="post-meta-categories" href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/">51单片机</a></span><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/"><span class="tags-name tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>51单片机</span></a></div></div></div></div><h1 class="post-title">4.定时器/计数器</h1><div id="post-meta"><div class="meta-secondline"><span class="post-meta-date" title="发布于 2024-04-12 10:13:46"><i class="post-meta-icon solitude fa-solid fa-clock"></i><time datetime="2024-04-12T02:13:46.000Z">2024-04-12T02:13:46.000Z</time></span><span class="post-meta-date" title="最后更新于 2024-08-19 21:58:36"><i class="post-meta-icon solitude fa-solid fa-arrows-rotate"></i><time datetime="2024-08-19T13:58:36.674Z">2024-08-19T13:58:36.674Z</time></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a><center>原理</center></h1><ol>
 <li>时钟源：定时器是内部时钟源（晶振），计数器是外部</li>
 <li>计时长度：对应TH  TL计数器初值寄存器(高八位,低八位)</li>
 <li>对应的中断触发函数</li>
@@ -216,11 +167,11 @@
 </tr>
 </tbody></table>
 <h1 id="相关寄存器"><a href="#相关寄存器" class="headerlink" title="相关寄存器"></a><center>相关寄存器</center></h1><h2 id="TCON：定时器控制寄存器"><a href="#TCON：定时器控制寄存器" class="headerlink" title="TCON：定时器控制寄存器"></a><center>TCON：定时器控制寄存器</center></h2><p>只需用到：TF0、TF1、TR0、TR1</p>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://s2.loli.net/2024/08/19/StZGcsq9QeMOTn6.png" alt="定时器/计数器" style="zoom:50%;">
+<img src="https://s2.loli.net/2024/08/19/StZGcsq9QeMOTn6.png" alt="定时器/计数器" style="zoom:50%;">
 
 <p>定时器&#x2F;计数器运行控制位(代码)：TR0、TR1</p>
 <p>中断触发标志位(内部)：TF0、TF1</p>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://s2.loli.net/2024/08/19/WQiH3LXkTDegpF1.png" alt="定时器中断分析" style="zoom:50%;">
+<img src="https://s2.loli.net/2024/08/19/WQiH3LXkTDegpF1.png" alt="定时器中断分析" style="zoom:50%;">
 
 <h2 id="TMOD：定时器模式寄存器"><a href="#TMOD：定时器模式寄存器" class="headerlink" title="TMOD：定时器模式寄存器"></a><center>TMOD：定时器模式寄存器</center></h2><p>两个定时器&#x2F;计数器（任选一个即可）：<code>T0(TL0\TH0)</code>、<code>T1(TL1\TH1)</code></p>
 <p>工作模式：</p>
@@ -232,15 +183,15 @@
 </ul>
 <p>我们学的是定时器，计数器是外部计数，则0.7、0.3地址是计数器的置0，C&#x2F;T：置0为定时器，模式（M1、M0）这里我们选01（16位定时器，不自动重装初值）</p>
 <p>如果不会自动重装载寄存器（不会自动赋初值）则要触发中断处理函数时重新手动赋初值</p>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://s2.loli.net/2024/08/19/Q2PTWE5RxOHmUB7.png" alt="工作模式" style="zoom: 67%;">
+<img src="https://s2.loli.net/2024/08/19/Q2PTWE5RxOHmUB7.png" alt="工作模式" style="zoom: 67%;">
 
 <h2 id="定时器计算初值"><a href="#定时器计算初值" class="headerlink" title="定时器计算初值"></a><center>定时器计算初值</center></h2><p>需要定时的时间带入公式，求出x</p>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://s2.loli.net/2024/08/19/SnTYf4wKilv8sRd.png" alt="初值计算方式" style="zoom:50%;">
+<img src="https://s2.loli.net/2024/08/19/SnTYf4wKilv8sRd.png" alt="初值计算方式" style="zoom:50%;">
 
 <h2 id="中断允许寄存器"><a href="#中断允许寄存器" class="headerlink" title="中断允许寄存器"></a><center>中断允许寄存器</center></h2><p>&ensp;&ensp;&ensp;&ensp;总中断允许控制位：EA</p>
 <p>&ensp;&ensp;&ensp;&ensp;ET0：定时&#x2F;计数器T0的溢出中断允许位，ET1：定时&#x2F;计数器T1的溢出中断允许位，ET2：定时&#x2F;计数器T2的溢出中断允许位</p>
 <p>&ensp;&ensp;&ensp;&ensp;需要外部、定时器、串口那个则赋值那个为1</p>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://s2.loli.net/2024/08/19/L2yJSt4aEYwHNen.png" alt="允许寄存器分析" style="zoom:50%;">
+<img src="https://s2.loli.net/2024/08/19/L2yJSt4aEYwHNen.png" alt="允许寄存器分析" style="zoom:50%;">
 
 <h1 id="代码编写"><a href="#代码编写" class="headerlink" title="代码编写"></a><center>代码编写</center></h1><p>每1s翻转LED灯状态</p>
 <ul>
@@ -254,147 +205,39 @@
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;reg52.h&gt;</span></span></span><br><span class="line">sbit LED1 = P1^<span class="number">0</span>;		<span class="comment">//定义LED灯</span></span><br><span class="line"><span class="type">int</span> count;			<span class="comment">//由于51单片机没办法定时1s，只能通过计数达到效果</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	TMOD = <span class="number">0x01</span>;		<span class="comment">//配置定时器工作模式：使用定时器0，使用16位定时器模式(不自动重装初值)</span></span><br><span class="line">	<span class="comment">//定时10ms，给寄存器赋初值</span></span><br><span class="line">	TL0 = <span class="number">0x00</span>;</span><br><span class="line">	TH0 = <span class="number">0xDC</span>;</span><br><span class="line">	TR0 = <span class="number">1</span>;		<span class="comment">//打开定时器T0运行控制位</span></span><br><span class="line">	ET0 = <span class="number">1</span>;		<span class="comment">//打开定时器0中断允许位</span></span><br><span class="line">	EA = <span class="number">1</span>;			<span class="comment">//打开总中断允许控制位</span></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//大于99时则取反LED状态</span></span><br><span class="line">		<span class="keyword">if</span>(count &gt; <span class="number">99</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			count = <span class="number">0</span>;</span><br><span class="line">			LED1 = ~LED1;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定时中断处理函数</span></span><br><span class="line">Timer0_Routine(<span class="type">void</span>)      interrupt <span class="number">1</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//触发中断函数，需要重新给定时器赋初值</span></span><br><span class="line">	TL0 = <span class="number">0x00</span>;</span><br><span class="line">	TH0 = <span class="number">0xDC</span>;</span><br><span class="line">	count++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/09/15/28d68d1f6c609186e91254a4469b42e6546bf877eb6a9244.png" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/09/15/28d68d1f6c609186e91254a4469b42e6546bf877eb6a9244.png" title="头像" alt="头像"></a><div class="post-copyright__author_name">星仔</div><div class="post-copyright__author_desc">珍惜当下 不负此生</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://d3iiz.top/post/2e5216dd.html">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://d3iiz.top/post/2e5216dd.html')">4.定时器/计数器</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://d3iiz.top/post/2e5216dd.html"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=undefined&amp;url=https://d3iiz.top/post/2e5216dd.html&amp;pic=undefined" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
-  var currentPageUrl = window.location.href;
-  var input = document.createElement("input");
-  input.setAttribute("value", currentPageUrl);
-  document.body.appendChild(input);
-  input.select();
-  input.setSelectionRange(0, 99999);
-  document.execCommand("copy");
-  document.body.removeChild(input);
-}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://d3iiz.top" target="_blank">星仔人生录</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>51单片机<span class="tagsPageCount">9</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://img.picgo.net/2024/09/11/888888a3ff86e754f2fe3d.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/81b224e1.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg" onerror="onerror=null;src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">3.外部中断</div></div></a></div><div class="next-post pull-right"><a href="/post/f736596e.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg" onerror="onerror=null;src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">5.串口</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/post/c6b2a2fd.html" title="0.单片机工作原理"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-04-08</div><div class="title">0.单片机工作原理</div></div></a></div><div><a href="/post/f8f1fb54.html" title="1.寄存器"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-04-10</div><div class="title">1.寄存器</div></div></a></div><div><a href="/post/74750b31.html" title="2.I&#x2F;O"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-04-11</div><div class="title">2.I&#x2F;O</div></div></a></div><div><a href="/post/81b224e1.html" title="3.外部中断"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-04-12</div><div class="title">3.外部中断</div></div></a></div><div><a href="/post/f736596e.html" title="5.串口"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-04-12</div><div class="title">5.串口</div></div></a></div><div><a href="/post/f5fba2c3.html" title="6.IIC通信"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-06-19</div><div class="title">6.IIC通信</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/09/15/28d68d1f6c609186e91254a4469b42e6546bf877eb6a9244.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description">分享科技与生活</div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">星仔</h1><div class="author-info__desc">珍惜当下 不负此生</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://juejin.cn/user/745920887002011/posts" target="_blank" title="稀土掘金"><i class="anzhiyufont anzhiyu-icon-link"></i></a><a class="social-icon faa-parent animated-hover" href="https://www.bilibili.com/" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://img.picgo.net/2024/08/19/7769745c3a8abda4b76a2c8767c011c4ccc3bcc6d25362ee.webp) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://img.picgo.net/2024/08/19/7229edbc2326d9f1a077d9f251d15dfc93e3d4fe574b7ca8.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text">相关寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TCON%EF%BC%9A%E5%AE%9A%E6%97%B6%E5%99%A8%E6%8E%A7%E5%88%B6%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">2.1.</span> <span class="toc-text">TCON：定时器控制寄存器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TMOD%EF%BC%9A%E5%AE%9A%E6%97%B6%E5%99%A8%E6%A8%A1%E5%BC%8F%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">2.2.</span> <span class="toc-text">TMOD：定时器模式寄存器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E5%99%A8%E8%AE%A1%E7%AE%97%E5%88%9D%E5%80%BC"><span class="toc-number">2.3.</span> <span class="toc-text">定时器计算初值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD%E5%85%81%E8%AE%B8%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">2.4.</span> <span class="toc-text">中断允许寄存器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E7%BC%96%E5%86%99"><span class="toc-number">3.</span> <span class="toc-text">代码编写</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/49f85af0.html" title="3.线程间通信"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/09/11/888888a3ff86e754f2fe3d.jpeg" onerror="this.onerror=null;this.src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="3.线程间通信"/></a><div class="content"><a class="title" href="/post/49f85af0.html" title="3.线程间通信">3.线程间通信</a><time datetime="2024-09-17T06:23:59.000Z" title="发表于 2024-09-17 14:23:59">2024-09-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/e9f3074a.html" title="HurricaneDNS解析博客"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/09/15/2b0f9397d1e41c97e408f32385cebd02e0516dc961a1c06a.jpeg" onerror="this.onerror=null;this.src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="HurricaneDNS解析博客"/></a><div class="content"><a class="title" href="/post/e9f3074a.html" title="HurricaneDNS解析博客">HurricaneDNS解析博客</a><time datetime="2024-09-15T10:09:50.000Z" title="发表于 2024-09-15 18:09:50">2024-09-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/a1db912f.html" title="2.线程同步"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/09/11/888888a3ff86e754f2fe3d.jpeg" onerror="this.onerror=null;this.src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="2.线程同步"/></a><div class="content"><a class="title" href="/post/a1db912f.html" title="2.线程同步">2.线程同步</a><time datetime="2024-09-15T01:39:42.000Z" title="发表于 2024-09-15 09:39:42">2024-09-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/54659a9b.html" title="1.线程相关函数"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/09/11/888888a3ff86e754f2fe3d.jpeg" onerror="this.onerror=null;this.src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="1.线程相关函数"/></a><div class="content"><a class="title" href="/post/54659a9b.html" title="1.线程相关函数">1.线程相关函数</a><time datetime="2024-09-15T01:32:45.000Z" title="发表于 2024-09-15 09:32:45">2024-09-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/8a87b27f.html" title="unstable 发行版，这也许是因为系统无法达到您要求的状态造成的"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/09/11/1111111bb07d16f638a1b14.jpeg" onerror="this.onerror=null;this.src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="unstable 发行版，这也许是因为系统无法达到您要求的状态造成的"/></a><div class="content"><a class="title" href="/post/8a87b27f.html" title="unstable 发行版，这也许是因为系统无法达到您要求的状态造成的">unstable 发行版，这也许是因为系统无法达到您要求的状态造成的</a><time datetime="2024-09-12T08:14:53.000Z" title="发表于 2024-09-12 16:14:53">2024-09-12</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2024 By <a class="footer-bar-link" href="/" title="星仔" target="_blank">星仔</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">101</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">10</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://juejin.cn/user/745920887002011/posts" title="稀土掘金"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="/img/favicon.ico" alt="稀土掘金"/><span class="back-menu-item-text">稀土掘金</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://www.bilibili.com/" title="哔哩哔哩"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="/img/favicon.ico" alt="哔哩哔哩"/><span class="back-menu-item-text">哔哩哔哩</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">资源下载</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://www.sscha.com/" title="商查查"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="商查查"/><span class="back-menu-item-text">商查查</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 小伙伴</span></a></li><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener" href="https://link3.cc/xinzai_x"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 个人资源</span></a></li><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener" href="http://ainm.cc/c/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐网</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 常用文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="https://d3iiz.top/post/1f293ccb"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 资源搜索</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 0.88rem;">32单片机<sup>12</sup></a><a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 0.88rem;">51单片机<sup>9</sup></a><a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 0.88rem;">C语言<sup>13</sup></a><a href="/tags/GitHub-Picgo%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/" style="font-size: 0.88rem;">GitHub+Picgo图片上传<sup>1</sup></a><a href="/tags/GitHub%E5%90%8C%E6%AD%A5gitee%E5%B9%B6%E9%83%A8%E7%BD%B2/" style="font-size: 0.88rem;">GitHub同步gitee并部署<sup>1</sup></a><a href="/tags/HurricaneDNS%E8%A7%A3%E6%9E%90%E5%8D%9A%E5%AE%A2/" style="font-size: 0.88rem;">HurricaneDNS解析博客<sup>1</sup></a><a href="/tags/IDE%E4%B8%8EMX%E5%BA%93%E6%96%87%E4%BB%B6%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AE%BE%E7%BD%AE/" style="font-size: 0.88rem;">IDE与MX库文件安装路径自定义设置<sup>1</sup></a><a href="/tags/Java%E8%AF%AD%E8%A8%80/" style="font-size: 0.88rem;">Java语言<sup>25</sup></a><a href="/tags/RT-Thread/" style="font-size: 0.88rem;">RT-Thread<sup>4</sup></a><a href="/tags/ST-LINK%E6%9C%AA%E8%83%BD%E4%B8%B2%E5%8F%A3keil%E8%AF%86%E5%88%AB%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" style="font-size: 0.88rem;">ST-LINK未能串口keil识别解决方案<sup>1</sup></a><a href="/tags/STM32CubeIDE%E4%BB%A3%E7%A0%81%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F/" style="font-size: 0.88rem;">STM32CubeIDE代码字体大小<sup>1</sup></a><a href="/tags/office%E6%97%A0%E6%B3%95%E5%88%9D%E5%A7%8B%E5%8C%96VisualBasic/" style="font-size: 0.88rem;">office无法初始化VisualBasic<sup>1</sup></a><a href="/tags/ubuntu%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" style="font-size: 0.88rem;">ubuntu相关设置<sup>1</sup></a><a href="/tags/win10%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E5%8F%98%E7%99%BD/" style="font-size: 0.88rem;">win10桌面图标变白<sup>1</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/" style="font-size: 0.88rem;">个人博客迁移<sup>1</sup></a><a href="/tags/%E4%BA%91%E5%9B%BE%E5%BA%8A/" style="font-size: 0.88rem;">云图床<sup>1</sup></a><a href="/tags/%E5%8A%A0%E9%80%9Fgithub%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE/" style="font-size: 0.88rem;">加速github博客访问<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" style="font-size: 0.88rem;">博客使用手册<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E5%8A%A0%E9%80%9F%E5%9B%BE%E5%BA%8A/" style="font-size: 0.88rem;">博客加速图床<sup>1</sup></a><a href="/tags/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/" style="font-size: 0.88rem;">图片压缩在线工具<sup>1</sup></a><a href="/tags/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/" style="font-size: 0.88rem;">小狼毫输入法<sup>1</sup></a><a href="/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 0.88rem;">插件<sup>1</sup></a><a href="/tags/%E6%94%BF%E6%B2%BB/" style="font-size: 0.88rem;">政治<sup>14</sup></a><a href="/tags/%E8%A7%A3%E5%86%B3443%E7%AB%AF%E5%8F%A3%E8%A2%ABvmware%E5%8D%A0%E7%94%A8/" style="font-size: 0.88rem;">解决443端口被vmware占用<sup>1</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E4%B8%8E%E5%9F%BA%E7%A1%80/" style="font-size: 0.88rem;">计算机程序与基础<sup>1</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2/" style="font-size: 0.88rem;">资源搜索<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>// 消除控制台打印
-var HoldLog = console.log;
-console.log = function () {};
-let now1 = new Date();
-queueMicrotask(() => {
-  const Log = function () {
-    HoldLog.apply(console, arguments);
-  }; //在恢复前输出日志
-  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
-  now1.setTime(now1.getTime() + 250);
-  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
-  const dnum = Math.floor(days);
-  const ascll = [
-    `欢迎使用安知鱼!`,
-    `生活明朗, 万物可爱`,
-    `
-        
-       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
-      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
-      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
-      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
-      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
-      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
-        
-        `,
-    "已上线",
-    dnum,
-    "天",
-    "©2020 By 安知鱼 V1.6.12",
-  ];
-  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
-
-  setTimeout(
-    Log.bind(
-      console,
-      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
-      "color:#425AEF",
-      "",
-      "color:#425AEF",
-      "color:#425AEF",
-      "",
-      "color:#425AEF",
-      ""
-    )
-  );
-  setTimeout(
-    Log.bind(
-      console,
-      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
-      "color:white; background-color:#4fd953",
-      "",
-      "",
-      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
-    )
-  );
-
-  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
-
-  setTimeout(
-    console.warn.bind(
-      console,
-      "%c ⚡ Powered by 安知鱼 %c 你正在访问 星仔 的博客.",
-      "color:white; background-color:#f0ad4e",
-      ""
-    )
-  );
-
-  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
-
-  setTimeout(
-    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
-  );
-});</script><script async src="/anzhiyu/random.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script async src="https://www.iconfont.cn/collections/detail?cid=44481"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
-var pjax = new Pjax({
-  elements: 'a:not([target="_blank"])',
-  selectors: pjaxSelectors,
-  cacheBust: false,
-  analytics: false,
-  scrollRestoration: false
+</article><div class="post-copyright"><div class="post-copyright__author_group"><a class="post-copyright__author_img" href="/about/"><img class="post-copyright__author_img_front" src="/img/pwa/favicon.ico"></a><div class="post-copyright__author_name">星仔人生录</div><div class="post-copyright__author_desc">珍惜当下 不负此生</div></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div id="quit-box" onclick="RemoveRewardMask()"></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本文是原创文章，采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>协议，完整转载请注明来自<a href="/">星仔人生录</a></span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/"><span class="tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>51单片机<span class="tagsPageCount">9</span></span></a></div></div></div><nav class="needEndHide pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/f736596e.html"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">5.串口</div></div></a></div><div class="next-post pull-right"><a href="/post/81b224e1.html"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">3.外部中断</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="solitude fa-solid fa-star"></i><span>喜欢这篇的人也看了</span><div class="relatedPosts-link"><a onclick="event.preventDefault(); toRandomPost();" href="javascript:void(0);" rel="external nofollow" data-pjax-state="">随便逛逛</a></div></div><div class="relatedPosts-list"><div><a href="/post/93c966f3.html" title="8.电机控制"><img class="cover" src="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg" alt="cover"><div class="content is-center"><div class="title">8.电机控制</div></div></a></div><div><a href="/post/8212ff63.html" title="7.单总线通信"><img class="cover" src="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg" alt="cover"><div class="content is-center"><div class="title">7.单总线通信</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><div class="author-info__top-group"><div class="author-info__sayhi" id="author-info__sayhi" onclick="sco.changeSayHelloText()">sayhello.morning</div></div></div><div class="avatar-img-group"><img class="avatar-img" alt="头像" src="https://img.picgo.net/2024/09/15/28d68d1f6c609186e91254a4469b42e6546bf877eb6a9244.png"></div><div class="author-info__description_group"><div class="author-info__description"></div><div class="author-info__description2"></div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/about/"><div class="author-info__name">星仔</div><div class="author-info__desc">珍惜当下 不负此生</div></a><div class="card-info-social-icons is-center"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="solitude fa-solid fa-bars"></i><span>文章目录</span></div><div class="toc-content" id="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-text">原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">相关寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TCON%EF%BC%9A%E5%AE%9A%E6%97%B6%E5%99%A8%E6%8E%A7%E5%88%B6%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">TCON：定时器控制寄存器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TMOD%EF%BC%9A%E5%AE%9A%E6%97%B6%E5%99%A8%E6%A8%A1%E5%BC%8F%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">TMOD：定时器模式寄存器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E5%99%A8%E8%AE%A1%E7%AE%97%E5%88%9D%E5%80%BC"><span class="toc-text">定时器计算初值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD%E5%85%81%E8%AE%B8%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">中断允许寄存器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E7%BC%96%E5%86%99"><span class="toc-text">代码编写</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude fa-solid fa-map"></i><span>最近发布</span></div><div class="aside-list"><a class="aside-list-item" href="/post/e5f15f94.html" title="4.时钟"><div class="thumbnail"><img alt="4.时钟" src="https://img.picgo.net/2024/09/11/888888a3ff86e754f2fe3d.jpeg"></div><div class="content"><span class="title" href="/post/e5f15f94.html" title="4.时钟">4.时钟</span><span class="article-recent_post_categories" href="/post/e5f15f94.html">RT-Thread</span></div></a><a class="aside-list-item" href="/post/49f85af0.html" title="3.线程间通信"><div class="thumbnail"><img alt="3.线程间通信" src="https://img.picgo.net/2024/09/11/888888a3ff86e754f2fe3d.jpeg"></div><div class="content"><span class="title" href="/post/49f85af0.html" title="3.线程间通信">3.线程间通信</span><span class="article-recent_post_categories" href="/post/49f85af0.html">RT-Thread</span></div></a><a class="aside-list-item" href="/post/e9f3074a.html" title="HurricaneDNS解析博客"><div class="thumbnail"><img alt="HurricaneDNS解析博客" src="https://img.picgo.net/2024/09/15/2b0f9397d1e41c97e408f32385cebd02e0516dc961a1c06a.jpeg"></div><div class="content"><span class="title" href="/post/e9f3074a.html" title="HurricaneDNS解析博客">HurricaneDNS解析博客</span><span class="article-recent_post_categories" href="/post/e9f3074a.html">技术积累记录</span></div></a><a class="aside-list-item" href="/post/a1db912f.html" title="2.线程同步"><div class="thumbnail"><img alt="2.线程同步" src="https://img.picgo.net/2024/09/11/888888a3ff86e754f2fe3d.jpeg"></div><div class="content"><span class="title" href="/post/a1db912f.html" title="2.线程同步">2.线程同步</span><span class="article-recent_post_categories" href="/post/a1db912f.html">RT-Thread</span></div></a><a class="aside-list-item" href="/post/54659a9b.html" title="1.线程相关函数"><div class="thumbnail"><img alt="1.线程相关函数" src="https://img.picgo.net/2024/09/11/888888a3ff86e754f2fe3d.jpeg"></div><div class="content"><span class="title" href="/post/54659a9b.html" title="1.线程相关函数">1.线程相关函数</span><span class="article-recent_post_categories" href="/post/54659a9b.html">RT-Thread</span></div></a></div></div></div></div></main><footer id="footer"><div id="footer_deal"></div><div id="st-footer"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2023 - 2024 By&nbsp;<a class="footer-bar-link" href="/">星仔</a></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude" alt="Theme">Theme</a></div></div></div></footer></div><!-- right_menu--><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="solitude fa-solid fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="solitude fa-solid fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="solitude fa-solid fa-arrows-rotate"></i></div><div class="rightMenu-item" id="menu-top"><i class="solitude fa-solid fa-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="solitude fa-solid fa-clone"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="solitude fa-solid fa-clipboard"></i><span>粘贴文本</span></div><div class="rightMenu-item" id="menu-newwindow"><i class="solitude fa-regular fa-window-maximize"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="solitude fa-solid fa-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="solitude fa-solid fa-clone"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="solitude fa-solid fa-cloud-arrow-down"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-search"><i class="solitude fa-solid fa-magnifying-glass"></i><span>站内搜索</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-darkmode" onclick="sco.switchDarkMode()"><i class="solitude fa-solid fa-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></div></div></div><div id="rightmenu-mask"></div><!-- inject body--><div><script src="/js/utils.js?v=2.0.13"></script><script src="/js/main.js?v=2.0.13"></script><script src="/js/third_party/waterfall.min.js?v=2.0.13"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pjax/0.2.8/pjax.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.4.0/color-thief.min.js"></script><script src="/js/covercolor/local.js?v=2.0.13"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js"></script><script src="/js/right_menu.js?v=2.0.13"></script><div class="js-pjax"></div></div><!-- pjax--><script>const pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: ['title','#body-wrap','#site-config','meta[name="description"]','.js-pjax','meta[property^="og:"]','#config-diff'],
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
 })
 
-document.addEventListener('pjax:send', function () {
-  // removeEventListener scroll 
-  anzhiyu.removeGlobalFnEvent('pjax')
-  anzhiyu.removeGlobalFnEvent('themeChange')
-
-  document.getElementById('rightside').classList.remove('rightside-show')
-  
-  if (window.aplayers) {
-    for (let i = 0; i < window.aplayers.length; i++) {
-      if (!window.aplayers[i].options.fixed) {
-        window.aplayers[i].destroy()
-      }
-    }
-  }
-
-  typeof typed === 'object' && typed.destroy()
-
-  //reset readmode
-  const $bodyClassList = document.body.classList
-  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
-})
-
-document.addEventListener('pjax:complete', function () {
-  window.refreshFn()
-
-  document.querySelectorAll('script[data-pjax]').forEach(item => {
+document.querySelectorAll('script[data-pjax]').forEach(item => {
     const newScript = document.createElement('script')
     const content = item.text || item.textContent || item.innerHTML || ""
     Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
     newScript.appendChild(document.createTextNode(content))
     item.parentNode.replaceChild(newScript, item)
-  })
-
-  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
-
-  typeof panguInit === 'function' && panguInit()
-
-  // google analytics
-  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
-
-  // baidu analytics
-  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
-
-  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
-
-  // prismjs
-  typeof Prism === 'object' && Prism.highlightAll()
 })
 
-document.addEventListener('pjax:error', e => {
-  if (e.request.status === 404) {
-    pjax.loadUrl('/404.html')
-  }
-})</script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
+document.addEventListener('pjax:complete', () => {
+    window.refreshFn()
+
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
+
+    GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+    if (e.request.status === 404) {
+        pjax.loadUrl('/404.html')
+    }
+})</script><!-- google adsense--><!-- search--><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="solitude fa-solid fa-xmark"></i></button></nav><div class="search-wrap"><div class="search-box"><input class="search-box-input" id="search-input" type="text" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off" placeholder="输入关键词快速查找"></div><div id="search-results"><div id="search-hits"></div></div><div id="search-pagination"></div><div id="search-tips"></div></div></div><div id="search-mask"></div></div><script src="/js/search/local.js?v=2.0.13"></script><!-- Tianli-Talk--><!-- music--></body></html><script>const posts=["post/e5f15f94.html","post/49f85af0.html","post/e9f3074a.html","post/a1db912f.html","post/54659a9b.html","post/8a87b27f.html","post/96c26968.html","post/13e71a6f.html","post/520176db.html","post/bd740709.html","post/acb77072.html","post/52772f76.html","post/f0812160.html","post/e8bc8f26.html","post/f5fba2c3.html","post/6928cd3f.html","post/bfd038f5.html","post/f71d0ad2.html","post/2c4c3bc3.html","post/b94c2cf2.html","post/a06b5fda.html","post/3e643b17.html","post/b7e3ace9.html","post/eb0bc4a3.html","post/a3ad0b3a.html","post/43a9b762.html","post/c4236caa.html","post/63d3dd68.html","post/32e9e993.html","post/362c3b0.html","post/adb202b7.html","post/99cd7d8.html","post/93c966f3.html","post/8212ff63.html","post/f5fba2c3.html","post/f736596e.html","post/2e5216dd.html","post/81b224e1.html","post/74750b31.html","post/f8f1fb54.html","post/c6b2a2fd.html","post/def84ee6.html","post/1f293ccb.html","post/79959306.html","post/5f6e69ef.html","post/d20e58f5.html","post/6c3f8114.html","post/2ec6e870.html","post/df95841.html","post/f1dbdc9f.html","post/5883a4af.html","post/fbc0ae86.html","post/3e1167ea.html","post/8f9052f9.html","post/a24af109.html","post/9e25cba9.html","post/a920af81.html","post/fe7ab1f0.html","post/76fa8c0d.html","post/86a3300e.html","post/6749388c.html","post/43a94ea1.html","post/ded373.html","post/75e75572.html","post/6a2c2bbd.html","post/5c2f197a.html","post/4a789563.html","post/c46a5cd3.html","post/1b3fd879.html","post/26831432.html","post/3cc3da73.html","post/fbc82303.html","post/ca0fcd03.html","post/8c9aed93.html","post/66861d4a.html","post/de801b7c.html","post/ee96f7a4.html","post/a8259cf6.html","post/2d17b932.html","post/57da986d.html","post/a0b1b02e.html","post/72b1c7b1.html","post/17bf8c68.html","post/7821492f.html","post/cf0c504a.html","post/e2246be5.html","post/9b06d854.html","post/5bdb5548.html","post/bec635c1.html","post/3ec1fd44.html","post/b70ae4e7.html","post/804ae251.html","post/df718222.html","post/3b48d11a.html","post/7422213c.html","post/6271a51c.html","post/6f76074c.html","post/6ac19130.html","post/8212f318.html","post/cb87841d.html","post/b2041fc0.html"];function toRandomPost(){ pjax.loadUrl(GLOBAL_CONFIG.root+posts[Math.floor(Math.random()*posts.length)]); }</script>
