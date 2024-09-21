@@ -1,179 +1,529 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>星仔人生录 - 珍惜当下 不负此生</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="/img/pwa/favicon.ico"><!-- index.css--><link rel="stylesheet" href="/css/index.css?v=2.0.13"><!-- inject head--><link rel="canonical" href="https://d3iiz.top/page/2/"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"><!-- aplayer--><!-- swiper--><!-- fancybox ui--><!-- katex--><!-- Open Graph--><meta name="description" content="分享科技与生活"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="星仔人生录"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/img/pwa/favicon.ico"><link rel="apple-touch-icon" href="/img/pwa/favicon.ico" sizes="180x180"><script>console.log(' %c Solitude %c ' + '2.0.13' + ' %c https://github.com/everfu/hexo-theme-solitude',
-    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
-    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
-    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
-</script><script>(()=>{
-        const saveToLocal = {
-            set: function setWithExpiry(key, value, ttl) {
-                if (ttl === 0)
-                    return
-                const now = new Date()
-                const expiryDay = ttl * 86400000
-                const item = {
-                    value: value,
-                    expiry: now.getTime() + expiryDay
-                }
-                localStorage.setItem(key, JSON.stringify(item))
-            },
-            get: function getWithExpiry(key) {
-                const itemStr = localStorage.getItem(key)
-
-                if (!itemStr) {
-                    return undefined
-                }
-                const item = JSON.parse(itemStr)
-                const now = new Date()
-
-                if (now.getTime() > item.expiry) {
-                    localStorage.removeItem(key)
-                    return undefined
-                }
-                return item.value
-            }
-        };
-        window.utils = {
-            saveToLocal: saveToLocal,
-            getCSS: (url, id = false) => new Promise((resolve, reject) => {
-              const link = document.createElement('link')
-              link.rel = 'stylesheet'
-              link.href = url
-              if (id) link.id = id
-              link.onerror = reject
-              link.onload = link.onreadystatechange = function() {
-                const loadState = this.readyState
-                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-                link.onload = link.onreadystatechange = null
-                resolve()
-              }
-              document.head.appendChild(link)
-            }),
-            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
-              const script = document.createElement('script')
-              script.src = url
-              script.async = true
-              script.onerror = reject
-              script.onload = script.onreadystatechange = function() {
-                const loadState = this.readyState
-                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-                script.onload = script.onreadystatechange = null
-                resolve()
-              }
-
-              Object.keys(attr).forEach(key => {
-                script.setAttribute(key, attr[key])
-              })
-
-              document.head.appendChild(script)
-            }),
-            addGlobalFn: (key, fn, name = false, parent = window) => {
-                const globalFn = parent.globalFn || {}
-                const keyObj = globalFn[key] || {}
-
-                if (name && keyObj[name]) return
-
-                name = name || Object.keys(keyObj).length
-                keyObj[name] = fn
-                globalFn[key] = keyObj
-                parent.globalFn = globalFn
-            },
-            addEventListenerPjax: (ele, event, fn, option = false) => {
-              ele.addEventListener(event, fn, option)
-              utils.addGlobalFn('pjax', () => {
-                  ele.removeEventListener(event, fn, option)
-              })
-          },
-        }
-    })()</script><!-- theme--><script>initTheme = () => {
-    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-    const cachedMode = utils.saveToLocal.get('theme');
-    if (cachedMode === undefined) {
-        const nowMode =
-            isDarkMode ? 'dark' : 'light'
-        document.documentElement.setAttribute('data-theme', nowMode);
-    } else {
-        document.documentElement.setAttribute('data-theme', cachedMode);
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>星仔人生录 - 珍惜当下 不负此生</title><meta name="author" content="星仔"><meta name="copyright" content="星仔"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#18171d"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="星仔人生录"><meta name="application-name" content="星仔人生录"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#18171d"><meta property="og:type" content="website"><meta property="og:title" content="星仔人生录"><meta property="og:url" content="https://d3iiz.top/page/2/index.html"><meta property="og:site_name" content="星仔人生录"><meta property="og:description" content="分享科技与生活"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://img.picgo.net/2024/09/15/28d68d1f6c609186e91254a4469b42e6546bf877eb6a9244.png"><meta property="article:author" content="星仔"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://img.picgo.net/2024/09/15/28d68d1f6c609186e91254a4469b42e6546bf877eb6a9244.png"><meta name="description" content="分享科技与生活"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://d3iiz.top/page/2/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: undefined,
+  diytitle: undefined,
+  LA51: {"enable":true,"ck":"3HZ1UVjhMEV6g7Lg","LingQueMonitorID":"3HZ1UVjhMEV6g7Lg"},
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: undefined,
+  friends_vue_info: undefined,
+  navMusic: false,
+  mainTone: undefined,
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 星仔","link":"链接: ","source":"来源: 星仔人生录","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
     }
-    typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
-}
-initTheme()</script><!-- global head--><script>const GLOBAL_CONFIG = {
-    root: '/',
-    algolia: undefined,
-    localsearch: {"preload":false,"path":"/search.xml"},
-    runtime: '2023-12-07 00:00:00',
-    lazyload: {
-        enable: false,
-        error: '/img/error_load.avif'
-    },
-    copyright: false,
-    highlight: {"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},
-    randomlink: false,
-    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可","search":{"empty":"找不到你查询的内容：${query}","hit":"找到 ${hits} 条结果，用时 ${time} 毫秒","placeholder":"输入关键词快速查找","count":"共 <b>${count}</b> 条结果。"}},
-    aside: {
-        sayhello: {
-            morning: "✨ Good morning. It's a new day",
-            noon: "It's time for a midday break",
-            afternoon: "Tea time. 🍵",
-            night: "early bedtime",
-            goodnight: "Good night 😴",
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '星仔人生录',
+  title: '星仔人生录',
+  postAI: '',
+  pageFillDescription: '分享科技与生活',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-09-21 10:01:11',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
         },
-        sayhello2: [],
-        sayhello3: {
-            prefix: '好久不见，',
-            back: '欢迎再次回来，',
-        },
-    },
-    covercolor: {
-        enable: true
-    },
-    comment: false,
-    lightbox: 'null',
-    post_ai: false,
-    right_menu: {"mode":{"dark":"深色模式","light":"浅色模式"},"img_error":"此图片无法复制与下载"},
-    lure: false,
-    expire: false,
-};</script><!-- page-config head--><script id="config-diff">var PAGE_CONFIG = {
-    is_post: false,
-    is_page: false,
-    is_home: true,
-    page: 'solitude',
-    toc: false,
-    comment: false,
-    ai_text: false,
-    color: false,
-}</script><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="星仔人生录" type="application/atom+xml">
-<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head><body id="body" data-type="solitude"><!-- universe--><!-- background img--><!-- loading--><!-- console--><div id="console"><div class="close-btn" onclick="sco.hideConsole()"><i class="solitude fa-solid fa-xmark"></i></div><div class="console-card-group"><div class="console-card-group-right"><div class="console-card tags" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">标签</div><div class="author-content-item-title">寻找感兴趣的领域</div></div><div class="card-tag-cloud"><a href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/">32单片机<sup>12</sup></a><a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/">51单片机<sup>9</sup></a><a href="/tags/C%E8%AF%AD%E8%A8%80/">C语言<sup>13</sup></a><a href="/tags/RT-Thread/">RT-Thread<sup>5</sup></a><a href="/tags/Java%E8%AF%AD%E8%A8%80/">Java语言<sup>24</sup></a><a href="/tags/win10%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E5%8F%98%E7%99%BD/">win10桌面图标变白<sup>1</sup></a><a href="/tags/%E4%BA%91%E5%9B%BE%E5%BA%8A/">云图床<sup>1</sup></a><a href="/tags/%E8%A7%A3%E5%86%B3443%E7%AB%AF%E5%8F%A3%E8%A2%ABvmware%E5%8D%A0%E7%94%A8/">解决443端口被vmware占用<sup>1</sup></a><a href="/tags/office%E6%97%A0%E6%B3%95%E5%88%9D%E5%A7%8B%E5%8C%96VisualBasic/">office无法初始化VisualBasic<sup>1</sup></a><a href="/tags/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/">图片压缩在线工具<sup>1</sup></a><a href="/tags/%E6%8F%92%E4%BB%B6/">插件<sup>1</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2/">资源搜索<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E5%8A%A0%E9%80%9F%E5%9B%BE%E5%BA%8A/">博客加速图床<sup>1</sup></a><a href="/tags/GitHub-Picgo%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/">GitHub+Picgo图片上传<sup>1</sup></a><a href="/tags/GitHub%E5%90%8C%E6%AD%A5gitee%E5%B9%B6%E9%83%A8%E7%BD%B2/">GitHub同步gitee并部署<sup>1</sup></a><a href="/tags/HurricaneDNS%E8%A7%A3%E6%9E%90%E5%8D%9A%E5%AE%A2/">HurricaneDNS解析博客<sup>1</sup></a><a href="/tags/STM32CubeIDE%E4%BB%A3%E7%A0%81%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F/">STM32CubeIDE代码字体大小<sup>1</sup></a><a href="/tags/IDE%E4%B8%8EMX%E5%BA%93%E6%96%87%E4%BB%B6%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AE%BE%E7%BD%AE/">IDE与MX库文件安装路径自定义设置<sup>1</sup></a><a href="/tags/ubuntu%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/">ubuntu相关设置<sup>1</sup></a><a href="/tags/%E5%8A%A0%E9%80%9Fgithub%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE/">加速github博客访问<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">博客使用手册<sup>1</sup></a><a href="/tags/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/">小狼毫输入法<sup>1</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/">个人博客迁移<sup>1</sup></a><a href="/tags/ST-LINK%E6%9C%AA%E8%83%BD%E4%B8%B2%E5%8F%A3keil%E8%AF%86%E5%88%AB%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">ST-LINK未能串口keil识别解决方案<sup>1</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E4%B8%8E%E5%9F%BA%E7%A1%80/">计算机程序与基础<sup>1</sup></a><a href="/tags/%E6%94%BF%E6%B2%BB/">政治<sup>14</sup></a></div></div><div class="console-card history" onclick="sco.hideConsole()"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">2024/09</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">9</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/08/"><span class="card-archive-list-date">2024/08</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">24</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">2024/07</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">2024/06</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">2024/04</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">2024/03</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">2024/02</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">2024/01</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">2023/12</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">52</span><span class="card-archive-list-count-unit">篇</span></div></a></li></ul></div></div></div><div class="button-group"><div class="console-btn-item"><span class="darkmode_switchbutton" onclick="sco.switchDarkMode()" title="昼夜切换"><i class="solitude fa-solid fa-circle-half-stroke"></i></span></div><div class="console-btn-item" id="consoleHideAside"><span class="asideSwitch" onclick="sco.switchHideAside()" title="边栏显示控制"><i class="solitude fas fa-arrows-left-right-to-line"></i></span></div></div><div class="console-mask" onclick="sco.hideConsole()"></div></div><!-- sidebar--><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">101</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fa-solid fa-circle-half-stroke"></i><span>显示模式</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文章</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="solitude  fas fa-user-group"></i><span>Links</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://link3.cc/xinzai_x"><i class="solitude  anzhiyu-icon-artstation"></i><span>个人资源</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://ainm.cc/c/music/"><i class="solitude  fas fa-music"></i><span>音乐网</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><span>About</span></a></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="card-tag-cloud"><a href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/">32单片机<sup>12</sup></a><a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/">51单片机<sup>9</sup></a><a href="/tags/C%E8%AF%AD%E8%A8%80/">C语言<sup>13</sup></a><a href="/tags/RT-Thread/">RT-Thread<sup>5</sup></a><a href="/tags/Java%E8%AF%AD%E8%A8%80/">Java语言<sup>24</sup></a><a href="/tags/win10%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E5%8F%98%E7%99%BD/">win10桌面图标变白<sup>1</sup></a><a href="/tags/%E4%BA%91%E5%9B%BE%E5%BA%8A/">云图床<sup>1</sup></a><a href="/tags/%E8%A7%A3%E5%86%B3443%E7%AB%AF%E5%8F%A3%E8%A2%ABvmware%E5%8D%A0%E7%94%A8/">解决443端口被vmware占用<sup>1</sup></a><a href="/tags/office%E6%97%A0%E6%B3%95%E5%88%9D%E5%A7%8B%E5%8C%96VisualBasic/">office无法初始化VisualBasic<sup>1</sup></a><a href="/tags/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/">图片压缩在线工具<sup>1</sup></a><a href="/tags/%E6%8F%92%E4%BB%B6/">插件<sup>1</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2/">资源搜索<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E5%8A%A0%E9%80%9F%E5%9B%BE%E5%BA%8A/">博客加速图床<sup>1</sup></a><a href="/tags/GitHub-Picgo%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/">GitHub+Picgo图片上传<sup>1</sup></a><a href="/tags/GitHub%E5%90%8C%E6%AD%A5gitee%E5%B9%B6%E9%83%A8%E7%BD%B2/">GitHub同步gitee并部署<sup>1</sup></a><a href="/tags/HurricaneDNS%E8%A7%A3%E6%9E%90%E5%8D%9A%E5%AE%A2/">HurricaneDNS解析博客<sup>1</sup></a><a href="/tags/STM32CubeIDE%E4%BB%A3%E7%A0%81%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F/">STM32CubeIDE代码字体大小<sup>1</sup></a><a href="/tags/IDE%E4%B8%8EMX%E5%BA%93%E6%96%87%E4%BB%B6%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AE%BE%E7%BD%AE/">IDE与MX库文件安装路径自定义设置<sup>1</sup></a><a href="/tags/ubuntu%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/">ubuntu相关设置<sup>1</sup></a><a href="/tags/%E5%8A%A0%E9%80%9Fgithub%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE/">加速github博客访问<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">博客使用手册<sup>1</sup></a><a href="/tags/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/">小狼毫输入法<sup>1</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/">个人博客迁移<sup>1</sup></a><a href="/tags/ST-LINK%E6%9C%AA%E8%83%BD%E4%B8%B2%E5%8F%A3keil%E8%AF%86%E5%88%AB%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">ST-LINK未能串口keil识别解决方案<sup>1</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E4%B8%8E%E5%9F%BA%E7%A1%80/">计算机程序与基础<sup>1</sup></a><a href="/tags/%E6%94%BF%E6%B2%BB/">政治<sup>14</sup></a></div></div></div></div><!-- keyboard--><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><a id="site-name" href="/" title="返回博客主页"><span class="title">星仔人生录</span><i class="solitude fa-solid fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">星仔人生录</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文章</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="solitude  fas fa-user-group"></i><span>Links</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://link3.cc/xinzai_x"><i class="solitude  anzhiyu-icon-artstation"></i><span>个人资源</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://ainm.cc/c/music/"><i class="solitude  fas fa-music"></i><span>音乐网</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><span>About</span></a></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索"><i class="solitude fa-solid fa-magnifying-glass"></i></a></div><div class="nav-button" id="nav-console"><a class="console_switchbutton" onclick="sco.showConsole()" title="中控台" href="javascript:void(0);"><label><i class="left"></i><i class="center"></i><i class="right"></i></label></a></div><div class="nav-button" id="nav-totop" onclick="sco.toTop()"><a class="totopbtn"><i class="solitude fa-solid fa-arrow-up"></i><span id="percent">0</span></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fa-solid fa-bars"></i></a></div></div></div></nav></header><main class="layout" id="content-inner"><div id="home"><div id="category-bar"><div class="category-bar-items home" id="category-bar-items"><div class="category-bar-item select" id="category-bar-home"><a href="/">推荐</a></div><div class="category-bar-item"><a href="/archives/">全部文章</a></div><div class="category-bar-item" id="32单片机"><a href="/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/">32单片机</a></div><div class="category-bar-item" id="51单片机"><a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/">51单片机</a></div><div class="category-bar-item" id="C语言"><a href="/categories/C%E8%AF%AD%E8%A8%80/">C语言</a></div><div class="category-bar-item" id="RT-Thread"><a href="/categories/RT-Thread/">RT-Thread</a></div><div class="category-bar-item" id="Java语言"><a href="/categories/Java%E8%AF%AD%E8%A8%80/">Java语言</a></div><div class="category-bar-item" id="Windows使用技巧"><a href="/categories/Windows%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">Windows使用技巧</a></div><div class="category-bar-item" id="工具分享"><a href="/categories/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/">工具分享</a></div><div class="category-bar-item" id="技术积累记录"><a href="/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/">技术积累记录</a></div><div class="category-bar-item" id="错误记录"><a href="/categories/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/">错误记录</a></div><div class="category-bar-item" id="升学"><a href="/categories/%E5%8D%87%E5%AD%A6/">升学</a></div></div><div class="category-bar-right"><div class="category-bar-next" id="category-bar-next" onclick="sco.scrollCategoryBarToRight()"><i class="solitude fa-solid fa-angles-right"></i></div><a class="category-bar-more" href="/categories/">更多</a></div></div><div class="recent-posts" id="recent-posts"><div class="recent-post-item" onclick="pjax.loadUrl('/post/acb77072.html')"><div class="post_cover"><a href="/post/acb77072.html" title="10.DMA"><img class="post_bg" src="https://img.picgo.net/2024/08/18/b00d09a505b4c64d80be90a32eefd8a84d5e1e15395f28e1.jpeg" alt="10.DMA"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><span class="original">32单片机</span><a class="unvisited-post" href="/post/acb77072.html">未读</a></div><a class="article-title" href="/post/acb77072.html" title="10.DMA">10.DMA</a></div><div class="article-meta-wrap"><span class="article-meta tags"><a class="article-meta__tags" href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/" onclick="event.stopPropagation();"><span class="tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>32单片机</span></a></span><span class="post-meta-date"><time datetime="2024-08-16T07:49:08.000Z"></time></span></div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/post/52772f76.html')"><div class="post_cover"><a href="/post/52772f76.html" title="9.DAC(数字信号转模拟信号)"><img class="post_bg" src="https://img.picgo.net/2024/08/18/b00d09a505b4c64d80be90a32eefd8a84d5e1e15395f28e1.jpeg" alt="9.DAC(数字信号转模拟信号)"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><span class="original">32单片机</span><a class="unvisited-post" href="/post/52772f76.html">未读</a></div><a class="article-title" href="/post/52772f76.html" title="9.DAC(数字信号转模拟信号)">9.DAC(数字信号转模拟信号)</a></div><div class="article-meta-wrap"><span class="article-meta tags"><a class="article-meta__tags" href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/" onclick="event.stopPropagation();"><span class="tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>32单片机</span></a></span><span class="post-meta-date"><time datetime="2024-08-15T14:22:06.000Z"></time></span></div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/post/f0812160.html')"><div class="post_cover"><a href="/post/f0812160.html" title="8.看门狗(WDG)"><img class="post_bg" src="https://img.picgo.net/2024/08/18/b00d09a505b4c64d80be90a32eefd8a84d5e1e15395f28e1.jpeg" alt="8.看门狗(WDG)"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><span class="original">32单片机</span><a class="unvisited-post" href="/post/f0812160.html">未读</a></div><a class="article-title" href="/post/f0812160.html" title="8.看门狗(WDG)">8.看门狗(WDG)</a></div><div class="article-meta-wrap"><span class="article-meta tags"><a class="article-meta__tags" href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/" onclick="event.stopPropagation();"><span class="tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>32单片机</span></a></span><span class="post-meta-date"><time datetime="2024-08-15T14:05:49.000Z"></time></span></div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/post/e8bc8f26.html')"><div class="post_cover"><a href="/post/e8bc8f26.html" title="7.实时时钟(RTC)"><img class="post_bg" src="https://img.picgo.net/2024/08/18/b00d09a505b4c64d80be90a32eefd8a84d5e1e15395f28e1.jpeg" alt="7.实时时钟(RTC)"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><span class="original">32单片机</span><a class="unvisited-post" href="/post/e8bc8f26.html">未读</a></div><a class="article-title" href="/post/e8bc8f26.html" title="7.实时时钟(RTC)">7.实时时钟(RTC)</a></div><div class="article-meta-wrap"><span class="article-meta tags"><a class="article-meta__tags" href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/" onclick="event.stopPropagation();"><span class="tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>32单片机</span></a></span><span class="post-meta-date"><time datetime="2024-08-14T13:12:02.000Z"></time></span></div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/post/f5fba2c3.html')"><div class="post_cover"><a href="/post/f5fba2c3.html" title="6.IIC通信"><img class="post_bg" src="https://img.picgo.net/2024/08/18/b00d09a505b4c64d80be90a32eefd8a84d5e1e15395f28e1.jpeg" alt="6.IIC通信"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><span class="original">32单片机</span><a class="unvisited-post" href="/post/f5fba2c3.html">未读</a></div><a class="article-title" href="/post/f5fba2c3.html" title="6.IIC通信">6.IIC通信</a></div><div class="article-meta-wrap"><span class="article-meta tags"><a class="article-meta__tags" href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/" onclick="event.stopPropagation();"><span class="tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>32单片机</span></a></span><span class="post-meta-date"><time datetime="2024-08-13T09:53:28.000Z"></time></span></div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/post/6928cd3f.html')"><div class="post_cover"><a href="/post/6928cd3f.html" title="office无法初始化VisualBasic"><img class="post_bg" src="https://img.picgo.net/2024/09/17/fdd42994b987c457bd0b57cf4a30a7dd42b1d68097b3d72a.jpeg" alt="office无法初始化VisualBasic"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><span class="original">Windows使用技巧</span><a class="unvisited-post" href="/post/6928cd3f.html">未读</a></div><a class="article-title" href="/post/6928cd3f.html" title="office无法初始化VisualBasic">office无法初始化VisualBasic</a></div><div class="article-meta-wrap"><span class="article-meta tags"><a class="article-meta__tags" href="/tags/office%E6%97%A0%E6%B3%95%E5%88%9D%E5%A7%8B%E5%8C%96VisualBasic/" onclick="event.stopPropagation();"><span class="tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>office无法初始化VisualBasic</span></a></span><span class="post-meta-date"><time datetime="2024-08-12T15:37:39.000Z"></time></span></div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/post/bfd038f5.html')"><div class="post_cover"><a href="/post/bfd038f5.html" title="5.ADC(模拟信号转数字信号)"><img class="post_bg" src="https://img.picgo.net/2024/08/18/b00d09a505b4c64d80be90a32eefd8a84d5e1e15395f28e1.jpeg" alt="5.ADC(模拟信号转数字信号)"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><span class="original">32单片机</span><a class="unvisited-post" href="/post/bfd038f5.html">未读</a></div><a class="article-title" href="/post/bfd038f5.html" title="5.ADC(模拟信号转数字信号)">5.ADC(模拟信号转数字信号)</a></div><div class="article-meta-wrap"><span class="article-meta tags"><a class="article-meta__tags" href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/" onclick="event.stopPropagation();"><span class="tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>32单片机</span></a></span><span class="post-meta-date"><time datetime="2024-08-10T06:45:10.000Z"></time></span></div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/post/f71d0ad2.html')"><div class="post_cover"><a href="/post/f71d0ad2.html" title="4.定时器(TIMER)"><img class="post_bg" src="https://img.picgo.net/2024/08/18/b00d09a505b4c64d80be90a32eefd8a84d5e1e15395f28e1.jpeg" alt="4.定时器(TIMER)"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><span class="original">32单片机</span><a class="unvisited-post" href="/post/f71d0ad2.html">未读</a></div><a class="article-title" href="/post/f71d0ad2.html" title="4.定时器(TIMER)">4.定时器(TIMER)</a></div><div class="article-meta-wrap"><span class="article-meta tags"><a class="article-meta__tags" href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/" onclick="event.stopPropagation();"><span class="tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>32单片机</span></a></span><span class="post-meta-date"><time datetime="2024-08-06T08:19:27.000Z"></time></span></div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/post/2c4c3bc3.html')"><div class="post_cover"><a href="/post/2c4c3bc3.html" title="3.串口(UART)"><img class="post_bg" src="https://img.picgo.net/2024/08/18/b00d09a505b4c64d80be90a32eefd8a84d5e1e15395f28e1.jpeg" alt="3.串口(UART)"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><span class="original">32单片机</span><a class="unvisited-post" href="/post/2c4c3bc3.html">未读</a></div><a class="article-title" href="/post/2c4c3bc3.html" title="3.串口(UART)">3.串口(UART)</a></div><div class="article-meta-wrap"><span class="article-meta tags"><a class="article-meta__tags" href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/" onclick="event.stopPropagation();"><span class="tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>32单片机</span></a></span><span class="post-meta-date"><time datetime="2024-08-05T10:02:46.000Z"></time></span></div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/post/b94c2cf2.html')"><div class="post_cover"><a href="/post/b94c2cf2.html" title="完美解决443端口被vmware占用的问题"><img class="post_bg" src="https://img.picgo.net/2024/09/17/fdd42994b987c457bd0b57cf4a30a7dd42b1d68097b3d72a.jpeg" alt="完美解决443端口被vmware占用的问题"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><span class="original">Windows使用技巧</span><a class="unvisited-post" href="/post/b94c2cf2.html">未读</a></div><a class="article-title" href="/post/b94c2cf2.html" title="完美解决443端口被vmware占用的问题">完美解决443端口被vmware占用的问题</a></div><div class="article-meta-wrap"><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%A7%A3%E5%86%B3443%E7%AB%AF%E5%8F%A3%E8%A2%ABvmware%E5%8D%A0%E7%94%A8/" onclick="event.stopPropagation();"><span class="tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>解决443端口被vmware占用</span></a></span><span class="post-meta-date"><time datetime="2024-08-04T14:54:51.000Z"></time></span></div></div></div><!-- pagination--><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="solitude fa-solid fa-chevron-left"></i> <div class="pagination_tips_prev">上一页</div></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/"><div class="pagination_tips_next">下一页</div> <i class="solitude fa-solid fa-chevron-right"></i></a><div class="toPageGroup"><input id="toPageText" oninput="value=value.replace(/[^0-9]/g,'')" maxlength="3" title="跳转到指定页面" onkeyup="if (this.value === '0') this.value = ''"><a id="toPageButton" onclick="sco.toPage()"><i class="solitude fa-solid fa-angles-right"></i></a></div></div></nav></div></div><!-- aside--><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><div class="author-info__top-group"><div class="author-info__sayhi" id="author-info__sayhi" onclick="sco.changeSayHelloText()">sayhello.morning</div></div></div><div class="avatar-img-group"><img class="avatar-img" alt="头像" src="https://img.picgo.net/2024/09/15/28d68d1f6c609186e91254a4469b42e6546bf877eb6a9244.png"></div><div class="author-info__description_group"><div class="author-info__description"></div><div class="author-info__description2"></div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/about/"><div class="author-info__name">星仔</div><div class="author-info__desc">珍惜当下 不负此生</div></a><div class="card-info-social-icons is-center"></div></div></div></div><div class="sticky_layout"><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="card-tag-cloud"><a href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/">32单片机<sup>12</sup></a><a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/">51单片机<sup>9</sup></a><a href="/tags/C%E8%AF%AD%E8%A8%80/">C语言<sup>13</sup></a><a href="/tags/RT-Thread/">RT-Thread<sup>5</sup></a><a href="/tags/Java%E8%AF%AD%E8%A8%80/">Java语言<sup>24</sup></a><a href="/tags/win10%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E5%8F%98%E7%99%BD/">win10桌面图标变白<sup>1</sup></a><a href="/tags/%E4%BA%91%E5%9B%BE%E5%BA%8A/">云图床<sup>1</sup></a><a href="/tags/%E8%A7%A3%E5%86%B3443%E7%AB%AF%E5%8F%A3%E8%A2%ABvmware%E5%8D%A0%E7%94%A8/">解决443端口被vmware占用<sup>1</sup></a><a href="/tags/office%E6%97%A0%E6%B3%95%E5%88%9D%E5%A7%8B%E5%8C%96VisualBasic/">office无法初始化VisualBasic<sup>1</sup></a><a href="/tags/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/">图片压缩在线工具<sup>1</sup></a><a href="/tags/%E6%8F%92%E4%BB%B6/">插件<sup>1</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2/">资源搜索<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E5%8A%A0%E9%80%9F%E5%9B%BE%E5%BA%8A/">博客加速图床<sup>1</sup></a><a href="/tags/GitHub-Picgo%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/">GitHub+Picgo图片上传<sup>1</sup></a><a href="/tags/GitHub%E5%90%8C%E6%AD%A5gitee%E5%B9%B6%E9%83%A8%E7%BD%B2/">GitHub同步gitee并部署<sup>1</sup></a><a href="/tags/HurricaneDNS%E8%A7%A3%E6%9E%90%E5%8D%9A%E5%AE%A2/">HurricaneDNS解析博客<sup>1</sup></a><a href="/tags/STM32CubeIDE%E4%BB%A3%E7%A0%81%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F/">STM32CubeIDE代码字体大小<sup>1</sup></a><a href="/tags/IDE%E4%B8%8EMX%E5%BA%93%E6%96%87%E4%BB%B6%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AE%BE%E7%BD%AE/">IDE与MX库文件安装路径自定义设置<sup>1</sup></a><a href="/tags/ubuntu%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/">ubuntu相关设置<sup>1</sup></a><a href="/tags/%E5%8A%A0%E9%80%9Fgithub%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE/">加速github博客访问<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">博客使用手册<sup>1</sup></a><a href="/tags/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/">小狼毫输入法<sup>1</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/">个人博客迁移<sup>1</sup></a><a href="/tags/ST-LINK%E6%9C%AA%E8%83%BD%E4%B8%B2%E5%8F%A3keil%E8%AF%86%E5%88%AB%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">ST-LINK未能串口keil识别解决方案<sup>1</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E4%B8%8E%E5%9F%BA%E7%A1%80/">计算机程序与基础<sup>1</sup></a><a href="/tags/%E6%94%BF%E6%B2%BB/">政治<sup>14</sup></a></div><span id="more-tags-btn" onclick="sco.openAllTags()">查看全部</span><hr><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">2024/09</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">9</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/08/"><span class="card-archive-list-date">2024/08</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">24</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">2024/07</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">2024/06</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">2024/04</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">2024/03</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">2024/02</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">2024/01</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">2023/12</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">52</span><span class="card-archive-list-count-unit">篇</span></div></a></li></ul><hr><div class="webinfo"><div class="webinfo-item"><div class="webinfo-item-title"><i class="item-icon fa-solid fa-folder-closed"></i><div class="item-name">文章总数 :</div></div><div class="item-count">101</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="item-icon solitude fa-solid fa-calendar-day"></i><div class="item-name">建站天数 :</div></div><div class="item-count" id="runtimeshow"></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="item-icon solitude fa-solid fa-arrows-rotate"></i><div class="item-name">最后更新 :</div></div><time class="item-count" datetime="2024-09-21T01:55:13.514Z"></time></div></div></div></div></div></main><footer id="footer"><div id="footer_deal"></div><div id="st-footer"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2023 - 2024 By&nbsp;<a class="footer-bar-link" href="/">星仔</a></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude" alt="Theme">Theme</a></div></div></div></footer></div><!-- right_menu--><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="solitude fa-solid fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="solitude fa-solid fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="solitude fa-solid fa-arrows-rotate"></i></div><div class="rightMenu-item" id="menu-top"><i class="solitude fa-solid fa-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="solitude fa-solid fa-clone"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="solitude fa-solid fa-clipboard"></i><span>粘贴文本</span></div><div class="rightMenu-item" id="menu-newwindow"><i class="solitude fa-regular fa-window-maximize"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="solitude fa-solid fa-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="solitude fa-solid fa-clone"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="solitude fa-solid fa-cloud-arrow-down"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-search"><i class="solitude fa-solid fa-magnifying-glass"></i><span>站内搜索</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-darkmode" onclick="sco.switchDarkMode()"><i class="solitude fa-solid fa-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></div></div></div><div id="rightmenu-mask"></div><!-- inject body--><div><script src="/js/utils.js?v=2.0.13"></script><script src="/js/main.js?v=2.0.13"></script><script src="/js/third_party/waterfall.min.js?v=2.0.13"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pjax/0.2.8/pjax.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.4.0/color-thief.min.js"></script><script src="/js/covercolor/local.js?v=2.0.13"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js"></script><script src="/js/right_menu.js?v=2.0.13"></script><div class="js-pjax"></div></div><!-- pjax--><script>const pjax = new Pjax({
-    elements: 'a:not([target="_blank"])',
-    selectors: ['title','#body-wrap','#site-config','meta[name="description"]','.js-pjax','meta[property^="og:"]','#config-diff'],
-    cacheBust: false,
-    analytics: false,
-    scrollRestoration: false
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="星仔人生录" type="application/atom+xml">
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">星仔人生录</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 小伙伴</span></a></li><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener" href="https://link3.cc/xinzai_x"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 个人资源</span></a></li><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener" href="http://ainm.cc/c/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐网</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 常用文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="https://d3iiz.top/post/1f293ccb"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 资源搜索</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 1.05rem;">32单片机<sup>12</sup></a><a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 1.05rem;">51单片机<sup>9</sup></a><a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 1.05rem;">C语言<sup>13</sup></a><a href="/tags/GitHub-Picgo%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/" style="font-size: 1.05rem;">GitHub+Picgo图片上传<sup>1</sup></a><a href="/tags/GitHub%E5%90%8C%E6%AD%A5gitee%E5%B9%B6%E9%83%A8%E7%BD%B2/" style="font-size: 1.05rem;">GitHub同步gitee并部署<sup>1</sup></a><a href="/tags/HurricaneDNS%E8%A7%A3%E6%9E%90%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem;">HurricaneDNS解析博客<sup>1</sup></a><a href="/tags/IDE%E4%B8%8EMX%E5%BA%93%E6%96%87%E4%BB%B6%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AE%BE%E7%BD%AE/" style="font-size: 1.05rem;">IDE与MX库文件安装路径自定义设置<sup>1</sup></a><a href="/tags/Java%E8%AF%AD%E8%A8%80/" style="font-size: 1.05rem;">Java语言<sup>24</sup></a><a href="/tags/RT-Thread/" style="font-size: 1.05rem;">RT-Thread<sup>5</sup></a><a href="/tags/ST-LINK%E6%9C%AA%E8%83%BD%E4%B8%B2%E5%8F%A3keil%E8%AF%86%E5%88%AB%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" style="font-size: 1.05rem;">ST-LINK未能串口keil识别解决方案<sup>1</sup></a><a href="/tags/STM32CubeIDE%E4%BB%A3%E7%A0%81%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F/" style="font-size: 1.05rem;">STM32CubeIDE代码字体大小<sup>1</sup></a><a href="/tags/office%E6%97%A0%E6%B3%95%E5%88%9D%E5%A7%8B%E5%8C%96VisualBasic/" style="font-size: 1.05rem;">office无法初始化VisualBasic<sup>1</sup></a><a href="/tags/ubuntu%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" style="font-size: 1.05rem;">ubuntu相关设置<sup>1</sup></a><a href="/tags/win10%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E5%8F%98%E7%99%BD/" style="font-size: 1.05rem;">win10桌面图标变白<sup>1</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/" style="font-size: 1.05rem;">个人博客迁移<sup>1</sup></a><a href="/tags/%E4%BA%91%E5%9B%BE%E5%BA%8A/" style="font-size: 1.05rem;">云图床<sup>1</sup></a><a href="/tags/%E5%8A%A0%E9%80%9Fgithub%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE/" style="font-size: 1.05rem;">加速github博客访问<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" style="font-size: 1.05rem;">博客使用手册<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E5%8A%A0%E9%80%9F%E5%9B%BE%E5%BA%8A/" style="font-size: 1.05rem;">博客加速图床<sup>1</sup></a><a href="/tags/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/" style="font-size: 1.05rem;">图片压缩在线工具<sup>1</sup></a><a href="/tags/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/" style="font-size: 1.05rem;">小狼毫输入法<sup>1</sup></a><a href="/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 1.05rem;">插件<sup>1</sup></a><a href="/tags/%E6%94%BF%E6%B2%BB/" style="font-size: 1.05rem;">政治<sup>14</sup></a><a href="/tags/%E8%A7%A3%E5%86%B3443%E7%AB%AF%E5%8F%A3%E8%A2%ABvmware%E5%8D%A0%E7%94%A8/" style="font-size: 1.05rem;">解决443端口被vmware占用<sup>1</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E4%B8%8E%E5%9F%BA%E7%A1%80/" style="font-size: 1.05rem;">计算机程序与基础<sup>1</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2/" style="font-size: 1.05rem;">资源搜索<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">九月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">9</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/08/"><span class="card-archive-list-date">八月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">24</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">七月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">四月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">二月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav></header><main id="blog-container"><div class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div id="categoryBar"><div class="category-bar" id="category-bar"><div id="catalog-bar"><div id="catalog-list"><div class="catalog-list-item" id="首页"><a href="/">首页</a></div>
+    <div class="catalog-list-item" id="/categories/32单片机/">
+      <a href="/categories/32单片机/">
+        32单片机
+      </a>
+    </div>
+    
+    <div class="catalog-list-item" id="/categories/51单片机/">
+      <a href="/categories/51单片机/">
+        51单片机
+      </a>
+    </div>
+    
+    <div class="catalog-list-item" id="/categories/C语言/">
+      <a href="/categories/C语言/">
+        C语言
+      </a>
+    </div>
+    
+    <div class="catalog-list-item" id="/categories/Java语言/">
+      <a href="/categories/Java语言/">
+        Java语言
+      </a>
+    </div>
+    
+    <div class="catalog-list-item" id="/categories/RT-Thread/">
+      <a href="/categories/RT-Thread/">
+        RT-Thread
+      </a>
+    </div>
+    
+    <div class="catalog-list-item" id="/categories/Windows使用技巧/">
+      <a href="/categories/Windows使用技巧/">
+        Windows使用技巧
+      </a>
+    </div>
+    
+    <div class="catalog-list-item" id="/categories/工具分享/">
+      <a href="/categories/工具分享/">
+        工具分享
+      </a>
+    </div>
+    
+    <div class="catalog-list-item" id="/categories/技术积累记录/">
+      <a href="/categories/技术积累记录/">
+        技术积累记录
+      </a>
+    </div>
+    
+    <div class="catalog-list-item" id="/categories/错误记录/">
+      <a href="/categories/错误记录/">
+        错误记录
+      </a>
+    </div>
+    
+    <div class="catalog-list-item" id="/categories/升学/">
+      <a href="/categories/升学/">
+        升学
+      </a>
+    </div>
+    </div><div class="category-bar-next" id="category-bar-next" onclick="anzhiyu.scrollCategoryBarToRight()"><i class="anzhiyufont anzhiyu-icon-angle-double-right"></i></div><a class="catalog-more" href="/categories/">更多</a></div></div></div><div class="recent-post-item lastestpost-item" onclick="pjax.loadUrl('/post/acb77072.html')"><div class="post_cover left"><a href="/post/acb77072.html" title="10.DMA" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/08/18/b00d09a505b4c64d80be90a32eefd8a84d5e1e15395f28e1.jpeg" onerror="this.onerror=null;this.src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="10.DMA" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">32单片机</div><a class="unvisited-post" href="/post/acb77072.html" title="10.DMA">未读</a></div><a class="article-title" href="/post/acb77072.html" title="10.DMA">10.DMA</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2024-08-16T07:49:08.000Z" title="发表于 2024-08-16 15:49:08" time="2024-08-16 15:49:08">2024-08-16</time><time class="time_hidden" datetime="2024-08-22T02:57:06.269Z" title="更新于 2024-08-22 10:57:06" time="2024-08-22 10:57:06">2024-08-22</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>32单片机</span></a></span></div><div class="content">理论12个通道：DMA1（7）DMA2（5）
+
+
+
+方向：存储器和存储器间(DMA_MEMORY_TO_MEMORY)、外设到存储器(DMA_PERIPH_TO_MEMORY)、存储器到外设(DMA_MEMORY_TO_PERIPH)
+闪存、 SRAM、外设的SRAM、 APB1、 APB2和AHB外设均可作为访问的源和目标
+数据宽度：字节(Byte 8)、半字(Half Word 16)、全字(Word 32)
+可编程的数据传输数目： 0 ~ 65535
+若可编程的数据传输数目为10，数据宽度为字节，半字，全字传输总数据大小：10字节，20字节，40字节
+若传输总数据大小与实际传输不符，会让传输标志(__HAL_DMA_GET_FLAG) ≠ 0
+代码编写存储器和存储器间实验，两个数组，将一个数组的数据通过DMA传到另一个数组，通过串口打印出来
+DMA配置
+
+串口初始化参考：链接
+Cube IDE代码main.c
+1234567891011121314151617181920212223242526/* USER CODE BEGIN PD */#define BUFF_SIZE 1 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/post/52772f76.html')"><div class="post_cover left"><a href="/post/52772f76.html" title="9.DAC(数字信号转模拟信号)" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/08/18/b00d09a505b4c64d80be90a32eefd8a84d5e1e15395f28e1.jpeg" onerror="this.onerror=null;this.src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="9.DAC(数字信号转模拟信号)" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">32单片机</div><a class="unvisited-post" href="/post/52772f76.html" title="9.DAC(数字信号转模拟信号)">未读</a></div><a class="article-title" href="/post/52772f76.html" title="9.DAC(数字信号转模拟信号)">9.DAC(数字信号转模拟信号)</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2024-08-15T14:22:06.000Z" title="发表于 2024-08-15 22:22:06" time="2024-08-15 22:22:06">2024-08-15</time><time class="time_hidden" datetime="2024-08-19T01:57:56.531Z" title="更新于 2024-08-19 09:57:56" time="2024-08-19 09:57:56">2024-08-19</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>32单片机</span></a></span></div><div class="content">代码编写DAC配置
+
+Cube IDE代码1234567891011121314/* USER CODE BEGIN PV */uint16_t DAC_Value = 0;	//47行/* USER CODE END PV *///while里，99行DAC_Value++;DAC_Value = DAC_Value % 4095;/* 参数1：指向包含 DAC_HandleTypeDef 结构的指针指定DAC的配置信息* 参数2：选定的 DAC 通道* 参数3：数据对齐方式，参数4：要加载到选定数据保持寄存器中的数据*/HAL_DAC_SetValue(&amp;hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, DAC_Value);HAL_DAC_Start(&amp;hdac,DAC_CHANNEL_1);	//开始DACHAL_Delay(4);
+</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/post/f0812160.html')"><div class="post_cover left"><a href="/post/f0812160.html" title="8.看门狗(WDG)" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/08/18/b00d09a505b4c64d80be90a32eefd8a84d5e1e15395f28e1.jpeg" onerror="this.onerror=null;this.src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="8.看门狗(WDG)" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">32单片机</div><a class="unvisited-post" href="/post/f0812160.html" title="8.看门狗(WDG)">未读</a></div><a class="article-title" href="/post/f0812160.html" title="8.看门狗(WDG)">8.看门狗(WDG)</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2024-08-15T14:05:49.000Z" title="发表于 2024-08-15 22:05:49" time="2024-08-15 22:05:49">2024-08-15</time><time class="time_hidden" datetime="2024-08-22T02:42:36.299Z" title="更新于 2024-08-22 10:42:36" time="2024-08-22 10:42:36">2024-08-22</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>32单片机</span></a></span></div><div class="content">理论防止系统跑飞
+喂狗：让值为0
+分类：独立看门狗(IWDG,0到100喂狗)、窗口看门狗(60到100喂狗)，值(60)，顶值(100)
+代码编写按键喂狗，在规定时间内按按键不会系统复位，超过时间系统复位LED闪烁一下
+独立看门狗配置超过10s，复位
+
+
+
+注意时钟：
+
+
+按键、LED灯配置参考：链接
+Cube IDE代码mian.c
+123456789/* USER CODE BEGIN 2 */	//超过时间看门狗触发复位闪灯	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, 0);	//93行	HAL_Delay(500);	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, 1);/* USER CODE END 2 */if(HAL_GPIO_ReadPin(Key1_GPIO_Port, Key1_Pin) == 0)	//102行,while里	HAL_IWDG_Refresh(&amp;hiwdg);
+</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/post/e8bc8f26.html')"><div class="post_cover left"><a href="/post/e8bc8f26.html" title="7.实时时钟(RTC)" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/08/18/b00d09a505b4c64d80be90a32eefd8a84d5e1e15395f28e1.jpeg" onerror="this.onerror=null;this.src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="7.实时时钟(RTC)" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">32单片机</div><a class="unvisited-post" href="/post/e8bc8f26.html" title="7.实时时钟(RTC)">未读</a></div><a class="article-title" href="/post/e8bc8f26.html" title="7.实时时钟(RTC)">7.实时时钟(RTC)</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2024-08-14T13:12:02.000Z" title="发表于 2024-08-14 21:12:02" time="2024-08-14 21:12:02">2024-08-14</time><time class="time_hidden" datetime="2024-08-19T01:55:57.275Z" title="更新于 2024-08-19 09:55:57" time="2024-08-19 09:55:57">2024-08-19</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>32单片机</span></a></span></div><div class="content">理论使用时钟晶振：32.768KHz(2^{15}^)
+代码编写OLED显示实时时间，串口打印
+晶体、RTC配置晶体配置
+
+
+
+
+RTC配置
+
+串口配置参考：链接
+Cube IDE代码mian.c
+123456789101112131415161718192021222324/* USER CODE BEGIN Includes */#include &quot;string.h&quot;	//27行/* USER CODE END Includes *//* USER CODE BEGIN PV */RTC_TimeTypeDef RTC_Time;	//48行RTC_DateTypeDef RTC_Date;uint8_t RTC_Buff[200];uint8_t RTC_Buff1[200];/* USER CODE END PV *///while里，108行/* 参数1：指向 RTC_HandleTypeDef 结构的指针，该结构包含RTC 的配置信息* 参数2：指向时间结构的指针，参数3：RTC_FORMAT_BIN:二进制数据格式，RTC_FORMAT_BCD:十六进 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/post/f5fba2c3.html')"><div class="post_cover left"><a href="/post/f5fba2c3.html" title="6.IIC通信" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/08/18/b00d09a505b4c64d80be90a32eefd8a84d5e1e15395f28e1.jpeg" onerror="this.onerror=null;this.src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="6.IIC通信" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">32单片机</div><a class="unvisited-post" href="/post/f5fba2c3.html" title="6.IIC通信">未读</a></div><a class="article-title" href="/post/f5fba2c3.html" title="6.IIC通信">6.IIC通信</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2024-08-13T09:53:28.000Z" title="发表于 2024-08-13 17:53:28" time="2024-08-13 17:53:28">2024-08-13</time><time class="time_hidden" datetime="2024-08-19T01:54:15.291Z" title="更新于 2024-08-19 09:54:15" time="2024-08-19 09:54:15">2024-08-19</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>32单片机</span></a></span></div><div class="content">理论参考51单片机IIC理论：链接
+在起始信号后必须发送一个7位从机地址 + 1位方向位，用“0”表示主机发送数据，“1”表示主机接收数据
+代码编写IIC三个模式配置IIC(阻塞模式)配置主要方式
+
+
+IIC(中断模式)配置
+
+IIC(DMA模式)配置
+
+阻塞模式mian.c
+12345678910111213141516/* Reset of all peripherals, Initializes the Flash interface and the Systick. */HAL_Init();	//75行MX_I2C1_Init();/* USER CODE BEGIN Init */OLED_Init();			//初始化OLEDOLED_Clear();OLED_ShowCHinese(0,0,0);	//�?OLED_ShowCHinese(18,0,1);	//�?OLED_ShowCHinese(36,0,2);	//�?OLED_ShowCHinese(54,0,3);	//�?OLED_ShowCHinese(72,0,4);	//�?OLED_ShowCHine ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/post/6928cd3f.html')"><div class="post_cover left"><a href="/post/6928cd3f.html" title="office无法初始化VisualBasic" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/09/17/fdd42994b987c457bd0b57cf4a30a7dd42b1d68097b3d72a.jpeg" onerror="this.onerror=null;this.src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="office无法初始化VisualBasic" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">Windows使用技巧</div><a class="unvisited-post" href="/post/6928cd3f.html" title="office无法初始化VisualBasic">未读</a></div><a class="article-title" href="/post/6928cd3f.html" title="office无法初始化VisualBasic">office无法初始化VisualBasic</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2024-08-12T15:37:39.000Z" title="发表于 2024-08-12 23:37:39" time="2024-08-12 23:37:39">2024-08-12</time><time class="time_hidden" datetime="2024-09-17T09:02:01.488Z" title="更新于 2024-09-17 17:02:01" time="2024-09-17 17:02:01">2024-09-17</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/office%E6%97%A0%E6%B3%95%E5%88%9D%E5%A7%8B%E5%8C%96VisualBasic/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>office无法初始化VisualBasic</span></a></span></div><div class="content">1.打开word，将 无法初始化visual basic 的弹出框先关掉
+2.点击左上角的 文件
+
+
+3.点击帮助栏目下的 选项，然后点击 加载项
+
+
+
+
+
+4.在弹出的com加载项中将所有带√的选项都去掉(此处不是删除，只是将√去掉)，最后点击确定，重新打开文件
+
+
+5.大功告成
+</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/post/bfd038f5.html')"><div class="post_cover left"><a href="/post/bfd038f5.html" title="5.ADC(模拟信号转数字信号)" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/08/18/b00d09a505b4c64d80be90a32eefd8a84d5e1e15395f28e1.jpeg" onerror="this.onerror=null;this.src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="5.ADC(模拟信号转数字信号)" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">32单片机</div><a class="unvisited-post" href="/post/bfd038f5.html" title="5.ADC(模拟信号转数字信号)">未读</a></div><a class="article-title" href="/post/bfd038f5.html" title="5.ADC(模拟信号转数字信号)">5.ADC(模拟信号转数字信号)</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2024-08-10T06:45:10.000Z" title="发表于 2024-08-10 14:45:10" time="2024-08-10 14:45:10">2024-08-10</time><time class="time_hidden" datetime="2024-08-19T01:52:03.866Z" title="更新于 2024-08-19 09:52:03" time="2024-08-19 09:52:03">2024-08-19</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>32单片机</span></a></span></div><div class="content">理论3个ADC控制器
+
+
+转换：单次转换模式、 连续转换模式
+转换时间 &#x3D; 采样时间 + 12.5周期
+&ensp;&ensp;&ensp;&ensp;当ADCCLK(时钟) &#x3D; 14MHz，采样时间为1.5周期，TcoNv(转换时间) &#x3D; 1.5 + 12.5 &#x3D; 14 周期 &#x3D; 1us
+采样精度：12位&#x2F;16位(2^12^ &#x3D; 4096)
+实际电压值 &#x3D; (通道采集的ADC值 * 3.3) / 4096
+数据对齐：左对齐、右对齐
+代码编写电压采集
+ADC、串口一配置ADC(阻塞模式)配置
+
+
+多个通道时，自动扫描会自动打开使能
+
+
+
+修改时钟分频：
+
+
+配置串口一打印采集到的电压值，配置方法参考：链接
+ADC(DMA模式)配置
+
+配置串口一打印采集到的电压值，配置方法参考：链接
+修改时钟分频（和上面相同）
+配置DMA：
+
+
+ADC(中断模式)配置
+
+配置串口一打印采集到的电压值，配置方法参考：链接
+修改时钟分频（和上面相同）
+
+
+
+阻塞模式12345678910111213141516171819202 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/post/f71d0ad2.html')"><div class="post_cover left"><a href="/post/f71d0ad2.html" title="4.定时器(TIMER)" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/08/18/b00d09a505b4c64d80be90a32eefd8a84d5e1e15395f28e1.jpeg" onerror="this.onerror=null;this.src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="4.定时器(TIMER)" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">32单片机</div><a class="unvisited-post" href="/post/f71d0ad2.html" title="4.定时器(TIMER)">未读</a></div><a class="article-title" href="/post/f71d0ad2.html" title="4.定时器(TIMER)">4.定时器(TIMER)</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2024-08-06T08:19:27.000Z" title="发表于 2024-08-06 16:19:27" time="2024-08-06 16:19:27">2024-08-06</time><time class="time_hidden" datetime="2024-08-19T01:45:46.227Z" title="更新于 2024-08-19 09:45:46" time="2024-08-19 09:45:46">2024-08-19</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>32单片机</span></a></span></div><div class="content">理论预分频寄存器(TIMx_PSC)：由于时钟源为：72MHz，T &#x3D; 1&#x2F;f &#x3D; 1&#x2F;72MHz，由于不好计算周期时间，则需要分频，若分72则T &#x3D; 1&#x2F;1MHz &#x3D; 1us(1MHz &#x3D; 一百万秒)
+计数方式：向上(递增到某个数触发中断)、向下(递减到某一个数触发中断)、中心计数(递增到某一个数触发中断，再递减到某一个数触发中断)
+比较值(参考：链接)：
+&ensp;&ensp;&ensp;&ensp;PWM1模式：若计数值小于有效值则高电平，计数值大于有效值则低电平，可以控制比较值来调节占空比
+&ensp;&ensp;&ensp;&ensp;PWM2模式：与PWM1模式相反，计数值小于有效值则低电平，大于有效值则高电平
+复用：Pin脚本身除了支持普通GPIO功能之外，还支持别的功能(使用别的功能就叫复用)
+重映射：Pin脚本身不支持这些功能，配置重映射寄存器，使其具备别的功能
+定时器分类型号：STM32F103ZET6
+基本定时器：TIM6、TIM7
+
+
+通用定时器：TIM2~TIM5
+
+
+高级定时器 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/post/2c4c3bc3.html')"><div class="post_cover left"><a href="/post/2c4c3bc3.html" title="3.串口(UART)" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/08/18/b00d09a505b4c64d80be90a32eefd8a84d5e1e15395f28e1.jpeg" onerror="this.onerror=null;this.src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="3.串口(UART)" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">32单片机</div><a class="unvisited-post" href="/post/2c4c3bc3.html" title="3.串口(UART)">未读</a></div><a class="article-title" href="/post/2c4c3bc3.html" title="3.串口(UART)">3.串口(UART)</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2024-08-05T10:02:46.000Z" title="发表于 2024-08-05 18:02:46" time="2024-08-05 18:02:46">2024-08-05</time><time class="time_hidden" datetime="2024-09-13T03:08:21.970Z" title="更新于 2024-09-13 11:08:21" time="2024-09-13 11:08:21">2024-09-13</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>32单片机</span></a></span></div><div class="content">理论串口理论部分可看51部分：链接
+数据帧 &#x3D; 帧头(2字节，例如AA、BB) + 数据长度（2字节）+ 数据 + CRC16校验（2字节） + 帧尾（2字节）
+回调函数在：stm32f1xx_it.c里找对应的函数转进入里面找
+中断函数：stm32f1xx_hal_uart.c（别的只是uart不同）
+代码编写串口一发送命令控制LED灯(PB5、PE5)
+LED灯、串口、串口打印浮点数据、串口重定向配置LED灯配置请看：链接
+串口配置：
+
+
+配置串口中断NVIC(嵌套向量中断控制器)
+
+
+配置DMA：
+
+
+Cube IDE中串口打印浮点数据配置方法(参考)：进入“Project→Properties”；显示界面如下。按照图片中的设置完成即可！
+
+
+串口重定向配置：
+12345uint8_t u_buf[256];	//usart.c,24行#include &lt;stdio.h&gt;	//usart.h,32行extern uint8_t u_buf[256];	//usart.h，38行#define printf(...)  HAL_UART_Transmit(&a ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/post/b94c2cf2.html')"><div class="post_cover left"><a href="/post/b94c2cf2.html" title="完美解决443端口被vmware占用的问题" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/09/17/fdd42994b987c457bd0b57cf4a30a7dd42b1d68097b3d72a.jpeg" onerror="this.onerror=null;this.src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="完美解决443端口被vmware占用的问题" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">Windows使用技巧</div><a class="unvisited-post" href="/post/b94c2cf2.html" title="完美解决443端口被vmware占用的问题">未读</a></div><a class="article-title" href="/post/b94c2cf2.html" title="完美解决443端口被vmware占用的问题">完美解决443端口被vmware占用的问题</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2024-08-04T14:54:51.000Z" title="发表于 2024-08-04 22:54:51" time="2024-08-04 22:54:51">2024-08-04</time><time class="time_hidden" datetime="2024-09-17T09:01:53.573Z" title="更新于 2024-09-17 17:01:53" time="2024-09-17 17:01:53">2024-09-17</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%A7%A3%E5%86%B3443%E7%AB%AF%E5%8F%A3%E8%A2%ABvmware%E5%8D%A0%E7%94%A8/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>解决443端口被vmware占用</span></a></span></div><div class="content"> 第一步，打开虚拟机，找到首选项
+
+
+第二步，选择共享虚拟机，修改端口号，保存
+
+
+</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="anzhiyufont anzhiyu-icon-chevron-left fa-fw" style="font-weight: inherit; font-size: 1rem;"></i><div class="pagination_tips_prev">上页</div></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/#content-inner">11</a><a class="extend next" rel="next" href="/page/3/#content-inner"><div class="pagination_tips_next">下页</div><i style="font-weight: inherit; font-size: 1rem;" class="anzhiyufont anzhiyu-icon-chevron-right fa-fw"></i></a><div class="toPageGroup"><input id="toPageText" oninput="value=value.replace(/[^0-9]/g,'')" maxlength="3" onkeyup="this.value=this.value.replace(/[^u4e00-u9fa5w]/g,'')" aria-label="toPage"><a id="toPageButton" onclick="anzhiyu.toPage()"><i class="anzhiyufont anzhiyu-icon-angles-right" style="font-weight: inherit; font-size: 1rem;"></i></a></div></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://img.picgo.net/2024/09/15/28d68d1f6c609186e91254a4469b42e6546bf877eb6a9244.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description">分享科技与生活</div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">星仔</h1><div class="author-info__desc">珍惜当下 不负此生</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://juejin.cn/user/745920887002011/posts" target="_blank" title="稀土掘金"><i class="anzhiyufont anzhiyu-icon-link"></i></a><a class="social-icon faa-parent animated-hover" href="https://www.bilibili.com/" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://img.picgo.net/2024/08/19/7769745c3a8abda4b76a2c8767c011c4ccc3bcc6d25362ee.webp) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://img.picgo.net/2024/08/19/7229edbc2326d9f1a077d9f251d15dfc93e3d4fe574b7ca8.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget"><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 1.05rem;">32单片机<sup>12</sup></a><a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 1.05rem;">51单片机<sup>9</sup></a><a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 1.05rem;">C语言<sup>13</sup></a><a href="/tags/GitHub-Picgo%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/" style="font-size: 1.05rem;">GitHub+Picgo图片上传<sup>1</sup></a><a href="/tags/GitHub%E5%90%8C%E6%AD%A5gitee%E5%B9%B6%E9%83%A8%E7%BD%B2/" style="font-size: 1.05rem;">GitHub同步gitee并部署<sup>1</sup></a><a href="/tags/HurricaneDNS%E8%A7%A3%E6%9E%90%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem;">HurricaneDNS解析博客<sup>1</sup></a><a href="/tags/IDE%E4%B8%8EMX%E5%BA%93%E6%96%87%E4%BB%B6%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AE%BE%E7%BD%AE/" style="font-size: 1.05rem;">IDE与MX库文件安装路径自定义设置<sup>1</sup></a><a href="/tags/Java%E8%AF%AD%E8%A8%80/" style="font-size: 1.05rem;">Java语言<sup>24</sup></a><a href="/tags/RT-Thread/" style="font-size: 1.05rem;">RT-Thread<sup>5</sup></a><a href="/tags/ST-LINK%E6%9C%AA%E8%83%BD%E4%B8%B2%E5%8F%A3keil%E8%AF%86%E5%88%AB%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" style="font-size: 1.05rem;">ST-LINK未能串口keil识别解决方案<sup>1</sup></a><a href="/tags/STM32CubeIDE%E4%BB%A3%E7%A0%81%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F/" style="font-size: 1.05rem;">STM32CubeIDE代码字体大小<sup>1</sup></a><a href="/tags/office%E6%97%A0%E6%B3%95%E5%88%9D%E5%A7%8B%E5%8C%96VisualBasic/" style="font-size: 1.05rem;">office无法初始化VisualBasic<sup>1</sup></a><a href="/tags/ubuntu%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" style="font-size: 1.05rem;">ubuntu相关设置<sup>1</sup></a><a href="/tags/win10%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E5%8F%98%E7%99%BD/" style="font-size: 1.05rem;">win10桌面图标变白<sup>1</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/" style="font-size: 1.05rem;">个人博客迁移<sup>1</sup></a><a href="/tags/%E4%BA%91%E5%9B%BE%E5%BA%8A/" style="font-size: 1.05rem;">云图床<sup>1</sup></a><a href="/tags/%E5%8A%A0%E9%80%9Fgithub%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE/" style="font-size: 1.05rem;">加速github博客访问<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" style="font-size: 1.05rem;">博客使用手册<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E5%8A%A0%E9%80%9F%E5%9B%BE%E5%BA%8A/" style="font-size: 1.05rem;">博客加速图床<sup>1</sup></a><a href="/tags/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/" style="font-size: 1.05rem;">图片压缩在线工具<sup>1</sup></a><a href="/tags/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/" style="font-size: 1.05rem;">小狼毫输入法<sup>1</sup></a><a href="/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 1.05rem;">插件<sup>1</sup></a><a href="/tags/%E6%94%BF%E6%B2%BB/" style="font-size: 1.05rem;">政治<sup>14</sup></a><a href="/tags/%E8%A7%A3%E5%86%B3443%E7%AB%AF%E5%8F%A3%E8%A2%ABvmware%E5%8D%A0%E7%94%A8/" style="font-size: 1.05rem;">解决443端口被vmware占用<sup>1</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E4%B8%8E%E5%9F%BA%E7%A1%80/" style="font-size: 1.05rem;">计算机程序与基础<sup>1</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2/" style="font-size: 1.05rem;">资源搜索<sup>1</sup></a></div></div><hr/><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">九月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">9</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/08/"><span class="card-archive-list-date">八月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">24</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">七月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">四月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">二月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/><div class="card-webinfo"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-file-lines"></i><div class="item-name">文章总数 :</div></div><div class="item-count">101</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-stopwatch"></i><div class="item-name">建站天数 :</div></div><div class="item-count" id="runtimeshow" data-publishDate="2023-07-11T16:00:00.000Z"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2024 By <a class="footer-bar-link" href="/" title="星仔" target="_blank">星仔</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">101</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">10</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://juejin.cn/user/745920887002011/posts" title="稀土掘金"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="/img/favicon.ico" alt="稀土掘金"/><span class="back-menu-item-text">稀土掘金</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://www.bilibili.com/" title="哔哩哔哩"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="/img/favicon.ico" alt="哔哩哔哩"/><span class="back-menu-item-text">哔哩哔哩</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">资源下载</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://www.sscha.com/" title="商查查"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="商查查"/><span class="back-menu-item-text">商查查</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 小伙伴</span></a></li><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener" href="https://link3.cc/xinzai_x"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 个人资源</span></a></li><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener" href="http://ainm.cc/c/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐网</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 常用文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="https://d3iiz.top/post/1f293ccb"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 资源搜索</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 0.88rem;">32单片机<sup>12</sup></a><a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 0.88rem;">51单片机<sup>9</sup></a><a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 0.88rem;">C语言<sup>13</sup></a><a href="/tags/GitHub-Picgo%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/" style="font-size: 0.88rem;">GitHub+Picgo图片上传<sup>1</sup></a><a href="/tags/GitHub%E5%90%8C%E6%AD%A5gitee%E5%B9%B6%E9%83%A8%E7%BD%B2/" style="font-size: 0.88rem;">GitHub同步gitee并部署<sup>1</sup></a><a href="/tags/HurricaneDNS%E8%A7%A3%E6%9E%90%E5%8D%9A%E5%AE%A2/" style="font-size: 0.88rem;">HurricaneDNS解析博客<sup>1</sup></a><a href="/tags/IDE%E4%B8%8EMX%E5%BA%93%E6%96%87%E4%BB%B6%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AE%BE%E7%BD%AE/" style="font-size: 0.88rem;">IDE与MX库文件安装路径自定义设置<sup>1</sup></a><a href="/tags/Java%E8%AF%AD%E8%A8%80/" style="font-size: 0.88rem;">Java语言<sup>24</sup></a><a href="/tags/RT-Thread/" style="font-size: 0.88rem;">RT-Thread<sup>5</sup></a><a href="/tags/ST-LINK%E6%9C%AA%E8%83%BD%E4%B8%B2%E5%8F%A3keil%E8%AF%86%E5%88%AB%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" style="font-size: 0.88rem;">ST-LINK未能串口keil识别解决方案<sup>1</sup></a><a href="/tags/STM32CubeIDE%E4%BB%A3%E7%A0%81%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F/" style="font-size: 0.88rem;">STM32CubeIDE代码字体大小<sup>1</sup></a><a href="/tags/office%E6%97%A0%E6%B3%95%E5%88%9D%E5%A7%8B%E5%8C%96VisualBasic/" style="font-size: 0.88rem;">office无法初始化VisualBasic<sup>1</sup></a><a href="/tags/ubuntu%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" style="font-size: 0.88rem;">ubuntu相关设置<sup>1</sup></a><a href="/tags/win10%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E5%8F%98%E7%99%BD/" style="font-size: 0.88rem;">win10桌面图标变白<sup>1</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/" style="font-size: 0.88rem;">个人博客迁移<sup>1</sup></a><a href="/tags/%E4%BA%91%E5%9B%BE%E5%BA%8A/" style="font-size: 0.88rem;">云图床<sup>1</sup></a><a href="/tags/%E5%8A%A0%E9%80%9Fgithub%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE/" style="font-size: 0.88rem;">加速github博客访问<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" style="font-size: 0.88rem;">博客使用手册<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E5%8A%A0%E9%80%9F%E5%9B%BE%E5%BA%8A/" style="font-size: 0.88rem;">博客加速图床<sup>1</sup></a><a href="/tags/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/" style="font-size: 0.88rem;">图片压缩在线工具<sup>1</sup></a><a href="/tags/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/" style="font-size: 0.88rem;">小狼毫输入法<sup>1</sup></a><a href="/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 0.88rem;">插件<sup>1</sup></a><a href="/tags/%E6%94%BF%E6%B2%BB/" style="font-size: 0.88rem;">政治<sup>14</sup></a><a href="/tags/%E8%A7%A3%E5%86%B3443%E7%AB%AF%E5%8F%A3%E8%A2%ABvmware%E5%8D%A0%E7%94%A8/" style="font-size: 0.88rem;">解决443端口被vmware占用<sup>1</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E4%B8%8E%E5%9F%BA%E7%A1%80/" style="font-size: 0.88rem;">计算机程序与基础<sup>1</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2/" style="font-size: 0.88rem;">资源搜索<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 星仔 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="anzhiyu"></div><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script async src="https://www.iconfont.cn/collections/detail?cid=44481"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
 })
 
-document.querySelectorAll('script[data-pjax]').forEach(item => {
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
     const newScript = document.createElement('script')
     const content = item.text || item.textContent || item.innerHTML || ""
     Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
     newScript.appendChild(document.createTextNode(content))
     item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
 })
 
-document.addEventListener('pjax:complete', () => {
-    window.refreshFn()
-
-    document.querySelectorAll('script[data-pjax]').forEach(item => {
-        const newScript = document.createElement('script')
-        const content = item.text || item.textContent || item.innerHTML || ""
-        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
-        newScript.appendChild(document.createTextNode(content))
-        item.parentNode.replaceChild(newScript, item)
-    })
-
-    GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
-
-})
-
-document.addEventListener('pjax:error', (e) => {
-    if (e.request.status === 404) {
-        pjax.loadUrl('/404.html')
-    }
-})</script><!-- google adsense--><!-- search--><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="solitude fa-solid fa-xmark"></i></button></nav><div class="search-wrap"><div class="search-box"><input class="search-box-input" id="search-input" type="text" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off" placeholder="输入关键词快速查找"></div><div id="search-results"><div id="search-hits"></div></div><div id="search-pagination"></div><div id="search-tips"></div></div></div><div id="search-mask"></div></div><script src="/js/search/local.js?v=2.0.13"></script><!-- Tianli-Talk--><!-- music--></body></html><script>const posts=["post/e5f15f94.html","post/49f85af0.html","post/e9f3074a.html","post/a1db912f.html","post/54659a9b.html","post/8a87b27f.html","post/96c26968.html","post/13e71a6f.html","post/520176db.html","post/bd740709.html","post/acb77072.html","post/52772f76.html","post/f0812160.html","post/e8bc8f26.html","post/f5fba2c3.html","post/6928cd3f.html","post/bfd038f5.html","post/f71d0ad2.html","post/2c4c3bc3.html","post/b94c2cf2.html","post/a06b5fda.html","post/3e643b17.html","post/b7e3ace9.html","post/eb0bc4a3.html","post/a3ad0b3a.html","post/43a9b762.html","post/63d3dd68.html","post/c4236caa.html","post/32e9e993.html","post/362c3b0.html","post/adb202b7.html","post/99cd7d8.html","post/93c966f3.html","post/8212ff63.html","post/f5fba2c3.html","post/f736596e.html","post/2e5216dd.html","post/81b224e1.html","post/74750b31.html","post/f8f1fb54.html","post/c6b2a2fd.html","post/def84ee6.html","post/1f293ccb.html","post/79959306.html","post/5f6e69ef.html","post/d20e58f5.html","post/6c3f8114.html","post/2ec6e870.html","post/df95841.html","post/f1dbdc9f.html","post/5883a4af.html","post/fbc0ae86.html","post/3e1167ea.html","post/8f9052f9.html","post/a24af109.html","post/9e25cba9.html","post/a920af81.html","post/fe7ab1f0.html","post/76fa8c0d.html","post/86a3300e.html","post/6749388c.html","post/43a94ea1.html","post/ded373.html","post/75e75572.html","post/6a2c2bbd.html","post/5c2f197a.html","post/4a789563.html","post/c46a5cd3.html","post/1b3fd879.html","post/26831432.html","post/3cc3da73.html","post/fbc82303.html","post/ca0fcd03.html","post/8c9aed93.html","post/66861d4a.html","post/de801b7c.html","post/ee96f7a4.html","post/a8259cf6.html","post/2d17b932.html","post/57da986d.html","post/a0b1b02e.html","post/72b1c7b1.html","post/17bf8c68.html","post/7821492f.html","post/cf0c504a.html","post/e2246be5.html","post/9b06d854.html","post/5bdb5548.html","post/bec635c1.html","post/3ec1fd44.html","post/b70ae4e7.html","post/804ae251.html","post/df718222.html","post/3b48d11a.html","post/7422213c.html","post/6271a51c.html","post/6f76074c.html","post/6ac19130.html","post/8212f318.html","post/cb87841d.html","post/b2041fc0.html"];function toRandomPost(){ pjax.loadUrl(GLOBAL_CONFIG.root+posts[Math.floor(Math.random()*posts.length)]); }</script>
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
