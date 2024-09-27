@@ -6,7 +6,7 @@
   <link href="https://d3iiz.top/atom.xml" rel="self"/>
   
   <link href="https://d3iiz.top/"/>
-  <updated>2024-09-24T11:06:45.052Z</updated>
+  <updated>2024-09-27T02:56:06.823Z</updated>
   <id>https://d3iiz.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://d3iiz.top/post/bcf1b676.html"/>
     <id>https://d3iiz.top/post/bcf1b676.html</id>
     <published>2024-09-24T10:44:26.000Z</published>
-    <updated>2024-09-24T11:06:45.052Z</updated>
+    <updated>2024-09-27T02:56:06.823Z</updated>
     
     <content type="html"><![CDATA[<h1 id="npm-install-g-vue-cli报错错"><a href="#npm-install-g-vue-cli报错错" class="headerlink" title="npm install-g@vue&#x2F;cli报错错"></a>npm install-g@vue&#x2F;cli报错错</h1><p>错误如图：</p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e8232aa1d1334a01ae08eb07f65ce8cb~tplv-k3u1fbpfcp-watermark.image?" alt="错误视图" style="zoom:50%;"><p>解决方法：修改文件夹权限</p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c3147276b51d442d922dc99cb7902db5~tplv-k3u1fbpfcp-watermark.image?" alt="2.WebP" style="zoom:50%;"><p>按照途中顺序，将上图三个文件夹修改权限，修改完即可</p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/64155e979e7840f8a0b5097d272d2dae~tplv-k3u1fbpfcp-watermark.image?" alt="修改权限" style="zoom:50%;">]]></content>
     
