@@ -6,7 +6,7 @@
   <link href="https://d3iiz.top/atom.xml" rel="self"/>
   
   <link href="https://d3iiz.top/"/>
-  <updated>2024-09-28T05:50:18.216Z</updated>
+  <updated>2024-09-28T08:03:23.164Z</updated>
   <id>https://d3iiz.top/</id>
   
   <author>
@@ -21,8 +21,18 @@
     <link href="https://d3iiz.top/post/288a7e13.html"/>
     <id>https://d3iiz.top/post/288a7e13.html</id>
     <published>2024-09-28T05:37:04.000Z</published>
-    <updated>2024-09-28T05:50:18.216Z</updated>
+    <updated>2024-09-28T08:03:23.164Z</updated>
     
+    <content type="html"><![CDATA[<blockquote><p>终端打开：一个窗口打开第二个：<code>Ctrl+Shift+t</code>，不同串口打开：<code>Ctrl+Alt+t</code></p></blockquote><h1 id="文件和目录操作"><a href="#文件和目录操作" class="headerlink" title="文件和目录操作"></a><center>文件和目录操作</center></h1><blockquote><p>查看文件</p></blockquote><ul><li>查看当前目录里面内容：<code>ls</code></li><li>查看当前目录里面内容(详细信息)：<code>ls -l</code></li><li>查看当前目录里面内容(包括隐藏)：<code>ls -a</code></li><li>查看系统加载哪些驱动：<code>lsmod</code></li><li>查看系统有哪些usb设备：<code>lsusb</code></li></ul><blockquote><p>文件夹操作</p></blockquote><ul><li>进入哪个文件夹(不知道有哪些需先查看)：<code>cd 文件夹名</code>，连续进入：<code>cd 文件夹名1/文件夹名2</code></li><li>返回上一级：<code>cd ..</code></li><li>切换到系统根目录：<code>cd /</code></li><li>切换用户主目录：：<code>cd ~</code></li><li>返回当前文件夹所在路径：<code>pwd</code></li><li>创建文件夹：<code>mkdir 文件夹名</code></li></ul><blockquote><p>文件操作</p></blockquote><ul><li>新建一个文件：<code>touch 文件.后缀名</code></li><li>删除文件：<code>rm 文件.后缀名</code>，删除文件夹中后缀名全部文件：<code>rm *.后缀名</code></li><li>复制文件：<code>cp 文件名.后缀名 路径</code></li><li>移动文件：<code>mv 文件名.后缀名 路径</code></li><li>查看文件中内容：<code>cat 文件名.后缀名</code></li></ul><h1 id="管理员"><a href="#管理员" class="headerlink" title="管理员"></a><center>管理员</center></h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;终端打开：一个窗口打开第二个：&lt;code&gt;Ctrl+Shift+t&lt;/code&gt;，不同串口打开：&lt;code&gt;Ctrl+Alt+t&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;文件和目录操作&quot;&gt;&lt;a href=&quot;#文件和目录操作</summary>
+      
     
     
     
@@ -226,7 +236,7 @@
     <link href="https://d3iiz.top/post/96c26968.html"/>
     <id>https://d3iiz.top/post/96c26968.html</id>
     <published>2024-09-12T05:42:36.000Z</published>
-    <updated>2024-09-15T11:40:12.641Z</updated>
+    <updated>2024-09-28T07:02:23.600Z</updated>
     
     <content type="html"><![CDATA[<h1 id="设置Ubuntu中文界面"><a href="#设置Ubuntu中文界面" class="headerlink" title="设置Ubuntu中文界面"></a><center>设置Ubuntu中文界面</center></h1><p>进入语言设置</p><img src="https://s2.loli.net/2024/09/12/CsSj7RbPhx2HGwD.webp" alt="进入语言设置" style="zoom:50%;"><p>进入语言下载，打勾简体中文，点击应用下载</p><img src="https://s2.loli.net/2024/09/12/WTuOsodlyKNDGf3.webp" alt="下载语言包" style="zoom: 67%;"><p>更换中文语言</p><img src="https://s2.loli.net/2024/09/12/SFU2CkZPBqYuKs4.webp" alt="更换中文语言" style="zoom:50%;"><p>重启更新语言，输入密码重启</p><img src="https://s2.loli.net/2024/09/12/PQja9sUpwTcIdyJ.webp" alt="更新语言" style="zoom:50%;"><p>根据需求选择，推荐保留就的名称</p><img src="https://s2.loli.net/2024/09/12/H7DRydPuovct6mT.webp" alt="自行选择对应" style="zoom:60%;"><h1 id="设置Ubuntu字体大小"><a href="#设置Ubuntu字体大小" class="headerlink" title="设置Ubuntu字体大小"></a><center>设置Ubuntu字体大小</center></h1><p>打开终端，安装gnome-tweaks</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install gnome-tweaks</span><br></pre></td></tr></table></figure><p>安装完成之后，输入</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gnome-tweaks</span><br></pre></td></tr></table></figure><p>根据需求调整字体大小</p><img src="https://s2.loli.net/2024/09/12/6AnpSRgylNv3JKT.webp" alt="调整字体大小" style="zoom:50%;"><h1 id="设置Ubuntu鼠标大小"><a href="#设置Ubuntu鼠标大小" class="headerlink" title="设置Ubuntu鼠标大小"></a><center>设置Ubuntu鼠标大小</center></h1><p>进入设置，按照图片指示按需修改</p><img src="https://s2.loli.net/2024/09/12/CiwO4hgvVLcIHop.webp" alt="修改鼠标大小" style="zoom:50%;">]]></content>
     
