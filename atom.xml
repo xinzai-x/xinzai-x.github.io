@@ -6,7 +6,7 @@
   <link href="https://d3iiz.top/atom.xml" rel="self"/>
   
   <link href="https://d3iiz.top/"/>
-  <updated>2024-09-28T08:03:23.164Z</updated>
+  <updated>2024-09-29T13:54:08.533Z</updated>
   <id>https://d3iiz.top/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://d3iiz.top/post/288a7e13.html"/>
     <id>https://d3iiz.top/post/288a7e13.html</id>
     <published>2024-09-28T05:37:04.000Z</published>
-    <updated>2024-09-28T08:03:23.164Z</updated>
+    <updated>2024-09-29T13:54:08.533Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>终端打开：一个窗口打开第二个：<code>Ctrl+Shift+t</code>，不同串口打开：<code>Ctrl+Alt+t</code></p></blockquote><h1 id="文件和目录操作"><a href="#文件和目录操作" class="headerlink" title="文件和目录操作"></a><center>文件和目录操作</center></h1><blockquote><p>查看文件</p></blockquote><ul><li>查看当前目录里面内容：<code>ls</code></li><li>查看当前目录里面内容(详细信息)：<code>ls -l</code></li><li>查看当前目录里面内容(包括隐藏)：<code>ls -a</code></li><li>查看系统加载哪些驱动：<code>lsmod</code></li><li>查看系统有哪些usb设备：<code>lsusb</code></li></ul><blockquote><p>文件夹操作</p></blockquote><ul><li>进入哪个文件夹(不知道有哪些需先查看)：<code>cd 文件夹名</code>，连续进入：<code>cd 文件夹名1/文件夹名2</code></li><li>返回上一级：<code>cd ..</code></li><li>切换到系统根目录：<code>cd /</code></li><li>切换用户主目录：：<code>cd ~</code></li><li>返回当前文件夹所在路径：<code>pwd</code></li><li>创建文件夹：<code>mkdir 文件夹名</code></li></ul><blockquote><p>文件操作</p></blockquote><ul><li>新建一个文件：<code>touch 文件.后缀名</code></li><li>删除文件：<code>rm 文件.后缀名</code>，删除文件夹中后缀名全部文件：<code>rm *.后缀名</code></li><li>复制文件：<code>cp 文件名.后缀名 路径</code></li><li>移动文件：<code>mv 文件名.后缀名 路径</code></li><li>查看文件中内容：<code>cat 文件名.后缀名</code></li></ul><h1 id="管理员"><a href="#管理员" class="headerlink" title="管理员"></a><center>管理员</center></h1>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>终端打开：一个窗口打开第二个：<code>Ctrl+Shift+t</code>，不同串口打开：<code>Ctrl+Alt+t</code></p></blockquote><h1 id="文件和目录操作"><a href="#文件和目录操作" class="headerlink" title="文件和目录操作"></a><center>文件和目录操作</center></h1><blockquote><p>查看文件</p></blockquote><ul><li>查看当前目录里面内容：<code>ls</code></li><li>查看当前目录里面内容(详细信息)：<code>ls -l</code></li><li>查看当前目录里面内容(包括隐藏)：<code>ls -a</code></li><li>查看系统加载哪些驱动：<code>lsmod</code></li><li>查看系统有哪些usb设备：<code>lsusb</code></li></ul><blockquote><p>文件夹操作</p></blockquote><ul><li>进入哪个文件夹(不知道有哪些需先查看)：<code>cd 文件夹名</code>，连续进入：<code>cd 文件夹名1/文件夹名2</code></li><li>返回上一级：<code>cd ..</code></li><li>切换到系统根目录：<code>cd /</code></li><li>切换用户主目录：：<code>cd ~</code></li><li>返回当前文件夹所在路径：<code>pwd</code></li><li>创建文件夹：<code>mkdir 文件夹名</code></li></ul><blockquote><p>文件操作</p></blockquote><ul><li>新建一个文件：<code>touch 文件.后缀名</code></li><li>删除文件：<code>rm 文件.后缀名</code>，删除文件夹中后缀名全部文件：<code>rm *.后缀名</code></li><li>复制文件：<code>cp 文件名.后缀名 路径</code></li><li>移动文件：<code>mv 文件名.后缀名 路径</code></li><li>查看文件中内容：<code>cat 文件名.后缀名</code></li></ul><h1 id="管理员"><a href="#管理员" class="headerlink" title="管理员"></a><center>管理员</center></h1><p>管理员权限：<code>sudo + 操作</code></p>]]></content>
     
     
       
