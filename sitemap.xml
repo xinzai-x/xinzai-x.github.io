@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://d3iiz.top/link/index.html</loc>
+    <loc>https://d3iiz.top/links/index.html</loc>
     
     <lastmod>2024-10-08</lastmod>
     
@@ -819,6 +819,13 @@
   </url>
   
   <url>
+    <loc>https://d3iiz.top/tags/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2024-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://d3iiz.top/tags/%E4%BA%91%E5%9B%BE%E5%BA%8A/</loc>
     <lastmod>2024-10-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -826,14 +833,14 @@
   </url>
   
   <url>
-    <loc>https://d3iiz.top/tags/%E6%8F%92%E4%BB%B6/</loc>
+    <loc>https://d3iiz.top/tags/%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2/</loc>
     <lastmod>2024-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://d3iiz.top/tags/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/</loc>
+    <loc>https://d3iiz.top/tags/%E6%8F%92%E4%BB%B6/</loc>
     <lastmod>2024-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -854,14 +861,21 @@
   </url>
   
   <url>
-    <loc>https://d3iiz.top/tags/%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2/</loc>
+    <loc>https://d3iiz.top/tags/ubuntu%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</loc>
     <lastmod>2024-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://d3iiz.top/tags/ubuntu%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</loc>
+    <loc>https://d3iiz.top/tags/%E5%8D%9A%E5%AE%A2CDN%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2024-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://d3iiz.top/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%9B%B8%E5%85%B3/</loc>
     <lastmod>2024-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -876,20 +890,6 @@
   
   <url>
     <loc>https://d3iiz.top/tags/%E8%90%A5%E4%B8%9A%E6%89%A7%E7%85%A7/</loc>
-    <lastmod>2024-10-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://d3iiz.top/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%9B%B8%E5%85%B3/</loc>
-    <lastmod>2024-10-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://d3iiz.top/tags/%E5%8D%9A%E5%AE%A2CDN%E8%A7%A3%E6%9E%90/</loc>
     <lastmod>2024-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -917,14 +917,14 @@
   </url>
   
   <url>
-    <loc>https://d3iiz.top/tags/Linux/</loc>
+    <loc>https://d3iiz.top/tags/RT-Thread/</loc>
     <lastmod>2024-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://d3iiz.top/tags/RT-Thread/</loc>
+    <loc>https://d3iiz.top/tags/Linux/</loc>
     <lastmod>2024-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -996,14 +996,14 @@
   </url>
   
   <url>
-    <loc>https://d3iiz.top/categories/Linux/</loc>
+    <loc>https://d3iiz.top/categories/RT-Thread/</loc>
     <lastmod>2024-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://d3iiz.top/categories/RT-Thread/</loc>
+    <loc>https://d3iiz.top/categories/Linux/</loc>
     <lastmod>2024-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
