@@ -3060,7 +3060,7 @@ span.tags-punctuation i {
   line-height: 1;
 }
 #aside-content .card-widget.card-platform {
-  background: var(--efu-blue);
+  background: var(--efu-green);
   display: flex;
   justify-content: center;
   align-content: center;
