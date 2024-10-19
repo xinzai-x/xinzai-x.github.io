@@ -3,11 +3,11 @@
   <title>星仔极客</title>
   
   <subtitle>珍惜当下 不负此生</subtitle>
-  <link href="https://d3iiz.top/atom.xml" rel="self"/>
+  <link href="https://xinzaigeek.68565200.xyz/atom.xml" rel="self"/>
   
-  <link href="https://d3iiz.top/"/>
-  <updated>2024-10-13T14:36:10.102Z</updated>
-  <id>https://d3iiz.top/</id>
+  <link href="https://xinzaigeek.68565200.xyz/"/>
+  <updated>2024-10-19T09:09:06.562Z</updated>
+  <id>https://xinzaigeek.68565200.xyz/</id>
   
   <author>
     <name>星仔极客</name>
@@ -17,13 +17,49 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>2.系统编译</title>
-    <link href="https://d3iiz.top/post/dd99ee0d.html"/>
-    <id>https://d3iiz.top/post/dd99ee0d.html</id>
-    <published>2024-10-13T03:18:49.000Z</published>
-    <updated>2024-10-13T14:36:10.102Z</updated>
+    <title>MySQL</title>
+    <link href="https://xinzaigeek.68565200.xyz/post/c24675b4.html"/>
+    <id>https://xinzaigeek.68565200.xyz/post/c24675b4.html</id>
+    <published>2024-10-19T06:36:15.000Z</published>
+    <updated>2024-10-19T09:09:06.562Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Uboot"><a href="#Uboot" class="headerlink" title="Uboot"></a>Uboot</h1><p>安装编译必用工具：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install lzop  libncurses5-dev u-boot-tools</span><br></pre></td></tr></table></figure><p>创建文件夹，创建完成之后，将Uboot源代码复制复制到Linux中(FTP)，解压文件，编译文件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">mkdir linux</span><br><span class="line">cd linux</span><br><span class="line">mkdir uboot</span><br><span class="line"></span><br><span class="line">//解压</span><br><span class="line">tar -xvf uboot-imx-rel_imx_4.1.15_2.1.0_ga_20200512.tar.gz</span><br><span class="line"></span><br><span class="line">//编译文件</span><br><span class="line">./create.sh</span><br></pre></td></tr></table></figure><p>u-boot.bin和u-boot.imx的区别：<a href="https://www.cnblogs.com/fah936861121/articles/7248430.html">参考链接</a></p><h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><blockquote><p>汇编部分</p></blockquote><p>关闭：中断、看门狗、cache、mmu… –&gt; 进入SVC模式 –&gt; 基本硬件初始化(时钟、串口、flash、内存) –&gt; 初始化堆栈 –&gt; 自搬移(将汇编中的C语言从flash中移到内存中)</p><blockquote><p>C语言部分</p></blockquote><p>大部分硬件初始化(网卡、USB、屏幕….) –&gt; 把内核搬到内存</p><h2 id="Uboot源码简要分析"><a href="#Uboot源码简要分析" class="headerlink" title="Uboot源码简要分析"></a>Uboot源码简要分析</h2><h3 id="汇编部分"><a href="#汇编部分" class="headerlink" title="汇编部分"></a>汇编部分</h3><blockquote><p>在项目中arch&#x2F;arm&#x2F;lib&#x2F;vectors.S，开始运行之后跳转到reset</p></blockquote><table><thead><tr><th align="center"><img src="https://s2.loli.net/2024/10/13/2WPMVwXc39t5ZiH.png" alt="源码分析1" style="zoom:40%;"></th></tr></thead></table><blockquote><p>arch&#x2F;arm&#x2F;cpu&#x2F;armv7&#x2F;start.S，找到开始文件(start.S)，跳转到<code>cpu_init_cp15</code>、<code>cpu_init_crit</code>、<code>_main</code></p></blockquote><table><thead><tr><th><img src="https://s2.loli.net/2024/10/13/YuSVxEvk1qdBOAj.png" alt="源码分析2" style="zoom:40%;"></th></tr></thead></table><blockquote><p>在start.S文件内，找到<code>cpu_init_cp15</code>、<code>cpu_init_crit</code>(跳转到cpu_init_crit)</p></blockquote><table><thead><tr><th align="center"><img src="https://s2.loli.net/2024/10/13/ZhrOB1JWySUxwA6.webp" alt="源码分析3" style="zoom:50%;"></th></tr></thead><tbody><tr><td align="center"><img src="https://s2.loli.net/2024/10/13/lsMF6qYR23mBcfy.webp" alt="源码分析4" style="zoom:40%;"></td></tr></tbody></table><blockquote><p>arch&#x2F;arm&#x2F;cpu&#x2F;armv7&#x2F;lowlevel_init.S，<code>lowlevel_init.S</code>运行结束后再运行<code>_main</code></p></blockquote><table><thead><tr><th align="center"><img src="https://s2.loli.net/2024/10/13/kazdBxF93uDiRnI.png" alt="源码分析5" style="zoom:40%;"></th></tr></thead></table><blockquote><p><code>_main</code>在： arch&#x2F;arm&#x2F;lib&#x2F;crt0.S，最后跳转到C语言部分的<code>board_init_f</code>和<code>board_init_r</code></p></blockquote><table><thead><tr><th align="center"><img src="https://s2.loli.net/2024/10/13/uqLXJbPzl4naDy5.webp" alt="源码分析6"></th></tr></thead></table><h3 id="C语言部分"><a href="#C语言部分" class="headerlink" title="C语言部分"></a>C语言部分</h3><blockquote><p>在项目中的common&#x2F;board_f.c，看board_init_f</p></blockquote><table><thead><tr><th align="center"><img src="https://s2.loli.net/2024/10/13/6BnIZWm8yV43dFi.png" alt="源码分析7" style="zoom:40%;"></th></tr></thead></table><blockquote><p>在项目中的common&#x2F;board_r.c，看board_init_r</p></blockquote><table><thead><tr><th align="center"><img src="https://s2.loli.net/2024/10/13/ObKmMeBwgunHWqT.webp" alt="源码分析8" style="zoom:50%;"></th></tr></thead></table><blockquote><p>在项目中的 common&#x2F;main.c，看main.c的<code>main_loop</code></p></blockquote><table><thead><tr><th align="center"><img src="https://s2.loli.net/2024/10/13/EPdT45JV6bxlrOs.png" alt="源码分析9" style="zoom:40%;"></th></tr></thead></table><p>create.sh脚本解析：</p><p>.config：配置那些需要编译(-y)，如果注释了就不需要编译的</p><p>Makefile：根据.config文件中的配置进行编译，也就是初始化哪些东西</p><p>修改.config：<code>make menuconfig</code></p><p>kernel</p>]]></content>
+    <content type="html"><![CDATA[<table><thead><tr><th>关键字</th><th>含义</th></tr></thead><tbody><tr><td>database</td><td>库</td></tr><tr><td>table</td><td>表</td></tr><tr><td>create</td><td>创建</td></tr><tr><td>drop</td><td>删除(数据库或表)</td></tr><tr><td>alter</td><td>修改</td></tr><tr><td>update</td><td>数据修改</td></tr><tr><td>insert</td><td>插入</td></tr><tr><td>where</td><td>筛选</td></tr><tr><td></td><td>删除(数据)</td></tr></tbody></table><h1 id="查看所有数据库"><a href="#查看所有数据库" class="headerlink" title="查看所有数据库"></a>查看所有数据库</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-- 查看所有数据库</span><br><span class="line">show databases;</span><br></pre></td></tr></table></figure><h1 id="查看当前数据库所有的表"><a href="#查看当前数据库所有的表" class="headerlink" title="查看当前数据库所有的表"></a>查看当前数据库所有的表</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure><h1 id="查看指定表的创建语句"><a href="#查看指定表的创建语句" class="headerlink" title="查看指定表的创建语句"></a>查看指定表的创建语句</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show create table 查看的表名;</span><br><span class="line">show create table student;</span><br></pre></td></tr></table></figure><h1 id="查看表结构"><a href="#查看表结构" class="headerlink" title="查看表结构"></a>查看表结构</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">desc 表名;</span><br><span class="line">desc student;</span><br></pre></td></tr></table></figure><h1 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create database 创建数据库名字;</span><br><span class="line">create database mydb1;</span><br><span class="line"></span><br><span class="line">-- if not exists：当数据库mydbq不存在时才创建</span><br><span class="line">create database if not exists 创建数据库名字;</span><br><span class="line">create database if not exists mydbq;</span><br></pre></td></tr></table></figure><h1 id="使用哪个数据库"><a href="#使用哪个数据库" class="headerlink" title="使用哪个数据库"></a>使用哪个数据库</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use 使用的数据库名;</span><br><span class="line">use mydb1;</span><br></pre></td></tr></table></figure><h1 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">drop database 删除的数据库名;</span><br><span class="line">drop database mydb1;</span><br><span class="line"></span><br><span class="line">-- if exists：当数据库mydb1存在时才删除</span><br><span class="line">drop database if exists 删除的数据库名;</span><br><span class="line">drop database if exists mydb1;</span><br></pre></td></tr></table></figure><h1 id="修改数据库编码（默认utf8）"><a href="#修改数据库编码（默认utf8）" class="headerlink" title="修改数据库编码（默认utf8）"></a>修改数据库编码（默认utf8）</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter database 修改的数据库名 character set 编码格式;</span><br><span class="line">alter database mydb1 character set utf8;</span><br></pre></td></tr></table></figure><h1 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">-- 创建表是构建一张空表，指定这个表的名字，这个表有几列，每一列叫什么名字，以及每一列存储的数据类型</span><br><span class="line">-- 字段名：每一列的名字，中括号中的内容可以省略也可以添加</span><br><span class="line">create table [if not exists]表名(</span><br><span class="line">  字段名1 类型[(宽度)] [约束条件] [comment &#x27;字段说明&#x27;],</span><br><span class="line">  字段名2 类型[(宽度)] [约束条件] [comment &#x27;字段说明&#x27;],</span><br><span class="line">  字段名3 类型[(宽度)] [约束条件] [comment &#x27;字段说明&#x27;]</span><br><span class="line">)[表的一些设置];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">create table if not exists student(</span><br><span class="line">    sid int,</span><br><span class="line">    name varchar(20),</span><br><span class="line">    gender varchar(10),</span><br><span class="line">    age int,</span><br><span class="line">    birth date,</span><br><span class="line">    address varchar(20),</span><br><span class="line">    score double</span><br><span class="line">);</span><br></pre></td></tr></table></figure><h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><table><thead><tr><th align="center">数据类型</th><th align="center">描述</th><th>大小</th></tr></thead><tbody><tr><td align="center">tinyint</td><td align="center">非常小的整数，带符号的范围是(-128, 127)，无符号的范围是(0, 255)</td><td>1 byte</td></tr><tr><td align="center">smallint</td><td align="center">较小的整数，带符号的范围是(-32,768, 32,767)，无符号的范围是(0, 65,535)</td><td>2 byte</td></tr><tr><td align="center">mediumint</td><td align="center">中等大小的整数，带符号的范围是(-8,388,608, 8,388,607)，无符号的范围是(0, 16,777,215)</td><td>3 byte</td></tr><tr><td align="center">int或integer</td><td align="center">普通大小的整数，带符号的范围是(-2,147,483,648, 2,147,483,647)，无符号的范围是(0, 4,294,967,295)</td><td>4 byte</td></tr><tr><td align="center">bigint</td><td align="center">大整数，带符号的范围是(-9,223,372,036,854,775,808, 9,223,372,036,854,775,807)，无符号的范围是(0, 18,446,744,073,709,551,615)</td><td>8 byte</td></tr><tr><td align="center">float</td><td align="center">单精度浮点数</td><td>4 byte</td></tr><tr><td align="center">double</td><td align="center">双精度浮点数</td><td>8 byte</td></tr><tr><td align="center">decimal</td><td align="center">小数，精度和标度可变</td><td></td></tr><tr><td align="center">varchar</td><td align="center">变长字符串，0-65535</td><td></td></tr><tr><td align="center">date</td><td align="center">日期，格式为YYYY-MM-DD(1000-01-01~9999-12-31)</td><td>3</td></tr><tr><td align="center">datetime</td><td align="center">混合日期和时间值(1000-01-01 00:00:00~9999-12-31 23:59:59)</td><td>8</td></tr><tr><td align="center">timestamp</td><td align="center">混合日期和时间值 时间戳(获取当前时区时间)</td><td>4</td></tr></tbody></table><h1 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">drop table 表名;</span><br><span class="line">drop table student;</span><br></pre></td></tr></table></figure><h1 id="修改表结构"><a href="#修改表结构" class="headerlink" title="修改表结构"></a>修改表结构</h1><h2 id="表添加列"><a href="#表添加列" class="headerlink" title="表添加列"></a>表添加列</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 add 列名 类型(长度) [约束];</span><br><span class="line"></span><br><span class="line">-- 为student表添加一个新的字段为：系别 dept 类型为 varchar(20)</span><br><span class="line">alter table student add dept varchar(20);</span><br></pre></td></tr></table></figure><h2 id="修改列名和类型"><a href="#修改列名和类型" class="headerlink" title="修改列名和类型"></a>修改列名和类型</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 change 旧列名 新列名 类型(长度) 约束; </span><br><span class="line"></span><br><span class="line">-- 为student表的dept字段更换为department varchar(30)</span><br><span class="line">alter table student change dept department varchar(30);</span><br></pre></td></tr></table></figure><h2 id="删除列"><a href="#删除列" class="headerlink" title="删除列"></a>删除列</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 drop 列名;</span><br><span class="line"></span><br><span class="line">-- 删除student表中department这列</span><br><span class="line">alter table student drop department;</span><br></pre></td></tr></table></figure><h2 id="修改表名"><a href="#修改表名" class="headerlink" title="修改表名"></a>修改表名</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rename table 表名 to 新表名;</span><br><span class="line"></span><br><span class="line">-- 将表student改名成 stu</span><br><span class="line">rename table student to stu;</span><br></pre></td></tr></table></figure><h1 id="表的增删改-DML"><a href="#表的增删改-DML" class="headerlink" title="表的增删改(DML)"></a>表的增删改(DML)</h1><h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-- 向某些列插入值</span><br><span class="line">-- 值要与列名的数据类型保持一致</span><br><span class="line">insert into 表 (列名1,列名2,列名3...) values (值1,值2,值3...);</span><br><span class="line">-- 向表中所有列插入值</span><br><span class="line">insert into 表 values (值1,值2,值3...);</span><br><span class="line"></span><br><span class="line">insert into student(sid,name,gender,age,birth,address,score)</span><br><span class="line">values (1001,&#x27;张三&#x27;,&#x27;男&#x27;,18,&#x27;2001-11-12&#x27;,&#x27;北京&#x27;,13.9),</span><br><span class="line">(1002,&#x27;李四&#x27;,&#x27;女&#x27;,15,&#x27;2001-11-12&#x27;,&#x27;北京&#x27;,10.9);</span><br><span class="line"></span><br><span class="line">insert into student values (1003,&#x27;王五&#x27;,&#x27;女&#x27;,34,&#x27;1992-12-01&#x27;,&#x27;深圳&#x27;,23);</span><br></pre></td></tr></table></figure><h2 id="数据修改"><a href="#数据修改" class="headerlink" title="数据修改"></a>数据修改</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-- 将字段名那一列全部行都修改</span><br><span class="line">update 表名 set 字段名=值,字段名=值...;</span><br><span class="line">-- 满足条件的行才修改</span><br><span class="line">update 表名 set 字段名=值,字段名=值... where 条件;</span><br><span class="line"></span><br><span class="line">-- 将所有学生的地址修改为重庆</span><br><span class="line">update student set address=&#x27;重庆&#x27;;</span><br><span class="line">-- id为1002的学生的地址修改为北京</span><br><span class="line">update student set address=&#x27;北京&#x27; where sid = 1002;</span><br><span class="line">-- id为1001的学生的地址修改为上海，成绩修成绩修改为100</span><br><span class="line">update student set address=&#x27;上海&#x27;,score=100 where sid = 1001;</span><br></pre></td></tr></table></figure><h2 id="数据删除"><a href="#数据删除" class="headerlink" title="数据删除"></a>数据删除</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">delete from 表名 [where 条件];</span><br><span class="line">-- 整个表删除，然后再创建该表</span><br><span class="line">truncate table 表名; 或者 truncate 表名;</span><br><span class="line"></span><br><span class="line">-- 删除sid为1004的学生数据</span><br><span class="line">delete from student where sid = 1003;</span><br><span class="line">-- 2.删除表所有数据</span><br><span class="line">delete from student;</span><br><span class="line">-- 3.清空表数据</span><br><span class="line">truncate table student;</span><br><span class="line">truncate student;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;关键字&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;database&lt;/td&gt;
+&lt;td&gt;库&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;table&lt;/td&gt;
+&lt;td&gt;表&lt;/td&gt;
+&lt;</summary>
+      
+    
+    
+    
+    
+    <category term="MySQL" scheme="https://xinzaigeek.68565200.xyz/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2.系统编译</title>
+    <link href="https://xinzaigeek.68565200.xyz/post/dd99ee0d.html"/>
+    <id>https://xinzaigeek.68565200.xyz/post/dd99ee0d.html</id>
+    <published>2024-10-13T03:18:49.000Z</published>
+    <updated>2024-10-19T13:02:45.974Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Uboot"><a href="#Uboot" class="headerlink" title="Uboot"></a>Uboot</h1><p>安装编译必用工具：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install lzop  libncurses5-dev u-boot-tools</span><br></pre></td></tr></table></figure><p>创建文件夹，创建完成之后，将Uboot源代码复制复制到Linux中(FTP)，解压文件，编译文件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">mkdir linux</span><br><span class="line">cd linux</span><br><span class="line">mkdir uboot</span><br><span class="line"></span><br><span class="line">//解压</span><br><span class="line">tar -xvf uboot-imx-rel_imx_4.1.15_2.1.0_ga_20200512.tar.gz</span><br><span class="line"></span><br><span class="line">//编译文件</span><br><span class="line">./create.sh</span><br></pre></td></tr></table></figure><p>u-boot.bin和u-boot.imx的区别：<a href="https://www.cnblogs.com/fah936861121/articles/7248430.html">参考链接</a></p><h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><blockquote><p>汇编部分</p></blockquote><p>关闭：中断、看门狗、cache、mmu… –&gt; 进入SVC模式 –&gt; 基本硬件初始化(时钟、串口、flash、内存) –&gt; 初始化堆栈 –&gt; 自搬移(将汇编中的C语言从flash中移到内存中)</p><blockquote><p>C语言部分</p></blockquote><p>大部分硬件初始化(网卡、USB、屏幕….) –&gt; 把内核搬到内存</p><h2 id="Uboot源码简要分析"><a href="#Uboot源码简要分析" class="headerlink" title="Uboot源码简要分析"></a>Uboot源码简要分析</h2><h3 id="汇编部分"><a href="#汇编部分" class="headerlink" title="汇编部分"></a>汇编部分</h3><blockquote><p>在项目中arch&#x2F;arm&#x2F;lib&#x2F;vectors.S，开始运行之后跳转到reset</p></blockquote><table><thead><tr><th align="center"><img src="https://s2.loli.net/2024/10/13/2WPMVwXc39t5ZiH.png" alt="源码分析1" style="zoom:40%;"></th></tr></thead></table><blockquote><p>arch&#x2F;arm&#x2F;cpu&#x2F;armv7&#x2F;start.S，找到开始文件(start.S)，跳转到<code>cpu_init_cp15</code>、<code>cpu_init_crit</code>、<code>_main</code></p></blockquote><table><thead><tr><th><img src="https://s2.loli.net/2024/10/13/YuSVxEvk1qdBOAj.png" alt="源码分析2" style="zoom:40%;"></th></tr></thead></table><blockquote><p>在start.S文件内，找到<code>cpu_init_cp15</code>、<code>cpu_init_crit</code>(跳转到cpu_init_crit)</p></blockquote><table><thead><tr><th align="center"><img src="https://s2.loli.net/2024/10/13/ZhrOB1JWySUxwA6.webp" alt="源码分析3" style="zoom:50%;"></th></tr></thead><tbody><tr><td align="center"><img src="https://s2.loli.net/2024/10/13/lsMF6qYR23mBcfy.webp" alt="源码分析4" style="zoom:40%;"></td></tr></tbody></table><blockquote><p>arch&#x2F;arm&#x2F;cpu&#x2F;armv7&#x2F;lowlevel_init.S，<code>lowlevel_init.S</code>运行结束后再运行<code>_main</code></p></blockquote><table><thead><tr><th align="center"><img src="https://s2.loli.net/2024/10/13/kazdBxF93uDiRnI.png" alt="源码分析5" style="zoom:40%;"></th></tr></thead></table><blockquote><p><code>_main</code>在： arch&#x2F;arm&#x2F;lib&#x2F;crt0.S，最后跳转到C语言部分的<code>board_init_f</code>和<code>board_init_r</code></p></blockquote><table><thead><tr><th align="center"><img src="https://s2.loli.net/2024/10/13/uqLXJbPzl4naDy5.webp" alt="源码分析6"></th></tr></thead></table><h3 id="C语言部分"><a href="#C语言部分" class="headerlink" title="C语言部分"></a>C语言部分</h3><blockquote><p>在项目中的common&#x2F;board_f.c，看board_init_f</p></blockquote><table><thead><tr><th align="center"><img src="https://s2.loli.net/2024/10/13/6BnIZWm8yV43dFi.png" alt="源码分析7" style="zoom:40%;"></th></tr></thead></table><blockquote><p>在项目中的common&#x2F;board_r.c，看board_init_r</p></blockquote><table><thead><tr><th align="center"><img src="https://s2.loli.net/2024/10/13/ObKmMeBwgunHWqT.webp" alt="源码分析8" style="zoom:50%;"></th></tr></thead></table><blockquote><p>在项目中的 common&#x2F;main.c，看main.c的<code>main_loop</code></p></blockquote><table><thead><tr><th align="center"><img src="https://s2.loli.net/2024/10/13/EPdT45JV6bxlrOs.png" alt="源码分析9" style="zoom:40%;"></th></tr></thead></table><h2 id="脚本分析-create-sh"><a href="#脚本分析-create-sh" class="headerlink" title="脚本分析(create.sh)"></a>脚本分析(create.sh)</h2><ul><li><p>.config：配置那些需要编译(-y)，如果注释了就不需要编译的</p></li><li><p>Makefile：根据.config文件中的配置进行编译，也就是哪些东西需要编译进去</p></li></ul><p>在Linux中修改.config方法(图形化配置)：<code>make menuconfig</code></p><p>增加或删除图形化配置选项：在drivers\rtc中的Kconfig修改，然后在进入，勾选需要编译的模块保存之后生效在.config文件，Makefile编译进去</p><h1 id="kernel-内核"><a href="#kernel-内核" class="headerlink" title="kernel(内核)"></a>kernel(内核)</h1><p>将迅为内核源码拷贝进Linux虚拟机 ，然后解压并编译</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//解压</span><br><span class="line">tar -xvf linux-imx-rel_imx_4.1.15_2.1.0_ga_20200903.tar.gz</span><br><span class="line">//进入解压后的文件夹</span><br><span class="line">cd linux-imx-rel_imx_4.1.15_2.1.0_ga</span><br><span class="line">//编译</span><br><span class="line">./create.sh</span><br></pre></td></tr></table></figure><p>内核镜像：</p><ul><li><p>路径：<code>arch/arm/boot</code>，Image(非压缩文件)、uImage与zImage的区别：<a href="https://blog.csdn.net/xuxin314012316/article/details/82621002">参考</a>，这里使用uImage</p><ul><li>Image：原镜像文件</li><li>uImage：uboot专用的映像文件，在zImage之前加上一个长度为64字节的“头”，说明这个内核的版本、加载位置、生成时间、大小等信息</li><li>zImage：内核的一种映像压缩文件</li></ul></li><li><p>路径：arch&#x2F;arm&#x2F;boot&#x2F;dts，设备树</p></li></ul><p>内核源码目录结构详细参考：<a href="https://blog.csdn.net/weixin_52622200/article/details/135411217">地址</a></p><p>drivers：包含了各种设备驱动程序的源代码，Linux 内核通过这些驱动程序与硬件设备进行交互和管理</p><p>net：与网络协议栈相关的目录，它包含了各种网络协议和网络设备驱动程序的实现</p><h2 id="脚本分析-create-sh-1"><a href="#脚本分析-create-sh-1" class="headerlink" title="脚本分析(create.sh)"></a>脚本分析(create.sh)</h2><p><code>#!/bin/bash</code> ：指定脚本使用 Bash 解释器的 shebang 语句。它出现在脚本的第一行，并告诉操作系统使用 Bash 解释器来执行该脚本。参考：<a href="https://www.jb51.net/jiaoben/307768w9h.htm">网址</a></p><p>make imx_v7_defconfig(arch\arm\configs)：预定义的配置文件，适用于i.MX6ULL EVK开发板的内核配置文件</p><p>.config(源码根目录)：配置哪些需要编译</p><p>Makefile：根据.config文件中的配置进行编译，也就是哪些东西需要编译进去</p><p>make modules命令：将驱动编译成模块（.ko 文件），然后加载到内核。<a href="https://blog.csdn.net/jinking01/article/details/132699750">参考</a></p><p>驱动编译两种方式</p><ul><li>驱动编译进内核(obj-y)</li><li>驱动编译成ko文件(obj-m)</li></ul><h1 id="设备树"><a href="#设备树" class="headerlink" title="设备树"></a>设备树</h1><p>功能：包含芯片&amp;板子  外设信息，系统驱动会匹配设备树，匹配成功后加载驱动</p><p>文件路径：<code>arch/arm/boot/dts</code></p><p>dts(源代码)：</p><ul><li>dtsi：描述SoC(系统芯片)的内部外设信息，如CPU架构、主频、外设寄存器地址范围等</li><li>dts：板级配置文件，包含了特定硬件平台的详细配置信息</li><li>topeet_emmc_hdmi.dts(屏幕)(头文件包含下一个文件) -&gt; imx6ull-14x14-evk-emmc.dts -&gt; imx6ull-14x14-evk.dts -&gt; imx6ull.dtsi</li></ul><p>dtc：编译，反编译(dtc -I dtb -O dts -o test001.dts topeet_emmc_hdmi.dtb)</p><p>dtb(设备树编译后的文件)</p><h1 id="根文件系统"><a href="#根文件系统" class="headerlink" title="根文件系统"></a>根文件系统</h1><p>含义：<a href="https://www.cnblogs.com/Wangzx000/p/16684484.html">参考</a></p><p>制作：<a href="https://blog.csdn.net/weixin_59665492/article/details/118681742">参考</a></p>]]></content>
     
     
       
@@ -34,17 +70,17 @@
     
     
     
-    <category term="Linux" scheme="https://d3iiz.top/categories/Linux/"/>
+    <category term="Linux" scheme="https://xinzaigeek.68565200.xyz/categories/Linux/"/>
     
     
-    <category term="Linux" scheme="https://d3iiz.top/tags/Linux/"/>
+    <category term="Linux" scheme="https://xinzaigeek.68565200.xyz/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>1.交叉编译安装及烧录调试</title>
-    <link href="https://d3iiz.top/post/69f8b9de.html"/>
-    <id>https://d3iiz.top/post/69f8b9de.html</id>
+    <link href="https://xinzaigeek.68565200.xyz/post/69f8b9de.html"/>
+    <id>https://xinzaigeek.68565200.xyz/post/69f8b9de.html</id>
     <published>2024-10-03T02:50:40.000Z</published>
     <updated>2024-10-13T07:09:04.226Z</updated>
     
@@ -58,17 +94,17 @@
     
     
     
-    <category term="Linux" scheme="https://d3iiz.top/categories/Linux/"/>
+    <category term="Linux" scheme="https://xinzaigeek.68565200.xyz/categories/Linux/"/>
     
     
-    <category term="Linux" scheme="https://d3iiz.top/tags/Linux/"/>
+    <category term="Linux" scheme="https://xinzaigeek.68565200.xyz/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>营业执照相关</title>
-    <link href="https://d3iiz.top/post/ff4327d1.html"/>
-    <id>https://d3iiz.top/post/ff4327d1.html</id>
+    <link href="https://xinzaigeek.68565200.xyz/post/ff4327d1.html"/>
+    <id>https://xinzaigeek.68565200.xyz/post/ff4327d1.html</id>
     <published>2024-10-02T02:55:09.000Z</published>
     <updated>2024-10-13T13:47:28.226Z</updated>
     
@@ -79,17 +115,17 @@
     
     
     
-    <category term="技术积累记录" scheme="https://d3iiz.top/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/"/>
+    <category term="技术积累记录" scheme="https://xinzaigeek.68565200.xyz/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="营业执照" scheme="https://d3iiz.top/tags/%E8%90%A5%E4%B8%9A%E6%89%A7%E7%85%A7/"/>
+    <category term="营业执照" scheme="https://xinzaigeek.68565200.xyz/tags/%E8%90%A5%E4%B8%9A%E6%89%A7%E7%85%A7/"/>
     
   </entry>
   
   <entry>
     <title>springboot相关配置</title>
-    <link href="https://d3iiz.top/post/fd908b52.html"/>
-    <id>https://d3iiz.top/post/fd908b52.html</id>
+    <link href="https://xinzaigeek.68565200.xyz/post/fd908b52.html"/>
+    <id>https://xinzaigeek.68565200.xyz/post/fd908b52.html</id>
     <published>2024-09-30T08:34:20.000Z</published>
     <updated>2024-10-14T11:32:28.574Z</updated>
     
@@ -104,17 +140,17 @@
     
     
     
-    <category term="技术积累记录" scheme="https://d3iiz.top/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/"/>
+    <category term="技术积累记录" scheme="https://xinzaigeek.68565200.xyz/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="springboot相关配置" scheme="https://d3iiz.top/tags/springboot%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/"/>
+    <category term="springboot相关配置" scheme="https://xinzaigeek.68565200.xyz/tags/springboot%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
   <entry>
     <title>0.Linux基础命令</title>
-    <link href="https://d3iiz.top/post/288a7e13.html"/>
-    <id>https://d3iiz.top/post/288a7e13.html</id>
+    <link href="https://xinzaigeek.68565200.xyz/post/288a7e13.html"/>
+    <id>https://xinzaigeek.68565200.xyz/post/288a7e13.html</id>
     <published>2024-09-28T05:37:04.000Z</published>
     <updated>2024-10-15T08:33:24.003Z</updated>
     
@@ -130,17 +166,17 @@
     
     
     
-    <category term="Linux" scheme="https://d3iiz.top/categories/Linux/"/>
+    <category term="Linux" scheme="https://xinzaigeek.68565200.xyz/categories/Linux/"/>
     
     
-    <category term="Linux" scheme="https://d3iiz.top/tags/Linux/"/>
+    <category term="Linux" scheme="https://xinzaigeek.68565200.xyz/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>前端相关报错</title>
-    <link href="https://d3iiz.top/post/bcf1b676.html"/>
-    <id>https://d3iiz.top/post/bcf1b676.html</id>
+    <link href="https://xinzaigeek.68565200.xyz/post/bcf1b676.html"/>
+    <id>https://xinzaigeek.68565200.xyz/post/bcf1b676.html</id>
     <published>2024-09-24T10:44:26.000Z</published>
     <updated>2024-10-06T15:20:41.055Z</updated>
     
@@ -154,15 +190,15 @@
     
     
     
-    <category term="错误记录" scheme="https://d3iiz.top/categories/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/"/>
+    <category term="错误记录" scheme="https://xinzaigeek.68565200.xyz/categories/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/"/>
     
     
   </entry>
   
   <entry>
     <title>5.RT-Thread设备模型框架</title>
-    <link href="https://d3iiz.top/post/de55e8eb.html"/>
-    <id>https://d3iiz.top/post/de55e8eb.html</id>
+    <link href="https://xinzaigeek.68565200.xyz/post/de55e8eb.html"/>
+    <id>https://xinzaigeek.68565200.xyz/post/de55e8eb.html</id>
     <published>2024-09-21T12:34:31.000Z</published>
     <updated>2024-10-03T01:45:36.453Z</updated>
     
@@ -176,17 +212,17 @@
     
     
     
-    <category term="RT-Thread" scheme="https://d3iiz.top/categories/RT-Thread/"/>
+    <category term="RT-Thread" scheme="https://xinzaigeek.68565200.xyz/categories/RT-Thread/"/>
     
     
-    <category term="RT-Thread" scheme="https://d3iiz.top/tags/RT-Thread/"/>
+    <category term="RT-Thread" scheme="https://xinzaigeek.68565200.xyz/tags/RT-Thread/"/>
     
   </entry>
   
   <entry>
     <title>4.时钟</title>
-    <link href="https://d3iiz.top/post/e5f15f94.html"/>
-    <id>https://d3iiz.top/post/e5f15f94.html</id>
+    <link href="https://xinzaigeek.68565200.xyz/post/e5f15f94.html"/>
+    <id>https://xinzaigeek.68565200.xyz/post/e5f15f94.html</id>
     <published>2024-09-20T14:27:49.000Z</published>
     <updated>2024-10-03T01:44:28.173Z</updated>
     
@@ -201,17 +237,17 @@
     
     
     
-    <category term="RT-Thread" scheme="https://d3iiz.top/categories/RT-Thread/"/>
+    <category term="RT-Thread" scheme="https://xinzaigeek.68565200.xyz/categories/RT-Thread/"/>
     
     
-    <category term="RT-Thread" scheme="https://d3iiz.top/tags/RT-Thread/"/>
+    <category term="RT-Thread" scheme="https://xinzaigeek.68565200.xyz/tags/RT-Thread/"/>
     
   </entry>
   
   <entry>
     <title>3.线程间通信</title>
-    <link href="https://d3iiz.top/post/49f85af0.html"/>
-    <id>https://d3iiz.top/post/49f85af0.html</id>
+    <link href="https://xinzaigeek.68565200.xyz/post/49f85af0.html"/>
+    <id>https://xinzaigeek.68565200.xyz/post/49f85af0.html</id>
     <published>2024-09-17T06:23:59.000Z</published>
     <updated>2024-10-03T01:43:56.790Z</updated>
     
@@ -226,17 +262,17 @@
     
     
     
-    <category term="RT-Thread" scheme="https://d3iiz.top/categories/RT-Thread/"/>
+    <category term="RT-Thread" scheme="https://xinzaigeek.68565200.xyz/categories/RT-Thread/"/>
     
     
-    <category term="RT-Thread" scheme="https://d3iiz.top/tags/RT-Thread/"/>
+    <category term="RT-Thread" scheme="https://xinzaigeek.68565200.xyz/tags/RT-Thread/"/>
     
   </entry>
   
   <entry>
     <title>博客CDN解析</title>
-    <link href="https://d3iiz.top/post/e9f3074a.html"/>
-    <id>https://d3iiz.top/post/e9f3074a.html</id>
+    <link href="https://xinzaigeek.68565200.xyz/post/e9f3074a.html"/>
+    <id>https://xinzaigeek.68565200.xyz/post/e9f3074a.html</id>
     <published>2024-09-15T10:09:50.000Z</published>
     <updated>2024-10-18T11:53:35.612Z</updated>
     
@@ -247,17 +283,17 @@
     
     
     
-    <category term="技术积累记录" scheme="https://d3iiz.top/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/"/>
+    <category term="技术积累记录" scheme="https://xinzaigeek.68565200.xyz/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="博客CDN解析" scheme="https://d3iiz.top/tags/%E5%8D%9A%E5%AE%A2CDN%E8%A7%A3%E6%9E%90/"/>
+    <category term="博客CDN解析" scheme="https://xinzaigeek.68565200.xyz/tags/%E5%8D%9A%E5%AE%A2CDN%E8%A7%A3%E6%9E%90/"/>
     
   </entry>
   
   <entry>
     <title>2.线程同步</title>
-    <link href="https://d3iiz.top/post/a1db912f.html"/>
-    <id>https://d3iiz.top/post/a1db912f.html</id>
+    <link href="https://xinzaigeek.68565200.xyz/post/a1db912f.html"/>
+    <id>https://xinzaigeek.68565200.xyz/post/a1db912f.html</id>
     <published>2024-09-15T01:39:42.000Z</published>
     <updated>2024-10-03T01:42:43.706Z</updated>
     
@@ -271,17 +307,17 @@
     
     
     
-    <category term="RT-Thread" scheme="https://d3iiz.top/categories/RT-Thread/"/>
+    <category term="RT-Thread" scheme="https://xinzaigeek.68565200.xyz/categories/RT-Thread/"/>
     
     
-    <category term="RT-Thread" scheme="https://d3iiz.top/tags/RT-Thread/"/>
+    <category term="RT-Thread" scheme="https://xinzaigeek.68565200.xyz/tags/RT-Thread/"/>
     
   </entry>
   
   <entry>
     <title>1.线程相关函数</title>
-    <link href="https://d3iiz.top/post/54659a9b.html"/>
-    <id>https://d3iiz.top/post/54659a9b.html</id>
+    <link href="https://xinzaigeek.68565200.xyz/post/54659a9b.html"/>
+    <id>https://xinzaigeek.68565200.xyz/post/54659a9b.html</id>
     <published>2024-09-15T01:32:45.000Z</published>
     <updated>2024-10-03T01:41:53.548Z</updated>
     
@@ -296,17 +332,17 @@
     
     
     
-    <category term="RT-Thread" scheme="https://d3iiz.top/categories/RT-Thread/"/>
+    <category term="RT-Thread" scheme="https://xinzaigeek.68565200.xyz/categories/RT-Thread/"/>
     
     
-    <category term="RT-Thread" scheme="https://d3iiz.top/tags/RT-Thread/"/>
+    <category term="RT-Thread" scheme="https://xinzaigeek.68565200.xyz/tags/RT-Thread/"/>
     
   </entry>
   
   <entry>
     <title>linux相关报错</title>
-    <link href="https://d3iiz.top/post/8a87b27f.html"/>
-    <id>https://d3iiz.top/post/8a87b27f.html</id>
+    <link href="https://xinzaigeek.68565200.xyz/post/8a87b27f.html"/>
+    <id>https://xinzaigeek.68565200.xyz/post/8a87b27f.html</id>
     <published>2024-09-12T08:14:53.000Z</published>
     <updated>2024-10-06T15:12:32.059Z</updated>
     
@@ -320,15 +356,15 @@
     
     
     
-    <category term="错误记录" scheme="https://d3iiz.top/categories/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/"/>
+    <category term="错误记录" scheme="https://xinzaigeek.68565200.xyz/categories/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/"/>
     
     
   </entry>
   
   <entry>
     <title>ubuntu相关设置</title>
-    <link href="https://d3iiz.top/post/96c26968.html"/>
-    <id>https://d3iiz.top/post/96c26968.html</id>
+    <link href="https://xinzaigeek.68565200.xyz/post/96c26968.html"/>
+    <id>https://xinzaigeek.68565200.xyz/post/96c26968.html</id>
     <published>2024-09-12T05:42:36.000Z</published>
     <updated>2024-10-06T15:48:01.177Z</updated>
     
@@ -343,17 +379,17 @@
     
     
     
-    <category term="技术积累记录" scheme="https://d3iiz.top/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/"/>
+    <category term="技术积累记录" scheme="https://xinzaigeek.68565200.xyz/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="ubuntu相关设置" scheme="https://d3iiz.top/tags/ubuntu%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/"/>
+    <category term="ubuntu相关设置" scheme="https://xinzaigeek.68565200.xyz/tags/ubuntu%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/"/>
     
   </entry>
   
   <entry>
     <title>0.线程创建与删除</title>
-    <link href="https://d3iiz.top/post/520176db.html"/>
-    <id>https://d3iiz.top/post/520176db.html</id>
+    <link href="https://xinzaigeek.68565200.xyz/post/520176db.html"/>
+    <id>https://xinzaigeek.68565200.xyz/post/520176db.html</id>
     <published>2024-09-11T05:41:21.000Z</published>
     <updated>2024-09-18T08:39:39.891Z</updated>
     
@@ -367,17 +403,17 @@
     
     
     
-    <category term="RT-Thread" scheme="https://d3iiz.top/categories/RT-Thread/"/>
+    <category term="RT-Thread" scheme="https://xinzaigeek.68565200.xyz/categories/RT-Thread/"/>
     
     
-    <category term="RT-Thread" scheme="https://d3iiz.top/tags/RT-Thread/"/>
+    <category term="RT-Thread" scheme="https://xinzaigeek.68565200.xyz/tags/RT-Thread/"/>
     
   </entry>
   
   <entry>
     <title>11.SPI通信</title>
-    <link href="https://d3iiz.top/post/bd740709.html"/>
-    <id>https://d3iiz.top/post/bd740709.html</id>
+    <link href="https://xinzaigeek.68565200.xyz/post/bd740709.html"/>
+    <id>https://xinzaigeek.68565200.xyz/post/bd740709.html</id>
     <published>2024-08-17T08:28:32.000Z</published>
     <updated>2024-08-19T02:03:02.952Z</updated>
     
@@ -392,17 +428,17 @@
     
     
     
-    <category term="32单片机" scheme="https://d3iiz.top/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://xinzaigeek.68565200.xyz/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
     
-    <category term="32单片机" scheme="https://d3iiz.top/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://xinzaigeek.68565200.xyz/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>10.DMA</title>
-    <link href="https://d3iiz.top/post/acb77072.html"/>
-    <id>https://d3iiz.top/post/acb77072.html</id>
+    <link href="https://xinzaigeek.68565200.xyz/post/acb77072.html"/>
+    <id>https://xinzaigeek.68565200.xyz/post/acb77072.html</id>
     <published>2024-08-16T07:49:08.000Z</published>
     <updated>2024-10-02T15:38:50.517Z</updated>
     
@@ -417,17 +453,17 @@
     
     
     
-    <category term="32单片机" scheme="https://d3iiz.top/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://xinzaigeek.68565200.xyz/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
     
-    <category term="32单片机" scheme="https://d3iiz.top/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://xinzaigeek.68565200.xyz/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>9.DAC(数字信号转模拟信号)</title>
-    <link href="https://d3iiz.top/post/52772f76.html"/>
-    <id>https://d3iiz.top/post/52772f76.html</id>
+    <link href="https://xinzaigeek.68565200.xyz/post/52772f76.html"/>
+    <id>https://xinzaigeek.68565200.xyz/post/52772f76.html</id>
     <published>2024-08-15T14:22:06.000Z</published>
     <updated>2024-10-02T15:38:32.824Z</updated>
     
@@ -441,17 +477,17 @@
     
     
     
-    <category term="32单片机" scheme="https://d3iiz.top/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://xinzaigeek.68565200.xyz/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
     
-    <category term="32单片机" scheme="https://d3iiz.top/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://xinzaigeek.68565200.xyz/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>8.看门狗(WDG)</title>
-    <link href="https://d3iiz.top/post/f0812160.html"/>
-    <id>https://d3iiz.top/post/f0812160.html</id>
+    <link href="https://xinzaigeek.68565200.xyz/post/f0812160.html"/>
+    <id>https://xinzaigeek.68565200.xyz/post/f0812160.html</id>
     <published>2024-08-15T14:05:49.000Z</published>
     <updated>2024-10-02T15:38:18.559Z</updated>
     
@@ -467,35 +503,10 @@
     
     
     
-    <category term="32单片机" scheme="https://d3iiz.top/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://xinzaigeek.68565200.xyz/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
     
-    <category term="32单片机" scheme="https://d3iiz.top/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>7.实时时钟(RTC)</title>
-    <link href="https://d3iiz.top/post/e8bc8f26.html"/>
-    <id>https://d3iiz.top/post/e8bc8f26.html</id>
-    <published>2024-08-14T13:12:02.000Z</published>
-    <updated>2024-10-02T15:38:06.068Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="理论"><a href="#理论" class="headerlink" title="理论"></a><center>理论</center></h1><p>使用时钟晶振：32.768KHz(2^{15}^)</p><h1 id="代码编写"><a href="#代码编写" class="headerlink" title="代码编写"></a><center>代码编写</center></h1><p>OLED显示实时时间，串口打印</p><h2 id="晶体、RTC配置"><a href="#晶体、RTC配置" class="headerlink" title="晶体、RTC配置"></a><center>晶体、RTC配置</center></h2><h3 id="晶体配置"><a href="#晶体配置" class="headerlink" title="晶体配置"></a>晶体配置</h3><img src="https://s2.loli.net/2024/08/19/dAcUyOsvEVHBJfD.png" alt="晶体配置" style="zoom:50%;"><hr><img src="https://s2.loli.net/2024/08/19/piDWUw5mf8oCsVq.png" alt="配置时钟" style="zoom:50%;"><h3 id="RTC配置"><a href="#RTC配置" class="headerlink" title="RTC配置"></a>RTC配置</h3><img src="https://s2.loli.net/2024/08/19/gk3tWjnTpeoOFma.png" alt="RTC配置" style="zoom:50%;"><p>串口配置参考：<a href="https://68565200.xyz/post/2c4c3bc3">链接</a></p><h2 id="Cube-IDE代码"><a href="#Cube-IDE代码" class="headerlink" title="Cube IDE代码"></a><center>Cube IDE代码</center></h2><p>mian.c</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* USER CODE BEGIN Includes */</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;string.h&quot;</span><span class="comment">//27行</span></span></span><br><span class="line"><span class="comment">/* USER CODE END Includes */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* USER CODE BEGIN PV */</span></span><br><span class="line">RTC_TimeTypeDef RTC_Time;<span class="comment">//48行</span></span><br><span class="line">RTC_DateTypeDef RTC_Date;</span><br><span class="line"><span class="type">uint8_t</span> RTC_Buff[<span class="number">200</span>];</span><br><span class="line"><span class="type">uint8_t</span> RTC_Buff1[<span class="number">200</span>];</span><br><span class="line"><span class="comment">/* USER CODE END PV */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//while里，108行</span></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">* 参数1：指向 RTC_HandleTypeDef 结构的指针，该结构包含RTC 的配置信息</span></span><br><span class="line"><span class="comment">* 参数2：指向时间结构的指针，参数3：RTC_FORMAT_BIN:二进制数据格式，RTC_FORMAT_BCD:十六进制数据格式</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">HAL_RTC_GetTime(&amp;hrtc, &amp;RTC_Time, RTC_FORMAT_BIN);<span class="comment">//获取时分秒</span></span><br><span class="line"><span class="built_in">sprintf</span>(RTC_Buff,<span class="string">&quot;Time:%d:%d:%d\r\n&quot;</span>, RTC_Time.Hours, RTC_Time.Minutes, RTC_Time.Seconds);</span><br><span class="line">HAL_UART_Transmit(&amp;huart1, RTC_Buff, <span class="built_in">strlen</span>(RTC_Buff), <span class="number">100</span>);</span><br><span class="line">HAL_Delay(<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">HAL_RTC_GetDate(&amp;hrtc, &amp;RTC_Date, RTC_FORMAT_BIN);<span class="comment">//获取年月日星期</span></span><br><span class="line"><span class="built_in">sprintf</span>(RTC_Buff1,<span class="string">&quot;Date:%d:%d:%d,WeekDay:%d\r\n&quot;</span>, RTC_Date.Year, RTC_Date.Month, RTC_Date.Date, RTC_Date.WeekDay);</span><br><span class="line">HAL_UART_Transmit(&amp;huart1, RTC_Buff1, <span class="built_in">strlen</span>(RTC_Buff1), <span class="number">100</span>);</span><br><span class="line">HAL_Delay(<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;理论&quot;&gt;&lt;a href=&quot;#理论&quot; class=&quot;headerlink&quot; title=&quot;理论&quot;&gt;&lt;/a&gt;&lt;center&gt;理论&lt;/center&gt;&lt;/h1&gt;&lt;p&gt;使用时钟晶振：32.768KHz(2^{15}^)&lt;/p&gt;
-&lt;h1 id=&quot;代码编写&quot;&gt;&lt;a href=&quot;</summary>
-      
-    
-    
-    
-    <category term="32单片机" scheme="https://d3iiz.top/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
-    
-    
-    <category term="32单片机" scheme="https://d3iiz.top/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="32单片机" scheme="https://xinzaigeek.68565200.xyz/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
   </entry>
   
