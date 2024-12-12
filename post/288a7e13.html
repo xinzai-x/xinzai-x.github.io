@@ -1,0 +1,402 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>0.Linux基础命令 | 星仔极客</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="https://img.picgo.net/2024/09/24/811513a1eaacadb85ae79568d39c3337b8b87d11b124d4ab.png"><!-- index.css--><link rel="stylesheet" href="/css/index.css?v=2.1.13"><!-- inject head--><link rel="canonical" href="https://xinzaigeek.68565200.xyz/post/288a7e13.html"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"><!-- aplayer--><!-- swiper--><!-- fancybox ui--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.min.css"><!-- katex--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"><!-- Open Graph--><meta name="description" content="终端打开：一个窗口打开第二个：Ctrl+Shift+t，不同串口打开：Ctrl+Alt+t 虚拟机Ubuntu安装参考：链接 文件和目录操作 参考：链接 查看文件 查看当前目录里面内容：ls 查看当前目录里面内容(详细信息)：ls -l 查看当前目录里面内容(包括隐藏)：ls -a 查看系"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="星仔极客"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="https://img.picgo.net/2024/09/24/811513a1eaacadb85ae79568d39c3337b8b87d11b124d4ab.png"><link rel="apple-touch-icon" href="https://img.picgo.net/2024/09/24/811513a1eaacadb85ae79568d39c3337b8b87d11b124d4ab.png" sizes="180x180"><script>console.log(' %c Solitude %c ' + '2.1.13' + ' %c https://github.com/everfu/hexo-theme-solitude',
+    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
+</script><script>(()=>{
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
+
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
+
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        };
+        window.utils = {
+            saveToLocal: saveToLocal,
+            getCSS: (url, id = false) => new Promise((resolve, reject) => {
+              const link = document.createElement('link')
+              link.rel = 'stylesheet'
+              link.href = url
+              if (id) link.id = id
+              link.onerror = reject
+              link.onload = link.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                link.onload = link.onreadystatechange = null
+                resolve()
+              }
+              document.head.appendChild(link)
+            }),
+            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+              const script = document.createElement('script')
+              script.src = url
+              script.async = true
+              script.onerror = reject
+              script.onload = script.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                script.onload = script.onreadystatechange = null
+                resolve()
+              }
+
+              Object.keys(attr).forEach(key => {
+                script.setAttribute(key, attr[key])
+              })
+
+              document.head.appendChild(script)
+            }),
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
+
+                if (name && keyObj[name]) return
+
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+            addEventListenerPjax: (ele, event, fn, option = false) => {
+              ele.addEventListener(event, fn, option)
+              utils.addGlobalFn('pjax', () => {
+                  ele.removeEventListener(event, fn, option)
+              })
+          },
+        }
+    })()</script><!-- theme--><script>initTheme = () => {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const cachedMode = utils.saveToLocal.get('theme');
+    if (cachedMode === undefined) {
+        const nowMode =
+            isDarkMode ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', nowMode);
+    } else {
+        document.documentElement.setAttribute('data-theme', cachedMode);
+    }
+    typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
+}
+initTheme()</script><!-- global head--><script>const GLOBAL_CONFIG = {
+    root: '/',
+    algolia: {"appId":"V1R8T877I8","apiKey":"5d3e42b03150eed38d97122513aa8714","indexName":"Blog","hits":{"per_page":10}},
+    localsearch: undefined,
+    runtime: '2023-04-20 00:00:00',
+    lazyload: {
+        enable: true,
+        error: '/img/error_load.avif'
+    },
+    copyright: {"limit":50,"author":"作者: 星仔极客","link":"链接: ","source":"来源: 星仔极客","info":"著作权归作者所有。 商业转载请联系作者获得授权，非商业转载请注明出处。"},
+    highlight: {"limit":500,"expand":true,"copy":true,"syntax":"highlight.js"},
+    randomlink: false,
+    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可","search":{"empty":"找不到你查询的内容：${query}","hit":"找到 ${hits} 条结果，用时 ${time} 毫秒","placeholder":"输入关键词快速查找","count":"共 <b>${count}</b> 条结果。","loading":"搜索中..."},"barrage":{"title":"热评"}},
+    aside: {
+        sayhello: {
+            morning: "✨ 早上好，新的一天开始了",
+            noon: "中午饭时间",
+            afternoon: "下午茶时间 ☕️",
+            night: "不要熬夜哦",
+            goodnight: "晚安，早点休息",
+        },
+        sayhello2: ["你可以的","相信你可以的","你一定可以的"],
+        sayhello3: {
+            prefix: '好久不见，',
+            back: '欢迎再次回来，',
+        },
+    },
+    covercolor: {
+        enable: true
+    },
+    comment: {"avatar":"https://gravatar.com/avatar","commentBarrage":true},
+    lightbox: 'fancybox',
+    post_ai: false,
+    right_menu: {"mode":{"dark":"深色模式","light":"浅色模式"},"img_error":"此图片无法复制与下载","barrage":{"open":"显示热评","close":"关闭热评"},"ctrlOriginalMenu":"按住Ctrl+右键可打开浏览器右键菜单"},
+    translate: false,
+    lure: false,
+    expire: false,
+};</script><!-- page-config head--><script id="config-diff">var PAGE_CONFIG = {
+    is_post: true,
+    is_page: false,
+    is_home: false,
+    page: '',
+    toc: true,
+    comment: true,
+    ai_text: false,
+    color: false,
+}</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="星仔极客" type="application/atom+xml">
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body id="body"><!-- universe--><!-- background img--><div id="global_bg"></div><!-- loading--><!-- console--><!-- sidebar--><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">80</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fa-solid fa-circle-half-stroke"></i><span>显示模式</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文库</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>全部文章</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类列表</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签列表</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友情链接</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://link3.cc/xinzai_x"><i class="solitude  fas fa-tools"></i><span>工具站</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://ainm.cc/c/music/"><i class="solitude  fas fa-headphones"></i><span>音乐网</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>常用文章</span></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://68565200.xyz/post/79959306.html"><i class="solitude  fas fa-images"></i><span>图片工具</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="solitude  fas fa-user"></i><span>关于本站</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="card-tag-cloud"><a href="/tags/Java%E8%AF%AD%E8%A8%80/">Java语言<sup>12</sup></a><a href="/tags/MySQL/">MySQL<sup>3</sup></a><a href="/tags/%E4%BA%91%E5%9B%BE%E5%BA%8A/">云图床<sup>1</sup></a><a href="/tags/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/">图片压缩在线工具<sup>1</sup></a><a href="/tags/%E6%8F%92%E4%BB%B6/">插件<sup>1</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2/">资源搜索<sup>1</sup></a><a href="/tags/CubeIDE%E4%B8%8ECubeMX%E8%BD%AF%E4%BB%B6%E8%AE%BE%E7%BD%AE/">CubeIDE与CubeMX软件设置<sup>1</sup></a><a href="/tags/ubuntu%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/">ubuntu相关设置<sup>1</sup></a><a href="/tags/Win11%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/">Win11相关设置<sup>1</sup></a><a href="/tags/springboot%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/">springboot相关配置<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%9B%B8%E5%85%B3/">博客搭建相关<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2CDN%E8%A7%A3%E6%9E%90/">博客CDN解析<sup>1</sup></a><a href="/tags/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/">小狼毫输入法<sup>1</sup></a><a href="/tags/%E8%90%A5%E4%B8%9A%E6%89%A7%E7%85%A7/">营业执照<sup>1</sup></a><a href="/tags/%E9%B8%BF%E8%92%99next%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/">鸿蒙next应用开发<sup>4</sup></a><a href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/">32单片机<sup>12</sup></a><a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/">51单片机<sup>8</sup></a><a href="/tags/Linux/">Linux<sup>5</sup></a><a href="/tags/C%E8%AF%AD%E8%A8%80/">C语言<sup>13</sup></a><a href="/tags/RT-Thread/">RT-Thread<sup>6</sup></a></div></div></div></div><!-- keyboard--><!-- righhtside--><div class="needEndHide" id="rightside"><div class="rs_hide"><button class="mode" type="button" title="显示模式切换" onclick="sco.switchDarkMode()"><i class="fas fa-circle-half-stroke"></i></button><button class="aside pc" type="button" title="侧边栏" onclick="sco.switchHideAside()"><i class="fas fa-arrows-alt-h"></i></button></div><div class="rs_show"><button class="config" type="button" title="扩展" onclick="document.querySelector(&quot;.rs_hide&quot;).classList.toggle(&quot;show&quot;)"><i class="fas fa-gear fa-spin"></i></button><button class="mobile toc" type="button" title="目录" onclick="document.querySelector('#card-toc').classList.toggle('open')"><i class="fas fa-list"></i></button><button class="comment" type="button" title="评论" onclick="sco.scrollTo('post-comment')"><i class="fas fa-comment"></i></button><button class="barrage pc" type="button" title="弹" onclick="sco.switchCommentBarrage()"><span>弹</span></button><button class="top" type="button" title="返回顶部" onclick="sco.toTop()"><i class="fas fa-arrow-up"></i><span id="percent">0</span></button></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><a id="site-name" href="/" title="返回博客主页"><i class="solitude fa-solid fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">0.Linux基础命令</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文库</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>全部文章</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类列表</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签列表</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友情链接</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://link3.cc/xinzai_x"><i class="solitude  fas fa-tools"></i><span>工具站</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://ainm.cc/c/music/"><i class="solitude  fas fa-headphones"></i><span>音乐网</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>常用文章</span></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://68565200.xyz/post/79959306.html"><i class="solitude  fas fa-images"></i><span>图片工具</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="solitude  fas fa-user"></i><span>关于本站</span></a></li></ul></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索"><i class="solitude fa-solid fa-magnifying-glass"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fa-solid fa-bars"></i></a></div></div></div></nav><div class="coverdiv" id="coverdiv"><img class="nolazyload" id="post-cover" src="https://i.postimg.cc/MKRR79pj/7777777.jpg" alt="0.Linux基础命令"></div><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original" title="该文章为原创文章，注意版权协议">原创</a><span class="post-meta-categories"><a class="post-meta-categories" href="/categories/Linux/">Linux</a></span><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/"><span class="tags-name tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>Linux</span></a></div></div></div></div><h1 class="post-title">0.Linux基础命令</h1><div id="post-meta"><div class="meta-secondline"><span class="post-meta-date" title="发布于 2024-09-28 13:37:04"><i class="post-meta-icon solitude fas fa-calendar-days"></i><time datetime="2024-09-28T05:37:04.000Z">2024-09-28T05:37:04.000Z</time></span><span class="post-meta-date" title="最后更新于 2024-11-21 10:22:20"><i class="post-meta-icon solitude fa-solid fa-arrows-rotate"></i><time datetime="2024-11-21T02:22:20.958Z">2024-11-21T02:22:20.958Z</time></span><span class="post-meta-position" title="作者IP归属地为揭阳"><i class="post-meta-icon solitude fas fa-location-dot"></i><span>揭阳</span></span><a class="post-meta-pv" href="/post/288a7e13.html" title="文章热度"><i class="post-meta-icon solitude fa-solid fa-fire-flame-curved"></i></a></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section></header><main class="layout" id="content-inner"><div id="post"><article class="post-content article-container"><blockquote>
+<p>终端打开：一个窗口打开第二个：<code>Ctrl+Shift+t</code>，不同串口打开：<code>Ctrl+Alt+t</code></p>
+<p>虚拟机Ubuntu安装参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_48728769/article/details/126989849?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522170693530616800182141076%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=170693530616800182141076&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-126989849-null-null.142%5Ev99%5Epc_search_result_base9&amp;utm_term=Ubuntu20.04%E4%B8%8B%E8%BD%BD&amp;spm=1018.2226.3001.4187">链接</a></p>
+</blockquote>
+<h1><center>文件和目录操作</center></h1>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45908488/article/details/123703179?spm=1001.2014.3001.5502">链接</a></p>
+<blockquote>
+<p>查看文件</p>
+</blockquote>
+<ul>
+<li>查看当前目录里面内容：<code>ls</code></li>
+<li>查看当前目录里面内容(详细信息)：<code>ls -l</code></li>
+<li>查看当前目录里面内容(包括隐藏)：<code>ls -a</code></li>
+<li>查看系统加载哪些驱动：<code>lsmod</code></li>
+<li>查看系统有哪些usb设备：<code>lsusb</code></li>
+</ul>
+<blockquote>
+<p>文件夹操作</p>
+</blockquote>
+<ul>
+<li>进入哪个文件夹(不知道有哪些需先查看)：<code>cd 文件夹名</code>，连续进入：<code>cd 文件夹名1/文件夹名2</code></li>
+<li>返回上一级：<code>cd ..</code></li>
+<li>切换到系统根目录：<code>cd /</code></li>
+<li>切换用户主目录：：<code>cd ~</code></li>
+<li>返回当前文件夹所在路径：<code>pwd</code></li>
+<li>创建文件夹：<code>mkdir 文件夹名</code></li>
+</ul>
+<blockquote>
+<p>文件操作</p>
+</blockquote>
+<ul>
+<li>新建文件：<code>touch 文件.后缀名</code></li>
+<li>删除文件：<code>rm 文件.后缀名</code>，删除文件夹中后缀名全部文件：<code>rm *.后缀名</code></li>
+<li>删除文件夹：<code>rm -R 文件夹名</code></li>
+<li>复制文件：<code>cp 文件名.后缀名 路径</code></li>
+<li>移动文件：<code>mv 文件名.后缀名 路径</code></li>
+<li>查看文件中内容：<code>cat 文件名.后缀名</code></li>
+</ul>
+<h1><center>管理员</center></h1>
+<p>管理员权限：<code>sudo 操作</code></p>
+<p>创建root用户：<code>sudo passwd root</code>，进入root用户：<code>su root</code></p>
+<p>切换用户：<code>su 用户名</code></p>
+<h1><center>安装应用</center></h1>
+<blockquote>
+<p>查看IP：ifconfig</p>
+</blockquote>
+<h2 id="apt">apt</h2>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_46278037/article/details/120232679?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171212013516800182718297%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=171212013516800182718297&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-120232679-null-null.142%5Ev100%5Epc_search_result_base9&amp;utm_term=apt%20Linux&amp;spm=1018.2226.3001.4187">链接</a></p>
+<p>安装：<code>sudo apt install &lt;package_name&gt;</code></p>
+<p>使用 apt 更新包数据库：<code>sudo apt update</code></p>
+<p>使用 apt 升级已安装的软件包：<code>sudo apt upgrade</code></p>
+<h2 id="换源">换源</h2>
+<p>根据图示更改为国内镜像源，参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45878098/article/details/126037838">链接</a></p>
+<img src= "/img/loading.avif" data-lazy-src="https://s2.loli.net/2024/09/30/4knXvK1C96LgJwj.webp" alt="更换镜像源" style="zoom:40%;">
+<h1><center>文本处理</center></h1>
+<h2 id="vim">vim</h2>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29689343/article/details/116162089?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=Linux%E6%96%87%E6%9C%AC&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-5-116162089.142%5Ev100%5Epc_search_result_base9&amp;spm=1018.2226.3001.4187">链接</a></p>
+<p>安装：<code>sudo apt install vim</code>，创建一个.c文件：<code>vim 文件名.c</code></p>
+<p>当编辑文件完成后按 Esc 键即可返回命令模式</p>
+<p>在命令模式状态下按<code>:</code>键，Vim 窗口的左下方出现一个<code>:</code>符号</p>
+<blockquote>
+<p><code>wq</code>：保存并退出，<code>wq!</code>：强制保存并推出，<code>q</code>：不保存退出，<code>q!</code>：不保存强制退出</p>
+<p><code>set nu</code>：文本编辑显示行号，<code>/需要搜索的文本</code>：搜索文本（n查看下一个，N查看上一个）</p>
+</blockquote>
+<p>gedit：文本编辑器</p>
+<h1><center>压缩与解压</center></h1>
+<blockquote>
+<p>通用形式</p>
+</blockquote>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">tar [选项] [文件]</span><br><span class="line"></span><br><span class="line">文件：指定要处理的文件或目录列表</span><br><span class="line">选项：</span><br><span class="line">    -c: 创建一个新的归档文件。</span><br><span class="line">    -r: 向已存在的归档文件中添加文件。</span><br><span class="line">    -t: 列出归档文件的内容。</span><br><span class="line">    -u: 更新归档文件，即添加比归档文件中副本更新的文件。</span><br><span class="line">    -x: 从归档文件中提取文件。</span><br><span class="line">    -v: 在处理文件时显示详细信息。</span><br><span class="line">    -f: 指定归档文件的名称。</span><br><span class="line">    -z: 通过gzip进行压缩或解压缩。</span><br><span class="line">    -j: 通过bzip2进行压缩或解压缩。</span><br><span class="line">    -W: 确认归档文件的正确性</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>tar压缩：tar -cvf test.tar *.c</p>
+<p>tar解压：tar -xvf test.tar</p>
+</blockquote>
+<h1><center>查找</center></h1>
+<blockquote>
+<p><code>find</code>：查找文件，sudo find  /home/wfeng  -name  “*.c”</p>
+</blockquote>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">find</span> [起始目录] [表达式]</span><br><span class="line"></span><br><span class="line"> 起始目录：<span class="built_in">find</span> 命令开始搜索的目录</span><br><span class="line"> 表达式：</span><br><span class="line">	-name：匹配文件名。</span><br><span class="line">	-<span class="built_in">type</span>：匹配文件类型（例如，f 表示普通文件，d 表示目录）。</span><br><span class="line">	-size：根据文件大小匹配文件。</span><br><span class="line">	-mtime：根据文件最后修改时间匹配文件。</span><br><span class="line">	-exec：对匹配搜索条件的文件执行命令</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>grep</code>：查找文件中的字符，grep “d” a.c</p>
+</blockquote>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">grep [选项] [搜索模式] [文件…]</span><br><span class="line"></span><br><span class="line">[选项]：可选，用于定制grep的行为，例如是否忽略大小写（-i），是否显示行号（-n）等</span><br><span class="line">[搜索模式]：想要搜索的文本或正则表达式。</span><br><span class="line">[文件…]：要搜索的文件。如果省略文件名，grep会从标准输入读取数据</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>dmesg</code>：系统内核打印，特定搜索：dmesg | grep usb</p>
+</blockquote>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dmesg | grep [选项] “搜索字符串”</span><br><span class="line"></span><br><span class="line">dmesg：用于获取内核消息</span><br><span class="line">|：管道符，将 dmesg 的输出传递给 grep</span><br><span class="line">grep：文本搜索命令</span><br><span class="line">[选项]：可选参数，用于定制 grep 的行为，例如忽略大小写（-i），显示行号（-n）等</span><br><span class="line">“搜索字符串”：要搜索的文本字符串</span><br></pre></td></tr></table></figure>
+<h1><center>基础编译测试</center></h1>
+<p>安装gcc：<code>sudo apt install gcc</code></p>
+<p>编译 .c：<code>gcc 文件名.c -o 生成文件名</code>，再运行编译生成的可执行文件：<code>./可执行文件名.后缀名</code></p>
+<p>查看文件属性：<code>file 文件名.后缀名</code>，例：file mian.c</p>
+<p>修改权限：<code>sudo chmod 777 文件名.后缀名</code>，例：sudo chmod 777 test.c</p>
+<h1><center>其他命令</center></h1>
+<ul>
+<li>查看网络信息(IP地址等)：<code>ifconfig</code>(<a target="_blank" rel="noopener" href="https://blog.csdn.net/AnChenliang_1002/article/details/131466890">参考</a>)</li>
+<li>echo：输出指定的字符串信息或显示变量的值的命令(<a target="_blank" rel="noopener" href="https://blog.csdn.net/rhn_111/article/details/128954511">参考</a>)</li>
+<li>显示应用运行的进程：<code>ps</code>，显示系统全部进程：<code>top</code>(<a target="_blank" rel="noopener" href="https://blog.csdn.net/Y1730008223CONG/article/details/126533853">参考</a>)，退出：<code>ctrl c/z</code></li>
+<li>杀死进程：kill -9 进程号</li>
+<li>发送信号到进程：<code>kill</code>(<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-kill.html?source=1">参考</a>)</li>
+<li>关机：<code>shutdown</code>(默认一分钟后关)，重启：<code>reboot</code></li>
+</ul>
+<h1><center>环境搭建</center></h1>
+<p>通过SSH，Windows可以连接到Linux，在MobaXterm中操作Linux</p>
+<p>安装SSH：Linux <code>sudo apt-get install openssh-server</code>，Windows <code>MobaXterm软件</code></p>
+<p>MobaXterm连接Linux，按照图中填写IP，连接后输入Linux用户名以及密码</p>
+<img src= "/img/loading.avif" data-lazy-src="https://s2.loli.net/2024/10/01/FKfOYW47Z2C6dGh.webp" alt="连接Linux" style="zoom:40%;">
+<h2 id="传文件">传文件</h2>
+<h3 id="ftp">FTP</h3>
+<p>安装：<code>sudo apt-get install vsftpd</code></p>
+<p><code>sudo vim /etc/vsftpd.conf</code>，找到 #write_enable=YES，把#删掉，然后<code>Esc</code>、<code>:</code>、<code>wq</code>、回车</p>
+<img src= "/img/loading.avif" data-lazy-src="https://s2.loli.net/2024/10/01/VPhkeEY3Z5b2KrC.webp" alt="删除" style="zoom:40%;">
+<p>重启FTP：<code>sudo /etc/init.d/vsftpd restart</code></p>
+<p>Windows安装：<code>FileZilla</code>软件，输入Linux的IP、用户名、密码 连接Linux的FTP</p>
+<p>本地站点则为Windows的文件，远程站点则为Linux文件，双击Windows中的文件自动传到Linux，在Linux右键下载则传到Windows</p>
+<img src= "/img/loading.avif" data-lazy-src="https://s2.loli.net/2024/10/01/VDI6tEBbdcYaKSp.webp" alt="连接FTP" style="zoom:50%;">
+<h3 id="samba">Samba</h3>
+<p>Linux安装：运行以下命令</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get upgrade</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get dist-upgrade</span><br><span class="line">sudo apt-get install samba samba-common</span><br><span class="line">samba -V	//如果出现下面版本号说明已经安装了samba服务器</span><br><span class="line">sudo <span class="built_in">mkdir</span> /home/share</span><br><span class="line">sudo chmod <span class="number">777</span> /home/用户名</span><br><span class="line">sudo smbpasswd -a 用户名	//需要确认输入两个相同的密码确认</span><br><span class="line">sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bak	//备份 smb.conf 配置文件</span><br></pre></td></tr></table></figure>
+<p>修改文件：<code>sudo vim /etc/samba/smb.conf</code>，在最后添加下面的内容，里面名字(xinzai)要改成自己的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line"> </span><br><span class="line">    ; 创建工作组 设定 Samba Server 所要加入的工作组或者域  </span><br><span class="line">    workgroup = WORKGROUP </span><br><span class="line"> </span><br><span class="line">    ; 为了防止出现中文目录乱码的情况。其中根据你的local，UTF-8 有可能需要改成 cp936</span><br><span class="line">    ; display charset = UTF-8</span><br><span class="line">    unix charset = UTF-8</span><br><span class="line">    dos charset = cp936 </span><br><span class="line">  </span><br><span class="line">    ; 是否允许guest用户访问</span><br><span class="line">    guest ok = no</span><br><span class="line">    </span><br><span class="line">    ; 注：如果 #security 存在就直接修改，不存在就创建</span><br><span class="line">    ; security = user </span><br><span class="line"> </span><br><span class="line">    ; 安全模式  我们设置用户安全级别</span><br><span class="line">    security = user </span><br><span class="line">  </span><br><span class="line">  ; 说明：用来定义用户名映射，比如可以将root换成administrator、admin等。不过要事先在smbusers文件中定义好。</span><br><span class="line">  ; 比如：root = administrator admin，这样就可以用administrator或admin这两个用户来代替root登陆Samba Server，更贴近windows用户的习惯。</span><br><span class="line">    username map = /etc/Samba/smbusers </span><br><span class="line"> </span><br><span class="line">; 共享名，该共享标签，该名字为在电脑上看到的共享名 注意网络映射的路径是这标签名字不是共享路径的名字</span><br><span class="line">[share]</span><br><span class="line"> </span><br><span class="line">    ; 该共享描述</span><br><span class="line">    comment = Shared Folder with username and password </span><br><span class="line"> </span><br><span class="line">    ; 共享文件夹路径</span><br><span class="line">    path = /home/xinzai/</span><br><span class="line"> </span><br><span class="line">    ; 表示是否允许匿名访问该共享目录</span><br><span class="line">    public = no</span><br><span class="line"> </span><br><span class="line">    ; 配置的Samba访问账号 指明可以访问的用户</span><br><span class="line">    valid users = xinzai</span><br><span class="line"> </span><br><span class="line">    ; 表示是否可以在 Window Explorer中显示该目录</span><br><span class="line">    browsable = no</span><br><span class="line"> </span><br><span class="line">    ; 指明新建立的文件的属性</span><br><span class="line">    create mask = 777 </span><br><span class="line"> </span><br><span class="line">    ; 指明新建立的目录的属性</span><br><span class="line">    directory mask = 777</span><br><span class="line"> </span><br><span class="line">    ; force group 和force user 规定创建的文件或文件夹的拥有者和组拥有者是谁 </span><br><span class="line">    ; 一般这两个值来空，则表示拥有者和组拥有者为创建文件者。 如设定值，如force group=xinzai</span><br><span class="line">    ; Force user=yhq，则不管是谁创建的文件和文件夹，拥有者都为yhq和yhq组。</span><br><span class="line"> </span><br><span class="line">    ; force user强制把建立文件的属主是谁。如果我有一个目录，让guest可以写，那么guest就可以删除，</span><br><span class="line">    ; 如果我用force user=yhq强制建立文件的属主是yhq，同时限制create mask = 0755，</span><br><span class="line">    ; 这样guest就不能删除了。</span><br><span class="line"> </span><br><span class="line">    force user = xinzai </span><br><span class="line">    force group = xinzai</span><br><span class="line"> </span><br><span class="line">    ; available用来指定该共享资源是否可用</span><br><span class="line">    available = yes </span><br><span class="line"> </span><br><span class="line">    ; 共享路径读权限 设置共享是否可浏览，如果no则表示隐藏，需要通过&quot;//ip/共享目录&quot;进行访问</span><br><span class="line">    browseable = yes</span><br><span class="line"> </span><br><span class="line">    ; 共享路径写权限</span><br><span class="line">    writable = yes</span><br></pre></td></tr></table></figure>
+<p>重启samba服务器：<code>sudo service smbd restart</code></p>
+<p>Windows：安装图中所示，创建映射网络驱动器，文件夹填写：<code>\\虚拟机IP地址\share</code>，例：\\192.168.31.169\share，然后输入账号和密码，创建时一般都是与Linux账户设置一致</p>
+<img src= "/img/loading.avif" data-lazy-src="https://s2.loli.net/2024/10/01/GfcUbgAt3YTM1Ks.webp" alt="创建" style="zoom:50%;">
+<blockquote>
+<p>scp：<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-scp.html">参考</a></p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author_group"><a class="post-copyright__author_img" target="_blank" rel="noopener" href="https://68565200.xyz/about/"><img class="post-copyright__author_img_front" src= "/img/loading.avif" data-lazy-src="https://i.postimg.cc/wjTxDpBF/image.jpg/banner"></a><div class="post-copyright__author_name">星仔极客</div><div class="post-copyright__author_desc">珍惜当下 不负此生</div></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div id="quit-box" onclick="RemoveRewardMask()"></div></div></div><div class="social-share"><a class="social-share-ico icon-qq" target="_blank" rel="noopener" href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fxinzaigeek.68565200.xyz%2Fpost%2F288a7e13.html&amp;title=0.Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4&amp;desc=undefined&amp;summary=undefined&amp;site=0.Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4&amp;pics=https%3A%2F%2Fi.postimg.cc%2FMKRR79pj%2F7777777.jpg" title="分享到QQ"><i class="solitude fab fa-qq"></i></a><div class="social-share-ico icon-link" onclick="utils.copy(&quot;https://xinzaigeek.68565200.xyz/post/288a7e13.html&quot;)" title="复制文章链接"><i class="solitude fas fa-link"></i></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本文是原创文章，采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>协议，完整转载请注明来自<a href="/">星仔极客</a></span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/"><span class="tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>Linux<span class="tagsPageCount">5</span></span></a></div></div></div><nav class="needEndHide pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/fd908b52.html"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">springboot相关配置</div></div></a></div><div class="next-post pull-right"><a href="/post/bcf1b676.html"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">前端相关报错</div></div></a></div></nav>
+        <div class="relatedPosts">
+            <div class="headline">
+                <i class="solitude fa-solid fa-star"></i>
+                <span>喜欢这篇的人也看了</span>
+                <div class="relatedPosts-link">
+                    <a onclick="event.preventDefault(); toRandomPost();" href="javascript:void(0);" rel="external nofollow" data-pjax-state="">随便逛逛</a>
+                </div>
+            </div>
+            <div class="relatedPosts-list">
+            <div>
+                <a href="/post/9d10e9f6.html" title="4.Linux应用编程">
+                    <img class="cover" src= "/img/loading.avif" data-lazy-src="https://i.postimg.cc/MKRR79pj/7777777.jpg" alt="cover">
+                    <div class="content is-center">
+                        <div class="title">4.Linux应用编程</div>
+                    </div>
+                </a>
+            </div>
+            <div>
+                <a href="/post/55a07e0f.html" title="3.驱动和存储器">
+                    <img class="cover" src= "/img/loading.avif" data-lazy-src="https://i.postimg.cc/MKRR79pj/7777777.jpg" alt="cover">
+                    <div class="content is-center">
+                        <div class="title">3.驱动和存储器</div>
+                    </div>
+                </a>
+            </div>
+            </div>
+        </div><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="solitude fa-solid fa-comment"></i><span> 评论</span><span class="count"> (<span class="waline-comment-count"><i class="solitude fa-solid fa-spinner fa-spin"></i></span>)</span></div></div><div class="comment-wrap"><div id="waline-wrap"></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><div class="author-info__top-group"><div class="author-info__sayhi" id="author-info__sayhi" onclick="sco.changeSayHelloText()">sayhello.morning</div></div></div><div class="avatar-img-group"><img class="avatar-img" alt="头像" src= "/img/loading.avif" data-lazy-src="https://i.postimg.cc/wjTxDpBF/image.jpg/banner"></div><div class="author-info__description_group"><div class="author-info__description"></div><div class="author-info__description2"></div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/about/"><div class="author-info__name">星仔极客</div><div class="author-info__desc">珍惜当下 不负此生</div></a><div class="card-info-social-icons is-center"><a class="social-icon" target="_blank" rel="noopener" href="https://juejin.cn/user/745920887002011" title="稀土掘金"><i class="solitude  fas fa-blog"></i></a><a class="social-icon" target="_blank" rel="noopener" href="https://space.bilibili.com/488963146?spm_id_from=333.1007.0.0" title="Bilibili"><i class="solitude  fab fa-bilibili"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="solitude fa-solid fa-bars"></i><span>文章目录</span></div><div class="toc-content" id="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">文件和目录操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">管理员</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">安装应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#apt"><span class="toc-text">apt</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8D%A2%E6%BA%90"><span class="toc-text">换源</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">文本处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#vim"><span class="toc-text">vim</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">压缩与解压</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">查找</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">基础编译测试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">其他命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E6%96%87%E4%BB%B6"><span class="toc-text">传文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ftp"><span class="toc-text">FTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#samba"><span class="toc-text">Samba</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude fa-solid fa-map"></i><span>最近发布</span></div><div class="aside-list"><a class="aside-list-item" href="/post/36f99b3f.html" title="2.交互开发"><div class="thumbnail"><img alt="2.交互开发" src= "/img/loading.avif" data-lazy-src="https://img.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png"></div><div class="content"><span class="title" href="/post/36f99b3f.html" title="2.交互开发">2.交互开发</span><span class="article-recent_post_categories" href="/post/36f99b3f.html">鸿蒙next应用开发</span></div></a><a class="aside-list-item" href="/post/9d10e9f6.html" title="4.Linux应用编程"><div class="thumbnail"><img alt="4.Linux应用编程" src= "/img/loading.avif" data-lazy-src="https://i.postimg.cc/MKRR79pj/7777777.jpg"></div><div class="content"><span class="title" href="/post/9d10e9f6.html" title="4.Linux应用编程">4.Linux应用编程</span><span class="article-recent_post_categories" href="/post/9d10e9f6.html">Linux</span></div></a><a class="aside-list-item" href="/post/de777d6b.html" title="1.界面开发"><div class="thumbnail"><img alt="1.界面开发" src= "/img/loading.avif" data-lazy-src="https://img.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png"></div><div class="content"><span class="title" href="/post/de777d6b.html" title="1.界面开发">1.界面开发</span><span class="article-recent_post_categories" href="/post/de777d6b.html">鸿蒙next应用开发</span></div></a><a class="aside-list-item" href="/post/d98607ab.html" title="0.ArkTS基础语法"><div class="thumbnail"><img alt="0.ArkTS基础语法" src= "/img/loading.avif" data-lazy-src="https://img.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png"></div><div class="content"><span class="title" href="/post/d98607ab.html" title="0.ArkTS基础语法">0.ArkTS基础语法</span><span class="article-recent_post_categories" href="/post/d98607ab.html">鸿蒙next应用开发</span></div></a><a class="aside-list-item" href="/post/a2c247c4.html" title="项目"><div class="thumbnail"><img alt="项目" src= "/img/loading.avif" data-lazy-src="https://img.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png"></div><div class="content"><span class="title" href="/post/a2c247c4.html" title="项目">项目</span><span class="article-recent_post_categories" href="/post/a2c247c4.html">鸿蒙next应用开发</span></div></a></div></div></div></div></main><footer id="footer"><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2023 - 2024 By&nbsp;<a class="footer-bar-link" href="/"><img class="author-avatar" src= "/img/loading.avif" data-lazy-src="https://img.picgo.net/2024/09/24/811513a1eaacadb85ae79568d39c3337b8b87d11b124d4ab.png">星仔极客</a></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude" alt="Theme">Theme</a></div></div></div><div class="comment-barrage needEndHide"></div></footer></div><!-- right_menu--><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="solitude fa-solid fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="solitude fa-solid fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="solitude fa-solid fa-arrows-rotate"></i></div><div class="rightMenu-item" id="menu-top"><i class="solitude fa-solid fa-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="solitude fa-solid fa-clone"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="solitude fa-solid fa-clipboard"></i><span>粘贴文本</span></div><div class="rightMenu-item" id="menu-commenttext"><i class="solitude fa-solid fa-comment-medical"></i><span>引用到评论</span></div><div class="rightMenu-item" id="menu-newwindow"><i class="solitude fa-regular fa-window-maximize"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="solitude fa-solid fa-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="solitude fa-solid fa-clone"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="solitude fa-solid fa-cloud-arrow-down"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-search"><i class="solitude fa-solid fa-magnifying-glass"></i><span>站内搜索</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-darkmode" onclick="sco.switchDarkMode()"><i class="solitude fa-solid fa-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></div></div></div><div id="rightmenu-mask"></div><!-- inject body--><div><script src="/js/utils.js?v=2.1.13"></script><script src="/js/main.js?v=2.1.13"></script><script src="/js/third_party/waterfall.min.js?v=2.1.13"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pjax/0.2.8/pjax.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/19.1.3/lazyload.iife.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.umd.min.js"></script><script>const coverColorConfig = {
+  api: 'https://api.qjqq.cn/api/Imgcolor?img=',
+  time: 43200000
+}</script><script src="/js/covercolor/api.js?v=2.1.13"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/instantsearch.js/4.75.5/instantsearch.production.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/algoliasearch/5.14.2/algoliasearch.umd.min.js"></script><script src="/js/right_menu.js?v=2.1.13"></script><div class="js-pjax"><script>(() => {
+    let walineInitFunction = window.walineFn || null
+
+    function initWaline(initFn) {
+        const walineOptions = {
+            el: '#waline-wrap',
+            serverURL: 'https://waline.68565200.xyz',
+            pageview: true,
+            dark: 'html[data-theme="dark"]',
+            path: window.location.pathname,
+            comment: true,
+            ...{"lang":"zh-CN","dark":"auto","requiredMeta":["nick","mail"],"wordLimit":500,"pageSize":10,"commentCount":true}
+        }
+        const walineInstance = initFn(walineOptions)
+        utils.addGlobalFn('pjax', () => walineInstance.destroy(), 'destroyWaline')
+        GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll('#comment .wl-content img:not(.wl-emoji)'))
+        sco.owoBig({
+            body: '.wl-emoji-popup',
+            item: '.wl-tab-wrapper button'
+        })
+    }
+
+    async function loadWaline() {
+        if (walineInitFunction) initWaline(walineInitFunction)
+        else {
+            await utils.getCSS('https://cdnjs.cloudflare.com/ajax/libs/waline/3.3.2/waline.min.css')
+            const {init} = await import('https://cdnjs.cloudflare.com/ajax/libs/waline/3.3.2/waline.min.js')
+            walineInitFunction = init || Waline.init
+            initWaline(walineInitFunction)
+            window.walineFn = walineInitFunction
+        }
+        true && barrageWaline()
+    }
+
+    if (true || true) {
+        if (true) utils.loadComment(document.getElementById('waline-wrap'), loadWaline)
+        else loadWaline()
+    } else window.loadTwoComment = loadWaline
+})()
+</script><script>async function barrageWaline() {
+    const url = new URL('https://waline.68565200.xyz/api/comment')
+    const params = {path: window.location.pathname, sortBy: 'insertedAt_asc'}
+    Object.entries(params).forEach(([key, value]) => url.searchParams.append(key, value))
+    await fetch(url).then(async res => {
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`)
+        const data = await res.json();
+        const regex = /<img [^>]*class="wl-emoji"[^>]*>/;
+        const init = () => {
+            initializeCommentBarrage(data.data.data
+                .map(item => ({
+                    nick: item.nick,
+                    mailId: item.avatar,
+                    content: item.comment.replace(regex, ''),
+                    id: item.objectId
+                })))
+        }
+        if (typeof initializeCommentBarrage === "undefined") await utils.getScript('/js/third_party/barrage.min.js?v=2.1.13').then(init)
+        else init()
+    }).catch(error => console.error("An error occurred while fetching comments: ", error))
+}</script></div></div><!-- pjax--><script>const pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: ["title","#body-wrap","#site-config","meta[name=\"description\"]",".js-pjax","meta[property^=\"og:\"]","#config-diff",".rs_show",".rs_hide"],
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+})
+
+document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+})
+
+document.addEventListener('pjax:complete', () => {
+    window.refreshFn()
+
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
+
+    GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+    if (e.request.status === 404) {
+        pjax.loadUrl('/404.html')
+    }
+})</script><!-- google adsense--><!-- search--><div id="algolia-search"><div class="search-dialog"><div class="algolia-navbar"><div class="search-dialog__title" id="algolia-search-title">搜索</div><div class="algolia-tips"><i class="solitude fab fa-algolia"></i><span class="algolia-tips-text">Algolia</span></div><span class="search-close-button"><i class="solitude fa-solid fa-xmark"></i></span></div><div id="algolia-input-panel"><div id="algolia-search-input"></div></div><div id="search-results"><div id="algolia-hits"></div></div><div id="algolia-tips"><div id="algolia-pagination"></div><div id="algolia-stats"></div></div></div><div id="search-mask"></div></div><script src="/js/search/algolia.js?v=2.1.13"></script><!-- Tianli-Talk--><!-- music--></body></html>
+        <script>
+            const posts = ["post/36f99b3f.html","post/9d10e9f6.html","post/de777d6b.html","post/d98607ab.html","post/a2c247c4.html","post/4e3021ff.html","post/55a07e0f.html","post/f705831.html","post/c24675b4.html","post/68ec1b16.html","post/dd99ee0d.html","post/69f8b9de.html","post/ff4327d1.html","post/fd908b52.html","post/288a7e13.html","post/bcf1b676.html","post/de55e8eb.html","post/e5f15f94.html","post/49f85af0.html","post/e9f3074a.html","post/a1db912f.html","post/54659a9b.html","post/8a87b27f.html","post/96c26968.html","post/520176db.html","post/bd740709.html","post/acb77072.html","post/52772f76.html","post/f0812160.html","post/e8bc8f26.html","post/f5fba2c3.html","post/6928cd3f.html","post/bfd038f5.html","post/f71d0ad2.html","post/2c4c3bc3.html","post/eb0bc4a3.html","post/c4236caa.html","post/63d3dd68.html","post/32e9e993.html","post/adb202b7.html","post/99cd7d8.html","post/93c966f3.html","post/8212ff63.html","post/f5fba2c3.html","post/f736596e.html","post/2e5216dd.html","post/81b224e1.html","post/74750b31.html","post/c6b2a2fd.html","post/def84ee6.html","post/1f293ccb.html","post/79959306.html","post/5f6e69ef.html","post/2ec6e870.html","post/f1dbdc9f.html","post/5883a4af.html","post/fbc0ae86.html","post/3e1167ea.html","post/8f9052f9.html","post/a24af109.html","post/9e25cba9.html","post/a920af81.html","post/fe7ab1f0.html","post/76fa8c0d.html","post/fbc82303.html","post/ca0fcd03.html","post/e2246be5.html","post/9b06d854.html","post/5bdb5548.html","post/bec635c1.html","post/3ec1fd44.html","post/b70ae4e7.html","post/804ae251.html","post/df718222.html","post/3b48d11a.html","post/7422213c.html","post/6271a51c.html","post/6f76074c.html","post/6ac19130.html","post/cb87841d.html"];
+            function toRandomPost() {
+                const randomPost = posts[Math.floor(Math.random() * posts.length)];
+                pjax.loadUrl(GLOBAL_CONFIG.root + randomPost);
+            }
+        </script>
