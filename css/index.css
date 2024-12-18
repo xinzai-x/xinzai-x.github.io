@@ -8427,6 +8427,7 @@ div#banners .bannerText {
   box-shadow: var(--efu-shadow-lightblack);
   border-radius: 12px;
   border: var(--style-border-always);
+  image-rendering: pixelated;
 }
 .post-reward .reward-main .reward-all .reward-main-btn {
   background: var(--efu-secondbg);
