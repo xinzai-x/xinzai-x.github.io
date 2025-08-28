@@ -1,0 +1,308 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>2.系统编译 | 星仔极客</title><meta name="author" content="星仔"><meta name="copyright" content="星仔"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Uboot安装编译必用工具： 1sudo apt-get install lzop  libncurses5-dev u-boot-tools  创建文件夹，创建完成之后，将Uboot源代码复制复制到Linux中(FTP)，解压文件，编译文件 12345678910cd ~mkdir linuxcd linuxmkdir uboot&#x2F;&#x2F;解压tar -xvf uboot-imx-rel_imx_4.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2.系统编译">
+<meta property="og:url" content="https://xinzai.qzz.io/2024/10/13/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/Linux/2-%E7%B3%BB%E7%BB%9F%E7%BC%96%E8%AF%91/index.html">
+<meta property="og:site_name" content="星仔极客">
+<meta property="og:description" content="Uboot安装编译必用工具： 1sudo apt-get install lzop  libncurses5-dev u-boot-tools  创建文件夹，创建完成之后，将Uboot源代码复制复制到Linux中(FTP)，解压文件，编译文件 12345678910cd ~mkdir linuxcd linuxmkdir uboot&#x2F;&#x2F;解压tar -xvf uboot-imx-rel_imx_4.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.postimg.cc/MKRR79pj/7777777.jpg">
+<meta property="article:published_time" content="2024-10-13T03:18:49.000Z">
+<meta property="article:modified_time" content="2024-11-12T10:58:09.478Z">
+<meta property="article:author" content="星仔">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.postimg.cc/MKRR79pj/7777777.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "2.系统编译",
+  "url": "https://xinzai.qzz.io/2024/10/13/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/Linux/2-%E7%B3%BB%E7%BB%9F%E7%BC%96%E8%AF%91/",
+  "image": "https://i.postimg.cc/MKRR79pj/7777777.jpg",
+  "datePublished": "2024-10-13T03:18:49.000Z",
+  "dateModified": "2024-11-12T10:58:09.478Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "星仔",
+      "url": "https://xinzai.qzz.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://xinzai.qzz.io/2024/10/13/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/Linux/2-%E7%B3%BB%E7%BB%9F%E7%BC%96%E8%AF%91/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'true',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '2.系统编译',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">80</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">星仔极客</span></a><a class="nav-page-title" href="/"><span class="site-name">2.系统编译</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">2.系统编译</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-10-13T03:18:49.000Z" title="发表于 2024-10-13 11:18:49">2024-10-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-11-12T10:58:09.478Z" title="更新于 2024-11-12 18:58:09">2024-11-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux/">Linux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><h1 id="Uboot"><a href="#Uboot" class="headerlink" title="Uboot"></a>Uboot</h1><p>安装编译必用工具：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install lzop  libncurses5-dev u-boot-tools</span><br></pre></td></tr></table></figure>
+
+<p>创建文件夹，创建完成之后，将Uboot源代码复制复制到Linux中(FTP)，解压文件，编译文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">mkdir linux</span><br><span class="line">cd linux</span><br><span class="line">mkdir uboot</span><br><span class="line"></span><br><span class="line">//解压</span><br><span class="line">tar -xvf uboot-imx-rel_imx_4.1.15_2.1.0_ga_20200512.tar.gz</span><br><span class="line"></span><br><span class="line">//编译文件</span><br><span class="line">./create.sh</span><br></pre></td></tr></table></figure>
+
+<p>u-boot.bin和u-boot.imx的区别：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/fah936861121/articles/7248430.html">参考链接</a></p>
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><blockquote>
+<p>汇编部分</p>
+</blockquote>
+<p>关闭：中断、看门狗、cache、mmu… –&gt; 进入SVC模式 –&gt; 基本硬件初始化(时钟、串口、flash、内存) –&gt; 初始化堆栈 –&gt; 自搬移(将汇编中的C语言从flash中移到内存中)</p>
+<blockquote>
+<p>C语言部分</p>
+</blockquote>
+<p>大部分硬件初始化(网卡、USB、屏幕….) –&gt; 把内核搬到内存</p>
+<h2 id="Uboot源码简要分析"><a href="#Uboot源码简要分析" class="headerlink" title="Uboot源码简要分析"></a>Uboot源码简要分析</h2><h3 id="汇编部分"><a href="#汇编部分" class="headerlink" title="汇编部分"></a>汇编部分</h3><blockquote>
+<p>在项目中arch&#x2F;arm&#x2F;lib&#x2F;vectors.S，开始运行之后跳转到reset</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="https://s2.loli.net/2024/10/13/2WPMVwXc39t5ZiH.png" alt="源码分析1" style="zoom:40%;" /></th>
+</tr>
+</thead>
+</table>
+<blockquote>
+<p>arch&#x2F;arm&#x2F;cpu&#x2F;armv7&#x2F;start.S，找到开始文件(start.S)，跳转到<code>cpu_init_cp15</code>、<code>cpu_init_crit</code>、<code>_main</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="https://s2.loli.net/2024/10/13/YuSVxEvk1qdBOAj.png" alt="源码分析2" style="zoom:40%;" /></th>
+</tr>
+</thead>
+</table>
+<blockquote>
+<p>在start.S文件内，找到<code>cpu_init_cp15</code>、<code>cpu_init_crit</code>(跳转到cpu_init_crit)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="https://s2.loli.net/2024/10/13/ZhrOB1JWySUxwA6.webp" alt="源码分析3" style="zoom:50%;" /></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><img src="https://s2.loli.net/2024/10/13/lsMF6qYR23mBcfy.webp" alt="源码分析4" style="zoom:40%;" /></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>arch&#x2F;arm&#x2F;cpu&#x2F;armv7&#x2F;lowlevel_init.S，<code>lowlevel_init.S</code>运行结束后再运行<code>_main</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="https://s2.loli.net/2024/10/13/kazdBxF93uDiRnI.png" alt="源码分析5" style="zoom:40%;" /></th>
+</tr>
+</thead>
+</table>
+<blockquote>
+<p><code>_main</code>在： arch&#x2F;arm&#x2F;lib&#x2F;crt0.S，最后跳转到C语言部分的<code>board_init_f</code>和<code>board_init_r</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="https://s2.loli.net/2024/10/13/uqLXJbPzl4naDy5.webp" alt="源码分析6"></th>
+</tr>
+</thead>
+</table>
+<h3 id="C语言部分"><a href="#C语言部分" class="headerlink" title="C语言部分"></a>C语言部分</h3><blockquote>
+<p>在项目中的common&#x2F;board_f.c，看board_init_f</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="https://s2.loli.net/2024/10/13/6BnIZWm8yV43dFi.png" alt="源码分析7" style="zoom:40%;" /></th>
+</tr>
+</thead>
+</table>
+<blockquote>
+<p>在项目中的common&#x2F;board_r.c，看board_init_r</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="https://s2.loli.net/2024/10/13/ObKmMeBwgunHWqT.webp" alt="源码分析8" style="zoom:50%;" /></th>
+</tr>
+</thead>
+</table>
+<blockquote>
+<p>在项目中的 common&#x2F;main.c，看main.c的<code>main_loop</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="https://s2.loli.net/2024/10/13/EPdT45JV6bxlrOs.png" alt="源码分析9" style="zoom:40%;" /></th>
+</tr>
+</thead>
+</table>
+<h2 id="脚本分析-create-sh"><a href="#脚本分析-create-sh" class="headerlink" title="脚本分析(create.sh)"></a>脚本分析(create.sh)</h2><ul>
+<li><p>.config：配置那些需要编译(-y)，如果注释了就不需要编译的</p>
+</li>
+<li><p>Makefile：根据.config文件中的配置进行编译，也就是哪些东西需要编译进去</p>
+</li>
+</ul>
+<p>在Linux中修改.config方法(图形化配置)：<code>make menuconfig</code></p>
+<p>增加或删除图形化配置选项：在drivers\rtc中的Kconfig修改，然后在进入，勾选需要编译的模块保存之后生效在.config文件，Makefile编译进去</p>
+<h1 id="kernel-内核"><a href="#kernel-内核" class="headerlink" title="kernel(内核)"></a>kernel(内核)</h1><p>将迅为内核源码拷贝进Linux虚拟机 ，然后解压并编译</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//解压</span><br><span class="line">tar -xvf linux-imx-rel_imx_4.1.15_2.1.0_ga_20200903.tar.gz</span><br><span class="line">//进入解压后的文件夹</span><br><span class="line">cd linux-imx-rel_imx_4.1.15_2.1.0_ga</span><br><span class="line">//编译</span><br><span class="line">./create.sh</span><br></pre></td></tr></table></figure>
+
+<p>内核镜像：</p>
+<ul>
+<li><p>路径：<code>arch/arm/boot</code>，Image(非压缩文件)、uImage与zImage的区别：<a target="_blank" rel="noopener" href="https://blog.csdn.net/xuxin314012316/article/details/82621002">参考</a>，这里使用uImage</p>
+<ul>
+<li>Image：原镜像文件</li>
+<li>uImage：uboot专用的映像文件，在zImage之前加上一个长度为64字节的“头”，说明这个内核的版本、加载位置、生成时间、大小等信息</li>
+<li>zImage：内核的一种映像压缩文件</li>
+</ul>
+</li>
+<li><p>路径：arch&#x2F;arm&#x2F;boot&#x2F;dts，设备树</p>
+</li>
+</ul>
+<p>内核源码目录结构详细参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_52622200/article/details/135411217">地址</a></p>
+<p>drivers：包含了各种设备驱动程序的源代码，Linux 内核通过这些驱动程序与硬件设备进行交互和管理</p>
+<p>net：与网络协议栈相关的目录，它包含了各种网络协议和网络设备驱动程序的实现</p>
+<h2 id="脚本分析-create-sh-1"><a href="#脚本分析-create-sh-1" class="headerlink" title="脚本分析(create.sh)"></a>脚本分析(create.sh)</h2><p><code>#!/bin/bash</code> ：指定脚本使用 Bash 解释器的 shebang 语句。它出现在脚本的第一行，并告诉操作系统使用 Bash 解释器来执行该脚本。参考：<a target="_blank" rel="noopener" href="https://www.jb51.net/jiaoben/307768w9h.htm">网址</a></p>
+<p>make imx_v7_defconfig(arch\arm\configs)：预定义的配置文件，适用于i.MX6ULL EVK开发板的内核配置文件</p>
+<p>.config(源码根目录)：配置哪些需要编译</p>
+<p>Makefile：根据.config文件中的配置进行编译，也就是哪些东西需要编译进去</p>
+<p>make modules命令：将驱动编译成模块（.ko 文件），然后加载到内核。<a target="_blank" rel="noopener" href="https://blog.csdn.net/jinking01/article/details/132699750">参考</a></p>
+<p>驱动编译两种方式</p>
+<ul>
+<li>驱动编译进内核(obj-y)</li>
+<li>驱动编译成ko文件(obj-m)</li>
+</ul>
+<h1 id="设备树"><a href="#设备树" class="headerlink" title="设备树"></a>设备树</h1><p>功能：包含芯片&amp;板子等外设信息，系统驱动会匹配设备树，匹配成功后加载驱动</p>
+<p>文件路径：<code>arch/arm/boot/dts</code></p>
+<p>dts(源代码)：</p>
+<ul>
+<li>dtsi：描述SoC(系统芯片)的内部外设信息，如CPU架构、主频、外设寄存器地址范围等</li>
+<li>dts：板级配置文件，包含了特定硬件平台的详细配置信息</li>
+<li>topeet_emmc_hdmi.dts(屏幕)(头文件包含下一个文件) -&gt; imx6ull-14x14-evk-emmc.dts -&gt; imx6ull-14x14-evk.dts -&gt; imx6ull.dtsi</li>
+</ul>
+<p>dtc(编译器)：编译，反编译(dtc -I dtb -O dts -o test001.dts topeet_emmc_hdmi.dtb)</p>
+<p>dtb(设备树编译后的二进制文件)</p>
+<h1 id="根文件系统"><a href="#根文件系统" class="headerlink" title="根文件系统"></a>根文件系统</h1><p>含义：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Wangzx000/p/16684484.html">参考</a></p>
+<p>制作：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_59665492/article/details/118681742">参考</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://xinzai.qzz.io">星仔</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://xinzai.qzz.io/2024/10/13/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/Linux/2-%E7%B3%BB%E7%BB%9F%E7%BC%96%E8%AF%91/">https://xinzai.qzz.io/2024/10/13/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/Linux/2-%E7%B3%BB%E7%BB%9F%E7%BC%96%E8%AF%91/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://xinzai.qzz.io" target="_blank">星仔极客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux</a></div><div class="post-share"><div class="social-share" data-image="https://i.postimg.cc/MKRR79pj/7777777.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2024/10/16/MySQL/2-MySQL%E8%BF%9B%E9%98%B6/" title="2.MySQL进阶"><img class="cover" src="https://img.picgo.net/2024/10/20/MySQL574f9b0ede46c2da.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">2.MySQL进阶</div></div><div class="info-2"><div class="info-item-1">视图一个虚拟表，非真实存在，其本质是根据SQL语句获取动态的数据集，并为其命名，用户使用时只需使用视图名称即可获取结果集，并可以将其当作表来使用 数据库中只存放了视图的定义，而并没有存放视图中的数据。这些数据存放在原来的表中，表中的数据发生改变，显示在视图中的数据也会发生改变 作用：  把重复使用的查询封装成视图重复使用，同时可以使复杂的查询易于理解和使用 安全原因，如果一张表中有很多数据，很多信息不希望让所有人看到，此时可以使用视图视  创建视图1234567891011create [or replace] [algorithm = &#123;undefined | merge | temptable&#125;]view view_name [(column_list)]as select_statement[with [cascaded | local] check option]/*参数说明：	algorithm：可选项，表示视图选择的算法	view_name ：表示要创建的视图名称	column_list：可选项，指定视图中各个属性的名词，默认情况下与SELECT语...</div></div></div></a><a class="pagination-related" href="/2024/10/03/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/Linux/1-%E7%BC%96%E8%AF%91%E7%83%A7%E5%BD%95%E8%B0%83%E8%AF%95/" title="1.编译烧录调试"><img class="cover" src="https://i.postimg.cc/MKRR79pj/7777777.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">1.编译烧录调试</div></div><div class="info-2"><div class="info-item-1">交叉编译器安装进入local，创建文件夹arm，修改arm文件夹权限，进入新创文件夹 1234cd /usr/localsudo mkdir armsudo chmod 777 armcd arm  把交叉编译工具链拷贝到&#x2F;usr&#x2F;local&#x2F;arm文件夹（FTP）        解压压缩包，修改环境变量，重启，测试 1234567891011121314151617181920//解压sudo tar -vxf gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf.tar.xz//修改环境变量sudo vim /etc/profile//最后面新一行添加export PATH=$PATH:/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin	//查看环境变量envprintenvecho $PATH//重启sudo reboot//测试arm-linux-gnueabihf-gcc -v//编译arm-linux...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2024/09/28/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/Linux/0-Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" title="0.Linux基础命令"><img class="cover" src="https://i.postimg.cc/MKRR79pj/7777777.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-28</div><div class="info-item-2">0.Linux基础命令</div></div><div class="info-2"><div class="info-item-1"> 终端打开：一个窗口打开第二个：Ctrl+Shift+t，不同串口打开：Ctrl+Alt+t 虚拟机Ubuntu安装参考：链接  文件和目录操作参考：链接  查看文件   查看当前目录里面内容：ls 查看当前目录里面内容(详细信息)：ls -l 查看当前目录里面内容(包括隐藏)：ls -a 查看系统加载哪些驱动：lsmod 查看系统有哪些usb设备：lsusb   文件夹操作   进入哪个文件夹(不知道有哪些需先查看)：cd 文件夹名，连续进入：cd 文件夹名1/文件夹名2 返回上一级：cd .. 切换到系统根目录：cd / 切换用户主目录：：cd ~ 返回当前文件夹所在路径：pwd 创建文件夹：mkdir 文件夹名   文件操作   新建文件：touch 文件.后缀名 删除文件：rm 文件.后缀名，删除文件夹中后缀名全部文件：rm *.后缀名 删除文件夹：rm -R 文件夹名 复制文件：cp 文件名.后缀名 路径 移动文件：mv 文件名.后缀名 路径 查看文件中内容：cat 文件名.后缀名  管理员管理员权限：sudo 操作 创建root用户：sudo passwd root，...</div></div></div></a><a class="pagination-related" href="/2024/10/03/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/Linux/1-%E7%BC%96%E8%AF%91%E7%83%A7%E5%BD%95%E8%B0%83%E8%AF%95/" title="1.编译烧录调试"><img class="cover" src="https://i.postimg.cc/MKRR79pj/7777777.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-03</div><div class="info-item-2">1.编译烧录调试</div></div><div class="info-2"><div class="info-item-1">交叉编译器安装进入local，创建文件夹arm，修改arm文件夹权限，进入新创文件夹 1234cd /usr/localsudo mkdir armsudo chmod 777 armcd arm  把交叉编译工具链拷贝到&#x2F;usr&#x2F;local&#x2F;arm文件夹（FTP）        解压压缩包，修改环境变量，重启，测试 1234567891011121314151617181920//解压sudo tar -vxf gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf.tar.xz//修改环境变量sudo vim /etc/profile//最后面新一行添加export PATH=$PATH:/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin	//查看环境变量envprintenvecho $PATH//重启sudo reboot//测试arm-linux-gnueabihf-gcc -v//编译arm-linux...</div></div></div></a><a class="pagination-related" href="/2024/11/02/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/Linux/3-%E9%A9%B1%E5%8A%A8%E5%92%8C%E5%AD%98%E5%82%A8%E5%99%A8/" title="3.驱动和存储器"><img class="cover" src="https://i.postimg.cc/MKRR79pj/7777777.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-02</div><div class="info-item-2">3.驱动和存储器</div></div><div class="info-2"><div class="info-item-1">驱动含义物理驱动：电机驱动… 软件驱动：  应用层  内核层  系统调用（open、read、write、ioctrl、colse）  虚拟文件系统  驱动代码（字符设备、块设备、网络设备驱动）  设备接口     硬件层：各种硬件设备        驱动分类字符设备驱动：按照字节流顺序传输 块设备驱动：多个字节一块传输 网络设备驱动：基于TCP&#x2F;IP协议栈、socket 内核模块三要素：  入口（module_init   insmod） 出口（module_exit   rmmod） 许可证（MODULE_LICENSE(“GPL”);）  MPU6050驱动流程查看主次设备号(串口dev中)：ls -l mpu6050_drv.c(Z:\app_drv\drv\mpu6050_drv.c)，需要结合内核源码查看原理(Z:\linux\kernel\linux-imx-rel_imx_4.1.15_2.1.0_ga) 123456789101112131415161718192021222324252627282930313233343536373839404142...</div></div></div></a><a class="pagination-related" href="/2024/11/20/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/Linux/4-Linux%E5%BA%94%E7%94%A8%E7%BC%96%E7%A8%8B/" title="4.Linux应用编程"><img class="cover" src="https://i.postimg.cc/MKRR79pj/7777777.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-20</div><div class="info-item-2">4.Linux应用编程</div></div><div class="info-2"><div class="info-item-1">C语言各种版本发展史(参考)，C89 和 C99 区别(参考) 查看编译器C版本方法： gcc -E -dM - &lt;/dev/null | grep &quot;STDC_VERSION&quot; Linux下编译C代码的指令：gcc main.c -o 生成文件名 Linux下指定c版本编译指令： gcc -std=c89 main.c -o main 查看C语言的语法说明：man 查询的函数等 编译器和编译脚本源代码(.c) –&gt;(预处理) 预处理文件(.i) –&gt;(编译) 汇编文件(.s) –&gt;(汇编) 目标文件(.o) –&gt;(链接) 可执行文件(.exe) 各个编译器的区别：参考 GNU工具集：参考 GCC基本编译规则  -c 预编译 -o 链接 -D define宏链接 -O 编译优化 -g Debug调试 -I 添加头文件遍历 -Wall 显示编译警告  Makefile基本语法：参考 12345targets : prerequisites    command#targets：规则的目标，是必须要有的，可以是 Object File...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">星仔</div><div class="author-info-description">日常笔记和生活分享！</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">80</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Uboot"><span class="toc-number">1.</span> <span class="toc-text">Uboot</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text">流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Uboot%E6%BA%90%E7%A0%81%E7%AE%80%E8%A6%81%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">Uboot源码简要分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E9%83%A8%E5%88%86"><span class="toc-number">1.2.1.</span> <span class="toc-text">汇编部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E9%83%A8%E5%88%86"><span class="toc-number">1.2.2.</span> <span class="toc-text">C语言部分</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E5%88%86%E6%9E%90-create-sh"><span class="toc-number">1.3.</span> <span class="toc-text">脚本分析(create.sh)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#kernel-%E5%86%85%E6%A0%B8"><span class="toc-number">2.</span> <span class="toc-text">kernel(内核)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E5%88%86%E6%9E%90-create-sh-1"><span class="toc-number">2.1.</span> <span class="toc-text">脚本分析(create.sh)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BE%E5%A4%87%E6%A0%91"><span class="toc-number">3.</span> <span class="toc-text">设备树</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%B9%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">4.</span> <span class="toc-text">根文件系统</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/11/25/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/%E9%A1%B9%E7%9B%AE/" title="项目"><img src="https://img.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="项目"/></a><div class="content"><a class="title" href="/2024/11/25/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/%E9%A1%B9%E7%9B%AE/" title="项目">项目</a><time datetime="2024-11-25T02:22:50.000Z" title="发表于 2024-11-25 10:22:50">2024-11-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/24/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/0-ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="0.ArkTS基础语法"><img src="https://img.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="0.ArkTS基础语法"/></a><div class="content"><a class="title" href="/2024/11/24/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/0-ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="0.ArkTS基础语法">0.ArkTS基础语法</a><time datetime="2024-11-24T02:22:50.000Z" title="发表于 2024-11-24 10:22:50">2024-11-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/23/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/1-%E7%95%8C%E9%9D%A2%E5%BC%80%E5%8F%91/" title="1.界面开发"><img src="https://img.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="1.界面开发"/></a><div class="content"><a class="title" href="/2024/11/23/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/1-%E7%95%8C%E9%9D%A2%E5%BC%80%E5%8F%91/" title="1.界面开发">1.界面开发</a><time datetime="2024-11-23T02:23:35.000Z" title="发表于 2024-11-23 10:23:35">2024-11-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/22/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/2-%E4%BA%A4%E4%BA%92%E5%BC%80%E5%8F%91/" title="2.交互开发"><img src="https://img.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2.交互开发"/></a><div class="content"><a class="title" href="/2024/11/22/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/2-%E4%BA%A4%E4%BA%92%E5%BC%80%E5%8F%91/" title="2.交互开发">2.交互开发</a><time datetime="2024-11-22T08:44:16.000Z" title="发表于 2024-11-22 16:44:16">2024-11-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/20/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/Linux/4-Linux%E5%BA%94%E7%94%A8%E7%BC%96%E7%A8%8B/" title="4.Linux应用编程"><img src="https://i.postimg.cc/MKRR79pj/7777777.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="4.Linux应用编程"/></a><div class="content"><a class="title" href="/2024/11/20/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/Linux/4-Linux%E5%BA%94%E7%94%A8%E7%BC%96%E7%A8%8B/" title="4.Linux应用编程">4.Linux应用编程</a><time datetime="2024-11-20T12:47:12.000Z" title="发表于 2024-11-20 20:47:12">2024-11-20</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 By 星仔</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.0-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

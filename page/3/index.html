@@ -1,0 +1,238 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>星仔极客 - 星仔个人博客</title><meta name="author" content="星仔"><meta name="copyright" content="星仔"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="日常笔记和生活分享！">
+<meta property="og:type" content="website">
+<meta property="og:title" content="星仔极客">
+<meta property="og:url" content="https://xinzai.qzz.io/page/3/index.html">
+<meta property="og:site_name" content="星仔极客">
+<meta property="og:description" content="日常笔记和生活分享！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xinzai.qzz.io/img/butterfly-icon.png">
+<meta property="article:author" content="星仔">
+<meta property="article:tag" content="星仔极客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xinzai.qzz.io/img/butterfly-icon.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://xinzai.qzz.io/page/3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'true',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '星仔极客',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">80</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">星仔极客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">星仔极客</h1></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="post_cover left"><a href="/2024/09/15/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/RT-Thread/2-%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5/" title="2.线程同步"><img class="post-bg" src="https://img.picgo.net/2024/09/11/888888a3ff86e754f2fe3d.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2.线程同步"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/09/15/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/RT-Thread/2-%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5/" title="2.线程同步">2.线程同步</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-15T01:39:42.000Z" title="发表于 2024-09-15 09:39:42">2024-09-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/RT-Thread/">RT-Thread</a></span></div><div class="content">概念线程同步：指多个线程通过特定的机制来控制线程之间的执行顺序(线程间通过同步建立执行顺序的关系)，如果没有同步，线程之间将是无序的 临界区(CriticalSection)：指在多线程或多进程环境中，访问共享资源或共享数据的一段代码或代码块，需要保证在任意时刻只能有一个线程或进程访问该共享资源，以避免出现竞争条件（Race Condition）和数据不一致的问题 临界区保护方式  关闭中断(rt_hw_interrupt_disable、rt_hw_interrupt_enable) 禁止调度(rt_enter_critical、rt_exit_critical) 互斥特性保护临界区 信号量 二值信号量 计数型信号量   互斥量    信号量创建 动态：rt_sem_create  定义： 123456789//name；信号量名字，value：信号量初始值//flag：多个线程等待的排队方式//(RT_IPC_FLAG_PRIO：挂起的线程按照优先级顺序排队，RT_IPC_FLAG_FIFO：挂起的线程线程先进入先运行)rt_sem_t rt_sem_create(const...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/09/15/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/RT-Thread/1-%E7%BA%BF%E7%A8%8B%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" title="1.线程相关函数"><img class="post-bg" src="https://img.picgo.net/2024/09/11/888888a3ff86e754f2fe3d.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="1.线程相关函数"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/09/15/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/RT-Thread/1-%E7%BA%BF%E7%A8%8B%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" title="1.线程相关函数">1.线程相关函数</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-15T01:32:45.000Z" title="发表于 2024-09-15 09:32:45">2024-09-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/RT-Thread/">RT-Thread</a></span></div><div class="content">线程休眠 rt_thread_mdelay、rt_thread_sleep、rt_thread_delay  123456789101112131415161718192021222324252627282930313233343536//thread.c 740行rt_err_t rt_thread_mdelay(rt_int32_t ms)&#123;    rt_tick_t tick;    tick = rt_tick_from_millisecond(ms);    return _thread_sleep(tick);&#125;// tick = rt_tick_from_millisecond(ms);rt_tick_t rt_tick_from_millisecond(rt_int32_t ms)&#123;    rt_tick_t tick;    if (ms &lt; 0)    &#123;        tick = (rt_tick_t)RT_WAITING_FOREVER;    &#125;    else    &#123;        ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2024/09/12/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/linux%E7%9B%B8%E5%85%B3%E6%8A%A5%E9%94%99/" title="linux相关报错"><img class="post-bg" src="https://i.postimg.cc/T3zkKL8m/7777.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="linux相关报错"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/09/12/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/linux%E7%9B%B8%E5%85%B3%E6%8A%A5%E9%94%99/" title="linux相关报错">linux相关报错</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-12T08:14:53.000Z" title="发表于 2024-09-12 16:14:53">2024-09-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/">错误记录</a></span></div><div class="content">unstable发行版，这也许是因为系统无法达到您要求的状态造成的错误：  有一些软件包无法被安装。如果您用的是 unstable 发行版，这也许是 因为系统无法达到您要求的状态造成的。该版本中可能会有一些您需要的软件 包尚未被创建或是它们已被从新到(Incoming)目录移出。 下列信息可能会对解决问题有所帮助： 下列软件包有未满足的依赖关系： fcitx : 依赖: fcitx-data 但是它将不会被安装 E: 无法修正错误，因为您要求某些软件包保持现状，就是它们破坏了软件包间的依赖关系。  解决方法： 打开更新设置，在“更新”选项卡中选则：重要安全更新 和 推荐更新   打勾：重要安全更新 和 推荐更新，如果有提示更新一般不更新   最后在命令行里输入 1sudo apt-get update                </div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/09/12/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/ubuntu%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" title="ubuntu相关设置"><img class="post-bg" src="https://i.postimg.cc/J7T3vDh8/7777.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ubuntu相关设置"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/09/12/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/ubuntu%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" title="ubuntu相关设置">ubuntu相关设置</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-12T05:42:36.000Z" title="发表于 2024-09-12 13:42:36">2024-09-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/">技术积累记录</a></span></div><div class="content">设置Ubuntu中文界面进入语言设置   进入语言下载，打勾简体中文，点击应用下载   更换中文语言   重启更新语言，输入密码重启   根据需求选择，推荐保留就的名称   设置Ubuntu字体大小打开终端，安装gnome-tweaks 1sudo apt install gnome-tweaks  安装完成之后，输入 1gnome-tweaks  根据需求调整字体大小   设置Ubuntu鼠标大小进入设置，按照图片指示按需修改           </div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2024/09/11/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/RT-Thread/0-%E7%BA%BF%E7%A8%8B%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%88%A0%E9%99%A4/" title="0.线程创建与删除"><img class="post-bg" src="https://img.picgo.net/2024/09/11/888888a3ff86e754f2fe3d.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="0.线程创建与删除"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/09/11/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/RT-Thread/0-%E7%BA%BF%E7%A8%8B%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%88%A0%E9%99%A4/" title="0.线程创建与删除">0.线程创建与删除</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-11T05:41:21.000Z" title="发表于 2024-09-11 13:41:21">2024-09-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/RT-Thread/">RT-Thread</a></span></div><div class="content">动态线程创建创建12345678910111213/* * name：线程名字，entry：线程的入口函数，parameter：函数参数 * stack_size：线程堆栈的大小，priority：优先级，tick：时间片(运行长短)(相同优先级的线程) * 返回值： *		成功：线程控制块指针，失败：RT_NULL */rt_thread_t rt_thread_create(const char *name,                             void (*entry)(void *parameter),                             void       *parameter,                             rt_uint32_t stack_size,                             rt_uint8_t  priority,                             rt_uint32_t tick)  1234567891011121314151617181...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/08/17/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/32%E5%8D%95%E7%89%87%E6%9C%BA/0-SMT32%E5%8E%9F%E7%90%86%E6%A6%82%E8%BF%B0/" title="0.SMT32原理概述"><img class="post-bg" src="https://img.picgo.net/2024/08/18/b00d09a505b4c64d80be90a32eefd8a84d5e1e15395f28e1.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="0.SMT32原理概述"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/08/17/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/32%E5%8D%95%E7%89%87%E6%9C%BA/0-SMT32%E5%8E%9F%E7%90%86%E6%A6%82%E8%BF%B0/" title="0.SMT32原理概述">0.SMT32原理概述</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-08-17T07:41:35.000Z" title="发表于 2024-08-17 15:41:35">2024-08-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/">32单片机</a></span></div><div class="content">51和32区别位数：  51：8位（STC89C52） 32：32位（STM32F103ZET6）  时钟：  51：11.0592Mhz晶振 32 F103：8Mhz晶振(×9)，主频：72Mhz F103：12Mhz晶振(×6)，主频：72Mhz F407：168Mhz主频    时钟E：外部，I：内部 高速外部晶振：HSE 低速外部晶振：LSE 高速内部晶振：HSI 低速内部晶振：LSI 锁相环：让8MHz晶振变成72MHz主频 每个外设初始化的大致流程  把图形化界面配置的参数赋值给对应的结构体的成员变量 把结构体地址当做参数传给初始化函数 初始化函数根据每个结构体成员变量操作对应的寄存器  1234567891011121314151617181920212223242526//时钟初始化SystemClock_Config();RCC_OscInitTypeDef RCC_OscInitStruct = &#123;0&#125;;	//结构体类型变量//在void SystemClock_Config(void)中(main.c第133)RCC_OscInitStr...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2024/08/16/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/32%E5%8D%95%E7%89%87%E6%9C%BA/1-GPIO/" title="1.GPIO"><img class="post-bg" src="https://img.picgo.net/2024/08/18/b00d09a505b4c64d80be90a32eefd8a84d5e1e15395f28e1.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="1.GPIO"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/08/16/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/32%E5%8D%95%E7%89%87%E6%9C%BA/1-GPIO/" title="1.GPIO">1.GPIO</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-08-16T07:47:03.000Z" title="发表于 2024-08-16 15:47:03">2024-08-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/">32单片机</a></span></div><div class="content">理论说明输入详细解析参考：网址 上拉输入：拉高电平 下拉输入：拉低电平 浮空输入：不拉高也不拉低电平 输出开漏输出：不能输出高电平（P-MOS不可用，则只能低电平） 推挽输出：可输出高低电平   输出速率：Low：2MHz、Medium：10MHz、High：50MHz Tips  普通功能的IO，通常2M就可以了 如果一个IO用作I2C通信，速度通常就10K到400K，选10M就好了 如果是用作SPI功能，可能会到20M速度，那就要选50M了  代码编写LED灯闪烁、按键PE3控制蜂鸣器(PB8)开关、按键PE4控制 LED2(PE5) 亮灭、光敏传感器(PB11)控制 LED1(PB5) 亮灭 实验一：LED灯闪烁LED灯配置配置引脚功能： GPIO Pull-up&#x2F;Pull-down：因为LED灯初始化时就已经设置了高低电平，没有空闲状态，无论是上拉还是下拉都起不到作用   Cube IDE代码在main.c文件，大概94行开始，代码必须写在 /* USER CODE BEGIN WHILE */  和 /* USER CODE END WHILE */里面，否则...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/08/15/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/32%E5%8D%95%E7%89%87%E6%9C%BA/2-%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD-EXTI/" title="2.外部中断(EXTI)"><img class="post-bg" src="https://img.picgo.net/2024/08/18/b00d09a505b4c64d80be90a32eefd8a84d5e1e15395f28e1.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2.外部中断(EXTI)"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/08/15/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/32%E5%8D%95%E7%89%87%E6%9C%BA/2-%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD-EXTI/" title="2.外部中断(EXTI)">2.外部中断(EXTI)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-08-15T09:21:42.000Z" title="发表于 2024-08-15 17:21:42">2024-08-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/">32单片机</a></span></div><div class="content">理论NVIC：嵌套向量中断控制器（解释教程） 外部通用中断线(EXTI0~EXTI15)：每个GPIO设置成中断模式，与中断控制器连接的线  **组配置：**配置中断控制器的中断优先级组，通常有5个组可以选择 组零：没有中断有优先级配置，基本不用 组一：中断优先级数字占用1个bit，可以描述2个优先级，即中断优先级只能是0或者1 组二：中断优先级数字占用2个bit，可以描述4个优先级，即中断优先级可以是0~3 组三：中断优先级数字占用3个bit，可以描述8个优先级，即中断优先级可以是0~7 组四：中断优先级数字占用4个bit，可以描述16个优先级，即中断优先级可以是0~15   **触发源：**事件类型，即什么外设的什么事件 **中断号：**一个索引号，发生中断时，中断控制器会根据这个索引号查找对应的中断服务程序 **优先级：**根据组配置选择合适的中断优先级，数字越小优先级越高  中断控制​    有3个条件是可以通过编程配置的：全局中断开关、外设中断开关、中断屏蔽。全局中断很好理解，就是控制整个芯片上所有的可屏蔽中断的使能；外设中断就是某个外设的某个事件的中断使能，比如GPI...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2024/08/14/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/32%E5%8D%95%E7%89%87%E6%9C%BA/3-%E4%B8%B2%E5%8F%A3-UART/" title="3.串口(UART)"><img class="post-bg" src="https://img.picgo.net/2024/08/18/b00d09a505b4c64d80be90a32eefd8a84d5e1e15395f28e1.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="3.串口(UART)"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/08/14/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/32%E5%8D%95%E7%89%87%E6%9C%BA/3-%E4%B8%B2%E5%8F%A3-UART/" title="3.串口(UART)">3.串口(UART)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-08-14T10:02:46.000Z" title="发表于 2024-08-14 18:02:46">2024-08-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/">32单片机</a></span></div><div class="content">理论串口理论部分可看51部分：链接 数据帧 &#x3D; 帧头(2字节，例如AA、BB) + 数据长度（2字节）+ 数据 + CRC16校验（2字节） + 帧尾（2字节） 回调函数在：stm32f1xx_it.c里找对应的函数转进入里面找 中断函数：stm32f1xx_hal_uart.c（别的只是uart不同） 代码编写串口一发送命令控制LED灯(PB5、PE5) LED灯、串口、串口打印浮点数据、串口重定向配置LED灯配置请看：链接 串口配置：   配置串口中断NVIC(嵌套向量中断控制器)   配置DMA：   Cube IDE中串口打印浮点数据配置方法(参考)：进入“Project→Properties”；显示界面如下。按照图片中的设置完成即可！   串口重定向配置： 12345uint8_t u_buf[256];	//usart.c,24行#include &lt;stdio.h&gt;	//usart.h,32行extern uint8_t u_buf[256];	//usart.h，38行#define printf(...)  HAL_UART_Transmit...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/08/13/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/32%E5%8D%95%E7%89%87%E6%9C%BA/4-%E5%AE%9A%E6%97%B6%E5%99%A8-TIMER/" title="4.定时器(TIMER)"><img class="post-bg" src="https://img.picgo.net/2024/08/18/b00d09a505b4c64d80be90a32eefd8a84d5e1e15395f28e1.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="4.定时器(TIMER)"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/08/13/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/32%E5%8D%95%E7%89%87%E6%9C%BA/4-%E5%AE%9A%E6%97%B6%E5%99%A8-TIMER/" title="4.定时器(TIMER)">4.定时器(TIMER)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-08-13T08:19:27.000Z" title="发表于 2024-08-13 16:19:27">2024-08-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/">32单片机</a></span></div><div class="content">理论预分频寄存器(TIMx_PSC)：由于时钟源为：72MHz，T &#x3D; 1&#x2F;f &#x3D; 1&#x2F;72MHz，由于不好计算周期时间，则需要分频，若分72则T &#x3D; 1&#x2F;1MHz &#x3D; 1us(1MHz &#x3D; 一百万秒) 计数方式：向上(递增到某个数触发中断)、向下(递减到某一个数触发中断)、中心计数(递增到某一个数触发中断，再递减到某一个数触发中断) 比较值(参考：链接)： &ensp;&ensp;&ensp;&ensp;PWM1模式：若计数值小于有效值则高电平，计数值大于有效值则低电平，可以控制比较值来调节占空比 &ensp;&ensp;&ensp;&ensp;PWM2模式：与PWM1模式相反，计数值小于有效值则低电平，大于有效值则高电平 复用：Pin脚本身除了支持普通GPIO功能之外，还支持别的功能(使用别的功能就叫复用) 重映射：Pin脚本身不支持这些功能，配置重映射寄存器，使其具备别的功能 定时器分类型号：STM32F103ZET6 基本定时器：TIM6、TIM7   通用定时器：TIM2~TIM5   高级...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#content-inner">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/#content-inner">8</a><a class="extend next" rel="next" href="/page/4/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">星仔</div><div class="author-info-description">日常笔记和生活分享！</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">80</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/11/25/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/%E9%A1%B9%E7%9B%AE/" title="项目"><img src="https://img.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="项目"/></a><div class="content"><a class="title" href="/2024/11/25/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/%E9%A1%B9%E7%9B%AE/" title="项目">项目</a><time datetime="2024-11-25T02:22:50.000Z" title="发表于 2024-11-25 10:22:50">2024-11-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/24/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/0-ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="0.ArkTS基础语法"><img src="https://img.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="0.ArkTS基础语法"/></a><div class="content"><a class="title" href="/2024/11/24/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/0-ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="0.ArkTS基础语法">0.ArkTS基础语法</a><time datetime="2024-11-24T02:22:50.000Z" title="发表于 2024-11-24 10:22:50">2024-11-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/23/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/1-%E7%95%8C%E9%9D%A2%E5%BC%80%E5%8F%91/" title="1.界面开发"><img src="https://img.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="1.界面开发"/></a><div class="content"><a class="title" href="/2024/11/23/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/1-%E7%95%8C%E9%9D%A2%E5%BC%80%E5%8F%91/" title="1.界面开发">1.界面开发</a><time datetime="2024-11-23T02:23:35.000Z" title="发表于 2024-11-23 10:23:35">2024-11-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/22/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/2-%E4%BA%A4%E4%BA%92%E5%BC%80%E5%8F%91/" title="2.交互开发"><img src="https://img.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2.交互开发"/></a><div class="content"><a class="title" href="/2024/11/22/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/2-%E4%BA%A4%E4%BA%92%E5%BC%80%E5%8F%91/" title="2.交互开发">2.交互开发</a><time datetime="2024-11-22T08:44:16.000Z" title="发表于 2024-11-22 16:44:16">2024-11-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/20/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/Linux/4-Linux%E5%BA%94%E7%94%A8%E7%BC%96%E7%A8%8B/" title="4.Linux应用编程"><img src="https://i.postimg.cc/MKRR79pj/7777777.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="4.Linux应用编程"/></a><div class="content"><a class="title" href="/2024/11/20/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/Linux/4-Linux%E5%BA%94%E7%94%A8%E7%BC%96%E7%A8%8B/" title="4.Linux应用编程">4.Linux应用编程</a><time datetime="2024-11-20T12:47:12.000Z" title="发表于 2024-11-20 20:47:12">2024-11-20</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/32%E5%8D%95%E7%89%87%E6%9C%BA/"><span class="card-category-list-name">32单片机</span><span class="card-category-list-count">12</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/"><span class="card-category-list-name">51单片机</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C%E8%AF%AD%E8%A8%80/"><span class="card-category-list-name">C语言</span><span class="card-category-list-count">13</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Java%E8%AF%AD%E8%A8%80/"><span class="card-category-list-name">Java语言</span><span class="card-category-list-count">12</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Linux/"><span class="card-category-list-name">Linux</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/MySQL/"><span class="card-category-list-name">MySQL</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/RT-Thread/"><span class="card-category-list-name">RT-Thread</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/"><span class="card-category-list-name">工具分享</span><span class="card-category-list-count">4</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/CubeIDE%E4%B8%8ECubeMX%E8%BD%AF%E4%BB%B6%E8%AE%BE%E7%BD%AE/" style="font-size: 1.1em; color: #999">CubeIDE与CubeMX软件设置</a> <a href="/tags/Win11%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" style="font-size: 1.1em; color: #999">Win11相关设置</a> <a href="/tags/%E5%8D%9A%E5%AE%A2CDN%E8%A7%A3%E6%9E%90/" style="font-size: 1.1em; color: #999">博客CDN解析</a> <a href="/tags/%E4%BA%91%E5%9B%BE%E5%BA%8A/" style="font-size: 1.1em; color: #999">云图床</a> <a href="/tags/32%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 1.44em; color: #99a7ba">32单片机</a> <a href="/tags/%E8%90%A5%E4%B8%9A%E6%89%A7%E7%85%A7/" style="font-size: 1.1em; color: #999">营业执照</a> <a href="/tags/%E9%B8%BF%E8%92%99NEXT%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/" style="font-size: 1.21em; color: #999ea4">鸿蒙NEXT应用开发</a> <a href="/tags/ubuntu%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" style="font-size: 1.1em; color: #999">ubuntu相关设置</a> <a href="/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 1.1em; color: #999">插件</a> <a href="/tags/Linux/" style="font-size: 1.27em; color: #99a0a9">Linux</a> <a href="/tags/springboot%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/" style="font-size: 1.1em; color: #999">springboot相关配置</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%9B%B8%E5%85%B3/" style="font-size: 1.1em; color: #999">博客搭建相关</a> <a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 1.39em; color: #99a4b4">51单片机</a> <a href="/tags/RT-Thread/" style="font-size: 1.33em; color: #99a2af">RT-Thread</a> <a href="/tags/MySQL/" style="font-size: 1.16em; color: #999b9e">MySQL</a> <a href="/tags/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/" style="font-size: 1.1em; color: #999">图片压缩在线工具</a> <a href="/tags/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/" style="font-size: 1.1em; color: #999">小狼毫输入法</a> <a href="/tags/Java%E8%AF%AD%E8%A8%80/" style="font-size: 1.44em; color: #99a7ba">Java语言</a> <a href="/tags/%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2/" style="font-size: 1.1em; color: #999">资源搜索</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 1.5em; color: #99a9bf">C语言</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a>
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/11/">
+            <span class="card-archive-list-date">
+              十一月 2024
+            </span>
+            <span class="card-archive-list-count">6</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/10/">
+            <span class="card-archive-list-date">
+              十月 2024
+            </span>
+            <span class="card-archive-list-count">7</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/09/">
+            <span class="card-archive-list-date">
+              九月 2024
+            </span>
+            <span class="card-archive-list-count">12</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/08/">
+            <span class="card-archive-list-date">
+              八月 2024
+            </span>
+            <span class="card-archive-list-count">16</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/04/">
+            <span class="card-archive-list-date">
+              四月 2024
+            </span>
+            <span class="card-archive-list-count">10</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/03/">
+            <span class="card-archive-list-date">
+              三月 2024
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/02/">
+            <span class="card-archive-list-date">
+              二月 2024
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/12/">
+            <span class="card-archive-list-date">
+              十二月 2023
+            </span>
+            <span class="card-archive-list-count">21</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">80</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-08-28T13:49:50.708Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 By 星仔</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.0-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>3.定时器/计数器 | 星仔极客</title><meta name="author" content="星仔"><meta name="copyright" content="星仔"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="原理 时钟源：定时器是内部时钟源（晶振），计数器是外部 计时长度：对应TH  TL计数器初值寄存器(高八位,低八位) 对应的中断触发函数     中断源 定时中断处理函数    Timer0 Timer0_Routine(void)      interrupt 1   Timer1 Timer1_Routine(void)       interrupt 3   Timer2 Timer2_Ro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3.定时器&#x2F;计数器">
+<meta property="og:url" content="https://xinzai.qzz.io/2024/04/12/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/51%E5%8D%95%E7%89%87%E6%9C%BA/3.%E5%AE%9A%E6%97%B6%E5%99%A8/index.html">
+<meta property="og:site_name" content="星仔极客">
+<meta property="og:description" content="原理 时钟源：定时器是内部时钟源（晶振），计数器是外部 计时长度：对应TH  TL计数器初值寄存器(高八位,低八位) 对应的中断触发函数     中断源 定时中断处理函数    Timer0 Timer0_Routine(void)      interrupt 1   Timer1 Timer1_Routine(void)       interrupt 3   Timer2 Timer2_Ro">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg">
+<meta property="article:published_time" content="2024-04-12T02:13:46.000Z">
+<meta property="article:modified_time" content="2024-12-04T00:36:41.683Z">
+<meta property="article:author" content="星仔">
+<meta property="article:tag" content="51单片机">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "3.定时器/计数器",
+  "url": "https://xinzai.qzz.io/2024/04/12/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/51%E5%8D%95%E7%89%87%E6%9C%BA/3.%E5%AE%9A%E6%97%B6%E5%99%A8/",
+  "image": "https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg",
+  "datePublished": "2024-04-12T02:13:46.000Z",
+  "dateModified": "2024-12-04T00:36:41.683Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "星仔",
+      "url": "https://xinzai.qzz.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://xinzai.qzz.io/2024/04/12/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/51%E5%8D%95%E7%89%87%E6%9C%BA/3.%E5%AE%9A%E6%97%B6%E5%99%A8/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'true',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '3.定时器/计数器',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">80</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">星仔极客</span></a><a class="nav-page-title" href="/"><span class="site-name">3.定时器/计数器</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">3.定时器/计数器</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-04-12T02:13:46.000Z" title="发表于 2024-04-12 10:13:46">2024-04-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-12-04T00:36:41.683Z" title="更新于 2024-12-04 08:36:41">2024-12-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/">51单片机</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a><center>原理</center></h1><ol>
+<li>时钟源：定时器是内部时钟源（晶振），计数器是外部</li>
+<li>计时长度：对应TH  TL计数器初值寄存器(高八位,低八位)</li>
+<li>对应的中断触发函数</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">中断源</th>
+<th align="center">定时中断处理函数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Timer0</td>
+<td align="center">Timer0_Routine(void)      interrupt 1</td>
+</tr>
+<tr>
+<td align="center">Timer1</td>
+<td align="center">Timer1_Routine(void)       interrupt 3</td>
+</tr>
+<tr>
+<td align="center">Timer2</td>
+<td align="center">Timer2_Routine(void)      interrupt 5</td>
+</tr>
+</tbody></table>
+<h1 id="相关寄存器"><a href="#相关寄存器" class="headerlink" title="相关寄存器"></a><center>相关寄存器</center></h1><h2 id="TCON：定时器控制寄存器"><a href="#TCON：定时器控制寄存器" class="headerlink" title="TCON：定时器控制寄存器"></a><center>TCON：定时器控制寄存器</center></h2><p>只需用到：TF0、TF1、TR0、TR1</p>
+<img src="https://s2.loli.net/2024/08/19/StZGcsq9QeMOTn6.png" alt="定时器/计数器" style="zoom:50%;" />
+
+<p>定时器&#x2F;计数器运行控制位(代码)：TR0、TR1</p>
+<p>中断触发标志位(内部)：TF0、TF1</p>
+<img src="https://s2.loli.net/2024/08/19/WQiH3LXkTDegpF1.png" alt="定时器中断分析" style="zoom:50%;" />
+
+<h2 id="TMOD：定时器模式寄存器"><a href="#TMOD：定时器模式寄存器" class="headerlink" title="TMOD：定时器模式寄存器"></a><center>TMOD：定时器模式寄存器</center></h2><p>两个定时器&#x2F;计数器（任选一个即可）：<code>T0(TL0\TH0)</code>、<code>T1(TL1\TH1)</code></p>
+<p>工作模式：</p>
+<ul>
+<li>模式0（13位定时器&#x2F;计数器）</li>
+<li>模式1（16位定时器&#x2F;计数器）</li>
+<li>模式2（8位自动重装初值）</li>
+<li>模式3（两个8位定时器&#x2F;计数器）</li>
+</ul>
+<p>0.7、0.3地址用于控制定时器的启动是否受外部中断引脚（INT1或INT0）的影响。当GATE位设置为1时，定时器的启动不仅取决于定时器的使能位（例如TR1或TR0），还取决于相应的中断引脚电平</p>
+<p>C&#x2F;T：置0为定时器</p>
+<p>模式（M1、M0）这里我们选01（16位定时器，不自动重装初值）如果不会自动重装载寄存器（不会自动赋初值）则要触发中断处理函数时重新<code>手动赋初值</code></p>
+<img src="https://s2.loli.net/2024/08/19/Q2PTWE5RxOHmUB7.png" alt="工作模式" style="zoom: 67%;" />
+
+<h2 id="定时器计算初值"><a href="#定时器计算初值" class="headerlink" title="定时器计算初值"></a><center>定时器计算初值</center></h2><p>需要定时的时间带入公式，求出x</p>
+<img src="https://s2.loli.net/2024/08/19/SnTYf4wKilv8sRd.png" alt="初值计算方式" style="zoom:50%;" />
+
+<h2 id="中断允许寄存器"><a href="#中断允许寄存器" class="headerlink" title="中断允许寄存器"></a><center>中断允许寄存器</center></h2><p>&ensp;&ensp;&ensp;&ensp;总中断允许控制位：EA</p>
+<p>&ensp;&ensp;&ensp;&ensp;ET0：定时&#x2F;计数器T0的溢出中断允许位，ET1：定时&#x2F;计数器T1的溢出中断允许位，ET2：定时&#x2F;计数器T2的溢出中断允许位</p>
+<p>&ensp;&ensp;&ensp;&ensp;需要外部、定时器、串口那个则赋值那个为1</p>
+<img src="https://s2.loli.net/2024/08/19/L2yJSt4aEYwHNen.png" alt="允许寄存器分析" style="zoom:50%;" />
+
+<h1 id="代码编写"><a href="#代码编写" class="headerlink" title="代码编写"></a><center>代码编写</center></h1><p>每1s翻转LED灯状态</p>
+<blockquote>
+<p>[!NOTE]</p>
+<p>设置哪个定时器控制(TR0、TR1)</p>
+<p>多久溢出触发定时中断函数(初始值)</p>
+<p>设置定时模式(TMOD)</p>
+<p>开启定时器中断允许控制位及总中断允许控制位</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;reg52.h&gt;</span></span></span><br><span class="line">sbit LED1 = P1^<span class="number">0</span>;		<span class="comment">//定义LED灯</span></span><br><span class="line"><span class="type">int</span> count;			<span class="comment">//由于51单片机没办法定时1s，只能通过计数达到效果</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    TMOD = <span class="number">0x01</span>;	<span class="comment">//配置定时器工作模式：使用定时器0，使用16位定时器模式(不自动重装初值)</span></span><br><span class="line">    <span class="comment">//定时10ms，给寄存器赋初值</span></span><br><span class="line">    TL0 = <span class="number">0x00</span>;</span><br><span class="line">    TH0 = <span class="number">0xDC</span>;</span><br><span class="line">    TR0 = <span class="number">1</span>;	<span class="comment">//打开定时器T0运行控制位</span></span><br><span class="line">    ET0 = <span class="number">1</span>;	<span class="comment">//打开定时器0中断允许位</span></span><br><span class="line">    EA = <span class="number">1</span>;		<span class="comment">//打开总中断允许控制位</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//大于99时则取反LED状态</span></span><br><span class="line">        <span class="keyword">if</span>(count &gt; <span class="number">99</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            count = <span class="number">0</span>;</span><br><span class="line">            LED1 = ~LED1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定时中断处理函数</span></span><br><span class="line">Timer0_Routine(<span class="type">void</span>)      interrupt <span class="number">1</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//触发中断函数，需要重新给定时器赋初值</span></span><br><span class="line">    TL0 = <span class="number">0x00</span>;</span><br><span class="line">    TH0 = <span class="number">0xDC</span>;</span><br><span class="line">    count++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://xinzai.qzz.io">星仔</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://xinzai.qzz.io/2024/04/12/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/51%E5%8D%95%E7%89%87%E6%9C%BA/3.%E5%AE%9A%E6%97%B6%E5%99%A8/">https://xinzai.qzz.io/2024/04/12/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/51%E5%8D%95%E7%89%87%E6%9C%BA/3.%E5%AE%9A%E6%97%B6%E5%99%A8/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://xinzai.qzz.io" target="_blank">星仔极客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/">51单片机</a></div><div class="post-share"><div class="social-share" data-image="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2024/04/13/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/51%E5%8D%95%E7%89%87%E6%9C%BA/2.%E4%B8%AD%E6%96%AD/" title="2.外部中断"><img class="cover" src="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">2.外部中断</div></div><div class="info-2"><div class="info-item-1">中断原理你在打游戏，水开了，水壶发出响声，你停止打游戏，去倒水，倒完水接着打游戏 打游戏：就相当于While(1){}里面执行的代码 水壶响：就是中断源 倒水：触发中断后要去做的事情，中断处理函数 代码实现过程中断源INT0(外部中断源)、Timer0(定时器中断源)、INT1、Timer1、UART(串口中断源)、Timer2、INT2、INT3 中断触发方式： &ensp;&ensp;&ensp;&ensp;外部中断：下降沿或者低电平 &ensp;&ensp;&ensp;&ensp;定时器中断：定时器计数溢出 &ensp;&ensp;&ensp;&ensp;串口中断：串口发送或者接收完成 中断处理函数与中断源对应的中断处理函数，直接使用对应的函数    中断源 外部中断处理函数    INT0 Int0_Routine(void)              interrupt 0   INT1 Int1_Routine(void)              interrupt 2   INT2 Int2_Routine(void)             interrupt ...</div></div></div></a><a class="pagination-related" href="/2024/04/11/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/51%E5%8D%95%E7%89%87%E6%9C%BA/4.%E4%B8%B2%E5%8F%A3/" title="4.串口"><img class="cover" src="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">4.串口</div></div><div class="info-2"><div class="info-item-1">串口的介绍UART（通用异步收发器）是一种双向、串行、异步的通信总线，仅用一根数据接收线（RX）和一根数据发送线（TX）就能实现全双工通信 USART：通用同步&#x2F;异步串行接收&#x2F;发送器 R：Receiver(接收)，T：Transmit(发送)   UART 在发送或接收过程中的一帧数据由4部分组成，起始位、数据位、奇偶校验位和停止位 如图所示，起始位标志着一帧数据的开始，停止位标志着一帧数据的结束，数据位是一帧数据中的有效数据，校验位分为奇校验和偶校验，用于检验数据在传输过程中是否出错（奇校验时，发送方应使数据位中1的个数与校验位中1的个数之和为奇数。接收方在接收数据时，对1的个数进行检查，若不为奇数，则说明数据在传输过程中出了差错。同样，偶校验则检查1的个数是否为偶数） UART通信过程中的数据格式及传输速率是可设置的，为了正确的通信，收发双方应约定并遵循同样的设置。数据位可选择为5、6、7、8位，其中8位数据位是最常用的，在实际应用中一般都选择8位数据位。校验位可选择奇校验、偶校验或者无校验位。停止位可选择1位（默认）1.5或2位 串口通信的速率用波特率表...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2024/04/15/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/51%E5%8D%95%E7%89%87%E6%9C%BA/0.%E5%8D%95%E7%89%87%E6%9C%BA%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" title="0.单片机工作原理"><img class="cover" src="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-15</div><div class="info-item-2">0.单片机工作原理</div></div><div class="info-2"><div class="info-item-1">最小系统单片机芯片本次51单片机的芯片为：STC89C52   Flash(闪存)程序存储器：存储程序的空间 SRAM：数据存储器，可用于存放程序执行的中间结果和过程数据 DPTR：16位的寄存器（两个8位寄存器组成），用于间接寻址，DPH存储地址的高8位，而DPL存储地址的低8位 EEPROM：带电可擦可编程只读存储器。是一种掉电后数据不丢失的存储芯片 看门狗：用于监控单片机程序运行状态的机制。它通过一个定时器电路实现，能够在程序运行失控或遇到硬件错误时对单片机进行复位操作，以确保程序能够重新开始执行 A&#x2F;D：模拟信号到数字信号的转换（模拟&#x2F;数字） I&#x2F;O：输入和输出，输入（Input）是指数据或信号从外部设备或用户传输到计算机系统内部的过程，而输出（Output）则是指数据或信号从计算机系统传输到外部设备或用户的过程 时钟电路产生固定频率的交流信号，晶振是产生信号的元器件（由晶振频率计算产生） 若晶振为12Mhz时： &ensp;&ensp;&ensp;&ensp;时钟周期：1&#x2F;12Mhz，单位是秒，12Mhz要转为秒为12000000...</div></div></div></a><a class="pagination-related" href="/2024/04/14/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/51%E5%8D%95%E7%89%87%E6%9C%BA/1.IO/" title="1.I&#x2F;O"><img class="cover" src="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-14</div><div class="info-item-2">1.I&#x2F;O</div></div><div class="info-2"><div class="info-item-1">I&#x2F;O输出(点灯)分析电路看电路图，元器件形成电压差，即可点亮LED灯   代码编写使用不同操作进行LED控制 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081#include &quot;reg52.h&quot;	//51单片机头文件#include &lt;intrins.h&gt;sbit LED1 = P1^0;	//引脚初始化：P1^0：对应引脚的LED灯，定义LED1代表P1^0这个引脚的LED灯sbit LED2 = P1^1;sbit LED3 = P1^2;sbit LED4 = P1^3;int i;//延时1000ms的延时函数void Delay1000ms()    //@11.0592MHz&#123;    unsigned char data i, j, k;    _nop_();...</div></div></div></a><a class="pagination-related" href="/2024/04/13/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/51%E5%8D%95%E7%89%87%E6%9C%BA/2.%E4%B8%AD%E6%96%AD/" title="2.外部中断"><img class="cover" src="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-13</div><div class="info-item-2">2.外部中断</div></div><div class="info-2"><div class="info-item-1">中断原理你在打游戏，水开了，水壶发出响声，你停止打游戏，去倒水，倒完水接着打游戏 打游戏：就相当于While(1){}里面执行的代码 水壶响：就是中断源 倒水：触发中断后要去做的事情，中断处理函数 代码实现过程中断源INT0(外部中断源)、Timer0(定时器中断源)、INT1、Timer1、UART(串口中断源)、Timer2、INT2、INT3 中断触发方式： &ensp;&ensp;&ensp;&ensp;外部中断：下降沿或者低电平 &ensp;&ensp;&ensp;&ensp;定时器中断：定时器计数溢出 &ensp;&ensp;&ensp;&ensp;串口中断：串口发送或者接收完成 中断处理函数与中断源对应的中断处理函数，直接使用对应的函数    中断源 外部中断处理函数    INT0 Int0_Routine(void)              interrupt 0   INT1 Int1_Routine(void)              interrupt 2   INT2 Int2_Routine(void)             interrupt ...</div></div></div></a><a class="pagination-related" href="/2024/04/11/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/51%E5%8D%95%E7%89%87%E6%9C%BA/4.%E4%B8%B2%E5%8F%A3/" title="4.串口"><img class="cover" src="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-11</div><div class="info-item-2">4.串口</div></div><div class="info-2"><div class="info-item-1">串口的介绍UART（通用异步收发器）是一种双向、串行、异步的通信总线，仅用一根数据接收线（RX）和一根数据发送线（TX）就能实现全双工通信 USART：通用同步&#x2F;异步串行接收&#x2F;发送器 R：Receiver(接收)，T：Transmit(发送)   UART 在发送或接收过程中的一帧数据由4部分组成，起始位、数据位、奇偶校验位和停止位 如图所示，起始位标志着一帧数据的开始，停止位标志着一帧数据的结束，数据位是一帧数据中的有效数据，校验位分为奇校验和偶校验，用于检验数据在传输过程中是否出错（奇校验时，发送方应使数据位中1的个数与校验位中1的个数之和为奇数。接收方在接收数据时，对1的个数进行检查，若不为奇数，则说明数据在传输过程中出了差错。同样，偶校验则检查1的个数是否为偶数） UART通信过程中的数据格式及传输速率是可设置的，为了正确的通信，收发双方应约定并遵循同样的设置。数据位可选择为5、6、7、8位，其中8位数据位是最常用的，在实际应用中一般都选择8位数据位。校验位可选择奇校验、偶校验或者无校验位。停止位可选择1位（默认）1.5或2位 串口通信的速率用波特率表...</div></div></div></a><a class="pagination-related" href="/2024/04/10/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/51%E5%8D%95%E7%89%87%E6%9C%BA/5.IIC%E9%80%9A%E4%BF%A1/" title="5.IIC通信"><img class="cover" src="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-10</div><div class="info-item-2">5.IIC通信</div></div><div class="info-2"><div class="info-item-1">IIC理论实现方式软件IIC：流程清楚、占用时间、速度慢 硬件IIC ：用法复杂、速度快、可以用DMA 电路SCL：时钟线，SDA：数据线 上拉电阻：4.7k-10k 速率标准模式：100Kb&#x2F;s、快速模式：400Kb&#x2F;s、高速模式：3.4Mb&#x2F;s 100kbit&#x2F;s 是指1秒钟传输100kbit。1个时钟脉冲只能传输1bit数据。1秒中内要传输100kbit数据，则需要100k个时钟脉冲。每个时钟脉冲的周期 T&#x3D;1&#x2F;100 000 &#x3D; 10us HZ和bit&#x2F;s是一个相同的概念。时钟周期为1HZ，则传输数据的速率为1bit&#x2F;s；时钟周期为100KHZ，则传输数据的速率为100kbit&#x2F;s 时序  空闲状态SDA和SCL全为高电平 开始信号当SCL为高电平时，SDA由高到低的跳变：表示数据传输的开始 停止信号当SCL为高电平时，SDA由低到高的跳变：表示数据的结束 读写操作 发送从机地址 每个 I2C 器件都有一个设备地址 先发送设备地址来决定访问哪个 I2C 器件   发送8位数...</div></div></div></a><a class="pagination-related" href="/2024/04/08/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/51%E5%8D%95%E7%89%87%E6%9C%BA/7.%E7%94%B5%E6%9C%BA%E6%8E%A7%E5%88%B6/" title="7.电机控制"><img class="cover" src="https://img.picgo.net/2024/08/19/da01431db43cfe07c4bb046792e82892ece607079f0a4325.jpeg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-08</div><div class="info-item-2">7.电机控制</div></div><div class="info-2"><div class="info-item-1">直流电机原理：链接 转速：脉冲宽度调制（Pulse width modulation，PWM） 周期（频率）、占空比   电机驱动电路  代码编写按键控制直流电机速度 main.c1234567891011121314151617181920212223242526#include &quot;main.h&quot;#include &quot;delay.h&quot;int count = 0,level = 7;void main()&#123;    TR0 = 1;    TH0 = 0xDC;    TL0 = 0x00;    TMOD = 0x01;    ET0 = 1;    EA =1;    while(1)    &#123;        if(KEY1 == 0)        &#123;            Delay120ms();            if(KEY1 == 0)            &#123;                level++;                level = level % 10;	//到...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">星仔</div><div class="author-info-description">日常笔记和生活分享！</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">80</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text">相关寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TCON%EF%BC%9A%E5%AE%9A%E6%97%B6%E5%99%A8%E6%8E%A7%E5%88%B6%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">2.1.</span> <span class="toc-text">TCON：定时器控制寄存器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TMOD%EF%BC%9A%E5%AE%9A%E6%97%B6%E5%99%A8%E6%A8%A1%E5%BC%8F%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">2.2.</span> <span class="toc-text">TMOD：定时器模式寄存器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E5%99%A8%E8%AE%A1%E7%AE%97%E5%88%9D%E5%80%BC"><span class="toc-number">2.3.</span> <span class="toc-text">定时器计算初值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD%E5%85%81%E8%AE%B8%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">2.4.</span> <span class="toc-text">中断允许寄存器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E7%BC%96%E5%86%99"><span class="toc-number">3.</span> <span class="toc-text">代码编写</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/11/25/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/%E9%A1%B9%E7%9B%AE/" title="项目"><img src="https://img.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="项目"/></a><div class="content"><a class="title" href="/2024/11/25/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/%E9%A1%B9%E7%9B%AE/" title="项目">项目</a><time datetime="2024-11-25T02:22:50.000Z" title="发表于 2024-11-25 10:22:50">2024-11-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/24/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/0-ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="0.ArkTS基础语法"><img src="https://img.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="0.ArkTS基础语法"/></a><div class="content"><a class="title" href="/2024/11/24/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/0-ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="0.ArkTS基础语法">0.ArkTS基础语法</a><time datetime="2024-11-24T02:22:50.000Z" title="发表于 2024-11-24 10:22:50">2024-11-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/23/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/1-%E7%95%8C%E9%9D%A2%E5%BC%80%E5%8F%91/" title="1.界面开发"><img src="https://img.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="1.界面开发"/></a><div class="content"><a class="title" href="/2024/11/23/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/1-%E7%95%8C%E9%9D%A2%E5%BC%80%E5%8F%91/" title="1.界面开发">1.界面开发</a><time datetime="2024-11-23T02:23:35.000Z" title="发表于 2024-11-23 10:23:35">2024-11-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/22/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/2-%E4%BA%A4%E4%BA%92%E5%BC%80%E5%8F%91/" title="2.交互开发"><img src="https://img.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2.交互开发"/></a><div class="content"><a class="title" href="/2024/11/22/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/2-%E4%BA%A4%E4%BA%92%E5%BC%80%E5%8F%91/" title="2.交互开发">2.交互开发</a><time datetime="2024-11-22T08:44:16.000Z" title="发表于 2024-11-22 16:44:16">2024-11-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/20/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/Linux/4-Linux%E5%BA%94%E7%94%A8%E7%BC%96%E7%A8%8B/" title="4.Linux应用编程"><img src="https://i.postimg.cc/MKRR79pj/7777777.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="4.Linux应用编程"/></a><div class="content"><a class="title" href="/2024/11/20/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/Linux/4-Linux%E5%BA%94%E7%94%A8%E7%BC%96%E7%A8%8B/" title="4.Linux应用编程">4.Linux应用编程</a><time datetime="2024-11-20T12:47:12.000Z" title="发表于 2024-11-20 20:47:12">2024-11-20</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 By 星仔</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.0-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

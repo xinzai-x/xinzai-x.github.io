@@ -1,0 +1,301 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>springboot相关配置 | 星仔极客</title><meta name="author" content="星仔"><meta name="copyright" content="星仔"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="maven安装与配置 maven安装：网址（这里以3.6.3为例），选择好对应版本后，点击binaries     配置环境变量(任务栏放大镜搜索)，进入后添加 变量名：MAVEN_HOME，变量值：maven下载后的解压路径(看到bin)     继续配置，双击Path，新建添加%MAVEN_HOME%\bin，然后一层层点确定     测试是否配置完成，cdm命令输入：mvn -v    修改">
+<meta property="og:type" content="article">
+<meta property="og:title" content="springboot相关配置">
+<meta property="og:url" content="https://xinzai.qzz.io/2024/09/30/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/springboot%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="星仔极客">
+<meta property="og:description" content="maven安装与配置 maven安装：网址（这里以3.6.3为例），选择好对应版本后，点击binaries     配置环境变量(任务栏放大镜搜索)，进入后添加 变量名：MAVEN_HOME，变量值：maven下载后的解压路径(看到bin)     继续配置，双击Path，新建添加%MAVEN_HOME%\bin，然后一层层点确定     测试是否配置完成，cdm命令输入：mvn -v    修改">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.postimg.cc/MHcnhGsZ/555.jpg">
+<meta property="article:published_time" content="2024-09-30T08:34:20.000Z">
+<meta property="article:modified_time" content="2024-11-16T03:32:17.382Z">
+<meta property="article:author" content="星仔">
+<meta property="article:tag" content="springboot相关配置">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.postimg.cc/MHcnhGsZ/555.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "springboot相关配置",
+  "url": "https://xinzai.qzz.io/2024/09/30/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/springboot%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/",
+  "image": "https://i.postimg.cc/MHcnhGsZ/555.jpg",
+  "datePublished": "2024-09-30T08:34:20.000Z",
+  "dateModified": "2024-11-16T03:32:17.382Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "星仔",
+      "url": "https://xinzai.qzz.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://xinzai.qzz.io/2024/09/30/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/springboot%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'true',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'springboot相关配置',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">80</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">星仔极客</span></a><a class="nav-page-title" href="/"><span class="site-name">springboot相关配置</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">springboot相关配置</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-09-30T08:34:20.000Z" title="发表于 2024-09-30 16:34:20">2024-09-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-11-16T03:32:17.382Z" title="更新于 2024-11-16 11:32:17">2024-11-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/">技术积累记录</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><h1 id="maven安装与配置"><a href="#maven安装与配置" class="headerlink" title="maven安装与配置"></a><center>maven安装与配置</center></h1><blockquote>
+<p>maven安装：<a target="_blank" rel="noopener" href="https://archive.apache.org/dist/maven/maven-3/">网址</a>（这里以3.6.3为例），选择好对应版本后，点击<code>binaries</code></p>
+</blockquote>
+<img src="https://s2.loli.net/2024/09/30/UcuHV5jgt4Xv2eW.webp" alt="maven安装" style="zoom:40%;" />
+
+<blockquote>
+<p>配置环境变量(任务栏放大镜搜索)，进入后添加</p>
+<p>变量名：<code>MAVEN_HOME</code>，变量值：maven下载后的解压路径(看到bin)</p>
+</blockquote>
+<img src="https://s2.loli.net/2024/09/30/b5gQYH7TR9OzjSV.webp" alt="配置环境变量" style="zoom:40%;" />
+
+<blockquote>
+<p>继续配置，双击<code>Path</code>，新建添加<code>%MAVEN_HOME%\bin</code>，然后一层层点确定</p>
+</blockquote>
+<img src="https://s2.loli.net/2024/09/30/sWBeRwgU5AzpaSN.webp" alt="配置环境变量" style="zoom:45%;" />
+
+<blockquote>
+<p>测试是否配置完成，cdm命令输入：<code>mvn -v</code></p>
+</blockquote>
+<img src="https://s2.loli.net/2024/09/30/CiOc5KxDzPrXUS3.webp" alt="成功图" style="zoom:50%;" />
+
+<h1 id="修改仓库"><a href="#修改仓库" class="headerlink" title="修改仓库"></a><center>修改仓库</center></h1><blockquote>
+<p>在maven 下载后的解压路径下，新建一个文件夹 文件命名为<code>repository</code></p>
+</blockquote>
+<img src="https://s2.loli.net/2024/09/30/uHG839XgwcVnxRo.webp" alt="新建文件夹" style="zoom:50%;" />
+
+<blockquote>
+<p>在解压文件夹中找到<code>conf</code>，打开<code>settings.xml</code></p>
+</blockquote>
+<img src="https://s2.loli.net/2024/09/30/ixUDlSBP96GY24t.webp" alt="打开文件" style="zoom:50%;" />
+
+<h2 id="修改本地仓库"><a href="#修改本地仓库" class="headerlink" title="修改本地仓库"></a>修改本地仓库</h2><blockquote>
+<p>找到<code>localRepositor</code>标签，可能注释掉了，直接搜索取消注释即可，找到后添加刚才创建文件夹路径</p>
+</blockquote>
+<img src="https://s2.loli.net/2024/09/30/B7LQhATnlzyPpdq.webp" alt="修改本地仓库位置" style="zoom:40%;" />
+
+<h2 id="修改远程仓库"><a href="#修改远程仓库" class="headerlink" title="修改远程仓库"></a>修改远程仓库</h2><blockquote>
+<p>找到<code>mirrors</code>标签，可能注释掉了，直接搜索取消注释即可，找到后添加以下代码</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;mirror&gt;</span><br><span class="line">    &lt;id&gt;alimaven&lt;/id&gt;</span><br><span class="line">    &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;</span><br><span class="line">    &lt;name&gt;aliyun maven&lt;/name&gt;</span><br><span class="line">    &lt;url&gt;http:<span class="comment">//maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;</span></span><br><span class="line">&lt;/mirror&gt;</span><br></pre></td></tr></table></figure>
+
+<img src="https://s2.loli.net/2024/09/30/5IHyqTFCuWQPjRf.webp" alt="添加代码" style="zoom:35%;" />
+
+<blockquote>
+<p>验证maven本地仓库和远程仓库是否配置成功，在命令行界面输入<code>mvn help:system</code>，出现图中标志表示成功</p>
+</blockquote>
+<img src="https://s2.loli.net/2024/09/30/3Vivd95MEeKkycZ.webp" alt="验证" style="zoom:60%;" />
+
+
+
+
+
+
+
+
+
+<h1 id="项目打包成jar包"><a href="#项目打包成jar包" class="headerlink" title="项目打包成jar包"></a><center>项目打包成jar包</center></h1><blockquote>
+<p>查看项目中的<code>pom.xml</code>是否有一下插件，如果没有添加，如果按上面配置应该是有</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;plugins&gt;</span><br><span class="line">    &lt;plugin&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">    &lt;/plugin&gt;</span><br><span class="line">&lt;/plugins&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>使用Maven命令打包，在项目中的终端或者命令窗口进入到项目文件夹运行命令</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean <span class="keyword">package</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>运行jar包，输入以下命令</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java -jar jar包名</span><br><span class="line"><span class="comment">//例：java -jar demoa-0.0.1-SNAPSHOT.jar</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="idea修改设置默认maven，解决每次新建和导入项目都需要重新配置maven"><a href="#idea修改设置默认maven，解决每次新建和导入项目都需要重新配置maven" class="headerlink" title="idea修改设置默认maven，解决每次新建和导入项目都需要重新配置maven"></a>idea修改设置默认maven，解决每次新建和导入项目都需要重新配置maven</h1><p>配置系统环境变量及Path环境变量</p>
+<blockquote>
+<p>变量名：<code>MAVEN_HOME</code></p>
+<p>变量值:<code>D:\apache-maven-3.6.2</code> (D:\APP\maven_3.6.3)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="https://s2.loli.net/2024/10/14/yHwBVoTe2IYA76l.webp" alt="配置环境变量1" style="zoom:40%;" /></th>
+</tr>
+</thead>
+</table>
+<p>配置Path环境变量，在maven中进入bin目录，复制目录，填进去(D:\APP\maven_3.6.3\bin)</p>
+<table>
+<thead>
+<tr>
+<th><img src="https://s2.loli.net/2024/10/14/KgWG9bFcOVqATe7.webp" alt="环境变量配置2" style="zoom:50%;" /></th>
+</tr>
+</thead>
+</table>
+<blockquote>
+<p>验证：cmd打开窗口，输入<code>mvn -version</code>，如果出现对应maven的版本号，即成功</p>
+</blockquote>
+<p>修改默认仓库</p>
+<p>进入maven文件夹找到图片的文件打开，然后在maven文件夹下新建一个文件夹名为<code>repository</code></p>
+<table>
+<thead>
+<tr>
+<th><img src="https://s2.loli.net/2024/10/14/tADH94LVjkuy7Ro.webp" alt="进入文件" style="zoom:50%;" /></th>
+</tr>
+</thead>
+</table>
+<p>进入后，找到图片中的位置增加圈中的代码，中间的路径则为刚才新建的文件夹路径</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;localRepository&gt;D:\APP\maven_3.6.3\repository&lt;/localRepository&gt;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th><img src="https://s2.loli.net/2024/10/14/ws2hxZDUvQiSRT6.webp" alt="修改本地仓库" style="zoom:50%;" /></th>
+</tr>
+</thead>
+</table>
+<p>顺便将仓库修改为阿里云的，可以快速下载配置文件，往下滑增加图片中的代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;mirror&gt;</span><br><span class="line">  &lt;id&gt;alimaven&lt;/id&gt;</span><br><span class="line">  &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;</span><br><span class="line">  &lt;name&gt;aliyun maven&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="center"><img src="https://s2.loli.net/2024/10/14/3qAhPMCN6ZyEFT5.webp" alt="修改仓库" style="zoom:40%;" /></th>
+</tr>
+</thead>
+</table>
+<p>修改完成之后，新建工程，进入工程，打开设置，按照图中修改</p>
+<table>
+<thead>
+<tr>
+<th><img src="https://s2.loli.net/2024/10/14/r9HCFyWsO3NaevR.webp" alt="修改工程中的maven" style="zoom:50%;" /></th>
+</tr>
+</thead>
+</table>
+<p>修改新建工程时的maven仓库地址，修改后就完成了</p>
+<table>
+<thead>
+<tr>
+<th><img src="https://s2.loli.net/2024/10/14/E98bzUKwh3JdeGu.webp" alt="修改新工程的配置" style="zoom:50%;" /></th>
+</tr>
+</thead>
+</table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://xinzai.qzz.io">星仔</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://xinzai.qzz.io/2024/09/30/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/springboot%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/">https://xinzai.qzz.io/2024/09/30/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/springboot%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://xinzai.qzz.io" target="_blank">星仔极客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/springboot%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/">springboot相关配置</a></div><div class="post-share"><div class="social-share" data-image="https://i.postimg.cc/MHcnhGsZ/555.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2024/10/02/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF%E8%AE%B0%E5%BD%95/%E8%90%A5%E4%B8%9A%E6%89%A7%E7%85%A7%E7%9B%B8%E5%85%B3/" title="营业执照相关"><img class="cover" src="https://i.postimg.cc/KcNF2FXx/777.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">营业执照相关</div></div><div class="info-2"><div class="info-item-1">营业执照注册注意：有营业执照每年必须年报，否则可能征信会出问题，应该是在全国电子税务总局，然后选择营业执照对应的省份登录即可，链接 敬请期待 营业执照注销营业执照作废声明如果营业执照丢失或不在身边，又要注销个体营业执照时，需要营业执照作废声明（如果没有账号就注册一个） 进入国家企业信用信息公示系统：网址，进入后选择营业执照上面所在地区，这里以山西为例   选择好对应地区后，进入企业信息填报   进入后，选择自己可以登陆的方式，这里选择电子营业执照登陆（一般直接微信扫码）   由于已经声明了作废这里就不展示了，说一下大概流程：公示公告，选择营业执照作废声明填报，如实填写就好。需要注意的一般得等一天在公示里才能看到，需要截图作废声明保存 清税证明进入国家税务总局：网址，点击纳税服务   进入后，点击网上办税   在地图上选择你营业执照上面的省份，这里以山西为例   进入后登陆账号（没有账号应该要注册）   选择自然人业务然后验证登陆   进入后，点击地方特色   选择特色办税，再选择清税证明(开具)   然后要验证人脸，必须手机下载电子税务局APP（直接人脸登陆即可），然后用app扫...</div></div></div></a><a class="pagination-related" href="/2024/09/28/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/Linux/0-Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" title="0.Linux基础命令"><img class="cover" src="https://i.postimg.cc/MKRR79pj/7777777.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">0.Linux基础命令</div></div><div class="info-2"><div class="info-item-1"> 终端打开：一个窗口打开第二个：Ctrl+Shift+t，不同串口打开：Ctrl+Alt+t 虚拟机Ubuntu安装参考：链接  文件和目录操作参考：链接  查看文件   查看当前目录里面内容：ls 查看当前目录里面内容(详细信息)：ls -l 查看当前目录里面内容(包括隐藏)：ls -a 查看系统加载哪些驱动：lsmod 查看系统有哪些usb设备：lsusb   文件夹操作   进入哪个文件夹(不知道有哪些需先查看)：cd 文件夹名，连续进入：cd 文件夹名1/文件夹名2 返回上一级：cd .. 切换到系统根目录：cd / 切换用户主目录：：cd ~ 返回当前文件夹所在路径：pwd 创建文件夹：mkdir 文件夹名   文件操作   新建文件：touch 文件.后缀名 删除文件：rm 文件.后缀名，删除文件夹中后缀名全部文件：rm *.后缀名 删除文件夹：rm -R 文件夹名 复制文件：cp 文件名.后缀名 路径 移动文件：mv 文件名.后缀名 路径 查看文件中内容：cat 文件名.后缀名  管理员管理员权限：sudo 操作 创建root用户：sudo passwd root，...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">星仔</div><div class="author-info-description">日常笔记和生活分享！</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">80</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#maven%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">maven安装与配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E4%BB%93%E5%BA%93"><span class="toc-number">2.</span> <span class="toc-text">修改仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="toc-number">2.1.</span> <span class="toc-text">修改本地仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">2.2.</span> <span class="toc-text">修改远程仓库</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E6%88%90jar%E5%8C%85"><span class="toc-number">3.</span> <span class="toc-text">项目打包成jar包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#idea%E4%BF%AE%E6%94%B9%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4maven%EF%BC%8C%E8%A7%A3%E5%86%B3%E6%AF%8F%E6%AC%A1%E6%96%B0%E5%BB%BA%E5%92%8C%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%E9%83%BD%E9%9C%80%E8%A6%81%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEmaven"><span class="toc-number">4.</span> <span class="toc-text">idea修改设置默认maven，解决每次新建和导入项目都需要重新配置maven</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/11/25/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/%E9%A1%B9%E7%9B%AE/" title="项目"><img src="https://img.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="项目"/></a><div class="content"><a class="title" href="/2024/11/25/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/%E9%A1%B9%E7%9B%AE/" title="项目">项目</a><time datetime="2024-11-25T02:22:50.000Z" title="发表于 2024-11-25 10:22:50">2024-11-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/24/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/0-ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="0.ArkTS基础语法"><img src="https://img.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="0.ArkTS基础语法"/></a><div class="content"><a class="title" href="/2024/11/24/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/0-ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="0.ArkTS基础语法">0.ArkTS基础语法</a><time datetime="2024-11-24T02:22:50.000Z" title="发表于 2024-11-24 10:22:50">2024-11-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/23/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/1-%E7%95%8C%E9%9D%A2%E5%BC%80%E5%8F%91/" title="1.界面开发"><img src="https://img.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="1.界面开发"/></a><div class="content"><a class="title" href="/2024/11/23/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/1-%E7%95%8C%E9%9D%A2%E5%BC%80%E5%8F%91/" title="1.界面开发">1.界面开发</a><time datetime="2024-11-23T02:23:35.000Z" title="发表于 2024-11-23 10:23:35">2024-11-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/22/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/2-%E4%BA%A4%E4%BA%92%E5%BC%80%E5%8F%91/" title="2.交互开发"><img src="https://img.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2.交互开发"/></a><div class="content"><a class="title" href="/2024/11/22/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/2-%E4%BA%A4%E4%BA%92%E5%BC%80%E5%8F%91/" title="2.交互开发">2.交互开发</a><time datetime="2024-11-22T08:44:16.000Z" title="发表于 2024-11-22 16:44:16">2024-11-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/20/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/Linux/4-Linux%E5%BA%94%E7%94%A8%E7%BC%96%E7%A8%8B/" title="4.Linux应用编程"><img src="https://i.postimg.cc/MKRR79pj/7777777.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="4.Linux应用编程"/></a><div class="content"><a class="title" href="/2024/11/20/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/Linux/4-Linux%E5%BA%94%E7%94%A8%E7%BC%96%E7%A8%8B/" title="4.Linux应用编程">4.Linux应用编程</a><time datetime="2024-11-20T12:47:12.000Z" title="发表于 2024-11-20 20:47:12">2024-11-20</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 By 星仔</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.0-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
