@@ -20325,6 +20325,17 @@ h1#site-title {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* 移除标题锚点的下划线与多余装饰 */
+.markdownIt-Anchor {
+  text-decoration: none !important; /* 清除文字下划线 */
+  border-bottom: none !important;   /* 清除底部边框（若有） */
+}
+
+/* 若锚点有伪元素生成符号，直接隐藏 */
+.markdownIt-Anchor::before {
+  content: none !important;
+}
+
 /* 时间轴生肖icon */
 svg.icon {
   width: 1em;
