@@ -19,7 +19,7 @@
   preloader: {"source":3},
   friends_vue_info: undefined,
   navMusic: false,
-  mainTone: {"mode":"api","api":"https://imgcolor.naokuo.top/api?img=","cover_change":true},
+  mainTone: undefined,
   authorStatus: undefined,
   algolia: {"appId":"4LPZMHTMTM","apiKey":"24c7e3283d04e2efaf7f6c1249febb2e","indexName":"Blog","hits":{"per_page":6},"languages":{"input_placeholder":"输入关键词后按下回车查找","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
   localSearch: undefined,
@@ -67,7 +67,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2025-09-25 17:03:56',
+  postUpdate: '2025-09-25 17:35:36',
   postMainColor: '',
 }</script><noscript><style type="text/css">
   #nav {
@@ -217,21 +217,15 @@ if (true) {
       </a>
     </div>
     
-    <div class="catalog-list-item" id="/categories/原生鸿蒙开发/">
-      <a href="/categories/原生鸿蒙开发/">
-        原生鸿蒙开发
-      </a>
-    </div>
-    
     <div class="catalog-list-item" id="/categories/MySQL数据库/">
       <a href="/categories/MySQL数据库/">
         MySQL数据库
       </a>
     </div>
     
-    <div class="catalog-list-item" id="/categories/工具分享/">
-      <a href="/categories/工具分享/">
-        工具分享
+    <div class="catalog-list-item" id="/categories/原生鸿蒙开发/">
+      <a href="/categories/原生鸿蒙开发/">
+        原生鸿蒙开发
       </a>
     </div>
     
@@ -244,6 +238,12 @@ if (true) {
     <div class="catalog-list-item" id="/categories/软测/">
       <a href="/categories/软测/">
         软测
+      </a>
+    </div>
+    
+    <div class="catalog-list-item" id="/categories/工具分享/">
+      <a href="/categories/工具分享/">
+        工具分享
       </a>
     </div>
     </div><div class="category-bar-next" id="category-bar-next" onclick="anzhiyu.scrollCategoryBarToRight()"><i class="anzhiyufont anzhiyu-icon-angle-double-right"></i></div><a class="catalog-more" href="/categories/">更多</a></div></div></div><div class="recent-post-item lastestpost-item" onclick="pjax.loadUrl('/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/3-UI%E7%BB%84%E4%BB%B6/')"><div class="post_cover left"><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/3-UI%E7%BB%84%E4%BB%B6/" title="3.UI组件" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://origin.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png" onerror="this.onerror=null;this.src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="3.UI组件" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">原生鸿蒙开发</div><a class="unvisited-post" href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/3-UI%E7%BB%84%E4%BB%B6/" title="3.UI组件">未读</a></div><a class="article-title" href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/3-UI%E7%BB%84%E4%BB%B6/" title="3.UI组件">3.UI组件</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-09-14T13:58:08.000Z" title="发表于 2025-09-14 21:58:08" time="2025-09-14 21:58:08">2025-09-14</time><time class="time_hidden" datetime="2025-09-14T14:09:25.219Z" title="更新于 2025-09-14 22:09:25" time="2025-09-14 22:09:25">2025-09-14</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>原生鸿蒙开发</span></a></span></div><div class="content">Ctrl+p：提示方法
@@ -276,10 +276,11 @@ Color.枚举值			数字类：0x00ffffff字符类：&#x27;#ffffff&#x27;，&#x27;
  内边距
 .pading().pading(&#123;    top: 数字,    bottom: 数字,    left: 数字,    right: 数字&#125;)
  外边距
- ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/0.ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/')"><div class="post_cover left"><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/0.ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="0.ArkTS基础语法" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://origin.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png" onerror="this.onerror=null;this.src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="0.ArkTS基础语法" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">原生鸿蒙开发</div><a class="unvisited-post" href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/0.ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="0.ArkTS基础语法">未读</a></div><a class="article-title" href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/0.ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="0.ArkTS基础语法">0.ArkTS基础语法</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-09-14T01:23:49.000Z" title="发表于 2025-09-14 09:23:49" time="2025-09-14 09:23:49">2025-09-14</time><time class="time_hidden" datetime="2025-09-25T06:34:58.058Z" title="更新于 2025-09-25 14:34:58" time="2025-09-25 14:34:58">2025-09-25</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>原生鸿蒙开发</span></a></span></div><div class="content">打印日志：console.log(‘消息说明’,‘打印的内容’)
+ ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/0.ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/')"><div class="post_cover left"><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/0.ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="0.ArkTS基础语法" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://origin.picgo.net/2024/11/13/c12889d56cf9e0078ed87b335eb8b0b321601f0548e324aa.png" onerror="this.onerror=null;this.src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="0.ArkTS基础语法" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">原生鸿蒙开发</div><a class="unvisited-post" href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/0.ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="0.ArkTS基础语法">未读</a></div><a class="article-title" href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/0.ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="0.ArkTS基础语法">0.ArkTS基础语法</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-09-14T01:23:49.000Z" title="发表于 2025-09-14 09:23:49" time="2025-09-14 09:23:49">2025-09-14</time><time class="time_hidden" datetime="2025-09-25T09:32:19.682Z" title="更新于 2025-09-25 17:32:19" time="2025-09-25 17:32:19">2025-09-25</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>原生鸿蒙开发</span></a></span></div><div class="content">打印日志：console.log(‘消息说明’,‘打印的内容’)
 对象等复杂数据，需要日志打印需要JSON.stringify()转换
 文档中心
 项目：
+美蔻商城_v1.2
 
 
 
@@ -320,7 +321,7 @@ number 数字，Number(数字/变量).toFixed(数字)保留几位小数
 boolean 布尔（真、假）
 
 let 变量名: 类型 = 值Number(数字/变量).toFixed()		//保留两位小数
-// 字符类型，&#x27;&#x27; 或 &quot;&quot; 包裹let title: string = &#x27;巨无霸汉堡&#x27;;console.log(&#x27;字符串title&#x27;, ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/09/11/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E7%A7%98%E5%AF%86%E7%A7%91%E6%8A%80/')"><div class="post_cover left"><a href="/2025/09/11/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E7%A7%98%E5%AF%86%E7%A7%91%E6%8A%80/" title="秘密科技" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://i.postimg.cc/VN3m1ssr/image.png" onerror="this.onerror=null;this.src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="秘密科技" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">工具分享</div><a class="unvisited-post" href="/2025/09/11/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E7%A7%98%E5%AF%86%E7%A7%91%E6%8A%80/" title="秘密科技">未读</a></div><a class="article-title" href="/2025/09/11/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E7%A7%98%E5%AF%86%E7%A7%91%E6%8A%80/" title="秘密科技">秘密科技</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-09-11T12:16:26.000Z" title="发表于 2025-09-11 20:16:26" time="2025-09-11 20:16:26">2025-09-11</time><time class="time_hidden" datetime="2025-09-25T07:20:42.887Z" title="更新于 2025-09-25 15:20:42" time="2025-09-25 15:20:42">2025-09-25</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E7%A7%98%E5%AF%86%E7%A7%91%E6%8A%80/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>秘密科技</span></a></span></div><div class="content">
+// 字符类型，&#x27;&#x27; 或 &quot;&quot; 包裹let title: string = &#x27;巨无霸汉堡&#x27;;console.log(&#x27;字符串ti ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/09/11/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E7%A7%98%E5%AF%86%E7%A7%91%E6%8A%80/')"><div class="post_cover left"><a href="/2025/09/11/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E7%A7%98%E5%AF%86%E7%A7%91%E6%8A%80/" title="秘密科技" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://i.postimg.cc/VN3m1ssr/image.png" onerror="this.onerror=null;this.src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="秘密科技" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">工具分享</div><a class="unvisited-post" href="/2025/09/11/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E7%A7%98%E5%AF%86%E7%A7%91%E6%8A%80/" title="秘密科技">未读</a></div><a class="article-title" href="/2025/09/11/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E7%A7%98%E5%AF%86%E7%A7%91%E6%8A%80/" title="秘密科技">秘密科技</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-09-11T12:16:26.000Z" title="发表于 2025-09-11 20:16:26" time="2025-09-11 20:16:26">2025-09-11</time><time class="time_hidden" datetime="2025-09-25T07:20:42.887Z" title="更新于 2025-09-25 15:20:42" time="2025-09-25 15:20:42">2025-09-25</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E7%A7%98%E5%AF%86%E7%A7%91%E6%8A%80/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>秘密科技</span></a></span></div><div class="content">
   d0082e95ce53ece4a4c0f5b8a727fc3f962b5c64e8654922e002aaab68a80fee8287b5237e990cc3bb2bfba1a3e0315d2966363fe9d120e6754f5085a6baa530f335af0c4ab0c4bc8036a0f7fae3a1749fbd6c3f3219622f5853dbd76d71fde7c62b461bb33878c1eda2e5d812ece538eac890bedcf9c3ecf59d1f510bec37d334b19eab2814dbecc10cfa02fa1a6e0e2110a6bebdce35be5b2b210cce9e7a9e42374d22c6a683922a4179ee529a4fa97afbb5143a1ee0ff60bfcc42e2c4582e16afb5e86a2110e38f609927748b739bb85089d773fdc80ad52bbfd847659c938944ae1db197343d3fc054272ea16ee88d12292a37aeecf50 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/09/08/0.Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/')"><div class="post_cover left"><a href="/2025/09/08/0.Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" title="0.Linux基础命令" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png&quot;" data-lazy-src="https://i.postimg.cc/MKRR79pj/7777777.jpg" onerror="this.onerror=null;this.src='https://img.picgo.net/2024/08/19/404fa2edc3bcbef6c8f.png'" alt="0.Linux基础命令" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">嵌入式软件</div><a class="unvisited-post" href="/2025/09/08/0.Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" title="0.Linux基础命令">未读</a></div><a class="article-title" href="/2025/09/08/0.Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" title="0.Linux基础命令">0.Linux基础命令</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-09-08T02:48:03.000Z" title="发表于 2025-09-08 10:48:03" time="2025-09-08 10:48:03">2025-09-08</time><time class="time_hidden" datetime="2025-09-25T08:51:41.723Z" title="更新于 2025-09-25 16:51:41" time="2025-09-25 16:51:41">2025-09-25</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Linux基础命令</span></a></span></div><div class="content">
 终端打开：一个窗口打开第二个：Ctrl+Shift+t，不同串口打开：Ctrl+Alt+t
 虚拟机Ubuntu安装参考：下载安装Ubuntu 20.04详细教程_ubuntu20.04下载-CSDN博客
