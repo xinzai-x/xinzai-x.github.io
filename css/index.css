@@ -20336,12 +20336,6 @@ h1#site-title {
   content: none !important;
 }
 
-/* 针对 #content-inner 移除边框和阴影 */
-#content-inner {
-  border: none !important;   /* 强制清除所有边框 */
-  box-shadow: none !important; /* 强制清除阴影（若阴影视觉上像“黑线”） */
-}
-
 /* 时间轴生肖icon */
 svg.icon {
   width: 1em;
