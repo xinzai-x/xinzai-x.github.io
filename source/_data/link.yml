@@ -1,0 +1,91 @@
+#- class_name: 外部资源
+#  flink_style: flexcard
+#  hundredSuffix: ""
+#  link_list:
+#    - name: 亿破解
+#      link: https://www.ypojie.com/
+#      avatar: https://img.picgo.net/2024/08/19/128ccf236d6eacf2a.png  # 小图片
+#      descr: 亿破解
+#      siteshot: https://img.picgo.net/2024/08/19/2b4a78f6f68b4a8d6.png # 背景图
+
+#- class_name: Windows镜像
+#  flink_style: telescopic
+#  hundredSuffix: ""
+#  link_list:
+#    - name: 原版1
+#      link: https://msdn.itellyou.cn/  # 网站链接
+#      avatar: https://img.picgo.net/2024/08/19/11ba7f61cb4d94e36.jpeg   # 图标
+#      descr: 珍惜当下，不负此生！
+#      siteshot: https://img.picgo.net/2024/08/19/205e3eb845501787d.png   # 背景图
+#      color: vip  # speed
+#      tag: 原版
+
+#- class_name: 综合工具
+#  class_desc: 致敬青春！
+#  flink_style: anzhiyu
+#  hundredSuffix: ""
+#  link_list:
+#    - name: 十六进制颜色查询    # 名字
+#      link: https://www.webdesignrankings.com/resources/lolcolors/   # 网站链接
+#      avatar: https://img.picgo.net/2024/08/19/69f35cdfcd56692a0e150a851db5cd37ba9514f652c09451.png   # 图标
+#      descr: 查询十六进制颜色
+#      recommend: true   # 推荐标签
+
+#- class_name: 内部资源
+#  class_desc: 仅用学习交流！
+#  flink_style: anzhiyu
+#  hundredSuffix: ""
+#  link_list:
+#    - name: 虚拟机软件    # 名字
+#      link: https://cloud.189.cn/t/fEbmMfNNreiq   # 网站链接
+#      avatar: https://img.picgo.net/2024/08/19/21150f9bf4824392cc08e4458f9dae5f656bf0036f267ec5.png   # 图标
+#      descr: 7svv
+#      recommend: false
+
+
+- class_name: 大佬群居地
+  class_desc: 致敬青春！
+  flink_style: anzhiyu
+  hundredSuffix: ""
+  link_list:
+    - name: 小帅同学    # 名字
+      link: https://xiaoshuai.link/   # 网站链接
+      avatar: https://img.picgo.net/2024/08/19/0e6f474ee69c0d93d25eaef90465fdc17dc864da06735dd7.jpeg   # 图标
+      #descr: 无
+      recommend: true
+
+    - name: 程序员哈利    # 名字
+      link: https://hali.life/   # 网站链接
+      avatar: https://hali.life/wp-content/uploads/2024/01/cropped-微信图片_20230103154646-32x32.jpg   # 图标
+      #descr: 无
+      recommend: false
+
+    - name: Mo 的记事簿    # 名字
+      link: https://blog.xiowo.net/   # 网站链接
+      avatar: https://blog.xiowo.net/favicon.ico   # 图标
+      descr: MortalCat's blog
+      recommend: false
+
+    - name: 阿呆的博客    # 名字
+      link: https://www.adai.fun/   # 网站链接
+      avatar: https://www.faviconextractor.com/favicon/www.adai.fun   # 图标
+      descr: 生活如此多娇
+      recommend: false
+
+
+- class_name: 小伙伴
+  class_desc: 致敬青春！
+  flink_style: anzhiyu
+  hundredSuffix: ""
+  link_list:
+    - name: 御枫林下の小破駅    # 名字
+      link: https://agen233.github.io/   # 网站链接
+      avatar: https://img.picgo.net/2024/08/19/6f1e2e497a47e5bd6d8faa0375d890a5bedd2f1978d0d1fb.jpg   # 图标
+      #descr: 无
+      recommend: true
+
+    - name: 为巽   # 名字
+      link: https://weixuna.github.io/   # 网站链接
+      avatar: https://img.picgo.net/2024/08/19/78ce7b83526731406160f5ed9f47fcefb5c12a0350a8acd9.jpg   # 图标
+      descr: 咬定青山不放松
+      recommend: true

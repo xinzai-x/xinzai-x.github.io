@@ -1,0 +1,108 @@
+- class_name: 关于页
+  subtitle: 珍惜当下，不负此生！✨
+  avatarImg: https://i.postimg.cc/wjTxDpBF/image.jpg #头像
+  avatarSkills:
+    left:
+      - 🤖️ 数码科技爱好者
+      - 🔍 分享与热心帮助
+      - 🏠 智能家居小能手
+      - 🔨 设计开发一条龙
+    right:
+      - 专修交互与设计 🤝
+      - 脚踏实地行动派 🏃
+      - 团队小组发动机 🧱
+      - 壮汉人狠话不多 💢
+  name: 星仔极客
+  description: 是一名 全栈工程师、学生、独立开发者、博主
+  aboutsiteTips:
+    tips: 追求
+    title1: 源于
+    title2: 热爱而去 感受
+    word:
+      - 学习
+      - 生活
+      - 程序
+      - 体验
+  helloAbout: Hello there!
+  skillsTips:
+    tips: 技能
+    title: 开启创造力
+  careers:
+    tips: 生涯
+    title: 无限进步
+    list:
+      - desc: EDU,物联网工程专业
+        color: "#357ef5"
+      - desc: EDU,软件工程专业
+        color: "#357ef5"
+      - desc: EDU,软件工程专业
+        color: "#357ef5"
+    img: https://bu.dusays.com/2023/04/21/644287166329b.png
+  statistic:
+    link: /archives
+    text: 文章隧道
+    cover: https://bu.dusays.com/2023/05/01/644f4b037b930.jpg
+  map:
+    title: 我现在住在
+    StrengthenTitle: 中国，揭阳市
+    background: https://img.picgo.net/2024/08/19/0e4f15477c1a34664545ff156db54a26f28e3fbae689e581.png
+    backgroundDark: https://img.picgo.net/2024/08/19/a55007a6cc7dfcaa16b47e95f58c00451abe160a4f7d9e8b.jpeg
+  selfInfo:
+    selfInfoTips1: 生于
+    selfInfoContentYear: 2002
+    selfInfoTips2: 深圳技术大学
+    selfInfoContent2: 物联网工程
+    selfInfoTips3: 现在职业
+    selfInfoContent3: 打工人
+  personalities:
+    author_name: 执政官
+    personality_type: ESFJ-A
+    photo_url: https://img.picgo.net/2024/08/19/62b04f580b2bc82ef018c90235ccfabb32f59699e055ac98.jpeg   # 性格右侧边款图
+    personality_img: https://img.picgo.net/2024/08/19/7d2815b901af6396a6d20945fa5d4b9b56dbbbab7456bf9c.png   # 动漫人物
+    name_url: https://www.16personalities.com/ch/esfj-%E4%BA%BA%E6%A0%BC
+  maxim:
+    maxim_tips: 座右铭
+    maxim_top: 珍惜当下，
+    maxim_bottom: 不负此生。
+  buff:
+    buff_tips: 特长
+    buff_top: 突发奇想的 想法
+    buff_bottom: 热爱数码
+  game:
+    game_tips: 爱好游戏
+    game_title: 原神
+    game_uid: "UID: 125766904"
+    game_bg: https://bu.dusays.com/2023/04/22/64433bf26e25d.webp
+  comic:
+    comic_tips: 爱好动漫
+    comic_title: 动漫
+    comic_list:
+      - name: 斗罗大陆
+        href: https://v.qq.com/x/cover/m441e3rjq9kwpsc/m00253deqqo.html   # 链接
+        cover: https://img.picgo.net/2024/09/15/120e960b517c4222b.jpg # 图片
+      - name: 斗罗大陆Ⅱ绝世唐门
+        href: https://v.qq.com/x/cover/mzc00200xf3rir6/i0046sewh4r.html
+        cover: https://img.picgo.net/2024/09/15/2883bd730739aa517.png
+      - name: 斗破苍穹
+        href: https://v.qq.com/x/cover/mzc0020027yzd9e/q0043cz9x20.html
+        cover: https://img.picgo.net/2024/09/15/3c5d9a1eec740d74b.jpg
+      - name: 吞噬星空
+        href: https://v.qq.com/x/cover/324olz7ilvo2j5f/i00350r6rf4.html
+        cover: https://img.picgo.net/2024/09/15/4d26d76c74ad364da.jpg
+      - name: 吞噬星空神印王座
+        href: https://v.qq.com/x/cover/mzc002007j7p5hn/k0042sids9q.html
+        cover: https://img.picgo.net/2024/09/15/5c08e3f3eab982c30.jpg
+  like:
+    like_tips: 关注偏好
+    like_title: 数码科技
+    like_bg: https://bu.dusays.com/2022/12/06/638f5f05ce1f7.jpg
+    like_bottom: 手机、电脑软硬件
+  music:
+    music_tips: 音乐偏好
+    music_title: 许嵩、民谣、华语流行
+    music_bg: https://p2.music.126.net/Mrg1i7DwcwjWBvQPIMt_Mg==/79164837213438.jpg
+    music_link: /music
+  #reward_list: #赞赏名单
+  #  - name: 海阔蓝   # 名字
+  #    amount: 8.8   # 金额
+  #    datatime: 2023-03-28   # 时间

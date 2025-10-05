@@ -1,0 +1,14 @@
+安知鱼b站：https://space.bilibili.com/372204786
+安知鱼官网：https://docs.anheyu.com/
+安知鱼内存图标：https://www.iconfont.cn/collections/detail?cid=44481
+    使用方法：将图标库中的图标名复制，然后加上前缀anzhiyu-icon-即可，比如github图标，则为anzhiyu-icon-github
+安知鱼样式：https://blog.anheyu.com/
+注意升级的时候，要把img图片取出来
+注意：换电脑时，博客前面的配置文件要移过去
+
+头像：https://i.postimg.cc/wjTxDpBF/image.jpg
+
+
+solitude主题官网：https://solitude.js.org/zh/
+图标：https://fontawesome.com/search?o=r&m=free
+评论官网：https://console.leancloud.app/login

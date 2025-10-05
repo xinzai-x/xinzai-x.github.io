@@ -1,0 +1,74 @@
+// 链接卡片主样式
+.link_card
+  display: flex
+  margin: 10px 0
+  padding: 12px !important
+  color: var(--font-color)
+  text-decoration: none
+  // 背景与页面区分（白色主题友好）
+  background: var(--card-bg, #f9fafb) !important
+  // 清晰边框
+  border: 1px solid var(--card-border, #e5e7eb) !important
+  border-radius: 10px !important
+  // 轻微阴影增强层次感
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important
+  // 过渡动画
+  transition: all 0.2s ease
+
+  // 悬停效果
+  &:hover
+    background: #4976f5 !important
+    color: white !important
+    border-color: #4976f5 !important
+    box-shadow: 0 2px 8px rgba(73, 118, 245, 0.2) !important
+
+// 图标区域
+.link_icon
+  max-width: 2.8rem  // 图标最大宽度（≈45px）
+  max-height: 2.8rem // 图标最大高度
+  img, svg
+    width: 100%
+    height: 100%
+    object-fit: contain  // 保持图标比例
+    background: white !important  // 图标背景纯白，避免与卡片融合
+    border-radius: 4px !important // 图标圆角
+
+// 内容区域
+.link_content
+  margin-left: 1rem
+  width: calc(100% - 3.8rem)  // 适配图标宽度+间距
+  overflow: hidden
+  line-height: 1.6  // 优化文字可读性
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+  // 标题样式
+  .link_title
+    font-weight: 600
+    font-size: 1.1rem
+    word-break: break-all
+    overflow: hidden
+    text-overflow: ellipsis
+
+  // 描述样式
+  .link_desc
+    opacity: 0.7
+    word-break: break-all
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+
+  // 无描述时标题多行显示
+  &:not(:has(.link_desc)) .link_title
+    display: -webkit-box
+    -webkit-box-orient: vertical
+    -webkit-line-clamp: 2
+
+  // 有描述时标题单行显示
+  &:has(.link_desc) .link_title
+    white-space: nowrap
+
+// 移除默认链接下划线
+a.link_card
+  border-bottom: none !important
