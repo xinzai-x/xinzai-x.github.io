@@ -8,7 +8,22 @@
 
 头像：https://i.postimg.cc/wjTxDpBF/image.jpg
 
+提交搜索：hexo algolia
 
 solitude主题官网：https://solitude.js.org/zh/
 图标：https://fontawesome.com/search?o=r&m=free
 评论官网：https://console.leancloud.app/login
+
+第一次：
+git init
+git checkout -b 分支名			创建并切换
+git add .				添加所有文件到暂存区
+git commit -m 提交描述
+git remote add 仓库链接别名 远程仓库链接
+git push 仓库链接别名 分支名
+后面：
+git add .				添加所有文件到暂存区
+git commit -m 提交描述
+git push origin blog
+
+
