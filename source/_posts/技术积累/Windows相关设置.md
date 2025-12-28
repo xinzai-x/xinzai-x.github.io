@@ -7,7 +7,7 @@ mathjax: false
 date: 2025-09-23 19:21:14
 img:
 coverImg:
-cover: https://i.postimg.cc/tgWYM8Dd/Windows.jpg
+cover: https://s2.loli.net/2025/12/28/5dFCrDUfJWKxtPE.webp
 password:
 categories: 技术积累
 tags: Windows相关设置
@@ -88,7 +88,7 @@ reg delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}" 
 
 # Win11关闭桌面拖动到此处分享
 
-![](https://images.weserv.nl/?url=frp1.mmszxc.xin:24191/Blog/20250923194402907.png)
+![](https://s2.loli.net/2025/12/28/Gsrf3TnK8NhERdZ.png)
 
 在管理员命令窗口中输入下面代码后回车执行，然后重启电脑
 
@@ -118,9 +118,9 @@ Dism /online /enable-feature /featurename:Microsoft-Hyper-V-All /LimitAccess /AL
 
 按Win + r输入 regedit 后回车，在注册表中依次展开并定位到HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control，在Control 文件夹下新建一个名为Updata项，再刚创建的Updata文件夹下再创建一个UpdataMode项，然后再新建一个可扩充字符串值，名为：DWORD，值为：0
 
-<img src="https://images.weserv.nl/?url=frp1.mmszxc.xin:24191/Blog/20250923194258782.png" alt="新建项的方法" style="zoom:50%;" />
+<img src="https://s2.loli.net/2025/12/28/PYOrItKf836WEwd.png" alt="新建项的方法" style="zoom:50%;" />
 
-<img src="https://images.weserv.nl/?url=frp1.mmszxc.xin:24191/Blog/20250923194303677.png" alt="新建可扩充字符串值方法" style="zoom:50%;" />
+<img src="https://s2.loli.net/2025/12/28/6YnwEXKQRotWAVc.png" alt="新建可扩充字符串值方法" style="zoom:50%;" />
 
 # 火狐浏览器优化
 
@@ -135,10 +135,6 @@ iTab 标签设置：
 配置双击关闭标签：
 
 [开启火狐浏览器 Firefox 原生「双击关闭标签页」功能_firefox双击关闭标签页-CSDN博客](https://blog.csdn.net/weixin_45498383/article/details/127865392)
-
-解决占用内存大、启动慢问题
-
-[解决firefox火狐浏览器占用内存大、启动慢问题的方法_火狐运行占内存很大-CSDN博客](https://blog.csdn.net/zhuyunier/article/details/79045064)
 
 
 

@@ -9,8 +9,8 @@ img:
 coverImg:
 cover:
 password:
-categories:
-tags:
+categories: 杂项
+tags: 星海物联协议
 ---
 
 # 星海物联用户服务协议

@@ -2,7 +2,7 @@
 title: 博客CDN解析
 author: 星仔极客
 top: false
-cover: https://i.postimg.cc/xC2n31mN/7777.jpg
+cover: https://s2.loli.net/2025/12/28/jpYxcyKJSR7Dvku.webp
 toc: ture
 mathjax: false
 date: 2025-08-31 15:09:45
@@ -195,7 +195,7 @@ NS1.HE.NET、NS2.HE.NET、NS3.HE.NET、NS4.HE.NET、NE5.HE.NET
 
 这里一般选择一家即可，不能添加多家的DNS，这里我是配置到腾讯控制
 
-![](https://images.weserv.nl/?url=frp1.mmszxc.xin:24191/Blog/20250831151644664.webp)
+<img src="https://images.weserv.nl/?url=frp1.mmszxc.xin:24191/Blog/20250831151644664.webp" style="zoom:50%;" />
 
 现在我们打开腾讯的DNS：[登录 - 腾讯云](https://console.dnspod.cn/)，添加域名(可能要添加TXT记录在原域名解析里面添加后验证即可)，然后进入解析
 

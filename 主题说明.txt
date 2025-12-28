@@ -14,8 +14,12 @@ solitude主题官网：https://solitude.js.org/zh/
 图标：https://fontawesome.com/search?o=r&m=free
 评论官网：https://console.leancloud.app/login
 
-免费域名：https://www.webdom.cn/dashboard
-https://dash.domain.digitalplat.org/panel/main?page=%2Fpanel%2Foverview
+免费域名：https://dash.domain.digitalplat.org/panel/main?page=%2Fpanel%2Foverview
+安装hexo框架：npm install hexo-cli -g
+安装 pug 和 stylus 渲染插件：npm install hexo-renderer-pug hexo-renderer-stylus --save
+安装algolia搜索：npm install hexo-algoliasearch --save
+安装项目依赖：npm install
+安装部署插件：npm install hexo-deployer-git --save
 
 第一次：
 git init

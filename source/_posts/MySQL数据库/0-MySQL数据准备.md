@@ -7,7 +7,7 @@ mathjax: false
 date: 2025-09-14 22:38:37
 img:
 coverImg:
-cover: https://origin.picgo.net/2024/10/20/MySQL574f9b0ede46c2da.jpeg
+cover: https://s2.loli.net/2025/12/28/Uqn7Gf6MEAv9JXS.webp
 password:
 categories: MySQL数据库
 tags: MySQL数据库
