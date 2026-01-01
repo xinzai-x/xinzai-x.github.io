@@ -130,9 +130,9 @@ ForEach(Array.from({ length: 10 }, (value: string, index: number) => index), (it
 
 新版中默认创建不会自动创建 en 国际化文件夹，需要在 **resources **右键新建 资源目录 选择对用的语言，后在新创建的资源文件夹中创建一个 **string.json**，再将 **resources**\element 中的 **string.json** 中内容复制到新的 string.json 文件中，即可编辑国际化对应的文本
 
-<img src="https://images.weserv.nl/?url=frp1.mmszxc.xin:24191/Blog/20250914220916414.png" style="zoom: 50%;" />
+<img src="https://s2.loli.net/2025/12/31/vmU4uLsj8d3EQK7.png" style="zoom: 50%;" />
 
-<img src="https://images.weserv.nl/?url=frp1.mmszxc.xin:24191/Blog/20250914220923681.png" style="zoom:50%;" />
+<img src="https://s2.loli.net/2025/12/31/U7JNdST3APacGoq.png" style="zoom:50%;" />
 
 ```arkts
 Text('文本')
@@ -141,7 +141,7 @@ Text(){
     Span('文本')
         .decoration({ 
             type: TextDecorationType.枚举值,		//划线位置
-            color: 颜色格式 						//文本划线颜色
+            color: 颜色格式 			//文本划线颜色
         })
 }
 Text($r('app.string.枚举值'))	//根据系统不同语言显示不同文本

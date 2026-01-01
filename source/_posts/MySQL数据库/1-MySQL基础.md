@@ -936,8 +936,7 @@ select 'xababy' regexp 'x(ab){1,2}y';	-- 1
 
 经常与主键约束一起使用，对于两个具有关联关系的表而言，相关联字段中主键所在的表就是主表（父表）外键所在的表就是从表（子表）
 
-| <img src="https://images.weserv.nl/?url=frp1.mmszxc.xin:24191/Blog/20250914232928501" style="zoom:50%;" /> |
-| :----------------------------------------------------------: |
+<img src="https://s2.loli.net/2025/12/28/kiWqYz2xU49NL7J.jpg" style="zoom:50%;" />
 
 
 + 外键中列的数据类型必须和主表主键中对应列的数据类型相同
@@ -1033,9 +1032,7 @@ delete from emp where eid = '7';
 
 ### 多对多关系
 
-| <img src="https://images.weserv.nl/?url=frp1.mmszxc.xin:24191/Blog/20250914232511586.jpg" style="zoom:50%;" /> |
-| :----------------------------------------------------------: |
-
+<img src="https://s2.loli.net/2025/12/28/UbQOFf3X4TapMsR.jpg" style="zoom:50%;" />
 
 修改和删除时，中间从表可以随便删除和修改，但是两边的主表受从表依赖的数据不能删除或者修改
 
