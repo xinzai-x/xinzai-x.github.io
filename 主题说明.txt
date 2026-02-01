@@ -6,8 +6,6 @@
 注意升级的时候，要把img图片取出来
 注意：换电脑时，博客前面的配置文件要移过去
 
-头像：https://i.postimg.cc/wjTxDpBF/image.jpg
-
 提交搜索：hexo algolia
 
 solitude主题官网：https://solitude.js.org/zh/
