@@ -1,0 +1,854 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>0.ArkTS基础语法 | 星仔极客</title><meta name="keywords" content="原生鸿蒙开发"><meta name="author" content="星仔"><meta name="copyright" content="星仔"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="0.ArkTS基础语法"><meta name="application-name" content="0.ArkTS基础语法"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="0.ArkTS基础语法"><meta property="og:url" content="https://www.6673543.xyz/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/0.ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.html"><meta property="og:site_name" content="星仔极客"><meta property="og:description" content="打印日志：console.log(‘消息说明’,‘打印的内容’) 对象等复杂数据，需要日志打印需要JSON.stringify()转换 文档中心 项目：                     美蔻商城_v1.2       https:&amp;#x2F;&amp;#x2F;www.yuque.com&amp;#x2F;megasu&amp;#x2F;hm_meiko"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp"><meta property="article:author" content="星仔"><meta property="article:tag" content="星仔极客"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp"><meta name="description" content="打印日志：console.log(‘消息说明’,‘打印的内容’) 对象等复杂数据，需要日志打印需要JSON.stringify()转换 文档中心 项目：                     美蔻商城_v1.2       https:&amp;#x2F;&amp;#x2F;www.yuque.com&amp;#x2F;megasu&amp;#x2F;hm_meiko"><link rel="shortcut icon" href="https://s2.loli.net/2025/12/28/5WBroFiQ9IAhGK4.webp"><link rel="canonical" href="https://www.6673543.xyz/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/0.ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="manifest" href="/manifest.json"/><meta name="msapplication-TileColor" content="var(--anzhiyu-main)"/><link rel="mask-icon" href="/img/siteicon/apple-icon-180.png" color="#5bbad5"/><link rel="apple-touch-icon" sizes="180x180" href="/img/siteicon/apple-icon-180.png"/><link rel="apple-touch-icon-precomposed" sizes="180x180" href="/img/siteicon/apple-icon-180.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/siteicon/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/img/siteicon/16.png"/><link rel="bookmark" href="/img/siteicon/apple-icon-180.png"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1290-2796.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2796-1290.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1179-2556.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2556-1179.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8301eb0bbaa209578343dcbe90153a35";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: {"enable":true,"ck":"3HZ1UVjhMEV6g7Lg","LingQueMonitorID":"3HZ1UVjhMEV6g7Lg"},
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: false,
+  mainTone: undefined,
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 星仔","link":"链接: ","source":"来源: 星仔极客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '星仔极客',
+  title: '0.ArkTS基础语法',
+  postAI: '',
+  pageFillDescription: ' 变量,  基础数据类型,  状态变量,  联合类型,  枚举类型,  常量,  运算符,  字符串,  字符串拼接,  模板字符串,  类型转换,  数组,  数组的操作,  遍历数组,  对象数组,  函数(function),  箭头函数,  重复执行函数,  创建定时器函数,  剩余参数和展开运算符,  接口,  接口继承,  接口实现,  接口自动转 class 类,  对象,  分支语句,  if,  switch,  三元条件表达式,  循环语句,  for,  while,  随机数生成,  Class类,  静态属性和静态方法,  继承,  检测实例,  修饰符,  泛型,  泛型函数,  多个泛型参数,  泛型约束打印日志消息说明打印的内容对象等复杂数据需要日志打印需要转换文档中心项目美蔻商城面试通守护助手项目实战教程哔哩哔哩鸿蒙守护助手黑马程序员项目代码仓库美蔻商城面试通鸿蒙守护助手微信聊天小时达小时达快递项目变量基础数据类型表示全局变量字符串和都可以数字数字变量数字保留几位小数布尔真假变量名类型值数字变量保留两位小数字符类型或包裹巨无霸汉堡字符串数字年龄布尔是否登陆成功修改字符串年龄是否登陆成功状态变量自动更新视图更新也就是改变会引起的渲染刷新变量名变量类型值联合类型灵活的数据类型它修饰的变量可以存储不同类型的数据变量类型类型类型值变量值限定在一组数据范围内选择性别枚举类型约定变量只能在一组数据范围内选择值枚举名常量值常量值定义枚举常量列表给变量设定枚举类型颜色常量用来存储不可变数据常量名类型值运算符一元运算符单独一行的时候前加和后加效果都一致算数运算符作用赋值运算符作用一元运算符作用加加等于先加后使用减减等于先使用后加乘乘等于先减后使用除除等于先使用后减取余取余等于比较运算符作用逻辑运算符作用大于与都真才真大于等于小于非取反小于等于判断不等于判断相等字符串字符串拼接用于拼接字符串和变量小明简介信息名字是模板字符串更适合于多个变量的字符串拼接变量名变量名信息名字是年龄是类型转换字符串转数字变量名字符串直接转数字转换失败返回字符串中包含非数字变量名去掉小数部分转数字转换失败返回变量名保留小数部分转数字转换失败返回数字转字符串变量名数字直接转字符串变量名四舍五入转字符串可设置保留几位小数值值值值值值值保留两位小数数组下标从零开始数组名类型数据数据数组名类型数组名数字填充内容数字是创建长度多少的数字填充内容可字符串或数字数组数组的操作任意位置增加或删除数组名起始位置新增删除个数新增元素新增元素从起始位置开始增加或删除数组名数组长度增加数组名数据数据数据从开头加数组名数据数据数据从结尾加数组名数组名将数组名的数组提出来后合并到数组名的数组后面删除数组名从开头删数组名从结尾删筛选符合条件的保留创建新的数组数组中的数据项数组中的数据项索引数组名条件筛选任意新增删除长度增加增加增加删除删除删除筛选筛选数组中值为遍历数组方式一普通循环遍历输出方式二数组名声明的一个变量用来在循环的时候接收每一个数组元素名字名字对象数组定义接口接口名属性定义对象数组对象数组名接口名属性名值属性名值访问对象数组名下标属性值需要修改数据要整个对象都修改不能修改对象中的一个数据对象数组名下标值属性名值属性名值小红数函数表示全局定义函数函数名形参类型形参类型返回值类型返回值调用函数变量名类型函数名实参实参定义函数五角星五角星五角星五角星调用函数价格箭头函数函数名形参类型形参类型函数体返回值函数名实参实参总价格重复执行函数文档中心执行的操作第一次执行也要等待时间延迟的毫秒数创建定时器函数文档中心不带参数执行的操作只执行一次延迟的毫秒数剩余参数和展开运算符将函数或方法中一个不定数量的参数表示为一个数组函数名参数参数数组名类型值展开运算符只能用在数组上一般用在合并上数组名数据类型数据名数组名结果接口定义接口约束对象中变量及函数的类型接口名属性类型属性类型属性类型方法名参数类型返回值类型声明属性类型声明方法接口继承接口接口属性类型不仅要实现子接口还需要实现父接口接口实现类接口必须实现接口中定义的属性方法否则会报错名字接口自动转类若安装存在网络以及权限问题自行百度解决查看版本需在及以上安装检测安装版本转换使用工程在对应的文件中右键打开范围选择转换的文件对象存储多个不同数据的容器定义的可以给不同的对象重复使用但对象需要的是相同的结构类型对象名称对象结构类型属性名值属性名值方法名形参名类型方法体调用属性及方法对象名属性名对象名方法名定义对象李四唱歌调用对象属性名字年龄调用对象方法奇迹分支语句优秀良好不及格不及格其他三元条件表达式当变量名的值大于变量名的值返回变量名的值否则返回变量名的值变量名变量名变量名变量名返回较大值结果是循环语句重复执行的代码数组名值条件条件成立重复执行的代码重复执行的代码随机数生成默认需要需要乘向下取整类用于创建对象模板同时类声明也会引入一个新类型可定义其实例属性方法和构造函数类名首字母大写规范类名实例属性字段字段名类型值没有构造函数时必须有初始化值字段名类型构造函数不同实例有不同的字段初始值在实例化对象时将参数传进构造函数将字段初始化形参名类型形参名类型也可以传对象属性名形参属性名形参方法方法名参数返回值类型逻辑可以通过获取实例对象使用类实例化对象基于类创建对象实例化类名类名类名实例化类名类名类名值值传入的参数必须和构造函数形参顺序一致小黑名字小黄鱼可以保证若没有赋值不会报错没有赋值显示食物有构造函数西蓝花名字食物扩展使用接口构造函数传入对象你好菜名此时传入的参数可以不用按照构造函数参数的顺序菜心名字食物静态属性和静态方法给类添加静态属性方法通过类名访问不需要静态属性名类型值静态方法名参数返回值类型版本随机数继承子类可以继承父类的方法和属性可以访问父类的实例字段实例方法和构造函数子类父类自己的字段属性自己的方法可以重写父类方法大家好学习子类自己的属性子类无法继承父类构造方法需要类似重写重新调用初始化子类属性重写父类方法调用父类的方法李四学习检测实例检测某个对象是否是某个类的实例判断结果判断结果判断变量是否是数组修饰符只可以取值无法修改修饰的成员只能在本类访问不能在声明该成员的类之外访问包括子类与修饰符非常相似不同点修饰的成员允许在派生类子类中访问任何地方都可以访问省略不写默认为类属性类型方法类属性类型方法泛型让函数等与多种不同的类型一起工作灵活可复用泛型函数类型是可变的函数名泛型参数名形参名泛型参数名泛型参数名调用类型传了什么类型形参和返回值类型都是同样的类型函数名类型实参函数名实参调用时也可以不用显式写出类型会根据输入的参数判断进阶值值值多个泛型参数泛型约束接口属性类型函数接口传入的类型必须要有接口中的属性传入的参数必须有接口中属性值',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-12-28 16:13:02',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/custom/css/font.css"><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://s2.loli.net/2025/12/28/hnKakmoIRgyuNTY.webp"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">星仔极客</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 小伙伴</span></a></li><li><a class="site-page child faa-parent animated-hover" href="https://www.6673543.xyz/2025/08/29/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E8%B5%84%E6%BA%90%E5%BA%93/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 资源库</span></a></li><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener" href="http://ainm.cc/c/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐网</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 1.05rem;">C语言<sup>1</sup></a><a href="/tags/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" style="font-size: 1.05rem;">Linux基础命令<sup>1</sup></a><a href="/tags/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 1.05rem;">MySQL数据库<sup>3</sup></a><a href="/tags/Windows%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" style="font-size: 1.05rem;">Windows相关设置<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2CDN%E8%A7%A3%E6%9E%90/" style="font-size: 1.05rem;">博客CDN解析<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%9B%B8%E5%85%B3/" style="font-size: 1.05rem;">博客搭建相关<sup>1</sup></a><a href="/tags/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" style="font-size: 1.05rem;">原生鸿蒙开发<sup>10</sup></a><a href="/tags/%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE/" style="font-size: 1.05rem;">学术文献<sup>1</sup></a><a href="/tags/%E6%98%9F%E6%B5%B7%E7%89%A9%E8%81%94%E5%8D%8F%E8%AE%AE/" style="font-size: 1.05rem;">星海物联协议<sup>1</sup></a><a href="/tags/%E7%A7%98%E5%AF%86%E7%A7%91%E6%8A%80/" style="font-size: 1.05rem;">秘密科技<sup>1</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E5%BA%93/" style="font-size: 1.05rem;">资源库<sup>1</sup></a><a href="/tags/%E8%BD%AF%E6%B5%8B/" style="font-size: 1.05rem;">软测<sup>2</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/02/"><span class="card-archive-list-date">二月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/01/"><span class="card-archive-list-date">一月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/10/"><span class="card-archive-list-date">十月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/09/"><span class="card-archive-list-date">九月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">17</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/08/"><span class="card-archive-list-date">八月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" itemprop="url">原生鸿蒙开发</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>原生鸿蒙开发</span></a></span></div></div><h1 class="post-title" itemprop="name headline">0.ArkTS基础语法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2025-09-14T01:23:49.000Z" title="发表于 2025-09-14 09:23:49">2025-09-14</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2025-12-28T08:13:02.262Z" title="更新于 2025-12-28 16:13:02">2025-12-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">4.2k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>17分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="0.ArkTS基础语法"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为揭阳"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>揭阳</span><span class="post-meta-separator"></span><span class="post-meta-commentcount"><i class="anzhiyufont anzhiyu-icon-comments post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/0.ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/0.ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" itemprop="commentCount"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></a></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://www.6673543.xyz/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/0.ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"><header><a class="post-meta-categories" href="/categories/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" itemprop="url">原生鸿蒙开发</a><a href="/tags/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" tabindex="-1" itemprop="url">原生鸿蒙开发</a><h1 id="CrawlerTitle" itemprop="name headline">0.ArkTS基础语法</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">星仔</span><time itemprop="dateCreated datePublished" datetime="2025-09-14T01:23:49.000Z" title="发表于 2025-09-14 09:23:49">2025-09-14</time><time itemprop="dateCreated datePublished" datetime="2025-12-28T08:13:02.262Z" title="更新于 2025-12-28 16:13:02">2025-12-28</time></header><p>打印日志：console.log(‘消息说明’,‘打印的内容’)</p>
+<p>对象等复杂数据，需要日志打印需要JSON.stringify()转换</p>
+<p><a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/introduction-to-arkts">文档中心</a></p>
+<p>项目：</p>
+<table>
+<thead>
+<tr>
+<th><a 
+    href="https://www.yuque.com/megasu/hm_meikou_v1.2" 
+    target="_blank" rel="noopener noreferrer" 
+    title="美蔻商城_v1.2" 
+    class="link_card"
+  >
+    <div class="link_icon"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://mdn.alipayobjects.com/huamei_0prmtq/afts/img/A*sRUdR543RjcAAAAAAAAAAAAADvuFAQ/original" class="no-lightbox" alt="图标"></div>
+    <div class="link_content">
+      <div class="link_title">美蔻商城_v1.2</div>
+      <div class="link_desc">https://www.yuque.com/megasu/hm_meikou_v1.2</div>
+    </div>
+  </a></th>
+<th><a target="_blank" rel="noopener" href="https://zhousg.atomgit.net/interview_success/project/">HarmonyOS NEXT 面试通</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1EJpLeRE3L/?spm_id_from=333.788.videopod.episodes&amp;vd_source=1c838941386ee32c4501615c317f75e0">守护助手APP项目实战教程_哔哩哔哩_bilibili</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.yuque.com/megasu/guardian_v1.0">鸿蒙守护助手-黑马程序员_v1.0</a></td>
+</tr>
+</tbody>
+</table>
+<p>项目代码仓库：</p>
+<table>
+<thead>
+<tr>
+<th><a target="_blank" rel="noopener" href="https://gitee.com/megasu/meikou_example">美蔻商城</a></th>
+<th><a target="_blank" rel="noopener" href="https://github.com/HarmonyOS-Next/interview-handbook-project">面试通</a></th>
+<th><a target="_blank" rel="noopener" href="https://gitee.com/Megasu/hm_guardian">鸿蒙守护助手</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://gitee.com/itcast_panpu/next12_wechat03.git">微信聊天</a></td>
+<td><a target="_blank" rel="noopener" href="https://gitee.com/luckybo0027/xsd">小时达</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2025/md/51403960/1747548377135-1a44e93a-69b3-4667-9016-d49582c1f895.md">小时达-快递项目（hap+har）.md</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="变量"><a class="markdownIt-Anchor" href="#变量"></a> 变量</h1>
+<h2 id="基础数据类型"><a class="markdownIt-Anchor" href="#基础数据类型"></a> 基础数据类型</h2>
+<p>let：表示全局变量</p>
+<ul>
+<li>string 字符串, ‘’ 和 &quot;&quot;都可以</li>
+<li>number 数字，<font style="color:#080808;background-color:#ffffff;">Number(数字/变量).toFixed(数字)保留几位小数</font></li>
+<li>boolean 布尔（真、假）</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let 变量名: 类型 = 值</span><br><span class="line">Number(数字/变量).toFixed()		//保留两位小数</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 字符类型，&#x27;&#x27; 或 &quot;&quot; 包裹</span><br><span class="line">let title: string = &#x27;巨无霸汉堡&#x27;;</span><br><span class="line">console.log(&#x27;字符串title&#x27;,title);</span><br><span class="line"></span><br><span class="line">//数字</span><br><span class="line">let age: number = 18</span><br><span class="line">console.log(&#x27;年龄age:&#x27;,age);</span><br><span class="line"></span><br><span class="line">//布尔</span><br><span class="line">let islogin: boolean = true</span><br><span class="line">console.log(&#x27;是否登陆成功：&#x27;,islogin)</span><br><span class="line"></span><br><span class="line">//修改</span><br><span class="line">title = &#x27;xinzai&#x27;</span><br><span class="line">console.log(&#x27;字符串title&#x27;,title);</span><br><span class="line">age = 90</span><br><span class="line">console.log(&#x27;年龄age:&#x27;,age);</span><br><span class="line">islogin = false</span><br><span class="line">console.log(&#x27;是否登陆成功：&#x27;,islogin)</span><br></pre></td></tr></table></figure>
+<h2 id="状态变量"><a class="markdownIt-Anchor" href="#状态变量"></a> 状态变量</h2>
+<p>自动更新视图更新也就是改变会引起 UI 的渲染刷新</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@State 变量名: 变量类型 = 值</span><br><span class="line"></span><br><span class="line">@State msg3: string = &#x27;Hello World&#x27;</span><br></pre></td></tr></table></figure>
+<h2 id="联合类型"><a class="markdownIt-Anchor" href="#联合类型"></a> 联合类型</h2>
+<p>灵活的数据类型，它修饰的变量可以存储不同类型的数据</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let 变量: 类型1 | 类型2 | 类型3 = 值</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let judge : number | string = 100</span><br><span class="line">judge = &#x27;A&#x27;</span><br><span class="line">console.log(judge)  //A</span><br><span class="line"></span><br><span class="line">//变量值限定在一组数据范围内选择</span><br><span class="line">let gender: &#x27;man&#x27; | &#x27;woman&#x27; | &#x27;secret&#x27; = &#x27;secret&#x27;</span><br><span class="line">console.log(&#x27;性别：&#x27;,gender)</span><br></pre></td></tr></table></figure>
+<h2 id="枚举类型"><a class="markdownIt-Anchor" href="#枚举类型"></a> 枚举类型</h2>
+<p>约定变量只能在一组数据范围内选择值</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">enum 枚举名 &#123;  </span><br><span class="line">  常量1 = 值,  </span><br><span class="line">  常量2 = 值,  </span><br><span class="line">  ......  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//定义枚举</span><br><span class="line">enum ThemeColor&#123;</span><br><span class="line">  //常量列表</span><br><span class="line">  Red = &#x27;#ff0f29&#x27;,</span><br><span class="line">  Orange = &#x27;#ff7100&#x27;,</span><br><span class="line">  Green = &#x27;#30b30e&#x27;</span><br><span class="line">&#125;</span><br><span class="line">//给变量设定枚举类型</span><br><span class="line">let color: ThemeColor = ThemeColor.Red</span><br><span class="line">console.log(&#x27;颜色&#x27;,color)</span><br></pre></td></tr></table></figure>
+<h1 id="常量"><a class="markdownIt-Anchor" href="#常量"></a> 常量</h1>
+<p>用来存储不可变数据</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const 常量名: 类型 = 值</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const PI: number = 3.14</span><br><span class="line">console.log(&quot;PI&quot;,PI);</span><br></pre></td></tr></table></figure>
+<h1 id="运算符"><a class="markdownIt-Anchor" href="#运算符"></a> 运算符</h1>
+<p>一元运算符单独一行的时候前加和后加效果都一致</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">算数运算符</th>
+<th style="text-align:center">作用</th>
+<th style="text-align:center">赋值运算符</th>
+<th style="text-align:center">作用</th>
+<th style="text-align:center">一元运算符</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">加</td>
+<td style="text-align:center">+=</td>
+<td style="text-align:center">加等于</td>
+<td style="text-align:center">++i</td>
+<td style="text-align:center">先加后使用</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">减</td>
+<td style="text-align:center">-=</td>
+<td style="text-align:center">减等于</td>
+<td style="text-align:center">i++</td>
+<td style="text-align:center">先使用后加</td>
+</tr>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">乘</td>
+<td style="text-align:center">*=</td>
+<td style="text-align:center">乘等于</td>
+<td style="text-align:center">–i</td>
+<td style="text-align:center">先减后使用</td>
+</tr>
+<tr>
+<td style="text-align:center">/</td>
+<td style="text-align:center">除</td>
+<td style="text-align:center">/=</td>
+<td style="text-align:center">除等于</td>
+<td style="text-align:center">i–</td>
+<td style="text-align:center">先使用后减</td>
+</tr>
+<tr>
+<td style="text-align:center">%</td>
+<td style="text-align:center">取余</td>
+<td style="text-align:center">%=</td>
+<td style="text-align:center">取余等于</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">比较运算符</th>
+<th style="text-align:center">作用</th>
+<th style="text-align:center">逻辑运算符</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:center">大于</td>
+<td style="text-align:center">&amp;&amp;</td>
+<td style="text-align:center">与，都真才真</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;=</td>
+<td style="text-align:center">大于等于</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;</td>
+<td style="text-align:center">小于</td>
+<td style="text-align:center">!</td>
+<td style="text-align:center">非，取反</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;=</td>
+<td style="text-align:center">小于等于</td>
+<td style="text-align:center">!=</td>
+<td style="text-align:center">判断不等于</td>
+</tr>
+<tr>
+<td style="text-align:center">==</td>
+<td style="text-align:center">判断相等</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h1 id="字符串"><a class="markdownIt-Anchor" href="#字符串"></a> 字符串</h1>
+<h2 id="字符串拼接"><a class="markdownIt-Anchor" href="#字符串拼接"></a> 字符串拼接</h2>
+<p>用于拼接字符串和变量</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let name: string = &#x27;小明&#x27;</span><br><span class="line">console.log(&#x27;简介信息&#x27;, &#x27;名字是&#x27; + name)</span><br></pre></td></tr></table></figure>
+<h2 id="模板字符串"><a class="markdownIt-Anchor" href="#模板字符串"></a> 模板字符串</h2>
+<p>更适合于 多个变量 的字符串拼接</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">`...$&#123;变量名1&#125;.....$&#123;变量名2&#125;.....`</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let name: string = &#x27;xinzai&#x27;</span><br><span class="line">let age: number = 18</span><br><span class="line">console.log(&#x27;信息：&#x27;,`名字是$&#123;name&#125;，年龄是$&#123;age&#125;`)</span><br></pre></td></tr></table></figure>
+<h1 id="类型转换"><a class="markdownIt-Anchor" href="#类型转换"></a> 类型转换</h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//字符串转数字</span><br><span class="line">Number(变量名)		//字符串 直接转数字，转换失败返回NaN（字符串中包含非数字）</span><br><span class="line">parseInt(变量名)		//去掉小数部分 转数字，转换失败返回NaN</span><br><span class="line">parseFloat(变量名)	//保留小数部分 转数字，转换失败返回NaN</span><br><span class="line">//数字转字符串</span><br><span class="line">变量名.toString()	//数字直接转字符串</span><br><span class="line">变量名.toFixed()		//四舍五入转字符串，可设置保留几位小数</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let num: string = &#x27;1.1&#x27;</span><br><span class="line">let num1: string = &#x27;1.1a1&#x27;</span><br><span class="line">console.log(&#x27;值：&#x27;,Number(num))   		//1.1</span><br><span class="line">console.log(&#x27;值：&#x27;,parseInt(num))			//1</span><br><span class="line">console.log(&#x27;值：&#x27;,parseFloat(num))   //1.1</span><br><span class="line">console.log(&#x27;值：&#x27;,Number(num1))  		//NaN</span><br><span class="line"></span><br><span class="line">let num: number = 1.12523</span><br><span class="line">console.log(&#x27;值：&#x27;,num.toString())   	//&#x27;1.12523&#x27;</span><br><span class="line">console.log(&#x27;值：&#x27;,num.toFixed())			//&#x27;1&#x27;</span><br><span class="line">console.log(&#x27;值：&#x27;,num.toFixed(2))    //&#x27;1.13&#x27;，保留两位小数</span><br></pre></td></tr></table></figure>
+<h1 id="数组"><a class="markdownIt-Anchor" href="#数组"></a> 数组</h1>
+<p>下标从零开始</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let 数组名: 类型[] = [数据1, 数据2,...]</span><br><span class="line">let 数组名:Array&lt;类型&gt; = [0,1,2,6]</span><br><span class="line">let 数组名 = Array(数字).fill(填充内容);		//数字是创建长度多少的数字，填充内容可字符串或数字 </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let numList2:Array&lt;number&gt; = [0,1,2,6]</span><br><span class="line">let names: string[] = [&#x27;nihao&#x27;,&#x27;xinzai&#x27;,&#x27;bs&#x27;]</span><br><span class="line">console.log(&#x27;数组：&#x27;,names)</span><br><span class="line">console.log(&#x27;1:&#x27;,names[1])</span><br></pre></td></tr></table></figure>
+<h2 id="数组的操作"><a class="markdownIt-Anchor" href="#数组的操作"></a> 数组的操作</h2>
+<p>任意位置 增加 或删除</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">数组名.splice(起始位置, 新增/删除个数, 新增元素1, 新增元素2, ......)	//从起始位置开始增加或删除</span><br><span class="line">数组名.length	//数组长度</span><br><span class="line">//增加</span><br><span class="line">数组名.unshift(数据1, 数据2, 数据3, ...)		//从开头加</span><br><span class="line">数组名.push(数据1, 数据2, 数据3, ...)	//从结尾加</span><br><span class="line">数组名.push(...数组名1)				//将数组名1的数组提出来后合并到数组名的数组后面</span><br><span class="line">//删除</span><br><span class="line">数组名.shift()	//从开头删</span><br><span class="line">数组名.pop()		//从结尾删</span><br><span class="line">//筛选，符合条件的保留创建新的数组</span><br><span class="line">//item：arr数组中的数据项，index：arr数组中的数据项索引</span><br><span class="line">数组名.filter((item, index) =&gt; 条件筛选)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name.splice(1,1,&#x27;123&#x27;)</span><br><span class="line">console.log(&#x27;任意新增/删除：&#x27;,name)    //xinzai,123,wfeng,xiaowng</span><br><span class="line">console.log(&#x27;长度：&#x27;, name.length)	//4</span><br><span class="line">//增加</span><br><span class="line">name.unshift(&#x27;123&#x27;,&#x27;321&#x27;)</span><br><span class="line">console.log(&#x27;增加：&#x27;,name) //123,321,xinzai,jueni,wfeng,xiaowng</span><br><span class="line">name.push(&#x27;123&#x27;,&#x27;321&#x27;)</span><br><span class="line">console.log(&#x27;增加：&#x27;,name) //xinzai,jueni,wfeng,xiaowng,123,321</span><br><span class="line">//删除</span><br><span class="line">name.shift()</span><br><span class="line">console.log(&#x27;删除：&#x27;,name) //jueni,wfeng,xiaowng</span><br><span class="line">name.pop()</span><br><span class="line">console.log(&#x27;删除：&#x27;,name) //xinzai,jueni,wfeng</span><br><span class="line">//筛选</span><br><span class="line">const fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;grape&quot;, &quot;orange&quot;];</span><br><span class="line">const filteredFruits = fruits.filter(fruit =&gt; fruit.includes(&quot;ap&quot;));		//筛选数组中值为ap</span><br></pre></td></tr></table></figure>
+<h2 id="遍历数组"><a class="markdownIt-Anchor" href="#遍历数组"></a> 遍历数组</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//方式一：普通for循环遍历输出</span><br><span class="line">let name: string[] = [&#x27;xinzai&#x27;,&#x27;lisi&#x27;,&#x27;wangwu&#x27;]</span><br><span class="line">//方式二</span><br><span class="line">for (let item of 数组名) &#123;&#125;	//item: 声明的一个变量, 用来在循环的时候接收 每一个数组元素</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for (let i = 0;i &lt; name.length;i++)&#123;</span><br><span class="line">    console.log(&#x27;名字&#x27;,name[i])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let name: string[] = [&#x27;xinzai&#x27;,&#x27;lisi&#x27;,&#x27;wangwu&#x27;]</span><br><span class="line">for (let item of name)&#123;</span><br><span class="line">    console.log(&#x27;名字&#x27;,item)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="对象数组"><a class="markdownIt-Anchor" href="#对象数组"></a> 对象数组</h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//定义接口</span><br><span class="line">interface  接口名&#123;</span><br><span class="line">    //属性</span><br><span class="line">&#125;</span><br><span class="line">//定义对象数组</span><br><span class="line">let 对象数组名: 接口名[] = [&#123; 属性名1: 值, 属性名2: 值, ... &#125;, ...]</span><br><span class="line">//访问</span><br><span class="line">对象数组名[下标].属性值</span><br><span class="line">//需要修改数据，要整个对象都修改，不能修改对象中的一个数据</span><br><span class="line">this.对象数组名[下标值] = &#123;</span><br><span class="line">    属性名1: 值</span><br><span class="line">    属性名2: 值</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface  Person&#123;</span><br><span class="line">    stuId: number</span><br><span class="line">    name: string</span><br><span class="line">&#125;</span><br><span class="line">let pArr: Person[] = [&#123;stuId: 1,name:&#x27;小红&#x27;&#125;,&#123;stuId: 2, name:&#x27;xinzai&#x27;&#125;]</span><br><span class="line">console.log(&#x27;数&#x27;,pArr[1].name)</span><br><span class="line">this.images[this.random] = &#123;</span><br><span class="line">    url: `app.media.img_0$&#123;this.random&#125;`,</span><br><span class="line">    count1: this.images[this.random].count1 + 1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="函数function"><a class="markdownIt-Anchor" href="#函数function"></a> 函数(function)</h1>
+<p>function：表示全局</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//定义函数</span><br><span class="line">function 函数名(形参1: 类型, 形参2: 类型,...): 返回值类型&#123;</span><br><span class="line">    return 返回值</span><br><span class="line">&#125;</span><br><span class="line">//调用函数</span><br><span class="line">let 变量名: 类型 = 函数名(实参1,实参2,...)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//定义函数</span><br><span class="line">function test()&#123;</span><br><span class="line">    console.log(&#x27;五角星&#x27;,&#x27;*&#x27;)</span><br><span class="line">    console.log(&#x27;五角星&#x27;,&#x27;**&#x27;)</span><br><span class="line">    console.log(&#x27;五角星&#x27;,&#x27;***&#x27;)</span><br><span class="line">    console.log(&#x27;五角星&#x27;,&#x27;****&#x27;)</span><br><span class="line">&#125;</span><br><span class="line">//调用函数</span><br><span class="line">test()</span><br><span class="line"></span><br><span class="line">function buy(price: number,num: number)&#123;</span><br><span class="line">    let result: number = price*num</span><br><span class="line">    return result</span><br><span class="line">&#125;</span><br><span class="line">console.log(&#x27;价格：&#x27;,buy(10,3));</span><br></pre></td></tr></table></figure>
+<h1 id="箭头函数"><a class="markdownIt-Anchor" href="#箭头函数"></a> 箭头函数</h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let 函数名 = (形参1: 类型, 形参2: 类型,...) =&gt; &#123;  </span><br><span class="line">    // 函数体</span><br><span class="line">    return 返回值</span><br><span class="line">&#125;</span><br><span class="line">函数名(实参1,实参2,...)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let num_Price = (price: number, num: number)=&gt;&#123;</span><br><span class="line">    let result: number = price*num</span><br><span class="line">    return result</span><br><span class="line">&#125;</span><br><span class="line">console.log(&#x27;总价格：&#x27;, num_Price(3,2))</span><br></pre></td></tr></table></figure>
+<h1 id="重复执行函数文档中心"><a class="markdownIt-Anchor" href="#重复执行函数文档中心"></a> 重复执行函数<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-timer#setinterval">文档中心</a></h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">setInterval(() =&gt; &#123;</span><br><span class="line">  //执行的操作，第一次执行也要等待时间</span><br><span class="line">&#125;, 延迟的毫秒数);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">setInterval(() =&gt; &#123;</span><br><span class="line">  console.log(&#x27;do every 1s.&#x27;);</span><br><span class="line">&#125;, 1000);</span><br></pre></td></tr></table></figure>
+<h1 id="创建定时器函数文档中心"><a class="markdownIt-Anchor" href="#创建定时器函数文档中心"></a> 创建定时器函数<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-timer#settimeout">文档中心</a></h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">setTimeout(() =&gt; &#123;	//不带参数</span><br><span class="line">  //执行的操作，只执行一次</span><br><span class="line">&#125;, 延迟的毫秒数);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">  console.info(&#x27;delay 1s&#x27;);</span><br><span class="line">&#125;, 1000);</span><br></pre></td></tr></table></figure>
+<h1 id="剩余参数和展开运算符"><a class="markdownIt-Anchor" href="#剩余参数和展开运算符"></a> 剩余参数和展开运算符</h1>
+<p>将 函数 或 方法 中一个不定数量的参数表示为一个数组</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function 函数名(参数1, 参数2, ...数组名:类型[])&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function num(a1: number,a2: number,...theArgs:number[])&#123;</span><br><span class="line">    let count = a1+a2</span><br><span class="line">    for(const flags of theArgs)&#123;</span><br><span class="line">        count += flags</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(&#x27;值&#x27;,count)</span><br><span class="line">    return count</span><br><span class="line">&#125;</span><br><span class="line">num(1,2,3)</span><br></pre></td></tr></table></figure>
+<p>展开运算符只能用在数组上(一般用在合并上)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const 数组名: 数据类型[] = [...数据名1, ...数组名2]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const a1: number[] = [1,2,3,4,5,6]</span><br><span class="line">const a2: number[] = [3,4,6,17,27]</span><br><span class="line">const num: number[] = [...a1,...a2]</span><br><span class="line">console.log(&#x27;结果&#x27;,num)</span><br></pre></td></tr></table></figure>
+<h1 id="接口"><a class="markdownIt-Anchor" href="#接口"></a> 接口</h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//定义接口约束对象中变量及函数的类型</span><br><span class="line">interface 接口名&#123;</span><br><span class="line">    属性1: 类型1</span><br><span class="line">    属性2: 类型2</span><br><span class="line">    属性3: 类型3</span><br><span class="line"></span><br><span class="line">    方法名: (参数: 类型) =&gt; 返回值类型</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface Person&#123;</span><br><span class="line">    //声明属性类型</span><br><span class="line">    name: string</span><br><span class="line">    age: number</span><br><span class="line">    weight: number</span><br><span class="line"></span><br><span class="line">    //声明方法</span><br><span class="line">    dance: () =&gt; void</span><br><span class="line">    sing: (sing: string) =&gt; void</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="接口继承"><a class="markdownIt-Anchor" href="#接口继承"></a> 接口继承</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface 接口2 extends 接口1 &#123;</span><br><span class="line">    //属性2:类型</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface IAnimal&#123;</span><br><span class="line">    name: string</span><br><span class="line">    age: number</span><br><span class="line">&#125;</span><br><span class="line">interface IDog extends IAnimal&#123;</span><br><span class="line">    color: string</span><br><span class="line">&#125;</span><br><span class="line">let dog1: IDog = &#123;</span><br><span class="line">    //不仅要实现IDog子接口还需要实现父接口</span><br><span class="line">    name: &#x27;s&#x27;,</span><br><span class="line">    age: 12,</span><br><span class="line">    color: &#x27;s&#x27;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="接口实现"><a class="markdownIt-Anchor" href="#接口实现"></a> 接口实现</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class 类 implements 接口&#123;</span><br><span class="line">    // 必须实现 接口中定义的 属性、方法，</span><br><span class="line">    // 否则会报错</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface IDog &#123;</span><br><span class="line">    name: string</span><br><span class="line">    age: number</span><br><span class="line">    color: string</span><br><span class="line">    jump: () =&gt; void</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Test implements IDog &#123;</span><br><span class="line">    name: string</span><br><span class="line">    age: number</span><br><span class="line">    color: string</span><br><span class="line"></span><br><span class="line">    constructor(name: string, age: number, color: string) &#123;</span><br><span class="line">        this.name = name</span><br><span class="line">        this.age = age</span><br><span class="line">        this.color = color</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    jump = () =&gt; &#123;</span><br><span class="line">        console.log(&#x27;名字&#x27;,this.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">let test:Test = new Test(&#x27;x&#x27;,12,&#x27;s&#x27;)</span><br><span class="line">test.jump()</span><br></pre></td></tr></table></figure>
+<h2 id="接口自动转-class-类"><a class="markdownIt-Anchor" href="#接口自动转-class-类"></a> 接口自动转 class 类</h2>
+<p>若安装存在网络以及权限问题，自行百度解决</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">node -v												//查看node版本，需在v18.20.1及以上</span><br><span class="line">npm i -g interface2class			//安装</span><br><span class="line">i2c -V												//检测安装版本</span><br><span class="line">//转换使用，工程在对应的est文件中右键“打开范围”选择Terminal</span><br><span class="line">i2c .\转换的文件</span><br></pre></td></tr></table></figure>
+<h1 id="对象"><a class="markdownIt-Anchor" href="#对象"></a> 对象</h1>
+<p>存储多个不同数据的容器，定义的<font style="color:#080808;background-color:#ffffff;">interface</font>可以给不同的对象重复使用，但对象需要的是相同的结构类型</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let 对象名称: 对象结构类型 = &#123;</span><br><span class="line">    属性名1: 值,</span><br><span class="line">    属性名2: 值,</span><br><span class="line">    </span><br><span class="line">    方法名: (形参名1: 类型,...) =&gt;&#123;</span><br><span class="line">        //方法体</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//调用属性及方法</span><br><span class="line">对象名.属性名1</span><br><span class="line">对象名.方法名1()</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//定义对象</span><br><span class="line">let ym: Person = &#123;</span><br><span class="line">    name: &#x27;李四&#x27;,</span><br><span class="line">    age: 19,</span><br><span class="line">    weight: 88,</span><br><span class="line"></span><br><span class="line">    dance: () =&gt;&#123;</span><br><span class="line">        console.log(&#x27;nihao&#x27;,&#x27;xinzai&#x27;)</span><br><span class="line">    &#125;,</span><br><span class="line">    sing: (song: string) =&gt; &#123;</span><br><span class="line">        console.log(&#x27;唱歌：&#x27;,song)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//调用对象属性</span><br><span class="line">console.log(&#x27;名字&#x27;,ym.name)</span><br><span class="line">console.log(&#x27;年龄：&#x27;,ym.age)</span><br><span class="line">//调用对象方法</span><br><span class="line">ym.dance()</span><br><span class="line">ym.sing(&#x27;奇迹&#x27;)</span><br></pre></td></tr></table></figure>
+<h1 id="分支语句"><a class="markdownIt-Anchor" href="#分支语句"></a> 分支语句</h1>
+<h2 id="if"><a class="markdownIt-Anchor" href="#if"></a> if</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let score: number = 66</span><br><span class="line">if (score &gt;= 90)&#123;</span><br><span class="line">    console.log(&#x27;优秀&#x27;)</span><br><span class="line">&#125;else if (score &gt;= 70)&#123;</span><br><span class="line">    console.log(&#x27;良好&#x27;);</span><br><span class="line">&#125;else &#123;</span><br><span class="line">    console.log(&#x27;不及格&#x27;)  //不及格</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="switch"><a class="markdownIt-Anchor" href="#switch"></a> switch</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let m: number = 2</span><br><span class="line">switch (m)&#123;</span><br><span class="line">    case 1:</span><br><span class="line">        console.log(&#x27;1&#x27;)</span><br><span class="line">        break</span><br><span class="line">    case 2:</span><br><span class="line">        console.log(&#x27;2&#x27;)    //2</span><br><span class="line">        break</span><br><span class="line">    default :</span><br><span class="line">        console.log(&#x27;其他&#x27;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="三元条件表达式"><a class="markdownIt-Anchor" href="#三元条件表达式"></a> 三元条件表达式</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//当变量名1 的值大于 变量名2 的值，返回变量名1 的值否则返回变量名2 的值</span><br><span class="line">变量名1 &gt; 变量名2? 变量名1 : 变量名2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let num1: number = 5</span><br><span class="line">let num2: number = 10</span><br><span class="line">let res: number = num1 &gt; num2 ? num1 : num2	// 返回较大值</span><br><span class="line">console.log(&#x27;结果是&#x27;, res)	//10</span><br></pre></td></tr></table></figure>
+<h1 id="循环语句"><a class="markdownIt-Anchor" href="#循环语句"></a> 循环语句</h1>
+<h2 id="for"><a class="markdownIt-Anchor" href="#for"></a> for</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for (let i: number = 0; i &lt; 5; i++) &#123;</span><br><span class="line">    console.log(&#x27;for&#x27;, &#x27;重复执行的代码&#x27;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for (const arg of 数组名) &#123;</span><br><span class="line">   console.log(&#x27;值&#x27;, &#x27;arg&#x27;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="while"><a class="markdownIt-Anchor" href="#while"></a> while</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">while (条件) &#123;</span><br><span class="line">    条件成立重复执行的代码</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let i: number = 1</span><br><span class="line">while (i &lt; 5) &#123;</span><br><span class="line">    console.log(&#x27;while~i&#x27;, &#x27;重复执行的代码&#x27;)</span><br><span class="line">    i++</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="随机数生成"><a class="markdownIt-Anchor" href="#随机数生成"></a> 随机数生成</h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Math.random()	//默认0~1</span><br><span class="line">//需要0~5，需要乘6</span><br><span class="line"></span><br><span class="line">Math.floor()	//向下取整</span><br></pre></td></tr></table></figure>
+<h1 id="class类"><a class="markdownIt-Anchor" href="#class类"></a> Class类</h1>
+<p>用于 创建对象 模板。同时类声明也会引入一个 新类型，可定义其 实例属性、方法 和 构造函数</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 类名 首字母大写（规范）</span><br><span class="line">class 类名&#123;</span><br><span class="line">  // 1. 实例属性(字段)</span><br><span class="line">  字段名.类型 = 值	//没有构造函数时必须有初始化值</span><br><span class="line">  字段名?:类型</span><br><span class="line">  // 2. 构造函数，不同实例 有不同的 字段 初始值，在实例化对象时将参数传进构造函数将字段初始化</span><br><span class="line">  constructor(形参名1: 类型, 形参名2: 类型) &#123;	//也可以传对象</span><br><span class="line">    this.属性名1 = 形参1</span><br><span class="line">    this.属性名2 = 形参2</span><br><span class="line">  &#125;</span><br><span class="line">  // 3. 方法</span><br><span class="line">  方法名(参数...): 返回值类型&#123;</span><br><span class="line">    // 逻辑...</span><br><span class="line">    // 可以通过 this 获取实例对象</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 使用类 实例化对象 基于类 创建对象</span><br><span class="line">let 实例化类名: 类名 = new 类名()</span><br><span class="line">let 实例化类名: 类名 = new 类名(值1 ,值2)	//传入的参数必须和构造函数形参顺序一致</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class cat&#123;</span><br><span class="line">    name: string = &#x27;小黑&#x27;</span><br><span class="line">    food?: string</span><br><span class="line">&#125;</span><br><span class="line">let mycat: cat = new cat()</span><br><span class="line">console.log(&#x27;名字&#x27;,mycat.name)</span><br><span class="line">mycat.food = &#x27;小黄鱼&#x27;</span><br><span class="line">// ?. 可以保证若food没有赋值不会报错，没有赋值显示undefined</span><br><span class="line">console.log(&#x27;食物&#x27;,mycat?.food)</span><br><span class="line">//有构造函数</span><br><span class="line">class Food&#123;</span><br><span class="line">    name: string</span><br><span class="line">    price?: number</span><br><span class="line"></span><br><span class="line">    constructor(name: string, price: number) &#123;</span><br><span class="line">        this.name = name</span><br><span class="line">        this.price = price</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">let mycat: Food = new Food(&#x27;西蓝花&#x27;,20)</span><br><span class="line">console.log(&#x27;名字&#x27;,mycat.name)</span><br><span class="line">console.log(&#x27;食物&#x27;,mycat.price)</span><br><span class="line"></span><br><span class="line">//扩展，使用接口，构造函数传入对象</span><br><span class="line">interface IFood&#123;</span><br><span class="line">    name: string</span><br><span class="line">    price: number</span><br><span class="line">&#125;</span><br><span class="line">class Food&#123;</span><br><span class="line">  name: string</span><br><span class="line">  price?: number</span><br><span class="line">  </span><br><span class="line">  constructor(paramsObj: IFood) &#123;</span><br><span class="line">      this.name = paramsObj.name</span><br><span class="line">      this.price = paramsObj.price</span><br><span class="line">  &#125;</span><br><span class="line">  style(name:string)&#123;</span><br><span class="line">      console.log(`你好$&#123;name&#125;`,`菜名$&#123;this.name&#125;`)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">let myfood: Food = new Food(&#123;</span><br><span class="line">    //此时传入的参数可以不用按照构造函数参数的顺序</span><br><span class="line">    name: &#x27;菜心&#x27;,</span><br><span class="line">    price: 20</span><br><span class="line">&#125;)</span><br><span class="line">console.log(&#x27;名字&#x27;,myfood.name)</span><br><span class="line">console.log(&#x27;食物&#x27;,myfood.price)</span><br><span class="line">myfood.style(&#x27;xinzai&#x27;)</span><br></pre></td></tr></table></figure>
+<h2 id="静态属性和静态方法"><a class="markdownIt-Anchor" href="#静态属性和静态方法"></a> 静态属性和静态方法</h2>
+<p>给类添加 静态属性、方法，通过类名访问不需要 new</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">static 静态属性名: 类型 = 值</span><br><span class="line">static 静态方法名(参数): 返回值类型&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Roboot&#123;</span><br><span class="line">    static version: string = &#x27;v2.0&#x27;</span><br><span class="line">    static getRomdom(): number&#123;</span><br><span class="line">        return Math.random()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(&#x27;版本&#x27;,Roboot.version)</span><br><span class="line">console.log(&#x27;随机数&#x27;,Roboot.getRomdom())</span><br></pre></td></tr></table></figure>
+<h2 id="继承"><a class="markdownIt-Anchor" href="#继承"></a> 继承</h2>
+<p>子类可以继承父类的方法和属性，super 可以访问父类的实例字段、实例方法和构造函数</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class 子类 extends 父类&#123;</span><br><span class="line">    // 自己的字段（属性）</span><br><span class="line">    // 自己的方法</span><br><span class="line">    // 可以重写父类方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Person&#123;</span><br><span class="line">    name: string</span><br><span class="line">    age: number</span><br><span class="line">    </span><br><span class="line">    constructor(name: string,age: number) &#123;</span><br><span class="line">        this.age = age</span><br><span class="line">        this.name = name</span><br><span class="line">    &#125;</span><br><span class="line">    sayHi()&#123;</span><br><span class="line">        console.log(&#x27;大家好&#x27;,this.name,this.age)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Student extends Person&#123;</span><br><span class="line">    worker: string = &#x27;学习&#x27;   //子类自己的属性</span><br><span class="line"></span><br><span class="line">    constructor(name: string,age: number, worker: string) &#123;</span><br><span class="line">        //子类无法继承父类构造方法，需要类似重写重新调用</span><br><span class="line">        super(name,age)</span><br><span class="line">        this.worker = worker    //初始化子类属性</span><br><span class="line">    &#125;</span><br><span class="line">    //重写父类方法</span><br><span class="line">    sayHi(): void &#123;</span><br><span class="line">        super.sayHi()   //调用父类的方法</span><br><span class="line">        console.log(&#x27;hello&#x27;, this.name,this.age)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">let student: Student = new Student(&#x27;李四&#x27;,19,&#x27;学习&#x27;)</span><br></pre></td></tr></table></figure>
+<h2 id="检测实例"><a class="markdownIt-Anchor" href="#检测实例"></a> 检测实例</h2>
+<p>instanceof 检测某个对象是否是某个类的实例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Person&#123;</span><br><span class="line">&#125;</span><br><span class="line">class Student extends Person&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let student: Student = new Student()</span><br><span class="line">console.log(&#x27;判断结果&#x27;, student instanceof Person)</span><br><span class="line"></span><br><span class="line">let temp: number[] = []</span><br><span class="line">console.log(&#x27;判断结果&#x27;,temp instanceof Array)   //判断变量是否是数组</span><br></pre></td></tr></table></figure>
+<h2 id="修饰符"><a class="markdownIt-Anchor" href="#修饰符"></a> 修饰符</h2>
+<p>readonly：只可以取值，无法修改</p>
+<p>private：修饰的成员只能在本类访问，不能在声明该成员的类之外访问, 包括子类</p>
+<p>protected：与private修饰符非常相似，不同点protected修饰的成员允许在 派生类(子类)中访问</p>
+<p>public：任何地方都可以访问，省略不写默认为 public</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">readonly legs: number = 4</span><br><span class="line"></span><br><span class="line">class 类&#123;</span><br><span class="line">    private 属性:类型</span><br><span class="line">    private 方法()&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class 类&#123;</span><br><span class="line">    protected 属性:类型</span><br><span class="line">    protected 方法()&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="泛型"><a class="markdownIt-Anchor" href="#泛型"></a> 泛型</h1>
+<p>让【函数】等， 与多种【不同的类型】一起工作，灵活可复用</p>
+<h2 id="泛型函数"><a class="markdownIt-Anchor" href="#泛型函数"></a> 泛型函数</h2>
+<p>类型是 可变 的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function 函数名&lt;泛型参数名&gt;(形参名1: 泛型参数名) : 泛型参数名&#123;</span><br><span class="line">&#125;</span><br><span class="line">//调用，类型传了什么类型，形参和返回值类型都是同样的类型</span><br><span class="line">函数名&lt;类型&gt;(实参)</span><br><span class="line">函数名(实参)		//调用时也可以不用显式写出类型，会根据输入的参数判断</span><br><span class="line"></span><br><span class="line">function fn&lt;T&gt;(name: T): T &#123;</span><br><span class="line">    return name</span><br><span class="line">&#125;</span><br><span class="line">console.log(fn(&#x27;n&#x27;))</span><br><span class="line">console.log(&#x27;zhi&#x27;,fn&lt;number[]&gt;([1,2,3,45,5]))</span><br></pre></td></tr></table></figure>
+<p>进阶</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function fn&lt;T&gt;(s: T[]): T[] &#123;</span><br><span class="line">    return s</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function fn1&lt;T&gt;(s: T[]): T &#123;</span><br><span class="line">    return s[s.length-1]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(&#x27;值&#x27;, fn&lt;Number&gt;([1, 2, 3, 4, 5]).length)</span><br><span class="line">console.log(&#x27;值&#x27;, fn&lt;string&gt;([&#x27;1&#x27;, &#x27;2&#x27;, &#x27;3&#x27;, &#x27;4&#x27;]).length)</span><br><span class="line">console.log(&#x27;值&#x27;, fn1&lt;string&gt;([&#x27;1&#x27;, &#x27;2&#x27;, &#x27;3&#x27;, &#x27;40&#x27;]))</span><br></pre></td></tr></table></figure>
+<h3 id="多个泛型参数"><a class="markdownIt-Anchor" href="#多个泛型参数"></a> 多个泛型参数</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function fn&lt;T1,T2&gt; (parm1:T1,parm2:T2)&#123;</span><br><span class="line">    console.log(&#x27;z1&#x27;,parm1)</span><br><span class="line">    console.log(&#x27;z2&#x27;,parm2)</span><br><span class="line">&#125;</span><br><span class="line">fn(&#x27;aa&#x27;,123)</span><br></pre></td></tr></table></figure>
+<h2 id="泛型约束"><a class="markdownIt-Anchor" href="#泛型约束"></a> 泛型约束</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface 接口&#123;</span><br><span class="line">    //属性: 类型</span><br><span class="line">&#125;</span><br><span class="line">function 函数&lt;Type extends 接口&gt;()&#123;&#125;	// 传入的类型必须要有 接口中的属性</span><br><span class="line"></span><br><span class="line">interface Ilength &#123;</span><br><span class="line">    length: number</span><br><span class="line">&#125;</span><br><span class="line">function fn&lt;T extends Ilength&gt;(param: T): T &#123;</span><br><span class="line">    return param</span><br><span class="line">&#125;</span><br><span class="line">//传入的参数必须有接口中length属性</span><br><span class="line">console.log(&#x27;值&#x27;, fn(&#x27;132&#x27;))</span><br><span class="line"></span><br><span class="line">class Desk &#123;</span><br><span class="line">    length: number = 2</span><br><span class="line">&#125;</span><br><span class="line">let d = new Desk()</span><br><span class="line">fn&lt;Desk&gt;(d)</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/hnKakmoIRgyuNTY.webp" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/hnKakmoIRgyuNTY.webp" title="头像" alt="头像"></a><div class="post-copyright__author_name">星仔</div><div class="post-copyright__author_desc">星仔个人博客</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://www.6673543.xyz/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/0.ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://www.6673543.xyz/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/0.ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/')">0.ArkTS基础语法</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://www.6673543.xyz/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/0.ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=0.ArkTS基础语法&amp;url=https://www.6673543.xyz/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/0.ArkTS%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/&amp;pic=https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.6673543.xyz" target="_blank">星仔极客</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>原生鸿蒙开发<span class="tagsPageCount">10</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/09/11/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E7%A7%98%E5%AF%86%E7%A7%91%E6%8A%80/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/cuZJ6tRlnYWms5S.webp" onerror="onerror=null;src='https://smms.app/image/J1DeqWXutm6ZI5x'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">秘密科技</div></div></a></div><div class="next-post pull-right"><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/1-%E9%80%9A%E7%94%A8%E5%B1%9E%E6%80%A7/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" onerror="onerror=null;src='https://smms.app/image/J1DeqWXutm6ZI5x'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">1.通用属性</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2026/02/01/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/9-%E6%A1%88%E4%BE%8B/" title="9.案例"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2026-02-01</div><div class="title">9.案例</div></div></a></div><div><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/8.%E5%AF%BC%E8%88%AA%E3%80%81%E9%A1%B5%E9%9D%A2%E8%B7%AF%E7%94%B1/" title="8.导航、页面路由"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-09-14</div><div class="title">8.导航、页面路由</div></div></a></div><div><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/7-%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/" title="7.数据请求"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-09-14</div><div class="title">7.数据请求</div></div></a></div><div><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/6-%E5%AD%98%E5%82%A8%E3%80%81%E6%9D%83%E9%99%90/" title="6.存储、权限"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-09-14</div><div class="title">6.存储、权限</div></div></a></div><div><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/5-%E5%BC%B9%E7%AA%97/" title="5.弹窗"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-09-14</div><div class="title">5.弹窗</div></div></a></div><div><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/4-%E7%95%8C%E9%9D%A2%E5%B8%83%E5%B1%80%E3%80%81%E5%8A%A8%E7%94%BB/" title="4.界面布局、动画"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-09-14</div><div class="title">4.界面布局、动画</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/hnKakmoIRgyuNTY.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description">日常笔记和生活分享！</div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">星仔</h1><div class="author-info__desc">星仔个人博客</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://blog.csdn.net/qq_65047384?spm=1000.2115.3001.5343" target="_blank" title="CSDN"><i class="anzhiyufont anzhiyu-icon-link"></i></a><a class="social-icon faa-parent animated-hover" href="https://www.bilibili.com/" target="_blank" title="哔哩哔哩"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://s2.loli.net/2025/12/28/Kzy7bfNZvFpXRcl.webp) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://s2.loli.net/2025/12/28/PYbyi8gphMCxUqw.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">1.</span> <span class="toc-text"> 变量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text"> 基础数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E5%8F%98%E9%87%8F"><span class="toc-number">1.2.</span> <span class="toc-text"> 状态变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text"> 联合类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.4.</span> <span class="toc-text"> 枚举类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-number">2.</span> <span class="toc-text"> 常量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">3.</span> <span class="toc-text"> 运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">4.</span> <span class="toc-text"> 字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5"><span class="toc-number">4.1.</span> <span class="toc-text"> 字符串拼接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">4.2.</span> <span class="toc-text"> 模板字符串</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">5.</span> <span class="toc-text"> 类型转换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">6.</span> <span class="toc-text"> 数组</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">6.1.</span> <span class="toc-text"> 数组的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84"><span class="toc-number">6.2.</span> <span class="toc-text"> 遍历数组</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%95%B0%E7%BB%84"><span class="toc-number">7.</span> <span class="toc-text"> 对象数组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0function"><span class="toc-number">8.</span> <span class="toc-text"> 函数(function)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><span class="toc-number">9.</span> <span class="toc-text"> 箭头函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8D%E5%A4%8D%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">10.</span> <span class="toc-text"> 重复执行函数文档中心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AE%9A%E6%97%B6%E5%99%A8%E5%87%BD%E6%95%B0%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">11.</span> <span class="toc-text"> 创建定时器函数文档中心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%A9%E4%BD%99%E5%8F%82%E6%95%B0%E5%92%8C%E5%B1%95%E5%BC%80%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">12.</span> <span class="toc-text"> 剩余参数和展开运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3"><span class="toc-number">13.</span> <span class="toc-text"> 接口</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E7%BB%A7%E6%89%BF"><span class="toc-number">13.1.</span> <span class="toc-text"> 接口继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0"><span class="toc-number">13.2.</span> <span class="toc-text"> 接口实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E8%BD%AC-class-%E7%B1%BB"><span class="toc-number">13.3.</span> <span class="toc-text"> 接口自动转 class 类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1"><span class="toc-number">14.</span> <span class="toc-text"> 对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">15.</span> <span class="toc-text"> 分支语句</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#if"><span class="toc-number">15.1.</span> <span class="toc-text"> if</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#switch"><span class="toc-number">15.2.</span> <span class="toc-text"> switch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E5%85%83%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">15.3.</span> <span class="toc-text"> 三元条件表达式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">16.</span> <span class="toc-text"> 循环语句</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#for"><span class="toc-number">16.1.</span> <span class="toc-text"> for</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#while"><span class="toc-number">16.2.</span> <span class="toc-text"> while</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90"><span class="toc-number">17.</span> <span class="toc-text"> 随机数生成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#class%E7%B1%BB"><span class="toc-number">18.</span> <span class="toc-text"> Class类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E5%B1%9E%E6%80%A7%E5%92%8C%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95"><span class="toc-number">18.1.</span> <span class="toc-text"> 静态属性和静态方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF"><span class="toc-number">18.2.</span> <span class="toc-text"> 继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A3%80%E6%B5%8B%E5%AE%9E%E4%BE%8B"><span class="toc-number">18.3.</span> <span class="toc-text"> 检测实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-number">18.4.</span> <span class="toc-text"> 修饰符</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B"><span class="toc-number">19.</span> <span class="toc-text"> 泛型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E5%87%BD%E6%95%B0"><span class="toc-number">19.1.</span> <span class="toc-text"> 泛型函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E4%B8%AA%E6%B3%9B%E5%9E%8B%E5%8F%82%E6%95%B0"><span class="toc-number">19.1.1.</span> <span class="toc-text"> 多个泛型参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E7%BA%A6%E6%9D%9F"><span class="toc-number">19.2.</span> <span class="toc-text"> 泛型约束</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/02/01/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/9-%E6%A1%88%E4%BE%8B/" title="9.案例"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" onerror="this.onerror=null;this.src='https://smms.app/image/J1DeqWXutm6ZI5x'" alt="9.案例"/></a><div class="content"><a class="title" href="/2026/02/01/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/9-%E6%A1%88%E4%BE%8B/" title="9.案例">9.案例</a><time datetime="2026-02-01T07:08:25.000Z" title="发表于 2026-02-01 15:08:25">2026-02-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/28/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6/C%E8%AF%AD%E8%A8%80/0-C%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/" title="0.C语言概述"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2026/01/28/gCKcZoemAiI1wpa.webp" onerror="this.onerror=null;this.src='https://smms.app/image/J1DeqWXutm6ZI5x'" alt="0.C语言概述"/></a><div class="content"><a class="title" href="/2026/01/28/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6/C%E8%AF%AD%E8%A8%80/0-C%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/" title="0.C语言概述">0.C语言概述</a><time datetime="2026-01-28T05:41:10.000Z" title="发表于 2026-01-28 13:41:10">2026-01-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/10/19/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE%E5%A4%A7%E5%85%A8/" title="学术文献大全"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/dhVaA6NUC8DO5Te.webp" onerror="this.onerror=null;this.src='https://smms.app/image/J1DeqWXutm6ZI5x'" alt="学术文献大全"/></a><div class="content"><a class="title" href="/2025/10/19/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE%E5%A4%A7%E5%85%A8/" title="学术文献大全">学术文献大全</a><time datetime="2025-10-19T06:49:50.000Z" title="发表于 2025-10-19 14:49:50">2025-10-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/10/05/%E6%9D%82%E9%A1%B9/TOS/" title="星海物联用户服务协议"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='https://smms.app/image/J1DeqWXutm6ZI5x'" alt="星海物联用户服务协议"/></a><div class="content"><a class="title" href="/2025/10/05/%E6%9D%82%E9%A1%B9/TOS/" title="星海物联用户服务协议">星海物联用户服务协议</a><time datetime="2025-10-05T05:42:28.000Z" title="发表于 2025-10-05 13:42:28">2025-10-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/09/25/%E8%BD%AF%E6%B5%8B/2-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" title="2.功能测试"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/t2mAjy3aJKMopqH.webp" onerror="this.onerror=null;this.src='https://smms.app/image/J1DeqWXutm6ZI5x'" alt="2.功能测试"/></a><div class="content"><a class="title" href="/2025/09/25/%E8%BD%AF%E6%B5%8B/2-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" title="2.功能测试">2.功能测试</a><time datetime="2025-09-25T06:28:25.000Z" title="发表于 2025-09-25 14:28:25">2025-09-25</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="workboard"><img class="workSituationImg boardsign" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2026/01/01/TBLYWNnwJdkEKMZ.webp" alt="距离月入25k也就还差一个大佬带我~" title="距离月入25k也就还差一个大佬带我~"/><div id="runtimeTextTip"></div></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title="博客框架为Hexo_v5.4.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo_v5.4.0"/></a><a class="github-badge" target="_blank" href="https://blog.anheyu.com/" style="margin-inline:5px" data-title="本站使用AnZhiYu主题" title="本站使用AnZhiYu主题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg" alt="本站使用AnZhiYu主题"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title="本站项目由Github托管"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg" alt="本站项目由Github托管"/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg" alt="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"/></a></p></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2021 - 2026 By <a class="footer-bar-link" href="/" title="星仔" target="_blank">星仔</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">8</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.csdn.net/qq_65047384?spm=1000.2115.3001.5343" title="CSDN"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="/img/favicon.ico" alt="CSDN"/><span class="back-menu-item-text">CSDN</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://www.bilibili.com/" title="哔哩哔哩"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="/img/favicon.ico" alt="哔哩哔哩"/><span class="back-menu-item-text">哔哩哔哩</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">资源下载</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.6673543.xyz/2025/08/29/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E8%B5%84%E6%BA%90%E5%BA%93/" title="资源库"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="资源库"/><span class="back-menu-item-text">资源库</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 小伙伴</span></a></li><li><a class="site-page child faa-parent animated-hover" href="https://www.6673543.xyz/2025/08/29/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E8%B5%84%E6%BA%90%E5%BA%93/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 资源库</span></a></li><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener" href="http://ainm.cc/c/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐网</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 0.88rem;">C语言<sup>1</sup></a><a href="/tags/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" style="font-size: 0.88rem;">Linux基础命令<sup>1</sup></a><a href="/tags/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 0.88rem;">MySQL数据库<sup>3</sup></a><a href="/tags/Windows%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" style="font-size: 0.88rem;">Windows相关设置<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2CDN%E8%A7%A3%E6%9E%90/" style="font-size: 0.88rem;">博客CDN解析<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%9B%B8%E5%85%B3/" style="font-size: 0.88rem;">博客搭建相关<sup>1</sup></a><a href="/tags/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" style="font-size: 0.88rem;">原生鸿蒙开发<sup>10</sup></a><a href="/tags/%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE/" style="font-size: 0.88rem;">学术文献<sup>1</sup></a><a href="/tags/%E6%98%9F%E6%B5%B7%E7%89%A9%E8%81%94%E5%8D%8F%E8%AE%AE/" style="font-size: 0.88rem;">星海物联协议<sup>1</sup></a><a href="/tags/%E7%A7%98%E5%AF%86%E7%A7%91%E6%8A%80/" style="font-size: 0.88rem;">秘密科技<sup>1</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E5%BA%93/" style="font-size: 0.88rem;">资源库<sup>1</sup></a><a href="/tags/%E8%BD%AF%E6%B5%8B/" style="font-size: 0.88rem;">软测<sup>2</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button><button id="go-down" type="button" title="直达底部" onclick="anzhiyu.scrollToDest(document.body.scrollHeight, 500)"><i class="anzhiyufont anzhiyu-icon-arrow-down"></i></button></div></div><div class="docsearch-wrap"><div id="docsearch" style="display:none"></div><link rel="stylesheet" href="https://cdn.cbd.int/@docsearch/css@3.5.2/dist/style.css"/><script src="https://cdn.cbd.int/@docsearch/js@3.5.2/dist/umd/index.js"></script><script>(() => {
+  docsearch(Object.assign({
+    appId: 'N5079WLKI8',
+    apiKey: '1369cef0e83c383cabd05d792051e4d9',
+    indexName: 'Blog',
+    container: '#docsearch',
+  }, null))
+
+  const handleClick = () => {
+    document.querySelector('.DocSearch-Button').click()
+  }
+
+  const searchClickFn = () => {
+    anzhiyu.addEventListenerPjax(document.querySelector('#search-button > .search'), 'click', handleClick)
+  }
+
+  searchClickFn()
+  window.addEventListener('pjax:complete', searchClickFn)
+})()</script></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.cbd.int/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2021 By 安知鱼 V1.6.15",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 星仔 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script async="async">(function () {
+  var grt = new Date("04/01/2021 00:00:00"); //设置网站上线时间
+  var now = new Date();
+  var dnum;
+  var hnum;
+  var mnum;
+  var snum;
+  var nowHour;
+
+  // 计算并更新天数、小时数、分钟数和秒数
+  function updateTime() {
+    now = new Date(); // 更新 now 的值
+    nowHour = now.getHours(); // 更新 nowHour 的值
+    var days = (now - grt) / 1000 / 60 / 60 / 24;
+    dnum = Math.floor(days);
+    var hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+    hnum = Math.floor(hours);
+    if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+    }
+    var minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+    mnum = Math.floor(minutes);
+    if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+    }
+    var seconds = (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+    snum = Math.round(seconds);
+    if (String(snum).length == 1) {
+      snum = "0" + snum;
+    }
+  }
+
+  // 更新网页中显示的网站运行时间
+  function updateHtml() {
+    const footer = document.getElementById("footer");
+    if (!footer) return
+    let currentTimeHtml = "";
+    if (nowHour < 18 && nowHour >= 9) {
+      // 如果是上班时间，默认就是"安知鱼-上班摸鱼中.svg"图片，不需要更改
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    } else {
+      // 如果是下班时间，插入"安知鱼-下班啦.svg"图片
+      let img = document.querySelector("#workboard .workSituationImg");
+      if (img != null) {
+        img.src = "https://s2.loli.net/2026/01/01/ULjdlB1pg2iSNGC.webp";
+        img.title = "下班了就该开开心心的玩耍，嘿嘿~";
+        img.alt = "下班了就该开开心心的玩耍，嘿嘿~";
+      }
+
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    }
+
+    if (document.getElementById("runtimeTextTip")) {
+      document.getElementById("runtimeTextTip").innerHTML = currentTimeHtml;
+    }
+  }
+
+  setInterval(() => {
+    updateTime();
+    updateHtml();
+  }, 1000);
+})();</script><div class="js-pjax"><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'w5lNowEPFYa9KXq7nuThvrkX-gzGzoHsz',
+      appKey: 'u39EI3MGigv5TfzUvcCKkVD4',
+      avatar: 'mp',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.cbd.int/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script src="https://cdn.cbd.int/blueimp-md5@2.19.0/js/md5.min.js"></script><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getIcon = (icon, mail) => {
+    if (icon) return icon
+    let defaultIcon = '?d=mp'
+    let iconUrl = `https://gravatar.loli.net/avatar/${md5(mail.toLowerCase()) + defaultIcon}`
+    return iconUrl
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const getComment = () => {
+    const serverURL = 'https://w5lNowEP.api.lncldglobal.com'
+
+    var settings = {
+      "method": "GET",
+      "headers": {
+        "X-LC-Id": 'w5lNowEPFYa9KXq7nuThvrkX-gzGzoHsz',
+        "X-LC-Key": 'u39EI3MGigv5TfzUvcCKkVD4',
+        "Content-Type": "application/json"
+      },
+    }
+
+    fetch(`${serverURL}/1.1/classes/Comment?limit=6&order=-createdAt`,settings)
+      .then(response => response.json())
+      .then(data => {
+        const valineArray = data.results.map(function (e) {
+          return {
+            'avatar': getIcon(e.QQAvatar, e.mail),
+            'content': changeContent(e.comment),
+            'nick': e.nick,
+            'url': e.url + '#' + e.objectId,
+            'date': e.updatedAt,
+          }
+        })
+        saveToLocal.set('valine-newest-comments', JSON.stringify(valineArray), 10/(60*24))
+        generateHtml(valineArray)
+      }).catch(e => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      }) 
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('valine-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script>var visitorMail = "1970884166@qq.com";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://cdn.cbd.int/qrcodejs@1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>

@@ -1,0 +1,653 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>4.界面布局、动画 | 星仔极客</title><meta name="keywords" content="原生鸿蒙开发"><meta name="author" content="星仔"><meta name="copyright" content="星仔"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="4.界面布局、动画"><meta name="application-name" content="4.界面布局、动画"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="4.界面布局、动画"><meta property="og:url" content="https://www.6673543.xyz/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/4-%E7%95%8C%E9%9D%A2%E5%B8%83%E5%B1%80%E3%80%81%E5%8A%A8%E7%94%BB/index.html"><meta property="og:site_name" content="星仔极客"><meta property="og:description" content="布局思路：先排版，再放内容，再美化  线性布局文档中心  Row行、Column列：默认有居中效果 通过space属性设置排列方向上子元素的间距 Column(&amp;#123; space: 数字 &amp;#125;)&amp;#123;&amp;#125;Row(&amp;#123; space: 数字 &amp;#125;)&amp;#123;"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp"><meta property="article:author" content="星仔"><meta property="article:tag" content="星仔极客"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp"><meta name="description" content="布局思路：先排版，再放内容，再美化  线性布局文档中心  Row行、Column列：默认有居中效果 通过space属性设置排列方向上子元素的间距 Column(&amp;#123; space: 数字 &amp;#125;)&amp;#123;&amp;#125;Row(&amp;#123; space: 数字 &amp;#125;)&amp;#123;"><link rel="shortcut icon" href="https://s2.loli.net/2025/12/28/5WBroFiQ9IAhGK4.webp"><link rel="canonical" href="https://www.6673543.xyz/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/4-%E7%95%8C%E9%9D%A2%E5%B8%83%E5%B1%80%E3%80%81%E5%8A%A8%E7%94%BB/"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="manifest" href="/manifest.json"/><meta name="msapplication-TileColor" content="var(--anzhiyu-main)"/><link rel="mask-icon" href="/img/siteicon/apple-icon-180.png" color="#5bbad5"/><link rel="apple-touch-icon" sizes="180x180" href="/img/siteicon/apple-icon-180.png"/><link rel="apple-touch-icon-precomposed" sizes="180x180" href="/img/siteicon/apple-icon-180.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/siteicon/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/img/siteicon/16.png"/><link rel="bookmark" href="/img/siteicon/apple-icon-180.png"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1290-2796.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2796-1290.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1179-2556.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2556-1179.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8301eb0bbaa209578343dcbe90153a35";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: {"enable":true,"ck":"3HZ1UVjhMEV6g7Lg","LingQueMonitorID":"3HZ1UVjhMEV6g7Lg"},
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: false,
+  mainTone: undefined,
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 星仔","link":"链接: ","source":"来源: 星仔极客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '星仔极客',
+  title: '4.界面布局、动画',
+  postAI: '',
+  pageFillDescription: ' 线性布局,  布局子元素在主轴上的排列方式,  布局子元素在交叉轴上的对齐方式,  自适应拉伸,  自适应缩放,  自适应延伸,  弹性布局,  相对布局,  层叠布局,  列表布局,  网格+栅格布局,  软键盘避让模式,  收起软键盘,  应用沉浸式效果,  应用深浅色适配布局思路先排版再放内容再美化线性布局文档中心行列默认有居中效果通过属性设置排列方向上子元素的间距数字数字布局子元素在主轴上的排列方式在布局容器内可以通过属性设置子元素在容器主轴上的排列方式可以从主轴起始位置开始排布也可以从主轴结束位置开始排布或者均匀分割主轴的空间对齐的那个方向必须设置大小枚举值布局子元素在交叉轴上的对齐方式若主轴为垂直方向则交叉轴为水平方向反之则垂直方向对齐的那个方向必须设置大小交叉轴在水平方向枚举值交叉轴在垂直方向枚举值自适应拉伸常用空白填充组件在容器主轴方向自动填充空白空间达到自适应拉伸效果自适应缩放子元素随容器尺寸的变化而按照预设的比例自动调整尺寸适应各种不同大小的设备父容器尺寸确定时使用属性设置子元素和兄弟元素在主轴上的权重忽略元素本身尺寸设置使它们在任意尺寸的设备下自适应占满剩余空间数字数字越大权重越高父容器尺寸确定时使用百分比设置子元素和兄弟元素的宽度使他们在任意尺寸的设备下保持固定的自适应占比自适应延伸当一屏无法完全显示时可以在或组件的外层包裹一个可滚动的容器组件来实现可滑动的线性布局有大小限制且小于滚动内容区域控制名创建控制器控制名控制名将与控制器绑定枚举值不同枚举值参数不同枚举值滚动方向枚举值滚动条常驻显示枚举值滚动条颜色数字滚动条宽度枚举值滚动到边沿后回弹回到底部回到顶部卡片弹性布局文档中心在渲染时存在二次布局过程因此在对性能有严格要求的场景下建议使用代替不规则的时候需要换行才使用如下图所示枚举值主轴方向枚举值主轴对齐方式枚举值交叉轴对齐方式枚举值布局换行枚举值数字主轴间距枚举值数字交叉轴间距组件单行布局多行布局设置主轴方向主轴对齐方式交叉轴对齐方式布局换行相对布局文档中心子元素可以指定兄弟元素或父容器作为锚点基于锚点进行相对位置布局父元素标识默认为其他子元素的组件标识相对于锚点的对齐位置自己的上中下或自己的左中右标识字符参照物参照父容器枚举值对齐参照物哪条边但移动是边的交叉轴方向枚举值标识字符子元素的组件标识层叠布局文档中心卡片层叠效果层叠操作更简洁编码效率高绝对定位的优势是更灵活子元素的顺序为越往后层级越高也可以手动调层级若手动则每一层都需要手动设置枚举值层叠方向列表布局文档中心控制名创建控制器控制名列表枚举值列表方向默认垂直方向数字分割线宽度颜色格式分隔线颜色滑动开始时触发滑动停止时触发到达末尾位置时触发北京下拉更新数据网格栅格布局文档中心一般使用在固定行列的布局网格每个小方格小方格中写的内容列有几个就有几个小方格代表小方格所占的空间份数列方向小方块之间的间隙行有几个就有几个小方格代表小方格所占的空间份数行方向小方块之间的间隙栅格数字数字栅格中写的内容数字数字数字数字数字数字数字数字设置列个数数字设置间距网格栅格卡片卡片软键盘避让模式文档中心在的使用压缩模式在组件中使用收起软键盘文档中心收起软键盘应用沉浸式效果文档中心隐藏状态和控制栏隐藏状态和控制栏应用深浅色适配文档中心持久化颜色主题默认值亮色模式取出现在应用存储的颜色主题模式设置应用颜色主题模式跟随系统暗色亮色',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-12-31 00:18:43',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/custom/css/font.css"><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://s2.loli.net/2025/12/28/hnKakmoIRgyuNTY.webp"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">星仔极客</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 小伙伴</span></a></li><li><a class="site-page child faa-parent animated-hover" href="https://www.6673543.xyz/2025/08/29/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E8%B5%84%E6%BA%90%E5%BA%93/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 资源库</span></a></li><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener" href="http://ainm.cc/c/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐网</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 1.05rem;">C语言<sup>1</sup></a><a href="/tags/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" style="font-size: 1.05rem;">Linux基础命令<sup>1</sup></a><a href="/tags/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 1.05rem;">MySQL数据库<sup>3</sup></a><a href="/tags/Windows%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" style="font-size: 1.05rem;">Windows相关设置<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2CDN%E8%A7%A3%E6%9E%90/" style="font-size: 1.05rem;">博客CDN解析<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%9B%B8%E5%85%B3/" style="font-size: 1.05rem;">博客搭建相关<sup>1</sup></a><a href="/tags/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" style="font-size: 1.05rem;">原生鸿蒙开发<sup>10</sup></a><a href="/tags/%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE/" style="font-size: 1.05rem;">学术文献<sup>1</sup></a><a href="/tags/%E6%98%9F%E6%B5%B7%E7%89%A9%E8%81%94%E5%8D%8F%E8%AE%AE/" style="font-size: 1.05rem;">星海物联协议<sup>1</sup></a><a href="/tags/%E7%A7%98%E5%AF%86%E7%A7%91%E6%8A%80/" style="font-size: 1.05rem;">秘密科技<sup>1</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E5%BA%93/" style="font-size: 1.05rem;">资源库<sup>1</sup></a><a href="/tags/%E8%BD%AF%E6%B5%8B/" style="font-size: 1.05rem;">软测<sup>2</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/02/"><span class="card-archive-list-date">二月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/01/"><span class="card-archive-list-date">一月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/10/"><span class="card-archive-list-date">十月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/09/"><span class="card-archive-list-date">九月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">17</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/08/"><span class="card-archive-list-date">八月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" itemprop="url">原生鸿蒙开发</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>原生鸿蒙开发</span></a></span></div></div><h1 class="post-title" itemprop="name headline">4.界面布局、动画</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2025-09-14T14:06:48.000Z" title="发表于 2025-09-14 22:06:48">2025-09-14</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2025-12-30T16:18:43.959Z" title="更新于 2025-12-31 00:18:43">2025-12-31</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">2.5k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>11分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="4.界面布局、动画"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为揭阳"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>揭阳</span><span class="post-meta-separator"></span><span class="post-meta-commentcount"><i class="anzhiyufont anzhiyu-icon-comments post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/4-%E7%95%8C%E9%9D%A2%E5%B8%83%E5%B1%80%E3%80%81%E5%8A%A8%E7%94%BB/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/4-%E7%95%8C%E9%9D%A2%E5%B8%83%E5%B1%80%E3%80%81%E5%8A%A8%E7%94%BB/" itemprop="commentCount"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></a></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://www.6673543.xyz/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/4-%E7%95%8C%E9%9D%A2%E5%B8%83%E5%B1%80%E3%80%81%E5%8A%A8%E7%94%BB/"><header><a class="post-meta-categories" href="/categories/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" itemprop="url">原生鸿蒙开发</a><a href="/tags/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" tabindex="-1" itemprop="url">原生鸿蒙开发</a><h1 id="CrawlerTitle" itemprop="name headline">4.界面布局、动画</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">星仔</span><time itemprop="dateCreated datePublished" datetime="2025-09-14T14:06:48.000Z" title="发表于 2025-09-14 22:06:48">2025-09-14</time><time itemprop="dateCreated datePublished" datetime="2025-12-30T16:18:43.959Z" title="更新于 2025-12-31 00:18:43">2025-12-31</time></header><p>布局思路：先排版，再放内容，再美化</p>
+<h1 id="线性布局文档中心"><a class="markdownIt-Anchor" href="#线性布局文档中心"></a> 线性布局<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-linear">文档中心</a></h1>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/31/oAlKMnZWDNHwGxv.png" alt="Column容器内子元素排列示意图" style="zoom:50%;" /><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/31/PHX2C3YlcjvF9MO.png" style="zoom:50%;" /><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/31/EaVAl6gQCSy3pbM.png" style="zoom:50%;" /></p>
+<p><code>Row行</code>、<code>Column列</code>：默认有居中效果</p>
+<p>通过space属性设置排列方向上子元素的间距</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Column(&#123; space: 数字 &#125;)&#123;&#125;</span><br><span class="line">Row(&#123; space: 数字 &#125;)&#123;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">build() &#123;</span><br><span class="line">    Column(&#123; space: 20 &#125;) &#123;</span><br><span class="line">        Text(&#x27;space: 20&#x27;).fontSize(15).fontColor(Color.Gray).width(&#x27;90%&#x27;)</span><br><span class="line">        Row().width(&#x27;90%&#x27;).height(50).backgroundColor(0xF5DEB3)</span><br><span class="line">        Row().width(&#x27;90%&#x27;).height(50).backgroundColor(0xD2B48C)</span><br><span class="line">        Row().width(&#x27;90%&#x27;).height(50).backgroundColor(0xF5DEB3)</span><br><span class="line">    &#125;.width(&#x27;100%&#x27;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="布局子元素在主轴上的排列方式"><a class="markdownIt-Anchor" href="#布局子元素在主轴上的排列方式"></a> 布局子元素在主轴上的排列方式</h2>
+<p>在布局容器内，可以通过<strong>justifyContent</strong>属性设置子元素在容器主轴上的排列方式。可以从主轴起始位置开始排布，也可以从主轴结束位置开始排布，或者均匀分割主轴的空间，对齐的那个方向必须设置大小</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/31/ufc8sKWYt1j4kov.png" alt="Column容器内子元素在垂直方向上的排列图" style="zoom: 33%;" /><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/31/S4j3OwpNZ9RcHX6.png" alt="Row容器内子元素在水平方向上的排列图" style="zoom: 33%;" /></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.justifyContent(FlexAlign.枚举值)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Column(&#123;&#125;) &#123;</span><br><span class="line">    Column() &#123;</span><br><span class="line">    &#125;.width(&#x27;80%&#x27;).height(50).backgroundColor(0xF5DEB3)</span><br><span class="line"></span><br><span class="line">    Column() &#123;</span><br><span class="line">    &#125;.width(&#x27;80%&#x27;).height(50).backgroundColor(0xD2B48C)</span><br><span class="line">&#125;</span><br><span class="line">.width(&#x27;100%&#x27;).height(300).backgroundColor(&#x27;rgb(242,242,242)&#x27;)</span><br><span class="line">    .justifyContent(FlexAlign.Start)</span><br><span class="line"></span><br><span class="line">Row(&#123;&#125;) &#123;</span><br><span class="line">    Column() &#123;</span><br><span class="line">    &#125;.width(&#x27;20%&#x27;).height(30).backgroundColor(0xF5DEB3)</span><br><span class="line"></span><br><span class="line">    Column() &#123;</span><br><span class="line">    &#125;.width(&#x27;20%&#x27;).height(30).backgroundColor(0xD2B48C)</span><br><span class="line">&#125;</span><br><span class="line">.width(&#x27;100%&#x27;).height(200).backgroundColor(&#x27;rgb(242,242,242)&#x27;)</span><br><span class="line">    .justifyContent(FlexAlign.Start)</span><br></pre></td></tr></table></figure>
+<h2 id="布局子元素在交叉轴上的对齐方式"><a class="markdownIt-Anchor" href="#布局子元素在交叉轴上的对齐方式"></a> 布局子元素在交叉轴上的对齐方式</h2>
+<p>若主轴为垂直方向，则交叉轴为水平方向，反之则垂直方向，对齐的那个方向必须设置大小</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/31/gFvALJ2DmaPj9wf.png" alt="Column容器内子元素在水平方向上的排列图" style="zoom: 33%;" /><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/31/xlXFbVtGfIpvTDq.png" alt="Row容器内子元素在垂直方向上的排列图" style="zoom: 25%;" /></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//交叉轴在水平方向</span><br><span class="line">.alignItems(HorizontalAlign.枚举值)</span><br><span class="line">//交叉轴在垂直方向</span><br><span class="line">.alignItems(VerticalAlign.枚举值)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Column(&#123;&#125;) &#123;</span><br><span class="line">    Column() &#123;</span><br><span class="line">    &#125;.width(&#x27;80%&#x27;).height(50).backgroundColor(0xF5DEB3)</span><br><span class="line"></span><br><span class="line">    Column() &#123;</span><br><span class="line">    &#125;.width(&#x27;80%&#x27;).height(50).backgroundColor(0xD2B48C)</span><br><span class="line">&#125;</span><br><span class="line">.width(&#x27;100%&#x27;).backgroundColor(&#x27;rgb(242,242,242)&#x27;)</span><br><span class="line">    .alignItems(HorizontalAlign.Start)</span><br><span class="line"></span><br><span class="line">Row(&#123;&#125;) &#123;</span><br><span class="line">    Column() &#123;</span><br><span class="line">    &#125;.width(&#x27;20%&#x27;).height(30).backgroundColor(0xF5DEB3)</span><br><span class="line"></span><br><span class="line">    Column() &#123;</span><br><span class="line">    &#125;.width(&#x27;20%&#x27;).height(30).backgroundColor(0xD2B48C)</span><br><span class="line">&#125;</span><br><span class="line">.width(&#x27;100%&#x27;).height(200).backgroundColor(&#x27;rgb(242,242,242)&#x27;)</span><br><span class="line">    .alignItems(VerticalAlign.Top)</span><br></pre></td></tr></table></figure>
+<h2 id="自适应拉伸"><a class="markdownIt-Anchor" href="#自适应拉伸"></a> 自适应拉伸</h2>
+<p>常用空白填充组件<strong>Blank</strong>，在容器主轴方向自动填充空白空间，达到自适应拉伸效果</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Blank()</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Column() &#123;</span><br><span class="line">    Row() &#123;</span><br><span class="line">        Text(&#x27;Bluetooth&#x27;).fontSize(18)</span><br><span class="line">        Blank()</span><br><span class="line">        Toggle(&#123; type: ToggleType.Switch, isOn: true &#125;)</span><br><span class="line">    &#125;.backgroundColor(0xFFFFFF).borderRadius(15).padding(&#123; left: 12 &#125;).width(&#x27;100%&#x27;)</span><br><span class="line">&#125;.backgroundColor(0xEFEFEF).padding(20).width(&#x27;100%&#x27;)</span><br></pre></td></tr></table></figure>
+<h2 id="自适应缩放"><a class="markdownIt-Anchor" href="#自适应缩放"></a> 自适应缩放</h2>
+<p>子元素随容器尺寸的变化而按照预设的比例自动调整尺寸，适应各种不同大小的设备</p>
+<ol>
+<li>父容器尺寸确定时，使用<strong>layoutWeight</strong>属性设置子元素和兄弟元素在主轴上的权重，忽略元素本身尺寸设置，使它们在任意尺寸的设备下自适应占满剩余空间</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.layoutWeight(数字)		//数字越大权重越高</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Column() &#123;</span><br><span class="line">    Text(&#x27;1:2:3&#x27;).width(&#x27;100%&#x27;)</span><br><span class="line">    Row() &#123;</span><br><span class="line">        Column() &#123;</span><br><span class="line">            Text(&#x27;layoutWeight(1)&#x27;)</span><br><span class="line">                .textAlign(TextAlign.Center)</span><br><span class="line">        &#125;.backgroundColor(0xF5DEB3).height(&#x27;100%&#x27;)</span><br><span class="line">        .layoutWeight(1)</span><br><span class="line"></span><br><span class="line">        Column() &#123;</span><br><span class="line">            Text(&#x27;layoutWeight(2)&#x27;)</span><br><span class="line">                .textAlign(TextAlign.Center)</span><br><span class="line">        &#125;.backgroundColor(0xD2B48C).height(&#x27;100%&#x27;)</span><br><span class="line">        .layoutWeight(2)</span><br><span class="line"></span><br><span class="line">        Column() &#123;</span><br><span class="line">            Text(&#x27;layoutWeight(3)&#x27;)</span><br><span class="line">                .textAlign(TextAlign.Center)</span><br><span class="line">        &#125;.backgroundColor(0xF5DEB3).height(&#x27;100%&#x27;)</span><br><span class="line">        .layoutWeight(3)</span><br><span class="line">    &#125;.backgroundColor(0xffd306).height(&#x27;30%&#x27;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>父容器尺寸确定时，使用百分比设置子元素和兄弟元素的宽度，使他们在任意尺寸的设备下保持固定的自适应占比</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Column() &#123;</span><br><span class="line">    Row() &#123;</span><br><span class="line">        Column() &#123;</span><br><span class="line">            Text(&#x27;left width 20%&#x27;)</span><br><span class="line">                .textAlign(TextAlign.Center)</span><br><span class="line">        &#125;.width(&#x27;20%&#x27;).backgroundColor(0xF5DEB3).height(&#x27;100%&#x27;)</span><br><span class="line"></span><br><span class="line">        Column() &#123;</span><br><span class="line">            Text(&#x27;center width 50%&#x27;)</span><br><span class="line">                .textAlign(TextAlign.Center)</span><br><span class="line">        &#125;.width(&#x27;50%&#x27;).backgroundColor(0xD2B48C).height(&#x27;100%&#x27;)</span><br><span class="line"></span><br><span class="line">        Column() &#123;</span><br><span class="line">            Text(&#x27;right width 30%&#x27;)</span><br><span class="line">                .textAlign(TextAlign.Center)</span><br><span class="line">        &#125;.width(&#x27;30%&#x27;).backgroundColor(0xF5DEB3).height(&#x27;100%&#x27;)</span><br><span class="line">    &#125;.backgroundColor(0xffd306).height(&#x27;30%&#x27;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="自适应延伸"><a class="markdownIt-Anchor" href="#自适应延伸"></a> 自适应延伸</h2>
+<p>当一屏无法完全显示时，可以在Column或Row组件的外层包裹一个可滚动的容器组件<strong>Scroll</strong>来实现可滑动的线性布局</p>
+<p><strong>Scroll</strong>有大小限制，且小于滚动内容区域，<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll#scroller">Scroll API</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">控制名:Scroller = new Scroller()		//创建Scroll控制器</span><br><span class="line">Scroll( this.控制名 ) &#123;	//this.控制名将Scroll与Scroll控制器绑定</span><br><span class="line">    Column() &#123;&#125;</span><br><span class="line"></span><br><span class="line">    this.scroller.枚举值(不同枚举值参数不同)</span><br><span class="line">&#125;</span><br><span class="line">.scrollable(ScrollDirection.枚举值)	// 滚动方向</span><br><span class="line">.scrollBar(BarState.枚举值) 		// 滚动条常驻显示</span><br><span class="line">.scrollBarColor(Color.枚举值) 		// 滚动条颜色</span><br><span class="line">.scrollBarWidth(数字) 		// 滚动条宽度</span><br><span class="line">.edgeEffect(EdgeEffect.枚举值)		// 滚动到边沿后回弹</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Entry</span><br><span class="line">@Component</span><br><span class="line">struct ScrollCase &#123;</span><br><span class="line">  @State message: string = &#x27;Hello World&#x27;;</span><br><span class="line"></span><br><span class="line">  scroller:Scroller = new Scroller()</span><br><span class="line"></span><br><span class="line">  build() &#123;</span><br><span class="line">    Column() &#123;</span><br><span class="line">      toubu()</span><br><span class="line">      Scroll(this.scroller)&#123;</span><br><span class="line">        Column(&#123;space:10&#125;)&#123;</span><br><span class="line">          Button(&#x27;回到底部&#x27;)</span><br><span class="line">            .onClick(() =&gt;&#123;</span><br><span class="line">              this.scroller.scrollEdge(Edge.End)</span><br><span class="line">            &#125;)</span><br><span class="line"></span><br><span class="line">          ScrollItemComp()</span><br><span class="line">          ScrollItemComp()</span><br><span class="line">          ScrollItemComp()</span><br><span class="line">          ScrollItemComp()</span><br><span class="line">          Button(&#x27;回到顶部&#x27;)</span><br><span class="line">            .onClick(() =&gt;&#123;</span><br><span class="line">              this.scroller.scrollEdge(Edge.Start)</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;.padding(10)</span><br><span class="line">      &#125;</span><br><span class="line">      .layoutWeight(1)</span><br><span class="line">      jiaodi()</span><br><span class="line">    &#125;</span><br><span class="line">    .height(&#x27;100%&#x27;)</span><br><span class="line">    .width(&#x27;100%&#x27;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@Component</span><br><span class="line">struct ScrollItemComp &#123;</span><br><span class="line">  build() &#123;</span><br><span class="line">    Column()&#123;</span><br><span class="line">      Text(&#x27;卡片&#x27;)</span><br><span class="line">    &#125;</span><br><span class="line">    .width(&#x27;100%&#x27;)</span><br><span class="line">    .height(200)</span><br><span class="line">    .backgroundColor(Color.Pink)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="弹性布局文档中心"><a class="markdownIt-Anchor" href="#弹性布局文档中心"></a> 弹性布局<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-flex-layout">文档中心</a></h1>
+<p>在渲染时存在二次布局过程，因此在对性能有严格要求的场景下建议使用Column、Row代替，<strong>不规则的时候需要换行</strong>，才使用，如下图所示：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/31/Vv81ZChQKXl4MOy.webp" style="zoom:50%;" />
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Flex(&#123;</span><br><span class="line">    direction: FlexDirection.枚举值,	//主轴方向</span><br><span class="line">    justifyContent: FlexAlign.枚举值,	//主轴对齐方式</span><br><span class="line">    alignItems: ItemAlign.枚举值,	//交叉轴对齐方式</span><br><span class="line">    wrap: FlexWrap.枚举值,	//布局换行</span><br><span class="line">    space: &#123;</span><br><span class="line">        main: LengthMetrics.枚举值(数字), 	//主轴间距</span><br><span class="line">        cross: LengthMetrics.枚举值(数字)	//交叉轴间距</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)&#123;</span><br><span class="line">    //组件</span><br><span class="line">&#125;</span><br><span class="line">//FlexWrap.NoWrap  单行布局</span><br><span class="line">//FlexWrap.Wrap   多行布局</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Column()&#123;</span><br><span class="line">    Flex(&#123;</span><br><span class="line">        direction: FlexDirection.Row, //设置主轴方向</span><br><span class="line">        justifyContent: FlexAlign.SpaceAround,  //主轴对齐方式</span><br><span class="line">        alignItems: ItemAlign.End,  //交叉轴对齐方式</span><br><span class="line">        wrap: FlexWrap.NoWrap   //布局换行</span><br><span class="line">    &#125;)&#123;</span><br><span class="line">        Text()</span><br><span class="line">            .width(100)</span><br><span class="line">            .height(100)</span><br><span class="line">            .backgroundColor(     Color.Blue)</span><br><span class="line">            .margin(10)</span><br><span class="line">        Text()</span><br><span class="line">            .width(100)</span><br><span class="line">            .height(100)</span><br><span class="line">            .backgroundColor(Color.Orange)</span><br><span class="line">            .margin(10)</span><br><span class="line">    &#125;</span><br><span class="line">    .width(&#x27;100%&#x27;)</span><br><span class="line">    .height(500)</span><br><span class="line">    .backgroundColor(&#x27;#ece&#x27;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="相对布局文档中心"><a class="markdownIt-Anchor" href="#相对布局文档中心"></a> 相对布局<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-relative-layout">文档中心</a></h1>
+<p>子元素可以指定兄弟元素或父容器作为锚点，基于锚点进行相对位置布局</p>
+<p>父元素标识默认为“<strong>container</strong>”，其他子元素的组件标识（id）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">RelativeContainer() &#123;</span><br><span class="line">&#125;</span><br><span class="line">.alignRules(&#123;   //相对于锚点的对齐位置</span><br><span class="line">  //自己的上top中center下bottom	或 自己的左lef中middle右right</span><br><span class="line">  center: &#123;</span><br><span class="line">    anchor: &#x27;标识字符&#x27;, 			//参照物,__container__：参照父容器</span><br><span class="line">    align: VerticalAlign.枚举值  	//对齐参照物哪条边，但移动是边的交叉轴方向</span><br><span class="line">    // align: HorizontalAlign.枚举值</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">.id(&quot;标识字符&quot;)	//子元素的组件标识</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Row()&#123;</span><br><span class="line">  Text(&#x27;1&#x27;)</span><br><span class="line">&#125;.width(&#x27;33%&#x27;).height(&#x27;33%&#x27;)</span><br><span class="line">.backgroundColor(Color.Red)</span><br><span class="line">.id(&#x27;row4&#x27;)</span><br><span class="line">.alignRules(&#123;</span><br><span class="line">  top:&#123;</span><br><span class="line">    anchor: &#x27;row2&#x27;,</span><br><span class="line">    align: VerticalAlign.Bottom</span><br><span class="line">  &#125;,</span><br><span class="line">  middle:&#123;</span><br><span class="line">    anchor: &#x27;row1&#x27;,</span><br><span class="line">    align: HorizontalAlign.Center</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="层叠布局文档中心"><a class="markdownIt-Anchor" href="#层叠布局文档中心"></a> 层叠布局<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-stack-layout">文档中心</a></h1>
+<p>卡片层叠效果，层叠操作更简洁，编码效率高（绝对定位的优势是更灵活）</p>
+<p>子元素的顺序为 Item1 -&gt; Item2 -&gt; Item3（越往后层级越高）也可以<strong>zIndex</strong>手动调层级(若手动则每一层都需要手动设置)</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/31/yVXIZKAnLiQ3D24.png" style="zoom: 50%;" />
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Stack(&#123;</span><br><span class="line">    alignContent: Alignment.枚举值	//层叠方向</span><br><span class="line">&#125;) &#123;</span><br><span class="line">    Item1()</span><br><span class="line">    Item2()</span><br><span class="line">    Item3()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Column()&#123;</span><br><span class="line">    Stack(&#123;</span><br><span class="line">        alignContent: Alignment.Bottom</span><br><span class="line">    &#125;)&#123;</span><br><span class="line">        Text(&#x27;1&#x27;)</span><br><span class="line">            .width(250)</span><br><span class="line">            .height(250)</span><br><span class="line">            .backgroundColor(Color.Brown)</span><br><span class="line">        //.zIndex(1)</span><br><span class="line">        Text(&#x27;2&#x27;)</span><br><span class="line">            .width(200)</span><br><span class="line">            .height(200)</span><br><span class="line">            .backgroundColor(Color.Blue)</span><br><span class="line">        //.zIndex(2)</span><br><span class="line">        Text(&#x27;3&#x27;)</span><br><span class="line">            .width(150)</span><br><span class="line">            .height(150)</span><br><span class="line">            .backgroundColor(Color.Green)</span><br><span class="line">        //.zIndex(3)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="列表布局文档中心"><a class="markdownIt-Anchor" href="#列表布局文档中心"></a> 列表布局<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-create-list">文档中心</a></h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">控制名:Scroller = new Scroller()		//创建Scroll控制器</span><br><span class="line">List(&#123; scroller: this.控制名 &#125;) &#123;</span><br><span class="line">  ListItem() &#123;</span><br><span class="line">    //列表</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">.listDirection(Axis.枚举值)	//列表方向，默认垂直方向</span><br><span class="line">.divider(&#123; </span><br><span class="line">  strokeWidth: 数字,		//分割线宽度</span><br><span class="line">  color: 颜色格式 			//分隔线颜色</span><br><span class="line">&#125;)</span><br><span class="line">.onScrollStart(() =&gt; &#123;&#125;)		//滑动开始时触发</span><br><span class="line">.onScrollStop(() =&gt; &#123;&#125;)			//滑动停止时触发</span><br><span class="line">.onReachEnd(() =&gt; &#123;&#125;)		//到达末尾位置时触发</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@State isEnd: boolean = false</span><br><span class="line">List() &#123;</span><br><span class="line">  ListItem() &#123;</span><br><span class="line">    Text(&#x27;北京&#x27;).fontSize(24)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">.divider(&#123; strokeWidth: 10, color: Color.Blue &#125;)</span><br><span class="line">//下拉更新数据</span><br><span class="line">.onScrollStart(() =&gt; &#123;</span><br><span class="line">  this.isEnd = false</span><br><span class="line">&#125;)</span><br><span class="line">.onScrollStop(() =&gt; &#123;</span><br><span class="line">  setTimeout(() =&gt; &#123;</span><br><span class="line">    if (this.isEnd) &#123;</span><br><span class="line">      const list: number[] = Array(10).fill(Math.random())</span><br><span class="line">      this.list.push(...list)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, 1000)</span><br><span class="line">&#125;)</span><br><span class="line">.onReachEnd(() =&gt; &#123;</span><br><span class="line">  this.isEnd = true</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="网格栅格布局文档中心"><a class="markdownIt-Anchor" href="#网格栅格布局文档中心"></a> 网格+栅格布局<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-create-grid">文档中心</a></h1>
+<p>一般使用在固定行列的布局</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//网格</span><br><span class="line">Grid()&#123;</span><br><span class="line">    GridItem()&#123;	//每个小方格</span><br><span class="line">        //小方格中写的内容</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">.columnsTemplate(&#x27;1fr 1fr 1fr&#x27;)	//列有几个1fr就有几个小方格，1代表小方格所占的空间份数</span><br><span class="line">.columnsGap(10)	//列方向小方块之间的间隙</span><br><span class="line">.rowsTemplate(&#x27;1fr 1fr 1fr&#x27;)	//行有几个1fr就有几个小方格，1代表小方格所占的空间份数</span><br><span class="line">.rowsGap(10)	//行方向小方块之间的间隙</span><br><span class="line">//栅格</span><br><span class="line">GridRow(&#123; columns: 数字, gutter: 数字&#125;)&#123;</span><br><span class="line">    GridCol()&#123;</span><br><span class="line">        //栅格中写的内容</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">GridRow(&#123; columns: &#123;</span><br><span class="line">    xs: 数字,</span><br><span class="line">    sm: 数字,</span><br><span class="line">    md: 数字,</span><br><span class="line">    lg: 数字,</span><br><span class="line">    xl: 数字,</span><br><span class="line">    xxl: 数字</span><br><span class="line">&#125;, gutter: 数字&#125;)</span><br><span class="line">//columns: 数字，设置列个数</span><br><span class="line">//gutter: 数字，设置间距</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//网格</span><br><span class="line">Grid()&#123;</span><br><span class="line">    GridItem()&#123;</span><br><span class="line">        Column()&#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        .width(80)</span><br><span class="line">        .height(80)</span><br><span class="line">        .backgroundColor(Color.Green)</span><br><span class="line">    &#125;</span><br><span class="line">    GridItem()&#123;</span><br><span class="line">        Column()&#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        .width(80)</span><br><span class="line">        .height(80)</span><br><span class="line">        .backgroundColor(Color.Green)</span><br><span class="line">    &#125;</span><br><span class="line">    //...</span><br><span class="line">&#125;</span><br><span class="line">.columnsTemplate(&#x27;1fr 1fr 1fr&#x27;)</span><br><span class="line">.columnsGap(10)</span><br><span class="line">.rowsTemplate(&#x27;1fr 1fr 1fr&#x27;)</span><br><span class="line">.rowsGap(10)</span><br><span class="line"></span><br><span class="line">//栅格</span><br><span class="line">GridRow(&#123; columns: 3, gutter: 10&#125;)&#123;</span><br><span class="line">  GridCol()&#123;</span><br><span class="line">    Column()&#123;</span><br><span class="line">      Text(&#x27;卡片&#x27;)</span><br><span class="line">    &#125;</span><br><span class="line">    .width(&#x27;100%&#x27;)</span><br><span class="line">    .height(200)</span><br><span class="line">    .backgroundColor(Color.Pink)</span><br><span class="line">  &#125;</span><br><span class="line">  GridCol()&#123;</span><br><span class="line">    Column()&#123;</span><br><span class="line">      Text(&#x27;卡片&#x27;)</span><br><span class="line">    &#125;</span><br><span class="line">    .width(&#x27;100%&#x27;)</span><br><span class="line">    .height(200)</span><br><span class="line">    .backgroundColor(Color.Pink)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="软键盘避让模式文档中心"><a class="markdownIt-Anchor" href="#软键盘避让模式文档中心"></a> 软键盘避让模式<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-keyboard-layout-adapt">文档中心</a></h1>
+<ol>
+<li>在 EntryAbility 的使用：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123; KeyboardAvoidMode, window &#125; from &#x27;@kit.ArkUI&#x27;</span><br><span class="line">import &#123; UIAbility &#125; from &#x27;@kit.AbilityKit&#x27;</span><br><span class="line"></span><br><span class="line">export default class EntryAbility extends UIAbility &#123;</span><br><span class="line">  onWindowStageCreate(windowStage: window.WindowStage): void &#123;</span><br><span class="line">    windowStage.loadContent(&#x27;pages/Index&#x27;, (err) =&gt; &#123;</span><br><span class="line">      // 压缩模式</span><br><span class="line">      windowStage.getMainWindowSync().getUIContext().setKeyboardAvoidMode(KeyboardAvoidMode.RESIZE);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>在组件中使用：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123; KeyboardAvoidMode, window &#125; from &#x27;@kit.ArkUI&#x27;</span><br><span class="line"></span><br><span class="line">@Component</span><br><span class="line">export struct TestComp &#123;</span><br><span class="line">  aboutToAppear(): void &#123;</span><br><span class="line">    window.getLastWindow(getContext())</span><br><span class="line">      .then(win =&gt; &#123;</span><br><span class="line">        win.getUIContext().setKeyboardAvoidMode(KeyboardAvoidMode.RESIZE)</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="收起软键盘文档中心"><a class="markdownIt-Anchor" href="#收起软键盘文档中心"></a> 收起软键盘<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-keyboard-layout-adapt#section19809195110316">文档中心</a></h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">this.getUIContext().getFocusController().clearFocus(); //收起软键盘</span><br></pre></td></tr></table></figure>
+<h1 id="应用沉浸式效果文档中心"><a class="markdownIt-Anchor" href="#应用沉浸式效果文档中心"></a> 应用沉浸式效果<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-develop-apply-immersive-effects">文档中心</a></h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.expandSafeArea([SafeAreaType.SYSTEM])    //隐藏状态和控制栏</span><br><span class="line">.expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM])    //隐藏状态和控制栏</span><br></pre></td></tr></table></figure>
+<h1 id="应用深浅色适配文档中心"><a class="markdownIt-Anchor" href="#应用深浅色适配文档中心"></a> 应用深浅色适配<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-dark-light-color-adaptation">文档中心</a></h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void &#123;</span><br><span class="line">  AppStorage.setOrCreate(&#x27;context&#x27;, this.context)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">aboutToAppear() &#123;</span><br><span class="line">  theme.initTheme()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123; ConfigurationConstant &#125; from &#x27;@kit.AbilityKit&#x27;</span><br><span class="line"></span><br><span class="line">export const ColorModeKey = &#x27;hc-color-mode&#x27;</span><br><span class="line"></span><br><span class="line">class Theme &#123;</span><br><span class="line">  initTheme() &#123;</span><br><span class="line">    // 持久化颜色主题，默认值亮色模式</span><br><span class="line">    PersistentStorage.persistProp&lt;ConfigurationConstant.ColorMode&gt;(ColorModeKey,</span><br><span class="line">      ConfigurationConstant.ColorMode.COLOR_MODE_LIGHT)</span><br><span class="line">    // 取出现在应用存储的颜色主题模式</span><br><span class="line">    const colorMode = AppStorage.get&lt;ConfigurationConstant.ColorMode&gt;(ColorModeKey)</span><br><span class="line">    // 设置应用颜色主题模式</span><br><span class="line">    this.setTheme(colorMode!)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  setTheme(mode: ConfigurationConstant.ColorMode) &#123;</span><br><span class="line">    AppStorage.set&lt;ConfigurationConstant.ColorMode&gt;(ColorModeKey, mode)</span><br><span class="line">    const ctx = AppStorage.get&lt;Context&gt;(&#x27;context&#x27;)</span><br><span class="line">    ctx?.getApplicationContext().setColorMode(mode)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 跟随系统</span><br><span class="line">  notSet() &#123;</span><br><span class="line">    this.setTheme(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 暗色</span><br><span class="line">  setDark() &#123;</span><br><span class="line">    this.setTheme(ConfigurationConstant.ColorMode.COLOR_MODE_DARK)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 亮色</span><br><span class="line">  setLight() &#123;</span><br><span class="line">    this.setTheme(ConfigurationConstant.ColorMode.COLOR_MODE_LIGHT)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export const theme = new Theme()</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/hnKakmoIRgyuNTY.webp" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/hnKakmoIRgyuNTY.webp" title="头像" alt="头像"></a><div class="post-copyright__author_name">星仔</div><div class="post-copyright__author_desc">星仔个人博客</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://www.6673543.xyz/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/4-%E7%95%8C%E9%9D%A2%E5%B8%83%E5%B1%80%E3%80%81%E5%8A%A8%E7%94%BB/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://www.6673543.xyz/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/4-%E7%95%8C%E9%9D%A2%E5%B8%83%E5%B1%80%E3%80%81%E5%8A%A8%E7%94%BB/')">4.界面布局、动画</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://www.6673543.xyz/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/4-%E7%95%8C%E9%9D%A2%E5%B8%83%E5%B1%80%E3%80%81%E5%8A%A8%E7%94%BB/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=4.界面布局、动画&amp;url=https://www.6673543.xyz/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/4-%E7%95%8C%E9%9D%A2%E5%B8%83%E5%B1%80%E3%80%81%E5%8A%A8%E7%94%BB/&amp;pic=https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.6673543.xyz" target="_blank">星仔极客</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>原生鸿蒙开发<span class="tagsPageCount">10</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/3-UI%E7%BB%84%E4%BB%B6/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" onerror="onerror=null;src='https://smms.app/image/J1DeqWXutm6ZI5x'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">3.UI组件</div></div></a></div><div class="next-post pull-right"><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/5-%E5%BC%B9%E7%AA%97/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" onerror="onerror=null;src='https://smms.app/image/J1DeqWXutm6ZI5x'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">5.弹窗</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2026/02/01/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/9-%E6%A1%88%E4%BE%8B/" title="9.案例"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2026-02-01</div><div class="title">9.案例</div></div></a></div><div><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/8.%E5%AF%BC%E8%88%AA%E3%80%81%E9%A1%B5%E9%9D%A2%E8%B7%AF%E7%94%B1/" title="8.导航、页面路由"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-09-14</div><div class="title">8.导航、页面路由</div></div></a></div><div><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/7-%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/" title="7.数据请求"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-09-14</div><div class="title">7.数据请求</div></div></a></div><div><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/6-%E5%AD%98%E5%82%A8%E3%80%81%E6%9D%83%E9%99%90/" title="6.存储、权限"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-09-14</div><div class="title">6.存储、权限</div></div></a></div><div><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/5-%E5%BC%B9%E7%AA%97/" title="5.弹窗"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-09-14</div><div class="title">5.弹窗</div></div></a></div><div><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/3-UI%E7%BB%84%E4%BB%B6/" title="3.UI组件"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-09-14</div><div class="title">3.UI组件</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/hnKakmoIRgyuNTY.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description">日常笔记和生活分享！</div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">星仔</h1><div class="author-info__desc">星仔个人博客</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://blog.csdn.net/qq_65047384?spm=1000.2115.3001.5343" target="_blank" title="CSDN"><i class="anzhiyufont anzhiyu-icon-link"></i></a><a class="social-icon faa-parent animated-hover" href="https://www.bilibili.com/" target="_blank" title="哔哩哔哩"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://s2.loli.net/2025/12/28/Kzy7bfNZvFpXRcl.webp) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://s2.loli.net/2025/12/28/PYbyi8gphMCxUqw.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%B8%83%E5%B1%80%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">1.</span> <span class="toc-text"> 线性布局文档中心</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%83%E5%B1%80%E5%AD%90%E5%85%83%E7%B4%A0%E5%9C%A8%E4%B8%BB%E8%BD%B4%E4%B8%8A%E7%9A%84%E6%8E%92%E5%88%97%E6%96%B9%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text"> 布局子元素在主轴上的排列方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%83%E5%B1%80%E5%AD%90%E5%85%83%E7%B4%A0%E5%9C%A8%E4%BA%A4%E5%8F%89%E8%BD%B4%E4%B8%8A%E7%9A%84%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text"> 布局子元素在交叉轴上的对齐方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E9%80%82%E5%BA%94%E6%8B%89%E4%BC%B8"><span class="toc-number">1.3.</span> <span class="toc-text"> 自适应拉伸</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E9%80%82%E5%BA%94%E7%BC%A9%E6%94%BE"><span class="toc-number">1.4.</span> <span class="toc-text"> 自适应缩放</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E9%80%82%E5%BA%94%E5%BB%B6%E4%BC%B8"><span class="toc-number">1.5.</span> <span class="toc-text"> 自适应延伸</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">2.</span> <span class="toc-text"> 弹性布局文档中心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E5%B8%83%E5%B1%80%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">3.</span> <span class="toc-text"> 相对布局文档中心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B1%82%E5%8F%A0%E5%B8%83%E5%B1%80%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">4.</span> <span class="toc-text"> 层叠布局文档中心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E5%B8%83%E5%B1%80%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">5.</span> <span class="toc-text"> 列表布局文档中心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E6%A0%BC%E6%A0%85%E6%A0%BC%E5%B8%83%E5%B1%80%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">6.</span> <span class="toc-text"> 网格+栅格布局文档中心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BD%AF%E9%94%AE%E7%9B%98%E9%81%BF%E8%AE%A9%E6%A8%A1%E5%BC%8F%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">7.</span> <span class="toc-text"> 软键盘避让模式文档中心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%94%B6%E8%B5%B7%E8%BD%AF%E9%94%AE%E7%9B%98%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">8.</span> <span class="toc-text"> 收起软键盘文档中心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E6%B2%89%E6%B5%B8%E5%BC%8F%E6%95%88%E6%9E%9C%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">9.</span> <span class="toc-text"> 应用沉浸式效果文档中心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E6%B7%B1%E6%B5%85%E8%89%B2%E9%80%82%E9%85%8D%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">10.</span> <span class="toc-text"> 应用深浅色适配文档中心</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/02/01/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/9-%E6%A1%88%E4%BE%8B/" title="9.案例"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" onerror="this.onerror=null;this.src='https://smms.app/image/J1DeqWXutm6ZI5x'" alt="9.案例"/></a><div class="content"><a class="title" href="/2026/02/01/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/9-%E6%A1%88%E4%BE%8B/" title="9.案例">9.案例</a><time datetime="2026-02-01T07:08:25.000Z" title="发表于 2026-02-01 15:08:25">2026-02-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/28/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6/C%E8%AF%AD%E8%A8%80/0-C%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/" title="0.C语言概述"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2026/01/28/gCKcZoemAiI1wpa.webp" onerror="this.onerror=null;this.src='https://smms.app/image/J1DeqWXutm6ZI5x'" alt="0.C语言概述"/></a><div class="content"><a class="title" href="/2026/01/28/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6/C%E8%AF%AD%E8%A8%80/0-C%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/" title="0.C语言概述">0.C语言概述</a><time datetime="2026-01-28T05:41:10.000Z" title="发表于 2026-01-28 13:41:10">2026-01-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/10/19/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE%E5%A4%A7%E5%85%A8/" title="学术文献大全"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/dhVaA6NUC8DO5Te.webp" onerror="this.onerror=null;this.src='https://smms.app/image/J1DeqWXutm6ZI5x'" alt="学术文献大全"/></a><div class="content"><a class="title" href="/2025/10/19/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE%E5%A4%A7%E5%85%A8/" title="学术文献大全">学术文献大全</a><time datetime="2025-10-19T06:49:50.000Z" title="发表于 2025-10-19 14:49:50">2025-10-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/10/05/%E6%9D%82%E9%A1%B9/TOS/" title="星海物联用户服务协议"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='https://smms.app/image/J1DeqWXutm6ZI5x'" alt="星海物联用户服务协议"/></a><div class="content"><a class="title" href="/2025/10/05/%E6%9D%82%E9%A1%B9/TOS/" title="星海物联用户服务协议">星海物联用户服务协议</a><time datetime="2025-10-05T05:42:28.000Z" title="发表于 2025-10-05 13:42:28">2025-10-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/09/25/%E8%BD%AF%E6%B5%8B/2-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" title="2.功能测试"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2025/12/28/t2mAjy3aJKMopqH.webp" onerror="this.onerror=null;this.src='https://smms.app/image/J1DeqWXutm6ZI5x'" alt="2.功能测试"/></a><div class="content"><a class="title" href="/2025/09/25/%E8%BD%AF%E6%B5%8B/2-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" title="2.功能测试">2.功能测试</a><time datetime="2025-09-25T06:28:25.000Z" title="发表于 2025-09-25 14:28:25">2025-09-25</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="workboard"><img class="workSituationImg boardsign" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://s2.loli.net/2026/01/01/TBLYWNnwJdkEKMZ.webp" alt="距离月入25k也就还差一个大佬带我~" title="距离月入25k也就还差一个大佬带我~"/><div id="runtimeTextTip"></div></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title="博客框架为Hexo_v5.4.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo_v5.4.0"/></a><a class="github-badge" target="_blank" href="https://blog.anheyu.com/" style="margin-inline:5px" data-title="本站使用AnZhiYu主题" title="本站使用AnZhiYu主题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg" alt="本站使用AnZhiYu主题"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title="本站项目由Github托管"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg" alt="本站项目由Github托管"/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg" alt="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"/></a></p></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2021 - 2026 By <a class="footer-bar-link" href="/" title="星仔" target="_blank">星仔</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">8</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.csdn.net/qq_65047384?spm=1000.2115.3001.5343" title="CSDN"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="/img/favicon.ico" alt="CSDN"/><span class="back-menu-item-text">CSDN</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://www.bilibili.com/" title="哔哩哔哩"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="/img/favicon.ico" alt="哔哩哔哩"/><span class="back-menu-item-text">哔哩哔哩</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">资源下载</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.6673543.xyz/2025/08/29/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E8%B5%84%E6%BA%90%E5%BA%93/" title="资源库"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://smms.app/image/J1DeqWXutm6ZI5x&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="资源库"/><span class="back-menu-item-text">资源库</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 小伙伴</span></a></li><li><a class="site-page child faa-parent animated-hover" href="https://www.6673543.xyz/2025/08/29/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E8%B5%84%E6%BA%90%E5%BA%93/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 资源库</span></a></li><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener" href="http://ainm.cc/c/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐网</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 0.88rem;">C语言<sup>1</sup></a><a href="/tags/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" style="font-size: 0.88rem;">Linux基础命令<sup>1</sup></a><a href="/tags/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 0.88rem;">MySQL数据库<sup>3</sup></a><a href="/tags/Windows%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" style="font-size: 0.88rem;">Windows相关设置<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2CDN%E8%A7%A3%E6%9E%90/" style="font-size: 0.88rem;">博客CDN解析<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%9B%B8%E5%85%B3/" style="font-size: 0.88rem;">博客搭建相关<sup>1</sup></a><a href="/tags/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" style="font-size: 0.88rem;">原生鸿蒙开发<sup>10</sup></a><a href="/tags/%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE/" style="font-size: 0.88rem;">学术文献<sup>1</sup></a><a href="/tags/%E6%98%9F%E6%B5%B7%E7%89%A9%E8%81%94%E5%8D%8F%E8%AE%AE/" style="font-size: 0.88rem;">星海物联协议<sup>1</sup></a><a href="/tags/%E7%A7%98%E5%AF%86%E7%A7%91%E6%8A%80/" style="font-size: 0.88rem;">秘密科技<sup>1</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E5%BA%93/" style="font-size: 0.88rem;">资源库<sup>1</sup></a><a href="/tags/%E8%BD%AF%E6%B5%8B/" style="font-size: 0.88rem;">软测<sup>2</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button><button id="go-down" type="button" title="直达底部" onclick="anzhiyu.scrollToDest(document.body.scrollHeight, 500)"><i class="anzhiyufont anzhiyu-icon-arrow-down"></i></button></div></div><div class="docsearch-wrap"><div id="docsearch" style="display:none"></div><link rel="stylesheet" href="https://cdn.cbd.int/@docsearch/css@3.5.2/dist/style.css"/><script src="https://cdn.cbd.int/@docsearch/js@3.5.2/dist/umd/index.js"></script><script>(() => {
+  docsearch(Object.assign({
+    appId: 'N5079WLKI8',
+    apiKey: '1369cef0e83c383cabd05d792051e4d9',
+    indexName: 'Blog',
+    container: '#docsearch',
+  }, null))
+
+  const handleClick = () => {
+    document.querySelector('.DocSearch-Button').click()
+  }
+
+  const searchClickFn = () => {
+    anzhiyu.addEventListenerPjax(document.querySelector('#search-button > .search'), 'click', handleClick)
+  }
+
+  searchClickFn()
+  window.addEventListener('pjax:complete', searchClickFn)
+})()</script></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.cbd.int/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2021 By 安知鱼 V1.6.15",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 星仔 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script async="async">(function () {
+  var grt = new Date("04/01/2021 00:00:00"); //设置网站上线时间
+  var now = new Date();
+  var dnum;
+  var hnum;
+  var mnum;
+  var snum;
+  var nowHour;
+
+  // 计算并更新天数、小时数、分钟数和秒数
+  function updateTime() {
+    now = new Date(); // 更新 now 的值
+    nowHour = now.getHours(); // 更新 nowHour 的值
+    var days = (now - grt) / 1000 / 60 / 60 / 24;
+    dnum = Math.floor(days);
+    var hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+    hnum = Math.floor(hours);
+    if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+    }
+    var minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+    mnum = Math.floor(minutes);
+    if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+    }
+    var seconds = (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+    snum = Math.round(seconds);
+    if (String(snum).length == 1) {
+      snum = "0" + snum;
+    }
+  }
+
+  // 更新网页中显示的网站运行时间
+  function updateHtml() {
+    const footer = document.getElementById("footer");
+    if (!footer) return
+    let currentTimeHtml = "";
+    if (nowHour < 18 && nowHour >= 9) {
+      // 如果是上班时间，默认就是"安知鱼-上班摸鱼中.svg"图片，不需要更改
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    } else {
+      // 如果是下班时间，插入"安知鱼-下班啦.svg"图片
+      let img = document.querySelector("#workboard .workSituationImg");
+      if (img != null) {
+        img.src = "https://s2.loli.net/2026/01/01/ULjdlB1pg2iSNGC.webp";
+        img.title = "下班了就该开开心心的玩耍，嘿嘿~";
+        img.alt = "下班了就该开开心心的玩耍，嘿嘿~";
+      }
+
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    }
+
+    if (document.getElementById("runtimeTextTip")) {
+      document.getElementById("runtimeTextTip").innerHTML = currentTimeHtml;
+    }
+  }
+
+  setInterval(() => {
+    updateTime();
+    updateHtml();
+  }, 1000);
+})();</script><div class="js-pjax"><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'w5lNowEPFYa9KXq7nuThvrkX-gzGzoHsz',
+      appKey: 'u39EI3MGigv5TfzUvcCKkVD4',
+      avatar: 'mp',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.cbd.int/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script src="https://cdn.cbd.int/blueimp-md5@2.19.0/js/md5.min.js"></script><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getIcon = (icon, mail) => {
+    if (icon) return icon
+    let defaultIcon = '?d=mp'
+    let iconUrl = `https://gravatar.loli.net/avatar/${md5(mail.toLowerCase()) + defaultIcon}`
+    return iconUrl
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const getComment = () => {
+    const serverURL = 'https://w5lNowEP.api.lncldglobal.com'
+
+    var settings = {
+      "method": "GET",
+      "headers": {
+        "X-LC-Id": 'w5lNowEPFYa9KXq7nuThvrkX-gzGzoHsz',
+        "X-LC-Key": 'u39EI3MGigv5TfzUvcCKkVD4',
+        "Content-Type": "application/json"
+      },
+    }
+
+    fetch(`${serverURL}/1.1/classes/Comment?limit=6&order=-createdAt`,settings)
+      .then(response => response.json())
+      .then(data => {
+        const valineArray = data.results.map(function (e) {
+          return {
+            'avatar': getIcon(e.QQAvatar, e.mail),
+            'content': changeContent(e.comment),
+            'nick': e.nick,
+            'url': e.url + '#' + e.objectId,
+            'date': e.updatedAt,
+          }
+        })
+        saveToLocal.set('valine-newest-comments', JSON.stringify(valineArray), 10/(60*24))
+        generateHtml(valineArray)
+      }).catch(e => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      }) 
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('valine-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script>var visitorMail = "1970884166@qq.com";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://cdn.cbd.int/qrcodejs@1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
