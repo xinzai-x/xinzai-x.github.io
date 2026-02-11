@@ -131,23 +131,7 @@ markdown_it_plus:
 
 # 站内搜索
 search:
-  path: search.xml
+  path: search.xml          # 或 search.json，根据主题需要
   field: post
   content: true
-  template: ./search.xml
-
-algolia:
-  appId: "4LPZMHTMTM"
-  apiKey: "24c7e3283d04e2efaf7f6c1249febb2e"
-  adminApiKey: "7fe4fe0bef947aa1479eb76f10234b8b"
-  chunkSize: 5000
-  indexName: "Blog"
-  fields:
-    - content:strip:truncate,0,500
-    - excerpt:strip
-    - gallery
-    - permalink
-    - photos
-    - slug
-    - tags
-    - title
+  format: html              # 重要：很多主题需要这个

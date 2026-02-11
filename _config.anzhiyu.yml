@@ -96,30 +96,30 @@ author_status:
 # see https://blog.anheyu.com/posts/c27d.html#搜索系统
 # --------------------------------------
 
-# Algolia search
+# Algolia search，正文限制，无法搜索全
 algolia_search:
-  enable: true
+  enable: false
   hits:
     per_page: 6
   tags:
     # - 前端
     # - Hexo
 
-# Docsearch
+# Docsearch，无法使用
 # Apply and Option Docs: see https://docsearch.algolia.com/
 # Crawler Admin Console: see https://crawler.algolia.com/
 # Settings: https://www.algolia.com/
 docsearch:
   enable: false
-  appId: # see email
-  apiKey: # see email
-  indexName: # see email
+  appId: "N5079WLKI8"
+  apiKey: "1369cef0e83c383cabd05d792051e4d9"
+  indexName: "Blog"
   option:
 
 # Local search
 local_search:
-  enable: false
-  preload: true
+  enable: true
+  preload: false
   CDN:
 
 # Math (数学)
@@ -540,8 +540,8 @@ footer:
         text: 主题
       # - link: https://image.anheyu.com
       #   text: 图床
-      - link: https://beian.miit.gov.cn/
-        text: 粤ICP备-2026002149号
+      # - link: https://beian.miit.gov.cn/
+      #   text: 粤ICP备-2026002149号
     subTitle:
       enable: false
       # Typewriter Effect (打字效果)

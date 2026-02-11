@@ -6,8 +6,6 @@
 注意升级的时候，要把img图片取出来
 注意：换电脑时，博客前面的配置文件要移过去
 
-提交搜索：hexo algolia
-
 solitude主题官网：https://solitude.js.org/zh/
 图标：https://fontawesome.com/search?o=r&m=free
 评论官网：https://console.leancloud.app/login
