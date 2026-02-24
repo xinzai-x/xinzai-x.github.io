@@ -1,558 +1,171 @@
-blockquote {
-  border: var(--style-border-always);
-  background-color: var(--anzhiyu-secondbg);
-  color: var(--anzhiyu-secondtext);
-  border-radius: 8px;
-  margin: 1rem 0;
-  padding: 0.5rem 0.8rem;
-}
-#article-container {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-#article-container h1 .post-content,
-#article-container h2 .post-content,
-#article-container h3 .post-content,
-#article-container h4 .post-content,
-#article-container h5 .post-content,
-#article-container h6 .post-content {
-  line-height: 1.6;
-  border-top: 1px dashed var(--anzhiyu-theme-op);
-  padding-top: 1.5rem;
-  padding-left: 0;
-}
-#article-container a {
-  color: $theme-link-color;
-}
-#article-container a:hover {
-  text-decoration: underline;
-}
-#article-container img {
-  display: block;
-  margin: 0 auto 20px;
-  max-width: 100%;
-  transition: 0.3s;
-  border-radius: 8px;
-}
-#article-container p {
-  margin: 0 0 16px;
-}
-#article-container iframe {
-  margin: 0 0 20px;
-  border-radius: 12px;
-}
-#article-container kbd {
-  margin: 0 3px;
-  padding: 3px 5px;
-  border: 1px solid #b4b4b4;
-  border-radius: 3px;
-  background-color: #f8f8f8;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.25), 0 2px 1px 0 rgba(255,255,255,0.6) inset;
-  color: #34495e;
-  white-space: nowrap;
-  font-weight: 600;
-  font-size: 0.9em;
-  font-family: Monaco, 'Ubuntu Mono', monospace;
-  line-height: 1em;
-}
-#article-container h1 .headerlink {
-  float: right;
-  opacity: 0.08;
-  position: relative;
-  padding: 0px;
-  border: none;
-  line-height: 2;
-  font-size: 2rem;
-  border-radius: 8px !important;
-  text-decoration: none;
-  font-weight: 700;
-}
-#article-container h1 .headerlink::before {
-  font-size: 2rem;
-}
-#article-container > :first-child:is(h2) {
-  border-top: none;
-  padding-top: 0;
-  margin-top: 0;
-}
-#article-container h2 .headerlink {
-  float: right;
-  opacity: 0.08;
-  position: relative;
-  padding: 0px;
-  border: none;
-  line-height: 2;
-  font-size: 1.8rem;
-  border-radius: 8px !important;
-  text-decoration: none;
-  font-weight: 700;
-}
-#article-container h2 .headerlink::before {
-  font-size: 1.8rem;
-}
-#article-container h3 .headerlink,
-#article-container h4 .headerlink,
-#article-container h5 .headerlink,
-#article-container h6 .headerlink {
-  float: right;
-  opacity: 0.08;
-  position: relative;
-  padding: 0px;
-  border: none;
-  line-height: 2;
-  font-size: 1.3rem;
-  border-radius: 8px !important;
-  text-decoration: none;
-  font-weight: 700;
-}
-#article-container h3 .headerlink::before,
-#article-container h4 .headerlink::before,
-#article-container h5 .headerlink::before,
-#article-container h6 .headerlink::before {
-  font-size: 1.3rem;
-}
-#article-container a.headerlink::before {
-  font-family: "anzhiyufont";
-  content: '\f0c1';
-  float: right;
-  color: var(--headline-presudo);
-  transition: all 0.3s;
-}
-#article-container a.headerlink:hover:after {
-  color: var(--pseudo-hover);
-}
-#article-container a.headerlink h1:hover a.headerlink:after,
-#article-container a.headerlink h2:hover a.headerlink:after,
-#article-container a.headerlink h3:hover a.headerlink:after,
-#article-container a.headerlink h4:hover a.headerlink:after,
-#article-container a.headerlink h5:hover a.headerlink:after,
-#article-container a.headerlink h6:hover a.headerlink:after {
-  opacity: 1;
-}
-#article-container ol ol,
-#article-container ul ol,
-#article-container ol ul,
-#article-container ul ul {
-  padding-left: 20px;
-}
-#article-container ol li,
-#article-container ul li {
-  margin: 4px 0;
-}
-#article-container ol p,
-#article-container ul p {
-  margin: 0 0 8px;
-}
-#article-container.post-content h1:before {
-  margin-left: -26px;
-  font-size: 20px;
-}
-#article-container.post-content h1:hover:before {
-  color: $light-blue;
-}
-#article-container.post-content h2:before {
-  margin-left: -24px;
-  font-size: 18px;
-}
-#article-container.post-content h2:hover:before {
-  color: $light-blue;
-}
-#article-container.post-content h3:before {
-  margin-left: -22px;
-  font-size: 16px;
-}
-#article-container.post-content h3:hover:before {
-  color: $light-blue;
-}
-#article-container.post-content h4:before {
-  margin-left: -20px;
-  font-size: 14px;
-}
-#article-container.post-content h4:hover:before {
-  color: $light-blue;
-}
-#article-container.post-content h5:before {
-  margin-left: -18px;
-  font-size: 12px;
-}
-#article-container.post-content h5:hover:before {
-  color: $light-blue;
-}
-#article-container.post-content h6:before {
-  margin-left: -18px;
-  font-size: 12px;
-}
-#article-container.post-content h6:hover:before {
-  color: $light-blue;
-}
-#article-container.post-content ol p,
-#article-container.post-content ul p {
-  margin: 0 0 8px;
-}
-#article-container.post-content li::marker {
-  color: $light-blue;
-  font-weight: 600;
-  font-size: 1.05em;
-}
-#article-container.post-content li:hover::marker {
-  color: var(--pseudo-hover);
-}
-#article-container > :last-child {
-  margin-bottom: 0 !important;
-}
-#post .post_share {
-  margin: 8px 0 0;
-  width: fit-content;
-  min-width: 205px;
-}
-#post .tag_share {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-#post .tag_share .post-meta__box {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-#post .tag_share .post-meta__box__tag-list,
-#post .tag_share .post-meta__box__category-list {
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-}
-#post .tag_share .post-meta__box__tags,
-#post .tag_share .post-meta__box__categoryes {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px 12px;
-  width: fit-content;
-  border-radius: 8px;
-  font-size: 0.85em;
-  transition: all 0.2s ease-in-out;
-maxWidth768()
-}
-#post .tag_share .post-meta__box__tags {
-  margin: 0px 8px 0px 0;
-}
-#post .tag_share .post-meta__box__categoryes {
-  margin: 0px 8px 4px 0;
-}
-#post .tag_share .post-meta__box__categoryes:hover {
-  background: $light-blue;
-  color: var(--white);
-}
-#post .tag_share .post-meta .social-share {
-  font-size: 0.85em;
-}
-#post .tag_share .post-meta .social-share .social-share-icon {
-  margin: 0 4px;
-  width: 1.85em;
-  height: 1.85em;
-  font-size: 1.2em;
-  line-height: 1.85em;
-}
-#post .post-copyright {
-  background: var(--anzhiyu-secondbg);
-  padding: 1rem 1.3rem;
-  border: var(--style-border);
-  border-width: 1px;
-  transition: 0.3s;
-  position: relative;
-  margin: 80px 0 30px;
-  border-radius: 12px;
-}
-#post .post-copyright .copyright-cc-box {
-  position: absolute;
-  right: 0;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  pointer-events: none;
-}
-#post .post-copyright__author_box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 1.5rem;
-}
-#post .post-copyright__author_box .post-copyright__author_img {
-  width: 66px;
-  height: 66px;
-  margin: auto;
-  border-radius: 66px;
-  overflow: hidden;
-  position: absolute;
-  left: calc(50% - 33px);
-  top: -33px;
-  border: var(--style-border-always);
-  box-shadow: var(--anzhiyu-shadow-main);
-}
-#post .post-copyright__author_box .post-copyright__author_img:hover img.post-copyright__author_img_back {
-  z-index: 21;
-  transform: translateY(0px);
-}
-#post .post-copyright__author_box .post-copyright__author_img img.post-copyright__author_img_front {
-  z-index: 20;
-  transition: 0.3s;
-}
-#post .post-copyright__author_box .post-copyright__author_img img.post-copyright__author_img_back {
-  border-radius: 66px;
-  z-index: 10;
-  transition: 0.3s;
-}
-#post .post-copyright__author_box .post-copyright__author_img img {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-#post .post-copyright__author_box .post-copyright__author_name {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--anzhiyu-fontcolor);
-  line-height: 1;
-}
-#post .post-copyright__author_box .post-copyright__author_desc {
-  text-align: center;
-  font-size: 14px;
-  color: var(--anzhiyu-secondtext);
-  margin-top: 4px;
-}
-#post .post-copyright__post__info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 0.2rem;
-}
-#post .post-copyright__original,
-#post .post-copyright__reprint {
-  background: var(--anzhiyu-main);
-  color: var(--anzhiyu-wihite-font);
-  padding: 0.2rem 1rem;
-  font-size: 0.8rem;
-  border-radius: 8px;
-  margin-right: 0.5rem;
-  font-weight: bold;
-  line-height: 1.5;
-  white-space: nowrap;
-  user-select: none;
-}
-#post .post-copyright .anzhiyufont.anzhiyu-icon-copyright {
-  position: absolute;
-  font-size: 1.3em;
-  top: -71px;
-  right: -20px;
-  font-size: 8.3em;
-  z-index: -1;
-  color: var(--anzhiyu-main);
-}
-@media screen and (min-width: 1365px) {
-  #post .post-copyright .anzhiyufont.anzhiyu-icon-copyright {
-    z-index: 0;
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>5.弹窗 | 星仔极客</title><meta name="keywords" content="原生鸿蒙开发"><meta name="author" content="星仔"><meta name="copyright" content="星仔"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="5.弹窗"><meta name="application-name" content="5.弹窗"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta name="description" content="文本提示框点击 创建并显示文本提示框、对话框和操作菜单 &amp;#x2F;&amp;#x2F;轻提示，过一会自动消失promptAction.openToast(&amp;#123;  message: &amp;quot;提示文本&amp;quot;, 		&amp;#x2F;&amp;#x2F; 要显示的提示内容  duration: 数字,   			&amp;#x2F;&amp;#x2F; 可选，显示时长（毫秒），默"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://www.6673543.xyz/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/5-%E5%BC%B9%E7%AA%97/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: undefined,
+  diytitle: undefined,
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: false,
+  mainTone: undefined,
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 星仔","link":"链接: ","source":"来源: 星仔极客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'null',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '星仔极客',
+  title: '5.弹窗',
+  postAI: '',
+  pageFillDescription: ' 文本提示框,  菜单控制,  右键或长按菜单,  半模态页面,  全模态页面文本提示框点击创建并显示文本提示框对话框和操作菜单轻提示过一会自动消失提示文本要显示的提示内容数字可选显示时长毫秒默认约数字可选距离屏幕底部的距离如或强提示弹层提示不会自动消失标题文本提示文本要显示的提示内容按键文本颜色格式不用引入包标题文本提示文本要显示的提示内容按键文本颜色格式轻提示你好提示内容显示秒可选距离屏幕底部像素可选强提示获取上下文获取对象温馨提示确认登录吗您还没有输入账号呢取消确定弹窗错误成功后的回调表示点击的按钮索引用户点击了取消用户点击了确定执行登录逻辑你可以在这里调用登录函数调用异常温馨提示确认登录吗您还没有输入账号呢取消确定菜单控制文档中心右键或长按菜单没有选中事件菜单文本快捷键文本枚举值半模态页面文档中心文档中心非全屏弹窗式交互页面允许部分底层父视图可见半模态页面适用于展示简单的任务或信息面板是否显示半模态页面内容组件页面停顿的高度初始高度中等高度通常是屏幕高度的一半左右大高度通常是屏幕高度的左右固定高度隐藏关闭按钮枚举值半模态转场效果半模态页面标题设置半模态页面滚动时优先滚动哪个页面枚举值向上滑动时枚举值向下滑动时第一步自定义滚动容器第二步设置滚动组件的嵌套滚动属性嵌套滚动场景全模态页面文档中心文档中心半模态转场控制变量全模态转场控制变量确认一定要设置背景颜色第二步定义半模态展示界面通过构建模态展示界面选择乘车人第三步通过全模态接口调起全模态展示界面新拉起的模态面板默认显示在最上层通过全模态接口绑定模态展示界面属性支持自定义转场效果此处定义了轴横向入场有票第一步定义半模态转场效果确认订单',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-02-19 17:58:38',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
   }
-}
-#post .post-copyright-title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-weight: 500;
-  max-width: 70%;
-}
-#post .post-copyright-title span {
-  cursor: pointer;
-}
-#post .post-copyright-title:hover {
-  color: var(--anzhiyu-fontcolor);
-}
-#post .post-copyright .post-copyright__notice {
-  font-size: 12px;
-}
-#post .post-copyright .post-copyright__notice .post-copyright-info {
-  padding-left: 0;
-  color: var(--anzhiyu-secondtext);
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  text-align: center;
-maxWidth768()
-}
-#post .post-copyright .post-copyright__notice .post-copyright-info a:hover {
-  color: var(--anzhiyu-main);
-}
-#post .post-outdate-notice {
-  position: relative;
-  margin: 0 0 20px;
-  padding: 0.5em 1.2em;
-  border-radius: 3px;
-  background-color: $noticeOutdate-bg;
-  color: $noticeOutdate-color;
-  padding: 0.5em 1em 0.5em 2.6em;
-  border-left: 5px solid $noticeOutdate-border;
-}
-#post .post-outdate-notice:before {
-  font-family: "anzhiyufont";
-  content: '\e66f';
-  position: absolute;
-  top: 50%;
-  left: 0.9em;
-  color: $noticeOutdate-border;
-  transform: translateY(-50%);
-}
-#post .ads-wrap {
-  margin: 40px 0;
-}
-#post #content-inner.layout #article-container h1,
-#post #content-inner.layout #article-container h2,
-#post #content-inner.layout #article-container h3,
-#post #content-inner.layout #article-container h4,
-#post #content-inner.layout #article-container h5,
-#post #content-inner.layout #article-container h6 {
-  padding-left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row-reverse;
-}
-.post-ai-description {
-  background: var(--anzhiyu-secondbg);
-  border-radius: 12px;
-  padding: 12px 16px;
-  line-height: 1.3;
-  border: var(--style-border-always);
-  margin-bottom: 10px;
-}
-.ai-title {
-  display: flex;
-  color: var(--font-color);
-  border-radius: 8px;
-  align-items: center;
-  padding: 0 5px;
-}
-.ai-title i {
-  font-weight: 800;
-  font-size: 20px;
-  line-height: 20px;
-  height: 20px;
-}
-.ai-title .anzhiyufont.anzhiyu-icon-circle-dot {
-  margin-left: auto;
-  margin-right: 4px;
-  font-size: 14px;
-  opacity: 0;
-}
-.ai-title .anzhiyufont.anzhiyu-icon-circle-dot:active {
-  transform: scale(0.97);
-}
-.ai-title .anzhiyufont.anzhiyu-icon-arrow-rotate-right {
-  font-size: 14px;
-  margin-left: 4px;
-  cursor: pointer;
-}
-.ai-title .ai-title-text {
-  font-weight: bold;
-  margin-left: 8px;
-}
-#ai-tag {
-  font-size: 12px;
-  background-color: var(--anzhiyu-lighttext);
-  color: rgba(255,255,255,0.9);
-  border-radius: 4px;
-  line-height: 1;
-  padding: 4px 5px;
-  cursor: pointer;
-}
-#ai-Toggle {
-  font-size: 12px;
-  background: var(--anzhiyu-lighttext);
-  color: var(--anzhiyu-card-bg);
-  padding: 4px;
-  border-radius: 4px;
-  margin-left: 6px;
-  transform: scale(0.8);
-  cursor: pointer;
-  transition: 0.3s;
-  font-weight: bold;
-}
-#ai-Toggle:hover {
-  background: var(--anzhiyu-fontcolor);
-  color: var(--anzhiyu-card-bg);
-}
-#go-tianli-blog {
-  display: none;
-}
-.ai-explanation {
-  margin-top: 12px;
-  padding: 8px 12px;
-  background: var(--anzhiyu-card-bg);
-  border-radius: 8px;
-  border: var(--style-border-always);
-  font-size: 15px;
-  line-height: 1.4;
-}
-.ai-cursor {
-  display: inline-block;
-  width: 7px;
-  background: #333;
-  height: 16px;
-  margin-bottom: -2px;
-  opacity: 0.95;
-  margin-left: 3px;
-  transition: all 0.3s;
-}
-[data-theme="dark"] .ai-cursor {
-  background: #fff;
-}
-.ai-btn-box {
-  font-size: 15.5px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.ai-btn-item {
-  padding: 5px 10px;
-  margin: 10px 16px 0px 5px;
-  width: fit-content;
-  line-height: 1;
-  background: var(--anzhiyu-main);
-  color: #fff;
-  border-radius: 6px;
-  user-select: none;
-  transition: all 0.3s;
-  cursor: pointer;
-}
-.ai-btn-item:hover {
-  background: var(--anzhiyu-theme);
-}
-.ai-recommend {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.ai-recommend .ai-recommend-item {
-  width: calc(50% - 20px);
-  margin: 10px;
-  background: var(--anzhiyu-secondbg);
-  border-radius: 4px;
-  padding: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-  animation: slide-in 0.6s 0.1s backwards;
-}
-.ai-recommend .ai-recommend-item span.index {
-  padding: 4px;
-}
-.ai-recommend .ai-recommend-item:hover {
-  color: var(--anzhiyu-white);
-  background: var(--anzhiyu-theme);
-}
-.ai-recommend .ai-recommend-item:hover a {
-  color: var(--anzhiyu-white);
-}
-maxWidth768()
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">星仔极客</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><span> 笔记</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><span> 分类</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/tags/"><span> 标签</span></a></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" itemprop="url">原生鸿蒙开发</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>原生鸿蒙开发</span></a></span></div></div><h1 class="post-title" itemprop="name headline">5.弹窗</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2025-09-14T14:12:53.000Z" title="发表于 2025-09-14 22:12:53">2025-09-14</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2026-02-19T09:58:38.132Z" title="更新于 2026-02-19 17:58:38">2026-02-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为长沙"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>长沙</span></div></div></div><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://www.6673543.xyz/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/5-%E5%BC%B9%E7%AA%97/"><header><a class="post-meta-categories" href="/categories/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" itemprop="url">原生鸿蒙开发</a><a href="/tags/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" tabindex="-1" itemprop="url">原生鸿蒙开发</a><h1 id="CrawlerTitle" itemprop="name headline">5.弹窗</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">星仔</span><time itemprop="dateCreated datePublished" datetime="2025-09-14T14:12:53.000Z" title="发表于 2025-09-14 22:12:53">2025-09-14</time><time itemprop="dateCreated datePublished" datetime="2026-02-19T09:58:38.132Z" title="更新于 2026-02-19 17:58:38">2026-02-19</time></header><h1 id="文本提示框点击"><a class="markdownIt-Anchor" href="#文本提示框点击"></a> 文本提示框<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction">点击</a></h1>
+<p>创建并显示文本提示框、对话框和操作菜单</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//轻提示，过一会自动消失</span><br><span class="line">promptAction.openToast(&#123;</span><br><span class="line">  message: &quot;提示文本&quot;, 		// 要显示的提示内容</span><br><span class="line">  duration: 数字,   			// 可选，显示时长（毫秒），默认约 2000ms</span><br><span class="line">  bottom: 数字 			// 可选，距离屏幕底部的距离（如 &#x27;100px&#x27; 或 100）</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//强提示，弹层提示 不会自动消失</span><br><span class="line">uiContext: UIContext = this.getUIContext();</span><br><span class="line">promptAction: PromptAction = this.uiContext.getPromptAction();</span><br><span class="line">this.promptAction.showDialog(&#123;</span><br><span class="line">  title: &#x27;标题文本&#x27;,</span><br><span class="line">  message: &quot;提示文本&quot;, 		// 要显示的提示内容</span><br><span class="line">  buttons: [</span><br><span class="line">    &#123;</span><br><span class="line">      text: &#x27;按键文本&#x27;, color: 颜色格式</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">this.getUIContext().showAlertDialog(&#123;		// 不用引入包</span><br><span class="line">  title: &#x27;标题文本&#x27;,</span><br><span class="line">  message: &quot;提示文本&quot;, 		// 要显示的提示内容</span><br><span class="line">  buttons: [</span><br><span class="line">    &#123;</span><br><span class="line">      value: &#x27;按键文本&#x27;, fontColor: 颜色格式, action: () =&gt;&#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//轻提示</span><br><span class="line">promptAction.showToast(&#123;</span><br><span class="line">  message: &quot;你好！！&quot;, // 提示内容</span><br><span class="line">  duration: 2000,     // 显示 2 秒（可选）</span><br><span class="line">  bottom: &quot;100px&quot;     // 距离屏幕底部 100 像素（可选）</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//强提示</span><br><span class="line">let uiContext = this.getUIContext(); // 获取 UI 上下文</span><br><span class="line">let promptAction: PromptAction = uiContext.getPromptAction(); // 获取 PromptAction 对象</span><br><span class="line"></span><br><span class="line">try &#123;</span><br><span class="line">  promptAction.showDialog(</span><br><span class="line">    &#123;</span><br><span class="line">      title: &#x27;温馨提示&#x27;,</span><br><span class="line">      message: &#x27;确认登录吗？您还没有输入账号呢！&#x27;,</span><br><span class="line">      buttons: [</span><br><span class="line">        &#123; text: &#x27;取消&#x27;,color: &#x27;#888888&#x27; &#125;,</span><br><span class="line">        &#123; text: &#x27;确定&#x27;,color: &#x27;#000000&#x27;&#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;,</span><br><span class="line">    (err, data) =&gt; &#123;</span><br><span class="line">      if (err) &#123;</span><br><span class="line">        console.error(&#x27;弹窗错误：&#x27;, err);</span><br><span class="line">        return;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      // 成功后的回调，data.index 表示点击的按钮索引（0、1、2...）</span><br><span class="line">      if (data.index === 0) &#123;</span><br><span class="line">        console.info(&#x27;用户点击了取消&#x27;);</span><br><span class="line">      &#125; else if (data.index === 1) &#123;</span><br><span class="line">        console.info(&#x27;用户点击了确定，执行登录逻辑&#x27;);</span><br><span class="line">        // 你可以在这里调用登录函数</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  );</span><br><span class="line">&#125; catch (error) &#123;</span><br><span class="line">  console.error(&#x27;调用 showDialog 异常：&#x27;, error);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AlertDialog.show(&#123;</span><br><span class="line">  title: &quot;温馨提示&quot;,</span><br><span class="line">  message: &#x27;确认登录吗，您还没有输入账号呢！&#x27;,</span><br><span class="line">  buttons: [</span><br><span class="line">    &#123;</span><br><span class="line">      value: &#x27;取消&#x27;, fontColor: &#x27;#ccc&#x27;, action: () =&gt; &#123;&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      value: &#x27;确定&#x27;, fontColor: &#x27;#000&#x27;, action: () =&gt; &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="菜单控制文档中心"><a class="markdownIt-Anchor" href="#菜单控制文档中心"></a> 菜单控制<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-popup-and-menu-components-menu">文档中心</a></h1>
+<h2 id="右键或长按菜单"><a class="markdownIt-Anchor" href="#右键或长按菜单"></a> 右键或长按菜单</h2>
+<p>没有选中事件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Builder</span><br><span class="line">MyMenu() &#123;</span><br><span class="line">  Menu() &#123;</span><br><span class="line">    MenuItem(&#123; content: &quot;菜单文本&quot;, labelInfo: &quot;快捷键文本&quot; &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">Button(&#x27;click for Menu&#x27;)</span><br><span class="line">  .bindContextMenu(this.MyMenu, ResponseType.枚举值)</span><br></pre></td></tr></table></figure>
+<h1 id="半模态页面文档中心文档中心"><a class="markdownIt-Anchor" href="#半模态页面文档中心文档中心"></a> 半模态页面<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-sheet-transition">文档中心</a><a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sheet-page">文档中心</a></h1>
+<p>非全屏弹窗式交互页面，允许部分底层父视图可见，半模态页面适用于展示简单的任务或信息面板</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.bindSheet(是否显示, 半模态页面内容组件, &#123;</span><br><span class="line">  detents: [				//页面停顿的高度</span><br><span class="line">    SheetSize.MEDIUM, 		//初始高度：中等高度（通常是屏幕高度的一半左右）</span><br><span class="line">    SheetSize.LARGE, 		//大高度（通常是屏幕高度的90%左右）</span><br><span class="line">    600					//固定高度600</span><br><span class="line">  ],</span><br><span class="line">  showClose: false				// 隐藏关闭按钮</span><br><span class="line">  preferType: SheetType.枚举值,	//半模态转场效果</span><br><span class="line">  title: &#123; title: &#x27;半模态页面标题&#x27; &#125;,</span><br><span class="line">&#125;)</span><br><span class="line">//设置半模态页面滚动时优先滚动哪个页面</span><br><span class="line">.nestedScroll(&#123;</span><br><span class="line">  scrollForward: NestedScrollMode.枚举值,		//向上滑动时</span><br><span class="line">  scrollBackward: NestedScrollMode.枚举值,		//向下滑动时</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Entry</span><br><span class="line">@Component</span><br><span class="line">struct BindSheet &#123;</span><br><span class="line">  @State isShowSheet: boolean = false;</span><br><span class="line">  private items: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];</span><br><span class="line"></span><br><span class="line">  @Builder</span><br><span class="line">  SheetBuilder() &#123;</span><br><span class="line">    Column() &#123;</span><br><span class="line">      // 第一步：自定义滚动容器</span><br><span class="line">      List(&#123; space: &#x27;10vp&#x27; &#125;) &#123;</span><br><span class="line">        ForEach(this.items, (item: number) =&gt; &#123;</span><br><span class="line">          ListItem() &#123;</span><br><span class="line">            Text(String(item)).fontSize(16).fontWeight(FontWeight.Bold)</span><br><span class="line">          &#125;.width(&#x27;90%&#x27;).height(&#x27;80vp&#x27;).backgroundColor(&#x27;#ff53ecd9&#x27;).borderRadius(10)</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">      .alignListItem(ListItemAlign.Center)</span><br><span class="line">      .margin(&#123; top: &#x27;10vp&#x27; &#125;)</span><br><span class="line">      .width(&#x27;100%&#x27;)</span><br><span class="line">      .height(&#x27;100%&#x27;)</span><br><span class="line">      // 第二步：设置滚动组件的嵌套滚动属性</span><br><span class="line">      .nestedScroll(&#123;</span><br><span class="line">        scrollForward: NestedScrollMode.PARENT_FIRST,</span><br><span class="line">        scrollBackward: NestedScrollMode.SELF_FIRST,</span><br><span class="line">      &#125;)</span><br><span class="line"></span><br><span class="line">    &#125;.width(&#x27;100%&#x27;).height(&#x27;100%&#x27;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  build() &#123;</span><br><span class="line">    Column() &#123;</span><br><span class="line">      Button(&#x27;Open Sheet&#x27;).width(&#x27;90%&#x27;).height(&#x27;80vp&#x27;)</span><br><span class="line">        .onClick(() =&gt; &#123;</span><br><span class="line">          this.isShowSheet = !this.isShowSheet;</span><br><span class="line">        &#125;)</span><br><span class="line">        .bindSheet($$this.isShowSheet, this.SheetBuilder(), &#123;</span><br><span class="line">          detents: [SheetSize.MEDIUM, SheetSize.LARGE, 600],</span><br><span class="line">          preferType: SheetType.BOTTOM,</span><br><span class="line">          title: &#123; title: &#x27;嵌套滚动场景&#x27; &#125;,</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;.width(&#x27;100%&#x27;).height(&#x27;100%&#x27;)</span><br><span class="line">    .justifyContent(FlexAlign.Center)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="全模态页面文档中心文档中心"><a class="markdownIt-Anchor" href="#全模态页面文档中心文档中心"></a> 全模态页面<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-modal-transition">文档中心</a><a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-contentcover-page">文档中心</a></h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.bindContentCover($$this.isPresent, this.MyContentCoverBuilder(), &#123;</span><br><span class="line">  transition: TransitionEffect.translate(&#123; x: 500 &#125;)</span><br><span class="line">    .animation(&#123; curve: curves.springMotion(0.6, 0.8) &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123; curves &#125; from &#x27;@kit.ArkUI&#x27;;</span><br><span class="line"></span><br><span class="line">@Entry</span><br><span class="line">@Component</span><br><span class="line">struct BindContentCover &#123;</span><br><span class="line">  // 半模态转场控制变量</span><br><span class="line">  @State isSheetShow: boolean = false;</span><br><span class="line">  // 全模态转场控制变量</span><br><span class="line">  @State isPresent: boolean = false;</span><br><span class="line"></span><br><span class="line">  @Builder</span><br><span class="line">  MyContentCoverBuilder() &#123;</span><br><span class="line">    Column() &#123;</span><br><span class="line">      Text(&#x27;确认&#x27;)</span><br><span class="line">        .width(&#x27;90%&#x27;)</span><br><span class="line">        .height(40)</span><br><span class="line">        .textAlign(TextAlign.Center)</span><br><span class="line">        .borderRadius(10)</span><br><span class="line">        .fontColor(Color.White)</span><br><span class="line">        .backgroundColor(0x007dfe)</span><br><span class="line">        .onClick(() =&gt; &#123;</span><br><span class="line">          this.isPresent = !this.isPresent;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;.justifyContent(FlexAlign.Center)</span><br><span class="line">    .size(&#123; width: &#x27;100%&#x27;, height: &#x27;100%&#x27; &#125;)</span><br><span class="line">    .backgroundColor(0xf5f5f5)				//一定要设置背景颜色</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 第二步：定义半模态展示界面</span><br><span class="line">  // 通过@Builder构建模态展示界面</span><br><span class="line">  @Builder</span><br><span class="line">  MySheetBuilder() &#123;</span><br><span class="line">    Column() &#123;</span><br><span class="line">      Column() &#123;</span><br><span class="line">        Text(&#x27;+ 选择乘车人&#x27;)</span><br><span class="line">          .fontSize(18)</span><br><span class="line">          .fontColor(Color.Orange)</span><br><span class="line">          .padding(&#123; top: 10, bottom: 10 &#125;)</span><br><span class="line">          .width(&#x27;60%&#x27;)</span><br><span class="line">          .textAlign(TextAlign.Center)</span><br><span class="line">          .onClick(() =&gt; &#123;</span><br><span class="line">            // 第三步：通过全模态接口调起全模态展示界面，新拉起的模态面板默认显示在最上层</span><br><span class="line">            this.isPresent = !this.isPresent;</span><br><span class="line">          &#125;)	// 通过全模态接口，绑定模态展示界面MyContentCoverBuilder。transition属性支持自定义转场效果，此处定义了x轴横向入场</span><br><span class="line">          .bindContentCover($$this.isPresent, this.MyContentCoverBuilder(), &#123;</span><br><span class="line">            transition: TransitionEffect.translate(&#123; x: 500 &#125;)</span><br><span class="line">              .animation(&#123; curve: curves.springMotion(0.6, 0.8) &#125;)</span><br><span class="line">          &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">      .padding(&#123; top: 60 &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  build() &#123;</span><br><span class="line">    Column() &#123;</span><br><span class="line">      Row() &#123;</span><br><span class="line">        Text(&#x27;有票&#x27;)</span><br><span class="line">          .fontColor(Color.Blue)</span><br><span class="line">          .width(&#x27;25%&#x27;)</span><br><span class="line">      &#125;</span><br><span class="line">      .margin(&#123; top: 200, bottom: 30 &#125;)</span><br><span class="line">      .backgroundColor(Color.White)</span><br><span class="line">      .onClick(() =&gt; &#123;</span><br><span class="line">        this.isSheetShow = !this.isSheetShow;</span><br><span class="line">      &#125;)</span><br><span class="line">      // 第一步：定义半模态转场效果</span><br><span class="line">      .bindSheet($$this.isSheetShow, this.MySheetBuilder(), &#123;</span><br><span class="line">        height: SheetSize.MEDIUM,</span><br><span class="line">        title: &#123; title: &quot;确认订单&quot; &#125;,</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    .width(&#x27;100%&#x27;)</span><br><span class="line">    .height(&#x27;100%&#x27;)</span><br><span class="line">    .backgroundColor(&#x27;#30aaaaaa&#x27;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">星仔</div><div class="post-copyright__author_desc">星仔个人博客</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://www.6673543.xyz/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/5-%E5%BC%B9%E7%AA%97/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://www.6673543.xyz/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/5-%E5%BC%B9%E7%AA%97/')">5.弹窗</span></a></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.6673543.xyz" target="_blank">星仔极客</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>原生鸿蒙开发<span class="tagsPageCount">10</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/4-%E7%95%8C%E9%9D%A2%E5%B8%83%E5%B1%80%E3%80%81%E5%8A%A8%E7%94%BB/"><img class="prev-cover" src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">4.界面布局、动画</div></div></a></div><div class="next-post pull-right"><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/6-%E5%AD%98%E5%82%A8%E3%80%81%E6%9D%83%E9%99%90/"><img class="next-cover" src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">6.存储、权限</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2026/02/01/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/9-%E6%A1%88%E4%BE%8B/" title="9.案例"><img class="cover" src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2026-02-01</div><div class="title">9.案例</div></div></a></div><div><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/8.%E5%AF%BC%E8%88%AA%E3%80%81%E9%A1%B5%E9%9D%A2%E8%B7%AF%E7%94%B1/" title="8.导航、页面路由"><img class="cover" src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-09-14</div><div class="title">8.导航、页面路由</div></div></a></div><div><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/7-%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/" title="7.数据请求"><img class="cover" src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-09-14</div><div class="title">7.数据请求</div></div></a></div><div><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/6-%E5%AD%98%E5%82%A8%E3%80%81%E6%9D%83%E9%99%90/" title="6.存储、权限"><img class="cover" src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-09-14</div><div class="title">6.存储、权限</div></div></a></div><div><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/4-%E7%95%8C%E9%9D%A2%E5%B8%83%E5%B1%80%E3%80%81%E5%8A%A8%E7%94%BB/" title="4.界面布局、动画"><img class="cover" src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-09-14</div><div class="title">4.界面布局、动画</div></div></a></div><div><a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/3-UI%E7%BB%84%E4%BB%B6/" title="3.UI组件"><img class="cover" src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-09-14</div><div class="title">3.UI组件</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description">日常笔记和生活分享！</div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://bu.dusays.com/2023/05/13/645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E6%8F%90%E7%A4%BA%E6%A1%86%E7%82%B9%E5%87%BB"><span class="toc-number">1.</span> <span class="toc-text"> 文本提示框点击</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%8F%9C%E5%8D%95%E6%8E%A7%E5%88%B6%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">2.</span> <span class="toc-text"> 菜单控制文档中心</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%B3%E9%94%AE%E6%88%96%E9%95%BF%E6%8C%89%E8%8F%9C%E5%8D%95"><span class="toc-number">2.1.</span> <span class="toc-text"> 右键或长按菜单</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%8A%E6%A8%A1%E6%80%81%E9%A1%B5%E9%9D%A2%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">3.</span> <span class="toc-text"> 半模态页面文档中心文档中心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%A8%E6%A8%A1%E6%80%81%E9%A1%B5%E9%9D%A2%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">4.</span> <span class="toc-text"> 全模态页面文档中心文档中心</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/02/01/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/9-%E6%A1%88%E4%BE%8B/" title="9.案例"><img src="https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="9.案例"/></a><div class="content"><a class="title" href="/2026/02/01/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/9-%E6%A1%88%E4%BE%8B/" title="9.案例">9.案例</a><time datetime="2026-02-01T07:08:25.000Z" title="发表于 2026-02-01 15:08:25">2026-02-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/28/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6/C%E8%AF%AD%E8%A8%80/0-C%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/" title="0.C语言概述"><img src="https://s2.loli.net/2026/01/28/gCKcZoemAiI1wpa.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="0.C语言概述"/></a><div class="content"><a class="title" href="/2026/01/28/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6/C%E8%AF%AD%E8%A8%80/0-C%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/" title="0.C语言概述">0.C语言概述</a><time datetime="2026-01-28T05:41:10.000Z" title="发表于 2026-01-28 13:41:10">2026-01-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/10/19/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE%E5%A4%A7%E5%85%A8/" title="学术文献大全"><img src="https://s2.loli.net/2025/12/28/dhVaA6NUC8DO5Te.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="学术文献大全"/></a><div class="content"><a class="title" href="/2025/10/19/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE%E5%A4%A7%E5%85%A8/" title="学术文献大全">学术文献大全</a><time datetime="2025-10-19T06:49:50.000Z" title="发表于 2025-10-19 14:49:50">2025-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/05/%E6%9D%82%E9%A1%B9/TOS/" title="星海物联用户服务协议">星海物联用户服务协议</a><time datetime="2025-10-05T05:42:28.000Z" title="发表于 2025-10-05 13:42:28">2025-10-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/09/25/%E8%BD%AF%E6%B5%8B/2-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" title="2.功能测试"><img src="https://s2.loli.net/2025/12/28/t2mAjy3aJKMopqH.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2.功能测试"/></a><div class="content"><a class="title" href="/2025/09/25/%E8%BD%AF%E6%B5%8B/2-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" title="2.功能测试">2.功能测试</a><time datetime="2025-09-25T06:28:25.000Z" title="发表于 2025-09-25 14:28:25">2025-09-25</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2026 By <a class="footer-bar-link" href="/" title="星仔" target="_blank">星仔</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">8</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><span> 笔记</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><span> 分类</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/tags/"><span> 标签</span></a></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 0.88rem;">C语言<sup>1</sup></a><a href="/tags/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" style="font-size: 0.88rem;">Linux基础命令<sup>1</sup></a><a href="/tags/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 0.88rem;">MySQL数据库<sup>3</sup></a><a href="/tags/Windows%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" style="font-size: 0.88rem;">Windows相关设置<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2CDN%E8%A7%A3%E6%9E%90/" style="font-size: 0.88rem;">博客CDN解析<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%9B%B8%E5%85%B3/" style="font-size: 0.88rem;">博客搭建相关<sup>1</sup></a><a href="/tags/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" style="font-size: 0.88rem;">原生鸿蒙开发<sup>10</sup></a><a href="/tags/%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE/" style="font-size: 0.88rem;">学术文献<sup>1</sup></a><a href="/tags/%E6%98%9F%E6%B5%B7%E7%89%A9%E8%81%94%E5%8D%8F%E8%AE%AE/" style="font-size: 0.88rem;">星海物联协议<sup>1</sup></a><a href="/tags/%E7%A7%98%E5%AF%86%E7%A7%91%E6%8A%80/" style="font-size: 0.88rem;">秘密科技<sup>1</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E5%BA%93/" style="font-size: 0.88rem;">资源库<sup>1</sup></a><a href="/tags/%E8%BD%AF%E6%B5%8B/" style="font-size: 0.88rem;">软测<sup>2</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button><button id="go-down" type="button" title="直达底部" onclick="anzhiyu.scrollToDest(document.body.scrollHeight, 500)"><i class="anzhiyufont anzhiyu-icon-arrow-down"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div></div></body></html>
