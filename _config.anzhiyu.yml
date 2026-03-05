@@ -7,7 +7,7 @@ menu:
   友链:
     小伙伴: /link/ || anzhiyu-icon-link
     资源库: https://www.6673543.xyz/2025/08/29/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E8%B5%84%E6%BA%90%E5%BA%93/ || anzhiyu-icon-artstation
-    音乐网: http://ainm.cc/c/music/ || anzhiyu-icon-music
+    图床: https://img.6673543.xyz/ || anzhiyu-icon-instagram
   #   朋友圈: /fcircle/ || anzhiyu-icon-artstation
   #   留言板: /comments/ || anzhiyu-icon-envelope
   #  常用文章:
@@ -791,7 +791,7 @@ subtitle:
 
 # Loading Animation (加载动画)
 preloader:
-  enable: true
+  enable: false
   # source
   # 1. fullpage-loading
   # 2. pace (progress bar)
@@ -1098,7 +1098,7 @@ friends_vue:
 
 # 深色模式粒子效果canvas
 universe:
-  enable: true
+  enable: false
 
 # 页面卡片顶部气泡升起效果
 bubble:
