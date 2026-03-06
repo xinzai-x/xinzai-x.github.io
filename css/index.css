@@ -2789,7 +2789,7 @@ i.anzhiyu-icon-hashtag {
   --anzhiyu-red: #ff3842;
   --anzhiyu-pink: #ff7c7c;
   --anzhiyu-green: #57bd6a;
-  --anzhiyu-fontcolor: #f7f7fa;
+  --anzhiyu-fontcolor: #fff;
   --anzhiyu-background: #18171d;
   --anzhiyu-reverse: #fff;
   --anzhiyu-maskbg: rgba(0,0,0,0.6);
@@ -2798,7 +2798,7 @@ i.anzhiyu-icon-hashtag {
   --anzhiyu-ahoverbg: #fff;
   --anzhiyu-scrollbar: rgba(200,200,223,0.4);
   --anzhiyu-lighttext: #f2b94b;
-  --anzhiyu-secondtext: #a1a2b8;
+  --anzhiyu-secondtext: #fff;
   --anzhiyu-scrollbar: rgba(200,200,223,0.4);
   --anzhiyu-card-btn-bg: #30343f;
   --anzhiyu-post-blockquote-bg: #000;
