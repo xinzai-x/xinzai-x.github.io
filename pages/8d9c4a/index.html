@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>6.存储、权限 | Evan&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/img/favicon.ico">
+    <meta name="description" content="web前端技术博客,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,React,python,css3,html5,Node,git,github等技术文章。">
+    <meta name="keywords" content="前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试,JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github,markdown">
+    <meta name="baidu-site-verification" content="7F55weZDDc">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/assets/css/0.styles.e9010ef2.css" as="style"><link rel="preload" href="/assets/js/app.eebfd3c3.js" as="script"><link rel="preload" href="/assets/js/2.09d00fe7.js" as="script"><link rel="preload" href="/assets/js/21.42523dfa.js" as="script"><link rel="prefetch" href="/assets/js/10.654b8300.js"><link rel="prefetch" href="/assets/js/11.07cca71a.js"><link rel="prefetch" href="/assets/js/12.c046ae5d.js"><link rel="prefetch" href="/assets/js/13.e02131ee.js"><link rel="prefetch" href="/assets/js/14.4c4cd369.js"><link rel="prefetch" href="/assets/js/15.dc8b8a81.js"><link rel="prefetch" href="/assets/js/16.4f677de2.js"><link rel="prefetch" href="/assets/js/17.8eda6121.js"><link rel="prefetch" href="/assets/js/18.a4fa7080.js"><link rel="prefetch" href="/assets/js/19.b8cf3e24.js"><link rel="prefetch" href="/assets/js/20.36607b7e.js"><link rel="prefetch" href="/assets/js/22.527df5d8.js"><link rel="prefetch" href="/assets/js/23.ec269f46.js"><link rel="prefetch" href="/assets/js/24.6d24cb43.js"><link rel="prefetch" href="/assets/js/25.020bd99d.js"><link rel="prefetch" href="/assets/js/26.5e33c1f6.js"><link rel="prefetch" href="/assets/js/27.47f27447.js"><link rel="prefetch" href="/assets/js/28.83b06217.js"><link rel="prefetch" href="/assets/js/29.b3cbc2e4.js"><link rel="prefetch" href="/assets/js/3.9e7c08e0.js"><link rel="prefetch" href="/assets/js/30.27736aa7.js"><link rel="prefetch" href="/assets/js/31.75dbdd39.js"><link rel="prefetch" href="/assets/js/32.54ec9eea.js"><link rel="prefetch" href="/assets/js/33.34c6b0d0.js"><link rel="prefetch" href="/assets/js/34.40e5fdd1.js"><link rel="prefetch" href="/assets/js/35.cd53ab43.js"><link rel="prefetch" href="/assets/js/36.9424e434.js"><link rel="prefetch" href="/assets/js/37.91b4671d.js"><link rel="prefetch" href="/assets/js/38.26400dd9.js"><link rel="prefetch" href="/assets/js/4.f868a1c7.js"><link rel="prefetch" href="/assets/js/5.61cb8e31.js"><link rel="prefetch" href="/assets/js/6.be169579.js"><link rel="prefetch" href="/assets/js/7.d8519902.js"><link rel="prefetch" href="/assets/js/8.e9b40503.js"><link rel="prefetch" href="/assets/js/9.abc4380d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e9010ef2.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/logo.png" alt="Evan's blog" class="logo"> <span class="site-name can-hide">Evan's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><a href="/web/" class="link-title">前端</a> <span class="title" style="display:none;">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>前端文章</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/8143cc480faf9a11/" class="nav-link">JavaScript</a></li></ul></li><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/javascript/" class="nav-link">《JavaScript教程》</a></li><li class="dropdown-subitem"><a href="/note/js/" class="nav-link">《JavaScript高级程序设计》</a></li><li class="dropdown-subitem"><a href="/note/es6/" class="nav-link">《ES6 教程》</a></li><li class="dropdown-subitem"><a href="/note/vue/" class="nav-link">《Vue》</a></li><li class="dropdown-subitem"><a href="/note/react/" class="nav-link">《React》</a></li><li class="dropdown-subitem"><a href="/note/typescript-axios/" class="nav-link">《TypeScript 从零实现 axios》</a></li><li class="dropdown-subitem"><a href="/note/git/" class="nav-link">《Git》</a></li><li class="dropdown-subitem"><a href="/pages/51afd6/" class="nav-link">TypeScript</a></li><li class="dropdown-subitem"><a href="/pages/4643cd/" class="nav-link">JS设计模式总结</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="页面" class="dropdown-title"><a href="/ui/" class="link-title">页面</a> <span class="title" style="display:none;">页面</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/8309a5b876fc95e3/" class="nav-link">HTML</a></li><li class="dropdown-item"><!----> <a href="/pages/0a83b083bdf257cb/" class="nav-link">CSS</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术" class="dropdown-title"><a href="/technology/" class="link-title">技术</a> <span class="title" style="display:none;">技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/9a7ee40fc232253e/" class="nav-link">技术文档</a></li><li class="dropdown-item"><!----> <a href="/pages/4c778760be26d8b3/" class="nav-link">GitHub技巧</a></li><li class="dropdown-item"><!----> <a href="/pages/117708e0af7f0bd9/" class="nav-link">Nodejs</a></li><li class="dropdown-item"><!----> <a href="/pages/41f87d890d0a02af/" class="nav-link">博客搭建</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><a href="/more/" class="link-title">更多</a> <span class="title" style="display:none;">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/f2a556/" class="nav-link">学习</a></li><li class="dropdown-item"><!----> <a href="/pages/aea6571b7a8bae86/" class="nav-link">面试</a></li><li class="dropdown-item"><!----> <a href="/pages/2d615df9a36a98ed/" class="nav-link">心情杂货</a></li><li class="dropdown-item"><!----> <a href="/pages/baaa02/" class="nav-link">实用技巧</a></li><li class="dropdown-item"><!----> <a href="/friends/" class="nav-link">友情链接</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><a href="/pages/beb6c0bd8a66cea6/" class="nav-link">收藏</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="https://fastly.jsdelivr.net/gh/xugaoyi/image_store/blog/20200103123203.jpg"> <div class="blogger-info"><h3>Evan Xu</h3> <span>前端界的小学生</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><a href="/web/" class="link-title">前端</a> <span class="title" style="display:none;">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>前端文章</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/8143cc480faf9a11/" class="nav-link">JavaScript</a></li></ul></li><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/javascript/" class="nav-link">《JavaScript教程》</a></li><li class="dropdown-subitem"><a href="/note/js/" class="nav-link">《JavaScript高级程序设计》</a></li><li class="dropdown-subitem"><a href="/note/es6/" class="nav-link">《ES6 教程》</a></li><li class="dropdown-subitem"><a href="/note/vue/" class="nav-link">《Vue》</a></li><li class="dropdown-subitem"><a href="/note/react/" class="nav-link">《React》</a></li><li class="dropdown-subitem"><a href="/note/typescript-axios/" class="nav-link">《TypeScript 从零实现 axios》</a></li><li class="dropdown-subitem"><a href="/note/git/" class="nav-link">《Git》</a></li><li class="dropdown-subitem"><a href="/pages/51afd6/" class="nav-link">TypeScript</a></li><li class="dropdown-subitem"><a href="/pages/4643cd/" class="nav-link">JS设计模式总结</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="页面" class="dropdown-title"><a href="/ui/" class="link-title">页面</a> <span class="title" style="display:none;">页面</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/8309a5b876fc95e3/" class="nav-link">HTML</a></li><li class="dropdown-item"><!----> <a href="/pages/0a83b083bdf257cb/" class="nav-link">CSS</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术" class="dropdown-title"><a href="/technology/" class="link-title">技术</a> <span class="title" style="display:none;">技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/9a7ee40fc232253e/" class="nav-link">技术文档</a></li><li class="dropdown-item"><!----> <a href="/pages/4c778760be26d8b3/" class="nav-link">GitHub技巧</a></li><li class="dropdown-item"><!----> <a href="/pages/117708e0af7f0bd9/" class="nav-link">Nodejs</a></li><li class="dropdown-item"><!----> <a href="/pages/41f87d890d0a02af/" class="nav-link">博客搭建</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><a href="/more/" class="link-title">更多</a> <span class="title" style="display:none;">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/f2a556/" class="nav-link">学习</a></li><li class="dropdown-item"><!----> <a href="/pages/aea6571b7a8bae86/" class="nav-link">面试</a></li><li class="dropdown-item"><!----> <a href="/pages/2d615df9a36a98ed/" class="nav-link">心情杂货</a></li><li class="dropdown-item"><!----> <a href="/pages/baaa02/" class="nav-link">实用技巧</a></li><li class="dropdown-item"><!----> <a href="/friends/" class="nav-link">友情链接</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><a href="/pages/beb6c0bd8a66cea6/" class="nav-link">收藏</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/pages/4cfcf1/" class="sidebar-link">0.ArkTS基础语法</a></li><li><a href="/pages/1831c5/" class="sidebar-link">8.导航、页面路由</a></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><ul class="breadcrumbs" data-v-06225672><li data-v-06225672><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-06225672></a></li> <li data-v-06225672><a href="/categories/?category=%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91" title="分类" data-v-06225672>原生鸿蒙开发</a></li></ul> <div class="info" data-v-06225672><div title="作者" class="author iconfont icon-touxiang" data-v-06225672><a href="javascript:;" data-v-06225672>星仔极客</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2025-09-14</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABKFJREFUSA3tVl1oFVcQnrMbrak3QUgkya1akpJYcrUtIqW1JvFBE9LiQ5v6JmJpolbMg32rVrhgoYK0QiMY6i9Y6EMaW5D+xFJaTYItIuK2Kr3+BJNwkxBj05sQY3b3nM6cs2dv9t7NT/vQJw/sndk5M/PNzJkzewGerP+pAmy+ON8lLzUJgA8ZYxYIYZmGYRnctDaWvJJAmTtfP1pvXsBCCPP8QFcCaRkZYACgDZFO4stNIcBCajEOlmmC9XpJ9bAGCaPaPmzPl32dvLSVu3BWCTQs0XQQ6g0DYgwLIoAZbBCdW/i+781o1VVlm/410mw4h06Y7bIPHNyWDyL4FHkX03Q8SrzNhZTZriieckWt7cL6MM85YcLpsi/7O9/iXFT6MswI0DmmpkSaJ0qLxFIm3+i1THHB3zmBH3PYx9CcykcLOeQVVa7QtdxTgQgEleX2AjHYfwA+2ddV77ruGoJUbhGDI09YSNXyMpUt5ylOzxgbUmtOp7NmbNt8v3arjTBfYELmLUV+M+nSawNNAUqpT3ClJWg5I3BLT+cGW/DXNGCa6tx1aakCGEigArTn4TDIPdrXXYKCZNrHLMCOEPvHBlLQ99s9eHB7EB6NTki73CVPQ2F5MSx/uRQixfmq7rK0wYD8w8E905bnPDfwoWs/rfv93NWN/ZfvwsLIU7A09gxECyISeGJkHAau98L97tuw7NXnoPyNF8FcYGLGKsOs0mN3OEyec9esGW/ZEl945dTP34wlR2FZVQWU1q0Cw8Tr7p+hgLLNL0FPxx/Q35mA8aEUrH6nCgwEl0tn7wUiZYJnNRh6DK4UH/k0lfyrsBKdPVv/AriGIQcEDQZ65LBAGe2Rzui9Ybjz7XUppz1/uKBbyVPGkN3ZAeC6hr0x7Nr38N5+EqkoOm17xpoqR9ohQF55ERSvr4Dkr3chNfC3DMzGJlNBElW8w9nsGQvhNGIzDkXzCg8cLK951xHsFBlTJspJNi3ZFIMF2AeDV3q8DNOB+YHi6QTrChDIWDBRi5U5f+ZMfJLu3ccrqxtdxk4SKH336LFxSmkqefwU5T8fhdSdQf9IVKD6aNiwI/hnmcAZ91isYMJIaCUCx9W098+LgruikeTqzqqxKPUwqJyCPJiyemVVZBOijDGjD38Os0jOiSPL1z3SPjXNANbiNPXAdzTfukjjuknNBbyz3nwgTd3AVFqUJ5hpHlq9MveLnWwttUfoygBmvVjuikxND3znrhsELnZk7k+OjIGxeNEkomyLVta0xxn+HZhjBc4YZ/AFjHjz9u3xRZl2BN4aq9nFwWh16IrQ1aHHEd3j1+4/dB9OtH4e29A2H1DyHQRmOSfQZ1Fy7MHBTGB6J/Djq6p3OxyO2cB+4Car7v/o3GXgfAkj23+x9ID1Teoamo/SXcbvSf2PX7Vc8DdCmE1vN9di+32P9/5YR3vLnhCVGUWBjEkr3yh4H8v9CzmsbdhzOKzsJKM90iFdaTMjRPhGVsakRvOaRidljo6H6G7j+ctrJpsP+4COhDIl0La2+FS4+5mlocBaXY5QnGZysIBYoeSsl5qQzrSj/cgNrfuEzlWBfwA+EjrZyWUvpAAAAABJRU5ErkJggg==">6.存储、权限<!----></h1>  <div class="theme-vdoing-content content__default"><h1 id="页面级ui状态存储文档中心"><a href="#页面级ui状态存储文档中心" class="header-anchor">#</a> 页面级UI状态存储<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-localstorage" target="_blank" rel="noopener noreferrer">文档中心<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h1> <p>通过@Entry装饰器接收的参数可以在页面内共享同一个<strong>LocalStorage</strong>实例。LocalStorage支持UIAbility实例内多个页面间状态共享</p> <p>页面内数据共享</p> <div class="language-arkts line-numbers-mode"><pre class="language-text"><code>const data: Record&lt;string, string&gt; = {
+  'uname': '张三',
+  'age': '18'
+}
+const storage = new LocalStorage(data)
+@Entry(storage)
+@Component
+struct LocalStorageCase {
+  @LocalStorageLink('uname')
+  message: string = '';
+
+  build() {
+    Column({ space: 20 }) {
+      Text(this.message)
+      Text('------------------------------')
+      StorageChild01()
+      Button('改变-父')
+        .onClick(() =&gt; {
+          this.message = '法外狂徒'
+        })
+    }.height('100%').width('100%')
+  }
+}
+
+@Component
+struct StorageChild01 {
+  @LocalStorageLink('uname')
+  message: string = '';
+
+  build() {
+    Column({ space: 20 }) {
+      Text(this.message)
+      Button('改变-子')
+        .onClick(() =&gt; {
+          this.message = '法外狂徒1'
+        })
+    }
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br></div></div><p>传递给指定页面</p> <p>EntryAbility.ets 已经有了直接添加代码即可</p> <div class="language-arkts line-numbers-mode"><pre class="language-text"><code>onWindowStageCreate(windowStage: window.WindowStage): void {
+  hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+  const data: Record&lt;string, string&gt; = {
+    'uname': '张三',
+    'age': '18'
+  }
+  const storage = new LocalStorage(data)
+  //只要是当前windowStage内的页面，都可以共享这份数据
+  windowStage.loadContent('pages/02/LocalStorageCase01', storage);
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><div class="language-arkts line-numbers-mode"><pre class="language-text"><code>const storage = LocalStorage.getShared()
+@Entry(storage)
+@Component
+struct LocalStorageCase {
+  @LocalStorageLink('uname')
+  message: string = '';
+
+  build() {
+    Column({ space: 20 }) {
+      Text(this.message)
+      Text('------------------------------')
+      Button('改变-父')
+        .onClick(() =&gt; {
+          this.message = '法外狂徒'
+        })
+      Button('跳转-父')
+        .onClick(() =&gt; {
+          router.pushUrl({ url: 'pages/02/LocalStorageCase02' })
+        })
+    }.height('100%').width('100%')
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><div class="language-arkts line-numbers-mode"><pre class="language-text"><code>const storage = LocalStorage.getShared()
+
+@Entry(storage)
+@Component
+struct LocalStorageCase02 {
+  @LocalStorageLink('uname')
+  message: string = '';
+
+  build() {
+    Column({ space: 20 }) {
+      Text(this.message)
+      Button('改变-02页面')
+        .onClick(() =&gt; {
+          this.message = '老实巴交';
+        })
+      Button('返回01')
+        .onClick(() =&gt; {
+          router.back();
+        })
+    }.height('100%').width('100%')
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><h1 id="应用全局的ui状态存储文档中心"><a href="#应用全局的ui状态存储文档中心" class="header-anchor">#</a> 应用全局的UI状态存储<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-appstorage" target="_blank" rel="noopener noreferrer">文档中心<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h1> <p>取出的结果是否有UI更新的需求－UI修饰符</p> <div class="language-arkts line-numbers-mode"><pre class="language-text"><code>// 页面1，当这里变为false则页面2变为false
+AppStorage.setOrCreate('isLoggedIn', false);
+
+// 页面2
+@StorageLink('isLoggedIn') isLoggedIn: boolean = true;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h1 id="持久化存储ui状态文档中心"><a href="#持久化存储ui状态文档中心" class="header-anchor">#</a> 持久化存储UI状态<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-persiststorage" target="_blank" rel="noopener noreferrer">文档中心<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h1> <p>持久化存储选定的AppStorage属性，持久化和读回UI的能力都需要依赖AppStorage</p> <p>持久化变量最好是小于2kb的数据，如果开发者需要存储大量的数据，建议使用数据库api</p> <p>查看：/data/app/el2/100/base/com.xinzai.myapplication/haps/entry/files/persistent_storage</p> <img src="https://s2.loli.net/2025/12/31/M2IrSpZjBEm16AX.png" alt="这里寻找" style="zoom:50%;"> <div class="language-arkts line-numbers-mode"><pre class="language-text"><code>//只能在UI界面声明，否则无法持久化
+AppStorage.setOrCreate('isLoggedIn', true);		//需要设置的时候持久化
+PersistentStorage.persistProp('名字', 初始值);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><div class="language-arkts line-numbers-mode"><pre class="language-text"><code>PersistentStorage.persistProp('userInfo', 'xinzai')		//定义
+
+AppStorage.setOrCreate('userInfo', 'test') //存：如果没有setOrCreate，更新set
+AppStorage.get('userInfo')
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h1 id="首选项数据持久化文档中心"><a href="#首选项数据持久化文档中心" class="header-anchor">#</a> 首选项数据持久化<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-preferences" target="_blank" rel="noopener noreferrer">文档中心<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h1> <p>首选项</p> <ul><li>每一个key的value的长度最大为8kb</li> <li>创建首选项-仓库的概念-应用可以有N个仓库，一个仓库中可以有N个key</li></ul> <p><strong>封装的首选项类</strong></p> <div class="language-arkts line-numbers-mode"><pre class="language-text"><code>import { preferences } from '@kit.ArkData';
+
+/**
+ * 偏好设置管理类，封装对本地持久化存储（preferences）的增删改查操作
+ * 使用示例：
+ * const prefs = new PreferenceManager(store, &quot;user_settings&quot;);
+ * await prefs.setValue(&quot;token&quot;, &quot;abc123&quot;);
+ */
+export class PreferenceManager {
+  private store: preferences.Preferences; // 实际的存储实例
+  private name: string; // 存储仓库名称（用于删除整个仓库时识别）
+
+  /**
+   * 构造函数
+   * @param store 已初始化的 preferences 存储实例
+   * @param name 当前存储仓库名称（需唯一）
+   */
+  constructor(store: preferences.Preferences, name: string) {
+    this.store = store;
+    this.name = name;
+  }
+
+  /**
+   * 存储键值对（同步写入内存 + 异步刷盘）
+   * @param key 键名
+   * @param value 值（字符串类型）
+   * @returns Promise&lt;void&gt; 刷盘完成后 resolve
+   */
+  async setValue(key: string, value: string): Promise&lt;void&gt; {
+    this.store.putSync(key, value); // 同步写入内存
+    await this.store.flush(); // 异步持久化到磁盘
+  }
+
+  /**
+   * 读取键对应的值
+   * @param key 键名
+   * @param defaultValue 可选默认值（未找到时返回）
+   * @returns 存储的值或默认值（字符串）
+   */
+  getValue(key: string, defaultValue: string = &quot;&quot;): string {
+    return this.store.getSync(key, defaultValue) as string;
+  }
+
+  /**
+   * 删除指定键值对（同步删除 + 异步刷盘）
+   * @param key 键名
+   * @returns Promise&lt;void&gt; 刷盘完成后 resolve
+   */
+  async deleteValue(key: string): Promise&lt;void&gt; {
+    this.store.deleteSync(key); // 同步删除
+    await this.store.flush(); // 异步持久化
+  }
+
+  /**
+   * 删除整个存储仓库（危险操作！）
+   * @returns Promise&lt;void&gt; 删除完成后 resolve
+   */
+  async deleteStorage(): Promise&lt;void&gt; {
+    await preferences.deletePreferences(null, { name: this.name });
+  }
+}
+
+/**
+ * PreferenceManager 的工厂类（单例模式），用于集中管理多个存储仓库
+ * 使用示例：
+ * PreferenceManagerFactory.getInstance().init(context);
+ * const prefs = factory.getPreference(&quot;app_config&quot;);
+ */
+export class PreferenceManagerFactory {
+  private static instance: PreferenceManagerFactory; // 单例实例
+  private context: Context | null = null; // 应用上下文（必须初始化）
+  private stores: Map&lt;string, PreferenceManager&gt; = new Map(); // 存储多个仓库实例
+
+  private constructor() {} // 禁止外部 new 实例
+
+  /**
+   * 获取工厂单例
+   * @returns 全局唯一的 PreferenceManagerFactory 实例
+   */
+  public static getInstance(): PreferenceManagerFactory {
+    if (!PreferenceManagerFactory.instance) {
+      PreferenceManagerFactory.instance = new PreferenceManagerFactory();
+    }
+    return PreferenceManagerFactory.instance;
+  }
+
+  /**
+   * 初始化工厂（必须在获取实例前调用）
+   * @param context 应用上下文
+   */
+  public init(context: Context): void {
+    this.context = context;
+  }
+
+  /**
+   * 获取指定名称的存储管理器（如果不存在则创建）
+   * @param name 存储仓库名称
+   * @throws 未初始化 context 时抛出错误
+   * @returns PreferenceManager 实例
+   */
+  public getPreference(name: string): PreferenceManager {
+    if (!this.context) {
+      throw new Error(&quot;PreferenceManagerFactory not initialized. Call init(context) first.&quot;);
+    }
+
+    // 缓存检查：避免重复创建同名仓库
+    if (!this.stores.has(name)) {
+      const store = preferences.getPreferencesSync(this.context, { name });
+      this.stores.set(name, new PreferenceManager(store, name));
+    }
+
+    return this.stores.get(name)!; // 非空断言（因为必定存在）
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br></div></div><p>获取上下文 context</p> <div class="language-arkts line-numbers-mode"><pre class="language-text"><code>// ✅ 初始化首选项
+PreferenceManagerFactory.getInstance().init(this.context)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>使用</p> <div class="language-arkts line-numbers-mode"><pre class="language-text"><code>const userPref = PreferenceManagerFactory.getInstance().getPreference('userInfo')
+await userPref.setValue('userid', res.data.data.id)		//设置值
+userPref.getValue('token')	//获取
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h1 id="关系型数据库数据持久化"><a href="#关系型数据库数据持久化" class="header-anchor">#</a> 关系型数据库数据持久化</h1> <p>封装工具类，注意每次都需要调用创建数据库</p> <div class="language-arkts line-numbers-mode"><pre class="language-text"><code>import { BusinessError } from '@kit.BasicServicesKit';
+import { relationalStore } from '@kit.ArkData';
+
+type DBRow = Record&lt;string, string | number | null&gt;;
+
+// ArkTS 中避免联合类型，使用明确类型
+type QueryOperator =
+  | 'equalTo' // 等于，常用于精确匹配，例如 NAME = '张三'
+  | 'like' // 模糊匹配，常用于字符串搜索，例如 NAME LIKE '%张%'
+  | 'greaterThan' // 大于，例如 AGE &gt; 18
+  | 'lessThan' // 小于，例如 AGE &lt; 60
+  | 'greaterThanOrEqualTo' // 大于等于，例如 AGE &gt;= 30
+  | 'lessThanOrEqualTo'; // 小于等于，例如 AGE &lt;= 50
+
+/**
+ * 查询条件结构定义
+ */
+interface QueryCondition {
+  field: string; // 查询字段，如 'NAME'、'AGE'
+  operator?: QueryOperator; // 查询操作符，默认为 'equalTo'
+  value: string | number; // 查询值（ArkTS 中不建议写联合类型，但此处使用时需确保类型一致）
+}
+
+class DBUtil {
+  private rdbStore: relationalStore.RdbStore | null = null;
+
+  /**
+   * 初始化数据库，仅建立连接，不建表，调用时可能需要配置一个变量防止每次都创建
+   * @param context 应用上下文
+   * @param storeConfig 数据库配置项
+   * @param onSuccess 初始化成功后的回调,方便顺便建表
+   */
+  initDB(context: Context, storeConfig: relationalStore.StoreConfig, onSuccess?: () =&gt; void): void {
+    relationalStore.getRdbStore(context, storeConfig, (err, store) =&gt; {
+      if (err) {
+        console.error(`[RdbStore_getRdbStore] failed. Code: ${err.code}, message: ${err.message}`);
+        return;
+      }
+      console.log(`[RdbStore_getRdbStore] success.`);
+      this.rdbStore = store;
+      if (onSuccess) {
+        onSuccess();
+      }
+    });
+  }
+
+  /**
+   * 创建表（需先调用 initDB 后再使用）
+   * @param createTableSQL 建表 SQL 语句
+   */
+  createTable(createTableSQL: string): void {
+    if (!this.rdbStore) {
+      console.error('RdbStore is not initialized. Please call initDB first.');
+      return;
+    }
+
+    this.rdbStore.executeSql(createTableSQL, [], (err) =&gt; {
+      if (err) {
+        console.error(`[RdbStore_executeSql] create table failed. Code: ${err.code}, message: ${err.message}`);
+        return;
+      }
+      console.log(`[RdbStore_executeSql] create table success.`);
+    });
+  }
+
+  /**
+   * 插入数据
+   * @param tableName 表名
+   * @param value 插入的键值对（ValuesBucket）
+   * @returns 插入的行 ID，失败返回 -1
+   */
+  async insertData(tableName: string, value: relationalStore.ValuesBucket): Promise&lt;number&gt; {
+    if (this.rdbStore !== null) {
+      try {
+        console.info(`[RdbStore_insert] 尝试插入表 ${tableName} 数据: ${JSON.stringify(value)}`);
+        const rowId = await this.rdbStore.insert(tableName, value);
+
+        if (rowId === -1) {
+          console.error(`[RdbStore_insert] 插入失败（未抛异常），rowId = -1，可能存在字段类型错误或约束冲突`);
+        }
+
+        return rowId;
+      } catch (e) {
+        const err = e as BusinessError;
+        console.error(`[RdbStore_insert] ${tableName} failed. Code: ${err.code}, message: ${err.message}`);
+      }
+    } else {
+      console.error(`[RdbStore_insert] rdbStore 未初始化`);
+    }
+    return -1;
+  }
+
+  /**
+   * 通用查询方法（支持多字段条件）
+   * @param column 查询字段列，如 ['ID', 'NAME']
+   * @param tableName 表名
+   * @param conditions 可选条件数组，如 [{ field: 'NAME', operator: 'equalTo', value: '张三' }]
+   * @returns 返回原始数据对象数组
+   */
+  async queryDB(
+    column: Array&lt;string&gt;,
+    tableName: string,
+    conditions?: Array&lt;QueryCondition&gt;
+  ): Promise&lt;Array&lt;DBRow&gt;&gt; {
+    const predicates = new relationalStore.RdbPredicates(tableName);
+
+    // 构造查询条件
+    if (conditions) {
+      for (const condition of conditions) {
+        const field: string = condition.field;
+        const operator: QueryOperator = condition.operator ?? 'equalTo';
+        const value: string | number = condition.value;
+
+        // 用 switch 方式判断操作符，ArkTS 不支持动态函数调用
+        switch (operator) {
+          case 'equalTo':
+            predicates.equalTo(field, value);
+            break;
+          case 'like':
+            if (typeof value === 'string') {
+              predicates.like(field, value);
+            } else {
+              console.warn(`[queryDB] 'like' operator requires string value, got: ${typeof value}`);
+            }
+            break;
+          case 'greaterThan':
+            predicates.greaterThan(field, value);
+            break;
+          case 'lessThan':
+            predicates.lessThan(field, value);
+            break;
+          case 'greaterThanOrEqualTo':
+            predicates.greaterThanOrEqualTo(field, value);
+            break;
+          case 'lessThanOrEqualTo':
+            predicates.lessThanOrEqualTo(field, value);
+            break;
+          default:
+            console.warn(`[queryDB] Unsupported operator: ${operator}`);
+        }
+      }
+    }
+
+    const resultList: Array&lt;DBRow&gt; = [];
+
+    // 查询执行
+    if (this.rdbStore !== null) {
+      try {
+        const resultSet = await this.rdbStore.query(predicates, column);
+        console.info(`[queryDB] start query from ${tableName}`);
+
+        while (resultSet.goToNextRow()) {
+          const row: DBRow = {};
+          for (const col of column) {
+            const index = resultSet.getColumnIndex(col);
+            try {
+              row[col] = resultSet.getString(index);
+            } catch {
+              try {
+                row[col] = resultSet.getDouble(index);
+              } catch {
+                try {
+                  row[col] = resultSet.getLong(index);
+                } catch {
+                  row[col] = null;
+                }
+              }
+            }
+          }
+          resultList.push(row);
+        }
+
+        resultSet.close();
+      } catch (e) {
+        const err = e as BusinessError;
+        console.error(`[RdbStore_query] ${tableName} failed. Code: ${err.code}, message: ${err.message}`);
+      }
+    }
+
+    return resultList;
+  }
+
+  /**
+   * 根据 ID 删除指定记录
+   * @param tableName 表名
+   * @param id 主键 ID
+   */
+  deleteDataByID(tableName: string, id: number | string): void {
+    const predicates = new relationalStore.RdbPredicates(tableName).equalTo('ID', id);
+    if (this.rdbStore !== null) {
+      this.rdbStore.delete(predicates, (err, rows) =&gt; {
+        if (err) {
+          console.error(`Delete failed. Code: ${err.code}, message: ${err.message}`);
+          return;
+        }
+        console.info(`Deleted rows: ${rows}`);
+      });
+    }
+  }
+
+  /**
+   * 根据 ID 更新记录
+   * @param tableName 表名
+   * @param id 主键 ID
+   * @param value 要更新的字段值（ValuesBucket）
+   */
+  async updateDataByID(tableName: string, id: string, value: relationalStore.ValuesBucket): Promise&lt;void&gt; {
+    const predicates = new relationalStore.RdbPredicates(tableName).equalTo('ID', id);
+
+    if (this.rdbStore !== null) {
+      try {
+        const rows = await this.rdbStore.update(value, predicates);
+        console.info(`[更新成功] 表: ${tableName}, ID: ${id}, 更新字段: ${JSON.stringify(value)}, 影响行数: ${rows}`);
+      } catch (err) {
+        console.error(`[更新失败] 表: ${tableName}, ID: ${id}, 错误码: ${err.code}, 错误信息: ${err.message}`);
+      }
+    } else {
+      console.warn(`[警告] rdbStore 尚未初始化，无法更新 表: ${tableName}`);
+    }
+  }
+
+  // 自动判断是否需要 VACUUM 的实现
+  async autoVacuumIfNeeded(): Promise&lt;void&gt; {
+    if (!this.rdbStore) {
+      console.warn('[DBUtil_autoVacuumIfNeeded] rdbStore not initialized.');
+      return;
+    }
+
+    try {
+      let pageCount = 0;
+      let freeCount = 0;
+
+      // 查询 page_count
+      const pageResultSet = await this.rdbStore.querySql('PRAGMA page_count;', []);
+      if (pageResultSet.goToFirstRow()) {
+        const index = pageResultSet.getColumnIndex('page_count');
+        pageCount = pageResultSet.getLong(index);
+      }
+      pageResultSet.close();
+
+      // 查询 freelist_count
+      const freeResultSet = await this.rdbStore.querySql('PRAGMA freelist_count;', []);
+      if (freeResultSet.goToFirstRow()) {
+        const index = freeResultSet.getColumnIndex('freelist_count');
+        freeCount = freeResultSet.getLong(index);
+      }
+      freeResultSet.close();
+
+      const freeRatio: number = pageCount &gt; 0 ? freeCount / pageCount : 0;
+
+      console.info(`[DBUtil_autoVacuumIfNeeded] pageCount=${pageCount}, freeCount=${freeCount}, freeRatio=${freeRatio}`);
+
+      if (pageCount &gt; 1000 &amp;&amp; freeRatio &gt; 0.3) {
+        console.warn('[DBUtil_autoVacuumIfNeeded] Triggering VACUUM...');
+        await new Promise&lt;void&gt;((resolve, reject) =&gt; {
+          this.rdbStore!.executeSql('VACUUM;', [], (err) =&gt; {
+            if (err) {
+              reject(err);
+            } else {
+              resolve();
+            }
+          });
+        });
+        console.info('[DBUtil_autoVacuumIfNeeded] VACUUM completed.');
+      } else {
+        console.info('[DBUtil_autoVacuumIfNeeded] No need to VACUUM.');
+      }
+    } catch (e) {
+      const err = e as BusinessError;
+      console.error(`[DBUtil_autoVacuumIfNeeded] Failed. Code: ${err.code}, message: ${err.message}`);
+    }
+  }
+}
+
+const dbUtil = new DBUtil();
+
+export { dbUtil };
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br><span class="line-number">231</span><br><span class="line-number">232</span><br><span class="line-number">233</span><br><span class="line-number">234</span><br><span class="line-number">235</span><br><span class="line-number">236</span><br><span class="line-number">237</span><br><span class="line-number">238</span><br><span class="line-number">239</span><br><span class="line-number">240</span><br><span class="line-number">241</span><br><span class="line-number">242</span><br><span class="line-number">243</span><br><span class="line-number">244</span><br><span class="line-number">245</span><br><span class="line-number">246</span><br><span class="line-number">247</span><br><span class="line-number">248</span><br><span class="line-number">249</span><br><span class="line-number">250</span><br><span class="line-number">251</span><br><span class="line-number">252</span><br><span class="line-number">253</span><br><span class="line-number">254</span><br><span class="line-number">255</span><br><span class="line-number">256</span><br><span class="line-number">257</span><br><span class="line-number">258</span><br><span class="line-number">259</span><br><span class="line-number">260</span><br><span class="line-number">261</span><br><span class="line-number">262</span><br><span class="line-number">263</span><br><span class="line-number">264</span><br><span class="line-number">265</span><br><span class="line-number">266</span><br><span class="line-number">267</span><br><span class="line-number">268</span><br><span class="line-number">269</span><br><span class="line-number">270</span><br><span class="line-number">271</span><br><span class="line-number">272</span><br><span class="line-number">273</span><br><span class="line-number">274</span><br><span class="line-number">275</span><br><span class="line-number">276</span><br><span class="line-number">277</span><br></div></div><div class="language-arkts line-numbers-mode"><pre class="language-text"><code>import { relationalStore } from '@kit.ArkData';
+import { dbUtil } from './DBUtil';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+@Entry
+@Component
+struct Page {
+  @State idValue: string = ''
+  @State name: string = ''
+  @State cha: string = ''
+  @State insertId: number = -1
+  // 数据库配置项
+  STORE_CONFIG: relationalStore.StoreConfig = {
+    name: 'RdbTest.db',
+    securityLevel: relationalStore.SecurityLevel.S1,
+    encrypt: false,
+    customDir: 'customDir/subCustomDir',
+    isReadOnly: false
+  };
+  // 建表语句
+  SQL_CREATE_TABLE = `
+    -- 表名：EMPLOYEE
+    CREATE TABLE IF NOT EXISTS EMPLOYEE (
+      ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+      NAME TEXT NOT NULL
+    );
+  `;
+
+  aboutToAppear() {
+    console.log('[Page] aboutToAppear');
+    // 进入页面时整理数据库，清除空行
+    dbUtil.autoVacuumIfNeeded()
+      .then(() =&gt; {
+        console.log('[Page] autoVacuumIfNeeded done');
+      })
+      .catch((err: BusinessError) =&gt; {
+        console.error('[Page] autoVacuumIfNeeded error:', err);
+      });
+  }
+
+  build() {
+    Column({ space: 20 }) {
+      TextInput({ text: $$this.idValue, placeholder: '请输入ID（修改/删除时用）' })
+      TextInput({ text: $$this.name, placeholder: '请输入姓名' })
+
+      Button('创建数据库')
+        .onClick(() =&gt; {
+          dbUtil.initDB(getContext(), this.STORE_CONFIG, this.SQL_CREATE_TABLE)
+        })
+
+      Button('插入数据')
+        .onClick(async () =&gt; {
+          const valueBucket: relationalStore.ValuesBucket = {
+            NAME: this.name  // 不需要传 ID，数据库自增
+          };
+          const rowId = await dbUtil.insertData('EMPLOYEE', valueBucket);
+          if (rowId !== -1) {
+            this.insertId = rowId;
+          }
+        })
+
+      Text(`插入行 ID: ${this.insertId}`)
+
+      Button('查询所有数据')
+        .onClick(async () =&gt; {
+          const result = await dbUtil.queryDB(['ID', 'NAME'], 'EMPLOYEE');
+          // 查询名字为xinzai的人
+          const result1 = await dbUtil.queryDB(
+            ['ID', 'NAME'], 'EMPLOYEE',
+            [{ field: &quot;NAME&quot;, operator: 'equalTo', value: 'xinzai' }]
+          );
+          console.log('查询结果:', JSON.stringify(result));
+          console.log('单个ID查询:', JSON.stringify(result1));
+        })
+
+      Button('修改数据')
+        .onClick(() =&gt; {
+          const id = Number(this.idValue);
+          if (!isNaN(id)) {
+            const updateValue: relationalStore.ValuesBucket = {
+              NAME: this.name
+            };
+            dbUtil.updateDataByID('EMPLOYEE', id, updateValue);
+          } else {
+            console.error('请输入有效的数字 ID');
+          }
+        })
+
+      Button('删除数据')
+        .onClick(() =&gt; {
+          const id = Number(this.idValue);
+          if (!isNaN(id)) {
+            dbUtil.deleteDataByID('EMPLOYEE', id);
+          } else {
+            console.error('请输入有效的数字 ID');
+          }
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br></div></div><h1 id="应用上下文context文档中心"><a href="#应用上下文context文档中心" class="header-anchor">#</a> 应用上下文Context<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage" target="_blank" rel="noopener noreferrer">文档中心<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h1> <p>应用的全局上下文</p> <div class="language-arkts line-numbers-mode"><pre class="language-text"><code>onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+  AppStorage.setOrCreate('context', this.context)
+}
+// 使用
+const context = AppStorage.get&lt;Context&gt;('context')
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>组件上下文</p> <div class="language-arkts line-numbers-mode"><pre class="language-text"><code>this.getUIContext()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h1 id="权限"><a href="#权限" class="header-anchor">#</a> 权限</h1> <p>在src\main\module.json5 配置，受限权限需要申请才可以获得<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-permissions" target="_blank" rel="noopener noreferrer">文档中心<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>当工程签名之后，记得运行工程需要登录账号，否则可能权限会失效</p> <h2 id="系统授权文档中心"><a href="#系统授权文档中心" class="header-anchor">#</a> 系统授权<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all" target="_blank" rel="noopener noreferrer">文档中心<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h2> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token string-property property">&quot;requestPermissions&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token string-property property">&quot;name&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;ohos.permission.枚举值&quot;</span>		<span class="token comment">//申请权限的名字</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="用户授权文档中心"><a href="#用户授权文档中心" class="header-anchor">#</a> 用户授权<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all-user" target="_blank" rel="noopener noreferrer">文档中心<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h2> <p>用户授权不能只写权限需要的名字，需要完善原因等</p> <p>路径：<code>\src\main\resources\base\element\string.json</code></p> <div class="language-arkts line-numbers-mode"><pre class="language-text"><code>{
+  &quot;string&quot;: [
+    {
+      &quot;name&quot;: &quot;reason_mai&quot;,
+      &quot;value&quot;: &quot;申请麦克风权限，用于录音&quot;
+    }
+  ]
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token string-property property">&quot;requestPermissions&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token string-property property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ohos.permission.枚举值&quot;</span><span class="token punctuation">,</span>	<span class="token comment">//申请权限的名字</span>
+    <span class="token string-property property">&quot;reason&quot;</span><span class="token operator">:</span><span class="token string">&quot;$string:reason_mai&quot;</span><span class="token punctuation">,</span>		<span class="token comment">//申请声明,需要在string.json文件中配置</span>
+    <span class="token string-property property">&quot;usedScene&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string-property property">&quot;abilities&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;EntryAbility&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>	<span class="token comment">//需要在哪个abilities中使用</span>
+      <span class="token string-property property">&quot;when&quot;</span><span class="token operator">:</span> <span class="token string">&quot;always&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>配置了还需要在 UI 中对应需要的位置发起申请，用户同意之后才有权限，下面是封装好的申请权限的函数</p> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> abilityAccessCtrl<span class="token punctuation">,</span> bundleManager<span class="token punctuation">,</span> common<span class="token punctuation">,</span> Permissions <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@kit.AbilityKit'</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">checkPermission</span><span class="token punctuation">(</span>permissionName<span class="token operator">:</span> Permissions<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token function-variable function">callback</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">//不要一进应用就申请权限</span>
+  <span class="token keyword">const</span> manger <span class="token operator">=</span> abilityAccessCtrl<span class="token punctuation">.</span><span class="token function">createAtManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//权限控制</span>
+  <span class="token comment">//申请权限</span>
+  <span class="token keyword">await</span> manger<span class="token punctuation">.</span><span class="token function">requestPermissionsFromUser</span><span class="token punctuation">(</span><span class="token function">getContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> permissionName <span class="token keyword">as</span> Permissions<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+  <span class="token comment">//拿到包信息</span>
+  <span class="token keyword">const</span> bundleInfo <span class="token operator">=</span>
+    bundleManager<span class="token punctuation">.</span><span class="token function">getBundleInfoForSelfSync</span><span class="token punctuation">(</span>bundleManager<span class="token punctuation">.</span>BundleFlag<span class="token punctuation">.</span><span class="token constant">GET_BUNDLE_INFO_WITH_APPLICATION</span><span class="token punctuation">)</span>
+  <span class="token comment">//获取tokenid</span>
+  <span class="token keyword">const</span> tokenId <span class="token operator">=</span> bundleInfo<span class="token punctuation">.</span>appInfo<span class="token punctuation">.</span>accessTokenId
+  <span class="token comment">//检测是否有权限</span>
+  <span class="token keyword">const</span> status <span class="token operator">=</span> manger<span class="token punctuation">.</span><span class="token function">checkAccessTokenSync</span><span class="token punctuation">(</span>tokenId<span class="token punctuation">,</span> permissionName<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>status <span class="token operator">===</span> abilityAccessCtrl<span class="token punctuation">.</span>GrantStatus<span class="token punctuation">.</span><span class="token constant">PERMISSION_DENIED</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">//如果没有权限设跳转到设置对应应用权限页面</span>
+    <span class="token comment">//打开应用设置</span>
+    <span class="token punctuation">(</span><span class="token function">getContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> common<span class="token punctuation">.</span>UIAbilityContext<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">startAbility</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token comment">//包名:com.huawei.hmos.settings</span>
+      bundleName<span class="token operator">:</span> <span class="token string">&quot;com.huawei.hmos.settings&quot;</span><span class="token punctuation">,</span>
+      <span class="token comment">//ability名字</span>
+      abilityName<span class="token operator">:</span> <span class="token string">&quot;com.huawei.hmos.settings.MainAbility&quot;</span><span class="token punctuation">,</span>
+      <span class="token comment">//跳转的页面</span>
+      uri<span class="token operator">:</span> <span class="token string">&quot;application_info_entry&quot;</span><span class="token punctuation">,</span>
+      <span class="token comment">//参数</span>
+      parameters<span class="token operator">:</span> <span class="token punctuation">{</span>
+        pushParams<span class="token operator">:</span> bundleInfo<span class="token punctuation">.</span>name
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> <span class="token comment">//如果有权限触发回调函数</span>
+    <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> checkPermission
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div><div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token function">Button</span><span class="token punctuation">(</span><span class="token string">'请打开位置交流'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">onClick</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">checkPermission</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">&quot;ohos.permission.APPROXIMATELY_LOCATION&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;ohos.permission.LOCATION&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> geoLocationManager<span class="token punctuation">.</span><span class="token function">getCurrentLocation</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        promptAction<span class="token punctuation">.</span><span class="token function">showToast</span><span class="token punctuation">(</span><span class="token punctuation">{</span> message<span class="token operator">:</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div></div></div>  <div class="page-edit"><div class="edit-link"><a href="https://github.com/xugaoyi/vuepress-theme-vdoing/edit/master/docs/原生鸿蒙开发/6-存储、权限.md" target="_blank" rel="noopener noreferrer">编辑</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="tags"><a href="/tags/?tag=%E5%8E%9F" title="标签">#原</a><a href="/tags/?tag=%E7%94%9F" title="标签">#生</a><a href="/tags/?tag=%E9%B8%BF" title="标签">#鸿</a><a href="/tags/?tag=%E8%92%99" title="标签">#蒙</a><a href="/tags/?tag=%E5%BC%80" title="标签">#开</a><a href="/tags/?tag=%E5%8F%91" title="标签">#发</a></div> <!----></div> <div class="page-nav-wapper"><!----> <!----></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/7876ce/"><div>
+            9.案例
+            <!----></div></a> <span class="date">02-01</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/0ca96b/"><div>
+            0.C语言概述
+            <!----></div></a> <span class="date">01-28</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/f81cea/"><div>
+            学术文献大全
+            <!----></div></a> <span class="date">10-19</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:894072666@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/xugaoyi" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#/playlist?id=755597173" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2019-2026
+    <span>Evan Xu | <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"><div></div></div></div>
+    <script src="/assets/js/app.eebfd3c3.js" defer></script><script src="/assets/js/2.09d00fe7.js" defer></script><script src="/assets/js/21.42523dfa.js" defer></script>
+  </body>
+</html>
