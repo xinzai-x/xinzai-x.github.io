@@ -44,11 +44,11 @@
       return;
     }
     container.style.display = 'block';
-    var html = '<div class="search-history-title">Recent searches</div><ul class="search-history-list">';
+    var html = '<div class="search-history-title">搜索历史</div><ul class="search-history-list">';
     history.forEach(function (q) {
       html += '<li class="search-history-item"><button type="button">' + escHtml(q) + '</button></li>';
     });
-    html += '<li class="search-history-item"><button class="search-history-clear" type="button">Clear all</button></li>';
+    html += '<li class="search-history-item"><button class="search-history-clear" type="button">清除历史</button></li>';
     html += '</ul>';
     container.innerHTML = html;
     // Click to reuse
@@ -109,7 +109,7 @@
   // Perform search
   function performSearch(query) {
     if (!searchIndex || query.length < 2) {
-      searchResults.innerHTML = '<p class="search-hint">Type at least 2 characters</p>';
+      searchResults.innerHTML = '<p class="search-hint">请输入搜索关键词</p>';
       return;
     }
 
@@ -152,11 +152,11 @@
   // Display results
   function displayResults(results) {
     if (results.length === 0) {
-      searchResults.innerHTML = '<p class="search-no-results">No matching articles found.</p>';
+      searchResults.innerHTML = '<p class="search-no-results">无结果。</p>';
       return;
     }
 
-    var html = '<div class="search-results-count">Found ' + results.length + ' result' + (results.length > 1 ? 's' : '') + '</div>';
+    var html = '<div class="search-results-count">找到 ' + results.length + ' 个结果</div>';
     html += '<ul class="search-results-list">';
     results.forEach(function (r) {
       // Highlight matching text
@@ -180,7 +180,7 @@
         '<h4 class="search-result-title">' + title + '</h4>' +
         '<div class="search-result-meta">' +
         (r.date ? '<span class="search-result-date">' + r.date + '</span>' : '') +
-        (r.updated ? '<span class="search-result-updated">Updated ' + r.updated + '</span>' : '') +
+        (r.updated ? '<span class="search-result-updated">最后更新 ' + r.updated + '</span>' : '') +
         (categories ? '<span class="search-result-categories">' + categories + '</span>' : '') +
         (tags ? '<span class="search-result-tags">' + tags + '</span>' : '') +
         '</div>' +

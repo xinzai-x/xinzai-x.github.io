@@ -41,7 +41,7 @@
       var overlay = document.createElement('div');
       overlay.className = 'image-lightbox';
       overlay.setAttribute('role', 'dialog');
-      overlay.setAttribute('aria-label', 'Image viewer');
+      overlay.setAttribute('aria-label', '图片查看器');
       overlay.style.cssText =
         'position:fixed;top:0;left:0;right:0;bottom:0;' +
         'background:rgba(0,0,0,0.92);z-index:9999;' +
@@ -167,13 +167,13 @@
     label.textContent = lang;
     var copyBtn = document.createElement('button');
     copyBtn.className = 'code-copy-btn ripple';
-    copyBtn.textContent = 'Copy';
+    copyBtn.textContent = '复制代码';
     copyBtn.addEventListener('click', function () {
       navigator.clipboard.writeText(codeEl.textContent || codeEl.innerText || '').then(function () {
-        copyBtn.textContent = 'Copied!';
+        copyBtn.textContent = '已复制';
         copyBtn.classList.add('copied');
         setTimeout(function () {
-          copyBtn.textContent = 'Copy';
+          copyBtn.textContent = '复制代码';
           copyBtn.classList.remove('copied');
         }, 2000);
       });
