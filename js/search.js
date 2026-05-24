@@ -37,8 +37,8 @@
             title: item.querySelector('title').textContent,
             url: item.querySelector('url').textContent,
             content: item.querySelector('content').textContent,
-            categories: Array.from(item.querySelectorAll('category')).map(function (c) { return c.textContent; }),
-            tags: Array.from(item.querySelectorAll('tag')).map(function (t) { return t.textContent; }),
+            categories: Array.from(item.querySelectorAll('categories')).map(function (c) { return c.textContent; }),
+            tags: Array.from(item.querySelectorAll('tags')).map(function (t) { return t.textContent; }),
             date: item.querySelector('date') ? item.querySelector('date').textContent : ''
           };
         });

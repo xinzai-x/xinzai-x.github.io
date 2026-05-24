@@ -125,14 +125,22 @@
   /* ============================================================
      4. EXTERNAL LINKS — New Tab
      ============================================================ */
-  document.addEventListener('click', function (e) {
-    var link = e.target.closest('a');
-    if (!link) return;
-    if (link.hostname && link.hostname !== window.location.hostname) {
-      link.setAttribute('target', '_blank');
-      link.setAttribute('rel', 'noopener noreferrer');
+  function initExternalLinks() {
+    var links = document.querySelectorAll('a[href^="http"]');
+    for (var i = 0; i < links.length; i++) {
+      var link = links[i];
+      if (link.hostname && link.hostname !== window.location.hostname) {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+      }
     }
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initExternalLinks);
+  } else {
+    initExternalLinks();
+  }
 
   /* ============================================================
      5. CODE BLOCK COPY BUTTON
