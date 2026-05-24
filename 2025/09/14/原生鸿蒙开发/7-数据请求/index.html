@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Dark Mode Anti-Flicker -->
+<script>
+  (function () {
+    var theme = localStorage.getItem('cleartext-theme-mode');
+    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+</script>
+
+<!-- Primary Meta -->
+<title>7.数据请求 | 星仔极客</title>
+<meta name="description" content="日常笔记和生活分享！">
+<meta name="author" content="星仔">
+<meta name="generator" content="Hexo ">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://accblog.6673543.xyz/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/7-%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/">
+<meta property="og:title" content="7.数据请求">
+<meta property="og:description" content="日常笔记和生活分享！">
+<meta property="og:image" content="https://accblog.6673543.xyz/img/og-image.png">
+<meta property="og:site_name" content="星仔极客">
+<meta property="og:locale" content="zh-CN">
+
+<meta property="article:published_time" content="2025-09-14T14:23:45.000Z">
+
+<meta property="article:modified_time" content="2025-12-28T14:20:42.345Z">
+
+
+<meta property="article:tag" content="原生鸿蒙开发">
+
+
+<meta property="article:section" content="原生鸿蒙开发">
+
+
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="7.数据请求">
+<meta name="twitter:description" content="日常笔记和生活分享！">
+<meta name="twitter:image" content="https://accblog.6673543.xyz/img/twitter-image.png">
+<meta name="twitter:site" content="">
+
+<!-- Structured Data (Schema.org) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "7.数据请求",
+  "description": "日常笔记和生活分享！",
+  "url": "https://accblog.6673543.xyz/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/7-%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/",
+  "image": "https://accblog.6673543.xyz/img/schema-image.png",
+  "publisher": {
+    "@type": "Organization",
+    "name": "星仔极客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://accblog.6673543.xyz/img/logo.png"
+    }
+  }
+  ,
+  "author": {
+    "@type": "Person",
+    "name": "星仔极客"
+  },
+  "datePublished": "2025-09-14T14:23:45.000Z"
+  ,
+  "dateModified": "2025-12-28T14:20:42.345Z"
+  
+  
+}
+</script>
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://accblog.6673543.xyz/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/7-%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/">
+
+<!-- RSS Feed -->
+<link rel="alternate" href="/atom.xml" type="application/atom+xml" title="星仔极客">
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Font Preload -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+
+<!-- Theme CSS -->
+<link rel="stylesheet" href="/css/style.css">
+
+<!-- MathJax (Conditional) -->
+
+
+<!-- Highlight.js (Conditional) -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11/styles/github.min.css">
+
+
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content" aria-label="跳转到主要内容">跳到内容</a>
+  <header class="site-header" id="site-header" role="banner">
+  <div class="header-inner">
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="切换导航菜单" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <a class="site-title" href="/" aria-label="返回首页">
+      星仔极客
+    </a>
+
+    <nav class="site-nav" role="navigation" aria-label="主导航">
+      
+        
+          
+          <a class="nav-link"
+             href="/"
+             >
+            首页
+          </a>
+        
+          
+          <a class="nav-link"
+             href="/archives/"
+             >
+            归档
+          </a>
+        
+          
+          <a class="nav-link"
+             href="/categories/"
+             >
+            分类
+          </a>
+        
+          
+          <a class="nav-link"
+             href="/tags/"
+             >
+            标签
+          </a>
+        
+          
+          <a class="nav-link"
+             href="/about/"
+             >
+            关于
+          </a>
+        
+          
+          <a class="nav-link"
+             href="/links/"
+             >
+            友链
+          </a>
+        
+      
+    </nav>
+
+    <div class="header-actions">
+      
+      <button class="header-btn" id="search-btn" aria-label="搜索" title="搜索 (Ctrl+K)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+      
+
+      
+      <button class="header-btn" id="dark-mode-btn" aria-label="切换暗色模式" title="切换暗色/亮色模式">
+        <svg id="dm-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg id="dm-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+      
+    </div>
+  </div>
+</header>
+
+<!-- Search Overlay -->
+
+<div class="search-overlay" id="search-overlay" data-search-url="/search.xml" aria-hidden="true" role="dialog" aria-label="搜索">
+  <div class="search-modal">
+    <input type="text" class="search-input" id="search-input" placeholder="搜索文章..." autocomplete="off" aria-label="搜索文章标题和内容">
+    <button class="search-close" id="search-close" aria-label="关闭搜索">&times;</button>
+    <div class="search-history" id="search-history" style="display:none;"></div>
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+
+
+
+  <div class="page-shell" id="main-content">
+    <div class="grid-container
+      grid-post
+      grid-has-toc
+      grid-has-sidebar
+    ">
+      <main class="grid-main">
+        
+
+<article class="post-full" itemscope itemtype="http://schema.org/Article">
+
+  <header class="post-header">
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="面包屑导航">
+      <a href="/">首页</a>
+      <span class="breadcrumb-sep">/</span>
+      
+        <a href="/categories/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/">原生鸿蒙开发</a>
+        <span class="breadcrumb-sep">/</span>
+      
+      <span class="breadcrumb-current" aria-current="page">7.数据请求</span>
+    </nav>
+
+    <h1 class="post-title" itemprop="headline">7.数据请求</h1>
+
+    <div class="post-meta">
+      <span class="meta-item" itemprop="datePublished" content="2025-09-14T14:23:45.000Z">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <time datetime="2025-09-14T14:23:45.000Z">2025-09-14</time>
+      </span>
+      
+      <span class="meta-item" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span itemprop="name">星仔极客</span>
+      </span>
+      
+      <span class="meta-item meta-stats">
+        <span class="word-count">332 字</span>
+        <span class="reading-time">2</span>
+      </span>
+      
+      <span class="meta-updated">更新于 2025-12-28</span>
+      
+    </div>
+
+    <!-- Post Categories & Tags -->
+    <div class="post-meta-taxonomy" style="margin-top: var(--space-3);">
+      
+      <span class="post-card-categories">
+        
+        <a href="/categories/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" class="cat-link">原生鸿蒙开发</a>
+        
+      </span>
+      
+      
+      <span class="post-card-tags">
+        
+        <a href="/tags/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" class="tag">原生鸿蒙开发</a>
+        
+      </span>
+      
+    </div>
+  </header>
+
+  <!-- Mobile TOC (collapsible) -->
+  
+  <div class="toc-mobile" id="toc-mobile-wrapper" aria-label="移动端文章目录">
+    <details id="toc-mobile-details">
+      <summary class="toc-mobile-toggle" aria-label="展开/收起目录">文章目录</summary>
+      <nav class="toc" id="toc-mobile" aria-label="文章目录"></nav>
+    </details>
+  </div>
+  
+
+  <!-- Post Content -->
+  <div class="post-content" itemprop="articleBody">
+    <h1 id="httpaxios-网络请求文档中心"><a class="markdownIt-Anchor" href="#httpaxios-网络请求文档中心"></a> Http/Axios 网络请求<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/http-request">文档中心</a></h1>
+<h2 id="http"><a class="markdownIt-Anchor" href="#http"></a> Http</h2>
+<p>返回字符串<br />
+免费测试接口地址：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://jsonplaceholder.typicode.com/todos/1">https://jsonplaceholder.typicode.com/todos/1</a></li>
+<li><a target="_blank" rel="noopener" href="https://jsonplaceholder.typicode.com">https://jsonplaceholder.typicode.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://httpbin.org">https://httpbin.org</a></li>
+<li><a target="_blank" rel="noopener" href="https://apis.juhe.cn">https://apis.juhe.cn</a></li>
+</ul>
+<p>:::</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@State result_use: string = &#x27;&#x27;</span><br><span class="line">async sendHttp() &#123;</span><br><span class="line">  //发请求的实例</span><br><span class="line">  const req = http.createHttp()</span><br><span class="line">  //通过实例发请求</span><br><span class="line">  const res = await req.request(&quot;https://httpbin.org&quot;)</span><br><span class="line">  //使用结果</span><br><span class="line">  this.result_use = res.result as string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Button(&#x27;发起Http请求&#x27;)</span><br><span class="line">  .onClick(() =&gt; &#123;</span><br><span class="line">    this.sendHttp()</span><br><span class="line">  &#125;)</span><br><span class="line">Scroll() &#123;</span><br><span class="line">  Text(&#x27;http请求结果：&#x27; + this.result_use)</span><br><span class="line">&#125;.height(&#x27;40%&#x27;)</span><br></pre></td></tr></table></figure>
+<h2 id="axiosaxios库"><a class="markdownIt-Anchor" href="#axiosaxios库"></a> Axios<a target="_blank" rel="noopener" href="https://ohpm.openharmony.cn/#/cn/detail/@ohos%2Faxios">Axios库</a></h2>
+<p>返回：包装了一层的对象，更适合项目</p>
+<p>使用时需要安装第三方库，需要指令安装，若在功能目录则全局安装，如果在 entry 模块夏安装则是局部安装</p>
+<p>包存放在：<code>oh-package.json5</code>中</p>
+<p><a target="_blank" rel="noopener" href="https://ohpm.openharmony.cn/#/cn/home">OpenHarmony三方库中心仓</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@State axiosResult_use: string = &#x27;&#x27;</span><br><span class="line">async sendAxios() &#123;</span><br><span class="line">  try &#123;</span><br><span class="line">    const res =</span><br><span class="line">      await axios.get&lt;object, AxiosResponse&lt;object, null&gt;&gt;(&quot;https://apis.juhe.cn&quot;)</span><br><span class="line">    this.axiosResult_use = JSON.stringify(res.data)</span><br><span class="line">  &#125; catch (error) &#123;</span><br><span class="line">    console.error(JSON.stringify(error));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Scroll() &#123;</span><br><span class="line">  Text(&#x27;axios请求结果：&#x27; + this.axiosResult_use)</span><br><span class="line">&#125;.height(300)</span><br><span class="line">Button(&#x27;发起Axios请求&#x27;)</span><br><span class="line">  .onClick(() =&gt; &#123;</span><br><span class="line">    this.sendAxios()</span><br><span class="line">    promptAction.showToast(&#123; message: this.axiosResult_use &#125;)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="rcp文档中心"><a class="markdownIt-Anchor" href="#rcp文档中心"></a> rcp<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp">文档中心</a></h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+  </div>
+
+  <!-- Post Footer -->
+  <footer class="post-footer" style="margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--color-border); text-align: center; font-size: 0.85rem; color: var(--color-text-muted);">
+    
+    <div style="margin-bottom: var(--space-4);">
+      标签：
+      
+      <a href="/tags/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" class="tag">原生鸿蒙开发</a>
+      
+    </div>
+    
+    
+    <div>
+      分类：
+      
+      <a href="/categories/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" class="cat-link">原生鸿蒙开发</a>
+      
+    </div>
+    
+  </footer>
+
+</article>
+
+<!-- Giscus Comments -->
+
+
+<!-- Post Navigation -->
+
+<nav class="post-nav" style="margin-top: var(--space-6); padding-top: var(--space-6); display: flex; justify-content: space-between; gap: var(--space-4);" aria-label="文章导航">
+  
+  <div style="flex: 1; text-align: left;">
+    
+    <a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/8.%E5%AF%BC%E8%88%AA%E3%80%81%E9%A1%B5%E9%9D%A2%E8%B7%AF%E7%94%B1/" class="post-nav-link" style="color: var(--color-text-secondary); font-size: var(--text-sm);">
+      <span style="display: block; font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: var(--space-1);">&#8592; 上一篇</span>
+      8.导航、页面路由
+    </a>
+    
+  </div>
+  
+  <div style="flex: 1; text-align: right;">
+    
+    <a href="/2025/09/14/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/6-%E5%AD%98%E5%82%A8%E3%80%81%E6%9D%83%E9%99%90/" class="post-nav-link" style="color: var(--color-text-secondary); font-size: var(--text-sm);">
+      <span style="display: block; font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: var(--space-1);">下一篇 &#8594;</span>
+      6.存储、权限
+    </a>
+    
+  </div>
+</nav>
+
+
+      </main>
+
+      
+      <aside class="grid-sidebar">
+        
+<div class="sidebar-widget">
+  <h3 class="widget-title">最新文章</h3>
+  <ul class="widget-list">
+    
+    <li>
+      <a href="/2026/03/25/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/10-%E6%98%9F%E6%B5%B7%E7%89%A9%E8%81%94%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">10.星海物联使用手册</a>
+    </li>
+    
+    <li>
+      <a href="/2026/02/01/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/9-%E6%A1%88%E4%BE%8B/">9.案例</a>
+    </li>
+    
+    <li>
+      <a href="/2026/01/28/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6/C%E8%AF%AD%E8%A8%80/0-C%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/">0.C语言概述</a>
+    </li>
+    
+    <li>
+      <a href="/2025/10/19/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE%E5%A4%A7%E5%85%A8/">学术文献大全</a>
+    </li>
+    
+    <li>
+      <a href="/2025/10/05/%E6%9D%82%E9%A1%B9/TOS/">星海物联用户服务协议</a>
+    </li>
+    
+  </ul>
+</div>
+
+
+<div class="sidebar-widget">
+  <h3 class="widget-title">分类</h3>
+  <ul class="widget-list widget-categories">
+    
+    <li>
+      <a href="/categories/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/">原生鸿蒙开发</a>
+      <span class="widget-count">11</span>
+    </li>
+    
+    <li>
+      <a href="/categories/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/">MySQL数据库</a>
+      <span class="widget-count">3</span>
+    </li>
+    
+    <li>
+      <a href="/categories/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/">工具分享</a>
+      <span class="widget-count">3</span>
+    </li>
+    
+    <li>
+      <a href="/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/">技术积累</a>
+      <span class="widget-count">3</span>
+    </li>
+    
+    <li>
+      <a href="/categories/%E8%BD%AF%E6%B5%8B/">软测</a>
+      <span class="widget-count">2</span>
+    </li>
+    
+    <li>
+      <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6/">嵌入式软件</a>
+      <span class="widget-count">1</span>
+    </li>
+    
+    <li>
+      <a href="/categories/%E6%9D%82%E9%A1%B9/">杂项</a>
+      <span class="widget-count">1</span>
+    </li>
+    
+    <li>
+      <a href="/categories/C%E8%AF%AD%E8%A8%80/">C语言</a>
+      <span class="widget-count">1</span>
+    </li>
+    
+  </ul>
+</div>
+
+
+
+<div class="sidebar-widget">
+  <h3 class="widget-title">标签云</h3>
+  <div class="widget-tags">
+    
+    <a href="/tags/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" class="tag" style="font-size: 1.02rem;">
+      原生鸿蒙开发 <span class="tag-count">11</span>
+    </a>
+    
+    <a href="/tags/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/" class="tag" style="font-size: 0.8600000000000001rem;">
+      MySQL数据库 <span class="tag-count">3</span>
+    </a>
+    
+    <a href="/tags/%E8%BD%AF%E6%B5%8B/" class="tag" style="font-size: 0.8400000000000001rem;">
+      软测 <span class="tag-count">2</span>
+    </a>
+    
+    <a href="/tags/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" class="tag" style="font-size: 0.8200000000000001rem;">
+      Linux基础命令 <span class="tag-count">1</span>
+    </a>
+    
+    <a href="/tags/%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE/" class="tag" style="font-size: 0.8200000000000001rem;">
+      学术文献 <span class="tag-count">1</span>
+    </a>
+    
+    <a href="/tags/%E7%A7%98%E5%AF%86%E7%A7%91%E6%8A%80/" class="tag" style="font-size: 0.8200000000000001rem;">
+      秘密科技 <span class="tag-count">1</span>
+    </a>
+    
+    <a href="/tags/%E8%B5%84%E6%BA%90%E5%BA%93/" class="tag" style="font-size: 0.8200000000000001rem;">
+      资源库 <span class="tag-count">1</span>
+    </a>
+    
+    <a href="/tags/Windows%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" class="tag" style="font-size: 0.8200000000000001rem;">
+      Windows相关设置 <span class="tag-count">1</span>
+    </a>
+    
+    <a href="/tags/%E5%8D%9A%E5%AE%A2CDN%E8%A7%A3%E6%9E%90/" class="tag" style="font-size: 0.8200000000000001rem;">
+      博客CDN解析 <span class="tag-count">1</span>
+    </a>
+    
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%9B%B8%E5%85%B3/" class="tag" style="font-size: 0.8200000000000001rem;">
+      博客搭建相关 <span class="tag-count">1</span>
+    </a>
+    
+    <a href="/tags/%E6%98%9F%E6%B5%B7%E7%89%A9%E8%81%94%E5%8D%8F%E8%AE%AE/" class="tag" style="font-size: 0.8200000000000001rem;">
+      星海物联协议 <span class="tag-count">1</span>
+    </a>
+    
+    <a href="/tags/C%E8%AF%AD%E8%A8%80/" class="tag" style="font-size: 0.8200000000000001rem;">
+      C语言 <span class="tag-count">1</span>
+    </a>
+    
+  </div>
+</div>
+
+
+<div class="sidebar-widget">
+  <h3 class="widget-title">归档</h3>
+  <ul class="widget-list">
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+    <li>
+      <a href="/archives/2026/">2026 年</a>
+    </li>
+    
+    <li>
+      <a href="/archives/2025/">2025 年</a>
+    </li>
+    
+  </ul>
+</div>
+
+
+      </aside>
+      
+
+      
+      <aside class="grid-toc">
+        <div class="toc-sticky">
+          <nav class="toc toc-desktop" id="toc-desktop" aria-label="文章目录"></nav>
+        </div>
+      </aside>
+      
+    </div>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    
+
+    
+    
+    <div class="footer-copyright">
+      &copy; 2026 星仔.
+      
+      <span class="footer-powered">
+        由 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 和 <a href="https://github.com/yourname/hexo-theme-cleartext" target="_blank" rel="noopener">Cleartext</a> 驱动。
+      </span>
+      
+    </div>
+    
+  </div>
+</footer>
+
+
+  <script defer src="/js/main.js"></script>
+  <script defer src="/js/mobile-menu.js"></script>
+  <script defer src="/js/back-to-top.js"></script>
+
+  
+  <script defer src="/js/dark-mode.js"></script>
+  
+
+  
+  <script defer src="/js/toc.js"></script>
+  
+
+  
+  <script defer src="/js/search.js"></script>
+  
+
+  <!-- Highlight.js (if enabled) -->
+
+<script defer src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/core.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/languages/javascript.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/languages/python.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/languages/bash.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/languages/xml.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/languages/css.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/languages/json.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/languages/markdown.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    hljs.highlightAll();
+  });
+</script>
+
+
+<!-- Prism.js (alternative) -->
+
+
+<!-- Page Views (optional) -->
+
+
+<!-- Giscus Config -->
+
+
+
+  <button class="back-to-top" id="back-to-top" aria-label="回到顶部" title="回到顶部">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+</body>
+</html>
