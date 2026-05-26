@@ -1,0 +1,25 @@
+<div class="page-categories">
+  <h1 class="page-title">分类</h1>
+
+  <div class="categories-list">
+    <% var catsData = (typeof site !== 'undefined' && site.categories) ? site.categories : []; %>
+    <% catsData.each(function(cat) { %>
+    <section class="category-section" id="cat-<%= cat._id %>">
+      <h2 class="category-title">
+        <a href="<%= url_for(cat.path) %>"><%= cat.name %></a>
+        <span class="category-count"><%= cat.length %></span>
+      </h2>
+      <ul class="category-post-list">
+        <% cat.posts.each(function(post) { %>
+        <li>
+          <time datetime="<%= date_xml(post.date) %>">
+            <%= date(post.date, 'YYYY-MM-DD') %>
+          </time>
+          <a href="<%= url_for(post.path) %>"><%= post.title %></a>
+        </li>
+        <% }); %>
+      </ul>
+    </section>
+    <% }); %>
+  </div>
+</div>

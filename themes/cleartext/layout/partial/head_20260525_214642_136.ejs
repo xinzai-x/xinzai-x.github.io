@@ -1,0 +1,61 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Dark Mode Anti-Flicker (inline, critical) -->
+<script>
+  (function () {
+    var theme = localStorage.getItem('cleartext-theme-mode');
+    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+</script>
+
+<!-- Primary Meta -->
+<title><% if (page.title) { %><%= page.title %> | <%= config.title %><% } else { %><%= config.title %> — <%= config.description %><% } %></title>
+<meta name="description" content="<%= page.description || page.excerpt || config.description %>">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="<%= full_url_for(page.path) %>">
+
+<!-- RSS Feed -->
+<link rel="alternate" href="<%= url_for('/atom.xml') %>" type="application/atom+xml" title="<%= config.title %>">
+
+<!-- Favicon -->
+<link rel="icon" href="<%= url_for('/favicon.svg') %>" type="image/svg+xml">
+<link rel="icon" href="<%= url_for('/favicon.ico') %>" type="image/x-icon">
+
+<!-- Theme CSS -->
+<link rel="stylesheet" href="<%= url_for('/css/style.css') %>">
+
+<!-- MathJax (Conditional) -->
+<% if (page.math || theme.math && theme.math.enable) { %>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+      ignoreHtmlClass: 'tex2jax_ignore',
+      processHtmlClass: 'tex2jax_process'
+    },
+    startup: {
+      ready: function () {
+        MathJax.startup.defaultReady();
+        if (window.cleartextReinit) cleartextReinit();
+      }
+    }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" crossorigin="anonymous"></script>
+<% } %>
+
+<!-- Highlight.js (Conditional) -->
+<% if (theme.code_highlight && theme.code_highlight.enable) { %>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11/build/styles/<%= theme.code_highlight.theme || 'github' %>.min.css">
+<% } %>

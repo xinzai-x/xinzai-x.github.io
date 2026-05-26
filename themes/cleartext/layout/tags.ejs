@@ -1,0 +1,44 @@
+<div class="page-tags">
+  <header class="page-header">
+    <h1 class="page-title">标签</h1>
+    <p class="page-subtitle">共 <%= site.tags.length %> 个标签，点击标签查看相关文章</p>
+  </header>
+
+  <div class="tags-cloud">
+    <% var tagsData = (typeof site !== 'undefined' && site.tags) ? site.tags : (page.tags || []); %>
+    <% tagsData.each(function(tag) {
+       var count = tag.length;
+       var size = Math.max(0.85, Math.min(1.7, 0.85 + count * 0.06));
+       var opacity = Math.max(0.6, Math.min(1, 0.6 + count * 0.04));
+    %>
+    <a class="tag-cloud-item" href="<%= url_for(tag.path) %>" style="font-size: <%= size %>rem; opacity: <%= opacity %>; --tag-count: <%= count %>;">
+      <%= tag.name %> <span class="tag-cloud-count"><%= tag.length %></span>
+    </a>
+    <% }); %>
+  </div>
+
+  <% if (page.tag) { %>
+  <div class="tag-posts-section">
+    <h2 class="tag-posts-title">「<%= page.tag %>」下的文章</h2>
+    <div class="tag-posts-grid">
+      <% page.posts.each(function(post) { %>
+      <article class="tag-post-card">
+        <time class="tag-post-date" datetime="<%= date_xml(post.date) %>">
+          <%= date(post.date, 'YYYY-MM-DD') %>
+        </time>
+        <h3 class="tag-post-title">
+          <a href="<%= url_for(post.path) %>"><%= post.title %></a>
+        </h3>
+        <% if (post.categories && post.categories.length > 0) { %>
+        <div class="tag-post-categories">
+          <% post.categories.each(function(cat) { %>
+          <a href="<%= url_for(cat.path) %>" class="cat-link"><%= cat.name %></a>
+          <% }); %>
+        </div>
+        <% } %>
+      </article>
+      <% }); %>
+    </div>
+  </div>
+  <% } %>
+</div>

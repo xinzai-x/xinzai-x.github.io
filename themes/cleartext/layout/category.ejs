@@ -1,0 +1,15 @@
+<div class="page-category">
+  <% if (page.category) { %>
+  <h1 class="page-title">分类：<%= page.category %></h1>
+  <% } else { %>
+  <h1 class="page-title">分类</h1>
+  <% } %>
+
+  <ul class="category-post-list">
+    <% (page.posts || []).each(function(post) { %>
+    <li>
+      <a href="<%= url_for(post.path) %>"><%= post.title %></a>
+    </li>
+    <% }); %>
+  </ul>
+</div>

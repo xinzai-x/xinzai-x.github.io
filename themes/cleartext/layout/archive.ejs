@@ -1,0 +1,27 @@
+<div class="page-archive">
+  <h1 class="page-title">归档</h1>
+
+  <% var postsByYear = {}; %>
+  <% var posts = (typeof site !== 'undefined' && site.posts) ? site.posts : []; %>
+  <% posts.each(function(post) { %>
+    <% var year = date(post.date, 'YYYY'); %>
+    <% if (!postsByYear[year]) { postsByYear[year] = []; } %>
+    <% postsByYear[year].push(post); %>
+  <% }); %>
+
+  <% for (var year in postsByYear) { %>
+  <section class="archive-year">
+    <h2 class="archive-year-title">
+      <%= year %>
+      <span class="archive-year-count"><%= postsByYear[year].length %> 篇</span>
+    </h2>
+    <ul class="archive-list">
+      <% postsByYear[year].forEach(function(post) { %>
+      <li class="archive-item">
+        <a href="<%= url_for(post.path) %>"><%= post.title %></a>
+      </li>
+      <% }); %>
+    </ul>
+  </section>
+  <% } %>
+</div>

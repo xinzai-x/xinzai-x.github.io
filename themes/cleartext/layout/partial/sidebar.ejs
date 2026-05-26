@@ -1,0 +1,71 @@
+<% if (theme.sidebar && theme.sidebar.enable) { %>
+<%
+  // Build widgets list from config
+  var widgets = theme.sidebar.widgets || [];
+  if (!Array.isArray(widgets) || widgets.length === 0) {
+    widgets = ['recent_posts', 'categories', 'tag_cloud', 'archives'];
+  }
+%>
+
+<% widgets.forEach(function(widget) { %>
+
+<% if (widget === 'recent_posts') { %>
+<div class="sidebar-widget">
+  <h3 class="widget-title">最新文章</h3>
+  <ul class="widget-list">
+    <% site.posts.sort('date', -1).limit(8).each(function(post) { %>
+    <li>
+      <a href="<%= url_for(post.path) %>" title="<%= post.title %>"><%= post.title %></a>
+      <span style="font-size:var(--text-xs);color:var(--color-text-muted);display:block;margin-top:var(--space-1)"><%= date(post.date, 'YYYY-MM-DD') %></span>
+    </li>
+    <% }); %>
+  </ul>
+</div>
+<% } %>
+
+<% if (widget === 'categories' && site.categories.length > 0) { %>
+<div class="sidebar-widget">
+  <h3 class="widget-title">分类</h3>
+  <ul class="widget-list widget-categories">
+    <% site.categories.sort('length', -1).limit(10).each(function(cat) { %>
+    <li>
+      <a href="<%= url_for(cat.path) %>"><%= cat.name %></a>
+      <span class="widget-count"><%= cat.length %></span>
+    </li>
+    <% }); %>
+  </ul>
+</div>
+<% } %>
+
+<% if (widget === 'tag_cloud' && site.tags.length > 0) { %>
+<div class="sidebar-widget">
+  <h3 class="widget-title">标签云</h3>
+  <div class="widget-tags">
+    <% site.tags.sort('length', -1).limit(20).each(function(tag) { %>
+    <a href="<%= url_for(tag.path) %>" class="tag" style="font-size: <%= Math.max(0.75, Math.min(1.1, 0.75 + tag.length * 0.02)) %>rem;">
+      <%= tag.name %>
+    </a>
+    <% }); %>
+  </div>
+</div>
+<% } %>
+
+<% if (widget === 'archives') { %>
+<div class="sidebar-widget">
+  <h3 class="widget-title">归档</h3>
+  <ul class="widget-list">
+    <% var years = {}; site.posts.each(function(post) { var y = post.date.year(); if (!years[y]) years[y] = 0; years[y]++; }); %>
+    <% Object.keys(years).sort(function(a,b){ return b-a; }).forEach(function(year) { %>
+    <li>
+      <a href="<%= url_for('/archives/' + year + '/') %>">
+        <%= year %> 年
+        <span class="widget-count"><%= years[year] %></span>
+      </a>
+    </li>
+    <% }); %>
+  </ul>
+</div>
+<% } %>
+
+<% }); %>
+<% } %>

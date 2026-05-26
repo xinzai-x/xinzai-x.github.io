@@ -1,0 +1,18 @@
+<!-- Giscus Config -->
+<% if (theme.comments && theme.comments.giscus && theme.comments.giscus.enable) { %>
+<script>
+window.CLEARTEXT_GISCUS = {
+  repo: '<%= theme.comments.giscus.repo %>',
+  repo_id: '<%= theme.comments.giscus.repo_id %>',
+  category: '<%= theme.comments.giscus.category %>',
+  category_id: '<%= theme.comments.giscus.category_id %>',
+  mapping: '<%= theme.comments.giscus.mapping || "pathname" %>',
+  strict: '<%= theme.comments.giscus.strict || "0" %>',
+  reactions_enabled: '<%= theme.comments.giscus.reactions_enabled || "1" %>',
+  emit_metadata: '<%= theme.comments.giscus.emit_metadata || "0" %>',
+  input_position: '<%= theme.comments.giscus.input_position || "bottom" %>',
+  lang: '<%= theme.comments.giscus.lang || "zh-CN" %>',
+  loading: '<%= theme.comments.giscus.loading || "lazy" %>'
+};
+</script>
+<% } %>

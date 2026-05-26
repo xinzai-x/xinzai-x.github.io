@@ -1,0 +1,68 @@
+<header class="site-header" id="site-header" role="banner">
+  <div class="header-inner">
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="切换导航菜单" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <a class="site-title" href="<%= url_for('/') %>" aria-label="返回首页">
+      <%= config.title || 'Cleartext' %>
+    </a>
+
+    <nav class="site-nav" role="navigation" aria-label="主导航">
+      <% if (theme.menu) { %>
+        <% for (var item in theme.menu) { %>
+          <% var link = theme.menu[item]; %>
+          <a class="nav-link<% if (link === '/' && is_home()) { %> active<% } else if (link !== '/' && page.path && page.path.indexOf(link.replace(/^\/|\/$/g, '')) === 0) { %> active<% } %>"
+             href="<%= url_for(link) %>"
+             <% if ((link === '/' && is_home()) || (link !== '/' && page.path && page.path.indexOf(link.replace(/^\/|\/$/g, '')) === 0)) { %>aria-current="page"<% } %>>
+            <%= item %>
+          </a>
+        <% } %>
+      <% } %>
+    </nav>
+
+    <div class="header-actions">
+      <% if (theme.search && theme.search.enable) { %>
+      <button class="header-btn" id="search-btn" aria-label="搜索" title="搜索 (Ctrl+K)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+      <% } %>
+
+      <% if (theme.dark_mode && theme.dark_mode.enable) { %>
+      <button class="header-btn" id="dark-mode-btn" aria-label="切换暗色模式" title="切换暗色/亮色模式">
+        <svg id="dm-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg id="dm-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+      <% } %>
+    </div>
+  </div>
+</header>
+
+<!-- Search Overlay -->
+<% if (theme.search && theme.search.enable) { %>
+<div class="search-overlay" id="search-overlay" data-search-url="<%= url_for('/search.xml') %>" aria-hidden="true" role="dialog" aria-label="搜索">
+  <div class="search-modal">
+    <input type="text" class="search-input" id="search-input" placeholder="搜索文章..." autocomplete="off" aria-label="搜索文章标题和内容">
+    <button class="search-close" id="search-close" aria-label="关闭搜索">&times;</button>
+    <div class="search-history" id="search-history" style="display:none;"></div>
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<% } %>

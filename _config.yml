@@ -13,7 +13,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://www.6673543.xyz/
+url: https://blog.6673543.xyz/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -64,19 +64,17 @@ index_generator:
   per_page: 10
   order_by: date
 
+# archive/category/tag pages enabled
 archive_generator:
   per_page: 10
-  order_by: date
+  yearly: true
+  monthly: true
 
-# Category page setting
 category_generator:
   per_page: 10
-  order_by: date
 
-# Tag page setting
 tag_generator:
   per_page: 10
-  order_by: date
 
 
 # Category & Tag
@@ -111,7 +109,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: anzhiyu
+theme: cleartext
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
