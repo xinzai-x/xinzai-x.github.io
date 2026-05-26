@@ -1,48 +1,56 @@
-/**
- * Cleartext Theme v3.0 — Back to Top Button
- * Lazy-initialized via requestIdleCallback for performance
- */
-(function () {
+// Back to Top & Back to Bottom Buttons
+(function() {
   'use strict';
 
-  var init = function () {
-    var button = document.getElementById('back-to-top');
-    if (!button) return;
+  document.addEventListener('DOMContentLoaded', function() {
+    const topBtn = document.getElementById('back-to-top');
+    const bottomBtn = document.getElementById('back-to-bottom');
+    if (!topBtn && !bottomBtn) return;
 
-    var SCROLL_THRESHOLD = 300;
-    var ticking = false;
+    function updateButtons() {
+      const scrollY = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight;
+      const winHeight = window.innerHeight;
+      const nearBottom = scrollY + winHeight >= docHeight - 200;
 
-    function updateVisibility() {
-      if (window.scrollY > SCROLL_THRESHOLD) {
-        button.classList.add('visible');
-      } else {
-        button.classList.remove('visible');
+      [topBtn, bottomBtn].forEach(function(btn) {
+        if (!btn) return;
+        if (scrollY > 300) {
+          btn.style.opacity = '1';
+          btn.style.visibility = 'visible';
+          btn.style.transform = 'translateY(0)';
+        } else {
+          btn.style.opacity = '0';
+          btn.style.visibility = 'hidden';
+          btn.style.transform = 'translateY(10px)';
+        }
+      });
+
+      if (bottomBtn && nearBottom) {
+        bottomBtn.style.opacity = '0';
+        bottomBtn.style.visibility = 'hidden';
+        bottomBtn.style.transform = 'translateY(10px)';
       }
-      ticking = false;
     }
 
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (topBtn) {
+      topBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        this.blur();
+      });
     }
 
-    button.addEventListener('click', function (e) {
-      scrollToTop();
-      e.preventDefault();
-    });
+    if (bottomBtn) {
+      bottomBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+        this.blur();
+      });
+    }
 
-    window.addEventListener('scroll', function () {
-      if (!ticking) {
-        requestAnimationFrame(updateVisibility);
-        ticking = true;
-      }
-    }, { passive: true });
-
-    updateVisibility();
-  };
-
-  if (typeof requestIdleCallback === 'function') {
-    requestIdleCallback(init, { timeout: 3000 });
-  } else {
-    setTimeout(init, 500);
-  }
+    updateButtons();
+    window.addEventListener('scroll', updateButtons, { passive: true });
+    window.addEventListener('resize', updateButtons, { passive: true });
+  });
 })();

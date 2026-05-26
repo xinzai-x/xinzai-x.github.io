@@ -2,91 +2,26 @@
 <html lang="zh-CN" class="">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<!-- Dark Mode Anti-Flicker -->
 <script>
-  (function () {
-    var theme = localStorage.getItem('cleartext-theme-mode');
-    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-    }
-  })();
+(function(){var t=localStorage.getItem('cleartext-theme-mode');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark')})();
 </script>
 
-<!-- Primary Meta -->
 <title>关于 | 星仔极客</title>
 <meta name="description" content="日常笔记和生活分享！">
-<meta name="author" content="星仔">
-<meta name="generator" content="Hexo ">
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://accblog.6673543.xyz/about/index.html">
 <meta property="og:title" content="关于">
 <meta property="og:description" content="日常笔记和生活分享！">
-<meta property="og:image" content="https://accblog.6673543.xyz/img/og-image.png">
-<meta property="og:site_name" content="星仔极客">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.6673543.xyz/about/index.html">
 
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="关于">
-<meta name="twitter:description" content="日常笔记和生活分享！">
-<meta name="twitter:image" content="https://accblog.6673543.xyz/img/twitter-image.png">
-<meta name="twitter:site" content="">
-
-<!-- Structured Data (Schema.org) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "headline": "关于",
-  "description": "日常笔记和生活分享！",
-  "url": "https://accblog.6673543.xyz/about/index.html",
-  "image": "https://accblog.6673543.xyz/img/schema-image.png",
-  "publisher": {
-    "@type": "Organization",
-    "name": "星仔极客",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://accblog.6673543.xyz/img/logo.png"
-    }
-  }
-  
-}
-</script>
-
-<!-- Canonical URL -->
-<link rel="canonical" href="https://accblog.6673543.xyz/about/index.html">
-
-<!-- RSS Feed -->
-<link rel="alternate" href="/atom.xml" type="application/atom+xml" title="星仔极客">
-
-<!-- Favicon -->
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-<!-- Font Preload -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-
-<!-- Theme CSS -->
+<link rel="canonical" href="https://blog.6673543.xyz/about/index.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/css/style.css">
 
-<!-- MathJax (Conditional) -->
-
-
-<!-- Highlight.js (Conditional) -->
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11/styles/github.min.css">
-
-
-</head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 <body>
   <a href="#main-content" class="skip-to-content" aria-label="跳转到主要内容">跳到内容</a>
   <header class="site-header" id="site-header" role="banner">
@@ -112,27 +47,6 @@
           </a>
         
           
-          <a class="nav-link"
-             href="/archives/"
-             >
-            归档
-          </a>
-        
-          
-          <a class="nav-link"
-             href="/categories/"
-             >
-            分类
-          </a>
-        
-          
-          <a class="nav-link"
-             href="/tags/"
-             >
-            标签
-          </a>
-        
-          
           <a class="nav-link active"
              href="/about/"
              aria-current="page">
@@ -141,7 +55,7 @@
         
           
           <a class="nav-link"
-             href="/links/"
+             href="/link/"
              >
             友链
           </a>
@@ -198,14 +112,26 @@
     <div class="grid-container
       
       
-      
+      grid-page
     ">
       <main class="grid-main">
-        <div class="page-content">
-  <h1 class="page-title">关于</h1>
+        <div class="page-about">
+  <div class="about-hero">
+    <div class="about-profile">
+      <div class="about-avatar-placeholder">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </div>
+      <h1 class="about-name">关于</h1>
+      <p class="about-tagline">记录技术与生活的思考</p>
+    </div>
+  </div>
 
-  <div class="page-body">
-    <p>    有志者自有千计万计，无志者只感千难万难。人生从来不跌倒不算光彩，每次跌倒后能再站起来，才是最大的荣耀。要懂得失败只有一种，那就是半途而废。生命不止需要长度，更需要宽度。记住不论你在什么时候开始，重要的是开始之后就不要停止。</p>
+  <div class="about-body">
+    <div class="about-bio">
+      <p>    有志者自有千计万计，无志者只感千难万难。人生从来不跌倒不算光彩，每次跌倒后能再站起来，才是最大的荣耀。要懂得失败只有一种，那就是半途而废。生命不止需要长度，更需要宽度。记住不论你在什么时候开始，重要的是开始之后就不要停止。</p>
 <p>    人生就像马拉松，获胜的关键不在于瞬间的爆发，而在于途中的坚持。你纵有千百个理由放弃，也要给自己找一个坚持下去的理由。很多时候，成功就是多坚持一分钟，这一分钟不放弃，下一分钟就会有希望。只是我们不知道，这一分钟会在什么时候出现。所以，再苦再累，只要坚持走下去，属于你的风景终会出现！</p>
 <hr />
 <blockquote>
@@ -217,14 +143,62 @@
 <p>联系方式：QQ 1970884166，请说明来意，谢谢！</p>
 </blockquote>
 
+    </div>
+
+    <div class="about-stats-bar">
+      <div class="stat-entry">
+        <span class="stat-value" id="about-post-count">25</span>
+        <span class="stat-key">文章</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-entry">
+        <span class="stat-value" id="about-tag-count">12</span>
+        <span class="stat-key">标签</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-entry">
+        <span class="stat-value" id="about-cat-count">8</span>
+        <span class="stat-key">分类</span>
+      </div>
+    </div>
+
+    <div class="about-skills-section">
+      <div class="skills-group">
+        <span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">TypeScript</span>
+        <span class="skill-pill">React</span>
+        <span class="skill-pill">Vue</span>
+        <span class="skill-pill">Node.js</span>
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">Go</span>
+        <span class="skill-pill">Docker</span>
+        <span class="skill-pill">Kubernetes</span>
+      </div>
+    </div>
+
+    <div class="about-social">
+      <a href="https://github.com/yourusername" class="social-link" target="_blank" rel="noopener" title="GitHub">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+      <a href="mailto:hello@example.com" class="social-link" title="Email">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+      </a>
+      <a href="#" class="social-link" title="RSS">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 11a9 9 0 0 1 9 9"></path>
+          <path d="M4 4a16 16 0 0 1 16 16"></path>
+          <circle cx="5" cy="19" r="1"></circle>
+        </svg>
+      </a>
+    </div>
   </div>
 </div>
-
-
-
       </main>
-
-      
 
       
     </div>
@@ -250,52 +224,8 @@
 
 
   <script defer src="/js/main.js"></script>
-  <script defer src="/js/mobile-menu.js"></script>
-  <script defer src="/js/back-to-top.js"></script>
-
-  
-  <script defer src="/js/dark-mode.js"></script>
-  
-
-  
-
-  
-  <script defer src="/js/search.js"></script>
-  
-
-  <!-- Highlight.js (if enabled) -->
-
-<script defer src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/core.min.js"></script>
-
-<script defer src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/languages/javascript.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/languages/python.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/languages/bash.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/languages/xml.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/languages/css.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/languages/json.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/languages/markdown.min.js"></script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    hljs.highlightAll();
-  });
-</script>
+  <!-- Giscus Config -->
 
 
-<!-- Prism.js (alternative) -->
-
-
-<!-- Page Views (optional) -->
-
-
-<!-- Giscus Config -->
-
-
-
-  <button class="back-to-top" id="back-to-top" aria-label="回到顶部" title="回到顶部">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="18 15 12 9 6 15"></polyline>
-    </svg>
-  </button>
 </body>
 </html>

@@ -7,6 +7,7 @@
 
   var tocDesktop = document.getElementById('toc-desktop');
   var tocMobile = document.getElementById('toc-mobile');
+  var tocDesktopWrapper = document.getElementById('toc-desktop-wrapper');
   var tocMobileWrapper = document.getElementById('toc-mobile-wrapper');
   var postContent = document.querySelector('.post-content');
 
@@ -15,9 +16,23 @@
 
   var headings = postContent.querySelectorAll('h2, h3, h4');
   if (headings.length === 0) {
-    if (tocMobileWrapper) tocMobileWrapper.style.display = 'none';
+    if (tocMobileWrapper) {
+      tocMobileWrapper.style.display = 'none';
+      tocMobileWrapper.style.visibility = 'hidden';
+    }
+    if (tocDesktopWrapper) {
+      tocDesktopWrapper.style.display = 'none';
+      tocDesktopWrapper.style.visibility = 'hidden';
+    }
     return;
   }
+
+  /* Generate IDs for headings that lack them */
+  headings.forEach(function(h) {
+    if (!h.id) {
+      h.id = 'heading-' + Math.random().toString(36).substr(2, 9);
+    }
+  });
 
   /* Build TOC */
   var tocTree = buildTocTree(headings);
