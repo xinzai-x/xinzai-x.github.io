@@ -48,6 +48,27 @@
         
           
           <a class="nav-link"
+             href="/archives/"
+             >
+            归档
+          </a>
+        
+          
+          <a class="nav-link"
+             href="/categories/"
+             >
+            分类
+          </a>
+        
+          
+          <a class="nav-link"
+             href="/tags/"
+             >
+            标签
+          </a>
+        
+          
+          <a class="nav-link"
              href="/about/"
              >
             关于
@@ -187,25 +208,25 @@
 
   <!-- Post Content -->
   <div class="post-content" itemprop="articleBody">
-    <h1 id="httpaxios-网络请求文档中心"><a class="markdownIt-Anchor" href="#httpaxios-网络请求文档中心"></a> Http/Axios 网络请求<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/http-request">文档中心</a></h1>
+    <h1 id="httpaxios-网络请求文档中心"><a class="markdownIt-Anchor" href="#httpaxios-网络请求文档中心"></a> Http/Axios 网络请求<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/http-request" target="_blank" rel="noopener noreferrer">文档中心</a></h1>
 <h2 id="http"><a class="markdownIt-Anchor" href="#http"></a> Http</h2>
 <p>返回字符串<br />
 免费测试接口地址：</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://jsonplaceholder.typicode.com/todos/1">https://jsonplaceholder.typicode.com/todos/1</a></li>
-<li><a target="_blank" rel="noopener" href="https://jsonplaceholder.typicode.com">https://jsonplaceholder.typicode.com</a></li>
-<li><a target="_blank" rel="noopener" href="https://httpbin.org">https://httpbin.org</a></li>
-<li><a target="_blank" rel="noopener" href="https://apis.juhe.cn">https://apis.juhe.cn</a></li>
+<li><a href="https://jsonplaceholder.typicode.com/todos/1" target="_blank" rel="noopener noreferrer">https://jsonplaceholder.typicode.com/todos/1</a></li>
+<li><a href="https://jsonplaceholder.typicode.com" target="_blank" rel="noopener noreferrer">https://jsonplaceholder.typicode.com</a></li>
+<li><a href="https://httpbin.org" target="_blank" rel="noopener noreferrer">https://httpbin.org</a></li>
+<li><a href="https://apis.juhe.cn" target="_blank" rel="noopener noreferrer">https://apis.juhe.cn</a></li>
 </ul>
 <p>:::</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@State result_use: string = &#x27;&#x27;</span><br><span class="line">async sendHttp() &#123;</span><br><span class="line">  //发请求的实例</span><br><span class="line">  const req = http.createHttp()</span><br><span class="line">  //通过实例发请求</span><br><span class="line">  const res = await req.request(&quot;https://httpbin.org&quot;)</span><br><span class="line">  //使用结果</span><br><span class="line">  this.result_use = res.result as string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Button(&#x27;发起Http请求&#x27;)</span><br><span class="line">  .onClick(() =&gt; &#123;</span><br><span class="line">    this.sendHttp()</span><br><span class="line">  &#125;)</span><br><span class="line">Scroll() &#123;</span><br><span class="line">  Text(&#x27;http请求结果：&#x27; + this.result_use)</span><br><span class="line">&#125;.height(&#x27;40%&#x27;)</span><br></pre></td></tr></table></figure>
-<h2 id="axiosaxios库"><a class="markdownIt-Anchor" href="#axiosaxios库"></a> Axios<a target="_blank" rel="noopener" href="https://ohpm.openharmony.cn/#/cn/detail/@ohos%2Faxios">Axios库</a></h2>
+<h2 id="axiosaxios库"><a class="markdownIt-Anchor" href="#axiosaxios库"></a> Axios<a href="https://ohpm.openharmony.cn/#/cn/detail/@ohos%2Faxios" target="_blank" rel="noopener noreferrer">Axios库</a></h2>
 <p>返回：包装了一层的对象，更适合项目</p>
 <p>使用时需要安装第三方库，需要指令安装，若在功能目录则全局安装，如果在 entry 模块夏安装则是局部安装</p>
 <p>包存放在：<code>oh-package.json5</code>中</p>
-<p><a target="_blank" rel="noopener" href="https://ohpm.openharmony.cn/#/cn/home">OpenHarmony三方库中心仓</a></p>
+<p><a href="https://ohpm.openharmony.cn/#/cn/home" target="_blank" rel="noopener noreferrer">OpenHarmony三方库中心仓</a></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@State axiosResult_use: string = &#x27;&#x27;</span><br><span class="line">async sendAxios() &#123;</span><br><span class="line">  try &#123;</span><br><span class="line">    const res =</span><br><span class="line">      await axios.get&lt;object, AxiosResponse&lt;object, null&gt;&gt;(&quot;https://apis.juhe.cn&quot;)</span><br><span class="line">    this.axiosResult_use = JSON.stringify(res.data)</span><br><span class="line">  &#125; catch (error) &#123;</span><br><span class="line">    console.error(JSON.stringify(error));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Scroll() &#123;</span><br><span class="line">  Text(&#x27;axios请求结果：&#x27; + this.axiosResult_use)</span><br><span class="line">&#125;.height(300)</span><br><span class="line">Button(&#x27;发起Axios请求&#x27;)</span><br><span class="line">  .onClick(() =&gt; &#123;</span><br><span class="line">    this.sendAxios()</span><br><span class="line">    promptAction.showToast(&#123; message: this.axiosResult_use &#125;)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="rcp文档中心"><a class="markdownIt-Anchor" href="#rcp文档中心"></a> rcp<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp">文档中心</a></h2>
+<h2 id="rcp文档中心"><a class="markdownIt-Anchor" href="#rcp文档中心"></a> rcp<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp" target="_blank" rel="noopener noreferrer">文档中心</a></h2>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
   </div>

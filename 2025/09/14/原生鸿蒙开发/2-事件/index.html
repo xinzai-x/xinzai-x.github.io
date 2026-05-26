@@ -48,6 +48,27 @@
         
           
           <a class="nav-link"
+             href="/archives/"
+             >
+            归档
+          </a>
+        
+          
+          <a class="nav-link"
+             href="/categories/"
+             >
+            分类
+          </a>
+        
+          
+          <a class="nav-link"
+             href="/tags/"
+             >
+            标签
+          </a>
+        
+          
+          <a class="nav-link"
              href="/about/"
              >
             关于
@@ -188,15 +209,15 @@
   <!-- Post Content -->
   <div class="post-content" itemprop="articleBody">
     <div class="mathjax-process"><h1 id="通用事件"><a class="markdownIt-Anchor" href="#通用事件"></a> 通用事件</h1>
-<p><a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events">通用事件API</a></p>
-<h2 id="组件区域变化事件文档中心"><a class="markdownIt-Anchor" href="#组件区域变化事件文档中心"></a> 组件区域变化事件<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-component-area-change-event">文档中心</a></h2>
+<p><a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events" target="_blank" rel="noopener noreferrer">通用事件API</a></p>
+<h2 id="组件区域变化事件文档中心"><a class="markdownIt-Anchor" href="#组件区域变化事件文档中心"></a> 组件区域变化事件<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-component-area-change-event" target="_blank" rel="noopener noreferrer">文档中心</a></h2>
 <p>组件区域变化时触发</p>
 <ul>
 <li>返回目标元素变化之前的宽高以及目标元素相对父元素和页面左上角的坐标位置</li>
 <li>返回目标元素变化之后的宽高以及目标元素相对父元素和页面左上角的坐标位置</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.onAreaChange((_oldValue, _newValue) =&gt; &#123;</span><br><span class="line">  // onAreaChange可能会触发多次，所以不要批量使用</span><br><span class="line">  promptAction.showDialog(&#123;</span><br><span class="line">    message: `</span><br><span class="line">      宽度:$&#123;_oldValue.width&#125; - $&#123;_newValue.width&#125;</span><br><span class="line">      高度:$&#123;_oldValue.height&#125; - $&#123;_newValue.height&#125;</span><br><span class="line">      X坐标:$&#123;_oldValue.globalPosition.x&#125; - $&#123;_newValue.globalPosition.x&#125;</span><br><span class="line">      Y坐标:$&#123;_oldValue.globalPosition.y&#125; - $&#123;_newValue.globalPosition.y&#125;</span><br><span class="line">    `</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h1 id="手势事件文档中心"><a class="markdownIt-Anchor" href="#手势事件文档中心"></a> 手势事件<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-gesture-events">文档中心</a></h1>
+<h1 id="手势事件文档中心"><a class="markdownIt-Anchor" href="#手势事件文档中心"></a> 手势事件<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-gesture-events" target="_blank" rel="noopener noreferrer">文档中心</a></h1>
 <h2 id="单一手势"><a class="markdownIt-Anchor" href="#单一手势"></a> 单一手势</h2>
 <h3 id="长按手势"><a class="markdownIt-Anchor" href="#长按手势"></a> 长按手势</h3>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// fingers: 1，触发长按手势所需要的最少手指数量</span><br><span class="line">// repeat: true，否连续触发事件回调</span><br><span class="line">// priority: 500，触发长按所需的最短时间，单位为毫秒，默认值为500</span><br><span class="line">.gesture(LongPressGesture(&#123; repeat: true &#125;).onAction((event: GestureEvent | undefined) =&gt; &#123;</span><br><span class="line">  if (event) &#123;</span><br><span class="line">    if (event.repeat) &#123;</span><br><span class="line">      console.log(&#x27;长按&#x27;, item.deviceViewId.toString());</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>

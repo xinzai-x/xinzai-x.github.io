@@ -48,6 +48,27 @@
         
           
           <a class="nav-link"
+             href="/archives/"
+             >
+            归档
+          </a>
+        
+          
+          <a class="nav-link"
+             href="/categories/"
+             >
+            分类
+          </a>
+        
+          
+          <a class="nav-link"
+             href="/tags/"
+             >
+            标签
+          </a>
+        
+          
+          <a class="nav-link"
              href="/about/"
              >
             关于
@@ -187,7 +208,7 @@
 
   <!-- Post Content -->
   <div class="post-content" itemprop="articleBody">
-    <div class="mathjax-process"><h1 id="组件导航路由-文档中心"><a class="markdownIt-Anchor" href="#组件导航路由-文档中心"></a> 组件导航路由 <a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigation-navigation">文档中心</a></h1>
+    <div class="mathjax-process"><h1 id="组件导航路由-文档中心"><a class="markdownIt-Anchor" href="#组件导航路由-文档中心"></a> 组件导航路由 <a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigation-navigation" target="_blank" rel="noopener noreferrer">文档中心</a></h1>
 <img src="https://s2.loli.net/2025/12/31/zSR5exhjdP2XUJ4.png" alt="路由导航路线图" style="zoom:50%;" />
 <img src="https://s2.loli.net/2025/12/31/D8UeWBXI2chal1s.png" alt="页面生命周期" style="zoom:50%;" />
 <ul>
@@ -227,21 +248,21 @@
 <p>跳转的页面，因为跳转的页面入口必须是 Builder 修饰的全局函数</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Builder</span><br><span class="line">export function 函数名() &#123;		//这里的函数名必须和route_map.json中的buildFunction一致</span><br><span class="line">    跳转页面入口函数</span><br><span class="line">&#125;</span><br><span class="line">NavDestination() &#123;&#125;		//页面展示必须在这个包裹里面才可以展示</span><br></pre></td></tr></table></figure>
 <h2 id="路由拦截"><a class="markdownIt-Anchor" href="#路由拦截"></a> 路由拦截</h2>
-<h1 id="老路由不推荐文档中心"><a class="markdownIt-Anchor" href="#老路由不推荐文档中心"></a> 老路由(不推荐)<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-routing">文档中心</a></h1>
+<h1 id="老路由不推荐文档中心"><a class="markdownIt-Anchor" href="#老路由不推荐文档中心"></a> 老路由(不推荐)<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-routing" target="_blank" rel="noopener noreferrer">文档中心</a></h1>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Entry</span><br><span class="line">@Component</span><br><span class="line">struct NavigationAPI9 &#123;</span><br><span class="line">  build() &#123;</span><br><span class="line">    Navigation() &#123;</span><br><span class="line">      //router具备跳转能力</span><br><span class="line">      NavRouter() &#123;</span><br><span class="line">        //跳转组件 - 只能放置一个组件------------------------------1</span><br><span class="line">        // 第二个会覆盖第一个</span><br><span class="line">        Button(&#x27;跳转A&#x27;)</span><br><span class="line">        Button(&#x27;跳转B&#x27;)</span><br><span class="line">        //要跳转的界面-------------------------------------------2</span><br><span class="line">        NavDestination() &#123;</span><br><span class="line">          NavRouter() &#123;</span><br><span class="line">            //     第一个组件就是点击进行跳转的</span><br><span class="line">            Image($r(&#x27;app.media.b&#x27;))</span><br><span class="line">              .width(100)</span><br><span class="line">            NavDestination()&#123;</span><br><span class="line">              Text(&#x27;第三个页面&#x27;)</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="三层架构三层架构文档中心"><a class="markdownIt-Anchor" href="#三层架构三层架构文档中心"></a> 三层架构<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/codelabsPortal/carddetails/tutorials_Next-BasicArchitectureDesignPart2">三层架构</a><a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/best-practices-V5/bpta-layered-architecture-design-V5">文档中心</a></h1>
+<h1 id="三层架构三层架构文档中心"><a class="markdownIt-Anchor" href="#三层架构三层架构文档中心"></a> 三层架构<a href="https://developer.huawei.com/consumer/cn/codelabsPortal/carddetails/tutorials_Next-BasicArchitectureDesignPart2" target="_blank" rel="noopener noreferrer">三层架构</a><a href="https://developer.huawei.com/consumer/cn/doc/best-practices-V5/bpta-layered-architecture-design-V5" target="_blank" rel="noopener noreferrer">文档中心</a></h1>
 <img src="https://s2.loli.net/2025/12/31/WjwzCqASyM1QnZc.png" style="zoom:50%;" />
 <p>commons（公共能力层）：提供整个应用共享的基础组件、工具类、公共配置等，如公共UI组件、数据管理、网络请求封装等，通常编译为HAR包或HSP包</p>
 <p>features（基础特性层）：实现应用的各个功能模块，每个模块相对独立，可单独开发和测试。通常编译为HAR包、HSP包或Feature类型的HAP包</p>
 <p>products（产品定制层）：针对不同设备形态（如手机、平板等）进行功能和特性集成，是应用的主入口，通常编译为Entry类型的HAP包</p>
-<p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2025/zip/51403960/1747472864086-3b681d04-c5eb-4192-b965-8da217db202a.zip">三层架构示例代码.zip</a></p>
+<p><a href="https://www.yuque.com/attachments/yuque/0/2025/zip/51403960/1747472864086-3b681d04-c5eb-4192-b965-8da217db202a.zip" target="_blank" rel="noopener noreferrer">三层架构示例代码.zip</a></p>
 <p>寻找包名：<code>\project01\AppScope\app.json5</code>中的 <strong>bundleName</strong></p>
 <ol>
 <li>在工程目录下，创建三个文件夹commons、features、products <img src="https://s2.loli.net/2025/12/31/UkVj1mbyBezlxNF.png" style="zoom: 67%;" /></li>
 <li>实现首页、课程学习、知识地图这三个功能页面，创建feature模块 quickstart、map、learning，选择<strong>Shared Library</strong></li>
 <li>创建commons层模块，创建两个模块utils和uicomponents，选择<strong>Static Library</strong></li>
 </ol>
-<p>具体使用<strong>Static Library</strong> 还是 **Shared Library **还需要根据实际情况 <a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-package-structure-stage-V5#%E9%80%89%E6%8B%A9%E5%90%88%E9%80%82%E7%9A%84%E5%8C%85%E7%B1%BB%E5%9E%8B">文档中心</a></p>
+<p>具体使用<strong>Static Library</strong> 还是 **Shared Library **还需要根据实际情况 <a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-package-structure-stage-V5#%E9%80%89%E6%8B%A9%E5%90%88%E9%80%82%E7%9A%84%E5%8C%85%E7%B1%BB%E5%9E%8B" target="_blank" rel="noopener noreferrer">文档中心</a></p>
 <table>
 <thead>
 <tr>
@@ -253,22 +274,22 @@
 <tbody>
 <tr>
 <td style="text-align:center">Ability</td>
-<td style="text-align:center"><a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/hap-package-V5">HAP</a></td>
+<td style="text-align:center"><a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/hap-package-V5" target="_blank" rel="noopener noreferrer">HAP</a></td>
 <td style="text-align:left">应用的功能模块，可以独立安装和运行，必须包含一个entry类型的HAP，可选包含一个或多个feature类型的HAP。</td>
 </tr>
 <tr>
 <td style="text-align:center">Static Library</td>
-<td style="text-align:center"><a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/har-package-V5">HAR</a></td>
-<td style="text-align:left">静态共享包，编译态复用。<br/>- 支持应用内共享，也可以发布后供其他应用使用。<br/>- 作为二方库，发布到<a target="_blank" rel="noopener" href="https://ohpm.openharmony.cn/">OHPM</a>私仓，供公司内部其他应用使用。<br/>- 作为三方库，发布到<a target="_blank" rel="noopener" href="https://ohpm.openharmony.cn/">OHPM</a>中心仓，供其他应用使用。<br/>- 多包（HAP/HSP）引用相同的HAR时，会造成多包间代码和资源的重复拷贝，从而导致应用包膨大。<br/>- 注意：<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/har-package-V5#%E7%BC%96%E8%AF%91">编译HAR</a>时，建议开启混淆能力，保护代码资产。</td>
+<td style="text-align:center"><a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/har-package-V5" target="_blank" rel="noopener noreferrer">HAR</a></td>
+<td style="text-align:left">静态共享包，编译态复用。<br/>- 支持应用内共享，也可以发布后供其他应用使用。<br/>- 作为二方库，发布到<a href="https://ohpm.openharmony.cn/" target="_blank" rel="noopener noreferrer">OHPM</a>私仓，供公司内部其他应用使用。<br/>- 作为三方库，发布到<a href="https://ohpm.openharmony.cn/" target="_blank" rel="noopener noreferrer">OHPM</a>中心仓，供其他应用使用。<br/>- 多包（HAP/HSP）引用相同的HAR时，会造成多包间代码和资源的重复拷贝，从而导致应用包膨大。<br/>- 注意：<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/har-package-V5#%E7%BC%96%E8%AF%91" target="_blank" rel="noopener noreferrer">编译HAR</a>时，建议开启混淆能力，保护代码资产。</td>
 </tr>
 <tr>
 <td style="text-align:center">Shared Library</td>
-<td style="text-align:center"><a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/in-app-hsp-V5">HSP</a></td>
+<td style="text-align:center"><a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/in-app-hsp-V5" target="_blank" rel="noopener noreferrer">HSP</a></td>
 <td style="text-align:left">动态共享包，运行时复用。<br/>- 当前仅支持应用内共享。<br/>- 当多包（HAP/HSP）同时引用同一个共享包时，采用HSP替代HAR，可以避免HAR造成的多包间代码和资源的重复拷贝，从而减小应用包大小。</td>
 </tr>
 </tbody>
 </table>
-<p>模块导出，无论是 **Static Library **或 **Shared Library **都是同样的，引用 HSP 资源： <a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/resource-categories-and-access-V5#%E8%B7%A8haphsp%E5%8C%85%E5%BA%94%E7%94%A8%E8%B5%84%E6%BA%90">文档中心</a>，HAR 不需要引用因为是复制包，直接使用即可</p>
+<p>模块导出，无论是 **Static Library **或 **Shared Library **都是同样的，引用 HSP 资源： <a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/resource-categories-and-access-V5#%E8%B7%A8haphsp%E5%8C%85%E5%BA%94%E7%94%A8%E8%B5%84%E6%BA%90" target="_blank" rel="noopener noreferrer">文档中心</a>，HAR 不需要引用因为是复制包，直接使用即可</p>
 <p>对应的页面需要导出</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Entry</span><br><span class="line">@Component</span><br><span class="line">export struct SingSongPage &#123;</span><br><span class="line">  @State message: string = &#x27;SingSongPage&#x27;;</span><br><span class="line"></span><br><span class="line">  build() &#123;</span><br><span class="line">    Row() &#123;</span><br><span class="line">      Column() &#123;</span><br><span class="line">        Text(this.message)</span><br><span class="line">          .fontSize($r(&#x27;app.float.page_text_font_size&#x27;))</span><br><span class="line">          .fontWeight(FontWeight.Bold)</span><br><span class="line">          .onClick(() =&gt; &#123;</span><br><span class="line">            this.message = &#x27;Welcome&#x27;;</span><br><span class="line">          &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">      .width(&#x27;100%&#x27;)</span><br><span class="line">    &#125;</span><br><span class="line">    .height(&#x27;100%&#x27;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>当前的文件夹新建 index.ets，导出对应模块文件  <img src="https://s2.loli.net/2025/12/31/Os6fyC7pVnqgetX.png" style="zoom:67%;" /></p>
@@ -286,11 +307,11 @@
 <p>src/main/resources/base/profile/route_map.json</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;routerMap&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;name&quot;: &quot;singsong&quot;,</span><br><span class="line">      &quot;pageSourceFile&quot;: &quot;src/main/ets/pages/builders/HspBuilder.ets&quot;,</span><br><span class="line">      &quot;buildFunction&quot;: &quot;HspBuilder&quot;,</span><br><span class="line">      &quot;data&quot;: &#123;</span><br><span class="line">        &quot;description&quot;: &quot;this is pageOne&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="封装工具"><a class="markdownIt-Anchor" href="#封装工具"></a> 封装工具</h1>
-<p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2025/zip/51403960/1748998894539-46fe201d-c3f6-430b-9a1b-dc0d80de7e17.zip">API封装工具.zip</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2025/zip/51403960/1748998900807-53f00cec-d85f-4f49-8a35-c21b27b10b8b.zip">数据库操作封装.zip</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2025/zip/51403960/1748998909302-473251da-c579-4e28-9955-3a84c5997447.zip">首选项工具封装.zip</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2025/zip/51403960/1748998924720-57110878-6763-4231-8ae6-8bd2f22a813d.zip">MQTT工具封装.zip</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2025/zip/51403960/1748998930373-2c1a6418-c3de-482e-90e7-a15520278a26.zip">加载弹窗动画封装.zip</a></p>
+<p><a href="https://www.yuque.com/attachments/yuque/0/2025/zip/51403960/1748998894539-46fe201d-c3f6-430b-9a1b-dc0d80de7e17.zip" target="_blank" rel="noopener noreferrer">API封装工具.zip</a></p>
+<p><a href="https://www.yuque.com/attachments/yuque/0/2025/zip/51403960/1748998900807-53f00cec-d85f-4f49-8a35-c21b27b10b8b.zip" target="_blank" rel="noopener noreferrer">数据库操作封装.zip</a></p>
+<p><a href="https://www.yuque.com/attachments/yuque/0/2025/zip/51403960/1748998909302-473251da-c579-4e28-9955-3a84c5997447.zip" target="_blank" rel="noopener noreferrer">首选项工具封装.zip</a></p>
+<p><a href="https://www.yuque.com/attachments/yuque/0/2025/zip/51403960/1748998924720-57110878-6763-4231-8ae6-8bd2f22a813d.zip" target="_blank" rel="noopener noreferrer">MQTT工具封装.zip</a></p>
+<p><a href="https://www.yuque.com/attachments/yuque/0/2025/zip/51403960/1748998930373-2c1a6418-c3de-482e-90e7-a15520278a26.zip" target="_blank" rel="noopener noreferrer">加载弹窗动画封装.zip</a></p>
 </div>
   </div>
 
