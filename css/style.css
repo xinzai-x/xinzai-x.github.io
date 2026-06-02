@@ -3503,6 +3503,20 @@ html.dark .site-title:hover {
 .pl-8 { padding-left: var(--space-8); }
 .pr-8 { padding-right: var(--space-8); }
 
+/* Mobile: inline code wraps instead of overflowing */
+@media (max-width: 767px) {
+  .post-content code:not(pre code) {
+    white-space: normal;
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+
+  .post-content {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+}
+
 /* ============================================================
    SEARCH OVERLAY
    ============================================================ */

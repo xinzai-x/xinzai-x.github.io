@@ -66,7 +66,13 @@
 
       copyBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        var code = pre.textContent;
+        var lineSpans = pre.querySelectorAll('.line');
+        var code;
+        if (lineSpans.length > 0) {
+          code = Array.from(lineSpans).map(function(span) { return span.textContent; }).join('\n');
+        } else {
+          code = pre.textContent;
+        }
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(code).then(function() {
             copyBtn.classList.add('copied');
@@ -184,6 +190,9 @@
     }
     try { localStorage.setItem('cleartext-theme-mode', mode); } catch(e) {}
   }
+
+  // Initialize icon state on page load
+  applyMode(getCurrentMode());
 
   if (btn) {
     btn.addEventListener('click', function() {
