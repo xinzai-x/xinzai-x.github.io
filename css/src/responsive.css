@@ -40,9 +40,8 @@
   
   /* Inline code: allow wrapping on mobile */
   .post-content code:not(pre code) {
-    white-space: normal !important;
     overflow-wrap: anywhere;
-    word-break: break-all;
+    word-break: break-word;
     display: inline;
     max-width: 100%;
   }
