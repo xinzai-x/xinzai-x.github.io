@@ -856,7 +856,7 @@ img[loading="lazy"].loaded {
 /* Post content typography */
 .post-content {
   font-size: var(--text-lg);
-  line-height: var(--line-height-normal);
+  line-height: var(--line-height-relaxed);
   word-wrap: break-word;
   overflow-wrap: break-word;
   color: var(--color-text-secondary);
@@ -3011,6 +3011,41 @@ html.dark .tag-cloud-count {
 }
 
 html.dark .tag-cloud-item:hover .tag-cloud-count {
+/* Dark mode syntax highlighting */
+html.dark .post-content figure.highlight .comment,
+html.dark .post-content figure.highlight .quote,
+html.dark .post-content figure.highlight .meta { color: #6a9955; font-style: italic; }
+html.dark .post-content figure.highlight .keyword,
+html.dark .post-content figure.highlight .selector-tag,
+html.dark .post-content figure.highlight .type,
+html.dark .post-content figure.highlight .section,
+html.dark .post-content figure.highlight .name,
+html.dark .post-content figure.highlight .tag,
+html.dark .post-content figure.highlight .doctag,
+html.dark .post-content figure.highlight .formula { color: #569cd6; }
+html.dark .post-content figure.highlight .string,
+html.dark .post-content figure.highlight .title,
+html.dark .post-content figure.highlight .selector-id,
+html.dark .post-content figure.highlight .selector-class,
+html.dark .post-content figure.highlight .template-tag,
+html.dark .post-content figure.highlight .deletion { color: #ce9178; }
+html.dark .post-content figure.highlight .number,
+html.dark .post-content figure.highlight .literal,
+html.dark .post-content figure.highlight .symbol,
+html.dark .post-content figure.highlight .bullet,
+html.dark .post-content figure.highlight .addition { color: #b5cea8; }
+html.dark .post-content figure.highlight .function,
+html.dark .post-content figure.highlight .built_in,
+html.dark .post-content figure.highlight .title.function_ { color: #dcdcaa; }
+html.dark .post-content figure.highlight .params,
+html.dark .post-content figure.highlight .variable,
+html.dark .post-content figure.highlight .template-variable,
+html.dark .post-content figure.highlight .attr { color: #9cdcfe; }
+html.dark .post-content figure.highlight .regexp,
+html.dark .post-content figure.highlight .link { color: #d16969; }
+html.dark .post-content figure.highlight .selector-attr,
+html.dark .post-content figure.highlight .selector-pseudo { color: #d7ba7d; }
+html.dark .post-content figure.highlight .attribute { color: #9cdcfe; }
   background: var(--color-accent);
   color: var(--color-text-inverse);
 }
@@ -3033,6 +3068,9 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
 
   .grid-container {
     padding: var(--space-8);
+  }
+  .post-content figure.highlight .line {
+    font-size: 0.9375rem;
   }
 }
 
@@ -3240,6 +3278,18 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
   
   .search-history {
     padding: var(--space-2) var(--space-4);
+  }  
+  /* Code blocks: smaller font on mobile */
+  .post-content figure.highlight .line {
+    font-size: 0.8125rem;
+  }
+  
+  .post-content figure.highlight pre {
+    padding: var(--space-2) var(--space-3);
+  }
+  
+  .post-content figure.highlight .code-block-header {
+    padding: var(--space-1) var(--space-3);
   }
 }
 
@@ -3321,6 +3371,10 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
   
   .page-subtitle {
     font-size: var(--text-base);
+  }  
+  /* Code blocks: even smaller on small phones */
+  .post-content figure.highlight .line {
+    font-size: 0.75rem;
   }
   
   .footer-social {

@@ -15,6 +15,9 @@
   .grid-container {
     padding: var(--space-8);
   }
+  .post-content figure.highlight .line {
+    font-size: 0.9375rem;
+  }
 }
 
 /* Mobile: <768px */
@@ -221,6 +224,18 @@
   
   .search-history {
     padding: var(--space-2) var(--space-4);
+  }  
+  /* Code blocks: smaller font on mobile */
+  .post-content figure.highlight .line {
+    font-size: 0.8125rem;
+  }
+  
+  .post-content figure.highlight pre {
+    padding: var(--space-2) var(--space-3);
+  }
+  
+  .post-content figure.highlight .code-block-header {
+    padding: var(--space-1) var(--space-3);
   }
 }
 
@@ -302,6 +317,10 @@
   
   .page-subtitle {
     font-size: var(--text-base);
+  }  
+  /* Code blocks: even smaller on small phones */
+  .post-content figure.highlight .line {
+    font-size: 0.75rem;
   }
   
   .footer-social {
