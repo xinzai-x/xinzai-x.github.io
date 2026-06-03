@@ -153,7 +153,6 @@
 }
 
 
-
 /* ============================================================
    2. RESET & BASE
    ============================================================ */
@@ -276,7 +275,6 @@ img[loading="lazy"].loaded {
     scroll-behavior: auto !important;
   }
 }
-
 
 
 /* ============================================================
@@ -419,7 +417,6 @@ img[loading="lazy"].loaded {
     padding: 0;
   }
 }
-
 
 
 /* ============================================================
@@ -609,7 +606,6 @@ img[loading="lazy"].loaded {
 }
 
 
-
 /* ============================================================
    5. CARD COMPONENT 鈥?Modern Design
    ============================================================ */
@@ -794,13 +790,11 @@ img[loading="lazy"].loaded {
   }
 }
 
-
 /* ============================================================
    1. HOMEPAGE GRID LAYOUT
    ============================================================ */
 /* NOTE: .posts-grid is defined in card.css.
    This file is kept for future homepage-specific overrides. */
-
 /* ============================================================
    6. POST CONTENT & TYPOGRAPHY
    ============================================================ */
@@ -1206,7 +1200,6 @@ img[loading="lazy"].loaded {
   font-size: var(--text-sm);
   font-family: var(--font-mono);
 }
-
 /* ============================================================
    7. CODE BLOCKS 鈥?Modern Design
    ============================================================ */
@@ -1361,7 +1354,6 @@ img[loading="lazy"].loaded {
 .post-content figure.highlight .attribute { color: var(--syntax-attr); }
 .post-content figure.highlight .emphasis { font-style: italic; }
 .post-content figure.highlight .strong { font-weight: bold; }
-
 /* ============================================================
    8. SIDEBAR WIDGETS 鈥?Modern Design
    ============================================================ */
@@ -1477,7 +1469,6 @@ img[loading="lazy"].loaded {
   color: var(--color-accent-hover);
   transform: translateX(2px);
 }
-
 
 
 /* ============================================================
@@ -1684,7 +1675,6 @@ img[loading="lazy"].loaded {
 }
 
 
-
 /* ============================================================
    10. PAGINATION
    ============================================================ */
@@ -1740,7 +1730,6 @@ img[loading="lazy"].loaded {
   border-color: var(--color-accent-hover) !important;
   transform: translateY(-2px) scale(1.05);
 }
-
 
 
 /* ============================================================
@@ -1806,7 +1795,6 @@ img[loading="lazy"].loaded {
 }
 
 
-
 /* ============================================================
    12. TAGS & CATEGORIES
    ============================================================ */
@@ -1861,7 +1849,6 @@ img[loading="lazy"].loaded {
   transform: translateY(-1px);
   box-shadow: var(--shadow-sm);
 }
-
 
 
 /* ============================================================
@@ -2600,7 +2587,6 @@ html.dark .archive-date {
 
 
 
-
 /* ============================================================
    SEARCH OVERLAY
    ============================================================ */
@@ -2835,7 +2821,6 @@ body.search-open {
 .search-history-clear:hover {
   color: var(--color-danger);
 }
-
 /* ============================================================
    14. DARK MODE
    ============================================================ */
@@ -3051,7 +3036,6 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
   background: var(--color-accent);
   color: var(--color-text-inverse);
 }
-
 /* ============================================================
    15. RESPONSIVE BREAKPOINTS
    ============================================================ */
@@ -3094,7 +3078,8 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
   
   /* Inline code: allow wrapping on mobile */
   .post-content code:not(pre code) {
-    white-space: break-spaces;
+    white-space: normal;
+    overflow-wrap: anywhere;
     word-break: break-word;
   }
   
@@ -3267,7 +3252,8 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
   /* Inline code: allow wrapping on mobile */
   .post-content code:not(pre code) {
     white-space: break-spaces;
-    word-break: break-word;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   /* Code blocks: smaller font on mobile */
@@ -3477,7 +3463,6 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
     right: calc(var(--space-2) + 44px);
   }
 }
-
 /* ============================================================
    16. UTILITIES
    ============================================================ */
