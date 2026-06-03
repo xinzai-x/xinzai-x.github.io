@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<script>
+(function(){var t=localStorage.getItem('cleartext-theme-mode');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark')})();
+</script>
+
+<title>0.C语言概述 | 星仔极客</title>
+<meta name="description" content="日常笔记和生活分享！">
+
+<meta property="og:title" content="0.C语言概述">
+<meta property="og:description" content="日常笔记和生活分享！">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://blog.6673543.xyz/b3c0/">
+
+<link rel="canonical" href="https://blog.6673543.xyz/b3c0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+  <a href="#main-content" class="skip-to-content" aria-label="跳转到主要内容">跳到内容</a>
+  <header class="site-header" id="site-header" role="banner">
+  <div class="header-inner">
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="切换导航菜单" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <a class="site-title" href="/" aria-label="返回首页">
+      星仔极客
+    </a>
+
+    <nav class="site-nav" role="navigation" aria-label="主导航">
+      
+        
+          
+          <a class="nav-link"
+             href="/"
+             >
+            首页
+          </a>
+        
+          
+          <a class="nav-link"
+             href="/archives/"
+             >
+            归档
+          </a>
+        
+          
+          <a class="nav-link"
+             href="/categories/"
+             >
+            分类
+          </a>
+        
+          
+          <a class="nav-link"
+             href="/tags/"
+             >
+            标签
+          </a>
+        
+          
+          <a class="nav-link"
+             href="/about/"
+             >
+            关于
+          </a>
+        
+          
+          <a class="nav-link"
+             href="/link/"
+             >
+            友链
+          </a>
+        
+      
+    </nav>
+
+    <div class="header-actions">
+      
+      <button class="header-btn" id="search-btn" aria-label="搜索" title="搜索 (Ctrl+K)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+      
+
+      
+      <button class="header-btn" id="dark-mode-btn" aria-label="切换暗色模式" title="切换暗色/亮色模式">
+        <svg id="dm-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg id="dm-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+      
+    </div>
+  </div>
+</header>
+
+<!-- Search Overlay -->
+
+<div class="search-overlay" id="search-overlay" data-search-url="/search.xml" aria-hidden="true" role="dialog" aria-label="搜索">
+  <div class="search-modal">
+    <input type="text" class="search-input" id="search-input" placeholder="搜索文章..." autocomplete="off" aria-label="搜索文章标题和内容">
+    <button class="search-close" id="search-close" aria-label="关闭搜索">&times;</button>
+    <div class="search-history" id="search-history" style="display:none;"></div>
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+
+
+
+  <div class="page-shell" id="main-content">
+    <div class="grid-container
+      grid-post
+      
+      
+    ">
+      <main class="grid-main">
+        
+
+<article class="post-full" itemscope itemtype="http://schema.org/Article">
+
+  <header class="post-header">
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="面包屑导航">
+      <a href="/">首页</a>
+      <span class="breadcrumb-sep">/</span>
+      
+        <a href="/categories/C%E8%AF%AD%E8%A8%80/">C语言</a>
+        <span class="breadcrumb-sep">/</span>
+      
+      <span class="breadcrumb-current" aria-current="page">0.C语言概述</span>
+    </nav>
+
+    <h1 class="post-title" itemprop="headline">0.C语言概述</h1>
+
+    <div class="post-meta">
+      <span class="meta-item" itemprop="datePublished" content="2026-01-28T05:41:10.000Z">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <time datetime="2026-01-28T05:41:10.000Z">2026-01-28</time>
+      </span>
+      
+      <span class="meta-item" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span itemprop="name">星仔极客</span>
+      </span>
+      
+      <span class="meta-item meta-stats">
+        <span class="word-count">521 字</span>
+        <span class="reading-time">3</span>
+      </span>
+      
+      <span class="meta-updated">更新于 2026-01-28</span>
+      
+    </div>
+
+    </header>
+
+  <!-- Desktop TOC (collapsible, above content) -->
+  
+  <div class="toc-desktop-collapsible" id="toc-desktop-wrapper" aria-label="文章目录">
+    <details id="toc-desktop-details">
+      <summary class="toc-desktop-toggle" aria-label="展开/收起目录">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
+          <line x1="8" y1="6" x2="21" y2="6"></line>
+          <line x1="8" y1="12" x2="21" y2="12"></line>
+          <line x1="8" y1="18" x2="21" y2="18"></line>
+          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+        </svg>
+        文章目录
+      </summary>
+      <nav class="toc" id="toc-desktop" aria-label="文章目录"></nav>
+    </details>
+  </div>
+  
+
+  <!-- Mobile TOC (collapsible) -->
+  
+  <div class="toc-mobile" id="toc-mobile-wrapper" aria-label="移动端文章目录">
+    <details id="toc-mobile-details">
+      <summary class="toc-mobile-toggle" aria-label="展开/收起目录">文章目录</summary>
+      <nav class="toc" id="toc-mobile" aria-label="文章目录"></nav>
+    </details>
+  </div>
+  
+
+  <!-- Post Content -->
+  <div class="post-content" itemprop="articleBody">
+    <div class="link-card"><a href="https://player.bilibili.com/player.html?bvid=BV1sM4y1v7ci&autoplay=0" target="_blank" rel="noopener noreferrer" class="link-card-inner"><div class="link-card-icon"><svg class="link-card-icon-fallback" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><img src="https://player.bilibili.com/player.html?bvid=BV1sM4y1v7ci&autoplay=0" alt="" onerror="this.style.display='none'" /></div><div class="link-card-content"><div class="link-card-title">基础,https://www.faviconextractor.com/favicon/bilibili.com?larger=true</div><div class="link-card-url">player.bilibili.com/player.html?bvid=BV1sM4y1v7ci&autoplay=0</div></div><div class="link-card-arrow">→</div></a></div>
+<div class="link-card"><a href="https://player.bilibili.com/player.html?bvid=BV1s64y1M7ZV&autoplay=0" target="_blank" rel="noopener noreferrer" class="link-card-inner"><div class="link-card-icon"><svg class="link-card-icon-fallback" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><img src="https://player.bilibili.com/player.html?bvid=BV1s64y1M7ZV&autoplay=0" alt="" onerror="this.style.display='none'" /></div><div class="link-card-content"><div class="link-card-title">进阶,https://www.faviconextractor.com/favicon/bilibili.com?larger=true</div><div class="link-card-url">player.bilibili.com/player.html?bvid=BV1s64y1M7ZV&autoplay=0</div></div><div class="link-card-arrow">→</div></a></div>
+<h1 id="写代码过程"><a class="markdownIt-Anchor" href="#写代码过程"></a> 写代码过程</h1>
+<p>编辑器：程序员写代码的过程</p>
+<p>编译器：查看代码的语法错误，生成汇编语言</p>
+<p>汇编语言：将生成好汇编语言生成二进制语言（目标文件）</p>
+<p>连接器：将生成好的二进制语言+用到的库+启动代码==&gt;可执行代码</p>
+<h1 id="完整代码分析"><a class="markdownIt-Anchor" href="#完整代码分析"></a> 完整代码分析</h1>
+<blockquote>
+<p>行注释：</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//注释内容，行注释</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>块注释：</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    意思：块注释（不能嵌套）</span></span><br><span class="line"><span class="comment">    内容</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>符号： ;         意思：C语言语句结束标志</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//行注释:</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span><span class="comment">//std 标准 i输入 o输出（标准的输入输出头文件）</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 块注释 不能嵌套</span></span><br><span class="line"><span class="comment">    main 是程序的入口 有且仅有一个</span></span><br><span class="line"><span class="comment">    main左边的int 代表的是函数的返回值类型</span></span><br><span class="line"><span class="comment">    ()里面函数的形参（函数外部将数据传递到函数内部的桥梁）</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//函数的功能都在&#123;&#125;里面实现</span></span><br><span class="line">    <span class="comment">//使用任何东西 必先存在</span></span><br><span class="line">    <span class="comment">//printf:将&quot;&quot;中的字符串 输出到 终端上</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello iot\n&quot;</span>);<span class="comment">//来至系统库文件</span></span><br><span class="line">    <span class="comment">//;c语言的语句结束标记</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//如果你的代码 一闪而过 可以用带阻塞的代码</span></span><br><span class="line">    getchar();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="变量-函数在不同c文件中使用"><a class="markdownIt-Anchor" href="#变量-函数在不同c文件中使用"></a> 变量、函数在不同.c文件中使用</h1>
+<blockquote>
+<p>extern本质：告诉编译器 变量、函数 来至其他源文件</p>
+<p>注意：static用于全局变量或函数前时，它将该变量或函数的可见性限制在定义它的文件内部</p>
+</blockquote>
+<p>如果.c文件中的变量或函数，在对应的.h文件中声明了变量或函数，在别的 .c 文件中只需要生命对应的头文件，即可访问别的.C文件中的函数或变量，若不生命对应的头文件，则需要时候外加extern 来声明变量或函数</p>
+
+  </div>
+
+
+
+</article>
+
+<!-- Giscus Comments -->
+
+
+<!-- Post Navigation -->
+
+<nav class="post-nav" style="margin-top: var(--space-6); padding-top: var(--space-6); display: flex; justify-content: space-between; gap: var(--space-4);" aria-label="文章导航">
+  
+  <div style="flex: 1; text-align: left;">
+    
+    <a href="/f3fc/" class="post-nav-link" style="color: var(--color-text-secondary); font-size: var(--text-sm);">
+      <span style="display: block; font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: var(--space-1);">&#8592; 上一篇</span>
+      9.案例
+    </a>
+    
+  </div>
+  
+  <div style="flex: 1; text-align: right;">
+    
+    <a href="/2c1f/" class="post-nav-link" style="color: var(--color-text-secondary); font-size: var(--text-sm);">
+      <span style="display: block; font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: var(--space-1);">下一篇 &#8594;</span>
+      学术文献大全
+    </a>
+    
+  </div>
+</nav>
+
+
+<!-- Back-to-top & back-to-bottom floating buttons -->
+<button class="back-to-top" id="back-to-top" aria-label="回到顶部" title="回到顶部">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="12" y1="19" x2="12" y2="5"></line>
+    <polyline points="5 12 12 5 19 12"></polyline>
+  </svg>
+</button>
+<button class="back-to-bottom" id="back-to-bottom" aria-label="直达底部" title="直达底部">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="12" y1="5" x2="12" y2="19"></line>
+    <polyline points="19 12 12 19 5 12"></polyline>
+  </svg>
+</button>
+
+<!-- Image Lightbox -->
+<div class="lightbox-overlay" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightbox-close" aria-label="关闭">&times;</button>
+  <button class="lightbox-prev" id="lightbox-prev" aria-label="上一张">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <button class="lightbox-next" id="lightbox-next" aria-label="下一张">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+  <img id="lightbox-img" src="" alt="" />
+  <span class="lightbox-counter" id="lightbox-counter"></span>
+</div>
+
+      </main>
+
+      
+    </div>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    
+
+    
+    
+    <div class="footer-copyright">
+      &copy; 2026 星仔.
+      
+      <span class="footer-powered">
+        由 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 和 <a href="https://github.com/yourname/hexo-theme-cleartext" target="_blank" rel="noopener">Cleartext</a> 驱动。
+      </span>
+      
+    </div>
+    
+  </div>
+</footer>
+
+
+  <script defer src="/js/main.js"></script>
+  <!-- Giscus Config -->
+
+
+</body>
+</html>
