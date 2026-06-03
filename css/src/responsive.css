@@ -40,7 +40,8 @@
   
   /* Inline code: allow wrapping on mobile */
   .post-content code:not(pre code) {
-    white-space: break-spaces;
+    white-space: normal;
+    overflow-wrap: anywhere;
     word-break: break-word;
   }
   
@@ -213,7 +214,8 @@
   /* Inline code: allow wrapping on mobile */
   .post-content code:not(pre code) {
     white-space: break-spaces;
-    word-break: break-word;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   /* Code blocks: smaller font on mobile */
