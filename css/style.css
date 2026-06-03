@@ -1430,7 +1430,7 @@ img[loading="lazy"].loaded {
   width: 100%;
   margin: 0;
   padding: var(--space-0_5) var(--space-4);
-  background: transparent;
+  background: var(--color-code-bg);
   font-family: var(--font-mono);
   font-size: 1rem;
   line-height: 1.25;

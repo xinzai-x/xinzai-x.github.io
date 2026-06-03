@@ -1,5 +1,5 @@
 /* ============================================================
-   7. CODE BLOCKS — Modern Design
+   7. CODE BLOCKS 鈥?Modern Design
    ============================================================ */
 .post-content figure.highlight {
   width: 100%;
@@ -82,7 +82,7 @@
   width: 100%;
   margin: 0;
   padding: var(--space-0_5) var(--space-4);
-  background: transparent;
+  background: var(--color-code-bg);
   font-family: var(--font-mono);
   font-size: 0;
   line-height: 1.25;
