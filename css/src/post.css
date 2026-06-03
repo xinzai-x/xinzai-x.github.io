@@ -130,7 +130,7 @@
 
 .post-content p {
   margin-bottom: var(--space-6);
-  line-height: var(--line-height-relaxed);
+  line-height: 1.35;
 }
 
 .post-content strong { 
