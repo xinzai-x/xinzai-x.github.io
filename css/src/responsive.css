@@ -40,9 +40,11 @@
   
   /* Inline code: allow wrapping on mobile */
   .post-content code:not(pre code) {
-    white-space: normal;
+    white-space: normal !important;
     overflow-wrap: anywhere;
-    word-break: break-word;
+    word-break: break-all;
+    display: inline;
+    max-width: 100%;
   }
   
   /* Tables: horizontal scroll */
@@ -211,12 +213,6 @@
   .search-history {
     padding: var(--space-2) var(--space-4);
   }  
-  /* Inline code: allow wrapping on mobile */
-  .post-content code:not(pre code) {
-    white-space: break-spaces;
-    white-space: normal;
-    overflow-wrap: anywhere;
-  }
 
   /* Code blocks: smaller font on mobile */
   .post-content figure.highlight .line {
