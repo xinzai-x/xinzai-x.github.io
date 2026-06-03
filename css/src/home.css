@@ -1,35 +1,5 @@
-/* 1. HOMEPAGE GRID LAYOUT OPTIMIZATION — Responsive 3-Column */
-.posts-grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: var(--space-8);
-  margin-bottom: var(--space-12);
-}
-
-/* Tablet (768px+): 2 columns */
-@media (min-width: 768px) {
-  .posts-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-10);
-  }
-}
-
-/* Desktop (1024px+): 3 columns for better density */
-@media (min-width: 1024px) {
-  .posts-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-12);
-  }
-}
-
-/* Large Desktop (1280px+): Optimized spacing */
-@media (min-width: 1280px) {
-  .posts-grid {
-    gap: var(--space-16);
-  }
-}
-
-
 /* ============================================================
-   CLEANED VERSION - Only essential homepage grid styles
+   1. HOMEPAGE GRID LAYOUT
    ============================================================ */
+/* NOTE: .posts-grid is defined in card.css.
+   This file is kept for future homepage-specific overrides. */
