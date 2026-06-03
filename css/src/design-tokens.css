@@ -1,8 +1,8 @@
 /* ============================================================
-   1. DESIGN TOKENS — CSS Custom Properties
+   1. DESIGN TOKENS 鈥?CSS Custom Properties
    ============================================================ */
 :root {
-  /* Color System — Modern Palette */
+  /* Color System 鈥?Modern Palette */
   --color-primary: #111827;
   --color-primary-light: #374151;
   --color-primary-dark: #0a0f1a;
@@ -56,8 +56,22 @@
   --color-callout-tip-border: #10b981;
   --color-callout-danger-bg: #fef2f2;
   --color-callout-danger-border: #ef4444;
+  /* Syntax Highlighting */
+  --syntax-comment: #008000;
+  --syntax-keyword: #0000ff;
+  --syntax-string: #a31515;
+  --syntax-number: #098658;
+  --syntax-function: #795e26;
+  --syntax-variable: #001080;
+  --syntax-type: #267f99;
+  --syntax-operator: #000000;
+  --syntax-attr: #0451a5;
+  --syntax-regexp: #811f3f;
+  --syntax-selector: #d16969;
+  --syntax-addition: #098658;
+  --syntax-deletion: #a31515;
 
-  /* Typography — System Font Stack (no external fonts) */
+  /* Typography 鈥?System Font Stack (no external fonts) */
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
   --font-mono: "Cascadia Code", "Fira Code", "SF Mono", Menlo, Consolas, monospace;
 
@@ -103,7 +117,7 @@
   --space-24: 6rem;
   --space-32: 8rem;
 
-  /* Border Radius — Modern */
+  /* Border Radius 鈥?Modern */
   --radius-none: 0;
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
@@ -112,14 +126,14 @@
   --radius-2xl: 1.5rem;
   --radius-full: 9999px;
 
-  /* Shadows — Light */
+  /* Shadows 鈥?Light */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.12);
   --shadow-xl: 0 6px 18px rgba(0, 0, 0, 0.12);
   --shadow-2xl: 0 8px 24px rgba(0, 0, 0, 0.15);
 
-  /* Layout — Optimized for 2-column */
+  /* Layout 鈥?Optimized for 2-column */
   --header-height: 72px;
   --header-height-shrunk: 60px;
   --content-max-width: 65ch;

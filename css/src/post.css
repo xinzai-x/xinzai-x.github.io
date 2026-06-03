@@ -68,7 +68,7 @@
 /* Post content typography */
 .post-content {
   font-size: var(--text-lg);
-  line-height: var(--line-height-relaxed);
+  line-height: var(--line-height-normal);
   word-wrap: break-word;
   overflow-wrap: break-word;
   color: var(--color-text-secondary);
@@ -130,6 +130,7 @@
 
 .post-content p {
   margin-bottom: var(--space-6);
+  line-height: var(--line-height-relaxed);
 }
 
 .post-content strong { 
