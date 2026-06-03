@@ -622,9 +622,15 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-    // Initialize image lightbox
-    initImageLightbox();
   })();
+
+
+/* ============================================================
+   12b. Image Lightbox Initialization
+   ============================================================ */
+(function() {
+  initImageLightbox();
+})();
 
   /* ============================================================
      13. IMAGE LIGHTBOX

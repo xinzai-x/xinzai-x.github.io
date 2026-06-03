@@ -1111,6 +1111,9 @@ img[loading="lazy"].loaded {
   border: 1px solid var(--color-border);
   overflow-wrap: break-word;
   word-break: break-word;
+  white-space: normal;
+  max-width: 100%;
+  display: inline;
   font-weight: var(--font-weight-medium);
 }
 
@@ -3081,6 +3084,7 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
   .post-content code:not(pre code) {
     overflow-wrap: anywhere;
     word-break: break-word;
+    white-space: normal;
     display: inline;
     max-width: 100%;
   }
@@ -3107,6 +3111,15 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
   .post-content th,
   .post-content td {
     white-space: nowrap;
+  }
+  
+  /* Allow inline code to wrap even inside table cells on mobile */
+  .post-content td code:not(pre code),
+  .post-content th code:not(pre code) {
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    max-width: 80vw;
   }
   
   /* Blockquote: reduce padding */
