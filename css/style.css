@@ -237,6 +237,12 @@ img[loading="lazy"].loaded {
 }
 
 .back-to-top { bottom: var(--space-6); right: var(--space-6); }
+.back-to-top.visible,
+.back-to-bottom.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
 .back-to-bottom { bottom: var(--space-6); right: calc(var(--space-6) + 56px); }
 
 .back-to-top:hover,
@@ -2849,6 +2855,8 @@ html.dark {
   --color-tag-text: #93c5fd;
   --color-tag-bg-hover: #1d4ed8;
   --color-tag-text-hover: #93c5fd;
+  --color-tag-bg-secondary: #312e81;
+  --color-tag-bg-secondary-hover: #3730a3;
   --color-search-mark-bg: #fbbf24;
   --color-search-mark-text: #111827;
 
@@ -2975,6 +2983,37 @@ html.dark .nav-link:hover {
 }
 
 html.dark .site-title:hover {
+/* Tags cloud dark mode */
+html.dark .tags-cloud {
+  background: var(--color-bg-alt);
+  border-color: var(--color-border);
+}
+
+html.dark .tag-cloud-item {
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.6), rgba(49, 46, 129, 0.6));
+  color: var(--color-tag-text);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+}
+
+html.dark .tag-cloud-item::before {
+  background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.1), transparent);
+}
+
+html.dark .tag-cloud-item:hover {
+  background: linear-gradient(135deg, rgba(29, 78, 216, 0.7), rgba(55, 48, 163, 0.7));
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.15);
+}
+
+html.dark .tag-cloud-count {
+  background: rgba(96, 165, 250, 0.25);
+  color: var(--color-accent);
+}
+
+html.dark .tag-cloud-item:hover .tag-cloud-count {
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+}
   color: var(--color-accent);
 }
 
