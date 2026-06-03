@@ -153,6 +153,7 @@
 }
 
 
+
 /* ============================================================
    2. RESET & BASE
    ============================================================ */
@@ -275,6 +276,7 @@ img[loading="lazy"].loaded {
     scroll-behavior: auto !important;
   }
 }
+
 
 
 /* ============================================================
@@ -417,6 +419,7 @@ img[loading="lazy"].loaded {
     padding: 0;
   }
 }
+
 
 
 /* ============================================================
@@ -606,6 +609,7 @@ img[loading="lazy"].loaded {
 }
 
 
+
 /* ============================================================
    5. CARD COMPONENT 鈥?Modern Design
    ============================================================ */
@@ -650,7 +654,7 @@ img[loading="lazy"].loaded {
 }
 
 .post-card-title {
-  font-size: var(--text-lg);
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-snug);
   margin-bottom: var(--space-3);
@@ -783,9 +787,6 @@ img[loading="lazy"].loaded {
     padding: var(--space-8);
   }
   
-  .post-card-title {
-    font-size: var(--text-lg);
-  }
   
   .post-card-meta {
     gap: var(--space-2);
@@ -818,12 +819,12 @@ img[loading="lazy"].loaded {
 }
 
 .post-title {
-  font-size: var(--text-5xl);
+  font-size: clamp(1.75rem, 5vw, 3rem);
   font-weight: var(--font-weight-extrabold);
   line-height: var(--line-height-tight);
   letter-spacing: var(--letter-spacing-tight);
-  margin-bottom: var(--space-6);
-  color: var(--color-primary);
+  margin-bottom: 1.125rem;
+  line-height: 1.5;
 }
 
 .post-meta {
@@ -869,7 +870,7 @@ img[loading="lazy"].loaded {
 
 /* Post content typography */
 .post-content {
-  font-size: var(--text-lg);
+  font-size: clamp(0.875rem, 2.5vw, 1.125rem);
   line-height: var(--line-height-normal);
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -877,7 +878,7 @@ img[loading="lazy"].loaded {
 }
 
 .post-content h1 { 
-  font-size: var(--text-4xl); 
+  font-size: clamp(1.5rem, 4vw, 2.25rem); 
   font-weight: var(--font-weight-extrabold); 
   margin: var(--space-12) 0 var(--space-6); 
   letter-spacing: var(--letter-spacing-tight); 
@@ -886,7 +887,7 @@ img[loading="lazy"].loaded {
   border-bottom: 2px solid var(--color-border);
 }
 .post-content h2 { 
-  font-size: var(--text-3xl); 
+  font-size: clamp(1.25rem, 3.5vw, 1.875rem); 
   font-weight: var(--font-weight-bold); 
   margin: var(--space-10) 0 var(--space-5); 
   color: var(--color-primary);
@@ -904,25 +905,25 @@ img[loading="lazy"].loaded {
   border-radius: var(--radius-full);
 }
 .post-content h3 { 
-  font-size: var(--text-2xl); 
+  font-size: clamp(1.125rem, 3vw, 1.5rem); 
   font-weight: var(--font-weight-semibold); 
   margin: var(--space-8) 0 var(--space-4); 
   color: var(--color-primary);
 }
 .post-content h4 { 
-  font-size: var(--text-xl); 
+  font-size: clamp(1rem, 2.5vw, 1.25rem); 
   font-weight: var(--font-weight-semibold); 
   margin: var(--space-6) 0 var(--space-3); 
   color: var(--color-primary-light);
 }
 .post-content h5 { 
-  font-size: var(--text-lg); 
+  font-size: clamp(0.9375rem, 2vw, 1.125rem); 
   font-weight: var(--font-weight-semibold); 
   margin: var(--space-6) 0 var(--space-3); 
   color: var(--color-text-secondary);
 }
 .post-content h6 { 
-  font-size: var(--text-base); 
+  font-size: clamp(0.875rem, 1.8vw, 1rem); 
   font-weight: var(--font-weight-semibold); 
   margin: var(--space-6) 0 var(--space-3); 
   color: var(--color-text-muted);
@@ -931,8 +932,8 @@ img[loading="lazy"].loaded {
 }
 
 .post-content p {
-  margin-bottom: var(--space-6);
-  line-height: 1.35;
+  margin-bottom: 1.125rem;
+  line-height: 1.5;
 }
 
 .post-content strong { 
@@ -1478,6 +1479,7 @@ img[loading="lazy"].loaded {
 }
 
 
+
 /* ============================================================
    9. TABLE OF CONTENTS
    ============================================================ */
@@ -1682,6 +1684,7 @@ img[loading="lazy"].loaded {
 }
 
 
+
 /* ============================================================
    10. PAGINATION
    ============================================================ */
@@ -1737,6 +1740,7 @@ img[loading="lazy"].loaded {
   border-color: var(--color-accent-hover) !important;
   transform: translateY(-2px) scale(1.05);
 }
+
 
 
 /* ============================================================
@@ -1802,6 +1806,7 @@ img[loading="lazy"].loaded {
 }
 
 
+
 /* ============================================================
    12. TAGS & CATEGORIES
    ============================================================ */
@@ -1856,6 +1861,7 @@ img[loading="lazy"].loaded {
   transform: translateY(-1px);
   box-shadow: var(--shadow-sm);
 }
+
 
 
 /* ============================================================
@@ -2594,6 +2600,7 @@ html.dark .archive-date {
 
 
 
+
 /* ============================================================
    SEARCH OVERLAY
    ============================================================ */
@@ -3051,9 +3058,6 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
 
 /* Tablet: 768px-1023px */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .post-content {
-    font-size: 1.0625rem;
-  }
 
   .posts-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -3062,8 +3066,11 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
   .grid-container {
     padding: var(--space-8);
   }
-  .post-content figure.highlight .line {
-    font-size: 0.9375rem;
+  .site-nav {
+    display: none;
+  }
+  .mobile-menu-toggle {
+    display: flex;
   }
 }
 
@@ -3082,20 +3089,8 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
     padding: var(--space-6) var(--space-4);
   }
   
-  .post-title {
-    font-size: var(--text-3xl);
-  }
   
-  .post-content {
-    font-size: var(--text-base);
-  }
   
-  .post-content h1 { font-size: var(--text-3xl); }
-  .post-content h2 { font-size: var(--text-2xl); }
-  .post-content h3 { font-size: var(--text-xl); }
-  .post-content h4 { font-size: var(--text-lg); }
-  .post-content h5 { font-size: var(--text-base); }
-  .post-content h6 { font-size: var(--text-sm); }
   
   /* Inline code: allow wrapping on mobile */
   .post-content code:not(pre code) {
@@ -3149,9 +3144,6 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
     padding: var(--space-6);
   }
   
-  .post-card-title {
-    font-size: var(--text-xl);
-  }
   
   /* Post meta: allow wrapping */
   .post-meta {
@@ -3272,6 +3264,12 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
   .search-history {
     padding: var(--space-2) var(--space-4);
   }  
+  /* Inline code: allow wrapping on mobile */
+  .post-content code:not(pre code) {
+    white-space: break-spaces;
+    word-break: break-word;
+  }
+
   /* Code blocks: smaller font on mobile */
   .post-content figure.highlight .line {
     font-size: 0.8125rem;
@@ -3296,28 +3294,13 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
     padding: var(--space-4) var(--space-3);
   }
   
-  .post-title {
-    font-size: var(--text-2xl);
-  }
   
-  .post-content {
-    font-size: 0.9375rem;
-  }
   
-  .post-content h1 { font-size: var(--text-2xl); }
-  .post-content h2 { font-size: var(--text-xl); }
-  .post-content h3 { font-size: var(--text-lg); }
-  .post-content h4 { font-size: var(--text-base); }
-  .post-content h5 { font-size: var(--text-sm); }
-  .post-content h6 { font-size: var(--text-xs); }
   
   .post-card {
     padding: var(--space-4);
   }
   
-  .post-card-title {
-    font-size: var(--text-lg);
-  }
   
   .post-card-excerpt {
     -webkit-line-clamp: 2;
@@ -3415,24 +3398,12 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
     padding: var(--space-3) var(--space-2);
   }
   
-  .post-title {
-    font-size: var(--text-xl);
-  }
   
-  .post-content h1 { font-size: var(--text-xl); }
-  .post-content h2 { font-size: var(--text-lg); }
-  .post-content h3 { font-size: var(--text-base); }
-  .post-content h4 { font-size: var(--text-sm); }
-  .post-content h5 { font-size: var(--text-xs); }
-  .post-content h6 { font-size: 0.7rem; }
   
   .post-card {
     padding: var(--space-3);
   }
   
-  .post-card-title {
-    font-size: var(--text-base);
-  }
   
   .post-card-meta {
     font-size: 0.7rem;
@@ -3589,4 +3560,3 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
 /* ============================================================
    END OF STYLESHEET
    ============================================================ */
-

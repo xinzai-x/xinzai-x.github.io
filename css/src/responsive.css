@@ -4,9 +4,6 @@
 
 /* Tablet: 768px-1023px */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .post-content {
-    font-size: 1.0625rem;
-  }
 
   .posts-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -15,8 +12,11 @@
   .grid-container {
     padding: var(--space-8);
   }
-  .post-content figure.highlight .line {
-    font-size: 0.9375rem;
+  .site-nav {
+    display: none;
+  }
+  .mobile-menu-toggle {
+    display: flex;
   }
 }
 
@@ -35,20 +35,8 @@
     padding: var(--space-6) var(--space-4);
   }
   
-  .post-title {
-    font-size: var(--text-3xl);
-  }
   
-  .post-content {
-    font-size: var(--text-base);
-  }
   
-  .post-content h1 { font-size: var(--text-3xl); }
-  .post-content h2 { font-size: var(--text-2xl); }
-  .post-content h3 { font-size: var(--text-xl); }
-  .post-content h4 { font-size: var(--text-lg); }
-  .post-content h5 { font-size: var(--text-base); }
-  .post-content h6 { font-size: var(--text-sm); }
   
   /* Inline code: allow wrapping on mobile */
   .post-content code:not(pre code) {
@@ -102,9 +90,6 @@
     padding: var(--space-6);
   }
   
-  .post-card-title {
-    font-size: var(--text-xl);
-  }
   
   /* Post meta: allow wrapping */
   .post-meta {
@@ -225,6 +210,12 @@
   .search-history {
     padding: var(--space-2) var(--space-4);
   }  
+  /* Inline code: allow wrapping on mobile */
+  .post-content code:not(pre code) {
+    white-space: break-spaces;
+    word-break: break-word;
+  }
+
   /* Code blocks: smaller font on mobile */
   .post-content figure.highlight .line {
     font-size: 0.8125rem;
@@ -249,28 +240,13 @@
     padding: var(--space-4) var(--space-3);
   }
   
-  .post-title {
-    font-size: var(--text-2xl);
-  }
   
-  .post-content {
-    font-size: 0.9375rem;
-  }
   
-  .post-content h1 { font-size: var(--text-2xl); }
-  .post-content h2 { font-size: var(--text-xl); }
-  .post-content h3 { font-size: var(--text-lg); }
-  .post-content h4 { font-size: var(--text-base); }
-  .post-content h5 { font-size: var(--text-sm); }
-  .post-content h6 { font-size: var(--text-xs); }
   
   .post-card {
     padding: var(--space-4);
   }
   
-  .post-card-title {
-    font-size: var(--text-lg);
-  }
   
   .post-card-excerpt {
     -webkit-line-clamp: 2;
@@ -368,24 +344,12 @@
     padding: var(--space-3) var(--space-2);
   }
   
-  .post-title {
-    font-size: var(--text-xl);
-  }
   
-  .post-content h1 { font-size: var(--text-xl); }
-  .post-content h2 { font-size: var(--text-lg); }
-  .post-content h3 { font-size: var(--text-base); }
-  .post-content h4 { font-size: var(--text-sm); }
-  .post-content h5 { font-size: var(--text-xs); }
-  .post-content h6 { font-size: 0.7rem; }
   
   .post-card {
     padding: var(--space-3);
   }
   
-  .post-card-title {
-    font-size: var(--text-base);
-  }
   
   .post-card-meta {
     font-size: 0.7rem;

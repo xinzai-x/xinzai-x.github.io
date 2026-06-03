@@ -1,5 +1,5 @@
 /* ============================================================
-   5. CARD COMPONENT — Modern Design
+   5. CARD COMPONENT �?Modern Design
    ============================================================ */
 .posts-grid {
   display: grid;
@@ -42,7 +42,7 @@
 }
 
 .post-card-title {
-  font-size: var(--text-lg);
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-snug);
   margin-bottom: var(--space-3);
@@ -175,13 +175,9 @@
     padding: var(--space-8);
   }
   
-  .post-card-title {
-    font-size: var(--text-lg);
-  }
   
   .post-card-meta {
     gap: var(--space-2);
     font-size: 0.75rem;
   }
 }
-
