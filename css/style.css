@@ -999,6 +999,7 @@ img[loading="lazy"].loaded {
 
 .post-content ol {
   counter-reset: list-counter;
+  list-style: none;
 }
 
 .post-content ol li {

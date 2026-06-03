@@ -171,7 +171,7 @@
 }
 
 .post-content ul li::before {
-  content: '•';
+  content: '鈥?;
   color: var(--color-accent);
   font-weight: bold;
   position: absolute;
@@ -180,6 +180,7 @@
 
 .post-content ol {
   counter-reset: list-counter;
+  list-style: none;
 }
 
 .post-content ol li {
