@@ -3021,6 +3021,21 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
    15. RESPONSIVE BREAKPOINTS
    ============================================================ */
 
+/* Tablet: 768px-1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .post-content {
+    font-size: 1.0625rem;
+  }
+
+  .posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-container {
+    padding: var(--space-8);
+  }
+}
+
 /* Mobile: <768px */
 @media (max-width: 767px) {
   .page-shell {
@@ -3040,12 +3055,59 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
     font-size: var(--text-3xl);
   }
   
+  .post-content {
+    font-size: var(--text-base);
+  }
+  
   .post-content h1 { font-size: var(--text-3xl); }
   .post-content h2 { font-size: var(--text-2xl); }
   .post-content h3 { font-size: var(--text-xl); }
   .post-content h4 { font-size: var(--text-lg); }
   .post-content h5 { font-size: var(--text-base); }
   .post-content h6 { font-size: var(--text-sm); }
+  
+  /* Inline code: allow wrapping on mobile */
+  .post-content code:not(pre code) {
+    white-space: break-spaces;
+    word-break: break-word;
+  }
+  
+  /* Tables: horizontal scroll */
+  .post-content table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .post-content thead {
+    display: table-header-group;
+  }
+  
+  .post-content tbody {
+    display: table-row-group;
+  }
+  
+  .post-content tr {
+    display: table-row;
+  }
+  
+  .post-content th,
+  .post-content td {
+    white-space: nowrap;
+  }
+  
+  /* Blockquote: reduce padding */
+  .post-content blockquote {
+    padding: var(--space-4) var(--space-5);
+  }
+  
+  /* Images: prevent horizontal overflow */
+  .post-content img {
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
   
   .posts-grid {
     grid-template-columns: 1fr;
@@ -3060,9 +3122,21 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
     font-size: var(--text-xl);
   }
   
+  /* Post meta: allow wrapping */
   .post-meta {
     gap: var(--space-3);
     font-size: var(--text-xs);
+    flex-wrap: wrap;
+  }
+  
+  /* Post nav: stack vertically */
+  .post-nav {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  
+  .post-nav > div {
+    text-align: left !important;
   }
   
   .header-inner {
@@ -3121,6 +3195,35 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
     right: calc(var(--space-4) + 52px);
   }
   
+  /* Lightbox: smaller buttons */
+  .lightbox-prev,
+  .lightbox-next {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .lightbox-prev {
+    left: 12px;
+  }
+  
+  .lightbox-next {
+    right: 12px;
+  }
+  
+  .lightbox-close {
+    width: 36px;
+    height: 36px;
+    top: 16px;
+    right: 16px;
+    font-size: 20px;
+  }
+  
+  /* Tags cloud: tighter on mobile */
+  .tags-cloud {
+    gap: var(--space-2);
+    padding: var(--space-4);
+  }
+  
   .search-modal {
     width: 95vw;
     max-height: 80vh;
@@ -3154,6 +3257,10 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
     font-size: var(--text-2xl);
   }
   
+  .post-content {
+    font-size: 0.9375rem;
+  }
+  
   .post-content h1 { font-size: var(--text-2xl); }
   .post-content h2 { font-size: var(--text-xl); }
   .post-content h3 { font-size: var(--text-lg); }
@@ -3173,6 +3280,11 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
     -webkit-line-clamp: 2;
   }
   
+  /* Post nav: smaller text */
+  .post-nav-link {
+    font-size: var(--text-xs);
+  }
+  
   .header-inner {
     padding: 0 var(--space-3);
   }
@@ -3188,6 +3300,27 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
   .header-btn {
     width: 40px;
     height: 40px;
+  }
+  
+  /* Lightbox: hide prev/next on small phones */
+  .lightbox-prev,
+  .lightbox-next {
+    display: none;
+  }
+  
+  /* Tags cloud: even tighter */
+  .tags-cloud {
+    gap: var(--space-1);
+    padding: var(--space-3);
+  }
+  
+  /* Page titles: smaller on small phones */
+  .page-title {
+    font-size: var(--text-2xl);
+  }
+  
+  .page-subtitle {
+    font-size: var(--text-base);
   }
   
   .footer-social {
@@ -3326,7 +3459,6 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
     right: calc(var(--space-2) + 44px);
   }
 }
-
 
 /* ============================================================
    16. UTILITIES
