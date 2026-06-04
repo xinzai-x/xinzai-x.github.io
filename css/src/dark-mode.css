@@ -182,6 +182,9 @@ html.dark .nav-link:hover {
 }
 
 html.dark .site-title:hover {
+  color: var(--color-accent);
+}
+
 /* Tags cloud dark mode */
 html.dark .tags-cloud {
   background: var(--color-bg-alt);

@@ -2,6 +2,12 @@
 (function() {
   'use strict';
 
+  // Shared utility: HTML entity escaping
+  function escHtml(text) {
+    var map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+    return text.replace(new RegExp('[&<>"'']', 'g'), function(c) { return map[c]; });
+  }
+
   /* ============================================================
      1. DOM Ready Initializations
      ============================================================ */
@@ -305,10 +311,6 @@
     return root;
   }
 
-  function escHtml(text) {
-    var map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
-    return text.replace(new RegExp('[&<>"\']', 'g'), function(c) { return map[c]; });
-  }
 
   function renderTocTree(tree) {
     if (!tree || tree.length === 0) return '';
@@ -412,7 +414,7 @@
         });
         return searchData;
       })
-      .catch(function(e) { console.error('Failed to load search data', e); return []; });
+      .catch(function(e) { console.warn('Search data unavailable', e); return []; });
   }
 
   function loadHistory() {
@@ -556,10 +558,6 @@
     if (e.key === 'Escape') closeSearch();
   }
 
-  function escHtml(text) {
-    var map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
-    return text.replace(new RegExp('[&<>"\']', 'g'), function(c) { return map[c]; });
-  }
 
   if (searchBtn) searchBtn.addEventListener('click', openSearch);
   if (closeBtn) closeBtn.addEventListener('click', closeSearch);
