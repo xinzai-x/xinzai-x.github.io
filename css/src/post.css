@@ -67,8 +67,8 @@
 
 /* Post content typography */
 .post-content {
-  font-size: clamp(0.875rem, 2.5vw, 1.125rem);
-  line-height: var(--line-height-normal);
+  font-size: clamp(0.9375rem, 2.5vw, 1.125rem);
+  line-height: 1.6;
   word-wrap: break-word;
   overflow-wrap: break-word;
   color: var(--color-text-secondary);
@@ -130,7 +130,7 @@
 
 .post-content p {
   margin-bottom: 1.125rem;
-  line-height: 1.5;
+  line-height: 1.8;
 }
 
 .post-content strong { 
@@ -167,33 +167,26 @@
 }
 
 .post-content li {
-  margin-bottom: var(--space-2);
-  position: relative;
+  margin: 4px 0;
+  line-height: 1.75;
 }
 
-.post-content ul li::before {
-  content: '鈥?;
+.post-content li::marker {
   color: var(--color-accent);
-  font-weight: bold;
-  position: absolute;
-  left: -1em;
+  font-weight: 600;
+  font-size: 1.05em;
+}
+
+.post-content li:hover::marker {
+  color: var(--color-accent-hover);
+}
+
+.post-content ul {
+  list-style: disc;
 }
 
 .post-content ol {
-  counter-reset: list-counter;
-  list-style: none;
-}
-
-.post-content ol > li {
-  counter-increment: list-counter;
-}
-
-.post-content ol > li::before {
-  content: counter(list-counter) '.';
-  color: var(--color-accent);
-  font-weight: var(--font-weight-bold);
-  position: absolute;
-  left: -1.5em;
+  list-style: decimal;
 }
 
 .post-content li > ul,
@@ -201,163 +194,22 @@
   margin: var(--space-2) 0;
 }
 
+.post-content ol ul,
+.post-content ul ul,
+.post-content ol ol,
+.post-content ul ol {
+  padding-left: 20px;
+}
+
+.post-content li p {
+  margin: 0 0 8px;
+}
+
 .post-content hr {
   margin: var(--space-12) 0;
   border: none;
   height: 1px;
   background: var(--color-border);
-}
-
-/* Tables */
-.post-content table {
-  width: 100%;
-  margin: var(--space-8) 0;
-  border-collapse: separate;
-  border-spacing: 0;
-  font-size: var(--text-sm);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 1px solid var(--color-border);
-}
-
-.post-content thead {
-  background: var(--color-bg-alt);
-}
-
-.post-content thead th {
-  padding: var(--space-3) var(--space-4);
-  text-align: left;
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-primary);
-  border-bottom: 2px solid var(--color-border);
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-wide);
-  white-space: nowrap;
-}
-
-.post-content tbody td {
-  padding: var(--space-3) var(--space-4);
-  border-bottom: 1px solid var(--color-border-light);
-  color: var(--color-text-secondary);
-}
-
-.post-content tbody tr:nth-child(even) {
-  background: var(--color-bg-alt);
-}
-
-.post-content tbody tr:hover {
-  background: var(--color-bg-hover);
-}
-
-.post-content tbody tr:last-child td {
-  border-bottom: none;
-}
-
-/* Blockquotes */
-.post-content blockquote {
-  margin: var(--space-8) 0;
-  padding: var(--space-6) var(--space-8);
-  border-left: 4px solid var(--color-accent);
-  background: var(--color-bg-alt);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  color: var(--color-text-secondary);
-  font-size: var(--text-base);
-  font-style: italic;
-}
-
-.post-content blockquote p {
-  margin-bottom: var(--space-3);
-}
-
-.post-content blockquote p:last-child {
-  margin-bottom: 0;
-}
-
-.post-content blockquote cite {
-  display: block;
-  margin-top: var(--space-3);
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  font-style: normal;
-  font-weight: var(--font-weight-medium);
-}
-
-/* Images in posts */
-.post-content img {
-  max-width: 100%;
-  height: auto;
-  border-radius: var(--radius-lg);
-  margin: var(--space-8) auto;
-}
-
-.post-content figure {
-  margin: var(--space-8) 0;
-  text-align: center;
-}
-
-.post-content figcaption {
-  margin-top: var(--space-3);
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  font-style: italic;
-}
-
-/* Inline code */
-.post-content code:not(pre code) {
-  font-family: var(--font-mono);
-  font-size: 0.875em;
-  background: var(--color-inline-code-bg);
-  color: var(--color-inline-code-text);
-  padding: 0.2em 0.5em;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
-  overflow-wrap: anywhere;
-  word-break: break-word;
-  white-space: normal;
-  max-width: 100%;
-  display: inline;
-  font-weight: var(--font-weight-medium);
-}
-
-
-/* Post Navigation */
-.post-nav {
-  margin-top: var(--space-6);
-  padding-top: var(--space-6);
-  display: flex;
-  justify-content: space-between;
-  gap: var(--space-4);
-}
-
-.post-nav > div {
-  flex: 1;
-}
-
-.post-nav-prev {
-  text-align: left;
-}
-
-.post-nav-next {
-  text-align: right;
-}
-
-.post-nav-link {
-  color: var(--color-text-secondary);
-  font-size: var(--text-sm);
-  text-decoration: none;
-  transition: color var(--transition-fast);
-}
-
-.post-nav-link:hover {
-  color: var(--color-accent);
-}
-
-.post-nav-label {
-  display: block;
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-1);
 }
 /* ============================================================
    IMAGE LIGHTBOX
