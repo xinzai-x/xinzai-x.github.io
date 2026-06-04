@@ -19,7 +19,7 @@
 
 <link rel="canonical" href="https://blog.6673543.xyz/8159/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/css/style.css?v=20260604094832">
+<link rel="stylesheet" href="/css/style.css?v=20260604100455">
 
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body>
@@ -166,8 +166,8 @@
       </span>
       
       <span class="meta-item meta-stats">
-        <span class="word-count">12532 字</span>
-        <span class="reading-time">63</span>
+        <span class="word-count">0 字</span>
+        <span class="reading-time"></span>
       </span>
       
       <span class="meta-updated">更新于 2026-06-03</span>
@@ -208,7 +208,7 @@
 
   <!-- Post Content -->
   <div class="post-content" itemprop="articleBody">
-    <div class="mathjax-process"><table>
+    <table>
 <thead>
 <tr>
 <th style="text-align:center">关键字</th>
@@ -1167,7 +1167,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><a href="https://www.runoob.com/mysql/mysql-func-ifnull.html" target="_blank" rel="noopener noreferrer">ifnull(v1,v2)</a></td>
+<td style="text-align:center"><a target="_blank" rel="noopener" href="https://www.runoob.com/mysql/mysql-func-ifnull.html">ifnull(v1,v2)</a></td>
 <td style="text-align:center">如果 v1 的值不为 NULL，则返回 v1，否则返回 v2</td>
 </tr>
 <tr>
@@ -1257,7 +1257,7 @@
 <p>应用场景：将每个部门员工按照入职日期分成3组</p>
 </blockquote>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 根据入职日期将每个部门的员工分成3组</span></span><br><span class="line"><span class="keyword">select</span> </span><br><span class="line">    dname, ename, hiredate, salary,</span><br><span class="line">    <span class="built_in">ntile</span>(<span class="number">3</span>) <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> dname <span class="keyword">order</span> <span class="keyword">by</span>  hiredate  ) <span class="keyword">as</span> rn </span><br><span class="line"><span class="keyword">from</span> employee;</span><br></pre></td></tr></table></figure>
-</div>
+
   </div>
 
 

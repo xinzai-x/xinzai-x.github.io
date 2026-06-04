@@ -1549,6 +1549,16 @@ img[loading="lazy"].loaded {
   box-shadow: var(--shadow-md);
 }
 
+.toc-desktop-toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toc-toggle-icon {
+  margin-right: 8px;
+}
+
 .toc-desktop-collapsible summary {
   display: flex;
   align-items: center;
