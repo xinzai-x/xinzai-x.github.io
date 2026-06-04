@@ -4,13 +4,14 @@ author: 星仔极客
 top: false
 toc: ture
 mathjax: false
+cover: 'https://s2.loli.net/2025/12/28/Uqn7Gf6MEAv9JXS.webp'
+categories: MySQL数据库
+tags: MySQL数据库
+abbrlink: '3e69'
 date: 2025-09-14 22:38:37
 img:
 coverImg:
-cover: https://s2.loli.net/2025/12/28/Uqn7Gf6MEAv9JXS.webp
 password:
-categories: MySQL数据库
-tags: MySQL数据库
 ---
 
 **mydb2**

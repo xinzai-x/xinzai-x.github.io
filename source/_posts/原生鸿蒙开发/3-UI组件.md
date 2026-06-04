@@ -4,13 +4,14 @@ author: 星仔极客
 top: false
 toc: ture
 mathjax: false
+cover: 'https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp'
+categories: 原生鸿蒙开发
+tags: 原生鸿蒙开发
+abbrlink: db50
 date: 2025-09-14 21:58:08
 img:
 coverImg:
-cover: https://s2.loli.net/2025/12/28/FZgRoYaPr1N8WVc.webp
 password:
-categories: 原生鸿蒙开发
-tags: 原生鸿蒙开发
 ---
 
 Ctrl+p：提示方法

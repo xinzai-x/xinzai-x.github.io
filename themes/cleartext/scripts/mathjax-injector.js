@@ -1,5 +1,5 @@
 /**
- * Cleartext Theme — MathJax Injector
+ * Cleartext Theme ?MathJax Injector
  *
  * Ensures MathJax renders content on every page.
  * Injects a small script that tells MathJax to re-process

@@ -2,6 +2,42 @@
    15. RESPONSIVE BREAKPOINTS
    ============================================================ */
 
+/* Tablet: 768px-1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-container {
+    padding: var(--space-8);
+  }
+  .site-nav {
+    display: none;
+  }
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .site-nav.open {
+    display: flex;
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background: var(--color-bg-elevated);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-4);
+    flex-direction: column;
+    gap: var(--space-2);
+    z-index: calc(var(--z-sticky) + 100);
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+  }
+
+}
+
 /* Mobile: <768px */
 @media (max-width: 767px) {
   .page-shell {
@@ -17,16 +53,63 @@
     padding: var(--space-6) var(--space-4);
   }
   
-  .post-title {
-    font-size: var(--text-3xl);
+  
+  
+  
+  /* Inline code: allow wrapping on mobile */
+  .post-content code:not(pre code) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    white-space: normal;
+    display: inline;
+    max-width: 100%;
   }
   
-  .post-content h1 { font-size: var(--text-3xl); }
-  .post-content h2 { font-size: var(--text-2xl); }
-  .post-content h3 { font-size: var(--text-xl); }
-  .post-content h4 { font-size: var(--text-lg); }
-  .post-content h5 { font-size: var(--text-base); }
-  .post-content h6 { font-size: var(--text-sm); }
+  /* Tables: horizontal scroll */
+  .post-content table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .post-content thead {
+    display: table-header-group;
+  }
+  
+  .post-content tbody {
+    display: table-row-group;
+  }
+  
+  .post-content tr {
+    display: table-row;
+  }
+  
+  .post-content th,
+  .post-content td {
+    white-space: nowrap;
+  }
+  
+  /* Allow inline code to wrap even inside table cells on mobile */
+  .post-content td code:not(pre code),
+  .post-content th code:not(pre code) {
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    max-width: 80vw;
+  }
+  
+  /* Blockquote: reduce padding */
+  .post-content blockquote {
+    padding: var(--space-4) var(--space-5);
+  }
+  
+  /* Images: prevent horizontal overflow */
+  .post-content img {
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
   
   .posts-grid {
     grid-template-columns: 1fr;
@@ -37,13 +120,22 @@
     padding: var(--space-6);
   }
   
-  .post-card-title {
-    font-size: var(--text-xl);
-  }
   
+  /* Post meta: allow wrapping */
   .post-meta {
     gap: var(--space-3);
     font-size: var(--text-xs);
+    flex-wrap: wrap;
+  }
+  
+  /* Post nav: stack vertically */
+  .post-nav {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  
+  .post-nav > div {
+    text-align: left !important;
   }
   
   .header-inner {
@@ -69,7 +161,7 @@
     padding: var(--space-4);
     flex-direction: column;
     gap: var(--space-2);
-    z-index: var(--z-sticky);
+    z-index: calc(var(--z-sticky) + 100);
     max-height: 80vh;
     overflow-y: auto;
     box-shadow: var(--shadow-lg);
@@ -102,6 +194,35 @@
     right: calc(var(--space-4) + 52px);
   }
   
+  /* Lightbox: smaller buttons */
+  .lightbox-prev,
+  .lightbox-next {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .lightbox-prev {
+    left: 12px;
+  }
+  
+  .lightbox-next {
+    right: 12px;
+  }
+  
+  .lightbox-close {
+    width: 36px;
+    height: 36px;
+    top: 16px;
+    right: 16px;
+    font-size: 20px;
+  }
+  
+  /* Tags cloud: tighter on mobile */
+  .tags-cloud {
+    gap: var(--space-2);
+    padding: var(--space-4);
+  }
+  
   .search-modal {
     width: 95vw;
     max-height: 80vh;
@@ -118,6 +239,19 @@
   
   .search-history {
     padding: var(--space-2) var(--space-4);
+  }  
+
+  /* Code blocks: smaller font on mobile */
+  .post-content figure.highlight .line {
+    font-size: 0.8125rem;
+  }
+  
+  .post-content figure.highlight pre {
+    padding: var(--space-2) var(--space-3);
+  }
+  
+  .post-content figure.highlight .code-block-header {
+    padding: var(--space-1) var(--space-3);
   }
 }
 
@@ -131,27 +265,21 @@
     padding: var(--space-4) var(--space-3);
   }
   
-  .post-title {
-    font-size: var(--text-2xl);
-  }
   
-  .post-content h1 { font-size: var(--text-2xl); }
-  .post-content h2 { font-size: var(--text-xl); }
-  .post-content h3 { font-size: var(--text-lg); }
-  .post-content h4 { font-size: var(--text-base); }
-  .post-content h5 { font-size: var(--text-sm); }
-  .post-content h6 { font-size: var(--text-xs); }
+  
   
   .post-card {
     padding: var(--space-4);
   }
   
-  .post-card-title {
-    font-size: var(--text-lg);
-  }
   
   .post-card-excerpt {
     -webkit-line-clamp: 2;
+  }
+  
+  /* Post nav: smaller text */
+  .post-nav-link {
+    font-size: var(--text-xs);
   }
   
   .header-inner {
@@ -169,6 +297,31 @@
   .header-btn {
     width: 40px;
     height: 40px;
+  }
+  
+  /* Lightbox: hide prev/next on small phones */
+  .lightbox-prev,
+  .lightbox-next {
+    display: none;
+  }
+  
+  /* Tags cloud: even tighter */
+  .tags-cloud {
+    gap: var(--space-1);
+    padding: var(--space-3);
+  }
+  
+  /* Page titles: smaller on small phones */
+  .page-title {
+    font-size: var(--text-2xl);
+  }
+  
+  .page-subtitle {
+    font-size: var(--text-base);
+  }  
+  /* Code blocks: even smaller on small phones */
+  .post-content figure.highlight .line {
+    font-size: 0.75rem;
   }
   
   .footer-social {
@@ -216,24 +369,12 @@
     padding: var(--space-3) var(--space-2);
   }
   
-  .post-title {
-    font-size: var(--text-xl);
-  }
   
-  .post-content h1 { font-size: var(--text-xl); }
-  .post-content h2 { font-size: var(--text-lg); }
-  .post-content h3 { font-size: var(--text-base); }
-  .post-content h4 { font-size: var(--text-sm); }
-  .post-content h5 { font-size: var(--text-xs); }
-  .post-content h6 { font-size: 0.7rem; }
   
   .post-card {
     padding: var(--space-3);
   }
   
-  .post-card-title {
-    font-size: var(--text-base);
-  }
   
   .post-card-meta {
     font-size: 0.7rem;
@@ -307,4 +448,3 @@
     right: calc(var(--space-2) + 44px);
   }
 }
-

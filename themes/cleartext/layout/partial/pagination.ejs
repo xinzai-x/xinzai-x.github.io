@@ -1,4 +1,4 @@
-<% if (page.total > 1) { %>
+﻿<% if (page.total > 1) { %>
 <nav class="pagination" aria-label="分页导航">
   <%
     var currentPage = page.current;
@@ -24,7 +24,7 @@
 
     if (start > 1) { %>
       <a href="<%= url_for(pageUrl(1)) %>" class="pagination-item">1</a>
-      <% if (start > 2) { %><span class="pagination-item" style="border:none;">...</span><% } %>
+      <% if (start > 2) { %><span class="pagination-item pagination-ellipsis">...</span><% } %>
     <% }
 
     for (var i = start; i <= end; i++) {
@@ -36,7 +36,7 @@
     }
 
     if (end < totalPages) { %>
-      <% if (end < totalPages - 1) { %><span class="pagination-item" style="border:none;">...</span><% } %>
+      <% if (end < totalPages - 1) { %><span class="pagination-item pagination-ellipsis">...</span><% } %>
       <a href="<%= url_for(pageUrl(totalPages)) %>" class="pagination-item"><%= totalPages %></a>
     <% }
   %>

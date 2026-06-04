@@ -1,11 +1,11 @@
 /**
- * Cleartext Theme — Columns Shortcode
+ * Cleartext Theme ?Columns Shortcode
  *
  * Usage:
- *   {% columns %}          → 2 equal columns (default)
- *   {% columns 3 %}        → 3 equal columns
- *   {% columns 2-1 %}      → 2 columns, left wider (2:1 ratio)
- *   {% columns 1-2 %}      → 2 columns, right wider (1:2 ratio)
+ *   {% columns %}          ?2 equal columns (default)
+ *   {% columns 3 %}        ?3 equal columns
+ *   {% columns 2-1 %}      ?2 columns, left wider (2:1 ratio)
+ *   {% columns 1-2 %}      ?2 columns, right wider (1:2 ratio)
  *
  *   {% column %}
  *     Content for this column...
@@ -26,9 +26,6 @@
 
 'use strict';
 
-var columnsCount = [];
-var columnsMode = [];
-
 hexo.extend.tag.register('columns', function (args, content) {
   var count = 2; // default: 2 columns
   var modeClass = 'cols-2';
@@ -46,13 +43,7 @@ hexo.extend.tag.register('columns', function (args, content) {
     }
   }
 
-  columnsCount.push(count);
-  columnsMode.push(modeClass);
-
   var result = '<div class="columns ' + modeClass + '">' + content + '</div>';
-
-  columnsCount.pop();
-  columnsMode.pop();
 
   return result;
 }, { ends: true });

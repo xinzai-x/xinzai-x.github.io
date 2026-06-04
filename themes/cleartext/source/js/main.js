@@ -2,6 +2,12 @@
 (function() {
   'use strict';
 
+  // Shared utility: HTML entity escaping
+  function escHtml(text) {
+    var map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+    return text.replace(new RegExp('[&<>"\']', 'g'), function(c) { return map[c]; });
+  }
+
   /* ============================================================
      1. DOM Ready Initializations
      ============================================================ */
@@ -66,7 +72,13 @@
 
       copyBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        var code = pre.textContent;
+        var lineSpans = pre.querySelectorAll('.line');
+        var code;
+        if (lineSpans.length > 0) {
+          code = Array.from(lineSpans).map(function(span) { return span.textContent; }).join('\n');
+        } else {
+          code = pre.textContent;
+        }
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(code).then(function() {
             copyBtn.classList.add('copied');
@@ -185,6 +197,9 @@
     try { localStorage.setItem('cleartext-theme-mode', mode); } catch(e) {}
   }
 
+  // Initialize icon state on page load
+  applyMode(getCurrentMode());
+
   if (btn) {
     btn.addEventListener('click', function() {
       applyMode(getCurrentMode() === 'dark' ? 'light' : 'dark');
@@ -296,10 +311,6 @@
     return root;
   }
 
-  function escHtml(text) {
-    var map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
-    return text.replace(new RegExp('[&<>"\']', 'g'), function(c) { return map[c]; });
-  }
 
   function renderTocTree(tree) {
     if (!tree || tree.length === 0) return '';
@@ -403,7 +414,7 @@
         });
         return searchData;
       })
-      .catch(function(e) { console.error('Failed to load search data', e); return []; });
+      .catch(function(e) { console.warn('Search data unavailable', e); return []; });
   }
 
   function loadHistory() {
@@ -547,10 +558,6 @@
     if (e.key === 'Escape') closeSearch();
   }
 
-  function escHtml(text) {
-    var map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
-    return text.replace(new RegExp('[&<>"\']', 'g'), function(c) { return map[c]; });
-  }
 
   if (searchBtn) searchBtn.addEventListener('click', openSearch);
   if (closeBtn) closeBtn.addEventListener('click', closeSearch);
@@ -613,9 +620,15 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-    // Initialize image lightbox
-    initImageLightbox();
   })();
+
+
+/* ============================================================
+   12b. Image Lightbox Initialization
+   ============================================================ */
+(function() {
+  initImageLightbox();
+})();
 
   /* ============================================================
      13. IMAGE LIGHTBOX

@@ -1,5 +1,5 @@
 /**
- * Cleartext Theme — Search XML Generator
+ * Cleartext Theme ?Search XML Generator
  * Generates search.xml for client-side search with categories & tags
  */
 'use strict';

@@ -16,4 +16,4 @@
 
 <link rel="canonical" href="<%= full_url_for(page.path) %>">
 <link rel="icon" href="<%= url_for('/favicon.svg') %>" type="image/svg+xml">
-<link rel="stylesheet" href="<%= url_for('/css/style.css') %>">
+<link rel="stylesheet" href="<%= url_for('/css/style.css') %>?v=<%= date(Date.now(), 'YYYYMMDDHHmmss') %>">

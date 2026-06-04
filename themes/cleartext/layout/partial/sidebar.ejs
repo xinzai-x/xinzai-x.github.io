@@ -1,4 +1,4 @@
-<% if (theme.sidebar && theme.sidebar.enable) { %>
+﻿<% if (theme.sidebar && theme.sidebar.enable) { %>
 <%
   // Build widgets list from config
   var widgets = theme.sidebar.widgets || [];
@@ -16,7 +16,7 @@
     <% site.posts.sort('date', -1).limit(8).each(function(post) { %>
     <li>
       <a href="<%= url_for(post.path) %>" title="<%= post.title %>"><%= post.title %></a>
-      <span style="font-size:var(--text-xs);color:var(--color-text-muted);display:block;margin-top:var(--space-1)"><%= date(post.date, 'YYYY-MM-DD') %></span>
+      <span class="widget-post-date"><%= date(post.date, 'YYYY-MM-DD') %></span>
     </li>
     <% }); %>
   </ul>

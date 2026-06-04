@@ -1,5 +1,5 @@
 /**
- * Cleartext Theme — Reading Time & Word Count
+ * Cleartext Theme ?Reading Time & Word Count
  * Adds word_count and reading_time to post/page data
  */
 'use strict';

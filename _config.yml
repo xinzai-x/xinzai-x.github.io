@@ -14,11 +14,16 @@ timezone: Asia/Shanghai
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://blog.6673543.xyz/
-permalink: :year/:month/:day/:title/
+permalink: :abbrlink/
 permalink_defaults:
 pretty_urls:
-  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+  trailing_index: true
+  trailing_html: true
+
+# abbrlink 配置
+abbrlink:
+  alg: crc16      # 算法：crc16 或 crc32
+  rep: hex        # 进制：hex（十六进制）或 dec（十进制）
 
 # Directory
 source_dir: source

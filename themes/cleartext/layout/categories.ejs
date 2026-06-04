@@ -1,4 +1,4 @@
-<div class="page-categories">
+﻿<div class="page-categories">
   <h1 class="page-title">分类</h1>
 
   <div class="categories-list">
@@ -12,9 +12,6 @@
       <ul class="category-post-list">
         <% cat.posts.each(function(post) { %>
         <li>
-          <time datetime="<%= date_xml(post.date) %>">
-            <%= date(post.date, 'YYYY-MM-DD') %>
-          </time>
           <a href="<%= url_for(post.path) %>"><%= post.title %></a>
         </li>
         <% }); %>

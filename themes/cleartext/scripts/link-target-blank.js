@@ -1,5 +1,5 @@
 /**
- * Cleartext Theme — Link Target Blank
+ * Cleartext Theme ?Link Target Blank
  *
  * After post rendering, add target="_blank" rel="noopener noreferrer"
  * to all links in post content that navigate away from the current page.

@@ -1,5 +1,5 @@
 /**
- * Cleartext Theme — Link Card Shortcode
+ * Cleartext Theme ?Link Card Shortcode
  *
  * Usage:
  *   {% link https://example.com Title Description https://example.com/favicon.ico %}
@@ -13,7 +13,7 @@
  * Note: Hexo splits arguments by space, not comma. Use spaces for separation.
  *
  * Example:
- *   {% link https://book.aip.sh/01@%e4%b8%bb%e9%a1%b5 使用教程 "" https://book.aip.sh/favicon.ico %}
+ *   {% link https://book.aip.sh/01@%e4%b8%bb%e9%a1%b5 浣跨敤鏁欑▼ "" https://book.aip.sh/favicon.ico %}
  */
 
 'use strict';
@@ -28,7 +28,7 @@ hexo.extend.tag.register('link', function (args) {
   // Determine what the remaining args are based on count
   // Args can be: [URL, title, description, icon] or [URL, title, icon]
   if (args.length === 3) {
-    // args[2] is either description or icon — check if it looks like a URL
+    // args[2] is either description or icon ?check if it looks like a URL
     var third = (args[2] || '').trim().replace(/,+$/, '');
     if (third && /^https?:\/\//.test(third)) {
       icon = third;
@@ -62,7 +62,7 @@ hexo.extend.tag.register('link', function (args) {
   var html = '<div class="link-card">';
   html += '<a href="' + url + '" target="_blank" rel="noopener noreferrer" class="link-card-inner">';
   
-  // Icon — always present, with fallback
+  // Icon ?always present, with fallback
   html += '<div class="link-card-icon">';
   html += '<svg class="link-card-icon-fallback" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">';
   html += '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>';
@@ -85,7 +85,7 @@ hexo.extend.tag.register('link', function (args) {
   html += '</div>'; // .link-card-content
   
   // External link indicator
-  html += '<div class="link-card-arrow">→</div>';
+  html += '<div class="link-card-arrow">?/div>';
   
   html += '</a>'; // .link-card-inner
   html += '</div>'; // .link-card

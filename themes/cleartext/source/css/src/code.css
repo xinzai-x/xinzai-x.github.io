@@ -1,5 +1,5 @@
-/* ============================================================
-   7. CODE BLOCKS — Modern Design
+﻿/* ============================================================
+   7. CODE BLOCKS 鈥?Modern Design
    ============================================================ */
 .post-content figure.highlight {
   width: 100%;
@@ -8,6 +8,7 @@
   overflow: hidden;
   background: var(--color-code-bg);
   border: 1px solid var(--color-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   text-align: left;
 }
 
@@ -17,7 +18,7 @@
   align-items: center;
   justify-content: space-between;
   padding: var(--space-0_5) var(--space-3);
-  background: var(--color-bg-alt);
+  background: rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid var(--color-border-light);
   font-size: var(--text-xs);
 }
@@ -82,10 +83,10 @@
   width: 100%;
   margin: 0;
   padding: var(--space-0_5) var(--space-4);
-  background: transparent;
+  background: var(--color-code-bg);
   font-family: var(--font-mono);
   font-size: 0;
-  line-height: 1.25;
+  line-height: 1.5;
   color: var(--color-code-text);
   tab-size: 2;
   white-space: pre;
@@ -101,8 +102,8 @@
   padding: 0;
   min-height: 0;
   height: auto;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 
 /* Reset table cell spacing */
@@ -117,7 +118,7 @@
 /* Syntax highlighting (High Contrast Light) */
 .post-content figure.highlight .comment,
 .post-content figure.highlight .quote,
-.post-content figure.highlight .meta { color: #008000; font-style: italic; }
+.post-content figure.highlight .meta { color: var(--syntax-comment); font-style: italic; }
 .post-content figure.highlight .keyword,
 .post-content figure.highlight .selector-tag,
 .post-content figure.highlight .type,
@@ -125,29 +126,29 @@
 .post-content figure.highlight .name,
 .post-content figure.highlight .tag,
 .post-content figure.highlight .doctag,
-.post-content figure.highlight .formula { color: #0000ff; }
+.post-content figure.highlight .formula { color: var(--syntax-keyword); }
 .post-content figure.highlight .string,
 .post-content figure.highlight .title,
 .post-content figure.highlight .selector-id,
 .post-content figure.highlight .selector-class,
 .post-content figure.highlight .template-tag,
-.post-content figure.highlight .deletion { color: #a31515; }
+.post-content figure.highlight .deletion { color: var(--syntax-string); }
 .post-content figure.highlight .number,
 .post-content figure.highlight .literal,
 .post-content figure.highlight .symbol,
 .post-content figure.highlight .bullet,
-.post-content figure.highlight .addition { color: #098658; }
+.post-content figure.highlight .addition { color: var(--syntax-number); }
 .post-content figure.highlight .function,
 .post-content figure.highlight .built_in,
-.post-content figure.highlight .title.function_ { color: #795e26; }
+.post-content figure.highlight .title.function_ { color: var(--syntax-function); }
 .post-content figure.highlight .params,
 .post-content figure.highlight .variable,
 .post-content figure.highlight .template-variable,
-.post-content figure.highlight .attr { color: #001080; }
+.post-content figure.highlight .attr { color: var(--syntax-variable); }
 .post-content figure.highlight .regexp,
-.post-content figure.highlight .link { color: #811f3f; }
+.post-content figure.highlight .link { color: var(--syntax-regexp); }
 .post-content figure.highlight .selector-attr,
-.post-content figure.highlight .selector-pseudo { color: #d16969; }
-.post-content figure.highlight .attribute { color: #0451a5; }
+.post-content figure.highlight .selector-pseudo { color: var(--syntax-selector); }
+.post-content figure.highlight .attribute { color: var(--syntax-attr); }
 .post-content figure.highlight .emphasis { font-style: italic; }
 .post-content figure.highlight .strong { font-weight: bold; }

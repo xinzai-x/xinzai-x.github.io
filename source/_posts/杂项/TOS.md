@@ -4,13 +4,14 @@ author: 星仔极客
 top: false
 toc: ture
 mathjax: false
+categories: 杂项
+tags: 星海物联协议
+abbrlink: '3932'
 date: 2025-10-05 13:42:28
 img:
 coverImg:
 cover:
 password:
-categories: 杂项
-tags: 星海物联协议
 ---
 
 # 星海物联用户服务协议
