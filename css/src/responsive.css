@@ -18,6 +18,24 @@
   .mobile-menu-toggle {
     display: flex;
   }
+
+  .site-nav.open {
+    display: flex;
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background: var(--color-bg-elevated);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-4);
+    flex-direction: column;
+    gap: var(--space-2);
+    z-index: calc(var(--z-sticky) + 100);
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+  }
+
 }
 
 /* Mobile: <768px */
@@ -143,7 +161,7 @@
     padding: var(--space-4);
     flex-direction: column;
     gap: var(--space-2);
-    z-index: var(--z-sticky);
+    z-index: calc(var(--z-sticky) + 100);
     max-height: 80vh;
     overflow-y: auto;
     box-shadow: var(--shadow-lg);
