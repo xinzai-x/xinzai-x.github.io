@@ -111,6 +111,24 @@
     margin-right: auto;
   }
   
+  /* Mobile: paragraph line-height */
+  .post-content p {
+    line-height: 1.8;
+  }
+  
+  /* Mobile: bump font sizes up one level */
+  .post-content {
+    font-size: clamp(0.9375rem, 3vw, 1.125rem);
+  }
+  
+  .post-card-title {
+    font-size: clamp(1.0625rem, 2.5vw, 1.25rem);
+  }
+  
+  .post-card-excerpt {
+    font-size: var(--text-base);
+  }
+  
   .posts-grid {
     grid-template-columns: 1fr;
     gap: var(--space-4);
@@ -275,6 +293,7 @@
   
   .post-card-excerpt {
     -webkit-line-clamp: 2;
+    font-size: 0.9375rem;
   }
   
   /* Post nav: smaller text */
