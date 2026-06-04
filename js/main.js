@@ -1,4 +1,4 @@
-// Main JavaScript for Cleartext Theme v4.0 (Optimized �� Single File)
+// Main JavaScript for Cleartext Theme v4.0 (Optimized — Single File)
 (function() {
   'use strict';
 
@@ -46,7 +46,7 @@
       var pre = figure.querySelector('td.code pre') || figure.querySelector('.code pre') || figure.querySelector('pre');
       if (!pre) return;
 
-      // Extract language from figure class (e.g., "highlight javascript" �� "javascript")
+      // Extract language from figure class (e.g., "highlight javascript" → "javascript")
       var lang = '';
       var classes = figure.className.split(/\s+/);
       for (var i = 0; i < classes.length; i++) {
@@ -67,8 +67,8 @@
 
       var copyBtn = document.createElement('button');
       copyBtn.className = 'code-copy-btn';
-      copyBtn.setAttribute('aria-label', '���ƴ���');
-      copyBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> ����';
+      copyBtn.setAttribute('aria-label', '复制代码');
+      copyBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> 复制';
 
       copyBtn.addEventListener('click', function(e) {
         e.preventDefault();
@@ -82,10 +82,10 @@
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(code).then(function() {
             copyBtn.classList.add('copied');
-            copyBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> �Ѹ���';
+            copyBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> 已复制';
             setTimeout(function() {
               copyBtn.classList.remove('copied');
-              copyBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> ����';
+              copyBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> 复制';
             }, 2000);
           });
         }
@@ -187,12 +187,12 @@
       html.classList.add(CLASS_DARK);
       if (sunIcon) sunIcon.style.display = 'none';
       if (moonIcon) moonIcon.style.display = '';
-      if (btn) btn.setAttribute('aria-label', '�л�����ɫģʽ');
+      if (btn) btn.setAttribute('aria-label', '切换到亮色模式');
     } else {
       html.classList.remove(CLASS_DARK);
       if (sunIcon) sunIcon.style.display = '';
       if (moonIcon) moonIcon.style.display = 'none';
-      if (btn) btn.setAttribute('aria-label', '�л�����ɫģʽ');
+      if (btn) btn.setAttribute('aria-label', '切换到暗色模式');
     }
     try { localStorage.setItem('cleartext-theme-mode', mode); } catch(e) {}
   }
@@ -274,7 +274,7 @@
 
 
 /* ============================================================
-   10. Table of Contents (TOC) �� Lazy: runs only on post pages
+   10. Table of Contents (TOC) — Lazy: runs only on post pages
    ============================================================ */
 (function() {
   'use strict';
@@ -374,7 +374,7 @@
 
 
 /* ============================================================
-   11. Search Engine �� Lazy: loads only when search overlay opens
+   11. Search Engine — Lazy: loads only when search overlay opens
    ============================================================ */
 (function() {
   'use strict';
@@ -437,11 +437,11 @@
       return;
     }
     historyContainer.style.display = 'block';
-    var html = '<div class="search-history-title">�������</div><ul class="search-history-list">';
+    var html = '<div class="search-history-title">最近搜索</div><ul class="search-history-list">';
     searchHistory.forEach(function(query) {
       html += '<li class="search-history-item"><button class="history-query" data-query="' + escHtml(query) + '">' + escHtml(query) + '</button></li>';
     });
-    html += '<li><button class="search-history-clear" id="clear-history">���</button></li></ul>';
+    html += '<li><button class="search-history-clear" id="clear-history">清除</button></li></ul>';
     historyContainer.innerHTML = html;
 
     historyContainer.querySelectorAll('.history-query').forEach(function(btn) {
@@ -494,7 +494,7 @@
 
   function renderResults(matches, query) {
     if (matches.length === 0) { showNoResults(); return; }
-    var html = '<div class="search-results-count">�ҵ� ' + matches.length + ' �����</div><ul class="search-results-list">';
+    var html = '<div class="search-results-count">找到 ' + matches.length + ' 个结果</div><ul class="search-results-list">';
     matches.forEach(function(match) {
       var item = match.item;
       var title = highlight(item.title, query);
@@ -521,11 +521,11 @@
   }
 
   function showNoResults() {
-    results.innerHTML = '<div class="search-no-results">û���ҵ�������£����������ؼ��ʡ�</div>';
+    results.innerHTML = '<div class="search-no-results">没有找到相关文章，试试其他关键词。</div>';
   }
 
   function showHint() {
-    results.innerHTML = '<div class="search-hint">����ؼ����������±��������</div>';
+    results.innerHTML = '<div class="search-hint">输入关键词搜索文章标题和内容</div>';
   }
 
   function openSearch() {
@@ -651,7 +651,7 @@
       if (postImages.length === 0) return;
       const img = postImages[currentIndex];
       lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt || '����ͼƬ';
+      lightboxImg.alt = img.alt || '文章图片';
       lightboxCounter.textContent = `${currentIndex + 1} / ${postImages.length}`;
     }
 
