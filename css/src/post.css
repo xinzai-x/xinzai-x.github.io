@@ -479,6 +479,9 @@
   height: 18px;
   color: var(--color-text-muted);
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* Hide fallback when img loaded successfully */
