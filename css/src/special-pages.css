@@ -478,6 +478,7 @@
   color: var(--color-text-secondary);
   border: 1px solid var(--color-border);
   transition: all var(--transition-fast);
+  text-decoration: none;
 }
 
 .skill-pill:hover {
@@ -517,7 +518,7 @@
 /* Dark mode overrides for special pages */
 html.dark .archive-year,
 html.dark .category-section,
-html.dark .about-content {
+html.dark .about-body {
   background: var(--color-bg-elevated);
   border-color: var(--color-border);
 }
@@ -573,7 +574,7 @@ html.dark .archive-date {
     grid-template-columns: 1fr;
   }
   
-  .about-content {
+  .about-body {
     padding: var(--space-6) var(--space-4);
   }
   
