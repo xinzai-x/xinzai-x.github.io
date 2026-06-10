@@ -146,14 +146,14 @@
     flex-wrap: wrap;
   }
   
-  /* Post nav: stack vertically */
+  /* Post nav: horizontal on all viewports */
   .post-nav {
-    flex-direction: column;
     gap: var(--space-4);
   }
   
-  .post-nav > div {
-    text-align: left !important;
+  .post-nav-prev,
+  .post-nav-next {
+    max-width: 48%;
   }
   
   .header-inner {
