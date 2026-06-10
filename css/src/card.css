@@ -188,6 +188,21 @@
   font-style: italic;
 }
 
+
+.sticky-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.68rem;
+  font-weight: var(--font-weight-semibold);
+  color: #fff;
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  padding: 1px 8px;
+  border-radius: var(--radius-full);
+  vertical-align: middle;
+  margin-right: var(--space-1);
+}
+
 /* Responsive adjustments */
 @media (max-width: 767px) {
   .posts-grid {

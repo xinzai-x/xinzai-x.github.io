@@ -419,9 +419,7 @@
 /* ============================================================
    LINK CARD — Clean, modern external link block
    ============================================================ */
-.link-card {
-  margin: var(--space-5) 0;
-}
+.link-card { margin: var(--space-6) 0; }
 
 .link-card-error {
   padding: var(--space-3) var(--space-5);

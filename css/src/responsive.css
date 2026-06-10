@@ -15,9 +15,7 @@
   .site-nav {
     display: none;
   }
-  .mobile-menu-toggle {
-    display: flex;
-  }
+  .mobile-menu-toggle { display: flex !important; }
 
   .site-nav.open {
     display: flex;
@@ -55,9 +53,7 @@
   .site-nav {
     display: none;
   }
-  .mobile-menu-toggle {
-    display: flex;
-  }
+  .mobile-menu-toggle { display: flex !important; }
   .site-nav.open {
     display: flex;
     position: fixed;
@@ -192,9 +188,7 @@
     display: none;
   }
   
-  .mobile-menu-toggle {
-    display: flex;
-  }
+  .mobile-menu-toggle { display: flex !important; }
   
   .site-nav.open {
     display: flex;
