@@ -440,7 +440,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  padding: var(--space-3) var(--space-4);
+  padding: var(--space-4) var(--space-5);
   background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -451,40 +451,39 @@
 
 .link-card-inner:hover {
   border-color: var(--color-accent);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
 }
 
 .link-card-icon {
   flex-shrink: 0;
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-sm);
   background: var(--color-bg-alt);
-  position: relative;
+}
+
+.link-card-icon img,
+.link-card-fallback {
+  width: 20px;
+  height: 20px;
 }
 
 .link-card-icon img {
-  width: 18px;
-  height: 18px;
   object-fit: contain;
-  position: relative;
-  z-index: 1;
 }
 
 .link-card-fallback {
-  width: 18px;
-  height: 18px;
   color: var(--color-text-muted);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: none;
 }
 
-/* Hide fallback when img loaded successfully */
+.link-card-icon img[style*="display: none"] ~ .link-card-fallback {
+  display: block;
+}
+
 .link-card-icon img[src]:not([style*="display: none"]) ~ .link-card-fallback {
   display: none;
 }
@@ -495,14 +494,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1px;
+  gap: 2px;
 }
 
 .link-card-title {
   font-size: var(--text-sm);
   font-weight: var(--font-weight-semibold);
   color: var(--color-primary);
-  line-height: 1.35;
+  line-height: 1.45;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -515,18 +514,18 @@
 .link-card-desc {
   font-size: var(--text-xs);
   color: var(--color-text-muted);
-  line-height: 1.35;
+  line-height: 1.4;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .link-card-domain {
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   color: var(--color-text-muted);
   font-family: var(--font-mono);
-  opacity: 0.55;
-  line-height: 1.35;
+  opacity: 0.5;
+  line-height: 1.4;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -538,6 +537,7 @@
   opacity: 0.35;
   transition: opacity 0.2s, transform 0.2s;
   display: flex;
+  align-items: center;
 }
 
 .link-card-inner:hover .link-card-arrow {
