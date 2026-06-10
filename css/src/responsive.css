@@ -283,7 +283,7 @@
 
   /* Code blocks: smaller font on mobile */
   .post-content figure.highlight .line {
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
   }
   
   .post-content figure.highlight pre {
@@ -362,7 +362,7 @@
   }  
   /* Code blocks: even smaller on small phones */
   .post-content figure.highlight .line {
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
   }
   
   .footer-social {
