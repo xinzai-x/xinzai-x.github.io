@@ -162,10 +162,6 @@ html.dark .footer-social .social-link:hover {
   color: var(--color-accent);
 }
 
-html.dark .link-card {
-  background: var(--color-bg-elevated);
-  border-color: var(--color-border);
-}
 
 html.dark ::selection {
   background: rgba(96, 165, 250, 0.3);

@@ -61,7 +61,7 @@
 .post-card-title a {
   color: var(--color-primary);
   text-decoration: none;
-  display: block;
+  display: inline;
 }
 
 .post-card-title a:hover {
