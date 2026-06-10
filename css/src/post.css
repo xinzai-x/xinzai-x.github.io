@@ -447,43 +447,45 @@
   text-decoration: none;
   color: inherit;
   transition: border-color 0.2s, box-shadow 0.2s;
+  line-height: 1;
 }
 
 .link-card-inner:hover {
   border-color: var(--color-accent);
-  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 
 .link-card-icon {
   flex-shrink: 0;
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-sm);
   background: var(--color-bg-alt);
-}
-
-.link-card-icon img,
-.link-card-fallback {
-  width: 20px;
-  height: 20px;
+  position: relative;
 }
 
 .link-card-icon img {
+  width: 18px;
+  height: 18px;
   object-fit: contain;
+  position: relative;
+  z-index: 1;
 }
 
 .link-card-fallback {
+  width: 18px;
+  height: 18px;
   color: var(--color-text-muted);
-  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.link-card-icon img[style*="display: none"] ~ .link-card-fallback {
-  display: block;
-}
-
+/* Hide fallback when img loaded successfully */
 .link-card-icon img[src]:not([style*="display: none"]) ~ .link-card-fallback {
   display: none;
 }
@@ -494,14 +496,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 2px;
+  gap: 3px;
 }
 
 .link-card-title {
   font-size: var(--text-sm);
   font-weight: var(--font-weight-semibold);
   color: var(--color-primary);
-  line-height: 1.45;
+  line-height: 1.35;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -514,18 +516,18 @@
 .link-card-desc {
   font-size: var(--text-xs);
   color: var(--color-text-muted);
-  line-height: 1.4;
+  line-height: 1.35;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .link-card-domain {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   color: var(--color-text-muted);
   font-family: var(--font-mono);
-  opacity: 0.5;
-  line-height: 1.4;
+  opacity: 0.55;
+  line-height: 1.35;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -537,7 +539,6 @@
   opacity: 0.35;
   transition: opacity 0.2s, transform 0.2s;
   display: flex;
-  align-items: center;
 }
 
 .link-card-inner:hover .link-card-arrow {
