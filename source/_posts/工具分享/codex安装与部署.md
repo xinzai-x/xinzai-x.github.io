@@ -1,16 +1,9 @@
 ---
 title: codex安装与部署
-author: 星仔极客
 top: false
-toc: ture
-mathjax: false
 categories: 工具分享
-tags: 工具
 abbrlink: fdfe
 date: 2026-05-30 16:47:37
-img:
-coverImg:
-cover:
 password:
 ---
 

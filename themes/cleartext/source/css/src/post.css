@@ -141,9 +141,11 @@
 }
 
 /* Inline code */
+
+.post-content td code:not(pre code), .post-content th code:not(pre code) { font-size: 0.8125em; }
 .post-content code:not(pre code) {
   font-family: var(--font-mono);
-  font-size: 0.875em;
+  font-size: 0.9375em;
   background: var(--color-inline-code-bg);
   color: var(--color-inline-code-text);
   padding: 0.15em 0.45em;
@@ -256,6 +258,8 @@
 
 .post-content th,
 .post-content td {
+  padding:
+  font-size: 0.9375rem;
   padding: 0.5rem 0.8rem;
   vertical-align: middle;
   border: 1px solid var(--color-border);
@@ -362,6 +366,50 @@
   height: 48px;
 }
 
+
+/* ============================================================
+   POST NAVIGATION �?Previous / Next
+   ============================================================ */
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-8);
+  margin-top: var(--space-10);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.post-nav-prev,
+.post-nav-next {
+  max-width: 48%;
+}
+
+.post-nav-next {
+  text-align: right;
+}
+
+.post-nav-link {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  transition: color var(--transition-fast);
+  line-height: var(--line-height-snug);
+}
+
+.post-nav-link:hover {
+  color: var(--color-accent);
+}
+
+.post-nav-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-medium);
+}
+
 .lightbox-counter {
   position: absolute;
   bottom: 28px;
@@ -370,4 +418,130 @@
   color: rgba(255, 255, 255, 0.6);
   font-size: var(--text-sm);
   font-family: var(--font-mono);
+}
+
+/* ============================================================
+   LINK CARD
+   ============================================================ */
+.link-card {
+  margin: var(--space-5) 0;
+}
+
+.link-card-error {
+  padding: var(--space-3) var(--space-5);
+  background: #fef2f2;
+  color: #991b1b;
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  border: 1px solid #fca5a5;
+}
+
+.link-card-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.link-card-inner:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.link-card-icon {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-alt);
+  position: relative;
+}
+
+.link-card-icon img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+}
+
+.link-card-fallback {
+  width: 18px;
+  height: 18px;
+  color: var(--color-text-muted);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Hide fallback when img loaded successfully */
+.link-card-icon img[src]:not([style*="display: none"]) ~ .link-card-fallback {
+  display: none;
+}
+
+.link-card-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1px;
+}
+
+.link-card-title {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  line-height: 1.35;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.link-card-inner:hover .link-card-title {
+  color: var(--color-accent);
+}
+
+.link-card-desc {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: 1.35;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.link-card-domain {
+  font-size: 0.68rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  opacity: 0.55;
+  line-height: 1.35;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.link-card-arrow {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+  opacity: 0.35;
+  transition: opacity 0.2s, transform 0.2s;
+  display: flex;
+}
+
+.link-card-inner:hover .link-card-arrow {
+  opacity: 0.7;
+  transform: translateX(2px);
+  color: var(--color-accent);
 }

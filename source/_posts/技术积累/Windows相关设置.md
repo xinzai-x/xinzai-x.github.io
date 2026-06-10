@@ -1,16 +1,9 @@
 ---
 title: Windows相关设置
-author: 星仔极客
 top: false
-toc: ture
-mathjax: false
-cover: 'https://s2.loli.net/2025/12/28/5dFCrDUfJWKxtPE.webp'
 categories: 技术积累
-tags: Windows相关设置
 abbrlink: 2b22
 date: 2025-09-23 19:21:14
-img:
-coverImg:
 password:
 ---
 

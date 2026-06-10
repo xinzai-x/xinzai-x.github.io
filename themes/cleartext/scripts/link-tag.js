@@ -1,94 +1,50 @@
-/**
- * Cleartext Theme ?Link Card Shortcode
- *
- * Usage:
- *   {% link https://example.com Title Description https://example.com/favicon.ico %}
- *
- * Parameters:
- *   1. URL (required)
- *   2. Title (required)
- *   3. Description (optional, default: "")
- *   4. Icon URL (optional, default: "")
- *
- * Note: Hexo splits arguments by space, not comma. Use spaces for separation.
- *
- * Example:
- *   {% link https://book.aip.sh/01@%e4%b8%bb%e9%a1%b5 浣跨敤鏁欑▼ "" https://book.aip.sh/favicon.ico %}
+﻿/**
+ * Cleartext Theme — Link Card Shortcode
+ * Usage: {% link URL Title Description IconURL %}
  */
-
 'use strict';
 
 hexo.extend.tag.register('link', function (args) {
-  // Parse arguments (Hexo splits by space)
-  var url = args[0] || '';
-  var title = args[1] || '';
+  var url = (args[0] || '').trim().replace(/,+$/, '');
+  var title = (args[1] || '').trim().replace(/,+$/, '');
   var description = '';
   var icon = '';
-  
-  // Determine what the remaining args are based on count
-  // Args can be: [URL, title, description, icon] or [URL, title, icon]
+
   if (args.length === 3) {
-    // args[2] is either description or icon ?check if it looks like a URL
     var third = (args[2] || '').trim().replace(/,+$/, '');
-    if (third && /^https?:\/\//.test(third)) {
-      icon = third;
-    } else {
-      description = third;
-    }
+    if (third && /^https?:\/\//.test(third)) { icon = third; }
+    else { description = third; }
   } else if (args.length >= 4) {
-    description = args[2] || '';
-    icon = args[3] || '';
+    description = (args[2] || '').trim().replace(/,+$/, '');
+    icon = (args[3] || '').trim().replace(/,+$/, '');
   }
-  
-  // Clean up URL (strip trailing commas and whitespace)
-  url = url.trim().replace(/,+$/, '');
-  title = title.trim().replace(/,+$/, '');
-  description = description.trim().replace(/,+$/, '');
-  if (icon) {
-    icon = icon.trim().replace(/,+$/, '');
-  }
-  
-  // Handle special cases for empty description
-  if (!description || description === '""' || description === "''" || description === ',,') {
-    description = '';
-  }
-  
-  // Validate required parameters
-  if (!url || !title) {
-    return '<div class="link-card link-card-error">Error: URL and title are required for link card.</div>';
-  }
-  
-  // Build the link card HTML
+
+  if (!description || description === '""' || description === "''" || description === ',,') { description = ''; }
+  if (!url || !title) { return '<div class="link-card link-card-error">URL 和标题为必填项</div>'; }
+
+  var domain = url.replace(/^https?:\/\//, '').split('/')[0];
+
   var html = '<div class="link-card">';
   html += '<a href="' + url + '" target="_blank" rel="noopener noreferrer" class="link-card-inner">';
-  
-  // Icon ?always present, with fallback
-  html += '<div class="link-card-icon">';
-  html += '<svg class="link-card-icon-fallback" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">';
-  html += '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>';
-  html += '<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>';
-  html += '</svg>';
+
+  // Icon
+  html += '<span class="link-card-icon">';
   if (icon && icon !== '""' && icon !== "''") {
     html += '<img src="' + icon + '" alt="" onerror="this.style.display=\'none\'" />';
   }
-  html += '</div>';
-  
+  html += '<svg class="link-card-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
+  html += '</span>';
+
   // Content
-  html += '<div class="link-card-content">';
-  html += '<div class="link-card-title">' + title + '</div>';
-  
-  if (description) {
-    html += '<div class="link-card-description">' + description + '</div>';
-  }
-  
-  html += '<div class="link-card-url">' + url.replace(/^https?:\/\//, '') + '</div>';
-  html += '</div>'; // .link-card-content
-  
-  // External link indicator
-  html += '<div class="link-card-arrow">?/div>';
-  
-  html += '</a>'; // .link-card-inner
-  html += '</div>'; // .link-card
-  
+  html += '<span class="link-card-content">';
+  html += '<span class="link-card-title">' + title + '</span>';
+  if (description) { html += '<span class="link-card-desc">' + description + '</span>'; }
+  html += '<span class="link-card-domain">' + domain + '</span>';
+  html += '</span>';
+
+  // Arrow
+  html += '<span class="link-card-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>';
+
+  html += '</a></div>';
   return html;
 }, false);

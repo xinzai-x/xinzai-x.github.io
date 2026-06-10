@@ -15,9 +15,7 @@
   .site-nav {
     display: none;
   }
-  .mobile-menu-toggle {
-    display: flex;
-  }
+  .mobile-menu-toggle { display: flex !important; }
 
   .site-nav.open {
     display: flex;
@@ -51,6 +49,32 @@
   
   .post-full {
     padding: var(--space-6) var(--space-4);
+  }
+  .site-nav {
+    display: none;
+  }
+  .mobile-menu-toggle { display: flex !important; }
+  .site-nav.open {
+    display: flex;
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background: var(--color-bg-elevated);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-4);
+    flex-direction: column;
+    gap: var(--space-2);
+    z-index: calc(var(--z-sticky) + 100);
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+  }
+  .nav-link {
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    width: 100%;
+    text-align: left;
   }
   
   
@@ -146,14 +170,14 @@
     flex-wrap: wrap;
   }
   
-  /* Post nav: stack vertically */
+  /* Post nav: horizontal on all viewports */
   .post-nav {
-    flex-direction: column;
     gap: var(--space-4);
   }
   
-  .post-nav > div {
-    text-align: left !important;
+  .post-nav-prev,
+  .post-nav-next {
+    max-width: 48%;
   }
   
   .header-inner {
@@ -164,9 +188,7 @@
     display: none;
   }
   
-  .mobile-menu-toggle {
-    display: flex;
-  }
+  .mobile-menu-toggle { display: flex !important; }
   
   .site-nav.open {
     display: flex;
@@ -261,7 +283,7 @@
 
   /* Code blocks: smaller font on mobile */
   .post-content figure.highlight .line {
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
   }
   
   .post-content figure.highlight pre {
@@ -340,7 +362,7 @@
   }  
   /* Code blocks: even smaller on small phones */
   .post-content figure.highlight .line {
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
   }
   
   .footer-social {

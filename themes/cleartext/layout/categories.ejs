@@ -1,21 +1,21 @@
-﻿<div class="page-categories">
-  <h1 class="page-title">分类</h1>
+<div class="page-content">
+  <h1 class="page-title"><%= page.title %></h1>
 
-  <div class="categories-list">
-    <% var catsData = (typeof site !== 'undefined' && site.categories) ? site.categories : []; %>
-    <% catsData.each(function(cat) { %>
-    <section class="category-section" id="cat-<%= cat._id %>">
+  <div class="page-body">
+    <% site.categories.sort('name').each(function(cat) { %>
+    <section class="category-section">
       <h2 class="category-title">
         <a href="<%= url_for(cat.path) %>"><%= cat.name %></a>
-        <span class="category-count"><%= cat.length %></span>
+        <span class="category-count"><%= cat.posts.length %></span>
       </h2>
-      <ul class="category-post-list">
-        <% cat.posts.each(function(post) { %>
-        <li>
-          <a href="<%= url_for(post.path) %>"><%= post.title %></a>
-        </li>
+      <div class="category-posts">
+        <% cat.posts.sort('date', -1).each(function(post) { %>
+        <article class="category-post">
+          <a href="<%= url_for(post.path) %>" class="category-post-title"><%= post.title %></a>
+          <time class="category-post-date"><%= date(post.date, 'YYYY-MM-DD') %></time>
+        </article>
         <% }); %>
-      </ul>
+      </div>
     </section>
     <% }); %>
   </div>

@@ -1,16 +1,9 @@
 ---
 title: 博客CDN解析
-author: 星仔极客
 top: false
-cover: 'https://s2.loli.net/2025/12/28/jpYxcyKJSR7Dvku.webp'
-toc: ture
-mathjax: false
 categories: 技术积累
-tags: 博客CDN解析
 abbrlink: '7769'
 date: 2025-08-31 15:09:45
-img:
-coverImg:
 password:
 ---
 

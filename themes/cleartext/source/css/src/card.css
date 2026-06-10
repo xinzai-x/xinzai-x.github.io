@@ -1,5 +1,5 @@
 /* ============================================================
-   5. CARD COMPONENT â€?Modern Design
+   5. CARD COMPONENT ï¿½?Modern Design
    ============================================================ */
 .posts-grid {
   display: grid;
@@ -15,11 +15,20 @@
   }
 }
 
-/* Desktop (1024px+): 2 columns */
+/* Desktop (1024px+): 3 columns */
 @media (min-width: 1024px) {
   .posts-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-12);
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+  }
+}
+
+/* Homepage centering */
+@media (min-width: 768px) {
+  .posts-grid {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -72,13 +81,17 @@
 .post-card-date {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-1);
+  gap: 4px;
   background: var(--color-bg-alt);
   padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-full);
   font-weight: var(--font-weight-medium);
   font-family: var(--font-mono);
-}
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;}
+
+.post-card-date svg { opacity: 0.5; flex-shrink: 0; vertical-align: middle; }
 
 .post-card-excerpt {
   color: var(--color-text-secondary);
@@ -93,9 +106,11 @@
 }
 
 .post-card-updated {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
   font-size: var(--text-xs);
   color: var(--color-text-muted);
-  font-style: italic;
   background: var(--color-bg-alt);
   padding: var(--space-1) var(--space-2);
   border-radius: var(--radius-sm);
@@ -163,6 +178,33 @@
   background: var(--color-tag-bg-hover);
   color: var(--color-tag-text-hover);
   border-color: var(--color-accent-light);
+}
+
+
+.post-card-excerpt-locked {
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-style: italic;
+}
+
+
+.sticky-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  font-weight: var(--font-weight-semibold);
+  color: #fff;
+  background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  vertical-align: middle;
+  margin-right: var(--space-2);
+  box-shadow: 0 1px 3px rgba(239, 68, 68, 0.25);
+  letter-spacing: 0.02em;
+  line-height: 1.4;
 }
 
 /* Responsive adjustments */
