@@ -239,7 +239,7 @@
 /* Tables - AnZhiYu style */
 .table-wrap {
   overflow-x: auto;
-  margin: 1rem 0;
+  margin: 2px 0;
   border-radius: 8px;
   -webkit-overflow-scrolling: touch;
 }
