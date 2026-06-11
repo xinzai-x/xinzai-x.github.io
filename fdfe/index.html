@@ -16,7 +16,7 @@
 
 <link rel="canonical" href="https://blog.6673543.xyz/fdfe/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/css/style.css?v=20260611173948">
+<link rel="stylesheet" href="/css/style.css?v=20260611192844">
  <meta name="generator" content="Hexo 7.3.0"></head> <body>   <a href="#main-content" class="skip-to-content" aria-label="跳转到主要内容">跳到内容</a>   <header class="site-header" id="site-header" role="banner">
   <div class="header-inner">
     <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="切换导航菜单" aria-expanded="false">
@@ -131,7 +131,7 @@
       </span>
       
       <span class="meta-item meta-stats">
-        <span class="word-count">2262 字</span>
+        <span class="word-count">2263 字</span>
         <span class="reading-time">12</span>
       </span>
       
@@ -177,7 +177,7 @@
 <ol>
 <li>单cc switch方式（中文界面下无法显示模型名，也就无法切换模型，只启用cc switch）</li>
 <li>cxx + cc switch方式（启用ccx和cc switch）</li>
-<li>codex<ins>方式（启用codex</ins>）</li>
+<li>codex++ 方式（启用codex++）</li>
 </ol>
 <h1 id="下载安装"><a class="markdownIt-Anchor" href="#下载安装"></a> 下载安装</h1>
 <p>    下载需要安装的软件，采用哪种方式下载对应软件即可，codex以及cc switch正常安装软件双击后安装即可（<code>codex安装完成之后直接在任务栏退出，等配置完成后再重新启动</code>）ccx需要配置一下，下载链接：<a href="https://yun.139.com/shareweb/#/w/i/2v3EknaoDtT1f" target="_blank" rel="noopener noreferrer">https://yun.139.com/shareweb/#/w/i/2v3EknaoDtT1f</a>  提取码：9rly</p>
@@ -448,7 +448,7 @@
 <h1 id="答疑"><a class="markdownIt-Anchor" href="#答疑"></a> 答疑</h1>
 <h2 id="无法设置成中文"><a class="markdownIt-Anchor" href="#无法设置成中文"></a> 无法设置成中文</h2>
 <p>    这个问题已经研究明白了，其实就是要使用一下某些工具才会生效，如果没有可能真没办法，只要开了使用一会，然后把codex退出，重新启动后，就会自动变成中文了，国外的软件都懂的！</p>
-<h2 id="使用过程经常断开"><a class="markdownIt-Anchor" href="#使用过程经常断开"></a> 使用过程经常断开</h2>
+<h2 id="ccx使用过程经常断开"><a class="markdownIt-Anchor" href="#ccx使用过程经常断开"></a> ccx使用过程经常断开</h2>
 <p>    我发现codex只要使用替我审批功能，就会百分百触发cxx驱动API熔断，这个问题我也研究明白了，ccx渠道里面有很多个模型，然后请求的时候会跳转到别的模型去请求，然而，我们别的模型又没有配置，所以请求失败，自然就断开了，比如我只配置了gpt-5.5，然后codex又会自动跳去请求gpt-5.4，而我们渠道又没加这个模型，导致断开。</p>
 <img src="https://files.seeusercontent.com/2026/06/03/R7np/ccx.png" alt="ccx故障图.png" style="zoom:50%;" />
 <p>    解决办法就是直接把ccx渠道里面的全部模型都配置了，这样就解决了。</p>

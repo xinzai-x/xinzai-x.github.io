@@ -1,9 +1,9 @@
 /* ==== design-tokens.css ==== */
 /* ============================================================
-   1. DESIGN TOKENS 鈥?CSS Custom Properties
+   1. DESIGN TOKENS �?CSS Custom Properties
    ============================================================ */
 :root {
-  /* Color System 鈥?Modern Palette */
+  /* Color System �?Modern Palette */
   --color-primary: #111827;
   --color-primary-light: #374151;
   --color-primary-dark: #0a0f1a;
@@ -72,7 +72,7 @@
   --syntax-addition: #098658;
   --syntax-deletion: #a31515;
 
-  /* Typography 鈥?System Font Stack (no external fonts) */
+  /* Typography �?System Font Stack (no external fonts) */
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
   --font-mono: "Cascadia Code", "Fira Code", "SF Mono", Menlo, Consolas, monospace;
 
@@ -118,7 +118,7 @@
   --space-24: 6rem;
   --space-32: 8rem;
 
-  /* Border Radius 鈥?Modern */
+  /* Border Radius �?Modern */
   --radius-none: 0;
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
@@ -127,14 +127,14 @@
   --radius-2xl: 1.5rem;
   --radius-full: 9999px;
 
-  /* Shadows 鈥?Light */
+  /* Shadows �?Light */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.12);
   --shadow-xl: 0 6px 18px rgba(0, 0, 0, 0.12);
   --shadow-2xl: 0 8px 24px rgba(0, 0, 0, 0.15);
 
-  /* Layout 鈥?Optimized for 2-column */
+  /* Layout �?Optimized for 2-column */
   --header-height: 72px;
   --header-height-shrunk: 60px;
   --content-max-width: 65ch;
@@ -363,7 +363,7 @@ img[loading="lazy"].loaded {
 
 /* ==== layout.css ==== */
 /* ============================================================
-   3. CSS GRID LAYOUT SYSTEM — Enhanced for 2-column
+   3. CSS GRID LAYOUT SYSTEM �?Enhanced for 2-column
    ============================================================ */
 .page-shell {
   padding-top: var(--header-height);
@@ -381,7 +381,7 @@ img[loading="lazy"].loaded {
 }
 
 /* ============================================================
-   HOMEPAGE LAYOUT — 2-column with sidebar
+   HOMEPAGE LAYOUT �?2-column with sidebar
    ============================================================ */
 
 /* Default mobile: single column */
@@ -416,7 +416,7 @@ img[loading="lazy"].loaded {
   width: 100%;
 }
 
-/* Article page without TOC or sidebar — full width */
+/* Article page without TOC or sidebar �?full width */
 .grid-container.grid-post:not(.grid-has-toc):not(.grid-has-sidebar) {
   display: block;
 }
@@ -436,7 +436,7 @@ img[loading="lazy"].loaded {
 }
 
 /* ============================================================
-   POST LAYOUT — With TOC
+   POST LAYOUT �?With TOC
    ============================================================ */
 
 /* Post with TOC only (no sidebar) */
@@ -497,7 +497,7 @@ img[loading="lazy"].loaded {
     gap: var(--grid-gap-mobile);
   }
   
-  /* Article page without TOC or sidebar — mobile adjustment */
+  /* Article page without TOC or sidebar �?mobile adjustment */
   .grid-container.grid-post:not(.grid-has-toc):not(.grid-has-sidebar) .grid-main {
     padding: 0;
   }
@@ -505,7 +505,7 @@ img[loading="lazy"].loaded {
 
 /* ==== header.css ==== */
 /* ============================================================
-   4. HEADER — Modern Glass Morphism
+   4. HEADER �?Modern Glass Morphism
    ============================================================ */
 .site-header {
   position: fixed;
@@ -755,7 +755,7 @@ img[loading="lazy"].loaded {
 
 /* ==== sidebar.css ==== */
 /* ============================================================
-   8. SIDEBAR WIDGETS — Modern Design
+   8. SIDEBAR WIDGETS �?Modern Design
    ============================================================ */
 .grid-sidebar {
   background: var(--color-bg-elevated);
@@ -1533,7 +1533,7 @@ img[loading="lazy"].loaded {
 
 /* ==== code.css ==== */
 /* ============================================================
-   7. CODE BLOCKS 鈥?Modern Design
+   7. CODE BLOCKS �?Modern Design
    ============================================================ */
 .post-content figure.highlight {
   width: 100%;
@@ -1890,15 +1890,23 @@ img[loading="lazy"].loaded {
   transform: scaleY(1);
 }
 
+.toc-level-1 a {
+  font-weight: var(--font-weight-semibold);
+}
+
+.toc-level-2 a {
+  padding-left: var(--space-2);
+}
+
 .toc-level-3 a {
   font-size: 0.9em;
-  padding-left: var(--space-6);
+  padding-left: var(--space-4);
 }
 
 .toc-level-4 a {
   font-size: 0.85em;
   opacity: 0.85;
-  padding-left: var(--space-8);
+  padding-left: var(--space-6);
 }
 
 /* ==== search.css ==== */
@@ -2252,10 +2260,10 @@ body.search-open {
 
 /* ==== special-pages.css ==== */
 /* ============================================================
-   13. SPECIAL PAGES — Archive, Categories, Tags, About
+   13. SPECIAL PAGES �?Archive, Categories, Tags, About
    ============================================================ */
 
-/* Grid layout for special pages — centered */
+/* Grid layout for special pages �?centered */
 .grid-container.grid-page .grid-main {
   max-width: 860px;
   width: 100%;

@@ -1,4 +1,4 @@
-// Main JavaScript for Cleartext Theme v4.0 (Optimized — Single File)
+// Main JavaScript for Cleartext Theme v4.0 (Optimized �?Single File)
 (function() {
   'use strict';
 
@@ -46,7 +46,7 @@
       var pre = figure.querySelector('td.code pre') || figure.querySelector('.code pre') || figure.querySelector('pre');
       if (!pre) return;
 
-      // Extract language from figure class (e.g., "highlight javascript" → "javascript")
+      // Extract language from figure class (e.g., "highlight javascript" �?"javascript")
       var lang = '';
       var classes = figure.className.split(/\s+/);
       for (var i = 0; i < classes.length; i++) {
@@ -82,7 +82,7 @@
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(code).then(function() {
             copyBtn.classList.add('copied');
-            copyBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> 已复制';
+            copyBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> 已复�?;
             setTimeout(function() {
               copyBtn.classList.remove('copied');
               copyBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> 复制';
@@ -187,12 +187,12 @@
       html.classList.add(CLASS_DARK);
       if (sunIcon) sunIcon.style.display = 'none';
       if (moonIcon) moonIcon.style.display = '';
-      if (btn) btn.setAttribute('aria-label', '切换到亮色模式');
+      if (btn) btn.setAttribute('aria-label', '切换到亮色模�?);
     } else {
       html.classList.remove(CLASS_DARK);
       if (sunIcon) sunIcon.style.display = '';
       if (moonIcon) moonIcon.style.display = 'none';
-      if (btn) btn.setAttribute('aria-label', '切换到暗色模式');
+      if (btn) btn.setAttribute('aria-label', '切换到暗色模�?);
     }
     try { localStorage.setItem('cleartext-theme-mode', mode); } catch(e) {}
   }
@@ -274,7 +274,7 @@
 
 
 /* ============================================================
-   10. Table of Contents (TOC) — Lazy: runs only on post pages
+   10. Table of Contents (TOC) �?Lazy: runs only on post pages
    ============================================================ */
 (function() {
   'use strict';
@@ -302,7 +302,7 @@
     var stack = [{ level: 1, children: root }];
     headings.forEach(function(h) {
       var level = parseInt(h.tagName.charAt(1));
-      if (level > 4) level = 4; if (level < 2) level = 2;
+      if (level > 4) level = 4; if (level < 1) level = 1;
       var item = { id: h.id, text: h.textContent.trim(), level: level, children: [] };
       while (stack.length > 0 && stack[stack.length - 1].level >= level) stack.pop();
       if (stack.length > 0) { stack[stack.length - 1].children.push(item); } else { root.push(item); }
@@ -319,7 +319,17 @@
       html += '<li class="toc-item toc-level-' + item.level + '"><a href="#' + item.id + '">' + escHtml(item.text) + '</a>';
       if (item.children.length > 0) {
         html += '<ul class="toc-sublist">';
-        item.children.forEach(function(child) { html += '<li class="toc-item toc-level-' + child.level + '"><a href="#' + child.id + '">' + escHtml(child.text) + '</a></li>'; });
+        item.children.forEach(function(child) {
+          html += '<li class="toc-item toc-level-' + child.level + '"><a href="#' + child.id + '">' + escHtml(child.text) + '</a>';
+          if (child.children.length > 0) {
+            html += '<ul class="toc-sublist">';
+            child.children.forEach(function(grandchild) {
+              html += '<li class="toc-item toc-level-' + grandchild.level + '"><a href="#' + grandchild.id + '">' + escHtml(grandchild.text) + '</a></li>';
+            });
+            html += '</ul>';
+          }
+          html += '</li>';
+        });
         html += '</ul>';
       }
       html += '</li>';
@@ -374,7 +384,7 @@
 
 
 /* ============================================================
-   11. Search Engine — Lazy: loads only when search overlay opens
+   11. Search Engine �?Lazy: loads only when search overlay opens
    ============================================================ */
 (function() {
   'use strict';
@@ -437,7 +447,7 @@
       return;
     }
     historyContainer.style.display = 'block';
-    var html = '<div class="search-history-title">最近搜索</div><ul class="search-history-list">';
+    var html = '<div class="search-history-title">最近搜�?/div><ul class="search-history-list">';
     searchHistory.forEach(function(query) {
       html += '<li class="search-history-item"><button class="history-query" data-query="' + escHtml(query) + '">' + escHtml(query) + '</button></li>';
     });
@@ -494,7 +504,7 @@
 
   function renderResults(matches, query) {
     if (matches.length === 0) { showNoResults(); return; }
-    var html = '<div class="search-results-count">找到 ' + matches.length + ' 个结果</div><ul class="search-results-list">';
+    var html = '<div class="search-results-count">找到 ' + matches.length + ' 个结�?/div><ul class="search-results-list">';
     matches.forEach(function(match) {
       var item = match.item;
       var title = highlight(item.title, query);
@@ -521,7 +531,7 @@
   }
 
   function showNoResults() {
-    results.innerHTML = '<div class="search-no-results">没有找到相关文章，试试其他关键词。</div>';
+    results.innerHTML = '<div class="search-no-results">没有找到相关文章，试试其他关键词�?/div>';
   }
 
   function showHint() {
