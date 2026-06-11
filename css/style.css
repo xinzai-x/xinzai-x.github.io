@@ -1352,7 +1352,7 @@ img[loading="lazy"].loaded {
   -webkit-overflow-scrolling: touch;
 }
 div[style*="overflow-x: auto"] {
-  margin: 2px 0 !important;
+  margin: 2px 0 6px 0 !important;
 }
 
 .post-content table {
