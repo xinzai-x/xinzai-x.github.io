@@ -284,7 +284,7 @@
 
   if (!postContent || (!tocDesktop && !tocMobile)) return;
 
-  var headings = postContent.querySelectorAll('h1, h2, h3, h4');
+  var headings = postContent.querySelectorAll('h1, h2, h3, h4, h5, h6');
   if (headings.length === 0) {
     var dw = document.getElementById('toc-desktop-wrapper');
     var mw = document.getElementById('toc-mobile-wrapper');
@@ -302,7 +302,7 @@
     var stack = [{ level: 1, children: root }];
     headings.forEach(function(h) {
       var level = parseInt(h.tagName.charAt(1));
-      if (level > 4) level = 4; if (level < 1) level = 1;
+      if (level > 6) level = 6; if (level < 1) level = 1;
       var item = { id: h.id, text: h.textContent.trim(), level: level, children: [] };
       while (stack.length > 0 && stack[stack.length - 1].level >= level) stack.pop();
       if (stack.length > 0) { stack[stack.length - 1].children.push(item); } else { root.push(item); }
@@ -319,7 +319,9 @@
       html += '<li class="toc-item toc-level-' + item.level + '"><a href="#' + item.id + '">' + escHtml(item.text) + '</a>';
       if (item.children.length > 0) {
         html += '<ul class="toc-sublist">';
-        item.children.forEach(function(child) { html += '<li class="toc-item toc-level-' + child.level + '"><a href="#' + child.id + '">' + escHtml(child.text) + '</a></li>'; });
+        item.children.forEach(function(child) {
+          html += renderTocItem(child);
+        });
         html += '</ul>';
       }
       html += '</li>';
@@ -328,26 +330,17 @@
     return html;
   }
 
-  var tocHtml = renderTocTree(buildTocTree(headings));
-  if (tocDesktop) tocDesktop.innerHTML = tocHtml;
-  if (tocMobile) tocMobile.innerHTML = tocHtml;
-
-  var tocLinksDesktop = tocDesktop ? tocDesktop.querySelectorAll('a') : [];
-  var tocLinksMobile = tocMobile ? tocMobile.querySelectorAll('a') : [];
-
-  if ('IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        var id = entry.target.getAttribute('id');
-        if (!id || !entry.isIntersecting) return;
-        [tocLinksDesktop, tocLinksMobile].forEach(function(links) {
-          links.forEach(function(link) {
-            link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-          });
-        });
+  function renderTocItem(item) {
+    var html = '<li class="toc-item toc-level-' + item.level + '"><a href="#' + item.id + '">' + escHtml(item.text) + '</a>';
+    if (item.children.length > 0) {
+      html += '<ul class="toc-sublist">';
+      item.children.forEach(function(child) {
+        html += renderTocItem(child);
       });
-    }, { rootMargin: '-80px 0px -66% 0px', threshold: 0 });
-    headings.forEach(function(h) { if (h.id) observer.observe(h); });
+      html += '</ul>';
+    }
+    html += '</li>';
+    return html;
   }
 
   function bindTocClicks(container) {

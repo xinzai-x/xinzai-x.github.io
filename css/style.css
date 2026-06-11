@@ -1909,6 +1909,18 @@ img[loading="lazy"].loaded {
   padding-left: var(--space-6);
 }
 
+.toc-level-5 a {
+  font-size: 0.8em;
+  opacity: 0.75;
+  padding-left: var(--space-8);
+}
+
+.toc-level-6 a {
+  font-size: 0.75em;
+  opacity: 0.65;
+  padding-left: var(--space-10);
+}
+
 /* ==== search.css ==== */
 /* ============================================================
    SEARCH OVERLAY
