@@ -1351,6 +1351,9 @@ img[loading="lazy"].loaded {
   border-radius: 8px;
   -webkit-overflow-scrolling: touch;
 }
+div[style*="overflow-x: auto"] {
+  margin: 2px 0 !important;
+}
 
 .post-content table {
   display: table;
