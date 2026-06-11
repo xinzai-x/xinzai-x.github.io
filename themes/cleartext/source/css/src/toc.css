@@ -200,14 +200,33 @@
   transform: scaleY(1);
 }
 
+.toc-level-1 a {
+  font-weight: var(--font-weight-semibold);
+}
+
+.toc-level-2 a {
+  padding-left: var(--space-2);
+}
+
 .toc-level-3 a {
   font-size: 0.9em;
-  padding-left: var(--space-6);
+  padding-left: var(--space-4);
 }
 
 .toc-level-4 a {
   font-size: 0.85em;
   opacity: 0.85;
+  padding-left: var(--space-6);
+}
+
+.toc-level-5 a {
+  font-size: 0.8em;
+  opacity: 0.75;
   padding-left: var(--space-8);
 }
 
+.toc-level-6 a {
+  font-size: 0.75em;
+  opacity: 0.65;
+  padding-left: var(--space-10);
+}

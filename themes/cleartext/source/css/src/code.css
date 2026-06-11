@@ -3,7 +3,7 @@
    ============================================================ */
 .post-content figure.highlight {
   width: 100%;
-  margin: var(--space-8) 0;
+  margin: 2px 0;
   border-radius: var(--radius-xl);
   overflow: hidden;
   background: var(--color-code-bg);

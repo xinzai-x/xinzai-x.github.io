@@ -284,7 +284,7 @@
 
   if (!postContent || (!tocDesktop && !tocMobile)) return;
 
-  var headings = postContent.querySelectorAll('h1, h2, h3, h4');
+  var headings = postContent.querySelectorAll('h1, h2, h3, h4, h5, h6');
   if (headings.length === 0) {
     var dw = document.getElementById('toc-desktop-wrapper');
     var mw = document.getElementById('toc-mobile-wrapper');
@@ -302,7 +302,7 @@
     var stack = [{ level: 1, children: root }];
     headings.forEach(function(h) {
       var level = parseInt(h.tagName.charAt(1));
-      if (level > 4) level = 4; if (level < 2) level = 2;
+      if (level > 6) level = 6; if (level < 1) level = 1;
       var item = { id: h.id, text: h.textContent.trim(), level: level, children: [] };
       while (stack.length > 0 && stack[stack.length - 1].level >= level) stack.pop();
       if (stack.length > 0) { stack[stack.length - 1].children.push(item); } else { root.push(item); }
@@ -312,19 +312,34 @@
   }
 
 
-  function renderTocTree(tree) {
+    function renderTocTree(tree) {
     if (!tree || tree.length === 0) return '';
     var html = '<ul class="toc-list">';
     tree.forEach(function(item) {
       html += '<li class="toc-item toc-level-' + item.level + '"><a href="#' + item.id + '">' + escHtml(item.text) + '</a>';
       if (item.children.length > 0) {
         html += '<ul class="toc-sublist">';
-        item.children.forEach(function(child) { html += '<li class="toc-item toc-level-' + child.level + '"><a href="#' + child.id + '">' + escHtml(child.text) + '</a></li>'; });
+        item.children.forEach(function(child) {
+          html += renderTocItem(child);
+        });
         html += '</ul>';
       }
       html += '</li>';
     });
     html += '</ul>';
+    return html;
+  }
+
+  function renderTocItem(item) {
+    var html = '<li class="toc-item toc-level-' + item.level + '"><a href="#' + item.id + '">' + escHtml(item.text) + '</a>';
+    if (item.children.length > 0) {
+      html += '<ul class="toc-sublist">';
+      item.children.forEach(function(child) {
+        html += renderTocItem(child);
+      });
+      html += '</ul>';
+    }
+    html += '</li>';
     return html;
   }
 

@@ -1,9 +1,9 @@
 /* ==== design-tokens.css ==== */
 /* ============================================================
-   1. DESIGN TOKENS 鈥?CSS Custom Properties
+   1. DESIGN TOKENS 閳?CSS Custom Properties
    ============================================================ */
 :root {
-  /* Color System 鈥?Modern Palette */
+  /* Color System 閳?Modern Palette */
   --color-primary: #111827;
   --color-primary-light: #374151;
   --color-primary-dark: #0a0f1a;
@@ -72,7 +72,7 @@
   --syntax-addition: #098658;
   --syntax-deletion: #a31515;
 
-  /* Typography 鈥?System Font Stack (no external fonts) */
+  /* Typography 閳?System Font Stack (no external fonts) */
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
   --font-mono: "Cascadia Code", "Fira Code", "SF Mono", Menlo, Consolas, monospace;
 
@@ -118,7 +118,7 @@
   --space-24: 6rem;
   --space-32: 8rem;
 
-  /* Border Radius 鈥?Modern */
+  /* Border Radius 閳?Modern */
   --radius-none: 0;
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
@@ -127,14 +127,14 @@
   --radius-2xl: 1.5rem;
   --radius-full: 9999px;
 
-  /* Shadows 鈥?Light */
+  /* Shadows 閳?Light */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.12);
   --shadow-xl: 0 6px 18px rgba(0, 0, 0, 0.12);
   --shadow-2xl: 0 8px 24px rgba(0, 0, 0, 0.15);
 
-  /* Layout 鈥?Optimized for 2-column */
+  /* Layout 閳?Optimized for 2-column */
   --header-height: 72px;
   --header-height-shrunk: 60px;
   --content-max-width: 65ch;
@@ -363,7 +363,7 @@ img[loading="lazy"].loaded {
 
 /* ==== layout.css ==== */
 /* ============================================================
-   3. CSS GRID LAYOUT SYSTEM — Enhanced for 2-column
+   3. CSS GRID LAYOUT SYSTEM 鈥?Enhanced for 2-column
    ============================================================ */
 .page-shell {
   padding-top: var(--header-height);
@@ -381,7 +381,7 @@ img[loading="lazy"].loaded {
 }
 
 /* ============================================================
-   HOMEPAGE LAYOUT — 2-column with sidebar
+   HOMEPAGE LAYOUT 鈥?2-column with sidebar
    ============================================================ */
 
 /* Default mobile: single column */
@@ -416,7 +416,7 @@ img[loading="lazy"].loaded {
   width: 100%;
 }
 
-/* Article page without TOC or sidebar — full width */
+/* Article page without TOC or sidebar 鈥?full width */
 .grid-container.grid-post:not(.grid-has-toc):not(.grid-has-sidebar) {
   display: block;
 }
@@ -436,7 +436,7 @@ img[loading="lazy"].loaded {
 }
 
 /* ============================================================
-   POST LAYOUT — With TOC
+   POST LAYOUT 鈥?With TOC
    ============================================================ */
 
 /* Post with TOC only (no sidebar) */
@@ -497,7 +497,7 @@ img[loading="lazy"].loaded {
     gap: var(--grid-gap-mobile);
   }
   
-  /* Article page without TOC or sidebar — mobile adjustment */
+  /* Article page without TOC or sidebar 鈥?mobile adjustment */
   .grid-container.grid-post:not(.grid-has-toc):not(.grid-has-sidebar) .grid-main {
     padding: 0;
   }
@@ -505,7 +505,7 @@ img[loading="lazy"].loaded {
 
 /* ==== header.css ==== */
 /* ============================================================
-   4. HEADER — Modern Glass Morphism
+   4. HEADER 鈥?Modern Glass Morphism
    ============================================================ */
 .site-header {
   position: fixed;
@@ -755,12 +755,12 @@ img[loading="lazy"].loaded {
 
 /* ==== sidebar.css ==== */
 /* ============================================================
-   8. SIDEBAR WIDGETS — Modern Design
+   8. SIDEBAR WIDGETS 鈥?Modern Design
    ============================================================ */
 .grid-sidebar {
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
+  border-radius: 2px;
   padding: var(--space-8);
   box-shadow: var(--shadow-sm);
 }
@@ -879,7 +879,7 @@ img[loading="lazy"].loaded {
 
 /* ==== card.css ==== */
 /* ============================================================
-   5. CARD COMPONENT �?Modern Design
+   5. CARD COMPONENT 锟?Modern Design
    ============================================================ */
 .posts-grid {
   display: grid;
@@ -1184,57 +1184,62 @@ img[loading="lazy"].loaded {
 .post-content h1 { 
   font-size: clamp(1.5rem, 4vw, 2.25rem); 
   font-weight: var(--font-weight-extrabold); 
-  margin: 1.5rem 0 0.75rem;
+  margin: 2.5rem 0 1rem;
+  line-height: 1.3;
   letter-spacing: var(--letter-spacing-tight); 
   color: var(--color-primary);
-  padding-bottom: var(--space-3);
-  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid var(--color-accent);
 }
 .post-content h2 { 
-  font-size: clamp(1.25rem, 3.5vw, 1.875rem); 
+  font-size: clamp(1.25rem, 3.5vw, 1.75rem); 
   font-weight: var(--font-weight-bold); 
-  margin: 1.25rem 0 0.5rem;
+  margin: 2rem 0 0.75rem;
+  line-height: 1.35;
   color: var(--color-primary);
-  position: relative;
-  padding-left: var(--space-4);
-}
-.post-content h2::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.5em;
-  height: 1em;
-  width: 3px;
-  background: var(--color-accent);
-  border-radius: var(--radius-full);
+  padding-left: 0.75rem;
+  border-left: 4px solid var(--color-accent);
+  border-radius: 0 2px 2px 0;
 }
 .post-content h3 { 
-  font-size: clamp(1.125rem, 3vw, 1.5rem); 
+  font-size: clamp(1.125rem, 3vw, 1.375rem); 
   font-weight: var(--font-weight-semibold); 
-  margin: 1rem 0 0.5rem;
+  margin: 1.5rem 0 0.5rem;
+  line-height: 1.4;
   color: var(--color-primary);
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--color-border);
 }
 .post-content h4 { 
-  font-size: clamp(1rem, 2.5vw, 1.25rem); 
+  font-size: clamp(1rem, 2.5vw, 1.15rem); 
   font-weight: var(--font-weight-semibold); 
-  margin: var(--space-6) 0 var(--space-3); 
+  margin: 1.25rem 0 0.5rem;
+  line-height: 1.45;
   color: var(--color-primary-light);
 }
 .post-content h5 { 
-  font-size: clamp(0.9375rem, 2vw, 1.125rem); 
-  font-weight: var(--font-weight-semibold); 
-  margin: var(--space-6) 0 var(--space-3); 
+  font-size: clamp(0.9375rem, 2vw, 1rem); 
+  font-weight: var(--font-weight-medium); 
+  margin: 1rem 0 0.5rem;
+  line-height: 1.5;
   color: var(--color-text-secondary);
 }
 .post-content h6 { 
-  font-size: clamp(0.875rem, 1.8vw, 1rem); 
-  font-weight: var(--font-weight-semibold); 
-  margin: var(--space-6) 0 var(--space-3); 
+  font-size: clamp(0.8125rem, 1.5vw, 0.875rem); 
+  font-weight: var(--font-weight-medium); 
+  margin: 1rem 0 0.5rem;
+  line-height: 1.5;
   color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-wide);
 }
-
+.post-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 1rem;
+  border-radius: var(--radius-lg);
+}
 .post-content p {
   margin-bottom: 0.75rem;
   line-height: 1.8;
@@ -1342,9 +1347,12 @@ img[loading="lazy"].loaded {
 /* Tables - AnZhiYu style */
 .table-wrap {
   overflow-x: auto;
-  margin: 1rem 0;
+  margin: 2px 0 !important;
   border-radius: 8px;
   -webkit-overflow-scrolling: touch;
+}
+div[style*="overflow-x: auto"] {
+  margin: 2px 0 6px 0 !important;
 }
 
 .post-content table {
@@ -1475,7 +1483,7 @@ img[loading="lazy"].loaded {
 
 
 /* ============================================================
-   POST NAVIGATION �?Previous / Next
+   POST NAVIGATION 锟?Previous / Next
    ============================================================ */
 .post-nav {
   display: flex;
@@ -1533,11 +1541,11 @@ img[loading="lazy"].loaded {
 
 /* ==== code.css ==== */
 /* ============================================================
-   7. CODE BLOCKS 鈥?Modern Design
+   7. CODE BLOCKS 閳?Modern Design
    ============================================================ */
 .post-content figure.highlight {
   width: 100%;
-  margin: var(--space-8) 0;
+  margin: 2px 0;
   border-radius: var(--radius-xl);
   overflow: hidden;
   background: var(--color-code-bg);
@@ -1694,7 +1702,7 @@ img[loading="lazy"].loaded {
 .toc-desktop-collapsible {
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
+  border-radius: 2px;
   padding: 0;
   box-shadow: var(--shadow-sm);
   margin-bottom: var(--space-5);
@@ -1702,7 +1710,7 @@ img[loading="lazy"].loaded {
 }
 
 .toc-desktop-collapsible details {
-  border-radius: var(--radius-xl);
+  border-radius: 2px;
   overflow: hidden;
 }
 
@@ -1795,14 +1803,14 @@ img[loading="lazy"].loaded {
     display: block;
     background: var(--color-bg-elevated);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
+    border-radius: 2px;
     padding: 0;
     box-shadow: var(--shadow-sm);
     margin-bottom: var(--space-5);
     transition: all var(--transition-fast);
   }
   .toc-mobile details {
-    border-radius: var(--radius-xl);
+    border-radius: 2px;
     overflow: hidden;
   }
   .toc-mobile summary {
@@ -1890,15 +1898,35 @@ img[loading="lazy"].loaded {
   transform: scaleY(1);
 }
 
+.toc-level-1 a {
+  font-weight: var(--font-weight-semibold);
+}
+
+.toc-level-2 a {
+  padding-left: var(--space-2);
+}
+
 .toc-level-3 a {
   font-size: 0.9em;
-  padding-left: var(--space-6);
+  padding-left: var(--space-4);
 }
 
 .toc-level-4 a {
   font-size: 0.85em;
   opacity: 0.85;
+  padding-left: var(--space-6);
+}
+
+.toc-level-5 a {
+  font-size: 0.8em;
+  opacity: 0.75;
   padding-left: var(--space-8);
+}
+
+.toc-level-6 a {
+  font-size: 0.75em;
+  opacity: 0.65;
+  padding-left: var(--space-10);
 }
 
 /* ==== search.css ==== */
@@ -1931,7 +1959,7 @@ body.search-open {
 .search-modal {
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
+  border-radius: 2px;
   box-shadow: var(--shadow-2xl);
   width: 640px;
   max-width: 90vw;
@@ -2252,10 +2280,10 @@ body.search-open {
 
 /* ==== special-pages.css ==== */
 /* ============================================================
-   13. SPECIAL PAGES — Archive, Categories, Tags, About
+   13. SPECIAL PAGES 鈥?Archive, Categories, Tags, About
    ============================================================ */
 
-/* Grid layout for special pages — centered */
+/* Grid layout for special pages 鈥?centered */
 .grid-container.grid-page .grid-main {
   max-width: 860px;
   width: 100%;
@@ -2299,7 +2327,7 @@ body.search-open {
   margin-bottom: var(--space-8);
   padding: var(--space-8);
   background: var(--color-bg-elevated);
-  border-radius: var(--radius-xl);
+  border-radius: 2px;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--color-border);
   transition: all var(--transition-base);
@@ -2373,7 +2401,7 @@ body.search-open {
   margin-bottom: var(--space-8);
   padding: var(--space-8);
   background: var(--color-bg-elevated);
-  border-radius: var(--radius-xl);
+  border-radius: 2px;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--color-border);
   transition: all var(--transition-base);
@@ -2453,7 +2481,7 @@ body.search-open {
   justify-content: center;
   padding: var(--space-6);
   background: var(--color-bg-elevated);
-  border-radius: var(--radius-xl);
+  border-radius: 2px;
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
@@ -2526,7 +2554,7 @@ body.search-open {
   margin-top: var(--space-12);
   padding: var(--space-8);
   background: var(--color-bg-elevated);
-  border-radius: var(--radius-xl);
+  border-radius: 2px;
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-sm);
 }
@@ -2702,7 +2730,7 @@ body.search-open {
   padding: var(--space-6);
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
+  border-radius: 2px;
 }
 
 .about-bio p {
@@ -2873,7 +2901,7 @@ html.dark .archive-date {
   display: block;
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
+  border-radius: 2px;
   padding: var(--space-6);
   text-decoration: none;
   color: inherit;
@@ -3696,4 +3724,3 @@ html.dark .tag-cloud-item:hover .tag-cloud-count {
     right: calc(var(--space-2) + 44px);
   }
 }
-
