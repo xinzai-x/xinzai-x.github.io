@@ -312,7 +312,7 @@
   }
 
 
-  function renderTocTree(tree) {
+    function renderTocTree(tree) {
     if (!tree || tree.length === 0) return '';
     var html = '<ul class="toc-list">';
     tree.forEach(function(item) {
@@ -341,6 +341,28 @@
     }
     html += '</li>';
     return html;
+  }
+
+  var tocHtml = renderTocTree(buildTocTree(headings));
+  if (tocDesktop) tocDesktop.innerHTML = tocHtml;
+  if (tocMobile) tocMobile.innerHTML = tocHtml;
+
+  var tocLinksDesktop = tocDesktop ? tocDesktop.querySelectorAll('a') : [];
+  var tocLinksMobile = tocMobile ? tocMobile.querySelectorAll('a') : [];
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        var id = entry.target.getAttribute('id');
+        if (!id || !entry.isIntersecting) return;
+        [tocLinksDesktop, tocLinksMobile].forEach(function(links) {
+          links.forEach(function(link) {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+          });
+        });
+      });
+    }, { rootMargin: '-80px 0px -66% 0px', threshold: 0 });
+    headings.forEach(function(h) { if (h.id) observer.observe(h); });
   }
 
   function bindTocClicks(container) {

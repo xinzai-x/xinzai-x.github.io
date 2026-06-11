@@ -132,7 +132,8 @@
   color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-wide);
-}.post-content p {
+}
+.post-content p {
   margin-bottom: 0.75rem;
   line-height: 1.8;
 }
@@ -372,7 +373,7 @@
 
 
 /* ============================================================
-   POST NAVIGATION �?Previous / Next
+   POST NAVIGATION 锟?Previous / Next
    ============================================================ */
 .post-nav {
   display: flex;
