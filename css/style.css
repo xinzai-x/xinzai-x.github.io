@@ -760,7 +760,7 @@ img[loading="lazy"].loaded {
 .grid-sidebar {
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
+  border-radius: 2px;
   padding: var(--space-8);
   box-shadow: var(--shadow-sm);
 }
@@ -1543,7 +1543,7 @@ img[loading="lazy"].loaded {
 .post-content figure.highlight {
   width: 100%;
   margin: var(--space-8) 0;
-  border-radius: var(--radius-xl);
+  border-radius: 2px;
   overflow: hidden;
   background: var(--color-code-bg);
   border: 1px solid var(--color-border);
@@ -1699,7 +1699,7 @@ img[loading="lazy"].loaded {
 .toc-desktop-collapsible {
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
+  border-radius: 2px;
   padding: 0;
   box-shadow: var(--shadow-sm);
   margin-bottom: var(--space-5);
@@ -1707,7 +1707,7 @@ img[loading="lazy"].loaded {
 }
 
 .toc-desktop-collapsible details {
-  border-radius: var(--radius-xl);
+  border-radius: 2px;
   overflow: hidden;
 }
 
@@ -1800,14 +1800,14 @@ img[loading="lazy"].loaded {
     display: block;
     background: var(--color-bg-elevated);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
+    border-radius: 2px;
     padding: 0;
     box-shadow: var(--shadow-sm);
     margin-bottom: var(--space-5);
     transition: all var(--transition-fast);
   }
   .toc-mobile details {
-    border-radius: var(--radius-xl);
+    border-radius: 2px;
     overflow: hidden;
   }
   .toc-mobile summary {
@@ -1956,7 +1956,7 @@ body.search-open {
 .search-modal {
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
+  border-radius: 2px;
   box-shadow: var(--shadow-2xl);
   width: 640px;
   max-width: 90vw;
@@ -2324,7 +2324,7 @@ body.search-open {
   margin-bottom: var(--space-8);
   padding: var(--space-8);
   background: var(--color-bg-elevated);
-  border-radius: var(--radius-xl);
+  border-radius: 2px;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--color-border);
   transition: all var(--transition-base);
@@ -2398,7 +2398,7 @@ body.search-open {
   margin-bottom: var(--space-8);
   padding: var(--space-8);
   background: var(--color-bg-elevated);
-  border-radius: var(--radius-xl);
+  border-radius: 2px;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--color-border);
   transition: all var(--transition-base);
@@ -2478,7 +2478,7 @@ body.search-open {
   justify-content: center;
   padding: var(--space-6);
   background: var(--color-bg-elevated);
-  border-radius: var(--radius-xl);
+  border-radius: 2px;
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
@@ -2551,7 +2551,7 @@ body.search-open {
   margin-top: var(--space-12);
   padding: var(--space-8);
   background: var(--color-bg-elevated);
-  border-radius: var(--radius-xl);
+  border-radius: 2px;
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-sm);
 }
@@ -2727,7 +2727,7 @@ body.search-open {
   padding: var(--space-6);
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
+  border-radius: 2px;
 }
 
 .about-bio p {
@@ -2898,7 +2898,7 @@ html.dark .archive-date {
   display: block;
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
+  border-radius: 2px;
   padding: var(--space-6);
   text-decoration: none;
   color: inherit;
