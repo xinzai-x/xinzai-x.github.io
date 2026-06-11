@@ -125,7 +125,14 @@
   color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-wide);
-}.post-content p {
+}.post-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 1rem;
+  border-radius: var(--radius-lg);
+}
+.post-content p {
   margin-bottom: 0.75rem;
   line-height: 1.8;
 }
