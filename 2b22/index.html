@@ -16,7 +16,7 @@
 
 <link rel="canonical" href="https://blog.6673543.xyz/2b22/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/css/style.css?v=20260614154605">
+<link rel="stylesheet" href="/css/style.css?v=20260616141035">
  <meta name="generator" content="Hexo 7.3.0"></head> <body>   <a href="#main-content" class="skip-to-content" aria-label="跳转到主要内容">跳到内容</a>   <header class="site-header" id="site-header" role="banner">
   <div class="header-inner">
     <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="切换导航菜单" aria-expanded="false">
@@ -131,11 +131,11 @@
       </span>
       
       <span class="meta-item meta-stats">
-        <span class="word-count">1282 字</span>
+        <span class="word-count">1283 字</span>
         <span class="reading-time">7</span>
       </span>
       
-      <span class="meta-updated">更新于 2026-06-10</span>
+      <span class="meta-updated">更新于 2026-06-16</span>
       
     </div>
 
@@ -192,16 +192,25 @@
 <p>新建txt文件，将下面复制进去，改名为<code>Hyper-V.bat</code>，以管理员身份运行，然后重启电脑</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pushd &quot;%~dp0&quot;</span><br><span class="line"></span><br><span class="line">dir /b %SystemRoot%\servicing\Packages\*Hyper-V*.mum &gt;hyper-v.txt</span><br><span class="line"></span><br><span class="line">for /f %%i in (&#x27;findstr /i . hyper-v.txt 2^&gt;nul&#x27;) do dism /online /norestart /add-package:&quot;%SystemRoot%\servicing\Packages\%%i&quot;</span><br><span class="line"></span><br><span class="line">del hyper-v.txt</span><br><span class="line"></span><br><span class="line">Dism /online /enable-feature /featurename:Microsoft-Hyper-V-All /LimitAccess /ALL</span><br></pre></td></tr></table></figure>
 <h1 id="win10系统复制或新建文件后需要刷新的解决办法"><a class="markdownIt-Anchor" href="#win10系统复制或新建文件后需要刷新的解决办法"></a> Win10系统复制或新建文件后需要刷新的解决办法</h1>
-<p>按Win + r输入 regedit 后回车，在注册表中依次展开并定位到HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control，在Control 文件夹下新建一个名为Updata项，再刚创建的Updata文件夹下再创建一个UpdataMode项，然后再新建一个可扩充字符串值，名为：DWORD，值为：0</p>
+<p>按Win + r输入 regedit 后回车，在注册表中依次展开并定位到<code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control</code>，在Control 文件夹下新建一个名为Updata项，再刚创建的Updata文件夹下再创建一个UpdataMode项，然后再新建一个可扩充字符串值，名为：DWORD，值为：0</p>
 <img src="https://s2.loli.net/2025/12/28/PYOrItKf836WEwd.png" alt="新建项的方法" style="zoom:50%;" />
 <img src="https://s2.loli.net/2025/12/28/6YnwEXKQRotWAVc.png" alt="新建可扩充字符串值方法" style="zoom:50%;" />
-<h1 id="火狐浏览器优化"><a class="markdownIt-Anchor" href="#火狐浏览器优化"></a> 火狐浏览器优化</h1>
-<p>iTab 标签设置：</p>
-<p><a href="https://itab.link/install/firefox.html" target="_blank" rel="noopener noreferrer">🌏Firefox安装教程 | iTab新标签页</a></p>
-<p>配置滚轮切换标签：</p>
-<p><a href="https://linux.do/t/topic/359819" target="_blank" rel="noopener noreferrer">火狐浏览器两个非常适合国人的配置项——滚轮切换标签页、双击关闭标签页</a></p>
-<p>配置双击关闭标签：</p>
-<p><a href="https://blog.csdn.net/weixin_45498383/article/details/127865392" target="_blank" rel="noopener noreferrer">开启火狐浏览器 Firefox 原生「双击关闭标签页」功能_firefox双击关闭标签页-CSDN博客</a></p>
+<h1 id="脚本运行乱码"><a class="markdownIt-Anchor" href="#脚本运行乱码"></a> 脚本运行乱码</h1>
+<p>如果勾选了此选项（默认设置是不勾选的），需要把.bat文件保存为UTF-8编码，如果未勾选，则需把.bat文件保存为ANSI编码，很多时候我们使用的都是UTF-8编码，然后ANSI编码来运行就乱码。</p>
+<ol>
+<li>
+<p>打开控制面板，点击进入<code>区域</code></p>
+<img src="https://files.seeusercontent.com/2026/06/16/B6bz/fe3ceb5.webp" alt="控制面板图.webp" style="zoom:50%;" />
+</li>
+<li>
+<p>点击<code>更改系统区域设置</code></p>
+<img src="https://files.seeusercontent.com/2026/06/16/B0yf/4f20e14.webp" alt="管理界面.webp" style="zoom:50%;" />
+</li>
+<li>
+<p>勾选<code>Beta版：使用UnicodeUTF-8提供全球语言支持(U)</code></p>
+<img src="https://files.seeusercontent.com/2026/06/16/Fma7/0d37456.webp" alt="勾选设置.webp" style="zoom:50%;" />
+</li>
+</ol>
 
   </div>
 
