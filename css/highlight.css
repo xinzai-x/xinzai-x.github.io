@@ -23,15 +23,14 @@
 
 .highlight table {
   width: 100%;
-  min-width: 0;
   border-collapse: collapse;
   margin: 0;
+  table-layout: fixed;
 }
 
 .highlight table td {
   padding: 0;
   border: none;
-  width: 100%;
 }
 
 .highlight table td.gutter {
@@ -47,6 +46,8 @@
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: var(--border-secondary) transparent;
+  display: block;
+  width: 100%;
 }
 
 .highlight .code pre {
