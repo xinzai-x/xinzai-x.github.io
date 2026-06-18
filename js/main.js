@@ -196,27 +196,48 @@
   };
 
   // =============================================
-  // Back to Top
+  // Back to Top & Scroll to Bottom
   // =============================================
-  const BackToTop = {
+  const ScrollButtons = {
     init() {
-      this.button = document.getElementById('back-to-top');
-      if (!this.button) return;
+      this.topBtn = document.getElementById('back-to-top');
+      this.bottomBtn = document.getElementById('scroll-to-bottom');
+      if (!this.topBtn && !this.bottomBtn) return;
       
       window.addEventListener('scroll', () => this.handleScroll(), { passive: true });
-      this.button.addEventListener('click', () => this.scrollToTop());
+      if (this.topBtn) this.topBtn.addEventListener('click', () => this.scrollToTop());
+      if (this.bottomBtn) this.bottomBtn.addEventListener('click', () => this.scrollToBottom());
     },
     
     handleScroll() {
-      if (window.scrollY > 300) {
-        this.button.classList.add('visible');
-      } else {
-        this.button.classList.remove('visible');
+      const scrollY = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight;
+      const winHeight = window.innerHeight;
+      const atBottom = scrollY + winHeight >= docHeight - 100;
+      
+      if (this.topBtn) {
+        if (scrollY > 300) {
+          this.topBtn.classList.add('visible');
+        } else {
+          this.topBtn.classList.remove('visible');
+        }
+      }
+      
+      if (this.bottomBtn) {
+        if (!atBottom && docHeight > winHeight + 400) {
+          this.bottomBtn.classList.add('visible');
+        } else {
+          this.bottomBtn.classList.remove('visible');
+        }
       }
     },
     
     scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
+    
+    scrollToBottom() {
+      window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
     }
   };
 
@@ -477,7 +498,7 @@
     ThemeManager.init();
     MobileNav.init();
     SearchManager.init();
-    BackToTop.init();
+    ScrollButtons.init();
     ReadingProgress.init();
     TOCManager.init();
     ImageManager.init();

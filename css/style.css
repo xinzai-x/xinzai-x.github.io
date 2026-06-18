@@ -708,19 +708,22 @@ html {
    Post Article
    ============================================= */
 .post-article {
-  max-width: 85vw;
+  max-width: 90vw;
   margin: 0 auto;
+  min-width: 0;
+  overflow: hidden;
 }
 
 /* When no sidebar, use more width */
 .container > .post-article {
-  max-width: 85vw;
+  max-width: 90vw;
 }
 
 /* When inside sidebar grid, don't constrain width */
 .content-wrap.with-sidebar .post-article {
   max-width: none;
   margin: 0;
+  overflow: hidden;
 }
 
 /* Post Header */
@@ -797,6 +800,7 @@ html {
   word-wrap: break-word;
   overflow-wrap: break-word;
   hyphens: auto;
+  overflow-x: hidden;
 }
 
 .post-content h1,
@@ -1825,6 +1829,39 @@ html {
   border-color: var(--accent-primary);
 }
 
+/* Scroll to Bottom */
+.scroll-to-bottom {
+  position: fixed;
+  bottom: 84px;
+  right: 32px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+  color: var(--text-secondary);
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity var(--transition-normal), transform var(--transition-normal), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.scroll-to-bottom.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.scroll-to-bottom:hover {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
 /* Header scrolled state */
 .site-header.scrolled {
   box-shadow: var(--shadow-sm);
@@ -2121,6 +2158,11 @@ html {
 
   .back-to-top {
     bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    right: 20px;
+  }
+
+  .scroll-to-bottom {
+    bottom: calc(72px + env(safe-area-inset-bottom, 0px));
     right: 20px;
   }
 
@@ -2765,6 +2807,7 @@ input:focus-visible {
   .post-nav,
   .post-toc,
   .back-to-top,
+  .scroll-to-bottom,
   .search-modal,
   .reading-progress,
   .footer-social,
@@ -3280,6 +3323,17 @@ input:focus-visible {
 }
 
 [data-theme="dark"] .back-to-top:hover {
+  color: #d4a017;
+  border-color: #d4a017;
+}
+
+[data-theme="dark"] .scroll-to-bottom {
+  background-color: #242019;
+  border-color: #3a342c;
+  color: #b0a598;
+}
+
+[data-theme="dark"] .scroll-to-bottom:hover {
   color: #d4a017;
   border-color: #d4a017;
 }
