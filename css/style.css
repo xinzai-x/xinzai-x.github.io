@@ -1184,6 +1184,8 @@ html {
   border-radius: 0;
   font-size: inherit;
   white-space: pre;
+  overflow: visible;
+  max-height: none;
 }
 
 /* Expand button */
