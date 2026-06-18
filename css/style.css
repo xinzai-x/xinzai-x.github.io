@@ -1177,13 +1177,14 @@ figure.highlight .code {
 figure.highlight .code pre {
   margin: 0;
   padding: 0;
-  background: none;
-  border: none;
+  background: none !important;
+  border: none !important;
   border-radius: 0;
   font-size: 0.88rem;
   line-height: 1.65;
   white-space: pre;
-  overflow: visible;
+  overflow: visible !important;
+  max-height: none !important;
 }
 
 /* Expand button */
