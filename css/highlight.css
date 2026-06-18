@@ -89,12 +89,12 @@ figure.highlight.is-expanded .code-expand-btn {
 
 /* Dark mode */
 [data-theme="dark"] figure.highlight {
-  background-color: #2e2a22;
-  border-color: #3a342c;
+  background-color: #0a0a0a;
+  border-color: #1a1a1a;
 }
 
 [data-theme="dark"] .code-expand-btn {
-  background: linear-gradient(transparent, #2e2a22);
+  background: linear-gradient(transparent, #0a0a0a);
 }
 
 /* =============================================
