@@ -549,25 +549,6 @@
   // =============================================
   // Initialize
   // =============================================
-  const CodeStyleFix = {
-    init() {
-      document.querySelectorAll('figure.highlight').forEach(block => {
-        const pre = block.querySelector('pre');
-        if (!pre) return;
-        pre.style.background = 'none';
-        pre.style.border = 'none';
-        pre.style.borderRadius = '0';
-        pre.style.margin = '0';
-        pre.style.padding = '0';
-        pre.style.overflow = 'visible';
-        pre.style.maxHeight = 'none';
-      });
-    }
-  };
-
-  // =============================================
-  // Initialize
-  // =============================================
   document.addEventListener('DOMContentLoaded', () => {
     ThemeManager.init();
     MobileNav.init();

@@ -1146,8 +1146,9 @@ figure.highlight {
   background-color: var(--bg-code);
   border: 1px solid var(--border-primary);
   border-radius: var(--radius-md);
-  overflow: hidden;
+  overflow: auto;
   position: relative;
+  max-height: 420px;
   max-width: 100%;
 }
 
@@ -1167,7 +1168,6 @@ figure.highlight table td {
 
 figure.highlight .code {
   padding: 16px 20px;
-  overflow: visible;
   background: none;
   border: none;
 }
@@ -1178,46 +1178,9 @@ figure.highlight .code pre {
   background: none !important;
   border: none !important;
   border-radius: 0;
-  font-size: 0.88rem;
+  font-size: 1.1rem;
   line-height: 1.65;
   white-space: pre;
-  overflow: visible !important;
-  max-height: none !important;
-}
-
-/* Expand button */
-.code-expand-btn {
-  display: none;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40px;
-  background: linear-gradient(transparent, var(--bg-code));
-  border: none;
-  border-radius: 0 0 var(--radius-md) var(--radius-md);
-  color: var(--text-tertiary);
-  font-family: var(--font-heading);
-  font-size: 0.85rem;
-  font-weight: 500;
-  cursor: pointer;
-  z-index: 1;
-  transition: color var(--transition-fast);
-}
-
-.code-expand-btn:hover {
-  color: var(--accent-primary);
-}
-
-figure.highlight.is-expandable .code-expand-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-}
-
-figure.highlight.is-expanded .code-expand-btn {
-  display: none;
 }
 
 .post-content pre code {

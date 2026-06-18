@@ -34,7 +34,7 @@ figure.highlight .code {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: var(--border-secondary) transparent;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
 }
 
 figure.highlight .code pre {
