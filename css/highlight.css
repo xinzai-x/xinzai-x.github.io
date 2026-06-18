@@ -30,6 +30,7 @@ figure.highlight table td.gutter {
 
 figure.highlight .code {
   padding: 16px 20px;
+  display: block;
   max-height: 420px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -44,7 +45,7 @@ figure.highlight .code pre {
   background: none;
   border: none;
   border-radius: 0;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.65;
   white-space: pre;
 }

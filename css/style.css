@@ -1169,11 +1169,6 @@ figure.highlight .code {
   padding: 16px 20px;
   background: none;
   border: none;
-  max-height: 420px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border-secondary) transparent;
 }
 
 figure.highlight .code pre {
@@ -1182,7 +1177,7 @@ figure.highlight .code pre {
   background: none !important;
   border: none !important;
   border-radius: 0;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.65;
   white-space: pre;
 }
@@ -2271,8 +2266,11 @@ figure.highlight .code pre {
   }
 
   figure.highlight .code {
-    font-size: 0.82rem;
     padding: 14px 16px;
+  }
+
+  figure.highlight .code pre {
+    font-size: 0.82rem;
   }
 
   /* Page title */
