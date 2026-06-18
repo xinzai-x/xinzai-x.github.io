@@ -58,12 +58,12 @@
   --font-body: "Noto Serif SC", "Source Han Serif SC", "Hiragino Sans GB", "Microsoft YaHei", Georgia, serif;
   --font-heading: "Noto Sans SC", "Source Han Sans SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   --font-code: "JetBrains Mono", "Fira Code", "Source Code Pro", Menlo, Monaco, Consolas, monospace;
-  --font-size-base: 16px;
+  --font-size-base: 17px;
   --line-height-base: 1.8;
 
-  --font-size-h1: 2rem;
-  --font-size-h2: 1.5rem;
-  --font-size-h3: 1.25rem;
+  --font-size-h1: 2.15rem;
+  --font-size-h2: 1.6rem;
+  --font-size-h3: 1.35rem;
   --font-size-h4: 1.1rem;
   --font-size-h5: 1rem;
   --font-size-h6: 0.9rem;
@@ -595,9 +595,15 @@ html {
    Post List (Index)
    ============================================= */
 .post-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 32px;
+}
+
+@media (max-width: 767px) {
+  .post-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 .post-card {
@@ -794,7 +800,7 @@ html {
 
 /* Post Content - Typography */
 .post-content {
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: var(--line-height-base);
   color: var(--text-primary);
   word-wrap: break-word;
@@ -2127,6 +2133,10 @@ html {
     --font-size-h1: 1.65rem;
     --font-size-h2: 1.35rem;
     --font-size-h3: 1.15rem;
+  }
+
+  .post-content {
+    font-size: 1rem;
   }
 
   .post-card-content {
