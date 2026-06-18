@@ -1,81 +1,155 @@
-<!DOCTYPE html> <html lang="zh-CN" class=""> <head>   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>
+    
+      2.事件 - 星仔极客
+    
+  </title>
+  
+    <meta name="description" content=" 通用事件
+通用事件API
+ 组件区域变化事件文档中心
+组件区域变化时触发
 
-<script>
-(function(){var t=localStorage.getItem('cleartext-theme-mode');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark')})();
-</script>
+返回目标元素变化之前的宽高以及目标元素相对父元素和页面左上角的坐标位置
+返回目标元素变化之后的宽高以及目标元素相对父元素和页面左上角的坐标位置
 
-<title>2.事件 | 星仔极客</title>
-<meta name="description" content="日常笔记和生活分享！">
-
-<meta property="og:title" content="2.事件">
-<meta property="og:description" content="日常笔记和生活分享！">
+.onAreaChange((_oldValue, _newValue) =&amp;gt; &amp;#123">
+  
+  <meta name="description" content="通用事件 通用事件API  组件区域变化事件文档中心 组件区域变化时触发  返回目标元素变化之前的宽高以及目标元素相对父元素和页面左上角的坐标位置 返回目标元素变化之后的宽高以及目标元素相对父元素和页面左上角的坐标位置  .onAreaChange((_oldValue, _newValue) &#x3D;&gt; &#123;  &#x2F;&#x2F; onAreaChange可能会触发多次，所以不要批量使用  prom">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://blog.6673543.xyz/651a/">
+<meta property="og:title" content="2.事件">
+<meta property="og:url" content="https://blog.6673543.xyz/651a/index.html">
+<meta property="og:site_name" content="星仔极客">
+<meta property="og:description" content="通用事件 通用事件API  组件区域变化事件文档中心 组件区域变化时触发  返回目标元素变化之前的宽高以及目标元素相对父元素和页面左上角的坐标位置 返回目标元素变化之后的宽高以及目标元素相对父元素和页面左上角的坐标位置  .onAreaChange((_oldValue, _newValue) &#x3D;&gt; &#123;  &#x2F;&#x2F; onAreaChange可能会触发多次，所以不要批量使用  prom">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.6673543.xyz/img/logo.svg">
+<meta property="article:published_time" content="2025-09-14T13:57:57.000Z">
+<meta property="article:modified_time" content="2026-06-10T09:10:23.903Z">
+<meta property="article:author" content="星仔">
+<meta property="article:tag" content="星仔极客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.6673543.xyz/img/logo.svg">
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  <link rel="alternate" type="application/atom+xml" title="星仔极客" href="/atom.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
 
-<link rel="canonical" href="https://blog.6673543.xyz/651a/">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/css/style.css?v=20260616141035">
- <meta name="generator" content="Hexo 7.3.0"></head> <body>   <a href="#main-content" class="skip-to-content" aria-label="跳转到主要内容">跳到内容</a>   <header class="site-header" id="site-header" role="banner">
-  <div class="header-inner">
-    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="切换导航菜单" aria-expanded="false">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
+  
+<link rel="stylesheet" href="/css/highlight.css">
 
-    <a class="site-title" href="/" aria-label="返回首页">
-      星仔极客
-    </a>
+  
+<link rel="stylesheet" href="/css/lightbox.css">
 
-    <nav class="site-nav" role="navigation" aria-label="主导航">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5YCBER1viXgfW6gOOGETNABLkXe0g8vB0+IgERrI2CE03NEdPAB" crossorigin="anonymous">
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "2.事件",
+    "datePublished": "2025-09-14T13:57:57.000Z",
+    "dateModified": "2026-06-10T09:10:23.903Z",
+    "author": {
+      "@type": "Person",
+      "name": "星仔"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "星仔极客"
+    },
+    "description": " 通用事件
+通用事件API
+ 组件区域变化事件文档中心
+组件区域变化时触发
+
+返回目标元素变化之前的宽高以及目标元素相对父元素和页面左上角的坐标位置
+返回目标元素变化之后的宽高以及目标元素相对父元素和页面左上角的坐标位置
+
+.onAreaChange((_oldValue, _newValue) =&amp;gt; &amp;#123",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://blog.6673543.xyz/651a/"
+    }
+  }
+  </script>
+  
+  <script>
+    (function() {
+      var saved = localStorage.getItem('ink-theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="post-page">
+  <a class="skip-to-content" href="#main-content">Skip to content</a>
+  <div class="site-wrapper">
+    <header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <div class="header-left">
+      <a href="/" class="site-brand">
+        
+          <img src="/img/logo.svg" alt="星仔极客" class="site-logo" width="32" height="32">
+        
+        <span class="site-title">星仔极客</span>
+      </a>
       
-        
-          
-          <a class="nav-link"
-             href="/"
-             >
-            首页
-          </a>
-        
-          
-          <a class="nav-link"
-             href="/categories/"
-             >
-            分类
-          </a>
-        
-          
-          <a class="nav-link"
-             href="/about/"
-             >
-            关于
-          </a>
-        
-          
-          <a class="nav-link"
-             href="/link/"
-             >
-            友链
-          </a>
-        
+        <span class="site-subtitle">星仔个人博客</span>
       
+    </div>
+    <nav class="header-nav" id="header-nav">
+      <ul class="nav-list">
+        
+          <li class="nav-item">
+            <a href="/">Home</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/categories">Categories</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/archives">Archives</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/links">Links</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+      </ul>
     </nav>
-
     <div class="header-actions">
       
-      <button class="header-btn" id="search-btn" aria-label="搜索" title="搜索 (Ctrl+K)">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-      </button>
+        <button class="search-toggle" id="search-toggle" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
       
-
-      
-      <button class="header-btn" id="dark-mode-btn" aria-label="切换暗色模式" title="切换暗色/亮色模式">
-        <svg id="dm-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="5"></circle>
           <line x1="12" y1="1" x2="12" y2="3"></line>
           <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -86,186 +160,257 @@
           <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
           <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </svg>
-        <svg id="dm-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
       </button>
-      
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </div>
   </div>
 </header>
 
-<!-- Search Overlay -->
-
-<div class="search-overlay" id="search-overlay" data-search-url="/search.xml" aria-hidden="true" role="dialog" aria-label="搜索">
-  <div class="search-modal">
-    <input type="text" class="search-input" id="search-input" placeholder="搜索文章..." autocomplete="off" aria-label="搜索文章标题和内容">
-    <button class="search-close" id="search-close" aria-label="关闭搜索">&times;</button>
-    <div class="search-history" id="search-history" style="display:none;"></div>
-    <div class="search-results" id="search-results"></div>
-  </div>
+    <main class="site-main" id="main-content">
+      <div class="container">
+        
+          
+            <div class="content-wrap with-sidebar">
+              <article class="post-article">
+                <header class="post-header">
+  
+  <h1 class="post-title">2.事件</h1>
+  <div class="post-meta">
+  <time class="post-date" datetime="2025-09-14T13:57:57.000Z">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+    2025-09-14
+  </time>
+  
+    <time class="post-updated" datetime="2026-06-10T09:10:23.903Z">
+      (Updated: 2026-06-10)
+    </time>
+  
+  
+    <span class="post-word-count">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+      309 words
+    </span>
+  
+  
+    <span class="post-reading-time">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      1 min read
+    </span>
+  
+  
+    <span class="post-categories">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+      
+        
+          <a href="/categories/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/">原生鸿蒙开发</a>
+        
+      
+    </span>
+  
 </div>
 
-    <div class="page-shell" id="main-content">     <div class="grid-container       grid-post            ">       <main class="grid-main">         
-
-<article class="post-full" itemscope itemtype="http://schema.org/Article">
-
-  <header class="post-header">
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb" aria-label="面包屑导航">
-      <a href="/">首页</a>
-      <span class="breadcrumb-sep">/</span>
-      
-        <a href="/categories/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/">原生鸿蒙开发</a>
-        <span class="breadcrumb-sep">/</span>
-      
-      <span class="breadcrumb-current" aria-current="page">2.事件</span>
-    </nav>
-
-    <h1 class="post-title" itemprop="headline">2.事件</h1>
-
-    <div class="post-meta">
-      <span class="meta-item" itemprop="datePublished" content="2025-09-14T13:57:57.000Z">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        <time datetime="2025-09-14T13:57:57.000Z">2025-09-14</time>
-      </span>
-      
-      <span class="meta-item meta-stats">
-        <span class="word-count">345 字</span>
-        <span class="reading-time">2</span>
-      </span>
-      
-      <span class="meta-updated">更新于 2026-06-10</span>
-      
-    </div>
-
-    </header>
-
-  <!-- Desktop TOC (collapsible, above content) -->
   
-  <div class="toc-desktop-collapsible" id="toc-desktop-wrapper" aria-label="文章目录">
-    <details id="toc-desktop-details">
-      <summary class="toc-desktop-toggle" aria-label="展开/收起目录">
-        <svg class="toc-toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="8" y1="6" x2="21" y2="6"></line>
-          <line x1="8" y1="12" x2="21" y2="12"></line>
-          <line x1="8" y1="18" x2="21" y2="18"></line>
-          <line x1="3" y1="6" x2="3.01" y2="6"></line>
-          <line x1="3" y1="12" x2="3.01" y2="12"></line>
-          <line x1="3" y1="18" x2="3.01" y2="18"></line>
-        </svg>
-        文章目录
-      </summary>
-      <nav class="toc" id="toc-desktop" aria-label="文章目录"></nav>
-    </details>
-  </div>
-  
+</header>
 
-  <!-- Mobile TOC (collapsible) -->
-  
-  <div class="toc-mobile" id="toc-mobile-wrapper" aria-label="移动端文章目录">
-    <details id="toc-mobile-details">
-      <summary class="toc-mobile-toggle" aria-label="展开/收起目录">文章目录</summary>
-      <nav class="toc" id="toc-mobile" aria-label="文章目录"></nav>
-    </details>
-  </div>
-  
 
-  <!-- Post Content -->
-  <div class="post-content" itemprop="articleBody">
-    <div class="mathjax-process"><h1 id="通用事件"><a class="markdownIt-Anchor" href="#通用事件"></a> 通用事件</h1>
-<p><a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events" target="_blank" rel="noopener noreferrer">通用事件API</a></p>
-<h2 id="组件区域变化事件文档中心"><a class="markdownIt-Anchor" href="#组件区域变化事件文档中心"></a> 组件区域变化事件<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-component-area-change-event" target="_blank" rel="noopener noreferrer">文档中心</a></h2>
+<div class="post-content" id="post-content">
+  <h1 id="通用事件"><a class="markdownIt-Anchor" href="#通用事件"></a> 通用事件</h1>
+<p><a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events">通用事件API</a></p>
+<h2 id="组件区域变化事件文档中心"><a class="markdownIt-Anchor" href="#组件区域变化事件文档中心"></a> 组件区域变化事件<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-component-area-change-event">文档中心</a></h2>
 <p>组件区域变化时触发</p>
 <ul>
 <li>返回目标元素变化之前的宽高以及目标元素相对父元素和页面左上角的坐标位置</li>
 <li>返回目标元素变化之后的宽高以及目标元素相对父元素和页面左上角的坐标位置</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.onAreaChange((_oldValue, _newValue) =&gt; &#123;</span><br><span class="line">  // onAreaChange可能会触发多次，所以不要批量使用</span><br><span class="line">  promptAction.showDialog(&#123;</span><br><span class="line">    message: `</span><br><span class="line">      宽度:$&#123;_oldValue.width&#125; - $&#123;_newValue.width&#125;</span><br><span class="line">      高度:$&#123;_oldValue.height&#125; - $&#123;_newValue.height&#125;</span><br><span class="line">      X坐标:$&#123;_oldValue.globalPosition.x&#125; - $&#123;_newValue.globalPosition.x&#125;</span><br><span class="line">      Y坐标:$&#123;_oldValue.globalPosition.y&#125; - $&#123;_newValue.globalPosition.y&#125;</span><br><span class="line">    `</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h1 id="手势事件文档中心"><a class="markdownIt-Anchor" href="#手势事件文档中心"></a> 手势事件<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-gesture-events" target="_blank" rel="noopener noreferrer">文档中心</a></h1>
+<h1 id="手势事件文档中心"><a class="markdownIt-Anchor" href="#手势事件文档中心"></a> 手势事件<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-gesture-events">文档中心</a></h1>
 <h2 id="单一手势"><a class="markdownIt-Anchor" href="#单一手势"></a> 单一手势</h2>
 <h3 id="长按手势"><a class="markdownIt-Anchor" href="#长按手势"></a> 长按手势</h3>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// fingers: 1，触发长按手势所需要的最少手指数量</span><br><span class="line">// repeat: true，否连续触发事件回调</span><br><span class="line">// priority: 500，触发长按所需的最短时间，单位为毫秒，默认值为500</span><br><span class="line">.gesture(LongPressGesture(&#123; repeat: true &#125;).onAction((event: GestureEvent | undefined) =&gt; &#123;</span><br><span class="line">  if (event) &#123;</span><br><span class="line">    if (event.repeat) &#123;</span><br><span class="line">      console.log(&#x27;长按&#x27;, item.deviceViewId.toString());</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
 <h2 id="组合手势"><a class="markdownIt-Anchor" href="#组合手势"></a> 组合手势</h2>
 <h3 id="互斥识别"><a class="markdownIt-Anchor" href="#互斥识别"></a> 互斥识别</h3>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.gesture(</span><br><span class="line">  GestureGroup(GestureMode.Exclusive,</span><br><span class="line">    TapGesture(&#123; count: 1 &#125;)</span><br><span class="line">      .onAction(() =&gt; &#123;</span><br><span class="line">        console.log(&#x27;单击&#x27;);</span><br><span class="line">      &#125;),</span><br><span class="line">    LongPressGesture()</span><br><span class="line">      .onAction(() =&gt; &#123;</span><br><span class="line">        console.log(&#x27;长按&#x27;);</span><br><span class="line">      &#125;)</span><br><span class="line">  )</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
 </div>
+
+
+  <div class="post-author-card">
+    <div class="post-author-info">
+      <div class="post-author-avatar">
+        
+          <span>星</span>
+        
+      </div>
+      <div class="post-author-detail">
+        <p class="post-author-name">星仔</p>
+        <p class="post-author-bio">日常笔记和生活分享！</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="post-copyright">
+    <p class="copyright-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M15 9.354a4 4 0 1 0 0 5.292"></path></svg>
+      Copyright
+    </p>
+    <ul class="copyright-list">
+      <li>Author: 星仔</li>
+      <li>Link: <a href="https://blog.6673543.xyz/651a/">https://blog.6673543.xyz/651a/</a></li>
+      <li>License: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></li>
+    </ul>
   </div>
 
 
 
-</article>
-
-<!-- Giscus Comments -->
-
-
-<!-- Post Navigation -->
-
-<nav class="post-nav" aria-label="文章导航">
-  
-  <div class="post-nav-prev">
+  <nav class="post-nav">
     
-    <a href="/db50/" class="post-nav-link">
-      <span class="post-nav-label">&#8592; 上一篇</span>
-      3.UI组件
-    </a>
+      <a href="/db50/" class="post-nav-item post-nav-prev">
+        <span class="post-nav-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          Previous
+        </span>
+        <span class="post-nav-title">3.UI组件</span>
+      </a>
     
+    
+      <a href="/8902/" class="post-nav-item post-nav-next">
+        <span class="post-nav-label">
+          Next
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </span>
+        <span class="post-nav-title">1.通用属性</span>
+      </a>
+    
+  </nav>
+
+
+
+
+              </article>
+              <aside class="sidebar sidebar-right">
+                
+  <div class="post-toc" id="post-toc">
+    <div class="toc-header">
+      <h4>Table of Contents</h4>
+      <button class="toc-toggle" id="toc-toggle" aria-label="Toggle TOC">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+    </div>
+    <div class="toc-body" id="toc-body">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text"> 通用事件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E5%8C%BA%E5%9F%9F%E5%8F%98%E5%8C%96%E4%BA%8B%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">1.1.</span> <span class="toc-text"> 组件区域变化事件文档中心</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%8B%E5%8A%BF%E4%BA%8B%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">2.</span> <span class="toc-text"> 手势事件文档中心</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E4%B8%80%E6%89%8B%E5%8A%BF"><span class="toc-number">2.1.</span> <span class="toc-text"> 单一手势</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%95%BF%E6%8C%89%E6%89%8B%E5%8A%BF"><span class="toc-number">2.1.1.</span> <span class="toc-text"> 长按手势</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E6%89%8B%E5%8A%BF"><span class="toc-number">2.2.</span> <span class="toc-text"> 组合手势</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%92%E6%96%A5%E8%AF%86%E5%88%AB"><span class="toc-number">2.2.1.</span> <span class="toc-text"> 互斥识别</span></a></li></ol></li></ol></li></ol>
+    </div>
   </div>
-  
-  <div class="post-nav-next">
-    
-    <a href="/8902/" class="post-nav-link">
-      <span class="post-nav-label">下一篇 &#8594;</span>
-      1.通用属性
-    </a>
-    
-  </div>
-</nav>
 
 
-<!-- Back-to-top & back-to-bottom floating buttons -->
-<button class="back-to-top" id="back-to-top" aria-label="回到顶部" title="回到顶部">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="12" y1="19" x2="12" y2="5"></line>
-    <polyline points="5 12 12 5 19 12"></polyline>
-  </svg>
-</button>
-<button class="back-to-bottom" id="back-to-bottom" aria-label="直达底部" title="直达底部">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="12" y1="5" x2="12" y2="19"></line>
-    <polyline points="19 12 12 19 5 12"></polyline>
-  </svg>
-</button>
-
-<!-- Image Lightbox -->
-<div class="lightbox-overlay" id="lightbox" aria-hidden="true">
-  <button class="lightbox-close" id="lightbox-close" aria-label="关闭">&times;</button>
-  <button class="lightbox-prev" id="lightbox-prev" aria-label="上一张">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-  </button>
-  <button class="lightbox-next" id="lightbox-next" aria-label="下一张">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-  </button>
-  <img id="lightbox-img" src="" alt="" />
-  <span class="lightbox-counter" id="lightbox-counter"></span>
-</div>
-       </main>      </div>   </div>    <footer class="site-footer" role="contentinfo">
-  <div class="footer-inner">
-    
-
-    
-    
-    <div class="footer-copyright">
-      &copy; 2026 星仔.
+              </aside>
+            </div>
+          
+        
+      </div>
+    </main>
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <p class="copyright">
+        &copy; 2026 <a href="/">星仔极客</a>
+      </p>
       
-      <span class="footer-powered">
-        由 <a href="https://hexo.io/" target="_blank" rel="noopener" aria-label="Hexo">Hexo</a> 和 <a href="https://github.com/yourname/hexo-theme-cleartext" target="_blank" rel="noopener" aria-label="Cleartext Theme">Cleartext</a> 驱动。
-      </span>
+        <p class="author">星仔</p>
       
     </div>
-    
+    <div class="footer-right">
+      
+        <nav class="footer-social">
+          
+            <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+              
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              
+            </a>
+          
+            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">
+              
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              
+            </a>
+          
+        </nav>
+      
+      <p class="powered-by">
+        Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>
+        &middot; Theme <a href="https://github.com" target="_blank" rel="noopener">Ink</a>
+      </p>
+    </div>
   </div>
 </footer>
-    <script defer charset="utf-8" src="/js/main.js"></script>   <!-- Giscus Config -->
 
- </body> </html>
+  </div>
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+</button>
+
+  
+  <div class="search-modal" id="search-modal">
+    <div class="search-modal-overlay" id="search-overlay"></div>
+    <div class="search-modal-content">
+      <div class="search-input-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="search-input" id="search-input" placeholder="Search posts..." autocomplete="off">
+        <button class="search-close" id="search-close" aria-label="Close search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+
+
+  
+  <script>
+    var searchPath = 'search.xml';
+  </script>
+  
+<script src="/js/search.js"></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ez5ueQ5lCVUkOmA" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe5rCM8qmhmtIq35eatBTE" crossorigin="anonymous"
+    onload="renderMathInElement(document.getElementById('post-content') || document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ],
+      throwOnError: false
+    });"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+<script src="/js/lightbox.js"></script>
+
+
+
+</body>
+</html>

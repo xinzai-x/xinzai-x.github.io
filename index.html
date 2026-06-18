@@ -1,81 +1,124 @@
-<!DOCTYPE html> <html lang="zh-CN" class=""> <head>   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-<script>
-(function(){var t=localStorage.getItem('cleartext-theme-mode');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark')})();
-</script>
-
-<title>星仔极客</title>
-<meta name="description" content="日常笔记和生活分享！">
-
-<meta property="og:title" content="星仔极客">
-<meta property="og:description" content="日常笔记和生活分享！">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>
+    
+      星仔极客 - 星仔个人博客
+    
+  </title>
+  
+    <meta name="description" content="日常笔记和生活分享！">
+  
+  <meta name="description" content="日常笔记和生活分享！">
 <meta property="og:type" content="website">
+<meta property="og:title" content="星仔极客">
 <meta property="og:url" content="https://blog.6673543.xyz/index.html">
+<meta property="og:site_name" content="星仔极客">
+<meta property="og:description" content="日常笔记和生活分享！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.6673543.xyz/img/logo.svg">
+<meta property="article:author" content="星仔">
+<meta property="article:tag" content="星仔极客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.6673543.xyz/img/logo.svg">
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  <link rel="alternate" type="application/atom+xml" title="星仔极客" href="/atom.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
 
-<link rel="canonical" href="https://blog.6673543.xyz/index.html">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/css/style.css?v=20260616141035">
- <meta name="generator" content="Hexo 7.3.0"></head> <body>   <a href="#main-content" class="skip-to-content" aria-label="跳转到主要内容">跳到内容</a>   <header class="site-header" id="site-header" role="banner">
-  <div class="header-inner">
-    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="切换导航菜单" aria-expanded="false">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
+  
+<link rel="stylesheet" href="/css/highlight.css">
 
-    <a class="site-title" href="/" aria-label="返回首页">
-      星仔极客
-    </a>
+  
+<link rel="stylesheet" href="/css/lightbox.css">
 
-    <nav class="site-nav" role="navigation" aria-label="主导航">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5YCBER1viXgfW6gOOGETNABLkXe0g8vB0+IgERrI2CE03NEdPAB" crossorigin="anonymous">
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "星仔极客",
+    "url": "https://blog.6673543.xyz",
+    "description": "日常笔记和生活分享！"
+  }
+  </script>
+  
+  <script>
+    (function() {
+      var saved = localStorage.getItem('ink-theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="home-page">
+  <a class="skip-to-content" href="#main-content">Skip to content</a>
+  <div class="site-wrapper">
+    <header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <div class="header-left">
+      <a href="/" class="site-brand">
+        
+          <img src="/img/logo.svg" alt="星仔极客" class="site-logo" width="32" height="32">
+        
+        <span class="site-title">星仔极客</span>
+      </a>
       
-        
-          
-          <a class="nav-link active"
-             href="/"
-             aria-current="page">
-            首页
-          </a>
-        
-          
-          <a class="nav-link"
-             href="/categories/"
-             >
-            分类
-          </a>
-        
-          
-          <a class="nav-link"
-             href="/about/"
-             >
-            关于
-          </a>
-        
-          
-          <a class="nav-link"
-             href="/link/"
-             >
-            友链
-          </a>
-        
+        <span class="site-subtitle">星仔个人博客</span>
       
+    </div>
+    <nav class="header-nav" id="header-nav">
+      <ul class="nav-list">
+        
+          <li class="nav-item active">
+            <a href="/">Home</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/categories">Categories</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/archives">Archives</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/links">Links</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+      </ul>
     </nav>
-
     <div class="header-actions">
       
-      <button class="header-btn" id="search-btn" aria-label="搜索" title="搜索 (Ctrl+K)">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-      </button>
+        <button class="search-toggle" id="search-toggle" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
       
-
-      
-      <button class="header-btn" id="dark-mode-btn" aria-label="切换暗色模式" title="切换暗色/亮色模式">
-        <svg id="dm-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="5"></circle>
           <line x1="12" y1="1" x2="12" y2="3"></line>
           <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -86,377 +129,696 @@
           <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
           <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </svg>
-        <svg id="dm-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
       </button>
-      
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </div>
   </div>
 </header>
 
-<!-- Search Overlay -->
+    <main class="site-main" id="main-content">
+      <div class="container">
+        
+          <div class="content-wrap with-sidebar">
+            <div class="content-area">
+              <div class="post-list">
+  
+  
+    <article class="post-card post-card-pinned">
+      
+      <div class="post-card-content">
+        <div class="post-card-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Pinned
+        </div>
+        <h2 class="post-card-title">
+          <a href="/6061/">资源库</a>
+        </h2>
+        <div class="post-card-meta">
+          <time datetime="2025-08-29T07:39:59.000Z">2025-08-29</time>
+          
+            <span class="post-card-category">
+              
+                
+                  <a href="/categories/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/">工具分享</a>
+                
+              
+            </span>
+          
+          
+            <span class="post-card-reading-time">10 min</span>
+          
+        </div>
+        
+          <div class="post-card-excerpt">
+            <p> 个人资源
 
-<div class="search-overlay" id="search-overlay" data-search-url="/search.xml" aria-hidden="true" role="dialog" aria-label="搜索">
-  <div class="search-modal">
-    <input type="text" class="search-input" id="search-input" placeholder="搜索文章..." autocomplete="off" aria-label="搜索文章标题和内容">
-    <button class="search-close" id="search-close" aria-label="关闭搜索">&times;</button>
-    <div class="search-history" id="search-history" style="display:none;"></div>
-    <div class="search-results" id="search-results"></div>
-  </div>
+
+
+资源名
+链接
+提取码
+资源所属盘
+
+
+
+
+BCompare
+https://xinzaigeek.lanzoub.com/b00je19yba
+xinzai
+蓝奏云
+
+
+IDM
+https://xinzaigeek.lanzoub.com/b00je1c6ze
+xinzai
+蓝奏云
+
+
+比特彗星
+https://xinzaigeek.lanzoub.com/b00je1c78d
+&hellip;</p>
+          </div>
+        
+        
+          <a href="/6061/" class="read-more">
+            Read more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        
+      </div>
+    </article>
+  
+
+  
+    <article class="post-card post-card-no-cover">
+      
+      <div class="post-card-content">
+        <h2 class="post-card-title">
+          <a href="/fdfe/">codex安装与部署</a>
+        </h2>
+        <div class="post-card-meta">
+          <time datetime="2026-05-30T08:47:37.000Z">2026-05-30</time>
+          
+            <span class="post-card-category">
+              
+                
+                  <a href="/categories/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/">工具分享</a>
+                
+              
+            </span>
+          
+          
+            <span class="post-card-reading-time">9 min</span>
+          
+        </div>
+        
+          <div class="post-card-excerpt">
+            <p>    本文详细介绍了如何安装codex，以及如何配置使用deepseek、mimo的API进行codex的使用，配置的方法有三种，可自行选择，前两种无法使用插件，最后一种解锁codex全部功能，如果多种方式存在，启动软件时只启用相对于需要的软件，不然可能会冲突。
+
+单cc switch方式（中文界面下无法显示模型名，也就无法切换模型，只启用cc switch）（以接入mimo为例）
+cxx + &hellip;</p>
+          </div>
+        
+        
+          <a href="/fdfe/" class="read-more">
+            Read more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post-card post-card-no-cover">
+      
+      <div class="post-card-content">
+        <h2 class="post-card-title">
+          <a href="/c3d5/">10.星海物联使用手册</a>
+        </h2>
+        <div class="post-card-meta">
+          <time datetime="2026-03-25T15:05:41.000Z">2026-03-25</time>
+          
+            <span class="post-card-category">
+              
+                
+                  <a href="/categories/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/">原生鸿蒙开发</a>
+                
+              
+            </span>
+          
+          
+            <span class="post-card-reading-time">1 min</span>
+          
+        </div>
+        
+          <div class="post-card-excerpt">
+            <p>Here&#39;s something encrypted, password is required to continue reading.&hellip;</p>
+          </div>
+        
+        
+          <a href="/c3d5/" class="read-more">
+            Read more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post-card post-card-no-cover">
+      
+      <div class="post-card-content">
+        <h2 class="post-card-title">
+          <a href="/f3fc/">9.案例</a>
+        </h2>
+        <div class="post-card-meta">
+          <time datetime="2026-02-01T07:08:25.000Z">2026-02-01</time>
+          
+            <span class="post-card-category">
+              
+                
+                  <a href="/categories/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/">原生鸿蒙开发</a>
+                
+              
+            </span>
+          
+          
+            <span class="post-card-reading-time">22 min</span>
+          
+        </div>
+        
+          <div class="post-card-excerpt">
+            <p> 163邮箱邮件发送
+代码链接：https://pan.wo.cn/s/1J1c4w90901  提取码：1Spc
+参考博客：https://developer.huawei.com/consumer/cn/blog/topic/03148160059378015
+在module.json5配置文件加上对权限的声明：
+&amp;quot;requestPermissions&amp;quot;: [  &amp;#123&hellip;</p>
+          </div>
+        
+        
+          <a href="/f3fc/" class="read-more">
+            Read more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post-card post-card-no-cover">
+      
+      <div class="post-card-content">
+        <h2 class="post-card-title">
+          <a href="/b3c0/">0.C语言概述</a>
+        </h2>
+        <div class="post-card-meta">
+          <time datetime="2026-01-28T05:41:10.000Z">2026-01-28</time>
+          
+            <span class="post-card-category">
+              
+                
+                  <a href="/categories/C%E8%AF%AD%E8%A8%80/">C语言</a>
+                
+              
+            </span>
+          
+          
+            <span class="post-card-reading-time">1 min</span>
+          
+        </div>
+        
+          <div class="post-card-excerpt">
+            <p>
+11
+基础：https://player.bilibili.com/player.html?bvid=BV1sM4y1v7ci&amp;amp;autoplay=0
+进阶：https://player.bilibili.com/player.html?bvid=BV1s64y1M7ZV&amp;amp;autoplay=0
+ 写代码过程
+编辑器：程序员写代码的过程
+编译器：查看代码的语法错误，生成汇编语言
+汇编&hellip;</p>
+          </div>
+        
+        
+          <a href="/b3c0/" class="read-more">
+            Read more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post-card post-card-no-cover">
+      
+      <div class="post-card-content">
+        <h2 class="post-card-title">
+          <a href="/2c1f/">学术文献大全</a>
+        </h2>
+        <div class="post-card-meta">
+          <time datetime="2025-10-19T06:49:50.000Z">2025-10-19</time>
+          
+            <span class="post-card-category">
+              
+                
+                  <a href="/categories/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/">工具分享</a>
+                
+              
+            </span>
+          
+          
+            <span class="post-card-reading-time">1 min</span>
+          
+        </div>
+        
+          <div class="post-card-excerpt">
+            <p> 知网
+通过注册广州图书馆，进入知网，下面注册广州图书馆，扫描二维码注册即可
+
+注册后通过 广州图书馆，登录后进入 这个页面，然后点击下面图片打开知网，打开后会自动登录广州图书馆的账号，无需重新登录账号
+
+ 学术引用
+进入知网后，点击“高级索引”
+
+填写对应需要搜索的信息后检索，点击“引号图标”即可引用
+
+选择第一项即可
+
+ 谷歌学术
+镜像网址：https://ac.scmor.com/
+官方网址&hellip;</p>
+          </div>
+        
+        
+          <a href="/2c1f/" class="read-more">
+            Read more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post-card post-card-no-cover">
+      
+      <div class="post-card-content">
+        <h2 class="post-card-title">
+          <a href="/3932/">星海物联用户服务协议</a>
+        </h2>
+        <div class="post-card-meta">
+          <time datetime="2025-10-05T05:42:28.000Z">2025-10-05</time>
+          
+            <span class="post-card-category">
+              
+                
+                  <a href="/categories/%E6%9D%82%E9%A1%B9/">杂项</a>
+                
+              
+            </span>
+          
+          
+            <span class="post-card-reading-time">6 min</span>
+          
+        </div>
+        
+          <div class="post-card-excerpt">
+            <p> 星海物联用户服务协议
+星仔 2025-09-262025-09-26
+ 星海物联用户服务协议
+更新日期：2025 年 9 月 26 日
+ 1. 关于我们
+感谢您选择使用星海物联（软件或服务名称）。
+星海物联（软件或服务名称）是由林旭新个人开发（以下简称 “我们” 或 “XX”）提供与运营。
+星海物联用户服务协议是林旭新与用户（以下简称 “您”）关于使用星海物联软件服务所订立的有效协议。
+ 2. &hellip;</p>
+          </div>
+        
+        
+          <a href="/3932/" class="read-more">
+            Read more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post-card post-card-no-cover">
+      
+      <div class="post-card-content">
+        <h2 class="post-card-title">
+          <a href="/506c/">2.功能测试</a>
+        </h2>
+        <div class="post-card-meta">
+          <time datetime="2025-09-25T06:28:25.000Z">2025-09-25</time>
+          
+            <span class="post-card-category">
+              
+                
+                  <a href="/categories/%E8%BD%AF%E6%B5%8B/">软测</a>
+                
+              
+            </span>
+          
+          
+            <span class="post-card-reading-time">1 min</span>
+          
+        </div>
+        
+          <div class="post-card-excerpt">
+            <p>2xx：表示成功，如：200、202、204等
+3xx：表示数据路径发生给改变，需要重定向，如：302、304等
+4xx：表示客户端问题，如：404、403等
+5xx：表示服务器错误，如：500、503等
+&hellip;</p>
+          </div>
+        
+        
+          <a href="/506c/" class="read-more">
+            Read more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post-card post-card-no-cover">
+      
+      <div class="post-card-content">
+        <h2 class="post-card-title">
+          <a href="/2b22/">Windows相关设置</a>
+        </h2>
+        <div class="post-card-meta">
+          <time datetime="2025-09-23T11:21:14.000Z">2025-09-23</time>
+          
+            <span class="post-card-category">
+              
+                
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/">技术积累</a>
+                
+              
+            </span>
+          
+          
+            <span class="post-card-reading-time">6 min</span>
+          
+        </div>
+        
+          <div class="post-card-excerpt">
+            <p> Win11 使用 Win10的文件资源管理器
+在 Windows 11 中恢复旧文件资源管理器 首先打开记事本并粘贴以下文本代码，然后保存，将记事本重命名为：文件名.reg，如：file.reg，然后双击添加注册表即可
+Windows Registry Editor Version 5.00[HKEY_CURRENT_USER\Software\Classes\CLSID\&amp;#123;2aa91&hellip;</p>
+          </div>
+        
+        
+          <a href="/2b22/" class="read-more">
+            Read more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        
+      </div>
+    </article>
+  
 </div>
 
-    <div class="page-shell" id="main-content">     <div class="grid-container       grid-post            ">       <main class="grid-main">         <div class="posts-grid">
-
-<article class="post-card" itemscope itemtype="http://schema.org/Article">
-  <h2 class="post-card-title" itemprop="headline">
-    <span class="sticky-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M16 9V4h1c.55 0 1-.45 1-1s-.45-1-1-1H7c-.55 0-1 .45-1 1s.45 1 1 1h1v5c0 1.66-1.34 3-3 3v2h5.97v7l1 1 1-1v-7H19v-2c-1.66 0-3-1.34-3-3z"/></svg>置顶</span>
-    <a href="/6061/" itemprop="url">资源库</a>
-  </h2>
-
-  <div class="post-card-meta">
-    <span class="post-card-date" itemprop="datePublished" content="2025-08-29T07:39:59.000Z">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      <time datetime="2025-08-29T07:39:59.000Z">2025-08-29</time>
-    </span>
-    
-    <span class="post-card-updated">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M21 12A9 9 0 0 0 6 6L1 10"/><path d="M3 12a9 9 0 0 0 15 6l5-4"/></svg>
-      更新于 2026-06-10
-    </span>
-    
-  </div>
-
-  
-
-  
-  <div class="post-card-meta-bottom">
-    
-    
-    <a href="/categories/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/" class="category-badge">工具分享</a>
-    
-    
-    
-  </div>
-  
-</article>
-
-<article class="post-card" itemscope itemtype="http://schema.org/Article">
-  <h2 class="post-card-title" itemprop="headline">
-    
-    <a href="/fdfe/" itemprop="url">codex安装与部署</a>
-  </h2>
-
-  <div class="post-card-meta">
-    <span class="post-card-date" itemprop="datePublished" content="2026-05-30T08:47:37.000Z">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      <time datetime="2026-05-30T08:47:37.000Z">2026-05-30</time>
-    </span>
-    
-    <span class="post-card-updated">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M21 12A9 9 0 0 0 6 6L1 10"/><path d="M3 12a9 9 0 0 0 15 6l5-4"/></svg>
-      更新于 2026-06-16
-    </span>
-    
-  </div>
-
-  
-
-  
-  <div class="post-card-meta-bottom">
-    
-    
-    <a href="/categories/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/" class="category-badge">工具分享</a>
-    
-    
-    
-  </div>
-  
-</article>
-
-<article class="post-card" itemscope itemtype="http://schema.org/Article">
-  <h2 class="post-card-title" itemprop="headline">
-    
-    <a href="/c3d5/" itemprop="url">10.星海物联使用手册</a>
-  </h2>
-
-  <div class="post-card-meta">
-    <span class="post-card-date" itemprop="datePublished" content="2026-03-25T15:05:41.000Z">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      <time datetime="2026-03-25T15:05:41.000Z">2026-03-25</time>
-    </span>
-    
-    <span class="post-card-updated">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M21 12A9 9 0 0 0 6 6L1 10"/><path d="M3 12a9 9 0 0 0 15 6l5-4"/></svg>
-      更新于 2026-06-10
-    </span>
-    
-  </div>
-
-  
-  
-  <div class="post-card-excerpt post-card-excerpt-locked">
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-    此文章已加密
-  </div>
-  
-  
-
-  
-  <div class="post-card-meta-bottom">
-    
-    
-    <a href="/categories/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" class="category-badge">原生鸿蒙开发</a>
-    
-    
-    
-  </div>
-  
-</article>
-
-<article class="post-card" itemscope itemtype="http://schema.org/Article">
-  <h2 class="post-card-title" itemprop="headline">
-    
-    <a href="/f3fc/" itemprop="url">9.案例</a>
-  </h2>
-
-  <div class="post-card-meta">
-    <span class="post-card-date" itemprop="datePublished" content="2026-02-01T07:08:25.000Z">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      <time datetime="2026-02-01T07:08:25.000Z">2026-02-01</time>
-    </span>
-    
-    <span class="post-card-updated">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M21 12A9 9 0 0 0 6 6L1 10"/><path d="M3 12a9 9 0 0 0 15 6l5-4"/></svg>
-      更新于 2026-06-10
-    </span>
-    
-  </div>
-
-  
-
-  
-  <div class="post-card-meta-bottom">
-    
-    
-    <a href="/categories/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/" class="category-badge">原生鸿蒙开发</a>
-    
-    
-    
-  </div>
-  
-</article>
-
-<article class="post-card" itemscope itemtype="http://schema.org/Article">
-  <h2 class="post-card-title" itemprop="headline">
-    
-    <a href="/b3c0/" itemprop="url">0.C语言概述</a>
-  </h2>
-
-  <div class="post-card-meta">
-    <span class="post-card-date" itemprop="datePublished" content="2026-01-28T05:41:10.000Z">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      <time datetime="2026-01-28T05:41:10.000Z">2026-01-28</time>
-    </span>
-    
-    <span class="post-card-updated">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M21 12A9 9 0 0 0 6 6L1 10"/><path d="M3 12a9 9 0 0 0 15 6l5-4"/></svg>
-      更新于 2026-06-10
-    </span>
-    
-  </div>
-
-  
-
-  
-  <div class="post-card-meta-bottom">
-    
-    
-    <a href="/categories/C%E8%AF%AD%E8%A8%80/" class="category-badge">C语言</a>
-    
-    
-    
-  </div>
-  
-</article>
-
-<article class="post-card" itemscope itemtype="http://schema.org/Article">
-  <h2 class="post-card-title" itemprop="headline">
-    
-    <a href="/2c1f/" itemprop="url">学术文献大全</a>
-  </h2>
-
-  <div class="post-card-meta">
-    <span class="post-card-date" itemprop="datePublished" content="2025-10-19T06:49:50.000Z">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      <time datetime="2025-10-19T06:49:50.000Z">2025-10-19</time>
-    </span>
-    
-    <span class="post-card-updated">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M21 12A9 9 0 0 0 6 6L1 10"/><path d="M3 12a9 9 0 0 0 15 6l5-4"/></svg>
-      更新于 2026-06-10
-    </span>
-    
-  </div>
-
-  
-
-  
-  <div class="post-card-meta-bottom">
-    
-    
-    <a href="/categories/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/" class="category-badge">工具分享</a>
-    
-    
-    
-  </div>
-  
-</article>
-
-<article class="post-card" itemscope itemtype="http://schema.org/Article">
-  <h2 class="post-card-title" itemprop="headline">
-    
-    <a href="/3932/" itemprop="url">星海物联用户服务协议</a>
-  </h2>
-
-  <div class="post-card-meta">
-    <span class="post-card-date" itemprop="datePublished" content="2025-10-05T05:42:28.000Z">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      <time datetime="2025-10-05T05:42:28.000Z">2025-10-05</time>
-    </span>
-    
-    <span class="post-card-updated">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M21 12A9 9 0 0 0 6 6L1 10"/><path d="M3 12a9 9 0 0 0 15 6l5-4"/></svg>
-      更新于 2026-06-10
-    </span>
-    
-  </div>
-
-  
-
-  
-  <div class="post-card-meta-bottom">
-    
-    
-    <a href="/categories/%E6%9D%82%E9%A1%B9/" class="category-badge">杂项</a>
-    
-    
-    
-  </div>
-  
-</article>
-
-<article class="post-card" itemscope itemtype="http://schema.org/Article">
-  <h2 class="post-card-title" itemprop="headline">
-    
-    <a href="/506c/" itemprop="url">2.功能测试</a>
-  </h2>
-
-  <div class="post-card-meta">
-    <span class="post-card-date" itemprop="datePublished" content="2025-09-25T06:28:25.000Z">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      <time datetime="2025-09-25T06:28:25.000Z">2025-09-25</time>
-    </span>
-    
-    <span class="post-card-updated">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M21 12A9 9 0 0 0 6 6L1 10"/><path d="M3 12a9 9 0 0 0 15 6l5-4"/></svg>
-      更新于 2026-06-10
-    </span>
-    
-  </div>
-
-  
-
-  
-  <div class="post-card-meta-bottom">
-    
-    
-    <a href="/categories/%E8%BD%AF%E6%B5%8B/" class="category-badge">软测</a>
-    
-    
-    
-  </div>
-  
-</article>
-
-<article class="post-card" itemscope itemtype="http://schema.org/Article">
-  <h2 class="post-card-title" itemprop="headline">
-    
-    <a href="/2b22/" itemprop="url">Windows相关设置</a>
-  </h2>
-
-  <div class="post-card-meta">
-    <span class="post-card-date" itemprop="datePublished" content="2025-09-23T11:21:14.000Z">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      <time datetime="2025-09-23T11:21:14.000Z">2025-09-23</time>
-    </span>
-    
-    <span class="post-card-updated">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M21 12A9 9 0 0 0 6 6L1 10"/><path d="M3 12a9 9 0 0 0 15 6l5-4"/></svg>
-      更新于 2026-06-16
-    </span>
-    
-  </div>
-
-  
-
-  
-  <div class="post-card-meta-bottom">
-    
-    
-    <a href="/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/" class="category-badge">技术积累</a>
-    
-    
-    
-  </div>
-  
-</article>
-
-</div>
-
-<!-- Pagination -->
-
-
-<nav class="pagination" aria-label="分页导航">
-  
-
-  
-  
-
-  
-  
-        <span class="pagination-item pagination-current" aria-current="page">1</span>
+  <nav class="pagination" aria-label="Pagination">
+    <div class="pagination-inner">
       
-        <a href="/page/2/" class="pagination-item">2</a>
+      <div class="pagination-pages">
+        
+        
+        
+        
+        
+        
+          
+            <span class="pagination-page current">1</span>
+          
+        
+          
+            <a href="/page/2/" class="pagination-page">2</a>
+          
+        
+          
+            <a href="/page/3/" class="pagination-page">3</a>
+          
+        
+        
+      </div>
       
-        <a href="/page/3/" class="pagination-item">3</a>
-      
-
-  
-  
-  <a href="/page/2/" class="pagination-item" aria-label="下一页">&raquo;</a>
-  
-</nav>
-
-
-
-       </main>      </div>   </div>    <footer class="site-footer" role="contentinfo">
-  <div class="footer-inner">
-    
-
-    
-    
-    <div class="footer-copyright">
-      &copy; 2026 星仔.
-      
-      <span class="footer-powered">
-        由 <a href="https://hexo.io/" target="_blank" rel="noopener" aria-label="Hexo">Hexo</a> 和 <a href="https://github.com/yourname/hexo-theme-cleartext" target="_blank" rel="noopener" aria-label="Cleartext Theme">Cleartext</a> 驱动。
-      </span>
+        <a href="/page/2/" class="pagination-next" aria-label="Next page">
+          Next
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
       
     </div>
+  </nav>
+
+
+
+            </div>
+            <aside class="sidebar sidebar-right">
+              
+  
     
+      <section class="widget widget-recent-posts">
+        <h3 class="widget-title">Recent Posts</h3>
+        <ul class="recent-posts-list">
+          
+            <li class="recent-post-item">
+              <a href="/fdfe/">
+                <span class="recent-post-title">codex安装与部署</span>
+                <time class="recent-post-date" datetime="2026-05-30T08:47:37.000Z">
+                  05-30
+                </time>
+              </a>
+            </li>
+          
+            <li class="recent-post-item">
+              <a href="/c3d5/">
+                <span class="recent-post-title">10.星海物联使用手册</span>
+                <time class="recent-post-date" datetime="2026-03-25T15:05:41.000Z">
+                  03-25
+                </time>
+              </a>
+            </li>
+          
+            <li class="recent-post-item">
+              <a href="/f3fc/">
+                <span class="recent-post-title">9.案例</span>
+                <time class="recent-post-date" datetime="2026-02-01T07:08:25.000Z">
+                  02-01
+                </time>
+              </a>
+            </li>
+          
+            <li class="recent-post-item">
+              <a href="/b3c0/">
+                <span class="recent-post-title">0.C语言概述</span>
+                <time class="recent-post-date" datetime="2026-01-28T05:41:10.000Z">
+                  01-28
+                </time>
+              </a>
+            </li>
+          
+            <li class="recent-post-item">
+              <a href="/2c1f/">
+                <span class="recent-post-title">学术文献大全</span>
+                <time class="recent-post-date" datetime="2025-10-19T06:49:50.000Z">
+                  10-19
+                </time>
+              </a>
+            </li>
+          
+        </ul>
+      </section>
+    
+
+    
+
+    
+
+    
+  
+    
+
+    
+      <section class="widget widget-categories">
+        <h3 class="widget-title">Categories</h3>
+        <ul class="category-list">
+          
+            <li class="category-list-item">
+              <a href="/categories/C%E8%AF%AD%E8%A8%80/">
+                <span class="category-name">C语言</span>
+                <span class="category-count">(1)</span>
+              </a>
+            </li>
+          
+            <li class="category-list-item">
+              <a href="/categories/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                <span class="category-name">MySQL数据库</span>
+                <span class="category-count">(3)</span>
+              </a>
+            </li>
+          
+            <li class="category-list-item">
+              <a href="/categories/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/">
+                <span class="category-name">原生鸿蒙开发</span>
+                <span class="category-count">(11)</span>
+              </a>
+            </li>
+          
+            <li class="category-list-item">
+              <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6/">
+                <span class="category-name">嵌入式软件</span>
+                <span class="category-count">(1)</span>
+              </a>
+            </li>
+          
+            <li class="category-list-item">
+              <a href="/categories/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/">
+                <span class="category-name">工具分享</span>
+                <span class="category-count">(4)</span>
+              </a>
+            </li>
+          
+            <li class="category-list-item">
+              <a href="/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/">
+                <span class="category-name">技术积累</span>
+                <span class="category-count">(3)</span>
+              </a>
+            </li>
+          
+            <li class="category-list-item">
+              <a href="/categories/%E6%9D%82%E9%A1%B9/">
+                <span class="category-name">杂项</span>
+                <span class="category-count">(1)</span>
+              </a>
+            </li>
+          
+            <li class="category-list-item">
+              <a href="/categories/%E8%BD%AF%E6%B5%8B/">
+                <span class="category-name">软测</span>
+                <span class="category-count">(2)</span>
+              </a>
+            </li>
+          
+        </ul>
+      </section>
+    
+
+    
+
+    
+  
+    
+
+    
+
+    
+
+    
+  
+
+
+            </aside>
+          </div>
+        
+      </div>
+    </main>
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <p class="copyright">
+        &copy; 2026 <a href="/">星仔极客</a>
+      </p>
+      
+        <p class="author">星仔</p>
+      
+    </div>
+    <div class="footer-right">
+      
+        <nav class="footer-social">
+          
+            <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+              
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              
+            </a>
+          
+            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">
+              
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              
+            </a>
+          
+        </nav>
+      
+      <p class="powered-by">
+        Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>
+        &middot; Theme <a href="https://github.com" target="_blank" rel="noopener">Ink</a>
+      </p>
+    </div>
   </div>
 </footer>
-    <script defer charset="utf-8" src="/js/main.js"></script>   <!-- Giscus Config -->
 
- </body> </html>
+  </div>
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+</button>
+
+  
+  <div class="search-modal" id="search-modal">
+    <div class="search-modal-overlay" id="search-overlay"></div>
+    <div class="search-modal-content">
+      <div class="search-input-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="search-input" id="search-input" placeholder="Search posts..." autocomplete="off">
+        <button class="search-close" id="search-close" aria-label="Close search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+
+
+  
+  <script>
+    var searchPath = 'search.xml';
+  </script>
+  
+<script src="/js/search.js"></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ez5ueQ5lCVUkOmA" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe5rCM8qmhmtIq35eatBTE" crossorigin="anonymous"
+    onload="renderMathInElement(document.getElementById('post-content') || document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ],
+      throwOnError: false
+    });"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+<script src="/js/lightbox.js"></script>
+
+
+
+</body>
+</html>

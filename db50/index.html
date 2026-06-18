@@ -1,81 +1,149 @@
-<!DOCTYPE html> <html lang="zh-CN" class=""> <head>   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-<script>
-(function(){var t=localStorage.getItem('cleartext-theme-mode');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark')})();
-</script>
-
-<title>3.UI组件 | 星仔极客</title>
-<meta name="description" content="日常笔记和生活分享！">
-
-<meta property="og:title" content="3.UI组件">
-<meta property="og:description" content="日常笔记和生活分享！">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>
+    
+      3.UI组件 - 星仔极客
+    
+  </title>
+  
+    <meta name="description" content="Ctrl+p：提示方法
+莓创图表
+ 自定义组件点击
+@Componentstruct 自定义组件名&amp;#123;    build() &amp;#123;        //内容    &amp;#125;&amp;#125;//export：导出组件，申明导出后再使用会自动导入export default 组件名
+ 组件重用样式文档中心
+只">
+  
+  <meta name="description" content="Ctrl+p：提示方法 莓创图表  自定义组件点击 @Componentstruct 自定义组件名&#123;    build() &#123;        &#x2F;&#x2F;内容    &#125;&#125;&#x2F;&#x2F;export：导出组件，申明导出后再使用会自动导入export default 组件名  组件重用样式文档中心 只能在当前文件内使用，不支持export 和传参，仅支持通用属性和通用事件 @St">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://blog.6673543.xyz/db50/">
+<meta property="og:title" content="3.UI组件">
+<meta property="og:url" content="https://blog.6673543.xyz/db50/index.html">
+<meta property="og:site_name" content="星仔极客">
+<meta property="og:description" content="Ctrl+p：提示方法 莓创图表  自定义组件点击 @Componentstruct 自定义组件名&#123;    build() &#123;        &#x2F;&#x2F;内容    &#125;&#125;&#x2F;&#x2F;export：导出组件，申明导出后再使用会自动导入export default 组件名  组件重用样式文档中心 只能在当前文件内使用，不支持export 和传参，仅支持通用属性和通用事件 @St">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.6673543.xyz/img/logo.svg">
+<meta property="article:published_time" content="2025-09-14T13:58:08.000Z">
+<meta property="article:modified_time" content="2026-06-10T09:10:23.904Z">
+<meta property="article:author" content="星仔">
+<meta property="article:tag" content="星仔极客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.6673543.xyz/img/logo.svg">
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  <link rel="alternate" type="application/atom+xml" title="星仔极客" href="/atom.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
 
-<link rel="canonical" href="https://blog.6673543.xyz/db50/">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/css/style.css?v=20260616141035">
- <meta name="generator" content="Hexo 7.3.0"></head> <body>   <a href="#main-content" class="skip-to-content" aria-label="跳转到主要内容">跳到内容</a>   <header class="site-header" id="site-header" role="banner">
-  <div class="header-inner">
-    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="切换导航菜单" aria-expanded="false">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
+  
+<link rel="stylesheet" href="/css/highlight.css">
 
-    <a class="site-title" href="/" aria-label="返回首页">
-      星仔极客
-    </a>
+  
+<link rel="stylesheet" href="/css/lightbox.css">
 
-    <nav class="site-nav" role="navigation" aria-label="主导航">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5YCBER1viXgfW6gOOGETNABLkXe0g8vB0+IgERrI2CE03NEdPAB" crossorigin="anonymous">
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "3.UI组件",
+    "datePublished": "2025-09-14T13:58:08.000Z",
+    "dateModified": "2026-06-10T09:10:23.904Z",
+    "author": {
+      "@type": "Person",
+      "name": "星仔"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "星仔极客"
+    },
+    "description": "Ctrl+p：提示方法
+莓创图表
+ 自定义组件点击
+@Componentstruct 自定义组件名&amp;#123;    build() &amp;#123;        //内容    &amp;#125;&amp;#125;//export：导出组件，申明导出后再使用会自动导入export default 组件名
+ 组件重用样式文档中心
+只",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://blog.6673543.xyz/db50/"
+    }
+  }
+  </script>
+  
+  <script>
+    (function() {
+      var saved = localStorage.getItem('ink-theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="post-page">
+  <a class="skip-to-content" href="#main-content">Skip to content</a>
+  <div class="site-wrapper">
+    <header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <div class="header-left">
+      <a href="/" class="site-brand">
+        
+          <img src="/img/logo.svg" alt="星仔极客" class="site-logo" width="32" height="32">
+        
+        <span class="site-title">星仔极客</span>
+      </a>
       
-        
-          
-          <a class="nav-link"
-             href="/"
-             >
-            首页
-          </a>
-        
-          
-          <a class="nav-link"
-             href="/categories/"
-             >
-            分类
-          </a>
-        
-          
-          <a class="nav-link"
-             href="/about/"
-             >
-            关于
-          </a>
-        
-          
-          <a class="nav-link"
-             href="/link/"
-             >
-            友链
-          </a>
-        
+        <span class="site-subtitle">星仔个人博客</span>
       
+    </div>
+    <nav class="header-nav" id="header-nav">
+      <ul class="nav-list">
+        
+          <li class="nav-item">
+            <a href="/">Home</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/categories">Categories</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/archives">Archives</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/links">Links</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+      </ul>
     </nav>
-
     <div class="header-actions">
       
-      <button class="header-btn" id="search-btn" aria-label="搜索" title="搜索 (Ctrl+K)">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-      </button>
+        <button class="search-toggle" id="search-toggle" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
       
-
-      
-      <button class="header-btn" id="dark-mode-btn" aria-label="切换暗色模式" title="切换暗色/亮色模式">
-        <svg id="dm-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="5"></circle>
           <line x1="12" y1="1" x2="12" y2="3"></line>
           <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -86,98 +154,72 @@
           <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
           <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </svg>
-        <svg id="dm-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
       </button>
-      
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </div>
   </div>
 </header>
 
-<!-- Search Overlay -->
-
-<div class="search-overlay" id="search-overlay" data-search-url="/search.xml" aria-hidden="true" role="dialog" aria-label="搜索">
-  <div class="search-modal">
-    <input type="text" class="search-input" id="search-input" placeholder="搜索文章..." autocomplete="off" aria-label="搜索文章标题和内容">
-    <button class="search-close" id="search-close" aria-label="关闭搜索">&times;</button>
-    <div class="search-history" id="search-history" style="display:none;"></div>
-    <div class="search-results" id="search-results"></div>
-  </div>
+    <main class="site-main" id="main-content">
+      <div class="container">
+        
+          
+            <div class="content-wrap with-sidebar">
+              <article class="post-article">
+                <header class="post-header">
+  
+  <h1 class="post-title">3.UI组件</h1>
+  <div class="post-meta">
+  <time class="post-date" datetime="2025-09-14T13:58:08.000Z">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+    2025-09-14
+  </time>
+  
+    <time class="post-updated" datetime="2026-06-10T09:10:23.904Z">
+      (Updated: 2026-06-10)
+    </time>
+  
+  
+    <span class="post-word-count">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+      2.7k words
+    </span>
+  
+  
+    <span class="post-reading-time">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      11 min read
+    </span>
+  
+  
+    <span class="post-categories">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+      
+        
+          <a href="/categories/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/">原生鸿蒙开发</a>
+        
+      
+    </span>
+  
 </div>
 
-    <div class="page-shell" id="main-content">     <div class="grid-container       grid-post            ">       <main class="grid-main">         
-
-<article class="post-full" itemscope itemtype="http://schema.org/Article">
-
-  <header class="post-header">
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb" aria-label="面包屑导航">
-      <a href="/">首页</a>
-      <span class="breadcrumb-sep">/</span>
-      
-        <a href="/categories/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/">原生鸿蒙开发</a>
-        <span class="breadcrumb-sep">/</span>
-      
-      <span class="breadcrumb-current" aria-current="page">3.UI组件</span>
-    </nav>
-
-    <h1 class="post-title" itemprop="headline">3.UI组件</h1>
-
-    <div class="post-meta">
-      <span class="meta-item" itemprop="datePublished" content="2025-09-14T13:58:08.000Z">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        <time datetime="2025-09-14T13:58:08.000Z">2025-09-14</time>
-      </span>
-      
-      <span class="meta-item meta-stats">
-        <span class="word-count">2908 字</span>
-        <span class="reading-time">15</span>
-      </span>
-      
-      <span class="meta-updated">更新于 2026-06-10</span>
-      
-    </div>
-
-    </header>
-
-  <!-- Desktop TOC (collapsible, above content) -->
   
-  <div class="toc-desktop-collapsible" id="toc-desktop-wrapper" aria-label="文章目录">
-    <details id="toc-desktop-details">
-      <summary class="toc-desktop-toggle" aria-label="展开/收起目录">
-        <svg class="toc-toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="8" y1="6" x2="21" y2="6"></line>
-          <line x1="8" y1="12" x2="21" y2="12"></line>
-          <line x1="8" y1="18" x2="21" y2="18"></line>
-          <line x1="3" y1="6" x2="3.01" y2="6"></line>
-          <line x1="3" y1="12" x2="3.01" y2="12"></line>
-          <line x1="3" y1="18" x2="3.01" y2="18"></line>
-        </svg>
-        文章目录
-      </summary>
-      <nav class="toc" id="toc-desktop" aria-label="文章目录"></nav>
-    </details>
-  </div>
-  
+</header>
 
-  <!-- Mobile TOC (collapsible) -->
-  
-  <div class="toc-mobile" id="toc-mobile-wrapper" aria-label="移动端文章目录">
-    <details id="toc-mobile-details">
-      <summary class="toc-mobile-toggle" aria-label="展开/收起目录">文章目录</summary>
-      <nav class="toc" id="toc-mobile" aria-label="文章目录"></nav>
-    </details>
-  </div>
-  
 
-  <!-- Post Content -->
-  <div class="post-content" itemprop="articleBody">
-    <div class="mathjax-process"><p>Ctrl+p：提示方法</p>
-<p><a href="https://meichuangit.net.cn/" target="_blank" rel="noopener noreferrer">莓创图表</a></p>
-<h1 id="自定义组件点击"><a class="markdownIt-Anchor" href="#自定义组件点击"></a> 自定义组件<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-custom-components" target="_blank" rel="noopener noreferrer">点击</a></h1>
+<div class="post-content" id="post-content">
+  <p>Ctrl+p：提示方法</p>
+<p><a target="_blank" rel="noopener" href="https://meichuangit.net.cn/">莓创图表</a></p>
+<h1 id="自定义组件点击"><a class="markdownIt-Anchor" href="#自定义组件点击"></a> 自定义组件<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-custom-components">点击</a></h1>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Component</span><br><span class="line">struct 自定义组件名&#123;</span><br><span class="line">    build() &#123;</span><br><span class="line">        //内容</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//export：导出组件，申明导出后再使用会自动导入</span><br><span class="line">export default 组件名</span><br></pre></td></tr></table></figure>
-<h1 id="组件重用样式文档中心"><a class="markdownIt-Anchor" href="#组件重用样式文档中心"></a> 组件重用样式<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-style" target="_blank" rel="noopener noreferrer">文档中心</a></h1>
+<h1 id="组件重用样式文档中心"><a class="markdownIt-Anchor" href="#组件重用样式文档中心"></a> 组件重用样式<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-style">文档中心</a></h1>
 <p>只能在当前文件内使用，不支持export 和传参，仅支持<strong>通用属性</strong>和<strong>通用事件</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Styles</span><br><span class="line">函数名()&#123;</span><br><span class="line">  //通用样式和事件抽离</span><br><span class="line">&#125;</span><br><span class="line">.函数名()</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Styles</span><br><span class="line">styleFunction()&#123;</span><br><span class="line">  .width(&#x27;100%&#x27;)</span><br><span class="line">  .height(&#x27;100%&#x27;)</span><br><span class="line">  .backgroundColor(Color.Blue)</span><br><span class="line">&#125;</span><br><span class="line">.styleFunction()		//调用</span><br></pre></td></tr></table></figure>
@@ -192,7 +234,7 @@
 <h1 id="循环渲染"><a class="markdownIt-Anchor" href="#循环渲染"></a> 循环渲染</h1>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//item：arr数组中的数据项，index：arr数组中的数据项索引</span><br><span class="line">ForEach(数组, (item: 类型, index: 类型)=&gt;&#123;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/*</span><br><span class="line">Array.from(&#123; length: 10 &#125;：生成个数10的数组，里面没有赋值</span><br><span class="line">value: string：数组里的值，index: number：下标索引，返回 index作为数组的值</span><br><span class="line">item: number：下标索引</span><br><span class="line">*/</span><br><span class="line">ForEach(Array.from(&#123; length: 10 &#125;, (value: string, index: number) =&gt; index), (item: number) =&gt; &#123;</span><br><span class="line">  Text(item.toString())</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h1 id="文本点击"><a class="markdownIt-Anchor" href="#文本点击"></a> 文本<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-use-text" target="_blank" rel="noopener noreferrer">点击</a></h1>
+<h1 id="文本点击"><a class="markdownIt-Anchor" href="#文本点击"></a> 文本<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-use-text">点击</a></h1>
 <h2 id="文本显示"><a class="markdownIt-Anchor" href="#文本显示"></a> 文本显示</h2>
 <p>新版中默认创建不会自动创建 en 国际化文件夹，需要在 **resources **右键新建 资源目录 选择对用的语言，后在新创建的资源文件夹中创建一个 <strong>string.json</strong>，再将 <strong>resources</strong>\element 中的 <strong>string.json</strong> 中内容复制到新的 string.json 文件中，即可编辑国际化对应的文本</p>
 <img src="https://s2.loli.net/2025/12/31/vmU4uLsj8d3EQK7.png" style="zoom: 50%;" />
@@ -201,36 +243,36 @@
 <h2 id="文本输入"><a class="markdownIt-Anchor" href="#文本输入"></a> 文本输入</h2>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">TextArea()       // 多行输入框</span><br><span class="line"></span><br><span class="line">TextInput(&#123;	placeholder: &#x27;占位符文本&#x27;, text: &#x27;输入文本内容&#x27;&#125;)		//单行输入框</span><br><span class="line">.placeholderColor(颜色格式)	//提示文本颜色</span><br><span class="line">.type(InputType.枚举值)		//输入框类型</span><br><span class="line">//事件</span><br><span class="line">//文本内容发生变化时触发</span><br><span class="line">.onChange((value) =&gt; &#123;		//value为输入框内容</span><br><span class="line">&#125;)</span><br><span class="line">// 按下输入法回车键时触发</span><br><span class="line">.onSubmit(() =&gt; &#123;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">TextInput(&#123; placeholder: &#x27;请输入用户名&#x27;, text: &#x27;输入文本内容&#x27; &#125;)</span><br><span class="line">  .onChange((value) =&gt; &#123;</span><br><span class="line">    promptAction.showToast(&#123;  //轻提示</span><br><span class="line">      message: value</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">  .onSubmit(() =&gt; &#123;</span><br><span class="line">    promptAction.showToast(&#123;</span><br><span class="line">      message: &#x27;onsubmit&#x27;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-<h1 id="下拉选择菜单点击"><a class="markdownIt-Anchor" href="#下拉选择菜单点击"></a> 下拉选择菜单<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-select" target="_blank" rel="noopener noreferrer">点击</a></h1>
+<h1 id="下拉选择菜单点击"><a class="markdownIt-Anchor" href="#下拉选择菜单点击"></a> 下拉选择菜单<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-select">点击</a></h1>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Select([&#123; value: &#x27;下拉框值&#x27; &#125;, ...])</span><br><span class="line">  .value(&#x27;下拉框值&#x27;)					//默认显示</span><br><span class="line">  .optionWidth(200)					//下拉框宽度</span><br><span class="line">  .optionHeight(200)			//下拉框高度</span><br><span class="line">  .menuAlign(MenuAlignType.CENTER)	//下拉框对齐方式</span><br><span class="line">  .onSelect((index: number) =&gt; &#123;		//选择回调</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Select([&#123; value: &#x27;男&#x27; &#125;, &#123; value: &#x27;女&#x27; &#125;])</span><br><span class="line">  .value(&#x27;女&#x27;)</span><br></pre></td></tr></table></figure>
-<h1 id="图片组件点击"><a class="markdownIt-Anchor" href="#图片组件点击"></a> 图片组件<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image" target="_blank" rel="noopener noreferrer">点击</a></h1>
-<p>工程中图片存放路径：<code>src/main/resources/base/media</code> 中，<a href="https://developer.huawei.com/consumer/cn/design/harmonyos-icon/" target="_blank" rel="noopener noreferrer">HarmonyOS_icon素材</a>、<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions" target="_blank" rel="noopener noreferrer">申请权限</a></p>
+<h1 id="图片组件点击"><a class="markdownIt-Anchor" href="#图片组件点击"></a> 图片组件<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image">点击</a></h1>
+<p>工程中图片存放路径：<code>src/main/resources/base/media</code> 中，<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/design/harmonyos-icon/">HarmonyOS_icon素材</a>、<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions">申请权限</a></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Image(&#x27;图片网址&#x27;)	//网络图片资源，需要申请权限ohos.permission.INTERNET</span><br><span class="line">Image( $r(&#x27;app.media.文件名&#x27;) )	//本地图片资源</span><br><span class="line">.fillColor(颜色格式)				//若图片为svg格式可使用这个填充颜色</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Column() &#123;</span><br><span class="line">    Image(&#x27;https://www.itheima.com/images/logo.png&#x27;)</span><br><span class="line">        .width(200)			//只需设置宽或高 就会等比例缩放</span><br><span class="line">    Image($r(&#x27;app.media.background&#x27;))</span><br><span class="line">      .fillColor(&#x27;#b0473d&#x27;)</span><br><span class="line">      .width(200)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="按钮组件文档中心"><a class="markdownIt-Anchor" href="#按钮组件文档中心"></a> 按钮组件<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button" target="_blank" rel="noopener noreferrer">文档中心</a></h1>
+<h1 id="按钮组件文档中心"><a class="markdownIt-Anchor" href="#按钮组件文档中心"></a> 按钮组件<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button">文档中心</a></h1>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Button(&#x27;按钮展示的文本&#x27;, </span><br><span class="line">  &#123; </span><br><span class="line">    type: ButtonType.枚举值,		//按钮形状 </span><br><span class="line">    stateEffect: true 				//是否开启按压态显示效果</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Button(&#x27;OK&#x27;, &#123; type: ButtonType.Normal, stateEffect: true &#125;)</span><br></pre></td></tr></table></figure>
-<h1 id="下拉选择菜单文档中心"><a class="markdownIt-Anchor" href="#下拉选择菜单文档中心"></a> 下拉选择菜单<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-select" target="_blank" rel="noopener noreferrer">文档中心</a></h1>
+<h1 id="下拉选择菜单文档中心"><a class="markdownIt-Anchor" href="#下拉选择菜单文档中心"></a> 下拉选择菜单<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-select">文档中心</a></h1>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Select([</span><br><span class="line">  &#123;value:&#x27;菜单文本&#x27;,icon:$r(&#x27;app.media.MQTT&#x27;)</span><br><span class="line">&#125;])</span><br><span class="line">.value(&#x27;未选择显示的文本&#x27;)</span><br><span class="line">.menuAlign(MenuAlignType.枚举值)		//下拉菜单对齐方式</span><br><span class="line">.optionWidth(200)					//下拉菜单宽度</span><br><span class="line">.optionHeight(200)					//下拉菜单高度</span><br><span class="line">.menuAlign(MenuAlignType.枚举值)		//下拉菜单对齐方式</span><br><span class="line">.onSelect((index: number) =&gt; &#123;		//选中回调函数</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Select([</span><br><span class="line">  &#123;value:&#x27;MQTT&#x27;,icon:$r(&#x27;app.media.MQTT&#x27;)</span><br><span class="line">&#125;]).layoutWeight(1)</span><br><span class="line">.value(&#x27;请选择&#x27;).menuAlign(MenuAlignType.CENTER)</span><br><span class="line">.optionWidth(200)</span><br></pre></td></tr></table></figure>
-<h1 id="进度条组件文档中心"><a class="markdownIt-Anchor" href="#进度条组件文档中心"></a> 进度条组件<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress" target="_blank" rel="noopener noreferrer">文档中心</a></h1>
+<h1 id="进度条组件文档中心"><a class="markdownIt-Anchor" href="#进度条组件文档中心"></a> 进度条组件<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress">文档中心</a></h1>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Progress(&#123;</span><br><span class="line">  total: 数字,					//指定进度总长</span><br><span class="line">  value: 数字,					//指定当前进度值</span><br><span class="line">  type: ProgressType.枚举值		//指定进度条类型</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Progress(&#123;</span><br><span class="line">  total: 100,</span><br><span class="line">  value: this.value,</span><br><span class="line">  type: ProgressType.Ring</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h1 id="加载动效组件文档中心"><a class="markdownIt-Anchor" href="#加载动效组件文档中心"></a> 加载动效组件<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-loadingprogress" target="_blank" rel="noopener noreferrer">文档中心</a></h1>
+<h1 id="加载动效组件文档中心"><a class="markdownIt-Anchor" href="#加载动效组件文档中心"></a> 加载动效组件<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-loadingprogress">文档中心</a></h1>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">LoadingProgress()</span><br><span class="line">.color(颜色格式)</span><br></pre></td></tr></table></figure>
-<h1 id="下拉刷新组件文档中心"><a class="markdownIt-Anchor" href="#下拉刷新组件文档中心"></a> 下拉刷新组件<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-refresh" target="_blank" rel="noopener noreferrer">文档中心</a></h1>
+<h1 id="下拉刷新组件文档中心"><a class="markdownIt-Anchor" href="#下拉刷新组件文档中心"></a> 下拉刷新组件<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-refresh">文档中心</a></h1>
 <p>页面下拉操作并显示刷新动效的容器组件</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@State 变量名: boolean = false</span><br><span class="line">//builder：自定义刷新区域显示内容</span><br><span class="line">Refresh(</span><br><span class="line">  &#123; refreshing: $$this.变量名, promptText: &#x27;下拉刷新展示文本&#x27;, builder: this.自定义函数名() </span><br><span class="line">  &#125;) &#123;</span><br><span class="line">  //刷新的组件</span><br><span class="line">&#125;</span><br><span class="line">.refreshOffset(数字)        //当下拉距离小于该属性设置值时离手不会触发刷新</span><br><span class="line">.onRefreshing(() =&gt; &#123;		//进入刷新状态时触发回调</span><br><span class="line">  //数据更新地方</span><br><span class="line">  //手动关闭刷新状态</span><br><span class="line">  this.变量名 = false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@State list: number[] = Array(20).fill(Math.random())</span><br><span class="line">@State isRefresh: boolean = false</span><br><span class="line"></span><br><span class="line">@Builder</span><br><span class="line">refreshConten() &#123;</span><br><span class="line">  Row(&#123; space: 8 &#125;) &#123;</span><br><span class="line">    LoadingProgress()</span><br><span class="line">      .width(20)</span><br><span class="line">    Text(&#x27;正在玩命加载...&#x27;)</span><br><span class="line">  &#125;</span><br><span class="line">  .width(&#x27;100%&#x27;)</span><br><span class="line">&#125;</span><br><span class="line">Refresh(&#123; refreshing: $$this.isRefresh, promptText: &#x27;正在刷新&#x27;, builder: this.refreshConten() &#125;) &#123;</span><br><span class="line">  List() &#123;</span><br><span class="line">    ForEach(this.list, (item: number) =&gt; &#123;</span><br><span class="line">      ListItem() &#123;</span><br><span class="line">        Text(item.toString())</span><br><span class="line">          .height(100)</span><br><span class="line">          .width(&quot;100%&quot;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  .divider(&#123; strokeWidth: 2 &#125;)</span><br><span class="line">&#125;</span><br><span class="line">.refreshOffset(150)</span><br><span class="line">.onRefreshing(() =&gt; &#123;</span><br><span class="line">  setTimeout(() =&gt; &#123;</span><br><span class="line">    //数据更新地方</span><br><span class="line">    this.list = Array(20).fill(Math.random())</span><br><span class="line">    //手动关闭刷新状态</span><br><span class="line">    this.isRefresh = false</span><br><span class="line">  &#125;, 1000)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h1 id="角标组件"><a class="markdownIt-Anchor" href="#角标组件"></a> 角标组件</h1>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Badge(&#123;</span><br><span class="line">    count: 数字,	//角标数值</span><br><span class="line">    position: BadgePosition.枚举值,	//角标位置</span><br><span class="line">    style: &#123;</span><br><span class="line">        fontSize: 14,			//角标文字大小</span><br><span class="line">        badgeSize: 20,			// 角标大小</span><br><span class="line">        badgeColor:&#x27;#fa2a2d&#x27;	// 角标底色</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)&#123;</span><br><span class="line">    //这里写角标下面的图片</span><br><span class="line">    Image(图片链接)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Badge(&#123;</span><br><span class="line">    count: 1,</span><br><span class="line">    position: BadgePosition.RightTop,</span><br><span class="line">    style: &#123;</span><br><span class="line">        fontSize: 14,</span><br><span class="line">        badgeSize: 20,</span><br><span class="line">        badgeColor:&#x27;#fa2a2d&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)&#123;</span><br><span class="line">    Image($r(&#x27;app.media.bg_00&#x27;))</span><br><span class="line">        .width(100)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="勾选开关组件文档中心"><a class="markdownIt-Anchor" href="#勾选开关组件文档中心"></a> 勾选开关组件<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-switch" target="_blank" rel="noopener noreferrer">文档中心</a></h1>
+<h1 id="勾选开关组件文档中心"><a class="markdownIt-Anchor" href="#勾选开关组件文档中心"></a> 勾选开关组件<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-switch">文档中心</a></h1>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Toggle(&#123;</span><br><span class="line">  type: ToggleType.枚举值, 	//开关样式</span><br><span class="line">  isOn: true    //默认开关状态</span><br><span class="line">&#125;)</span><br><span class="line">.selectedColor(颜色格式)//打开状态的背景颜色</span><br><span class="line">.switchPointColor(颜色格式)//圆形滑块颜色,仅对type为ToggleType.Switch生效</span><br><span class="line">.switchStyle(&#123;</span><br><span class="line">  //仅对type为ToggleType.Switch生效</span><br><span class="line">  pointRadius: 数字, //圆形滑块半径</span><br><span class="line">  unselectedColor: 颜色格式, //关闭状态的背景颜色</span><br><span class="line">  trackBorderRadius: 数字   //滑轨的圆角</span><br><span class="line">&#125;)</span><br><span class="line">.onChange((isOn: boolean) =&gt; &#123;</span><br><span class="line">    if(isOn) &#123;</span><br><span class="line">      // 需要执行的操作</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Toggle(&#123;</span><br><span class="line">  type: ToggleType.Switch, //样式</span><br><span class="line">  isOn: true    //默认开关状态</span><br><span class="line">&#125;)</span><br><span class="line">  .selectedColor(Color.Red)//打开状态的背景颜色</span><br><span class="line">  .switchPointColor(Color.Gray)//圆形滑块颜色,仅对type为ToggleType.Switch生效</span><br><span class="line">  .switchStyle(&#123;</span><br><span class="line">    //仅对type为ToggleType.Switch生效</span><br><span class="line">    pointRadius: 5, //圆形滑块半径</span><br><span class="line">    unselectedColor: Color.Pink, //关闭状态的背景颜色</span><br><span class="line">    trackBorderRadius: 10   //滑轨的圆角</span><br><span class="line">  &#125;)</span><br><span class="line">Toggle(&#123; type: ToggleType.Button, isOn: false &#125;) &#123;</span><br><span class="line">  Text(&#x27;status button&#x27;).fontColor(&#x27;#182431&#x27;).fontSize(12)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="分段按钮文档中心"><a class="markdownIt-Anchor" href="#分段按钮文档中心"></a> 分段按钮<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-segmentbuttonv2#capsulesegmentbuttonv2" target="_blank" rel="noopener noreferrer">文档中心</a></h1>
+<h1 id="分段按钮文档中心"><a class="markdownIt-Anchor" href="#分段按钮文档中心"></a> 分段按钮<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-segmentbuttonv2#capsulesegmentbuttonv2">文档中心</a></h1>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 必须 @ComponentV2 修饰</span><br><span class="line">@Local textItems: SegmentButtonV2Items = new SegmentButtonV2Items([</span><br><span class="line">  &#123; text: &#x27;手机&#x27; &#125;,</span><br><span class="line">  &#123; text: &#x27;平板&#x27; &#125;,</span><br><span class="line">  &#123; text: &#x27;2in1&#x27; &#125;,</span><br><span class="line">  &#123; text: &#x27;智能穿戴&#x27; &#125;,</span><br><span class="line">],);</span><br><span class="line">@Local textSelectedIndex: number = 0;</span><br><span class="line">CapsuleSegmentButtonV2(&#123;</span><br><span class="line">  items: this.textItems,</span><br><span class="line">  selectedIndex: this.textSelectedIndex!!,</span><br><span class="line">  onItemClicked: (index: number) =&gt; &#123;</span><br><span class="line">    console.log(&#x27;点击了选项:&#x27;, index);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 不需要 @ComponentV2 修饰</span><br><span class="line">@State textSelectedIndex: number = 0;</span><br><span class="line">CapsuleSegmentButtonV2(&#123;</span><br><span class="line">  items: new SegmentButtonV2Items([</span><br><span class="line">    &#123; text: &#x27;关闭&#x27; &#125;,</span><br><span class="line">    &#123; text: &#x27;红色&#x27; &#125;,</span><br><span class="line">  ]),</span><br><span class="line">  selectedIndex: this.textSelectedIndex!!,</span><br><span class="line">  onItemClicked: async (index: number) =&gt; &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h1 id="轮播组件文档中心"><a class="markdownIt-Anchor" href="#轮播组件文档中心"></a> 轮播组件<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-create-looping" target="_blank" rel="noopener noreferrer">文档中心</a></h1>
+<h1 id="轮播组件文档中心"><a class="markdownIt-Anchor" href="#轮播组件文档中心"></a> 轮播组件<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-create-looping">文档中心</a></h1>
 <p>容器组件，当设置了多个子组件后，可以对子组件 进行轮播显示</p>
 <h2 id="语法"><a class="markdownIt-Anchor" href="#语法"></a> 语法</h2>
 <p>一般轮播要设置宽高比例</p>
@@ -254,83 +296,180 @@
 <p>onChange：滑动切换、点击切换 均会触发</p>
 <p>onTabBarClick：只有点击才会触发</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Builder</span><br><span class="line">自定义函数名() &#123;</span><br><span class="line">    // 自定义的Tabbar结构</span><br><span class="line">&#125;</span><br><span class="line">Tabs() &#123;</span><br><span class="line">    TabContent() &#123;</span><br><span class="line">        // 内容略</span><br><span class="line">    &#125;.</span><br><span class="line">    tabBar(this.自定义函数名())</span><br><span class="line">&#125;</span><br><span class="line">.onChange((index: number) =&gt; &#123;	//index索引值，从0开始，但代表的是导航栏1开始</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//存储激活的索引值</span><br><span class="line">@State selectedIndex:number = 0</span><br><span class="line">@Builder</span><br><span class="line">mytabs(itemIndex: number, name: string,url: ResourceStr,selurl: ResourceStr)&#123;</span><br><span class="line">    Column(&#123;space: 5&#125;)&#123;</span><br><span class="line">        Image(itemIndex == this.selectedIndex? selurl : url)</span><br><span class="line">            .width(30)</span><br><span class="line">        Text(name)</span><br><span class="line">            .fontSize(12)</span><br><span class="line">        //通过传递本身和获取到的索引作比较，从而知道选中的是哪个</span><br><span class="line">            .fontColor(itemIndex == this.selectedIndex? Color.Red: Color.Black)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">build() &#123;</span><br><span class="line">    Tabs()&#123;</span><br><span class="line">        TabContent()&#123;</span><br><span class="line">            Text(&#x27;购物车内容&#x27;)</span><br><span class="line">        &#125;</span><br><span class="line">        .tabBar(this.mytabs(0,&#x27;购物车&#x27;,$r(&#x27;app.media.ic_tabbar_icon_2&#x27;),$r(&#x27;app.media.ic_tabbar_icon_2_selected&#x27;)))</span><br><span class="line">        TabContent()&#123;</span><br><span class="line">            Text(&#x27;我的内容&#x27;)</span><br><span class="line">        &#125;</span><br><span class="line">        .tabBar(this.mytabs(1,&#x27;我的&#x27;,$r(&#x27;app.media.ic_tabbar_icon_3&#x27;),$r(&#x27;app.media.ic_tabbar_icon_3_selected&#x27;)))</span><br><span class="line">    &#125;</span><br><span class="line">    .onChange((index: number) =&gt; &#123;</span><br><span class="line">        this.selectedIndex = index</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </div>
+
+
+  <div class="post-author-card">
+    <div class="post-author-info">
+      <div class="post-author-avatar">
+        
+          <span>星</span>
+        
+      </div>
+      <div class="post-author-detail">
+        <p class="post-author-name">星仔</p>
+        <p class="post-author-bio">日常笔记和生活分享！</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="post-copyright">
+    <p class="copyright-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M15 9.354a4 4 0 1 0 0 5.292"></path></svg>
+      Copyright
+    </p>
+    <ul class="copyright-list">
+      <li>Author: 星仔</li>
+      <li>Link: <a href="https://blog.6673543.xyz/db50/">https://blog.6673543.xyz/db50/</a></li>
+      <li>License: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></li>
+    </ul>
   </div>
 
 
 
-</article>
-
-<!-- Giscus Comments -->
-
-
-<!-- Post Navigation -->
-
-<nav class="post-nav" aria-label="文章导航">
-  
-  <div class="post-nav-prev">
+  <nav class="post-nav">
     
-    <a href="/76af/" class="post-nav-link">
-      <span class="post-nav-label">&#8592; 上一篇</span>
-      4.界面布局、动画
-    </a>
+      <a href="/76af/" class="post-nav-item post-nav-prev">
+        <span class="post-nav-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          Previous
+        </span>
+        <span class="post-nav-title">4.界面布局、动画</span>
+      </a>
     
+    
+      <a href="/651a/" class="post-nav-item post-nav-next">
+        <span class="post-nav-label">
+          Next
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </span>
+        <span class="post-nav-title">2.事件</span>
+      </a>
+    
+  </nav>
+
+
+
+
+              </article>
+              <aside class="sidebar sidebar-right">
+                
+  <div class="post-toc" id="post-toc">
+    <div class="toc-header">
+      <h4>Table of Contents</h4>
+      <button class="toc-toggle" id="toc-toggle" aria-label="Toggle TOC">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+    </div>
+    <div class="toc-body" id="toc-body">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%82%B9%E5%87%BB"><span class="toc-number">1.</span> <span class="toc-text"> 自定义组件点击</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E9%87%8D%E7%94%A8%E6%A0%B7%E5%BC%8F%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">2.</span> <span class="toc-text"> 组件重用样式文档中心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E7%BB%84%E4%BB%B6%E6%A0%B7%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text"> 扩展组件样式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9E%84%E5%BB%BA%E5%87%BD%E6%95%B0"><span class="toc-number">4.</span> <span class="toc-text"> 自定义构建函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E6%B8%B2%E6%9F%93"><span class="toc-number">5.</span> <span class="toc-text"> 循环渲染</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E7%82%B9%E5%87%BB"><span class="toc-number">6.</span> <span class="toc-text"> 文本点击</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E6%98%BE%E7%A4%BA"><span class="toc-number">6.1.</span> <span class="toc-text"> 文本显示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E8%BE%93%E5%85%A5"><span class="toc-number">6.2.</span> <span class="toc-text"> 文本输入</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8B%E6%8B%89%E9%80%89%E6%8B%A9%E8%8F%9C%E5%8D%95%E7%82%B9%E5%87%BB"><span class="toc-number">7.</span> <span class="toc-text"> 下拉选择菜单点击</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E7%BB%84%E4%BB%B6%E7%82%B9%E5%87%BB"><span class="toc-number">8.</span> <span class="toc-text"> 图片组件点击</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%89%E9%92%AE%E7%BB%84%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">9.</span> <span class="toc-text"> 按钮组件文档中心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8B%E6%8B%89%E9%80%89%E6%8B%A9%E8%8F%9C%E5%8D%95%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">10.</span> <span class="toc-text"> 下拉选择菜单文档中心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E5%BA%A6%E6%9D%A1%E7%BB%84%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">11.</span> <span class="toc-text"> 进度条组件文档中心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%A0%E8%BD%BD%E5%8A%A8%E6%95%88%E7%BB%84%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">12.</span> <span class="toc-text"> 加载动效组件文档中心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0%E7%BB%84%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">13.</span> <span class="toc-text"> 下拉刷新组件文档中心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%92%E6%A0%87%E7%BB%84%E4%BB%B6"><span class="toc-number">14.</span> <span class="toc-text"> 角标组件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8B%BE%E9%80%89%E5%BC%80%E5%85%B3%E7%BB%84%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">15.</span> <span class="toc-text"> 勾选开关组件文档中心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E6%AE%B5%E6%8C%89%E9%92%AE%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">16.</span> <span class="toc-text"> 分段按钮文档中心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BD%AE%E6%92%AD%E7%BB%84%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">17.</span> <span class="toc-text"> 轮播组件文档中心</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-number">17.1.</span> <span class="toc-text"> 语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%B1%9E%E6%80%A7"><span class="toc-number">17.2.</span> <span class="toc-text"> 基本属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89"><span class="toc-number">17.3.</span> <span class="toc-text"> 样式自定义</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB"><span class="toc-number">18.</span> <span class="toc-text"> 动画</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E5%AE%B9%E5%99%A8%E7%BB%84%E4%BB%B6"><span class="toc-number">19.</span> <span class="toc-text"> 分类容器组件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95-2"><span class="toc-number">19.1.</span> <span class="toc-text"> 语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7"><span class="toc-number">19.2.</span> <span class="toc-text"> 常用属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89tabbar"><span class="toc-number">19.3.</span> <span class="toc-text"> 自定义TabBar</span></a></li></ol></li></ol>
+    </div>
   </div>
-  
-  <div class="post-nav-next">
-    
-    <a href="/651a/" class="post-nav-link">
-      <span class="post-nav-label">下一篇 &#8594;</span>
-      2.事件
-    </a>
-    
-  </div>
-</nav>
 
 
-<!-- Back-to-top & back-to-bottom floating buttons -->
-<button class="back-to-top" id="back-to-top" aria-label="回到顶部" title="回到顶部">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="12" y1="19" x2="12" y2="5"></line>
-    <polyline points="5 12 12 5 19 12"></polyline>
-  </svg>
-</button>
-<button class="back-to-bottom" id="back-to-bottom" aria-label="直达底部" title="直达底部">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="12" y1="5" x2="12" y2="19"></line>
-    <polyline points="19 12 12 19 5 12"></polyline>
-  </svg>
-</button>
-
-<!-- Image Lightbox -->
-<div class="lightbox-overlay" id="lightbox" aria-hidden="true">
-  <button class="lightbox-close" id="lightbox-close" aria-label="关闭">&times;</button>
-  <button class="lightbox-prev" id="lightbox-prev" aria-label="上一张">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-  </button>
-  <button class="lightbox-next" id="lightbox-next" aria-label="下一张">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-  </button>
-  <img id="lightbox-img" src="" alt="" />
-  <span class="lightbox-counter" id="lightbox-counter"></span>
-</div>
-       </main>      </div>   </div>    <footer class="site-footer" role="contentinfo">
-  <div class="footer-inner">
-    
-
-    
-    
-    <div class="footer-copyright">
-      &copy; 2026 星仔.
+              </aside>
+            </div>
+          
+        
+      </div>
+    </main>
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <p class="copyright">
+        &copy; 2026 <a href="/">星仔极客</a>
+      </p>
       
-      <span class="footer-powered">
-        由 <a href="https://hexo.io/" target="_blank" rel="noopener" aria-label="Hexo">Hexo</a> 和 <a href="https://github.com/yourname/hexo-theme-cleartext" target="_blank" rel="noopener" aria-label="Cleartext Theme">Cleartext</a> 驱动。
-      </span>
+        <p class="author">星仔</p>
       
     </div>
-    
+    <div class="footer-right">
+      
+        <nav class="footer-social">
+          
+            <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+              
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              
+            </a>
+          
+            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">
+              
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              
+            </a>
+          
+        </nav>
+      
+      <p class="powered-by">
+        Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>
+        &middot; Theme <a href="https://github.com" target="_blank" rel="noopener">Ink</a>
+      </p>
+    </div>
   </div>
 </footer>
-    <script defer charset="utf-8" src="/js/main.js"></script>   <!-- Giscus Config -->
 
- </body> </html>
+  </div>
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+</button>
+
+  
+  <div class="search-modal" id="search-modal">
+    <div class="search-modal-overlay" id="search-overlay"></div>
+    <div class="search-modal-content">
+      <div class="search-input-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="search-input" id="search-input" placeholder="Search posts..." autocomplete="off">
+        <button class="search-close" id="search-close" aria-label="Close search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+
+
+  
+  <script>
+    var searchPath = 'search.xml';
+  </script>
+  
+<script src="/js/search.js"></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ez5ueQ5lCVUkOmA" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe5rCM8qmhmtIq35eatBTE" crossorigin="anonymous"
+    onload="renderMathInElement(document.getElementById('post-content') || document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ],
+      throwOnError: false
+    });"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+<script src="/js/lightbox.js"></script>
+
+
+
+</body>
+</html>

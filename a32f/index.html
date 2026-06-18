@@ -1,81 +1,175 @@
-<!DOCTYPE html> <html lang="zh-CN" class=""> <head>   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>
+    
+      0.ArkTS基础语法 - 星仔极客
+    
+  </title>
+  
+    <meta name="description" content="打印日志：console.log(‘消息说明’,‘打印的内容’)
+对象等复杂数据，需要日志打印需要JSON.stringify()转换
+文档中心
+项目：
 
-<script>
-(function(){var t=localStorage.getItem('cleartext-theme-mode');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark')})();
-</script>
 
-<title>0.ArkTS基础语法 | 星仔极客</title>
-<meta name="description" content="日常笔记和生活分享！">
 
-<meta property="og:title" content="0.ArkTS基础语法">
-<meta property="og:description" content="日常笔记和生活分享！">
+
+HarmonyOS NEXT 面试通
+
+
+
+
+守护助手APP项目实战教程_哔哩哔哩_bilibili
+鸿蒙守护助手-黑马程序员_v1.0
+
+
+
+项目代码仓库：">
+  
+  <meta name="description" content="打印日志：console.log(‘消息说明’,‘打印的内容’) 对象等复杂数据，需要日志打印需要JSON.stringify()转换 文档中心 项目：     HarmonyOS NEXT 面试通     守护助手APP项目实战教程_哔哩哔哩_bilibili 鸿蒙守护助手-黑马程序员_v1.0    项目代码仓库：    美蔻商城 面试通 鸿蒙守护助手     微信聊天 小时达 小时达-快递项">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://blog.6673543.xyz/a32f/">
+<meta property="og:title" content="0.ArkTS基础语法">
+<meta property="og:url" content="https://blog.6673543.xyz/a32f/index.html">
+<meta property="og:site_name" content="星仔极客">
+<meta property="og:description" content="打印日志：console.log(‘消息说明’,‘打印的内容’) 对象等复杂数据，需要日志打印需要JSON.stringify()转换 文档中心 项目：     HarmonyOS NEXT 面试通     守护助手APP项目实战教程_哔哩哔哩_bilibili 鸿蒙守护助手-黑马程序员_v1.0    项目代码仓库：    美蔻商城 面试通 鸿蒙守护助手     微信聊天 小时达 小时达-快递项">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.6673543.xyz/img/logo.svg">
+<meta property="article:published_time" content="2025-09-14T01:23:49.000Z">
+<meta property="article:modified_time" content="2026-06-10T09:10:23.901Z">
+<meta property="article:author" content="星仔">
+<meta property="article:tag" content="星仔极客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.6673543.xyz/img/logo.svg">
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  <link rel="alternate" type="application/atom+xml" title="星仔极客" href="/atom.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
 
-<link rel="canonical" href="https://blog.6673543.xyz/a32f/">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/css/style.css?v=20260616141035">
- <meta name="generator" content="Hexo 7.3.0"></head> <body>   <a href="#main-content" class="skip-to-content" aria-label="跳转到主要内容">跳到内容</a>   <header class="site-header" id="site-header" role="banner">
-  <div class="header-inner">
-    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="切换导航菜单" aria-expanded="false">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
+  
+<link rel="stylesheet" href="/css/highlight.css">
 
-    <a class="site-title" href="/" aria-label="返回首页">
-      星仔极客
-    </a>
+  
+<link rel="stylesheet" href="/css/lightbox.css">
 
-    <nav class="site-nav" role="navigation" aria-label="主导航">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5YCBER1viXgfW6gOOGETNABLkXe0g8vB0+IgERrI2CE03NEdPAB" crossorigin="anonymous">
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "0.ArkTS基础语法",
+    "datePublished": "2025-09-14T01:23:49.000Z",
+    "dateModified": "2026-06-10T09:10:23.901Z",
+    "author": {
+      "@type": "Person",
+      "name": "星仔"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "星仔极客"
+    },
+    "description": "打印日志：console.log(‘消息说明’,‘打印的内容’)
+对象等复杂数据，需要日志打印需要JSON.stringify()转换
+文档中心
+项目：
+
+
+
+
+HarmonyOS NEXT 面试通
+
+
+
+
+守护助手APP项目实战教程_哔哩哔哩_bilibili
+鸿蒙守护助手-黑马程序员_v1.0
+
+
+
+项目代码仓库：",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://blog.6673543.xyz/a32f/"
+    }
+  }
+  </script>
+  
+  <script>
+    (function() {
+      var saved = localStorage.getItem('ink-theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="post-page">
+  <a class="skip-to-content" href="#main-content">Skip to content</a>
+  <div class="site-wrapper">
+    <header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <div class="header-left">
+      <a href="/" class="site-brand">
+        
+          <img src="/img/logo.svg" alt="星仔极客" class="site-logo" width="32" height="32">
+        
+        <span class="site-title">星仔极客</span>
+      </a>
       
-        
-          
-          <a class="nav-link"
-             href="/"
-             >
-            首页
-          </a>
-        
-          
-          <a class="nav-link"
-             href="/categories/"
-             >
-            分类
-          </a>
-        
-          
-          <a class="nav-link"
-             href="/about/"
-             >
-            关于
-          </a>
-        
-          
-          <a class="nav-link"
-             href="/link/"
-             >
-            友链
-          </a>
-        
+        <span class="site-subtitle">星仔个人博客</span>
       
+    </div>
+    <nav class="header-nav" id="header-nav">
+      <ul class="nav-list">
+        
+          <li class="nav-item">
+            <a href="/">Home</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/categories">Categories</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/archives">Archives</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/links">Links</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+      </ul>
     </nav>
-
     <div class="header-actions">
       
-      <button class="header-btn" id="search-btn" aria-label="搜索" title="搜索 (Ctrl+K)">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-      </button>
+        <button class="search-toggle" id="search-toggle" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
       
-
-      
-      <button class="header-btn" id="dark-mode-btn" aria-label="切换暗色模式" title="切换暗色/亮色模式">
-        <svg id="dm-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="5"></circle>
           <line x1="12" y1="1" x2="12" y2="3"></line>
           <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -86,108 +180,82 @@
           <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
           <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </svg>
-        <svg id="dm-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
       </button>
-      
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </div>
   </div>
 </header>
 
-<!-- Search Overlay -->
-
-<div class="search-overlay" id="search-overlay" data-search-url="/search.xml" aria-hidden="true" role="dialog" aria-label="搜索">
-  <div class="search-modal">
-    <input type="text" class="search-input" id="search-input" placeholder="搜索文章..." autocomplete="off" aria-label="搜索文章标题和内容">
-    <button class="search-close" id="search-close" aria-label="关闭搜索">&times;</button>
-    <div class="search-history" id="search-history" style="display:none;"></div>
-    <div class="search-results" id="search-results"></div>
-  </div>
+    <main class="site-main" id="main-content">
+      <div class="container">
+        
+          
+            <div class="content-wrap with-sidebar">
+              <article class="post-article">
+                <header class="post-header">
+  
+  <h1 class="post-title">0.ArkTS基础语法</h1>
+  <div class="post-meta">
+  <time class="post-date" datetime="2025-09-14T01:23:49.000Z">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+    2025-09-14
+  </time>
+  
+    <time class="post-updated" datetime="2026-06-10T09:10:23.901Z">
+      (Updated: 2026-06-10)
+    </time>
+  
+  
+    <span class="post-word-count">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+      4.2k words
+    </span>
+  
+  
+    <span class="post-reading-time">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      19 min read
+    </span>
+  
+  
+    <span class="post-categories">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+      
+        
+          <a href="/categories/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/">原生鸿蒙开发</a>
+        
+      
+    </span>
+  
 </div>
 
-    <div class="page-shell" id="main-content">     <div class="grid-container       grid-post            ">       <main class="grid-main">         
-
-<article class="post-full" itemscope itemtype="http://schema.org/Article">
-
-  <header class="post-header">
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb" aria-label="面包屑导航">
-      <a href="/">首页</a>
-      <span class="breadcrumb-sep">/</span>
-      
-        <a href="/categories/%E5%8E%9F%E7%94%9F%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91/">原生鸿蒙开发</a>
-        <span class="breadcrumb-sep">/</span>
-      
-      <span class="breadcrumb-current" aria-current="page">0.ArkTS基础语法</span>
-    </nav>
-
-    <h1 class="post-title" itemprop="headline">0.ArkTS基础语法</h1>
-
-    <div class="post-meta">
-      <span class="meta-item" itemprop="datePublished" content="2025-09-14T01:23:49.000Z">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        <time datetime="2025-09-14T01:23:49.000Z">2025-09-14</time>
-      </span>
-      
-      <span class="meta-item meta-stats">
-        <span class="word-count">4258 字</span>
-        <span class="reading-time">22</span>
-      </span>
-      
-      <span class="meta-updated">更新于 2026-06-10</span>
-      
-    </div>
-
-    </header>
-
-  <!-- Desktop TOC (collapsible, above content) -->
   
-  <div class="toc-desktop-collapsible" id="toc-desktop-wrapper" aria-label="文章目录">
-    <details id="toc-desktop-details">
-      <summary class="toc-desktop-toggle" aria-label="展开/收起目录">
-        <svg class="toc-toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="8" y1="6" x2="21" y2="6"></line>
-          <line x1="8" y1="12" x2="21" y2="12"></line>
-          <line x1="8" y1="18" x2="21" y2="18"></line>
-          <line x1="3" y1="6" x2="3.01" y2="6"></line>
-          <line x1="3" y1="12" x2="3.01" y2="12"></line>
-          <line x1="3" y1="18" x2="3.01" y2="18"></line>
-        </svg>
-        文章目录
-      </summary>
-      <nav class="toc" id="toc-desktop" aria-label="文章目录"></nav>
-    </details>
-  </div>
-  
+</header>
 
-  <!-- Mobile TOC (collapsible) -->
-  
-  <div class="toc-mobile" id="toc-mobile-wrapper" aria-label="移动端文章目录">
-    <details id="toc-mobile-details">
-      <summary class="toc-mobile-toggle" aria-label="展开/收起目录">文章目录</summary>
-      <nav class="toc" id="toc-mobile" aria-label="文章目录"></nav>
-    </details>
-  </div>
-  
 
-  <!-- Post Content -->
-  <div class="post-content" itemprop="articleBody">
-    <div class="mathjax-process"><p>打印日志：console.log(‘消息说明’,‘打印的内容’)</p>
+<div class="post-content" id="post-content">
+  <p>打印日志：console.log(‘消息说明’,‘打印的内容’)</p>
 <p>对象等复杂数据，需要日志打印需要JSON.stringify()转换</p>
-<p><a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/introduction-to-arkts" target="_blank" rel="noopener noreferrer">文档中心</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/introduction-to-arkts">文档中心</a></p>
 <p>项目：</p>
 <table>
 <thead>
 <tr>
 <th><a href="https://www.yuque.com/megasu/hm_meikou_v1.2,%E7%BE%8E%E8%94%BB%E5%95%86%E5%9F%8E_v1.2,https://mdn.alipayobjects.com/huamei_0prmtq/afts/img/A*sRUdR543RjcAAAAAAAAAAAAADvuFAQ/original,https://www.yuque.com/megasu/hm_meikou_v1.2" title="" target=""></a></th>
-<th><a href="https://zhousg.atomgit.net/interview_success/project/" target="_blank" rel="noopener noreferrer">HarmonyOS NEXT 面试通</a></th>
+<th><a target="_blank" rel="noopener" href="https://zhousg.atomgit.net/interview_success/project/">HarmonyOS NEXT 面试通</a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://www.bilibili.com/video/BV1EJpLeRE3L/?spm_id_from=333.788.videopod.episodes&amp;vd_source=1c838941386ee32c4501615c317f75e0" target="_blank" rel="noopener noreferrer">守护助手APP项目实战教程_哔哩哔哩_bilibili</a></td>
-<td><a href="https://www.yuque.com/megasu/guardian_v1.0" target="_blank" rel="noopener noreferrer">鸿蒙守护助手-黑马程序员_v1.0</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1EJpLeRE3L/?spm_id_from=333.788.videopod.episodes&amp;vd_source=1c838941386ee32c4501615c317f75e0">守护助手APP项目实战教程_哔哩哔哩_bilibili</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.yuque.com/megasu/guardian_v1.0">鸿蒙守护助手-黑马程序员_v1.0</a></td>
 </tr>
 </tbody>
 </table>
@@ -195,16 +263,16 @@
 <table>
 <thead>
 <tr>
-<th><a href="https://gitee.com/megasu/meikou_example" target="_blank" rel="noopener noreferrer">美蔻商城</a></th>
-<th><a href="https://github.com/HarmonyOS-Next/interview-handbook-project" target="_blank" rel="noopener noreferrer">面试通</a></th>
-<th><a href="https://gitee.com/Megasu/hm_guardian" target="_blank" rel="noopener noreferrer">鸿蒙守护助手</a></th>
+<th><a target="_blank" rel="noopener" href="https://gitee.com/megasu/meikou_example">美蔻商城</a></th>
+<th><a target="_blank" rel="noopener" href="https://github.com/HarmonyOS-Next/interview-handbook-project">面试通</a></th>
+<th><a target="_blank" rel="noopener" href="https://gitee.com/Megasu/hm_guardian">鸿蒙守护助手</a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://gitee.com/itcast_panpu/next12_wechat03.git" target="_blank" rel="noopener noreferrer">微信聊天</a></td>
-<td><a href="https://gitee.com/luckybo0027/xsd" target="_blank" rel="noopener noreferrer">小时达</a></td>
-<td><a href="https://www.yuque.com/attachments/yuque/0/2025/md/51403960/1747548377135-1a44e93a-69b3-4667-9016-d49582c1f895.md" target="_blank" rel="noopener noreferrer">小时达-快递项目（hap+har）.md</a></td>
+<td><a target="_blank" rel="noopener" href="https://gitee.com/itcast_panpu/next12_wechat03.git">微信聊天</a></td>
+<td><a target="_blank" rel="noopener" href="https://gitee.com/luckybo0027/xsd">小时达</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2025/md/51403960/1747548377135-1a44e93a-69b3-4667-9016-d49582c1f895.md">小时达-快递项目（hap+har）.md</a></td>
 </tr>
 </tbody>
 </table>
@@ -363,10 +431,10 @@
 <h1 id="箭头函数"><a class="markdownIt-Anchor" href="#箭头函数"></a> 箭头函数</h1>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let 函数名 = (形参1: 类型, 形参2: 类型,...) =&gt; &#123;  </span><br><span class="line">    // 函数体</span><br><span class="line">    return 返回值</span><br><span class="line">&#125;</span><br><span class="line">函数名(实参1,实参2,...)</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let num_Price = (price: number, num: number)=&gt;&#123;</span><br><span class="line">    let result: number = price*num</span><br><span class="line">    return result</span><br><span class="line">&#125;</span><br><span class="line">console.log(&#x27;总价格：&#x27;, num_Price(3,2))</span><br></pre></td></tr></table></figure>
-<h1 id="重复执行函数文档中心"><a class="markdownIt-Anchor" href="#重复执行函数文档中心"></a> 重复执行函数<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-timer#setinterval" target="_blank" rel="noopener noreferrer">文档中心</a></h1>
+<h1 id="重复执行函数文档中心"><a class="markdownIt-Anchor" href="#重复执行函数文档中心"></a> 重复执行函数<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-timer#setinterval">文档中心</a></h1>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">setInterval(() =&gt; &#123;</span><br><span class="line">  //执行的操作，第一次执行也要等待时间</span><br><span class="line">&#125;, 延迟的毫秒数);</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">setInterval(() =&gt; &#123;</span><br><span class="line">  console.log(&#x27;do every 1s.&#x27;);</span><br><span class="line">&#125;, 1000);</span><br></pre></td></tr></table></figure>
-<h1 id="创建定时器函数文档中心"><a class="markdownIt-Anchor" href="#创建定时器函数文档中心"></a> 创建定时器函数<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-timer#settimeout" target="_blank" rel="noopener noreferrer">文档中心</a></h1>
+<h1 id="创建定时器函数文档中心"><a class="markdownIt-Anchor" href="#创建定时器函数文档中心"></a> 创建定时器函数<a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-timer#settimeout">文档中心</a></h1>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">setTimeout(() =&gt; &#123;	//不带参数</span><br><span class="line">  //执行的操作，只执行一次</span><br><span class="line">&#125;, 延迟的毫秒数);</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">  console.info(&#x27;delay 1s&#x27;);</span><br><span class="line">&#125;, 1000);</span><br></pre></td></tr></table></figure>
 <h1 id="剩余参数和展开运算符"><a class="markdownIt-Anchor" href="#剩余参数和展开运算符"></a> 剩余参数和展开运算符</h1>
@@ -440,83 +508,180 @@
 <h2 id="泛型约束"><a class="markdownIt-Anchor" href="#泛型约束"></a> 泛型约束</h2>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface 接口&#123;</span><br><span class="line">    //属性: 类型</span><br><span class="line">&#125;</span><br><span class="line">function 函数&lt;Type extends 接口&gt;()&#123;&#125;	// 传入的类型必须要有 接口中的属性</span><br><span class="line"></span><br><span class="line">interface Ilength &#123;</span><br><span class="line">    length: number</span><br><span class="line">&#125;</span><br><span class="line">function fn&lt;T extends Ilength&gt;(param: T): T &#123;</span><br><span class="line">    return param</span><br><span class="line">&#125;</span><br><span class="line">//传入的参数必须有接口中length属性</span><br><span class="line">console.log(&#x27;值&#x27;, fn(&#x27;132&#x27;))</span><br><span class="line"></span><br><span class="line">class Desk &#123;</span><br><span class="line">    length: number = 2</span><br><span class="line">&#125;</span><br><span class="line">let d = new Desk()</span><br><span class="line">fn&lt;Desk&gt;(d)</span><br></pre></td></tr></table></figure>
 <p>​</p>
+
 </div>
+
+
+  <div class="post-author-card">
+    <div class="post-author-info">
+      <div class="post-author-avatar">
+        
+          <span>星</span>
+        
+      </div>
+      <div class="post-author-detail">
+        <p class="post-author-name">星仔</p>
+        <p class="post-author-bio">日常笔记和生活分享！</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="post-copyright">
+    <p class="copyright-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M15 9.354a4 4 0 1 0 0 5.292"></path></svg>
+      Copyright
+    </p>
+    <ul class="copyright-list">
+      <li>Author: 星仔</li>
+      <li>Link: <a href="https://blog.6673543.xyz/a32f/">https://blog.6673543.xyz/a32f/</a></li>
+      <li>License: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></li>
+    </ul>
   </div>
 
 
 
-</article>
-
-<!-- Giscus Comments -->
-
-
-<!-- Post Navigation -->
-
-<nav class="post-nav" aria-label="文章导航">
-  
-  <div class="post-nav-prev">
+  <nav class="post-nav">
     
-    <a href="/8902/" class="post-nav-link">
-      <span class="post-nav-label">&#8592; 上一篇</span>
-      1.通用属性
-    </a>
+      <a href="/8902/" class="post-nav-item post-nav-prev">
+        <span class="post-nav-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          Previous
+        </span>
+        <span class="post-nav-title">1.通用属性</span>
+      </a>
     
+    
+      <a href="/753a/" class="post-nav-item post-nav-next">
+        <span class="post-nav-label">
+          Next
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </span>
+        <span class="post-nav-title">秘密科技</span>
+      </a>
+    
+  </nav>
+
+
+
+
+              </article>
+              <aside class="sidebar sidebar-right">
+                
+  <div class="post-toc" id="post-toc">
+    <div class="toc-header">
+      <h4>Table of Contents</h4>
+      <button class="toc-toggle" id="toc-toggle" aria-label="Toggle TOC">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+    </div>
+    <div class="toc-body" id="toc-body">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">1.</span> <span class="toc-text"> 变量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text"> 基础数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E5%8F%98%E9%87%8F"><span class="toc-number">1.2.</span> <span class="toc-text"> 状态变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text"> 联合类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.4.</span> <span class="toc-text"> 枚举类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-number">2.</span> <span class="toc-text"> 常量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">3.</span> <span class="toc-text"> 运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">4.</span> <span class="toc-text"> 字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5"><span class="toc-number">4.1.</span> <span class="toc-text"> 字符串拼接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">4.2.</span> <span class="toc-text"> 模板字符串</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">5.</span> <span class="toc-text"> 类型转换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">6.</span> <span class="toc-text"> 数组</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">6.1.</span> <span class="toc-text"> 数组的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84"><span class="toc-number">6.2.</span> <span class="toc-text"> 遍历数组</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%95%B0%E7%BB%84"><span class="toc-number">7.</span> <span class="toc-text"> 对象数组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0function"><span class="toc-number">8.</span> <span class="toc-text"> 函数(function)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><span class="toc-number">9.</span> <span class="toc-text"> 箭头函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8D%E5%A4%8D%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">10.</span> <span class="toc-text"> 重复执行函数文档中心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AE%9A%E6%97%B6%E5%99%A8%E5%87%BD%E6%95%B0%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span class="toc-number">11.</span> <span class="toc-text"> 创建定时器函数文档中心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%A9%E4%BD%99%E5%8F%82%E6%95%B0%E5%92%8C%E5%B1%95%E5%BC%80%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">12.</span> <span class="toc-text"> 剩余参数和展开运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3"><span class="toc-number">13.</span> <span class="toc-text"> 接口</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E7%BB%A7%E6%89%BF"><span class="toc-number">13.1.</span> <span class="toc-text"> 接口继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0"><span class="toc-number">13.2.</span> <span class="toc-text"> 接口实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E8%BD%AC-class-%E7%B1%BB"><span class="toc-number">13.3.</span> <span class="toc-text"> 接口自动转 class 类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1"><span class="toc-number">14.</span> <span class="toc-text"> 对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">15.</span> <span class="toc-text"> 分支语句</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#if"><span class="toc-number">15.1.</span> <span class="toc-text"> if</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#switch"><span class="toc-number">15.2.</span> <span class="toc-text"> switch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E5%85%83%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">15.3.</span> <span class="toc-text"> 三元条件表达式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">16.</span> <span class="toc-text"> 循环语句</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#for"><span class="toc-number">16.1.</span> <span class="toc-text"> for</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#while"><span class="toc-number">16.2.</span> <span class="toc-text"> while</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90"><span class="toc-number">17.</span> <span class="toc-text"> 随机数生成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#class%E7%B1%BB"><span class="toc-number">18.</span> <span class="toc-text"> Class类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E5%B1%9E%E6%80%A7%E5%92%8C%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95"><span class="toc-number">18.1.</span> <span class="toc-text"> 静态属性和静态方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF"><span class="toc-number">18.2.</span> <span class="toc-text"> 继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A3%80%E6%B5%8B%E5%AE%9E%E4%BE%8B"><span class="toc-number">18.3.</span> <span class="toc-text"> 检测实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-number">18.4.</span> <span class="toc-text"> 修饰符</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B"><span class="toc-number">19.</span> <span class="toc-text"> 泛型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E5%87%BD%E6%95%B0"><span class="toc-number">19.1.</span> <span class="toc-text"> 泛型函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E4%B8%AA%E6%B3%9B%E5%9E%8B%E5%8F%82%E6%95%B0"><span class="toc-number">19.1.1.</span> <span class="toc-text"> 多个泛型参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E7%BA%A6%E6%9D%9F"><span class="toc-number">19.2.</span> <span class="toc-text"> 泛型约束</span></a></li></ol></li></ol>
+    </div>
   </div>
-  
-  <div class="post-nav-next">
-    
-    <a href="/753a/" class="post-nav-link">
-      <span class="post-nav-label">下一篇 &#8594;</span>
-      秘密科技
-    </a>
-    
-  </div>
-</nav>
 
 
-<!-- Back-to-top & back-to-bottom floating buttons -->
-<button class="back-to-top" id="back-to-top" aria-label="回到顶部" title="回到顶部">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="12" y1="19" x2="12" y2="5"></line>
-    <polyline points="5 12 12 5 19 12"></polyline>
-  </svg>
-</button>
-<button class="back-to-bottom" id="back-to-bottom" aria-label="直达底部" title="直达底部">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="12" y1="5" x2="12" y2="19"></line>
-    <polyline points="19 12 12 19 5 12"></polyline>
-  </svg>
-</button>
-
-<!-- Image Lightbox -->
-<div class="lightbox-overlay" id="lightbox" aria-hidden="true">
-  <button class="lightbox-close" id="lightbox-close" aria-label="关闭">&times;</button>
-  <button class="lightbox-prev" id="lightbox-prev" aria-label="上一张">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-  </button>
-  <button class="lightbox-next" id="lightbox-next" aria-label="下一张">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-  </button>
-  <img id="lightbox-img" src="" alt="" />
-  <span class="lightbox-counter" id="lightbox-counter"></span>
-</div>
-       </main>      </div>   </div>    <footer class="site-footer" role="contentinfo">
-  <div class="footer-inner">
-    
-
-    
-    
-    <div class="footer-copyright">
-      &copy; 2026 星仔.
+              </aside>
+            </div>
+          
+        
+      </div>
+    </main>
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <p class="copyright">
+        &copy; 2026 <a href="/">星仔极客</a>
+      </p>
       
-      <span class="footer-powered">
-        由 <a href="https://hexo.io/" target="_blank" rel="noopener" aria-label="Hexo">Hexo</a> 和 <a href="https://github.com/yourname/hexo-theme-cleartext" target="_blank" rel="noopener" aria-label="Cleartext Theme">Cleartext</a> 驱动。
-      </span>
+        <p class="author">星仔</p>
       
     </div>
-    
+    <div class="footer-right">
+      
+        <nav class="footer-social">
+          
+            <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+              
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              
+            </a>
+          
+            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">
+              
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              
+            </a>
+          
+        </nav>
+      
+      <p class="powered-by">
+        Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>
+        &middot; Theme <a href="https://github.com" target="_blank" rel="noopener">Ink</a>
+      </p>
+    </div>
   </div>
 </footer>
-    <script defer charset="utf-8" src="/js/main.js"></script>   <!-- Giscus Config -->
 
- </body> </html>
+  </div>
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+</button>
+
+  
+  <div class="search-modal" id="search-modal">
+    <div class="search-modal-overlay" id="search-overlay"></div>
+    <div class="search-modal-content">
+      <div class="search-input-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="search-input" id="search-input" placeholder="Search posts..." autocomplete="off">
+        <button class="search-close" id="search-close" aria-label="Close search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+
+
+  
+  <script>
+    var searchPath = 'search.xml';
+  </script>
+  
+<script src="/js/search.js"></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ez5ueQ5lCVUkOmA" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe5rCM8qmhmtIq35eatBTE" crossorigin="anonymous"
+    onload="renderMathInElement(document.getElementById('post-content') || document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ],
+      throwOnError: false
+    });"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+<script src="/js/lightbox.js"></script>
+
+
+
+</body>
+</html>

@@ -1,81 +1,159 @@
-<!DOCTYPE html> <html lang="zh-CN" class=""> <head>   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>
+    
+      0.Linux基础命令 - 星仔极客
+    
+  </title>
+  
+    <meta name="description" content="
+终端打开：一个窗口打开第二个：Ctrl+Shift+t，不同串口打开：Ctrl+Alt+t
+虚拟机Ubuntu安装参考：下载安装Ubuntu 20.04详细教程_ubuntu20.04下载-CSDN博客
 
-<script>
-(function(){var t=localStorage.getItem('cleartext-theme-mode');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark')})();
-</script>
+ 文件和目录操作
+参考：Linux命令大全（常用的命令解析）-CSDN博客
 
-<title>0.Linux基础命令 | 星仔极客</title>
-<meta name="description" content="日常笔记和生活分享！">
+查看文件
 
-<meta property="og:title" content="0.Linux基础命令">
-<meta property="og:description" content="日常笔记和生活分享！">
+
+查看当前目录里面内容">
+  
+  <meta name="description" content="终端打开：一个窗口打开第二个：Ctrl+Shift+t，不同串口打开：Ctrl+Alt+t 虚拟机Ubuntu安装参考：下载安装Ubuntu 20.04详细教程_ubuntu20.04下载-CSDN博客   文件和目录操作 参考：Linux命令大全（常用的命令解析）-CSDN博客  查看文件   查看当前目录里面内容：ls 查看当前目录里面内容(详细信息)：ls -l 查看当前目录里面内容(包括">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://blog.6673543.xyz/ce3b/">
+<meta property="og:title" content="0.Linux基础命令">
+<meta property="og:url" content="https://blog.6673543.xyz/ce3b/index.html">
+<meta property="og:site_name" content="星仔极客">
+<meta property="og:description" content="终端打开：一个窗口打开第二个：Ctrl+Shift+t，不同串口打开：Ctrl+Alt+t 虚拟机Ubuntu安装参考：下载安装Ubuntu 20.04详细教程_ubuntu20.04下载-CSDN博客   文件和目录操作 参考：Linux命令大全（常用的命令解析）-CSDN博客  查看文件   查看当前目录里面内容：ls 查看当前目录里面内容(详细信息)：ls -l 查看当前目录里面内容(包括">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.6673543.xyz/img/logo.svg">
+<meta property="article:published_time" content="2025-09-08T02:48:03.000Z">
+<meta property="article:modified_time" content="2026-06-10T09:10:23.897Z">
+<meta property="article:author" content="星仔">
+<meta property="article:tag" content="星仔极客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.6673543.xyz/img/logo.svg">
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  <link rel="alternate" type="application/atom+xml" title="星仔极客" href="/atom.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
 
-<link rel="canonical" href="https://blog.6673543.xyz/ce3b/">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/css/style.css?v=20260616141035">
- <meta name="generator" content="Hexo 7.3.0"></head> <body>   <a href="#main-content" class="skip-to-content" aria-label="跳转到主要内容">跳到内容</a>   <header class="site-header" id="site-header" role="banner">
-  <div class="header-inner">
-    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="切换导航菜单" aria-expanded="false">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
+  
+<link rel="stylesheet" href="/css/highlight.css">
 
-    <a class="site-title" href="/" aria-label="返回首页">
-      星仔极客
-    </a>
+  
+<link rel="stylesheet" href="/css/lightbox.css">
 
-    <nav class="site-nav" role="navigation" aria-label="主导航">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5YCBER1viXgfW6gOOGETNABLkXe0g8vB0+IgERrI2CE03NEdPAB" crossorigin="anonymous">
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "0.Linux基础命令",
+    "datePublished": "2025-09-08T02:48:03.000Z",
+    "dateModified": "2026-06-10T09:10:23.897Z",
+    "author": {
+      "@type": "Person",
+      "name": "星仔"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "星仔极客"
+    },
+    "description": "
+终端打开：一个窗口打开第二个：Ctrl+Shift+t，不同串口打开：Ctrl+Alt+t
+虚拟机Ubuntu安装参考：下载安装Ubuntu 20.04详细教程_ubuntu20.04下载-CSDN博客
+
+ 文件和目录操作
+参考：Linux命令大全（常用的命令解析）-CSDN博客
+
+查看文件
+
+
+查看当前目录里面内容",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://blog.6673543.xyz/ce3b/"
+    }
+  }
+  </script>
+  
+  <script>
+    (function() {
+      var saved = localStorage.getItem('ink-theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="post-page">
+  <a class="skip-to-content" href="#main-content">Skip to content</a>
+  <div class="site-wrapper">
+    <header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <div class="header-left">
+      <a href="/" class="site-brand">
+        
+          <img src="/img/logo.svg" alt="星仔极客" class="site-logo" width="32" height="32">
+        
+        <span class="site-title">星仔极客</span>
+      </a>
       
-        
-          
-          <a class="nav-link"
-             href="/"
-             >
-            首页
-          </a>
-        
-          
-          <a class="nav-link"
-             href="/categories/"
-             >
-            分类
-          </a>
-        
-          
-          <a class="nav-link"
-             href="/about/"
-             >
-            关于
-          </a>
-        
-          
-          <a class="nav-link"
-             href="/link/"
-             >
-            友链
-          </a>
-        
+        <span class="site-subtitle">星仔个人博客</span>
       
+    </div>
+    <nav class="header-nav" id="header-nav">
+      <ul class="nav-list">
+        
+          <li class="nav-item">
+            <a href="/">Home</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/categories">Categories</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/archives">Archives</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/links">Links</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+      </ul>
     </nav>
-
     <div class="header-actions">
       
-      <button class="header-btn" id="search-btn" aria-label="搜索" title="搜索 (Ctrl+K)">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-      </button>
+        <button class="search-toggle" id="search-toggle" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
       
-
-      
-      <button class="header-btn" id="dark-mode-btn" aria-label="切换暗色模式" title="切换暗色/亮色模式">
-        <svg id="dm-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="5"></circle>
           <line x1="12" y1="1" x2="12" y2="3"></line>
           <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -86,99 +164,73 @@
           <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
           <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </svg>
-        <svg id="dm-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
       </button>
-      
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </div>
   </div>
 </header>
 
-<!-- Search Overlay -->
-
-<div class="search-overlay" id="search-overlay" data-search-url="/search.xml" aria-hidden="true" role="dialog" aria-label="搜索">
-  <div class="search-modal">
-    <input type="text" class="search-input" id="search-input" placeholder="搜索文章..." autocomplete="off" aria-label="搜索文章标题和内容">
-    <button class="search-close" id="search-close" aria-label="关闭搜索">&times;</button>
-    <div class="search-history" id="search-history" style="display:none;"></div>
-    <div class="search-results" id="search-results"></div>
-  </div>
+    <main class="site-main" id="main-content">
+      <div class="container">
+        
+          
+            <div class="content-wrap with-sidebar">
+              <article class="post-article">
+                <header class="post-header">
+  
+  <h1 class="post-title">0.Linux基础命令</h1>
+  <div class="post-meta">
+  <time class="post-date" datetime="2025-09-08T02:48:03.000Z">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+    2025-09-08
+  </time>
+  
+    <time class="post-updated" datetime="2026-06-10T09:10:23.897Z">
+      (Updated: 2026-06-10)
+    </time>
+  
+  
+    <span class="post-word-count">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+      2.5k words
+    </span>
+  
+  
+    <span class="post-reading-time">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      9 min read
+    </span>
+  
+  
+    <span class="post-categories">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+      
+        
+          <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6/">嵌入式软件</a>
+        
+      
+    </span>
+  
 </div>
 
-    <div class="page-shell" id="main-content">     <div class="grid-container       grid-post            ">       <main class="grid-main">         
-
-<article class="post-full" itemscope itemtype="http://schema.org/Article">
-
-  <header class="post-header">
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb" aria-label="面包屑导航">
-      <a href="/">首页</a>
-      <span class="breadcrumb-sep">/</span>
-      
-        <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6/">嵌入式软件</a>
-        <span class="breadcrumb-sep">/</span>
-      
-      <span class="breadcrumb-current" aria-current="page">0.Linux基础命令</span>
-    </nav>
-
-    <h1 class="post-title" itemprop="headline">0.Linux基础命令</h1>
-
-    <div class="post-meta">
-      <span class="meta-item" itemprop="datePublished" content="2025-09-08T02:48:03.000Z">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        <time datetime="2025-09-08T02:48:03.000Z">2025-09-08</time>
-      </span>
-      
-      <span class="meta-item meta-stats">
-        <span class="word-count">2729 字</span>
-        <span class="reading-time">14</span>
-      </span>
-      
-      <span class="meta-updated">更新于 2026-06-10</span>
-      
-    </div>
-
-    </header>
-
-  <!-- Desktop TOC (collapsible, above content) -->
   
-  <div class="toc-desktop-collapsible" id="toc-desktop-wrapper" aria-label="文章目录">
-    <details id="toc-desktop-details">
-      <summary class="toc-desktop-toggle" aria-label="展开/收起目录">
-        <svg class="toc-toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="8" y1="6" x2="21" y2="6"></line>
-          <line x1="8" y1="12" x2="21" y2="12"></line>
-          <line x1="8" y1="18" x2="21" y2="18"></line>
-          <line x1="3" y1="6" x2="3.01" y2="6"></line>
-          <line x1="3" y1="12" x2="3.01" y2="12"></line>
-          <line x1="3" y1="18" x2="3.01" y2="18"></line>
-        </svg>
-        文章目录
-      </summary>
-      <nav class="toc" id="toc-desktop" aria-label="文章目录"></nav>
-    </details>
-  </div>
-  
+</header>
 
-  <!-- Mobile TOC (collapsible) -->
-  
-  <div class="toc-mobile" id="toc-mobile-wrapper" aria-label="移动端文章目录">
-    <details id="toc-mobile-details">
-      <summary class="toc-mobile-toggle" aria-label="展开/收起目录">文章目录</summary>
-      <nav class="toc" id="toc-mobile" aria-label="文章目录"></nav>
-    </details>
-  </div>
-  
 
-  <!-- Post Content -->
-  <div class="post-content" itemprop="articleBody">
-    <blockquote>
+<div class="post-content" id="post-content">
+  <blockquote>
 <p>终端打开：一个窗口打开第二个：<code>Ctrl+Shift+t</code>，不同串口打开：<code>Ctrl+Alt+t</code></p>
-<p>虚拟机Ubuntu安装参考：<a href="https://blog.csdn.net/weixin_48728769/article/details/126989849?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522170693530616800182141076%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=170693530616800182141076&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-126989849-null-null.142%5Ev99%5Epc_search_result_base9&amp;utm_term=Ubuntu20.04%E4%B8%8B%E8%BD%BD&amp;spm=1018.2226.3001.4187" target="_blank" rel="noopener noreferrer">下载安装Ubuntu 20.04详细教程_ubuntu20.04下载-CSDN博客</a></p>
+<p>虚拟机Ubuntu安装参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_48728769/article/details/126989849?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522170693530616800182141076%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=170693530616800182141076&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-126989849-null-null.142%5Ev99%5Epc_search_result_base9&amp;utm_term=Ubuntu20.04%E4%B8%8B%E8%BD%BD&amp;spm=1018.2226.3001.4187">下载安装Ubuntu 20.04详细教程_ubuntu20.04下载-CSDN博客</a></p>
 </blockquote>
 <h1 id="文件和目录操作"><a class="markdownIt-Anchor" href="#文件和目录操作"></a> 文件和目录操作</h1>
-<p>参考：<a href="https://blog.csdn.net/weixin_45908488/article/details/123703179?spm=1001.2014.3001.5502" target="_blank" rel="noopener noreferrer">Linux命令大全（常用的命令解析）-CSDN博客</a></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45908488/article/details/123703179?spm=1001.2014.3001.5502">Linux命令大全（常用的命令解析）-CSDN博客</a></p>
 <blockquote>
 <p>查看文件</p>
 </blockquote>
@@ -223,16 +275,16 @@
 <p>查看IP：ifconfig</p>
 </blockquote>
 <h2 id="apt"><a class="markdownIt-Anchor" href="#apt"></a> apt</h2>
-<p>参考：<a href="https://blog.csdn.net/m0_46278037/article/details/120232679?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171212013516800182718297%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=171212013516800182718297&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-120232679-null-null.142%5Ev100%5Epc_search_result_base9&amp;utm_term=apt%20Linux&amp;spm=1018.2226.3001.4187" target="_blank" rel="noopener noreferrer">详解 Linux 中 apt 命令的使用_apt purge命令-CSDN博客</a></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_46278037/article/details/120232679?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171212013516800182718297%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=171212013516800182718297&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-120232679-null-null.142%5Ev100%5Epc_search_result_base9&amp;utm_term=apt%20Linux&amp;spm=1018.2226.3001.4187">详解 Linux 中 apt 命令的使用_apt purge命令-CSDN博客</a></p>
 <p>安装：<code>sudo apt install &lt;package_name&gt;</code></p>
 <p>使用 apt 更新包数据库：<code>sudo apt update</code></p>
 <p>使用 apt 升级已安装的软件包：<code>sudo apt upgrade</code></p>
 <h2 id="换源"><a class="markdownIt-Anchor" href="#换源"></a> 换源</h2>
-<p>根据图示更改为国内镜像源，参考：<a href="https://blog.csdn.net/qq_45878098/article/details/126037838" target="_blank" rel="noopener noreferrer">ubuntu换源-CSDN博客</a></p>
+<p>根据图示更改为国内镜像源，参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45878098/article/details/126037838">ubuntu换源-CSDN博客</a></p>
 <img src="https://s2.loli.net/2025/12/28/f64evodZjgm9lz2.webp" style="zoom:50%;" />
 <h1 id="文本处理"><a class="markdownIt-Anchor" href="#文本处理"></a> 文本处理</h1>
 <h2 id="vim"><a class="markdownIt-Anchor" href="#vim"></a> vim</h2>
-<p>参考：<a href="https://blog.csdn.net/qq_29689343/article/details/116162089?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=Linux%E6%96%87%E6%9C%AC&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-5-116162089.142%5Ev100%5Epc_search_result_base9&amp;spm=1018.2226.3001.4187" target="_blank" rel="noopener noreferrer">linux常用命令：文本编辑_linux编辑文本-CSDN博客</a></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29689343/article/details/116162089?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=Linux%E6%96%87%E6%9C%AC&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-5-116162089.142%5Ev100%5Epc_search_result_base9&amp;spm=1018.2226.3001.4187">linux常用命令：文本编辑_linux编辑文本-CSDN博客</a></p>
 <p>安装：<code>sudo apt install vim</code>，创建一个.c文件：<code>vim 文件名.c</code></p>
 <p>当编辑文件完成后按 Esc 键即可返回命令模式</p>
 <p>在命令模式状态下按<code>:</code>键，Vim 窗口的左下方出现一个<code>:</code>符号</p>
@@ -273,11 +325,11 @@
 <p>修改权限：<code>sudo chmod 777 文件名.后缀名</code>，例：sudo chmod 777 test.c</p>
 <h1 id="其他命令"><a class="markdownIt-Anchor" href="#其他命令"></a> 其他命令</h1>
 <ul>
-<li>查看网络信息(IP地址等)：<code>ifconfig</code>(<a href="https://blog.csdn.net/AnChenliang_1002/article/details/131466890" target="_blank" rel="noopener noreferrer">Linux下ifconfig指令详解-CSDN博客</a>)</li>
-<li>echo：输出指定的字符串信息或显示变量的值的命令(<a href="https://blog.csdn.net/rhn_111/article/details/128954511" target="_blank" rel="noopener noreferrer">Linux基础命令-echo输出信息_linuxecho怎么把字符串输在最顶端-CSDN博客</a>)</li>
-<li>显示应用运行的进程：<code>ps</code>，显示系统全部进程：<code>top</code>(<a href="https://blog.csdn.net/Y1730008223CONG/article/details/126533853" target="_blank" rel="noopener noreferrer">【Linux】ps和top进程管理命令_ps和top命令的区别-CSDN博客</a>)，退出：<code>ctrl c/z</code></li>
+<li>查看网络信息(IP地址等)：<code>ifconfig</code>(<a target="_blank" rel="noopener" href="https://blog.csdn.net/AnChenliang_1002/article/details/131466890">Linux下ifconfig指令详解-CSDN博客</a>)</li>
+<li>echo：输出指定的字符串信息或显示变量的值的命令(<a target="_blank" rel="noopener" href="https://blog.csdn.net/rhn_111/article/details/128954511">Linux基础命令-echo输出信息_linuxecho怎么把字符串输在最顶端-CSDN博客</a>)</li>
+<li>显示应用运行的进程：<code>ps</code>，显示系统全部进程：<code>top</code>(<a target="_blank" rel="noopener" href="https://blog.csdn.net/Y1730008223CONG/article/details/126533853">【Linux】ps和top进程管理命令_ps和top命令的区别-CSDN博客</a>)，退出：<code>ctrl c/z</code></li>
 <li>杀死进程：kill -9 进程号</li>
-<li>发送信号到进程：<code>kill</code>(<a href="https://www.runoob.com/linux/linux-comm-kill.html?source=1" target="_blank" rel="noopener noreferrer">Linux kill 命令 | 菜鸟教程</a>)</li>
+<li>发送信号到进程：<code>kill</code>(<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-kill.html?source=1">Linux kill 命令 | 菜鸟教程</a>)</li>
 <li>关机：<code>shutdown</code>(默认一分钟后关)，重启：<code>reboot</code></li>
 <li>管道符号 | ，例：ls /usr/bin | grep ‘^au’</li>
 <li>查看系统监听端口：netstat [-anptu] ，例：netstat -anp |grep mysql
@@ -319,85 +371,182 @@
 <p>Windows：安装图中所示，创建映射网络驱动器，文件夹填写：<code>\\虚拟机IP地址\share</code>，例：\192.168.31.169\share，然后输入账号和密码，创建时一般都是与Linux账户设置一致</p>
 <img src="https://s2.loli.net/2025/12/28/n3ZOLtQuoG8gCNa.webp" style="zoom: 50%;" />
 <blockquote>
-<p>scp：<a href="https://www.runoob.com/linux/linux-comm-scp.html" target="_blank" rel="noopener noreferrer">Linux scp 命令 | 菜鸟教程</a></p>
+<p>scp：<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-scp.html">Linux scp 命令 | 菜鸟教程</a></p>
 </blockquote>
 
-  </div>
-
-
-
-</article>
-
-<!-- Giscus Comments -->
-
-
-<!-- Post Navigation -->
-
-<nav class="post-nav" aria-label="文章导航">
-  
-  <div class="post-nav-prev">
-    
-    <a href="/753a/" class="post-nav-link">
-      <span class="post-nav-label">&#8592; 上一篇</span>
-      秘密科技
-    </a>
-    
-  </div>
-  
-  <div class="post-nav-next">
-    
-    <a href="/2016/" class="post-nav-link">
-      <span class="post-nav-label">下一篇 &#8594;</span>
-      博客搭建相关
-    </a>
-    
-  </div>
-</nav>
-
-
-<!-- Back-to-top & back-to-bottom floating buttons -->
-<button class="back-to-top" id="back-to-top" aria-label="回到顶部" title="回到顶部">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="12" y1="19" x2="12" y2="5"></line>
-    <polyline points="5 12 12 5 19 12"></polyline>
-  </svg>
-</button>
-<button class="back-to-bottom" id="back-to-bottom" aria-label="直达底部" title="直达底部">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="12" y1="5" x2="12" y2="19"></line>
-    <polyline points="19 12 12 19 5 12"></polyline>
-  </svg>
-</button>
-
-<!-- Image Lightbox -->
-<div class="lightbox-overlay" id="lightbox" aria-hidden="true">
-  <button class="lightbox-close" id="lightbox-close" aria-label="关闭">&times;</button>
-  <button class="lightbox-prev" id="lightbox-prev" aria-label="上一张">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-  </button>
-  <button class="lightbox-next" id="lightbox-next" aria-label="下一张">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-  </button>
-  <img id="lightbox-img" src="" alt="" />
-  <span class="lightbox-counter" id="lightbox-counter"></span>
 </div>
-       </main>      </div>   </div>    <footer class="site-footer" role="contentinfo">
-  <div class="footer-inner">
-    
 
+
+  <div class="post-author-card">
+    <div class="post-author-info">
+      <div class="post-author-avatar">
+        
+          <span>星</span>
+        
+      </div>
+      <div class="post-author-detail">
+        <p class="post-author-name">星仔</p>
+        <p class="post-author-bio">日常笔记和生活分享！</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="post-copyright">
+    <p class="copyright-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M15 9.354a4 4 0 1 0 0 5.292"></path></svg>
+      Copyright
+    </p>
+    <ul class="copyright-list">
+      <li>Author: 星仔</li>
+      <li>Link: <a href="https://blog.6673543.xyz/ce3b/">https://blog.6673543.xyz/ce3b/</a></li>
+      <li>License: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></li>
+    </ul>
+  </div>
+
+
+
+  <nav class="post-nav">
+    
+      <a href="/753a/" class="post-nav-item post-nav-prev">
+        <span class="post-nav-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          Previous
+        </span>
+        <span class="post-nav-title">秘密科技</span>
+      </a>
     
     
-    <div class="footer-copyright">
-      &copy; 2026 星仔.
+      <a href="/2016/" class="post-nav-item post-nav-next">
+        <span class="post-nav-label">
+          Next
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </span>
+        <span class="post-nav-title">博客搭建相关</span>
+      </a>
+    
+  </nav>
+
+
+
+
+              </article>
+              <aside class="sidebar sidebar-right">
+                
+  <div class="post-toc" id="post-toc">
+    <div class="toc-header">
+      <h4>Table of Contents</h4>
+      <button class="toc-toggle" id="toc-toggle" aria-label="Toggle TOC">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+    </div>
+    <div class="toc-body" id="toc-body">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text"> 文件和目录操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%A1%E7%90%86%E5%91%98"><span class="toc-number">2.</span> <span class="toc-text"> 管理员</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%BA%94%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text"> 安装应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#apt"><span class="toc-number">3.1.</span> <span class="toc-text"> apt</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8D%A2%E6%BA%90"><span class="toc-number">3.2.</span> <span class="toc-text"> 换源</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text"> 文本处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#vim"><span class="toc-number">4.1.</span> <span class="toc-text"> vim</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B"><span class="toc-number">5.</span> <span class="toc-text"> 压缩与解压</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE"><span class="toc-number">6.</span> <span class="toc-text"> 查找</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%BC%96%E8%AF%91%E6%B5%8B%E8%AF%95"><span class="toc-number">7.</span> <span class="toc-text"> 基础编译测试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4"><span class="toc-number">8.</span> <span class="toc-text"> 其他命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">9.</span> <span class="toc-text"> 环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E6%96%87%E4%BB%B6"><span class="toc-number">9.1.</span> <span class="toc-text"> 传文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ftp"><span class="toc-number">9.1.1.</span> <span class="toc-text"> FTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#samba"><span class="toc-number">9.1.2.</span> <span class="toc-text"> Samba</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </div>
+
+
+              </aside>
+            </div>
+          
+        
+      </div>
+    </main>
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <p class="copyright">
+        &copy; 2026 <a href="/">星仔极客</a>
+      </p>
       
-      <span class="footer-powered">
-        由 <a href="https://hexo.io/" target="_blank" rel="noopener" aria-label="Hexo">Hexo</a> 和 <a href="https://github.com/yourname/hexo-theme-cleartext" target="_blank" rel="noopener" aria-label="Cleartext Theme">Cleartext</a> 驱动。
-      </span>
+        <p class="author">星仔</p>
       
     </div>
-    
+    <div class="footer-right">
+      
+        <nav class="footer-social">
+          
+            <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+              
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              
+            </a>
+          
+            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">
+              
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              
+            </a>
+          
+        </nav>
+      
+      <p class="powered-by">
+        Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>
+        &middot; Theme <a href="https://github.com" target="_blank" rel="noopener">Ink</a>
+      </p>
+    </div>
   </div>
 </footer>
-    <script defer charset="utf-8" src="/js/main.js"></script>   <!-- Giscus Config -->
 
- </body> </html>
+  </div>
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+</button>
+
+  
+  <div class="search-modal" id="search-modal">
+    <div class="search-modal-overlay" id="search-overlay"></div>
+    <div class="search-modal-content">
+      <div class="search-input-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="search-input" id="search-input" placeholder="Search posts..." autocomplete="off">
+        <button class="search-close" id="search-close" aria-label="Close search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+
+
+  
+  <script>
+    var searchPath = 'search.xml';
+  </script>
+  
+<script src="/js/search.js"></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ez5ueQ5lCVUkOmA" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe5rCM8qmhmtIq35eatBTE" crossorigin="anonymous"
+    onload="renderMathInElement(document.getElementById('post-content') || document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ],
+      throwOnError: false
+    });"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+<script src="/js/lightbox.js"></script>
+
+
+
+</body>
+</html>

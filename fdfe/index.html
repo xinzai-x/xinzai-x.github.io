@@ -1,81 +1,143 @@
-<!DOCTYPE html> <html lang="zh-CN" class=""> <head>   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>
+    
+      codex安装与部署 - 星仔极客
+    
+  </title>
+  
+    <meta name="description" content="    本文详细介绍了如何安装codex，以及如何配置使用deepseek、mimo的API进行codex的使用，配置的方法有三种，可自行选择，前两种无法使用插件，最后一种解锁codex全部功能，如果多种方式存在，启动软件时只启用相对于需要的软件，不然可能会冲突。
 
-<script>
-(function(){var t=localStorage.getItem('cleartext-theme-mode');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark')})();
-</script>
-
-<title>codex安装与部署 | 星仔极客</title>
-<meta name="description" content="日常笔记和生活分享！">
-
-<meta property="og:title" content="codex安装与部署">
-<meta property="og:description" content="日常笔记和生活分享！">
+单cc switch方式（中文界面下无法显示模型名，">
+  
+  <meta name="description" content="本文详细介绍了如何安装codex，以及如何配置使用deepseek、mimo的API进行codex的使用，配置的方法有三种，可自行选择，前两种无法使用插件，最后一种解锁codex全部功能，如果多种方式存在，启动软件时只启用相对于需要的软件，不然可能会冲突。  单cc switch方式（中文界面下无法显示模型名，也就无法切换模型，只启用cc switch）（以接入mimo为例） cxx +">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://blog.6673543.xyz/fdfe/">
+<meta property="og:title" content="codex安装与部署">
+<meta property="og:url" content="https://blog.6673543.xyz/fdfe/index.html">
+<meta property="og:site_name" content="星仔极客">
+<meta property="og:description" content="本文详细介绍了如何安装codex，以及如何配置使用deepseek、mimo的API进行codex的使用，配置的方法有三种，可自行选择，前两种无法使用插件，最后一种解锁codex全部功能，如果多种方式存在，启动软件时只启用相对于需要的软件，不然可能会冲突。  单cc switch方式（中文界面下无法显示模型名，也就无法切换模型，只启用cc switch）（以接入mimo为例） cxx +">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.6673543.xyz/img/logo.svg">
+<meta property="article:published_time" content="2026-05-30T08:47:37.000Z">
+<meta property="article:modified_time" content="2026-06-16T06:10:14.467Z">
+<meta property="article:author" content="星仔">
+<meta property="article:tag" content="星仔极客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.6673543.xyz/img/logo.svg">
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  <link rel="alternate" type="application/atom+xml" title="星仔极客" href="/atom.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
 
-<link rel="canonical" href="https://blog.6673543.xyz/fdfe/">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/css/style.css?v=20260616141035">
- <meta name="generator" content="Hexo 7.3.0"></head> <body>   <a href="#main-content" class="skip-to-content" aria-label="跳转到主要内容">跳到内容</a>   <header class="site-header" id="site-header" role="banner">
-  <div class="header-inner">
-    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="切换导航菜单" aria-expanded="false">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
+  
+<link rel="stylesheet" href="/css/highlight.css">
 
-    <a class="site-title" href="/" aria-label="返回首页">
-      星仔极客
-    </a>
+  
+<link rel="stylesheet" href="/css/lightbox.css">
 
-    <nav class="site-nav" role="navigation" aria-label="主导航">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5YCBER1viXgfW6gOOGETNABLkXe0g8vB0+IgERrI2CE03NEdPAB" crossorigin="anonymous">
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "codex安装与部署",
+    "datePublished": "2026-05-30T08:47:37.000Z",
+    "dateModified": "2026-06-16T06:10:14.467Z",
+    "author": {
+      "@type": "Person",
+      "name": "星仔"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "星仔极客"
+    },
+    "description": "    本文详细介绍了如何安装codex，以及如何配置使用deepseek、mimo的API进行codex的使用，配置的方法有三种，可自行选择，前两种无法使用插件，最后一种解锁codex全部功能，如果多种方式存在，启动软件时只启用相对于需要的软件，不然可能会冲突。
+
+单cc switch方式（中文界面下无法显示模型名，",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://blog.6673543.xyz/fdfe/"
+    }
+  }
+  </script>
+  
+  <script>
+    (function() {
+      var saved = localStorage.getItem('ink-theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="post-page">
+  <a class="skip-to-content" href="#main-content">Skip to content</a>
+  <div class="site-wrapper">
+    <header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <div class="header-left">
+      <a href="/" class="site-brand">
+        
+          <img src="/img/logo.svg" alt="星仔极客" class="site-logo" width="32" height="32">
+        
+        <span class="site-title">星仔极客</span>
+      </a>
       
-        
-          
-          <a class="nav-link"
-             href="/"
-             >
-            首页
-          </a>
-        
-          
-          <a class="nav-link"
-             href="/categories/"
-             >
-            分类
-          </a>
-        
-          
-          <a class="nav-link"
-             href="/about/"
-             >
-            关于
-          </a>
-        
-          
-          <a class="nav-link"
-             href="/link/"
-             >
-            友链
-          </a>
-        
+        <span class="site-subtitle">星仔个人博客</span>
       
+    </div>
+    <nav class="header-nav" id="header-nav">
+      <ul class="nav-list">
+        
+          <li class="nav-item">
+            <a href="/">Home</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/categories">Categories</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/archives">Archives</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/links">Links</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+      </ul>
     </nav>
-
     <div class="header-actions">
       
-      <button class="header-btn" id="search-btn" aria-label="搜索" title="搜索 (Ctrl+K)">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-      </button>
+        <button class="search-toggle" id="search-toggle" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
       
-
-      
-      <button class="header-btn" id="dark-mode-btn" aria-label="切换暗色模式" title="切换暗色/亮色模式">
-        <svg id="dm-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="5"></circle>
           <line x1="12" y1="1" x2="12" y2="3"></line>
           <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -86,109 +148,83 @@
           <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
           <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </svg>
-        <svg id="dm-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
       </button>
-      
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </div>
   </div>
 </header>
 
-<!-- Search Overlay -->
-
-<div class="search-overlay" id="search-overlay" data-search-url="/search.xml" aria-hidden="true" role="dialog" aria-label="搜索">
-  <div class="search-modal">
-    <input type="text" class="search-input" id="search-input" placeholder="搜索文章..." autocomplete="off" aria-label="搜索文章标题和内容">
-    <button class="search-close" id="search-close" aria-label="关闭搜索">&times;</button>
-    <div class="search-history" id="search-history" style="display:none;"></div>
-    <div class="search-results" id="search-results"></div>
-  </div>
+    <main class="site-main" id="main-content">
+      <div class="container">
+        
+          
+            <div class="content-wrap with-sidebar">
+              <article class="post-article">
+                <header class="post-header">
+  
+  <h1 class="post-title">codex安装与部署</h1>
+  <div class="post-meta">
+  <time class="post-date" datetime="2026-05-30T08:47:37.000Z">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+    2026-05-30
+  </time>
+  
+    <time class="post-updated" datetime="2026-06-16T06:10:14.467Z">
+      (Updated: 2026-06-16)
+    </time>
+  
+  
+    <span class="post-word-count">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+      2.5k words
+    </span>
+  
+  
+    <span class="post-reading-time">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      9 min read
+    </span>
+  
+  
+    <span class="post-categories">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+      
+        
+          <a href="/categories/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/">工具分享</a>
+        
+      
+    </span>
+  
 </div>
 
-    <div class="page-shell" id="main-content">     <div class="grid-container       grid-post            ">       <main class="grid-main">         
-
-<article class="post-full" itemscope itemtype="http://schema.org/Article">
-
-  <header class="post-header">
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb" aria-label="面包屑导航">
-      <a href="/">首页</a>
-      <span class="breadcrumb-sep">/</span>
-      
-        <a href="/categories/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/">工具分享</a>
-        <span class="breadcrumb-sep">/</span>
-      
-      <span class="breadcrumb-current" aria-current="page">codex安装与部署</span>
-    </nav>
-
-    <h1 class="post-title" itemprop="headline">codex安装与部署</h1>
-
-    <div class="post-meta">
-      <span class="meta-item" itemprop="datePublished" content="2026-05-30T08:47:37.000Z">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        <time datetime="2026-05-30T08:47:37.000Z">2026-05-30</time>
-      </span>
-      
-      <span class="meta-item meta-stats">
-        <span class="word-count">2770 字</span>
-        <span class="reading-time">14</span>
-      </span>
-      
-      <span class="meta-updated">更新于 2026-06-16</span>
-      
-    </div>
-
-    </header>
-
-  <!-- Desktop TOC (collapsible, above content) -->
   
-  <div class="toc-desktop-collapsible" id="toc-desktop-wrapper" aria-label="文章目录">
-    <details id="toc-desktop-details">
-      <summary class="toc-desktop-toggle" aria-label="展开/收起目录">
-        <svg class="toc-toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="8" y1="6" x2="21" y2="6"></line>
-          <line x1="8" y1="12" x2="21" y2="12"></line>
-          <line x1="8" y1="18" x2="21" y2="18"></line>
-          <line x1="3" y1="6" x2="3.01" y2="6"></line>
-          <line x1="3" y1="12" x2="3.01" y2="12"></line>
-          <line x1="3" y1="18" x2="3.01" y2="18"></line>
-        </svg>
-        文章目录
-      </summary>
-      <nav class="toc" id="toc-desktop" aria-label="文章目录"></nav>
-    </details>
-  </div>
-  
+</header>
 
-  <!-- Mobile TOC (collapsible) -->
-  
-  <div class="toc-mobile" id="toc-mobile-wrapper" aria-label="移动端文章目录">
-    <details id="toc-mobile-details">
-      <summary class="toc-mobile-toggle" aria-label="展开/收起目录">文章目录</summary>
-      <nav class="toc" id="toc-mobile" aria-label="文章目录"></nav>
-    </details>
-  </div>
-  
 
-  <!-- Post Content -->
-  <div class="post-content" itemprop="articleBody">
-    <p>    本文详细介绍了如何安装codex，以及如何配置使用deepseek、mimo的API进行codex的使用，配置的方法有三种，可自行选择，前两种无法使用插件，最后一种解锁codex全部功能，如果多种方式存在，启动软件时只启用相对于需要的软件，不然可能会冲突。</p>
+<div class="post-content" id="post-content">
+  <p>    本文详细介绍了如何安装codex，以及如何配置使用deepseek、mimo的API进行codex的使用，配置的方法有三种，可自行选择，前两种无法使用插件，最后一种解锁codex全部功能，如果多种方式存在，启动软件时只启用相对于需要的软件，不然可能会冲突。</p>
 <ol>
 <li>单cc switch方式（中文界面下无法显示模型名，也就无法切换模型，只启用cc switch）（以接入mimo为例）</li>
 <li>cxx + cc switch方式（启用ccx和cc switch）（以接入mimo和deepseek为例）</li>
 <li>codex++ 方式（启用codex++）（以接入deepseek为例）</li>
 </ol>
 <h1 id="下载安装"><a class="markdownIt-Anchor" href="#下载安装"></a> 下载安装</h1>
-<p>    下载需要安装的软件，采用哪种方式下载对应软件即可，codex以及cc switch正常安装软件双击后安装即可（<code>codex安装完成之后直接在任务栏退出，等配置完成后再重新启动</code>）ccx需要配置一下，下载链接：<a href="https://yun.139.com/shareweb/#/w/i/2v3EknaoDtT1f" target="_blank" rel="noopener noreferrer">https://yun.139.com/shareweb/#/w/i/2v3EknaoDtT1f</a>  提取码：9rly</p>
+<p>    下载需要安装的软件，采用哪种方式下载对应软件即可，codex以及cc switch正常安装软件双击后安装即可（<code>codex安装完成之后直接在任务栏退出，等配置完成后再重新启动</code>）ccx需要配置一下，下载链接：<a target="_blank" rel="noopener" href="https://yun.139.com/shareweb/#/w/i/2v3EknaoDtT1f">https://yun.139.com/shareweb/#/w/i/2v3EknaoDtT1f</a>  提取码：9rly</p>
 <ul>
-<li>codex，<a href="https://apps.microsoft.com/detail/9plm9xgg6vks?hl=zh-CN&amp;gl=CN" target="_blank" rel="noopener noreferrer">官方链接</a></li>
-<li>ccx，<a href="https://github.com/BenedictKing/ccx" target="_blank" rel="noopener noreferrer">官方链接</a>，Windows下载：ccx-windows-amd64.exe</li>
-<li>cc switch，<a href="https://github.com/farion1231/cc-switch" target="_blank" rel="noopener noreferrer">官方链接</a>，Windows下载：CC-Switch-v3.16.0-Windows.msi</li>
-<li>codex++，<a href="https://github.com/BigPizzaV3/CodexPlusPlus" target="_blank" rel="noopener noreferrer">官方链接</a>，Windows下载：CodexPlusPlus-1.2.4-windows-x64-setup.exe</li>
+<li>codex，<a target="_blank" rel="noopener" href="https://apps.microsoft.com/detail/9plm9xgg6vks?hl=zh-CN&amp;gl=CN">官方链接</a></li>
+<li>ccx，<a target="_blank" rel="noopener" href="https://github.com/BenedictKing/ccx">官方链接</a>，Windows下载：ccx-windows-amd64.exe</li>
+<li>cc switch，<a target="_blank" rel="noopener" href="https://github.com/farion1231/cc-switch">官方链接</a>，Windows下载：CC-Switch-v3.16.0-Windows.msi</li>
+<li>codex++，<a target="_blank" rel="noopener" href="https://github.com/BigPizzaV3/CodexPlusPlus">官方链接</a>，Windows下载：CodexPlusPlus-1.2.4-windows-x64-setup.exe</li>
 </ul>
 <h1 id="deepseek配置部署"><a class="markdownIt-Anchor" href="#deepseek配置部署"></a> deepseek配置部署</h1>
-<p>    教程：<a href="https://v.douyin.com/YQ2uNp0rLKo/" target="_blank" rel="noopener noreferrer">https://v.douyin.com/YQ2uNp0rLKo/</a></p>
+<p>    教程：<a target="_blank" rel="noopener" href="https://v.douyin.com/YQ2uNp0rLKo/">https://v.douyin.com/YQ2uNp0rLKo/</a></p>
 <h2 id="cxx-cc-switch方式"><a class="markdownIt-Anchor" href="#cxx-cc-switch方式"></a> cxx + cc switch方式</h2>
 <h3 id="配ccx"><a class="markdownIt-Anchor" href="#配ccx"></a> 配ccx</h3>
 <p>    先创建个文件夹，将<code>ccx-windows-amd64.exe</code>文件放进去，然后再创建一个名为<code>.env</code>的文件</p>
@@ -212,7 +248,7 @@
  <img src="https://files.seeusercontent.com/2026/05/30/aP3f/ccx.png" alt="ccx详细配置.png" style="zoom:50%;" />
 </li>
 <li>
-<p>deepseek API平台进行申请<code>API keys</code>，<a href="https://platform.deepseek.com" target="_blank" rel="noopener noreferrer">官方链接</a>，注意：<code>创建好key之后复制记得保存（关闭后无法复制）</code>，API调用官方技术文档：<a href="https://api-docs.deepseek.com/zh-cn/" target="_blank" rel="noopener noreferrer">链接</a>。API key例如：sk-83db74c3dbb244f8a1260ec2fa43097</p>
+<p>deepseek API平台进行申请<code>API keys</code>，<a target="_blank" rel="noopener" href="https://platform.deepseek.com">官方链接</a>，注意：<code>创建好key之后复制记得保存（关闭后无法复制）</code>，API调用官方技术文档：<a target="_blank" rel="noopener" href="https://api-docs.deepseek.com/zh-cn/">链接</a>。API key例如：sk-83db74c3dbb244f8a1260ec2fa43097</p>
  <img src="https://files.seeusercontent.com/2026/05/30/k9Fl/deepseekkeys.png" alt="deepseek建keys.png" style="zoom:50%;" />
 </li>
 <li>
@@ -225,7 +261,7 @@
 <p>服务类型：OpenAI Chat</p>
 </li>
 <li>
-<p>基础URL（在官方技术文档查看<code>base_url (OpenAI)</code>）：<a href="https://api.deepseek.com" target="_blank" rel="noopener noreferrer">https://api.deepseek.com</a></p>
+<p>基础URL（在官方技术文档查看<code>base_url (OpenAI)</code>）：<a target="_blank" rel="noopener" href="https://api.deepseek.com">https://api.deepseek.com</a></p>
 </li>
 <li>
 <p>模型重定向，填写完成后，点击右侧的<code>添加</code>按钮添加</p>
@@ -277,7 +313,7 @@
 <p>API Key：为ccx配置文件<code>.env</code>中的<code>PROXY_ACCESS_KEY=your-proxy-access-key</code>，等号后面的就是你的API Key（例如：123456）</p>
 </li>
 <li>
-<p>API请求地址：<a href="http://localhost:3000/v1%EF%BC%88%E5%9B%BA%E5%AE%9A%EF%BC%89" target="_blank" rel="noopener noreferrer">http://localhost:3000/v1（固定）</a></p>
+<p>API请求地址：<a target="_blank" rel="noopener" href="http://localhost:3000/v1%EF%BC%88%E5%9B%BA%E5%AE%9A%EF%BC%89">http://localhost:3000/v1（固定）</a></p>
 </li>
 <li>
 <p>其它不需要配置，直达最下方点击<code>添加</code>按钮添加</p>
@@ -298,7 +334,7 @@
  <img src="https://files.seeusercontent.com/2026/06/11/Ug5o/codex.png" alt="codex++添加供应商.png" style="zoom:50%;" />
 </li>
 <li>
-<p>deepseek API平台进行申请<code>API keys</code>，<a href="https://platform.deepseek.com" target="_blank" rel="noopener noreferrer">官方链接</a>，注意：<code>创建好key之后复制记得保存（关闭后无法复制）</code>，API调用官方技术文档：<a href="https://api-docs.deepseek.com/zh-cn/" target="_blank" rel="noopener noreferrer">链接</a>。API key例如：sk-83db74c3dbb244f8a1260ec2fa43097</p>
+<p>deepseek API平台进行申请<code>API keys</code>，<a target="_blank" rel="noopener" href="https://platform.deepseek.com">官方链接</a>，注意：<code>创建好key之后复制记得保存（关闭后无法复制）</code>，API调用官方技术文档：<a target="_blank" rel="noopener" href="https://api-docs.deepseek.com/zh-cn/">链接</a>。API key例如：sk-83db74c3dbb244f8a1260ec2fa43097</p>
  <img src="https://files.seeusercontent.com/2026/05/30/k9Fl/deepseekkeys.png" alt="deepseek建keys.png" style="zoom:50%;" />
 </li>
 <li>
@@ -317,7 +353,7 @@
 <p>勾选启用目标功能</p>
 </li>
 <li>
-<p>Base URL：<a href="https://api.deepseek.com" target="_blank" rel="noopener noreferrer">https://api.deepseek.com</a>（可查看官方技术文档）</p>
+<p>Base URL：<a target="_blank" rel="noopener" href="https://api.deepseek.com">https://api.deepseek.com</a>（可查看官方技术文档）</p>
 </li>
 <li>
 <p>Key：在官方创建的API key（例如：sk-83db74c3dbb244f8a1260ec2fa43097）</p>
@@ -340,7 +376,7 @@
 <h2 id="单cc-switch方式"><a class="markdownIt-Anchor" href="#单cc-switch方式"></a> 单cc switch方式</h2>
 <p>    首先打开我们安装好的cc switch（安装默认下一步即可），切换至open ai，点击右侧<code>加号</code>添加配置。</p>
 <img src="https://files.seeusercontent.com/2026/06/11/D3is/cc-switch.png" alt="单cc switch添加.png" style="zoom:50%;" />
-<p>    官网创建API key<a href="https://platform.xiaomimimo.com/console/" target="_blank" rel="noopener noreferrer">链接</a>，<a href="https://platform.xiaomimimo.com/docs/zh-CN/quick-start/first-api-call" target="_blank" rel="noopener noreferrer">官方技术文档</a>，API key例如：sk-c4tstal75n3zw3wmiq41lpgdoixtin9tke3j8qe8dg4j2lo（自己创建）</p>
+<p>    官网创建API key<a target="_blank" rel="noopener" href="https://platform.xiaomimimo.com/console/">链接</a>，<a target="_blank" rel="noopener" href="https://platform.xiaomimimo.com/docs/zh-CN/quick-start/first-api-call">官方技术文档</a>，API key例如：sk-c4tstal75n3zw3wmiq41lpgdoixtin9tke3j8qe8dg4j2lo（自己创建）</p>
 <p><img src="https://files.seeusercontent.com/2026/06/11/chF0/mimoAPI-key.png" alt="mimo创建API key.png" /></p>
 <p>    如果是<code>Token Plan</code>的（套餐型）创建的API key与普通的不一样，需要在下面图片显示创建才是正确的。</p>
 <img src="https://files.seeusercontent.com/2026/06/16/Zqb3/mimo-plan-API-key.webp" alt="mimo plan API key.webp" style="zoom:50%;" />
@@ -385,7 +421,7 @@
  <img src="https://files.seeusercontent.com/2026/05/30/aP3f/ccx.png" alt="ccx详细配置.png" style="zoom:50%;" />
 </li>
 <li>
-<p>官网创建API key<a href="https://platform.xiaomimimo.com/console/" target="_blank" rel="noopener noreferrer">链接</a>，<a href="https://platform.xiaomimimo.com/docs/zh-CN/quick-start/first-api-call" target="_blank" rel="noopener noreferrer">官方技术文档</a>，API key例如：sk-c4tstal75n3zw3wmiq41lpgdoixtin9tke3j8qe8dg4j2lo（自己创建）</p>
+<p>官网创建API key<a target="_blank" rel="noopener" href="https://platform.xiaomimimo.com/console/">链接</a>，<a target="_blank" rel="noopener" href="https://platform.xiaomimimo.com/docs/zh-CN/quick-start/first-api-call">官方技术文档</a>，API key例如：sk-c4tstal75n3zw3wmiq41lpgdoixtin9tke3j8qe8dg4j2lo（自己创建）</p>
 <p><img src="https://files.seeusercontent.com/2026/06/11/chF0/mimoAPI-key.png" alt="mimo创建API key.png" /></p>
 <p>如果是<code>Token Plan</code>的（套餐型）创建的API key与普通的不一样，需要在下面图片显示创建才是正确的。</p>
  <img src="https://files.seeusercontent.com/2026/06/16/Zqb3/mimo-plan-API-key.webp" alt="mimo plan API key.webp" style="zoom:50%;" />
@@ -400,7 +436,7 @@
 <p>服务类型：OpenAI Chat</p>
 </li>
 <li>
-<p>基础URL（在官方技术文档查看<code>base_url (OpenAI)</code>）：<a href="https://api.xiaomimimo.com/v1%EF%BC%88%E8%8B%A5%E6%98%AFToken" target="_blank" rel="noopener noreferrer">https://api.xiaomimimo.com/v1（若是Token</a> Plan的：<a href="https://token-plan-cn.xiaomimimo.com/v1%EF%BC%89" target="_blank" rel="noopener noreferrer">https://token-plan-cn.xiaomimimo.com/v1）</a></p>
+<p>基础URL（在官方技术文档查看<code>base_url (OpenAI)</code>）：<a target="_blank" rel="noopener" href="https://api.xiaomimimo.com/v1%EF%BC%88%E8%8B%A5%E6%98%AFToken">https://api.xiaomimimo.com/v1（若是Token</a> Plan的：<a target="_blank" rel="noopener" href="https://token-plan-cn.xiaomimimo.com/v1%EF%BC%89">https://token-plan-cn.xiaomimimo.com/v1）</a></p>
 </li>
 <li>
 <p>模型重定向，填写完成后，点击右侧的<code>添加</code>按钮添加</p>
@@ -440,7 +476,7 @@
 <li>预设供应商：自定义配置</li>
 <li>供应商名称：mimo</li>
 <li>API Key：为ccx配置文件<code>.env</code>中的<code>PROXY_ACCESS_KEY=your-proxy-access-key</code>，等号 后面的就是你的API Key</li>
-<li>API请求地址：<a href="http://localhost:3000/v1%EF%BC%88%E5%9B%BA%E5%AE%9A%EF%BC%89" target="_blank" rel="noopener noreferrer">http://localhost:3000/v1（固定）</a></li>
+<li>API请求地址：<a target="_blank" rel="noopener" href="http://localhost:3000/v1%EF%BC%88%E5%9B%BA%E5%AE%9A%EF%BC%89">http://localhost:3000/v1（固定）</a></li>
 <li>其它不需要配置，直达最下方点击<code>添加</code>按钮添加</li>
 </ul>
 </li>
@@ -455,81 +491,175 @@
 <p>    解决办法就是直接把ccx渠道里面的全部模型都配置了，这样就解决了。</p>
 <img src="https://files.seeusercontent.com/2026/06/03/km0P/ccx.png" alt="ccx故障解决.png" style="zoom:50%;" />
 <h2 id="插件问题"><a class="markdownIt-Anchor" href="#插件问题"></a> 插件问题</h2>
-<p>    解决控制电脑以及插件问题，复制：<a href="https://github.com/chen0416ccc-cpu/codex-windows-fast-patch-skill" target="_blank" rel="noopener noreferrer">https://github.com/chen0416ccc-cpu/codex-windows-fast-patch-skill</a> 根据这个修复codex插件无法使用问题。然后直接给ai修复即可，如果装完有浏览器插件或电脑控制的插件不能使用再修复一次即可（最好是完全访问权限直接让ai修）</p>
+<p>    解决控制电脑以及插件问题，复制：<a target="_blank" rel="noopener" href="https://github.com/chen0416ccc-cpu/codex-windows-fast-patch-skill">https://github.com/chen0416ccc-cpu/codex-windows-fast-patch-skill</a> 根据这个修复codex插件无法使用问题。然后直接给ai修复即可，如果装完有浏览器插件或电脑控制的插件不能使用再修复一次即可（最好是完全访问权限直接让ai修）</p>
 <p>    温馨提示：<code>浏览器必须是原生谷歌浏览器，运行必须是完全访问的权限</code>。</p>
 <p>    解决codex打开内置浏览器：<code>codex-windows-fast-patch</code> 技能中提到了类似的 <code>node_repl</code> 沙箱故障。根因：<code>config.toml</code> 中 <code>[windows] sandbox = &quot;elevated&quot;</code> 导致创建子进程时 <code>CreateProcessAsUserW</code> 失败（error 5）修改为 <code>sandbox = &quot;unelevated&quot;</code> 后，<code>node_repl</code> 内核正常启动。</p>
 
-  </div>
-
-
-
-</article>
-
-<!-- Giscus Comments -->
-
-
-<!-- Post Navigation -->
-
-<nav class="post-nav" aria-label="文章导航">
-  
-  <div class="post-nav-prev">
-    
-  </div>
-  
-  <div class="post-nav-next">
-    
-    <a href="/c3d5/" class="post-nav-link">
-      <span class="post-nav-label">下一篇 &#8594;</span>
-      10.星海物联使用手册
-    </a>
-    
-  </div>
-</nav>
-
-
-<!-- Back-to-top & back-to-bottom floating buttons -->
-<button class="back-to-top" id="back-to-top" aria-label="回到顶部" title="回到顶部">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="12" y1="19" x2="12" y2="5"></line>
-    <polyline points="5 12 12 5 19 12"></polyline>
-  </svg>
-</button>
-<button class="back-to-bottom" id="back-to-bottom" aria-label="直达底部" title="直达底部">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="12" y1="5" x2="12" y2="19"></line>
-    <polyline points="19 12 12 19 5 12"></polyline>
-  </svg>
-</button>
-
-<!-- Image Lightbox -->
-<div class="lightbox-overlay" id="lightbox" aria-hidden="true">
-  <button class="lightbox-close" id="lightbox-close" aria-label="关闭">&times;</button>
-  <button class="lightbox-prev" id="lightbox-prev" aria-label="上一张">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-  </button>
-  <button class="lightbox-next" id="lightbox-next" aria-label="下一张">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-  </button>
-  <img id="lightbox-img" src="" alt="" />
-  <span class="lightbox-counter" id="lightbox-counter"></span>
 </div>
-       </main>      </div>   </div>    <footer class="site-footer" role="contentinfo">
-  <div class="footer-inner">
-    
 
+
+  <div class="post-author-card">
+    <div class="post-author-info">
+      <div class="post-author-avatar">
+        
+          <span>星</span>
+        
+      </div>
+      <div class="post-author-detail">
+        <p class="post-author-name">星仔</p>
+        <p class="post-author-bio">日常笔记和生活分享！</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="post-copyright">
+    <p class="copyright-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M15 9.354a4 4 0 1 0 0 5.292"></path></svg>
+      Copyright
+    </p>
+    <ul class="copyright-list">
+      <li>Author: 星仔</li>
+      <li>Link: <a href="https://blog.6673543.xyz/fdfe/">https://blog.6673543.xyz/fdfe/</a></li>
+      <li>License: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></li>
+    </ul>
+  </div>
+
+
+
+  <nav class="post-nav">
     
     
-    <div class="footer-copyright">
-      &copy; 2026 星仔.
+      <a href="/c3d5/" class="post-nav-item post-nav-next">
+        <span class="post-nav-label">
+          Next
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </span>
+        <span class="post-nav-title">10.星海物联使用手册</span>
+      </a>
+    
+  </nav>
+
+
+
+
+              </article>
+              <aside class="sidebar sidebar-right">
+                
+  <div class="post-toc" id="post-toc">
+    <div class="toc-header">
+      <h4>Table of Contents</h4>
+      <button class="toc-toggle" id="toc-toggle" aria-label="Toggle TOC">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+    </div>
+    <div class="toc-body" id="toc-body">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text"> 下载安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#deepseek%E9%85%8D%E7%BD%AE%E9%83%A8%E7%BD%B2"><span class="toc-number">2.</span> <span class="toc-text"> deepseek配置部署</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#cxx-cc-switch%E6%96%B9%E5%BC%8F"><span class="toc-number">2.1.</span> <span class="toc-text"> cxx + cc switch方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8Dccx"><span class="toc-number">2.1.1.</span> <span class="toc-text"> 配ccx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8Dcc-switch"><span class="toc-number">2.1.2.</span> <span class="toc-text"> 配cc switch</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#codex%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F"><span class="toc-number">2.2.</span> <span class="toc-text"> codex++配置方式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mimo%E9%85%8D%E7%BD%AE%E9%83%A8%E7%BD%B2"><span class="toc-number">3.</span> <span class="toc-text"> mimo配置部署</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95cc-switch%E6%96%B9%E5%BC%8F"><span class="toc-number">3.1.</span> <span class="toc-text"> 单cc switch方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cxx-cc-switch%E6%96%B9%E5%BC%8F-2"><span class="toc-number">3.2.</span> <span class="toc-text"> cxx + cc switch方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8Dccx-2"><span class="toc-number">3.2.1.</span> <span class="toc-text"> 配ccx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8Dcc-switch-2"><span class="toc-number">3.2.2.</span> <span class="toc-text"> 配cc switch</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AD%94%E7%96%91"><span class="toc-number">4.</span> <span class="toc-text"> 答疑</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A0%E6%B3%95%E8%AE%BE%E7%BD%AE%E6%88%90%E4%B8%AD%E6%96%87"><span class="toc-number">4.1.</span> <span class="toc-text"> 无法设置成中文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ccx%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E7%BB%8F%E5%B8%B8%E6%96%AD%E5%BC%80"><span class="toc-number">4.2.</span> <span class="toc-text"> ccx使用过程经常断开</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E9%97%AE%E9%A2%98"><span class="toc-number">4.3.</span> <span class="toc-text"> 插件问题</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+              </aside>
+            </div>
+          
+        
+      </div>
+    </main>
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <p class="copyright">
+        &copy; 2026 <a href="/">星仔极客</a>
+      </p>
       
-      <span class="footer-powered">
-        由 <a href="https://hexo.io/" target="_blank" rel="noopener" aria-label="Hexo">Hexo</a> 和 <a href="https://github.com/yourname/hexo-theme-cleartext" target="_blank" rel="noopener" aria-label="Cleartext Theme">Cleartext</a> 驱动。
-      </span>
+        <p class="author">星仔</p>
       
     </div>
-    
+    <div class="footer-right">
+      
+        <nav class="footer-social">
+          
+            <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+              
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              
+            </a>
+          
+            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">
+              
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              
+            </a>
+          
+        </nav>
+      
+      <p class="powered-by">
+        Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>
+        &middot; Theme <a href="https://github.com" target="_blank" rel="noopener">Ink</a>
+      </p>
+    </div>
   </div>
 </footer>
-    <script defer charset="utf-8" src="/js/main.js"></script>   <!-- Giscus Config -->
 
- </body> </html>
+  </div>
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+</button>
+
+  
+  <div class="search-modal" id="search-modal">
+    <div class="search-modal-overlay" id="search-overlay"></div>
+    <div class="search-modal-content">
+      <div class="search-input-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="search-input" id="search-input" placeholder="Search posts..." autocomplete="off">
+        <button class="search-close" id="search-close" aria-label="Close search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+
+
+  
+  <script>
+    var searchPath = 'search.xml';
+  </script>
+  
+<script src="/js/search.js"></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ez5ueQ5lCVUkOmA" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe5rCM8qmhmtIq35eatBTE" crossorigin="anonymous"
+    onload="renderMathInElement(document.getElementById('post-content') || document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ],
+      throwOnError: false
+    });"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+<script src="/js/lightbox.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,400 @@
+/* =============================================
+   Code Syntax Highlighting - Light Theme
+   Based on warm white palette
+   ============================================= */
+
+/* Hexo highlight wrapper */
+.highlight {
+  margin: 1.5em 0;
+  padding: 0;
+  background-color: var(--bg-code);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  max-width: 100%;
+}
+
+/* Line numbers gutter */
+.highlight .gutter {
+  display: none;
+}
+
+.highlight table {
+  border-collapse: collapse;
+  margin: 0;
+  width: 100%;
+}
+
+.highlight table td {
+  padding: 0;
+  border: none;
+}
+
+.highlight table td.gutter {
+  display: none;
+}
+
+/* Code content area */
+.highlight .code {
+  padding: 20px;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 420px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.highlight .code pre {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+/* Caption / figcaption for code blocks */
+.highlight + .caption,
+.codeblock-caption {
+  margin-top: -12px;
+  padding: 6px 14px;
+  font-size: var(--font-size-small);
+  color: var(--text-tertiary);
+  font-style: italic;
+  background-color: var(--bg-code);
+  border: 1px solid var(--border-primary);
+  border-top: none;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+/* Line number styling when enabled */
+.highlight .gutter pre {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  text-align: right;
+  padding-right: 12px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Line numbers column */
+.highlight .gutter {
+  display: table-cell;
+  width: 1px;
+  white-space: nowrap;
+  padding-right: 12px;
+  border-right: 1px solid var(--border-primary);
+  vertical-align: top;
+}
+
+[data-theme="dark"] .highlight .gutter {
+  border-right-color: #3a342c;
+}
+
+[data-theme="dark"] .highlight .gutter pre {
+  color: #5a5048;
+}
+
+/* Code block wrapper for copy button */
+.highlight-wrap {
+  position: relative;
+}
+
+/* Copy button */
+.code-copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  transition: opacity var(--transition-fast), color var(--transition-fast), background-color var(--transition-fast);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.highlight-wrap:hover .code-copy-btn {
+  opacity: 1;
+}
+
+.code-copy-btn:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-tertiary);
+}
+
+.code-copy-btn.copied {
+  color: #2e7d32;
+  opacity: 1;
+}
+
+[data-theme="dark"] .code-copy-btn {
+  background-color: #2e2a22;
+  border-color: #3a342c;
+  color: #8a7e74;
+}
+
+[data-theme="dark"] .code-copy-btn:hover {
+  color: #e8e0d6;
+  background-color: #3a342c;
+}
+
+[data-theme="dark"] .code-copy-btn.copied {
+  color: #a8d8a0;
+}
+
+/* Mobile: always show copy button */
+@media (max-width: 767px) {
+  .code-copy-btn {
+    opacity: 0.6;
+  }
+}
+
+/* =============================================
+   Syntax Colors — Light Mode
+   ============================================= */
+.highlight .comment,
+.highlight .quote {
+  color: #8a7e74;
+  font-style: italic;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .type {
+  color: #9b2d7c;
+  font-weight: 500;
+}
+
+.highlight .string,
+.highlight .template-tag,
+.highlight .deletion {
+  color: #2e7d32;
+}
+
+.highlight .addition {
+  color: #2e7d32;
+  background-color: rgba(46, 125, 50, 0.1);
+}
+
+.highlight .number,
+.highlight .literal,
+.highlight .built_in,
+.highlight .builtin-name {
+  color: #b8860b;
+}
+
+.highlight .symbol,
+.highlight .bullet {
+  color: #b8860b;
+}
+
+.highlight .variable,
+.highlight .template-variable,
+.highlight .link {
+  color: #2c71b0;
+}
+
+.highlight .attr,
+.highlight .attribute {
+  color: #b8860b;
+}
+
+.highlight .regexp,
+.highlight .link {
+  color: #2c71b0;
+}
+
+.highlight .title,
+.highlight .section {
+  color: #9b2d7c;
+  font-weight: 600;
+}
+
+.highlight .params {
+  color: var(--text-secondary);
+}
+
+.highlight .meta {
+  color: #8a7e74;
+}
+
+.highlight .name {
+  color: #9b2d7c;
+}
+
+.highlight .tag {
+  color: #9b2d7c;
+}
+
+.highlight .selector-class,
+.highlight .selector-attr {
+  color: #9b2d7c;
+}
+
+.highlight .selector-pseudo {
+  color: #b8860b;
+}
+
+.highlight .property {
+  color: #2c71b0;
+}
+
+.highlight .char {
+  color: #2e7d32;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}
+
+/* =============================================
+   Syntax Colors — Dark Mode
+   ============================================= */
+[data-theme="dark"] .highlight .comment,
+[data-theme="dark"] .highlight .quote {
+  color: #7a7068;
+  font-style: italic;
+}
+
+[data-theme="dark"] .highlight .keyword,
+[data-theme="dark"] .highlight .selector-tag,
+[data-theme="dark"] .highlight .type {
+  color: #e8a0bf;
+  font-weight: 500;
+}
+
+[data-theme="dark"] .highlight .string,
+[data-theme="dark"] .highlight .template-tag,
+[data-theme="dark"] .highlight .deletion {
+  color: #a8d8a0;
+}
+
+[data-theme="dark"] .highlight .addition {
+  color: #a8d8a0;
+  background-color: rgba(168, 216, 160, 0.1);
+}
+
+[data-theme="dark"] .highlight .number,
+[data-theme="dark"] .highlight .literal,
+[data-theme="dark"] .highlight .built_in,
+[data-theme="dark"] .highlight .builtin-name {
+  color: #e8c060;
+}
+
+[data-theme="dark"] .highlight .symbol,
+[data-theme="dark"] .highlight .bullet {
+  color: #e8c060;
+}
+
+[data-theme="dark"] .highlight .variable,
+[data-theme="dark"] .highlight .template-variable,
+[data-theme="dark"] .highlight .link {
+  color: #88c0e8;
+}
+
+[data-theme="dark"] .highlight .attr,
+[data-theme="dark"] .highlight .attribute {
+  color: #e8c060;
+}
+
+[data-theme="dark"] .highlight .regexp,
+[data-theme="dark"] .highlight .link {
+  color: #88c0e8;
+}
+
+[data-theme="dark"] .highlight .title,
+[data-theme="dark"] .highlight .section {
+  color: #e8a0bf;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .highlight .params {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .highlight .meta {
+  color: #7a7068;
+}
+
+[data-theme="dark"] .highlight .name {
+  color: #e8a0bf;
+}
+
+[data-theme="dark"] .highlight .tag {
+  color: #e8a0bf;
+}
+
+[data-theme="dark"] .highlight .selector-class,
+[data-theme="dark"] .highlight .selector-attr {
+  color: #e8a0bf;
+}
+
+[data-theme="dark"] .highlight .selector-pseudo {
+  color: #e8c060;
+}
+
+[data-theme="dark"] .highlight .property {
+  color: #88c0e8;
+}
+
+[data-theme="dark"] .highlight .char {
+  color: #a8d8a0;
+}
+
+/* Dark mode code block background */
+[data-theme="dark"] .highlight {
+  background-color: #2e2a22;
+  border-color: #3a342c;
+}
+
+[data-theme="dark"] .post-content pre {
+  background-color: #2e2a22;
+  border-color: #3a342c;
+}
+
+[data-theme="dark"] .post-content code {
+  background-color: #2e2a22;
+  color: #e8c060;
+}
+
+[data-theme="dark"] .post-content pre code {
+  color: #e8e0d6;
+}
+
+/* Line highlight on hover */
+.highlight .code tr:hover {
+  background-color: var(--accent-light);
+}
+
+[data-theme="dark"] .highlight .code tr:hover {
+  background-color: rgba(212, 160, 23, 0.08);
+}
+
+/* Scrollbar in code blocks */
+.highlight .code::-webkit-scrollbar {
+  height: 4px;
+}
+
+.highlight .code::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.highlight .code::-webkit-scrollbar-thumb {
+  background-color: var(--border-secondary);
+  border-radius: 2px;
+}
