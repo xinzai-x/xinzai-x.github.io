@@ -1158,11 +1158,13 @@ html {
 .highlight table {
   width: 100%;
   border-collapse: collapse;
+  background: none;
 }
 
 .highlight table td {
   padding: 0;
   border: none;
+  background: none;
 }
 
 .highlight .code {
@@ -1170,6 +1172,8 @@ html {
   overflow: hidden;
   max-height: 420px;
   transition: max-height 0.3s ease;
+  background: none;
+  border: none;
 }
 
 .highlight .code.expanded {
