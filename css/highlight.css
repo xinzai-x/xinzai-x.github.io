@@ -372,3 +372,22 @@ figure.highlight + .caption,
     opacity: 0.6;
   }
 }
+
+/* Scrollbar in code blocks - transparent track, no hover color change */
+figure.highlight ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+figure.highlight ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+figure.highlight ::-webkit-scrollbar-thumb {
+  background-color: var(--border-secondary);
+  border-radius: 3px;
+}
+
+figure.highlight ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--border-secondary);
+}

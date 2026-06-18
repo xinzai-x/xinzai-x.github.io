@@ -2297,6 +2297,11 @@ figure.highlight.is-expanded .code-expand-btn {
     border-right: none;
   }
 
+  figure.highlight .code {
+    font-size: 0.82rem;
+    padding: 14px 16px;
+  }
+
   /* Page title */
   .page-title {
     font-size: 1.55rem;
