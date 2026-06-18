@@ -1108,20 +1108,7 @@ html {
   box-shadow: 0 1px 0 var(--border-secondary);
 }
 
-/* Code blocks scrollable indicator */
-.post-content pre::after,
-.highlight .code::after {
-  content: '';
-  display: block;
-  position: sticky;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 24px;
-  background: linear-gradient(transparent, var(--bg-code));
-  pointer-events: none;
-  margin-top: -24px;
-}
+/* Code blocks scrollable indicator - removed, was covering last line */
 
 /* Code blocks */
 .post-content pre {
@@ -1147,14 +1134,22 @@ html {
   background-color: var(--bg-code);
   border: 1px solid var(--border-primary);
   border-radius: var(--radius-md);
-  overflow: visible;
+  overflow: hidden;
   font-size: 0.88rem;
   line-height: 1.65;
   max-width: 100%;
 }
 
 .highlight table {
-  min-width: fit-content;
+  width: 100%;
+  min-width: 0;
+  border-collapse: collapse;
+}
+
+.highlight table td {
+  padding: 0;
+  border: none;
+  width: 100%;
 }
 
 .highlight .code {
@@ -1165,6 +1160,17 @@ html {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: var(--border-secondary) transparent;
+}
+
+.highlight .code pre {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  font-size: inherit;
+  white-space: pre;
+  display: block;
 }
 
 .post-content pre code {
@@ -2890,12 +2896,6 @@ input:focus-visible {
 
 [data-theme="dark"] .post-content pre code {
   color: #e8e0d6;
-}
-
-/* Dark code scroll indicator */
-[data-theme="dark"] .post-content pre::after,
-[data-theme="dark"] .highlight .code::after {
-  background: linear-gradient(transparent, #2e2a22);
 }
 
 /* --- Keyboard --- */

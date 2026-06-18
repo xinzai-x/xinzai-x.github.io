@@ -10,10 +10,54 @@
   background-color: var(--bg-code);
   border: 1px solid var(--border-primary);
   border-radius: var(--radius-md);
-  overflow: visible;
+  overflow: hidden;
   font-size: 0.88rem;
   line-height: 1.65;
   max-width: 100%;
+}
+
+/* Line numbers gutter */
+.highlight .gutter {
+  display: none;
+}
+
+.highlight table {
+  width: 100%;
+  min-width: 0;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.highlight table td {
+  padding: 0;
+  border: none;
+  width: 100%;
+}
+
+.highlight table td.gutter {
+  display: none;
+}
+
+/* Code content area */
+.highlight .code {
+  padding: 20px 0 20px 20px;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 420px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-secondary) transparent;
+}
+
+.highlight .code pre {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  font-size: inherit;
+  white-space: pre;
+  display: block;
 }
 
 /* Line numbers gutter */
@@ -45,6 +89,7 @@
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: var(--border-secondary) transparent;
+  width: 100%;
 }
 
 .highlight .code pre {
