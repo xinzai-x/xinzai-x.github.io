@@ -2172,12 +2172,20 @@ figure.highlight.is-expanded .code-expand-btn {
 @media (max-width: 767px) {
   :root {
     --container-padding: 16px;
-    --font-size-h1: 1.65rem;
-    --font-size-h2: 1.35rem;
-    --font-size-h3: 1.15rem;
+    --font-size-h1: 1.5rem;
+    --font-size-h2: 1.25rem;
+    --font-size-h3: 1.05rem;
+  }
+
+  html {
+    font-size: 15px;
   }
 
   .post-content {
+    font-size: 0.95rem;
+  }
+
+  .page-content {
     font-size: 0.95rem;
   }
 
