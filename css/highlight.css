@@ -39,12 +39,7 @@
 /* Code content area */
 .highlight .code {
   padding: 20px 20px 20px 0;
-  overflow-x: auto;
-  overflow-y: auto;
-  max-height: 420px;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border-secondary) transparent;
+  overflow: visible;
 }
 
 .highlight .code pre {
