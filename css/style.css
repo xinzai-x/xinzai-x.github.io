@@ -1124,8 +1124,8 @@ html {
 
 /* Code blocks scrollable indicator - removed, was covering last line */
 
-/* Code blocks */
-.post-content pre {
+/* Code blocks - only apply to standalone pre, not inside figure.highlight */
+.post-content > pre {
   margin: 1.5em 0;
   padding: 20px 0 20px 20px;
   background-color: var(--bg-code);
