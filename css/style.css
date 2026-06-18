@@ -48,7 +48,7 @@
   --transition-slow: 0.4s ease;
 
   /* === Layout === */
-  --max-width: 1200px;
+  --max-width: 1400px;
   --content-width: 860px;
   --sidebar-width: 240px;
   --header-height: 60px;
@@ -1543,7 +1543,7 @@ html {
 
 .archive-link {
   flex: 1;
-  min-width: 0; /* Allow text truncation */
+  min-width: 0;
   color: var(--text-primary);
   transition: color var(--transition-fast);
 }
@@ -1557,6 +1557,9 @@ html {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .archive-category {
@@ -2140,7 +2143,7 @@ html {
   }
 
   .post-content {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .post-card-content {
