@@ -41,7 +41,7 @@
   display: none;
 }
 
-/* Code content area - no overflow, let parent handle it */
+/* Code content area */
 .highlight .code {
   padding: 0;
   overflow: visible;
@@ -55,6 +55,8 @@
   border-radius: 0;
   font-size: inherit;
   white-space: pre;
+  display: block;
+  width: 100%;
 }
 
 /* Line numbers gutter */

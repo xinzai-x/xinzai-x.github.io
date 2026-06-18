@@ -1182,6 +1182,8 @@ html {
   border-radius: 0;
   font-size: inherit;
   white-space: pre;
+  display: block;
+  width: 100%;
 }
 
 .post-content pre code {
