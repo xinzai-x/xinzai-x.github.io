@@ -9,6 +9,7 @@ figure.highlight {
   border: 1px solid var(--border-primary);
   border-radius: var(--radius-md);
   overflow: hidden;
+  position: relative;
   max-width: 100%;
 }
 
@@ -16,6 +17,7 @@ figure.highlight table {
   width: 100%;
   border-collapse: collapse;
   margin: 0;
+  font-size: inherit;
 }
 
 figure.highlight table td {
@@ -29,24 +31,54 @@ figure.highlight table td.gutter {
 }
 
 figure.highlight .code {
-  padding: 0;
+  padding: 16px 20px;
+  font-size: 0.95rem;
 }
 
 figure.highlight .code pre {
   margin: 0;
-  padding: 16px 20px;
+  padding: 0;
   background: none;
   border: none;
   border-radius: 0;
-  font-size: 0.95rem !important;
+  font-size: inherit;
   line-height: 1.65;
   white-space: pre;
-  display: block;
-  max-height: 420px;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border-secondary) transparent;
+}
+
+/* Expand button */
+.code-expand-btn {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(transparent, var(--bg-code));
+  border: none;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  color: var(--text-tertiary);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  z-index: 1;
+  transition: color var(--transition-fast);
+}
+
+.code-expand-btn:hover {
+  color: var(--accent-primary);
+}
+
+figure.highlight.is-expandable .code-expand-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+figure.highlight.is-expanded .code-expand-btn {
+  display: none;
 }
 
 /* Mobile */
@@ -54,28 +86,28 @@ figure.highlight .code pre {
   .code-copy-btn {
     opacity: 0.6;
   }
-  figure.highlight .code pre {
+  figure.highlight .code {
     font-size: 0.82rem;
     padding: 14px 16px;
   }
 }
 
 /* Scrollbar in code blocks */
-figure.highlight .code pre::-webkit-scrollbar {
+figure.highlight ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
-figure.highlight .code pre::-webkit-scrollbar-track {
+figure.highlight ::-webkit-scrollbar-track {
   background: transparent;
 }
 
-figure.highlight .code pre::-webkit-scrollbar-thumb {
+figure.highlight ::-webkit-scrollbar-thumb {
   background-color: var(--border-secondary);
   border-radius: 3px;
 }
 
-figure.highlight .code pre::-webkit-scrollbar-thumb:hover {
+figure.highlight ::-webkit-scrollbar-thumb:hover {
   background-color: var(--border-secondary);
 }
 

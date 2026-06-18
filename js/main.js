@@ -534,6 +534,53 @@
   // =============================================
   const CodeStyleFix = {
     init() {
+      document.querySelectorAll('figure.highlight').forEach(block => {
+        const pre = block.querySelector('pre');
+        if (!pre) return;
+        pre.style.background = 'none';
+        pre.style.border = 'none';
+        pre.style.borderRadius = '0';
+        pre.style.margin = '0';
+        pre.style.padding = '0';
+      });
+    }
+  };
+
+  // =============================================
+  // Code Expand Button
+  // =============================================
+  const CodeExpand = {
+    init() {
+      document.querySelectorAll('figure.highlight').forEach(block => {
+        const code = block.querySelector('.code');
+        if (!code) return;
+
+        const fullHeight = code.scrollHeight;
+        if (fullHeight <= 420) return;
+
+        block.style.maxHeight = '420px';
+        block.classList.add('is-expandable');
+
+        const btn = document.createElement('button');
+        btn.className = 'code-expand-btn';
+        btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg> 展开代码';
+        block.appendChild(btn);
+
+        let expanded = false;
+        btn.addEventListener('click', () => {
+          expanded = !expanded;
+          if (expanded) {
+            block.style.maxHeight = 'none';
+            block.classList.add('is-expanded');
+            btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg> 收起代码';
+          } else {
+            block.style.maxHeight = '420px';
+            block.classList.remove('is-expanded');
+            btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg> 展开代码';
+            block.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+          }
+        });
+      });
     }
   };
 
@@ -550,6 +597,7 @@
     ImageManager.init();
     CalloutProcessor.init();
     CodeCopy.init();
+    CodeExpand.init();
     CodeStyleFix.init();
     LinkManager.init();
     HeaderScroll.init();

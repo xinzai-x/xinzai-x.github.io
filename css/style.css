@@ -1139,53 +1139,24 @@ html {
   scrollbar-color: var(--border-secondary) transparent;
 }
 
-/* Hexo code block - figure.highlight */
 figure.highlight {
-  margin: 1.5em 0;
-  padding: 0;
-  background-color: var(--bg-code);
-  border: 1px solid var(--border-primary);
-  border-radius: var(--radius-md);
   overflow: hidden;
-  position: relative;
   max-width: 100%;
-}
-
-figure.highlight table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0;
-  border: none;
-  background: none;
-}
-
-figure.highlight table td {
-  padding: 0;
-  border: none;
-  background: none;
 }
 
 figure.highlight .code {
   padding: 16px 20px;
-  background: none;
-  border: none;
 }
 
 figure.highlight .code pre {
   margin: 0;
-  padding: 16px 20px;
+  padding: 0;
   background: none !important;
   border: none !important;
   border-radius: 0;
-  font-size: 0.95rem !important;
+  font-size: inherit;
   line-height: 1.65;
   white-space: pre;
-  display: block;
-  max-height: 420px;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border-secondary) transparent;
 }
 
 .post-content pre code {
@@ -2271,7 +2242,7 @@ figure.highlight .code pre {
     border-right: none;
   }
 
-  figure.highlight .code pre {
+  figure.highlight .code {
     font-size: 0.82rem;
     padding: 14px 16px;
   }
