@@ -2,7 +2,6 @@
    Code Block Styles
    ============================================= */
 
-/* Outer container - handles border, background, height limit */
 figure.highlight {
   margin: 1.5em 0;
   padding: 0;
@@ -10,17 +9,13 @@ figure.highlight {
   border: 1px solid var(--border-primary);
   border-radius: var(--radius-md);
   overflow: hidden;
-  position: relative;
   max-width: 100%;
 }
 
-/* Reset all inner elements - no borders, no backgrounds */
 figure.highlight table {
   width: 100%;
   border-collapse: collapse;
   margin: 0;
-  border: none;
-  background: none;
 }
 
 figure.highlight table td {
@@ -35,9 +30,12 @@ figure.highlight table td.gutter {
 
 figure.highlight .code {
   padding: 16px 20px;
-  overflow: visible;
-  background: none;
-  border: none;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 420px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-secondary) transparent;
 }
 
 figure.highlight .code pre {
@@ -46,324 +44,9 @@ figure.highlight .code pre {
   background: none;
   border: none;
   border-radius: 0;
-  font-size: 0.88rem;
+  font-size: inherit;
   line-height: 1.65;
   white-space: pre;
-  overflow: visible;
-}
-
-/* Expand button */
-.code-expand-btn {
-  display: none;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40px;
-  background: linear-gradient(transparent, var(--bg-code));
-  border: none;
-  border-radius: 0 0 var(--radius-md) var(--radius-md);
-  color: var(--text-tertiary);
-  font-family: var(--font-heading);
-  font-size: 0.85rem;
-  font-weight: 500;
-  cursor: pointer;
-  z-index: 1;
-  transition: color var(--transition-fast);
-}
-
-.code-expand-btn:hover {
-  color: var(--accent-primary);
-}
-
-figure.highlight.is-expandable .code-expand-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-}
-
-figure.highlight.is-expanded .code-expand-btn {
-  display: none;
-}
-
-/* Dark mode */
-[data-theme="dark"] figure.highlight {
-  background-color: #0a0a0a;
-  border-color: #1a1a1a;
-}
-
-[data-theme="dark"] .code-expand-btn {
-  background: linear-gradient(transparent, #0a0a0a);
-}
-
-/* =============================================
-   Syntax Colors — Light Mode
-   ============================================= */
-figure.highlight .comment,
-figure.highlight .quote {
-  color: #8a7e74;
-  font-style: italic;
-}
-
-figure.highlight .keyword,
-figure.highlight .selector-tag,
-figure.highlight .type {
-  color: #9b2d7c;
-  font-weight: 500;
-}
-
-figure.highlight .string,
-figure.highlight .template-tag,
-figure.highlight .deletion {
-  color: #2e7d32;
-}
-
-figure.highlight .addition {
-  color: #2e7d32;
-  background-color: rgba(46, 125, 50, 0.1);
-}
-
-figure.highlight .number,
-figure.highlight .literal,
-figure.highlight .built_in,
-figure.highlight .builtin-name {
-  color: #b8860b;
-}
-
-figure.highlight .symbol,
-figure.highlight .bullet {
-  color: #b8860b;
-}
-
-figure.highlight .variable,
-figure.highlight .template-variable,
-figure.highlight .link {
-  color: #2c71b0;
-}
-
-figure.highlight .attr,
-figure.highlight .attribute {
-  color: #b8860b;
-}
-
-figure.highlight .regexp,
-figure.highlight .link {
-  color: #2c71b0;
-}
-
-figure.highlight .title,
-figure.highlight .section {
-  color: #9b2d7c;
-  font-weight: 600;
-}
-
-figure.highlight .params {
-  color: var(--text-secondary);
-}
-
-figure.highlight .meta {
-  color: #8a7e74;
-}
-
-figure.highlight .name {
-  color: #9b2d7c;
-}
-
-figure.highlight .tag {
-  color: #9b2d7c;
-}
-
-figure.highlight .selector-class,
-figure.highlight .selector-attr {
-  color: #9b2d7c;
-}
-
-figure.highlight .selector-pseudo {
-  color: #b8860b;
-}
-
-figure.highlight .property {
-  color: #2c71b0;
-}
-
-figure.highlight .char {
-  color: #2e7d32;
-}
-
-figure.highlight .emphasis {
-  font-style: italic;
-}
-
-figure.highlight .strong {
-  font-weight: bold;
-}
-
-/* =============================================
-   Syntax Colors — Dark Mode
-   ============================================= */
-[data-theme="dark"] figure.highlight .comment,
-[data-theme="dark"] figure.highlight .quote {
-  color: #7a7068;
-  font-style: italic;
-}
-
-[data-theme="dark"] figure.highlight .keyword,
-[data-theme="dark"] figure.highlight .selector-tag,
-[data-theme="dark"] figure.highlight .type {
-  color: #e8a0bf;
-  font-weight: 500;
-}
-
-[data-theme="dark"] figure.highlight .string,
-[data-theme="dark"] figure.highlight .template-tag,
-[data-theme="dark"] figure.highlight .deletion {
-  color: #a8d8a0;
-}
-
-[data-theme="dark"] figure.highlight .addition {
-  color: #a8d8a0;
-  background-color: rgba(168, 216, 160, 0.1);
-}
-
-[data-theme="dark"] figure.highlight .number,
-[data-theme="dark"] figure.highlight .literal,
-[data-theme="dark"] figure.highlight .built_in,
-[data-theme="dark"] figure.highlight .builtin-name {
-  color: #e8c060;
-}
-
-[data-theme="dark"] figure.highlight .symbol,
-[data-theme="dark"] figure.highlight .bullet {
-  color: #e8c060;
-}
-
-[data-theme="dark"] figure.highlight .variable,
-[data-theme="dark"] figure.highlight .template-variable,
-[data-theme="dark"] figure.highlight .link {
-  color: #88c0e8;
-}
-
-[data-theme="dark"] figure.highlight .attr,
-[data-theme="dark"] figure.highlight .attribute {
-  color: #e8c060;
-}
-
-[data-theme="dark"] figure.highlight .regexp,
-[data-theme="dark"] figure.highlight .link {
-  color: #88c0e8;
-}
-
-[data-theme="dark"] figure.highlight .title,
-[data-theme="dark"] figure.highlight .section {
-  color: #e8a0bf;
-  font-weight: 600;
-}
-
-[data-theme="dark"] figure.highlight .params {
-  color: var(--text-secondary);
-}
-
-[data-theme="dark"] figure.highlight .meta {
-  color: #7a7068;
-}
-
-[data-theme="dark"] figure.highlight .name {
-  color: #e8a0bf;
-}
-
-[data-theme="dark"] figure.highlight .tag {
-  color: #e8a0bf;
-}
-
-[data-theme="dark"] figure.highlight .selector-class,
-[data-theme="dark"] figure.highlight .selector-attr {
-  color: #e8a0bf;
-}
-
-[data-theme="dark"] figure.highlight .selector-pseudo {
-  color: #e8c060;
-}
-
-[data-theme="dark"] figure.highlight .property {
-  color: #88c0e8;
-}
-
-[data-theme="dark"] figure.highlight .char {
-  color: #a8d8a0;
-}
-
-/* Line highlight on hover - disabled */
-
-/* Caption */
-figure.highlight + .caption,
-.codeblock-caption {
-  margin-top: -12px;
-  padding: 6px 14px;
-  font-size: var(--font-size-small);
-  color: var(--text-tertiary);
-  font-style: italic;
-  background-color: var(--bg-code);
-  border: 1px solid var(--border-primary);
-  border-top: none;
-  border-radius: 0 0 var(--radius-md) var(--radius-md);
-}
-
-/* Code block wrapper for copy button */
-.highlight-wrap {
-  position: relative;
-}
-
-/* Copy button */
-.code-copy-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 4px 10px;
-  font-family: var(--font-heading);
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--text-tertiary);
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-primary);
-  border-radius: var(--radius-sm);
-  opacity: 0;
-  transition: opacity var(--transition-fast), color var(--transition-fast), background-color var(--transition-fast);
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.highlight-wrap:hover .code-copy-btn {
-  opacity: 1;
-}
-
-.code-copy-btn:hover {
-  color: var(--text-primary);
-  background-color: var(--bg-tertiary);
-}
-
-.code-copy-btn.copied {
-  color: #2e7d32;
-  opacity: 1;
-}
-
-[data-theme="dark"] .code-copy-btn {
-  background-color: #2e2a22;
-  border-color: #3a342c;
-  color: #8a7e74;
-}
-
-[data-theme="dark"] .code-copy-btn:hover {
-  color: #e8e0d6;
-  background-color: #3a342c;
-}
-
-[data-theme="dark"] .code-copy-btn.copied {
-  color: #a8d8a0;
 }
 
 /* Mobile: always show copy button */
@@ -371,9 +54,13 @@ figure.highlight + .caption,
   .code-copy-btn {
     opacity: 0.6;
   }
+  figure.highlight .code {
+    font-size: 0.82rem;
+    padding: 14px 16px;
+  }
 }
 
-/* Scrollbar in code blocks - transparent track, no hover color change */
+/* Scrollbar in code blocks */
 figure.highlight ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -390,4 +77,10 @@ figure.highlight ::-webkit-scrollbar-thumb {
 
 figure.highlight ::-webkit-scrollbar-thumb:hover {
   background-color: var(--border-secondary);
+}
+
+/* Dark mode */
+[data-theme="dark"] figure.highlight {
+  background-color: #0a0a0a;
+  border-color: #1a1a1a;
 }
