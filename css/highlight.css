@@ -6,14 +6,19 @@
 /* Hexo highlight wrapper */
 .highlight {
   margin: 1.5em 0;
-  padding: 0;
+  padding: 20px 0 20px 20px;
   background-color: var(--bg-code);
   border: 1px solid var(--border-primary);
   border-radius: var(--radius-md);
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 420px;
   font-size: 0.88rem;
   line-height: 1.65;
   max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-secondary) transparent;
 }
 
 /* Line numbers gutter */
@@ -25,7 +30,6 @@
   width: 100%;
   border-collapse: collapse;
   margin: 0;
-  table-layout: fixed;
 }
 
 .highlight table td {
@@ -37,17 +41,10 @@
   display: none;
 }
 
-/* Code content area */
+/* Code content area - no overflow, let parent handle it */
 .highlight .code {
-  padding: 20px 0 20px 20px;
-  overflow-x: auto;
-  overflow-y: auto;
-  max-height: 420px;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border-secondary) transparent;
-  display: block;
-  width: 100%;
+  padding: 0;
+  overflow: visible;
 }
 
 .highlight .code pre {
@@ -58,7 +55,6 @@
   border-radius: 0;
   font-size: inherit;
   white-space: pre;
-  display: block;
 }
 
 /* Line numbers gutter */
@@ -70,36 +66,6 @@
   border-collapse: collapse;
   margin: 0;
   width: 100%;
-}
-
-.highlight table td {
-  padding: 0;
-  border: none;
-}
-
-.highlight table td.gutter {
-  display: none;
-}
-
-/* Code content area */
-.highlight .code {
-  padding: 20px 0 20px 20px;
-  overflow-x: auto;
-  overflow-y: auto;
-  max-height: 420px;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border-secondary) transparent;
-  width: 100%;
-}
-
-.highlight .code pre {
-  margin: 0;
-  padding: 0;
-  background: none;
-  border: none;
-  border-radius: 0;
-  font-size: inherit;
 }
 
 /* Caption / figcaption for code blocks */
@@ -434,15 +400,15 @@
 }
 
 /* Scrollbar in code blocks */
-.highlight .code::-webkit-scrollbar {
+.highlight::-webkit-scrollbar {
   height: 4px;
 }
 
-.highlight .code::-webkit-scrollbar-track {
+.highlight::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.highlight .code::-webkit-scrollbar-thumb {
+.highlight::-webkit-scrollbar-thumb {
   background-color: var(--border-secondary);
   border-radius: 2px;
 }

@@ -1141,23 +1141,27 @@ html {
   scrollbar-color: var(--border-secondary) transparent;
 }
 
-/* Hexo highlight wrapper fixed height */
+/* Hexo highlight wrapper */
 .highlight {
   margin: 1.5em 0;
-  padding: 0;
+  padding: 20px 0 20px 20px;
   background-color: var(--bg-code);
   border: 1px solid var(--border-primary);
   border-radius: var(--radius-md);
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 420px;
   font-size: 0.88rem;
   line-height: 1.65;
   max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-secondary) transparent;
 }
 
 .highlight table {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed;
 }
 
 .highlight table td {
@@ -1166,15 +1170,8 @@ html {
 }
 
 .highlight .code {
-  padding: 20px 0 20px 20px;
-  overflow-x: auto;
-  overflow-y: auto;
-  max-height: 420px;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border-secondary) transparent;
-  display: block;
-  width: 100%;
+  padding: 0;
+  overflow: visible;
 }
 
 .highlight .code pre {
@@ -1185,7 +1182,6 @@ html {
   border-radius: 0;
   font-size: inherit;
   white-space: pre;
-  display: block;
 }
 
 .post-content pre code {
