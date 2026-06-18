@@ -1141,55 +1141,49 @@ html {
   scrollbar-color: var(--border-secondary) transparent;
 }
 
-/* Hexo highlight wrapper */
-.highlight {
+/* Hexo code block - figure.highlight */
+figure.highlight {
   margin: 1.5em 0;
   padding: 0;
   background-color: var(--bg-code);
   border: 1px solid var(--border-primary);
   border-radius: var(--radius-md);
   overflow: hidden;
-  font-size: 0.88rem;
-  line-height: 1.65;
-  max-width: 100%;
   position: relative;
+  max-width: 100%;
 }
 
-.highlight table {
+figure.highlight table {
   width: 100%;
   border-collapse: collapse;
+  margin: 0;
+  border: none;
   background: none;
 }
 
-.highlight table td {
+figure.highlight table td {
   padding: 0;
   border: none;
   background: none;
 }
 
-.highlight .code {
-  padding: 20px;
-  overflow: hidden;
-  max-height: 420px;
-  transition: max-height 0.3s ease;
+figure.highlight .code {
+  padding: 16px 20px;
+  overflow: visible;
   background: none;
   border: none;
 }
 
-.highlight .code.expanded {
-  max-height: none;
-}
-
-.highlight .code pre {
+figure.highlight .code pre {
   margin: 0;
   padding: 0;
   background: none;
   border: none;
   border-radius: 0;
-  font-size: inherit;
+  font-size: 0.88rem;
+  line-height: 1.65;
   white-space: pre;
   overflow: visible;
-  max-height: none;
 }
 
 /* Expand button */
@@ -1199,7 +1193,7 @@ html {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 48px;
+  height: 40px;
   background: linear-gradient(transparent, var(--bg-code));
   border: none;
   border-radius: 0 0 var(--radius-md) var(--radius-md);
@@ -1216,14 +1210,14 @@ html {
   color: var(--accent-primary);
 }
 
-.highlight.is-expandable .code-expand-btn {
+figure.highlight.is-expandable .code-expand-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
 }
 
-.highlight.is-expanded .code-expand-btn {
+figure.highlight.is-expanded .code-expand-btn {
   display: none;
 }
 
@@ -2294,7 +2288,7 @@ html {
     border-right: none;
   }
 
-  .highlight {
+  figure.highlight {
     margin-left: calc(-1 * var(--container-padding));
     margin-right: calc(-1 * var(--container-padding));
     border-radius: 0;

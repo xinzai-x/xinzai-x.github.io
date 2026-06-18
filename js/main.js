@@ -393,7 +393,7 @@
   // =============================================
   const CodeCopy = {
     init() {
-      const blocks = document.querySelectorAll('.highlight');
+      const blocks = document.querySelectorAll('figure.highlight');
       blocks.forEach(block => {
         // Wrap for hover detection
         if (!block.parentElement.classList.contains('highlight-wrap')) {
@@ -496,10 +496,14 @@
   // =============================================
   const CodeExpand = {
     init() {
-      document.querySelectorAll('.highlight').forEach(block => {
+      document.querySelectorAll('figure.highlight').forEach(block => {
         const code = block.querySelector('.code');
-        if (!code || code.scrollHeight <= 420) return;
+        if (!code) return;
 
+        const fullHeight = code.scrollHeight;
+        if (fullHeight <= 420) return;
+
+        block.style.maxHeight = '420px';
         block.classList.add('is-expandable');
 
         const btn = document.createElement('button');
@@ -507,13 +511,18 @@
         btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg> 展开代码';
         block.appendChild(btn);
 
+        let expanded = false;
         btn.addEventListener('click', () => {
-          code.classList.toggle('expanded');
-          block.classList.toggle('is-expanded');
-          if (code.classList.contains('expanded')) {
+          expanded = !expanded;
+          if (expanded) {
+            block.style.maxHeight = 'none';
+            block.classList.add('is-expanded');
             btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg> 收起代码';
           } else {
+            block.style.maxHeight = '420px';
+            block.classList.remove('is-expanded');
             btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg> 展开代码';
+            block.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
           }
         });
       });
