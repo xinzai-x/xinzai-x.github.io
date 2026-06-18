@@ -14,7 +14,7 @@
   --bg-tertiary: #efeae3;
   --bg-card: #ffffff;
   --bg-code: #f8f5f0;
-  --bg-code-inline: #f0ece5;
+  --bg-code-inline: #ebe5da;
   --bg-header: rgba(250, 248, 245, 0.85);
   --bg-footer: #f5f2ed;
   --bg-search-overlay: rgba(0, 0, 0, 0.4);
@@ -25,14 +25,14 @@
   --text-muted: #b0a598;
   --text-inverse: #faf8f5;
 
-  --accent-primary: #b8860b;
+  --accent-primary: #9a7209;
   --accent-secondary: #d4a017;
-  --accent-hover: #996f09;
-  --accent-light: rgba(184, 134, 11, 0.1);
+  --accent-hover: #806008;
+  --accent-light: rgba(184, 134, 11, 0.18);
 
   --border-primary: #e8e0d6;
   --border-secondary: #d8cfc4;
-  --border-active: #b8860b;
+  --border-active: #9a7209;
 
   --shadow-sm: 0 1px 3px rgba(44, 36, 32, 0.06);
   --shadow-md: 0 4px 12px rgba(44, 36, 32, 0.08);
@@ -708,13 +708,13 @@ html {
    Post Article
    ============================================= */
 .post-article {
-  max-width: var(--content-width);
+  max-width: 85vw;
   margin: 0 auto;
 }
 
 /* When no sidebar, use more width */
 .container > .post-article {
-  max-width: min(var(--content-width), 85vw);
+  max-width: 85vw;
 }
 
 /* When inside sidebar grid, don't constrain width */
@@ -1126,7 +1126,7 @@ html {
 /* Code blocks */
 .post-content pre {
   margin: 1.5em 0;
-  padding: 20px;
+  padding: 20px 0 20px 20px;
   background-color: var(--bg-code);
   border: 1px solid var(--border-primary);
   border-radius: var(--radius-md);
@@ -1136,6 +1136,8 @@ html {
   font-size: 0.88rem;
   line-height: 1.65;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-secondary) transparent;
 }
 
 /* Hexo highlight wrapper fixed height */
@@ -1145,18 +1147,24 @@ html {
   background-color: var(--bg-code);
   border: 1px solid var(--border-primary);
   border-radius: var(--radius-md);
-  overflow: hidden;
+  overflow: visible;
   font-size: 0.88rem;
   line-height: 1.65;
   max-width: 100%;
 }
 
+.highlight table {
+  min-width: fit-content;
+}
+
 .highlight .code {
-  padding: 20px;
+  padding: 20px 0 20px 20px;
   overflow-x: auto;
   overflow-y: auto;
   max-height: 420px;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-secondary) transparent;
 }
 
 .post-content pre code {
