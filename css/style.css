@@ -1152,6 +1152,7 @@ html {
   font-size: 0.88rem;
   line-height: 1.65;
   max-width: 100%;
+  position: relative;
 }
 
 .highlight table {
@@ -1165,8 +1166,15 @@ html {
 }
 
 .highlight .code {
-  padding: 20px 20px 20px 0;
-  overflow: visible;
+  padding: 20px;
+  overflow-x: auto;
+  max-height: 420px;
+  -webkit-overflow-scrolling: touch;
+  transition: max-height 0.3s ease;
+}
+
+.highlight .code.expanded {
+  max-height: none;
 }
 
 .highlight .code pre {
@@ -1177,6 +1185,41 @@ html {
   border-radius: 0;
   font-size: inherit;
   white-space: pre;
+}
+
+/* Expand button */
+.code-expand-btn {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: linear-gradient(transparent, var(--bg-code));
+  border: none;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  color: var(--text-tertiary);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  z-index: 1;
+  transition: color var(--transition-fast);
+}
+
+.code-expand-btn:hover {
+  color: var(--accent-primary);
+}
+
+.highlight.is-expandable .code-expand-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.highlight.is-expanded .code-expand-btn {
+  display: none;
 }
 
 .post-content pre code {

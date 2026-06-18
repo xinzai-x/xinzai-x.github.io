@@ -492,6 +492,35 @@
   };
 
   // =============================================
+  // Code Expand Button
+  // =============================================
+  const CodeExpand = {
+    init() {
+      document.querySelectorAll('.highlight').forEach(block => {
+        const code = block.querySelector('.code');
+        if (!code || code.scrollHeight <= 420) return;
+
+        block.classList.add('is-expandable');
+
+        const btn = document.createElement('button');
+        btn.className = 'code-expand-btn';
+        btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg> 展开代码';
+        block.appendChild(btn);
+
+        btn.addEventListener('click', () => {
+          code.classList.toggle('expanded');
+          block.classList.toggle('is-expanded');
+          if (code.classList.contains('expanded')) {
+            btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg> 收起代码';
+          } else {
+            btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg> 展开代码';
+          }
+        });
+      });
+    }
+  };
+
+  // =============================================
   // Initialize
   // =============================================
   document.addEventListener('DOMContentLoaded', () => {
@@ -504,6 +533,7 @@
     ImageManager.init();
     CalloutProcessor.init();
     CodeCopy.init();
+    CodeExpand.init();
     LinkManager.init();
     HeaderScroll.init();
   });
