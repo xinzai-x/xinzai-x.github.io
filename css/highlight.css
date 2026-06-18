@@ -8,7 +8,8 @@ figure.highlight {
   background-color: var(--bg-code);
   border: 1px solid var(--border-primary);
   border-radius: var(--radius-md);
-  overflow: hidden;
+  overflow: auto;
+  max-height: 420px;
   max-width: 100%;
 }
 
@@ -30,13 +31,10 @@ figure.highlight table td.gutter {
 
 figure.highlight .code {
   padding: 16px 20px;
-  overflow-x: auto;
-  overflow-y: auto;
-  max-height: 420px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: var(--border-secondary) transparent;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
 }
 
 figure.highlight .code pre {
