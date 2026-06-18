@@ -40,9 +40,8 @@
 /* Code content area */
 .highlight .code {
   padding: 20px;
-  overflow-x: auto;
+  overflow: hidden;
   max-height: 420px;
-  -webkit-overflow-scrolling: touch;
   transition: max-height 0.3s ease;
 }
 
