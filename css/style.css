@@ -50,7 +50,7 @@
   /* === Layout === */
   --max-width: 1200px;
   --content-width: 860px;
-  --sidebar-width: 280px;
+  --sidebar-width: 240px;
   --header-height: 60px;
   --container-padding: 24px;
 
@@ -714,7 +714,7 @@ html {
    Post Article
    ============================================= */
 .post-article {
-  max-width: 90vw;
+  max-width: none;
   margin: 0 auto;
   min-width: 0;
   overflow: hidden;
