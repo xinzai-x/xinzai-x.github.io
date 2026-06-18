@@ -1160,8 +1160,11 @@ html {
 }
 
 .highlight table {
+  display: block;
   width: 100%;
   border-collapse: collapse;
+  margin: 0;
+  overflow-x: auto;
 }
 
 .highlight table td {
@@ -1172,6 +1175,8 @@ html {
 .highlight .code {
   padding: 0;
   overflow: visible;
+  display: block;
+  width: 100%;
 }
 
 .highlight .code pre {
@@ -1184,6 +1189,7 @@ html {
   white-space: pre;
   display: block;
   width: 100%;
+  min-width: fit-content;
 }
 
 .post-content pre code {
