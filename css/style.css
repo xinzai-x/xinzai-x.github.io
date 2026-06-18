@@ -2281,7 +2281,7 @@ figure.highlight.is-expanded .code-expand-btn {
   }
 
   /* Code blocks full width */
-  .post-content pre {
+  .post-content > pre {
     margin-left: calc(-1 * var(--container-padding));
     margin-right: calc(-1 * var(--container-padding));
     border-radius: 0;
