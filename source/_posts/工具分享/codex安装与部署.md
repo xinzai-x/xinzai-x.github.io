@@ -9,9 +9,9 @@ password:
 
 &ensp;&ensp;&ensp;&ensp;本文详细介绍了如何安装codex，以及如何配置使用deepseek、mimo的API进行codex的使用，配置的方法有三种，可自行选择，前两种无法使用插件，最后一种解锁codex全部功能，如果多种方式存在，启动软件时只启用相对于需要的软件，不然可能会冲突。
 
-1. 单cc switch方式（中文界面下无法显示模型名，也就无法切换模型，只启用cc switch）
-2. cxx + cc switch方式（启用ccx和cc switch）
-3. codex++ 方式（启用codex++）
+1. 单cc switch方式（中文界面下无法显示模型名，也就无法切换模型，只启用cc switch）（以接入mimo为例）
+2. cxx + cc switch方式（启用ccx和cc switch）（以接入mimo和deepseek为例）
+3. codex++ 方式（启用codex++）（以接入deepseek为例）
 
 # 下载安装
 
@@ -25,10 +25,6 @@ password:
 # deepseek配置部署
 
 &ensp;&ensp;&ensp;&ensp;教程：https://v.douyin.com/YQ2uNp0rLKo/
-
-&ensp;&ensp;&ensp;&ensp;deepseek API平台进行申请`API keys`，[官方链接](https://platform.deepseek.com)，注意：`创建好key之后复制记得保存（关闭后无法复制）`，API调用官方技术文档：[链接](https://api-docs.deepseek.com/zh-cn/)。
-
-<img src="https://files.seeusercontent.com/2026/05/30/k9Fl/deepseekkeys.png" alt="deepseek建keys.png" style="zoom:50%;" />
 
 ## cxx + cc switch方式
 
@@ -65,6 +61,10 @@ APP_UI_LANGUAGE=zh-CN
 
     <img src="https://files.seeusercontent.com/2026/05/30/aP3f/ccx.png" alt="ccx详细配置.png" style="zoom:50%;" />
 
+4. deepseek API平台进行申请`API keys`，[官方链接](https://platform.deepseek.com)，注意：`创建好key之后复制记得保存（关闭后无法复制）`，API调用官方技术文档：[链接](https://api-docs.deepseek.com/zh-cn/)。API key例如：sk-83db74c3dbb244f8a1260ec2fa43097
+
+    <img src="https://files.seeusercontent.com/2026/05/30/k9Fl/deepseekkeys.png" alt="deepseek建keys.png" style="zoom:50%;" />
+
 5. 填写下面参数，进行配置，
 
     - 渠道名称：deepseek
@@ -73,12 +73,12 @@ APP_UI_LANGUAGE=zh-CN
 
     - 基础URL（在官方技术文档查看`base_url (OpenAI)`）：https://api.deepseek.com
 
-    - 模型重定向，填写完成后，点击右侧的`添加`按钮添加（把列表的模型都配置）
+    - 模型重定向，填写完成后，点击右侧的`添加`按钮添加
 
-        - 模型名选`gpt-5.5`
+        - 模型名选`gpt-5.5`（`把列表的模型都配置`）
         - 目标模型选`deepseek-v4-pro`（这个需要将deepseek的key复制到`API密钥管理`中添加才可以获取到）
 
-    - API密钥管理：将deeseek创建的`API kyes`复制进入，点击右侧`添加`按钮添加
+    - API密钥管理：将deeseek创建的`API kyes`复制进入（例如：sk-83db74c3dbb244f8a1260ec2fa43097），点击右侧`添加`按钮添加
 
     - 勾选`规范化非常见 Chat role`
 
@@ -108,7 +108,7 @@ APP_UI_LANGUAGE=zh-CN
 
     - 供应商名称：deepseek
 
-    - API Key：为ccx配置文件`.env`中的`PROXY_ACCESS_KEY=your-proxy-access-key`，等号后面的就是你的API Key
+    - API Key：为ccx配置文件`.env`中的`PROXY_ACCESS_KEY=your-proxy-access-key`，等号后面的就是你的API Key（例如：123456）
 
     - API请求地址：http://localhost:3000/v1（固定）
 
@@ -128,7 +128,11 @@ APP_UI_LANGUAGE=zh-CN
 
     <img src="https://files.seeusercontent.com/2026/06/11/Ug5o/codex.png" alt="codex++添加供应商.png" style="zoom:50%;" />
 
-3. 根据下面说明配置，配置完成后，记得点击上方保存按钮保存。
+3. deepseek API平台进行申请`API keys`，[官方链接](https://platform.deepseek.com)，注意：`创建好key之后复制记得保存（关闭后无法复制）`，API调用官方技术文档：[链接](https://api-docs.deepseek.com/zh-cn/)。API key例如：sk-83db74c3dbb244f8a1260ec2fa43097
+
+    <img src="https://files.seeusercontent.com/2026/05/30/k9Fl/deepseekkeys.png" alt="deepseek建keys.png" style="zoom:50%;" />
+
+4. 根据下面说明配置，配置完成后，记得点击上方保存按钮保存。
 
     - 名称：deepseek
 
@@ -140,7 +144,7 @@ APP_UI_LANGUAGE=zh-CN
 
     - Base URL：https://api.deepseek.com（可查看官方技术文档）
 
-    - Key：在官方创建的API key
+    - Key：在官方创建的API key（例如：sk-83db74c3dbb244f8a1260ec2fa43097）
 
     - 上游协议：Chat Completions
 
@@ -148,15 +152,11 @@ APP_UI_LANGUAGE=zh-CN
 
         <img src="https://files.seeusercontent.com/2026/06/11/xz4I/codex.png" alt="codex++详细配置.png" style="zoom:50%;" />
 
-4. 使用配置好的供应商，切记不要手动启动codex，点击右上角重启codex++，就会启动codex。
+5. 使用配置好的供应商，切记`不要手动启动codex`，点击右上角重启codex++，就会启动codex。使用浏览器以及控制电脑插件最好使用完全访问的权限。
 
     <img src="https://files.seeusercontent.com/2026/06/11/qeL7/codex.png" alt="启动codex++.png" style="zoom:50%;" />
 
 # mimo配置部署
-
-&ensp;&ensp;&ensp;&ensp;官网创建API key[链接](https://platform.xiaomimimo.com/console/)，[官方技术文档](https://platform.xiaomimimo.com/docs/zh-CN/quick-start/first-api-call)
-
-![mimo创建API key.png](https://files.seeusercontent.com/2026/06/11/chF0/mimoAPI-key.png)
 
 ## 单cc switch方式
 
@@ -164,10 +164,18 @@ APP_UI_LANGUAGE=zh-CN
 
 <img src="https://files.seeusercontent.com/2026/06/11/D3is/cc-switch.png" alt="单cc switch添加.png" style="zoom:50%;" />
 
+&ensp;&ensp;&ensp;&ensp;官网创建API key[链接](https://platform.xiaomimimo.com/console/)，[官方技术文档](https://platform.xiaomimimo.com/docs/zh-CN/quick-start/first-api-call)，API key例如：sk-c4tstal75n3zw3wmiq41lpgdoixtin9tke3j8qe8dg4j2lo（自己创建）
+
+![mimo创建API key.png](https://files.seeusercontent.com/2026/06/11/chF0/mimoAPI-key.png)
+
+&ensp;&ensp;&ensp;&ensp;如果是`Token Plan`的（套餐型）创建的API key与普通的不一样，需要在下面图片显示创建才是正确的。
+
+<img src="https://files.seeusercontent.com/2026/06/16/Zqb3/mimo-plan-API-key.webp" alt="mimo plan API key.webp" style="zoom:50%;" />
+
 &ensp;&ensp;&ensp;&ensp;根据下面信息进行配置，只需要选择对应的供应商，以及填入供应商的API key，其它不需要修改
 
-- 预设供应商：Xiaomi MiMo
-- API Key：在mimo官网创建的API key填入
+- 预设供应商：Xiaomi MiMo（若是Token Plan的：Xaomi MiMo Token Plan (China)）
+- API Key：在mimo官网创建的API key填入（例如：sk-c4tstal75n3zw3wmiq41lpgdoixtin9tke3j8qe8dg4j2lo）
 - 模型映射：可以自行添加需要的模型（默认也行）
 
 <img src="https://files.seeusercontent.com/2026/06/11/h9fL/cc-switch.png" alt="单cc switch详细配置.png" style="zoom:50%;" />
@@ -223,38 +231,36 @@ APP_UI_LANGUAGE=zh-CN
 
     <img src="https://files.seeusercontent.com/2026/05/30/aP3f/ccx.png" alt="ccx详细配置.png" style="zoom:50%;" />
 
-4. 填写下面参数，进行配置，
+4. 官网创建API key[链接](https://platform.xiaomimimo.com/console/)，[官方技术文档](https://platform.xiaomimimo.com/docs/zh-CN/quick-start/first-api-call)，API key例如：sk-c4tstal75n3zw3wmiq41lpgdoixtin9tke3j8qe8dg4j2lo（自己创建）
+
+    ![mimo创建API key.png](https://files.seeusercontent.com/2026/06/11/chF0/mimoAPI-key.png)
+
+    如果是`Token Plan`的（套餐型）创建的API key与普通的不一样，需要在下面图片显示创建才是正确的。
+
+    <img src="https://files.seeusercontent.com/2026/06/16/Zqb3/mimo-plan-API-key.webp" alt="mimo plan API key.webp" style="zoom:50%;" />
+
+    
+
+5. 填写下面参数，进行配置，
 
     - 渠道名称：mimo
 
     - 服务类型：OpenAI Chat
 
-    - 基础URL（在官方技术文档查看`base_url (OpenAI)`）：https://api.xiaomimimo.com
+    - 基础URL（在官方技术文档查看`base_url (OpenAI)`）：https://api.xiaomimimo.com/v1（若是Token Plan的：https://token-plan-cn.xiaomimimo.com/v1）
 
     - 模型重定向，填写完成后，点击右侧的`添加`按钮添加
 
-        - 模型名选`gpt-5.5`
+        - 模型名选`gpt-5.5`（`把列表的模型都配置`）
         - 目标模型选`mimo-v2.5-pro`（这个需要将mimo的key复制到`API密钥管理`中添加才可以获取到）
 
-    - API密钥管理：将deeseek创建的`API kyes`复制进入，点击右侧`添加`按钮添加
+    - API密钥管理：将deeseek创建的`API kyes`复制进入（例如：sk-c4tstal75n3zw3wmiq41lpgdoixtin9tke3j8qe8dg4j2lo），点击右侧`添加`按钮添加
 
     - 勾选`规范化非常见 Chat role`
 
     - 其它不需要填写，直达下方的`创建渠道`按钮创建
 
         <img src="https://files.seeusercontent.com/2026/06/11/rY3s/mimo-ccx.png" alt="mimo ccx配置.png" style="zoom:50%;" />
-
-5. 
-
-6. 1
-
-7. 1
-
-8. 1
-
-9. 1
-
-
 
 ### 配cc switch
 
@@ -283,7 +289,7 @@ APP_UI_LANGUAGE=zh-CN
 
 ## 无法设置成中文
 
-&ensp;&ensp;&ensp;&ensp;这个问题已经研究明白了，其实就是要使用一下某些工具才会生效，如果没有可能真没办法，只要开了使用一会，然后把codex退出，重新启动后，就会自动变成中文了，国外的软件都懂的！
+&ensp;&ensp;&ensp;&ensp;这个问题已经研究明白了，其实就是要使用一下某些工具（外国网络环境）才会生效，如果没有可能真没办法，只要开了使用一会，然后把codex退出，重新启动后，就会自动变成中文了，国外的软件都懂的！
 
 ## ccx使用过程经常断开
 
@@ -295,9 +301,13 @@ APP_UI_LANGUAGE=zh-CN
 
 <img src="https://files.seeusercontent.com/2026/06/03/km0P/ccx.png" alt="ccx故障解决.png" style="zoom:50%;" />
 
+## 插件问题
 
+&ensp;&ensp;&ensp;&ensp;解决控制电脑以及插件问题，复制：https://github.com/chen0416ccc-cpu/codex-windows-fast-patch-skill 根据这个修复codex插件无法使用问题。然后直接给ai修复即可，如果装完有浏览器插件或电脑控制的插件不能使用再修复一次即可（最好是完全访问权限直接让ai修）
 
+&ensp;&ensp;&ensp;&ensp;温馨提示：`浏览器必须是原生谷歌浏览器，运行必须是完全访问的权限`。
 
+&ensp;&ensp;&ensp;&ensp;解决codex打开内置浏览器：`codex-windows-fast-patch` 技能中提到了类似的 `node_repl` 沙箱故障。根因：`config.toml` 中 `[windows] sandbox = "elevated"` 导致创建子进程时 `CreateProcessAsUserW` 失败（error 5）修改为 `sandbox = "unelevated"` 后，`node_repl` 内核正常启动。
 
 
 

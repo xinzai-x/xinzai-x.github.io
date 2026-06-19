@@ -1,0 +1,10 @@
+{
+  "name": "hexo-theme-ink",
+  "version": "1.0.0",
+  "description": "A clean, reading-focused Hexo theme with warm white palette",
+  "keywords": ["hexo", "theme", "minimal", "reading", "blog"],
+  "license": "MIT",
+  "engines": {
+    "hexo": ">=4.0.0"
+  }
+}

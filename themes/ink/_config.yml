@@ -1,0 +1,147 @@
+# ========================================
+# Hexo Theme - Ink
+# A clean, reading-focused blog theme
+# ========================================
+
+# ---------- Site Info ----------
+blog_name: 星仔极客
+favicon: /favicon.svg
+logo: /img/logo.svg
+
+# ---------- Navigation ----------
+menu:
+  首页: /
+  分类: /categories
+  归档: /archives
+  友链: /link
+  关于: /about
+
+# ---------- Friend Links ----------
+links:
+  - class_name: 大佬群居地
+    class_desc: 致敬青春！
+    link_list:
+      - name: 小帅同学
+        link: https://xiaoshuai.link/
+        avatar: https://img.picgo.net/2024/08/19/0e6f474ee69c0d93d25eaef90465fdc17dc864da06735dd7.jpeg
+        recommend: true
+      - name: 程序员哈利
+        link: https://hali.life/
+        avatar: https://hali.life/wp-content/uploads/2024/01/cropped-微信图片_20230103154646-32x32.jpg
+      - name: Mo 的记事簿
+        link: https://blog.xiowo.net/
+        avatar: https://blog.xiowo.net/favicon.ico
+        descr: MortalCat's blog
+      - name: 阿呆的博客
+        link: https://www.adai.fun/
+        avatar: https://www.faviconextractor.com/favicon/www.adai.fun
+        descr: 生活如此多娇
+
+  - class_name: 小伙伴
+    class_desc: 致敬青春！
+    link_list:
+      - name: 御枫林下の小破駅
+        link: https://agen233.github.io/
+        avatar: https://img.picgo.net/2024/08/19/6f1e2e497a47e5bd6d8faa0375d890a5bedd2f1978d0d1fb.jpg
+        recommend: true
+      - name: 为巽
+        link: https://weixuna.github.io/
+        avatar: https://img.picgo.net/2024/08/19/78ce7b83526731406160f5ed9f47fcefb5c12a0350a8acd9.jpg
+        descr: 咬定青山不放松
+        recommend: true
+
+# Social links (shown in footer)
+social:
+  GitHub: https://github.com/xinzai-x/
+  抖音: https://v.douyin.com/FENmELIAV9E/
+  # Email: mailto:you@example.com
+  # RSS: /atom.xml
+
+# ---------- Layout ----------
+# Sidebar position: left / right / false
+sidebar: right
+
+# Widgets shown in sidebar
+widgets:
+  - recent_posts
+  - categories
+  - tags
+
+# ---------- Article ----------
+# Excerpt length on index page (characters)
+excerpt_length: 80
+
+# Show read more link
+excerpt_link: true
+
+# Show reading time estimate
+reading_time: true
+
+# Show word count
+word_count: true
+
+# Show table of contents
+toc: true
+
+# Show post navigation (prev/next)
+post_navigation: true
+
+# Show author card at bottom of posts
+post_author:
+  enable: true
+  avatar: # URL to avatar image
+  bio: # Short bio
+
+# Show copyright notice at bottom of posts
+post_copyright: true
+
+# Show share buttons
+share: false
+
+# ---------- Code Highlight ----------
+highlight:
+  enable: true
+  line_number: true
+  theme: default
+
+# ---------- Comments ----------
+# Supports: disqus / gitalk / valine / waline / twikoo
+comments:
+  enable: false
+  # Choose one:
+  # disqus_shortname: your-shortname
+  # valine:
+  #   app_id: your-app-id
+  #   app_key: your-app-key
+
+# ---------- Search ----------
+search:
+  enable: true
+  path: search.xml
+  field: post
+
+# ---------- Appearance ----------
+# Default color scheme: light / dark / auto
+color_scheme: auto
+
+# Font settings
+font:
+  body: '"Noto Serif SC", "Source Han Serif SC", "Hiragino Sans GB", "Microsoft YaHei", Georgia, serif'
+  heading: '"Noto Sans SC", "Source Han Sans SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif'
+  code: '"JetBrains Mono", "Fira Code", "Source Code Pro", Menlo, Monaco, Consolas, monospace'
+  size: 16px
+  line_height: 1.8
+
+# Custom CSS / JS (paths relative to source/)
+custom_css: []
+custom_js: []
+
+# ---------- Math ----------
+math:
+  enable: true
+  # Options: katex (default) / mathjax
+  engine: katex
+
+# ---------- Analytics ----------
+# google_analytics: UA-XXXXXXXX-X
+# baidu_analytics: your-key

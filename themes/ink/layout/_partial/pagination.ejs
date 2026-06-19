@@ -1,0 +1,43 @@
+<% if (page.total > 1) { %>
+  <nav class="pagination" aria-label="分页导航">
+    <div class="pagination-inner">
+      <% if (page.prev) { %>
+        <a href="<%- url_for(page.prev_link) %>" class="pagination-prev" aria-label="上一页">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          上一页
+        </a>
+      <% } %>
+      <div class="pagination-pages">
+        <% var current = page.current; %>
+        <% var total = page.total; %>
+        <% var start = Math.max(1, current - 2); %>
+        <% var end = Math.min(total, current + 2); %>
+        <% if (start > 1) { %>
+          <a href="<%- url_for('') %>" class="pagination-page">1</a>
+          <% if (start > 2) { %>
+            <span class="pagination-ellipsis">&hellip;</span>
+          <% } %>
+        <% } %>
+        <% for (var i = start; i <= end; i++) { %>
+          <% if (i === current) { %>
+            <span class="pagination-page current"><%= i %></span>
+          <% } else { %>
+            <a href="<%- url_for(i === 1 ? '' : 'page/' + i + '/') %>" class="pagination-page"><%= i %></a>
+          <% } %>
+        <% } %>
+        <% if (end < total) { %>
+          <% if (end < total - 1) { %>
+            <span class="pagination-ellipsis">&hellip;</span>
+          <% } %>
+          <a href="<%- url_for('page/' + total + '/') %>" class="pagination-page"><%= total %></a>
+        <% } %>
+      </div>
+      <% if (page.next) { %>
+        <a href="<%- url_for(page.next_link) %>" class="pagination-next" aria-label="下一页">
+          下一页
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+      <% } %>
+    </div>
+  </nav>
+<% } %>

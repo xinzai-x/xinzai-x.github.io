@@ -1,0 +1,31 @@
+<div class="category-page">
+  <header class="category-header">
+    <h1 class="category-title">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+      分类：<%= page.category %>
+    </h1>
+  </header>
+  <div class="post-list">
+    <% page.posts.sort('date', -1).each(function(post) { %>
+      <article class="post-card">
+        <div class="post-card-content">
+          <h2 class="post-card-title">
+            <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+          </h2>
+          <div class="post-card-meta">
+            <time datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'YYYY-MM-DD') %></time>
+            <% if (theme.reading_time && typeof min2read !== 'undefined') { %>
+              <span class="post-card-reading-time"><%= min2read(post.content) %> min</span>
+            <% } %>
+          </div>
+          <div class="post-card-excerpt">
+            <p><%= strip_html(post.excerpt || post.content).substring(0, 200) %>&hellip;</p>
+          </div>
+        </div>
+      </article>
+    <% }) %>
+  </div>
+  <% if (page.total && page.total > 1) { %>
+    <%- partial('_partial/pagination') %>
+  <% } %>
+</div>

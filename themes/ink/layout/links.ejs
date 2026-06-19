@@ -1,0 +1,45 @@
+<div class="links-page">
+  <% if (page.content && page.content.trim()) { %>
+    <div class="links-content">
+      <%- page.content %>
+    </div>
+  <% } %>
+  <% if (theme.links && theme.links.length) { %>
+    <% theme.links.forEach(function(group) { %>
+      <section class="links-group">
+        <div class="links-group-header">
+          <h2 class="links-group-title"><%= group.class_name %></h2>
+          <% if (group.class_desc) { %>
+            <p class="links-group-desc"><%= group.class_desc %></p>
+          <% } %>
+        </div>
+        <div class="links-grid">
+          <% group.link_list.forEach(function(link) { %>
+            <a href="<%- link.link %>" target="_blank" rel="noopener" class="link-card<%= link.recommend ? ' link-card-recommend' : '' %>">
+              <% if (link.avatar) { %>
+                <img class="link-card-avatar" src="<%- link.avatar %>" alt="<%= link.name %>" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="link-card-avatar link-card-avatar-placeholder" style="display:none"><%= link.name.charAt(0) %></div>
+              <% } else { %>
+                <div class="link-card-avatar link-card-avatar-placeholder"><%= link.name.charAt(0) %></div>
+              <% } %>
+              <div class="link-card-info">
+                <h3 class="link-card-name">
+                  <%= link.name %>
+                  <% if (link.recommend) { %>
+                    <span class="link-card-star" title="推荐">★</span>
+                  <% } %>
+                </h3>
+                <% if (link.descr) { %>
+                  <p class="link-card-desc"><%= link.descr %></p>
+                <% } %>
+              </div>
+              <% if (link.tag) { %>
+                <span class="link-card-tag"><%= link.tag %></span>
+              <% } %>
+            </a>
+          <% }) %>
+        </div>
+      </section>
+    <% }) %>
+  <% } %>
+</div>

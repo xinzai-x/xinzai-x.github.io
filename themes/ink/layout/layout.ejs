@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="<%= config.language || 'zh-CN' %>">
+<%- partial('_partial/head') %>
+<body class="<%= is_post() ? 'post-page' : is_home() ? 'home-page' : is_archive() ? 'archive-page' : 'other-page' %>">
+  <a class="skip-to-content" href="#main-content">跳转到内容</a>
+  <div class="site-wrapper">
+    <%- partial('_partial/header') %>
+    <main class="site-main" id="main-content">
+      <div class="container">
+        <% if (is_post()) { %>
+          <% if (theme.sidebar && theme.sidebar !== false && theme.toc) { %>
+            <div class="content-wrap with-sidebar<%= theme.sidebar === 'left' ? ' sidebar-left' : '' %>">
+              <article class="post-article">
+                <%- body %>
+              </article>
+              <aside class="sidebar sidebar-<%= theme.sidebar %>">
+                <%- partial('_partial/toc') %>
+              </aside>
+            </div>
+          <% } else { %>
+            <article class="post-article">
+              <%- body %>
+            </article>
+          <% } %>
+        <% } else { %>
+          <div class="content-wrap">
+            <%- body %>
+          </div>
+        <% } %>
+      </div>
+    </main>
+    <%- partial('_partial/footer') %>
+  </div>
+  <%- partial('_partial/back-to-top') %>
+  <%- partial('_partial/search-modal') %>
+  <%- partial('_partial/scripts') %>
+</body>
+</html>

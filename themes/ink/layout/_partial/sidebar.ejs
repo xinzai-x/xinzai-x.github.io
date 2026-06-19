@@ -1,0 +1,57 @@
+<% if (theme.widgets) { %>
+  <% theme.widgets.forEach(function(widget) { %>
+    <% if (widget === 'recent_posts') { %>
+      <section class="widget widget-recent-posts">
+        <h3 class="widget-title">最新文章</h3>
+        <ul class="recent-posts-list">
+          <% site.posts.sort('date', -1).limit(5).each(function(post) { %>
+            <li class="recent-post-item">
+              <a href="<%- url_for(post.path) %>">
+                <span class="recent-post-title"><%= post.title %></span>
+                <time class="recent-post-date" datetime="<%= date_xml(post.date) %>">
+                  <%= date(post.date, 'MM-DD') %>
+                </time>
+              </a>
+            </li>
+          <% }) %>
+        </ul>
+      </section>
+    <% } %>
+
+    <% if (widget === 'categories' && site.categories.length) { %>
+      <section class="widget widget-categories">
+        <h3 class="widget-title">分类</h3>
+        <ul class="category-list">
+          <% site.categories.sort('name').each(function(cat) { %>
+            <li class="category-list-item<%- is_category(cat.name) ? ' active' : '' %>">
+              <a href="<%- url_for(cat.path) %>">
+                <span class="category-name"><%= cat.name %></span>
+                <span class="category-count">(<%= cat.posts.length %>)</span>
+              </a>
+            </li>
+          <% }) %>
+        </ul>
+      </section>
+    <% } %>
+
+    <% if (widget === 'tags' && site.tags.length) { %>
+      <section class="widget widget-tags">
+        <h3 class="widget-title">标签</h3>
+        <div class="tag-cloud">
+          <% site.tags.sort('name').each(function(tag) { %>
+            <a href="<%- url_for(tag.path) %>" class="tag-item<%- is_tag(tag.name) ? ' active' : '' %>">
+              <%= tag.name %> <sup><%= tag.posts.length %></sup>
+            </a>
+          <% }) %>
+        </div>
+      </section>
+    <% } %>
+
+    <% if (widget === 'archive') { %>
+      <section class="widget widget-archive">
+        <h3 class="widget-title">归档</h3>
+        <%- list_archives({show_count: true, format: 'YYYY-MM'}) %>
+      </section>
+    <% } %>
+  <% }) %>
+<% } %>

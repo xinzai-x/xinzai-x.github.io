@@ -1,0 +1,117 @@
+<div class="post-list">
+  <% 
+    var pinnedPosts = [];
+    var normalPosts = [];
+    page.posts.each(function(post) {
+      if (post.top === true || post.top === 1) {
+        pinnedPosts.push(post);
+      } else {
+        normalPosts.push(post);
+      }
+    });
+  %>
+  <% pinnedPosts.forEach(function(post) { %>
+    <article class="post-card post-card-pinned">
+      <% if (post.cover) { %>
+        <div class="post-card-cover">
+          <a href="<%- url_for(post.path) %>">
+            <img src="<%- url_for(post.cover) %>" alt="<%= post.title %>" loading="lazy" onerror="this.parentElement.parentElement.style.display='none'">
+          </a>
+        </div>
+      <% } %>
+      <div class="post-card-content">
+        <div class="post-card-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          置顶
+        </div>
+        <h2 class="post-card-title">
+          <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+        </h2>
+        <div class="post-card-meta">
+          <time datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'YYYY-MM-DD') %></time>
+          <% if (post.categories && post.categories.length) { %>
+            <span class="post-card-category">
+              <% if (typeof post.categories.toArray === 'function') { %>
+                <% post.categories.forEach(function(cat, i) { %>
+                  <a href="<%- url_for(cat.path) %>"><%= cat.name %></a><%= i < post.categories.length - 1 ? ', ' : '' %>
+                <% }) %>
+              <% } else { %>
+                <a href="<%- url_for('/categories/' + post.categories + '/') %>"><%= post.categories %></a>
+              <% } %>
+            </span>
+          <% } %>
+          <% if (theme.reading_time && typeof min2read !== 'undefined') { %>
+            <span class="post-card-reading-time"><%= min2read(post.content) %> min</span>
+          <% } %>
+        </div>
+        <% if (post.excerpt || post.content) { %>
+          <div class="post-card-excerpt">
+            <%
+              var rawExcerpt = strip_html(post.excerpt || post.content);
+              var isEncrypted = rawExcerpt.indexOf('something encrypted') !== -1 || rawExcerpt.indexOf('password is required') !== -1;
+              var excerptText = isEncrypted ? '此文章为加密文章，需要密码才能查看' : rawExcerpt.substring(0, theme.excerpt_length || 80);
+            %>
+            <p><%= excerptText %><% if (!isEncrypted) { %>&hellip;<% } %></p>
+          </div>
+        <% } %>
+        <% if (theme.excerpt_link) { %>
+          <a href="<%- url_for(post.path) %>" class="read-more">
+            阅读更多
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        <% } %>
+      </div>
+    </article>
+  <% }) %>
+
+  <% normalPosts.forEach(function(post) { %>
+    <article class="post-card<%= post.cover ? '' : ' post-card-no-cover' %>">
+      <% if (post.cover) { %>
+        <div class="post-card-cover">
+          <a href="<%- url_for(post.path) %>">
+            <img src="<%- url_for(post.cover) %>" alt="<%= post.title %>" loading="lazy" onerror="this.parentElement.parentElement.style.display='none'">
+          </a>
+        </div>
+      <% } %>
+      <div class="post-card-content">
+        <h2 class="post-card-title">
+          <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+        </h2>
+        <div class="post-card-meta">
+          <time datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'YYYY-MM-DD') %></time>
+          <% if (post.categories && post.categories.length) { %>
+            <span class="post-card-category">
+              <% if (typeof post.categories.toArray === 'function') { %>
+                <% post.categories.forEach(function(cat, i) { %>
+                  <a href="<%- url_for(cat.path) %>"><%= cat.name %></a><%= i < post.categories.length - 1 ? ', ' : '' %>
+                <% }) %>
+              <% } else { %>
+                <a href="<%- url_for('/categories/' + post.categories + '/') %>"><%= post.categories %></a>
+              <% } %>
+            </span>
+          <% } %>
+          <% if (theme.reading_time && typeof min2read !== 'undefined') { %>
+            <span class="post-card-reading-time"><%= min2read(post.content) %> min</span>
+          <% } %>
+        </div>
+        <% if (post.excerpt || post.content) { %>
+          <div class="post-card-excerpt">
+            <%
+              var rawExcerpt = strip_html(post.excerpt || post.content);
+              var isEncrypted = rawExcerpt.indexOf('something encrypted') !== -1 || rawExcerpt.indexOf('password is required') !== -1;
+              var excerptText = isEncrypted ? '此文章为加密文章，需要密码才能查看' : rawExcerpt.substring(0, theme.excerpt_length || 80);
+            %>
+            <p><%= excerptText %><% if (!isEncrypted) { %>&hellip;<% } %></p>
+          </div>
+        <% } %>
+        <% if (theme.excerpt_link) { %>
+          <a href="<%- url_for(post.path) %>" class="read-more">
+            阅读更多
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        <% } %>
+      </div>
+    </article>
+  <% }) %>
+</div>
+<%- partial('_partial/pagination') %>

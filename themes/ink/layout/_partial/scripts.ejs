@@ -1,0 +1,26 @@
+<% if (theme.search && theme.search.enable) { %>
+  <script>
+    var searchPath = '<%= (config.search && config.search.path) || theme.search.path || "search.xml" %>';
+  </script>
+  <%- js('js/search.js') %>
+<% } %>
+<% if (theme.math && theme.math.enable !== false) { %>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ez5ueQ5lCVUkOmA" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe5rCM8qmhmtIq35eatBTE" crossorigin="anonymous"
+    onload="renderMathInElement(document.getElementById('post-content') || document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ],
+      throwOnError: false
+    });"></script>
+<% } %>
+<%- js('js/main.js') %>
+<%- js('js/lightbox.js') %>
+<% if (theme.custom_js && theme.custom_js.length) { %>
+  <% theme.custom_js.forEach(function(js_path) { %>
+    <script src="<%- url_for(js_path) %>"></script>
+  <% }) %>
+<% } %>

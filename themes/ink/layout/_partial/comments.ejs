@@ -1,0 +1,36 @@
+<% if (theme.comments && theme.comments.enable) { %>
+  <div id="comments" class="comments-section">
+    <% if (theme.comments.disqus_shortname) { %>
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_shortname = '<%= theme.comments.disqus_shortname %>';
+        (function() {
+          var dsq = document.createElement('script');
+          dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.head || document.body).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <% } else if (theme.comments.valine) { %>
+      <div id="valine-comments"></div>
+      <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+      <script>
+        new Valine({
+          el: '#valine-comments',
+          appId: '<%= theme.comments.valine.app_id %>',
+          appKey: '<%= theme.comments.valine.app_key %>'
+        });
+      </script>
+    <% } else if (theme.comments.twikoo) { %>
+      <div id="twikoo-comments"></div>
+      <script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.22/dist/twikoo.all.min.js"></script>
+      <script>
+        twikoo.init({
+          envId: '<%= theme.comments.twikoo.env_id %>',
+          el: '#twikoo-comments'
+        });
+      </script>
+    <% } %>
+  </div>
+<% } %>

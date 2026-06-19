@@ -1,0 +1,179 @@
+/* =============================================
+   Code Block Styles
+   ============================================= */
+
+figure.highlight {
+  margin: 1.5em 0;
+  padding: 0;
+  background-color: var(--bg-code);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  max-width: 100%;
+}
+
+figure.highlight table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  font-size: inherit;
+}
+
+figure.highlight table td {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+figure.highlight table td.gutter {
+  display: none;
+}
+
+figure.highlight .code {
+  padding: 16px 20px;
+  font-size: 0.95rem;
+}
+
+figure.highlight .code pre {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  font-size: inherit;
+  line-height: 1.65;
+  white-space: pre;
+}
+
+/* Copy button */
+.code-copy-btn {
+  position: absolute !important;
+  top: 8px !important;
+  right: 8px !important;
+  bottom: auto !important;
+  left: auto !important;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background-color: rgba(255,255,255,0.08);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  transition: opacity var(--transition-fast), color var(--transition-fast), background-color var(--transition-fast);
+  z-index: 2;
+}
+
+figure.highlight:hover .code-copy-btn {
+  opacity: 1;
+}
+
+.code-copy-btn:hover {
+  color: var(--accent-primary);
+  background-color: var(--bg-secondary);
+}
+
+.code-copy-btn.copied {
+  color: #4caf50;
+}
+
+/* Code language label */
+.code-lang-label {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Expand button */
+.code-expand-btn {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(transparent, var(--bg-code));
+  border: none;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  color: var(--text-tertiary);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  z-index: 1;
+  transition: color var(--transition-fast);
+}
+
+.code-expand-btn:hover {
+  color: var(--accent-primary);
+}
+
+figure.highlight.is-expandable .code-expand-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+figure.highlight.is-expanded .code-expand-btn {
+  display: none;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .code-copy-btn {
+    opacity: 0.6;
+  }
+  figure.highlight .code {
+    font-size: 0.82rem;
+    padding: 14px 16px;
+  }
+}
+
+/* Scrollbar in code blocks */
+figure.highlight ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+figure.highlight ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+figure.highlight ::-webkit-scrollbar-thumb {
+  background-color: var(--border-secondary);
+  border-radius: 3px;
+}
+
+figure.highlight ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--border-secondary);
+}
+
+/* Dark mode */
+[data-theme="dark"] figure.highlight {
+  background-color: #0a0a0a;
+  border-color: #1a1a1a;
+}
+
+[data-theme="dark"] .code-copy-btn {
+  background-color: rgba(255,255,255,0.06);
+  border-color: #4a4238;
+}
+
+[data-theme="dark"] .code-lang-label {
+  color: #8a7e74;
+}

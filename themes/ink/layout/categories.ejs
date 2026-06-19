@@ -1,0 +1,15 @@
+<div class="categories-page">
+  <div class="categories-grid">
+    <% site.categories.sort('name').each(function(cat) { %>
+      <a href="<%- url_for(cat.path) %>" class="category-card">
+        <h2 class="category-card-name"><%= cat.name %></h2>
+        <p class="category-card-count"><%= cat.posts.length %> 篇文章</p>
+        <ul class="category-card-posts">
+          <% cat.posts.sort('date', -1).limit(3).each(function(post) { %>
+            <li><%= post.title %></li>
+          <% }) %>
+        </ul>
+      </a>
+    <% }) %>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<% if (theme.toc && toc(page.content).length > 0) { %>
+  <div class="post-toc" id="post-toc">
+    <div class="toc-header">
+      <h4>目录</h4>
+      <button class="toc-toggle" id="toc-toggle" aria-label="切换目录">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+    </div>
+    <div class="toc-body" id="toc-body">
+      <%- toc(page.content, {list_number: true, max_depth: 3}) %>
+    </div>
+  </div>
+<% } %>

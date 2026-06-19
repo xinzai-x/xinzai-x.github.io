@@ -1,0 +1,35 @@
+<div class="tag-page">
+  <header class="tag-header">
+    <h1 class="tag-title">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line></svg>
+      标签：<%= page.tag %>
+    </h1>
+  </header>
+  <div class="post-list">
+    <% page.posts.sort('date', -1).each(function(post) { %>
+      <article class="post-card">
+        <div class="post-card-content">
+          <h2 class="post-card-title">
+            <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+          </h2>
+          <div class="post-card-meta">
+            <time datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'YYYY-MM-DD') %></time>
+            <% if (post.categories && post.categories.length) { %>
+              <span class="post-card-category">
+                <% post.categories.forEach(function(cat, i) { %>
+                  <a href="<%- url_for(cat.path) %>"><%= cat.name %></a><%= i < post.categories.length - 1 ? ', ' : '' %>
+                <% }) %>
+              </span>
+            <% } %>
+          </div>
+          <div class="post-card-excerpt">
+            <p><%= strip_html(post.excerpt || post.content).substring(0, 200) %>&hellip;</p>
+          </div>
+        </div>
+      </article>
+    <% }) %>
+  </div>
+  <% if (page.total && page.total > 1) { %>
+    <%- partial('_partial/pagination') %>
+  <% } %>
+</div>

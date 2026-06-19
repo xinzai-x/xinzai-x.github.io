@@ -1,0 +1,22 @@
+<% if (theme.post_navigation) { %>
+  <nav class="post-nav">
+    <% if (page.prev) { %>
+      <a href="<%- url_for(page.prev.path) %>" class="post-nav-item post-nav-prev">
+        <span class="post-nav-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          上一篇
+        </span>
+        <span class="post-nav-title"><%= page.prev.title %></span>
+      </a>
+    <% } %>
+    <% if (page.next) { %>
+      <a href="<%- url_for(page.next.path) %>" class="post-nav-item post-nav-next">
+        <span class="post-nav-label">
+          下一篇
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </span>
+        <span class="post-nav-title"><%= page.next.title %></span>
+      </a>
+    <% } %>
+  </nav>
+<% } %>

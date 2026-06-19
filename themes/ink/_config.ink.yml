@@ -1,0 +1,56 @@
+# ========================================
+# Hexo Theme - Ink
+# Theme Configuration (Hexo 5+)
+# ========================================
+# Copy this file to your Hexo site root as _config.ink.yml
+# Hexo will merge it with the theme's _config.yml
+
+# ---------- Navigation ----------
+menu:
+  Home: /
+  Archives: /archives
+
+# Social links (shown in footer)
+social:
+  GitHub: https://github.com
+
+# ---------- Layout ----------
+sidebar: right
+
+widgets:
+  - recent_posts
+  - categories
+  - tags
+
+# ---------- Article ----------
+excerpt_length: 200
+excerpt_link: true
+reading_time: true
+word_count: true
+toc: true
+post_navigation: true
+
+# ---------- Appearance ----------
+color_scheme: auto
+
+font:
+  body: '"Noto Serif SC", "Source Han Serif SC", "Hiragino Sans GB", "Microsoft YaHei", Georgia, serif'
+  heading: '"Noto Sans SC", "Source Han Sans SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif'
+  code: '"JetBrains Mono", "Fira Code", "Source Code Pro", Menlo, Monaco, Consolas, monospace'
+  size: 16px
+  line_height: 1.8
+
+# ---------- Search ----------
+search:
+  enable: true
+  path: search.xml
+  field: post
+
+# ---------- Math ----------
+math:
+  enable: true
+  engine: katex
+
+# ---------- Comments ----------
+comments:
+  enable: false

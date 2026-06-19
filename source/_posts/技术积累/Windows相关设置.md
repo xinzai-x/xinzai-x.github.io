@@ -110,25 +110,35 @@ Dism /online /enable-feature /featurename:Microsoft-Hyper-V-All /LimitAccess /AL
 
 # Win10系统复制或新建文件后需要刷新的解决办法
 
-按Win + r输入 regedit 后回车，在注册表中依次展开并定位到HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control，在Control 文件夹下新建一个名为Updata项，再刚创建的Updata文件夹下再创建一个UpdataMode项，然后再新建一个可扩充字符串值，名为：DWORD，值为：0
+按Win + r输入 regedit 后回车，在注册表中依次展开并定位到`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control`，在Control 文件夹下新建一个名为Updata项，再刚创建的Updata文件夹下再创建一个UpdataMode项，然后再新建一个可扩充字符串值，名为：DWORD，值为：0
 
 <img src="https://s2.loli.net/2025/12/28/PYOrItKf836WEwd.png" alt="新建项的方法" style="zoom:50%;" />
 
 <img src="https://s2.loli.net/2025/12/28/6YnwEXKQRotWAVc.png" alt="新建可扩充字符串值方法" style="zoom:50%;" />
 
-# 火狐浏览器优化
+# 脚本运行乱码
 
-iTab 标签设置：
+如果勾选了此选项（默认设置是不勾选的），需要把.bat文件保存为UTF-8编码，如果未勾选，则需把.bat文件保存为ANSI编码，很多时候我们使用的都是UTF-8编码，然后ANSI编码来运行就乱码。
 
-[🌏Firefox安装教程 | iTab新标签页](https://itab.link/install/firefox.html)
+1. 打开控制面板，点击进入`区域`
 
-配置滚轮切换标签：
+   <img src="https://files.seeusercontent.com/2026/06/16/B6bz/fe3ceb5.webp" alt="控制面板图.webp" style="zoom:50%;" />
 
-[火狐浏览器两个非常适合国人的配置项——滚轮切换标签页、双击关闭标签页](https://linux.do/t/topic/359819)
+2. 点击`更改系统区域设置`
 
-配置双击关闭标签：
+   <img src="https://files.seeusercontent.com/2026/06/16/B0yf/4f20e14.webp" alt="管理界面.webp" style="zoom:50%;" />
 
-[开启火狐浏览器 Firefox 原生「双击关闭标签页」功能_firefox双击关闭标签页-CSDN博客](https://blog.csdn.net/weixin_45498383/article/details/127865392)
+3. 勾选`Beta版：使用UnicodeUTF-8提供全球语言支持(U)`
+
+   <img src="https://files.seeusercontent.com/2026/06/16/Fma7/0d37456.webp" alt="勾选设置.webp" style="zoom:50%;" />
+
+
+
+
+
+
+
+
 
 
 

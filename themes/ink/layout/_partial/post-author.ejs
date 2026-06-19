@@ -1,0 +1,30 @@
+<% if (theme.post_author && theme.post_author.enable !== false) { %>
+  <div class="post-author-card">
+    <div class="post-author-info">
+      <div class="post-author-avatar">
+        <% if (theme.post_author.avatar) { %>
+          <img src="<%- url_for(theme.post_author.avatar) %>" alt="<%= page.author || config.author %>">
+        <% } else { %>
+          <span><%= (page.author || config.author || 'A').charAt(0).toUpperCase() %></span>
+        <% } %>
+      </div>
+      <div class="post-author-detail">
+        <p class="post-author-name"><%= page.author || config.author || '' %></p>
+        <p class="post-author-bio"><%= theme.post_author.bio || config.description || '' %></p>
+      </div>
+    </div>
+  </div>
+<% } %>
+<% if (theme.post_copyright !== false) { %>
+  <div class="post-copyright">
+    <p class="copyright-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M15 9.354a4 4 0 1 0 0 5.292"></path></svg>
+      版权声明
+    </p>
+    <ul class="copyright-list">
+      <li>作者：<%= page.author || config.author %></li>
+      <li>链接：<a href="<%= config.url + '/' + page.path %>"><%= config.url + '/' + page.path %></a></li>
+      <li>许可协议：<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></li>
+    </ul>
+  </div>
+<% } %>

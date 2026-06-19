@@ -1,0 +1,21 @@
+<%- partial('_partial/post-header') %>
+<% if (theme.toc && !(theme.sidebar && theme.sidebar !== false)) { %>
+  <%- partial('_partial/toc') %>
+<% } %>
+<div class="post-content" id="post-content">
+  <%- page.content %>
+</div>
+<% if (page.tags && page.tags.length) { %>
+  <div class="post-footer-tags">
+    <% page.tags.forEach(function(tag) { %>
+      <a href="<%- url_for(tag.path) %>" class="post-tag">#<%= tag.name %></a>
+    <% }) %>
+  </div>
+<% } %>
+<%- partial('_partial/post-author') %>
+<%- partial('_partial/post-nav') %>
+<% if (page.comments !== false && theme.comments && theme.comments.enable) { %>
+  <div class="post-comments">
+    <%- partial('_partial/comments') %>
+  </div>
+<% } %>

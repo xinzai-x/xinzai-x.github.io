@@ -1,0 +1,17 @@
+<header class="post-header">
+  <% if (page.top === true || page.top === 1) { %>
+    <div class="post-card-badge" style="margin-bottom: 12px;">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      Pinned
+    </div>
+  <% } %>
+  <h1 class="post-title"><%= page.title %></h1>
+  <%- partial('post-meta', {post: page}) %>
+  <% if (page.tags && page.tags.length) { %>
+    <div class="post-tags">
+      <% page.tags.forEach(function(tag) { %>
+        <a href="<%- url_for(tag.path) %>" class="post-tag">#<%= tag.name %></a>
+      <% }) %>
+    </div>
+  <% } %>
+</header>

@@ -1,0 +1,120 @@
+/* =============================================
+   Image Lightbox
+   ============================================= */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background-color: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  cursor: grab;
+}
+
+.lightbox-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-select: none;
+  transform-origin: center center;
+  transition: none;
+  will-change: transform;
+}
+
+.lightbox-toolbar {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background-color: rgba(30, 28, 24, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  z-index: 1;
+}
+
+.lightbox-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.15s ease, background-color 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.lightbox-btn:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.lightbox-close:hover {
+  color: #ff6b6b;
+}
+
+.lightbox-zoom-level {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.6);
+  min-width: 44px;
+  text-align: center;
+  user-select: none;
+}
+
+/* Cursor states */
+.lightbox-overlay {
+  cursor: grab;
+}
+
+.lightbox-overlay:active {
+  cursor: grabbing;
+}
+
+/* Zoomed in cursor */
+.lightbox-img[style*="scale"] {
+  cursor: move;
+}
+
+@media (max-width: 640px) {
+  .lightbox-toolbar {
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    padding: 6px 10px;
+    gap: 4px;
+  }
+
+  .lightbox-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .lightbox-zoom-level {
+    font-size: 0.72rem;
+    min-width: 36px;
+  }
+}
