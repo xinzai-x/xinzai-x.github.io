@@ -397,6 +397,9 @@
       blocks.forEach(block => {
         block.style.position = 'relative';
 
+        const codeEl = block.querySelector('.code');
+        if (codeEl) codeEl.style.paddingTop = '40px';
+
         const btn = document.createElement('button');
         btn.className = 'code-copy-btn';
         btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> 复制';
@@ -431,7 +434,7 @@
           });
         });
 
-        btn.style.cssText = 'position:absolute;top:8px;right:8px;display:flex;align-items:center;gap:4px;padding:4px 10px;font-family:var(--font-heading);font-size:0.75rem;font-weight:500;color:var(--text-muted);background:rgba(255,255,255,0.08);border:1px solid var(--border-secondary);border-radius:4px;cursor:pointer;z-index:2;opacity:0;transition:opacity 0.15s ease;';
+        btn.style.cssText = 'position:absolute;top:4px;right:8px;display:flex;align-items:center;gap:4px;padding:4px 10px;font-family:var(--font-heading);font-size:0.75rem;font-weight:500;color:var(--text-muted);background:rgba(255,255,255,0.08);border:1px solid var(--border-secondary);border-radius:4px;cursor:pointer;z-index:2;opacity:0;transition:opacity 0.15s ease;';
         block.appendChild(btn);
 
         const figureClasses = block.className.split(/\s+/);
@@ -439,7 +442,7 @@
         if (lang) {
           const label = document.createElement('span');
           label.className = 'code-lang-label';
-          label.style.cssText = 'position:absolute;top:8px;left:12px;font-family:var(--font-heading);font-size:0.7rem;font-weight:500;color:var(--text-muted);opacity:0.6;pointer-events:none;z-index:2;text-transform:uppercase;letter-spacing:0.04em;';
+          label.style.cssText = 'position:absolute;top:0;left:0;right:0;height:32px;display:flex;align-items:center;padding:0 12px;font-family:var(--font-heading);font-size:0.7rem;font-weight:500;color:var(--text-muted);opacity:0.7;pointer-events:none;z-index:2;text-transform:uppercase;letter-spacing:0.04em;border-bottom:1px solid var(--border-primary);';
           label.textContent = lang;
           block.appendChild(label);
         }
