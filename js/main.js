@@ -434,7 +434,7 @@
           });
         });
 
-        btn.style.cssText = 'position:absolute;top:8px;right:8px;display:flex;align-items:center;gap:4px;padding:4px 10px;font-family:var(--font-heading);font-size:0.75rem;font-weight:500;color:var(--text-muted);background:rgba(255,255,255,0.08);border:1px solid var(--border-secondary);border-radius:4px;cursor:pointer;z-index:2;opacity:0;transition:opacity 0.15s ease;';
+        btn.style.cssText = 'position:absolute;top:4px;right:8px;display:flex;align-items:center;gap:4px;padding:4px 10px;font-family:var(--font-heading);font-size:0.75rem;font-weight:500;color:var(--text-muted);background:rgba(255,255,255,0.08);border:1px solid var(--border-secondary);border-radius:4px;cursor:pointer;z-index:2;opacity:0;transition:opacity 0.15s ease;';
         block.appendChild(btn);
 
         const figureClasses = block.className.split(/\s+/);
