@@ -431,6 +431,7 @@
           });
         });
 
+        btn.style.cssText = 'position:absolute;top:8px;right:8px;display:flex;align-items:center;gap:4px;padding:4px 10px;font-family:var(--font-heading);font-size:0.75rem;font-weight:500;color:var(--text-muted);background:rgba(255,255,255,0.08);border:1px solid var(--border-secondary);border-radius:4px;cursor:pointer;z-index:2;opacity:0;transition:opacity 0.15s ease;';
         block.appendChild(btn);
 
         const figureClasses = block.className.split(/\s+/);
@@ -438,9 +439,13 @@
         if (lang) {
           const label = document.createElement('span');
           label.className = 'code-lang-label';
+          label.style.cssText = 'position:absolute;top:8px;left:12px;font-family:var(--font-heading);font-size:0.7rem;font-weight:500;color:var(--text-muted);opacity:0.6;pointer-events:none;z-index:2;text-transform:uppercase;letter-spacing:0.04em;';
           label.textContent = lang;
           block.appendChild(label);
         }
+
+        block.addEventListener('mouseenter', () => { btn.style.opacity = '1'; });
+        block.addEventListener('mouseleave', () => { btn.style.opacity = '0'; });
       });
     }
   };
