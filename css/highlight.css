@@ -48,9 +48,11 @@ figure.highlight .code pre {
 
 /* Copy button */
 .code-copy-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
+  position: absolute !important;
+  top: 8px !important;
+  right: 8px !important;
+  bottom: auto !important;
+  left: auto !important;
   display: flex;
   align-items: center;
   gap: 4px;

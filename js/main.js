@@ -433,17 +433,13 @@
 
         block.appendChild(btn);
 
-        const codeEl = block.querySelector('code');
-        if (codeEl) {
-          const classes = codeEl.className.split(/\s+/);
-          const langClass = classes.find(c => c.startsWith('language-'));
-          if (langClass) {
-            const lang = langClass.replace('language-', '');
-            const label = document.createElement('span');
-            label.className = 'code-lang-label';
-            label.textContent = lang;
-            block.appendChild(label);
-          }
+        const figureClasses = block.className.split(/\s+/);
+        const lang = figureClasses.find(c => c !== 'highlight' && c !== 'is-expandable' && c !== 'is-expanded');
+        if (lang) {
+          const label = document.createElement('span');
+          label.className = 'code-lang-label';
+          label.textContent = lang;
+          block.appendChild(label);
         }
       });
     }
