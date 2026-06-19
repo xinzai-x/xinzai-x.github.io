@@ -439,7 +439,7 @@
         if (lang) {
           const label = document.createElement('span');
           label.className = 'code-lang-label';
-          label.style.cssText = 'position:absolute;top:8px;left:12px;font-family:var(--font-heading);font-size:0.7rem;font-weight:500;color:var(--text-muted);opacity:0.6;pointer-events:none;z-index:2;text-transform:uppercase;letter-spacing:0.04em;';
+          label.style.cssText = 'position:absolute;top:0;left:0;right:0;height:32px;display:flex;align-items:center;padding:0 12px;font-family:var(--font-heading);font-size:0.7rem;font-weight:500;color:var(--text-muted);opacity:0.7;pointer-events:none;z-index:2;text-transform:uppercase;letter-spacing:0.04em;border-bottom:1px solid var(--border-primary);';
           label.textContent = lang;
           block.appendChild(label);
         }
