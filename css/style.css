@@ -1146,7 +1146,7 @@ figure.highlight {
 }
 
 figure.highlight .code {
-  padding: 16px 20px;
+  padding: 40px 20px 16px 20px;
 }
 
 figure.highlight .code pre {
@@ -2245,7 +2245,7 @@ figure.highlight .code pre {
 
   figure.highlight .code {
     font-size: 0.82rem;
-    padding: 14px 16px;
+    padding: 36px 16px 14px 16px;
   }
 
   /* Page title */
