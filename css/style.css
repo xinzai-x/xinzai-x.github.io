@@ -897,6 +897,7 @@ html {
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   color: var(--text-secondary);
   font-style: italic;
+  font-size: 0.95rem;
 }
 
 /* Callout: NOTE */
