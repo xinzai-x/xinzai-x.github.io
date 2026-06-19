@@ -46,6 +46,56 @@ figure.highlight .code pre {
   white-space: pre;
 }
 
+/* Copy button */
+.code-copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background-color: rgba(255,255,255,0.08);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  transition: opacity var(--transition-fast), color var(--transition-fast), background-color var(--transition-fast);
+  z-index: 2;
+}
+
+figure.highlight:hover .code-copy-btn {
+  opacity: 1;
+}
+
+.code-copy-btn:hover {
+  color: var(--accent-primary);
+  background-color: var(--bg-secondary);
+}
+
+.code-copy-btn.copied {
+  color: #4caf50;
+}
+
+/* Code language label */
+.code-lang-label {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
 /* Expand button */
 .code-expand-btn {
   display: none;
@@ -115,4 +165,13 @@ figure.highlight ::-webkit-scrollbar-thumb:hover {
 [data-theme="dark"] figure.highlight {
   background-color: #0a0a0a;
   border-color: #1a1a1a;
+}
+
+[data-theme="dark"] .code-copy-btn {
+  background-color: rgba(255,255,255,0.06);
+  border-color: #4a4238;
+}
+
+[data-theme="dark"] .code-lang-label {
+  color: #8a7e74;
 }

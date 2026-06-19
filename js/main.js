@@ -395,13 +395,7 @@
     init() {
       const blocks = document.querySelectorAll('figure.highlight');
       blocks.forEach(block => {
-        // Wrap for hover detection
-        if (!block.parentElement.classList.contains('highlight-wrap')) {
-          const wrap = document.createElement('div');
-          wrap.className = 'highlight-wrap';
-          block.parentNode.insertBefore(wrap, block);
-          wrap.appendChild(block);
-        }
+        block.style.position = 'relative';
 
         const btn = document.createElement('button');
         btn.className = 'code-copy-btn';
@@ -420,7 +414,6 @@
               btn.classList.remove('copied');
             }, 2000);
           }).catch(() => {
-            // Fallback
             const textarea = document.createElement('textarea');
             textarea.value = text;
             textarea.style.position = 'fixed';
@@ -438,8 +431,20 @@
           });
         });
 
-        block.style.position = 'relative';
         block.appendChild(btn);
+
+        const codeEl = block.querySelector('code');
+        if (codeEl) {
+          const classes = codeEl.className.split(/\s+/);
+          const langClass = classes.find(c => c.startsWith('language-'));
+          if (langClass) {
+            const lang = langClass.replace('language-', '');
+            const label = document.createElement('span');
+            label.className = 'code-lang-label';
+            label.textContent = lang;
+            block.appendChild(label);
+          }
+        }
       });
     }
   };
