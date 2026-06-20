@@ -186,63 +186,63 @@ figure.highlight ::-webkit-scrollbar-thumb:hover {
 }
 
 /* =============================================
-   Syntax Highlighting Colors
+   Syntax Highlighting Colors (Warm Palette)
    ============================================= */
 
 figure.highlight .keyword,
 figure.highlight .selector-tag,
 figure.highlight .doctag {
-  color: #d73a49;
+  color: #8b3a3a;
   font-weight: bold;
 }
 
 figure.highlight .string,
 figure.highlight .template-variable,
 figure.highlight .regexp {
-  color: #032f62;
+  color: #4a6741;
 }
 
 figure.highlight .comment,
 figure.highlight .quote {
-  color: #6a737d;
+  color: #8a7e74;
   font-style: italic;
 }
 
 figure.highlight .type,
 figure.highlight .title.class_,
 figure.highlight .built_in {
-  color: #6f42c1;
+  color: #6b4c2a;
 }
 
 figure.highlight .number,
 figure.highlight .literal {
-  color: #005cc5;
+  color: #b8860b;
 }
 
 figure.highlight .attr,
 figure.highlight .variable {
-  color: #e36209;
+  color: #a0522d;
 }
 
 figure.highlight .operator {
-  color: #d73a49;
+  color: #8b3a3a;
 }
 
 figure.highlight .punctuation {
-  color: #24292e;
+  color: #5a4a3a;
 }
 
 figure.highlight .title,
 figure.highlight .title.function_ {
-  color: #6f42c1;
+  color: #6b4c2a;
 }
 
 figure.highlight .params {
-  color: #24292e;
+  color: #5a4a3a;
 }
 
 figure.highlight .meta {
-  color: #005cc5;
+  color: #7a5a0e;
 }
 
 /* Dark mode syntax highlighting */
