@@ -13,10 +13,10 @@
   --bg-secondary: #ebe1cd;
   --bg-tertiary: #e5dac3;
   --bg-card: #f5efe1;
-  --bg-code: #f8f5f0;
-  --bg-code-inline: #ebe5da;
-  --bg-header: rgba(250, 248, 245, 0.85);
-  --bg-footer: #f5f2ed;
+  --bg-code: #e5dac3;
+  --bg-code-inline: #d8ccb0;
+  --bg-header: rgba(240, 230, 212, 0.92);
+  --bg-footer: #ebe1cd;
   --bg-search-overlay: rgba(0, 0, 0, 0.4);
 
   --text-primary: #2c2420;
@@ -1157,6 +1157,8 @@ figure.highlight {
 
 figure.highlight .code {
   padding: 40px 24px 20px 24px;
+  background-color: var(--bg-code);
+  border-radius: 8px;
 }
 
 figure.highlight .code pre {
