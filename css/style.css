@@ -9,10 +9,10 @@
    ============================================= */
 :root {
   /* === Light Theme (米白色 Warm White) === */
-  --bg-primary: #faf8f5;
-  --bg-secondary: #f5f2ed;
-  --bg-tertiary: #efeae3;
-  --bg-card: #f0e8d8;
+  --bg-primary: #f0e6d4;
+  --bg-secondary: #ebe1cd;
+  --bg-tertiary: #e5dac3;
+  --bg-card: #f5efe1;
   --bg-code: #f8f5f0;
   --bg-code-inline: #ebe5da;
   --bg-header: rgba(250, 248, 245, 0.85);
@@ -25,9 +25,9 @@
   --text-muted: #b0a598;
   --text-inverse: #faf8f5;
 
-  --accent-primary: #2a5a7c;
-  --accent-secondary: #3a6a8c;
-  --accent-hover: #1e4a68;
+  --accent-primary: #1e4a68;
+  --accent-secondary: #2a5a7c;
+  --accent-hover: #143a54;
   --accent-light: rgba(61, 107, 142, 0.12);
 
   --border-primary: #e8e0d6;
@@ -90,9 +90,9 @@
   --text-muted: #7a6e62;
   --text-inverse: #1a1814;
 
-  --accent-primary: #4a7da0;
-  --accent-secondary: #5a8db5;
-  --accent-hover: #5a8db5;
+  --accent-primary: #6aa8d0;
+  --accent-secondary: #7ab8e0;
+  --accent-hover: #7ab8e0;
   --accent-light: rgba(74, 125, 160, 0.15);
 
   --border-primary: #1a1a1a;
