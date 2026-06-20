@@ -33,6 +33,11 @@ figure.highlight table td.gutter {
 figure.highlight .code {
   padding: 40px 20px 16px 20px;
   font-size: 0.95rem;
+  background-color: transparent;
+}
+
+figure.highlight:hover .code {
+  background-color: transparent;
 }
 
 figure.highlight .code pre {
@@ -173,6 +178,14 @@ figure.highlight ::-webkit-scrollbar-thumb:hover {
 [data-theme="dark"] figure.highlight {
   background-color: #0a0a0a;
   border-color: #1a1a1a;
+}
+
+[data-theme="dark"] figure.highlight .code {
+  background-color: transparent;
+}
+
+[data-theme="dark"] figure.highlight:hover .code {
+  background-color: transparent;
 }
 
 [data-theme="dark"] .code-copy-btn {
