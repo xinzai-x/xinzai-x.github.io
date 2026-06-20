@@ -166,9 +166,35 @@
   }
 
   /**
+   * Strip HTML tags and decode entities to plain text
+   */
+  function stripHtml(html) {
+    if (!html) return '';
+    // Remove script/style blocks entirely
+    var text = html.replace(/<(script|style)[\s\S]*?<\/\1>/gi, '');
+    // Remove markdown-it anchor links and their text (e.g. <a class="header-anchor">)
+    text = text.replace(/<a[^>]*class="[^"]*(?:header-anchor|markdownIt-Anchor)[^"]*"[^>]*>[\s\S]*?<\/a>/gi, '');
+    // Drop all remaining tags
+    text = text.replace(/<[^>]+>/g, '');
+    // Decode common HTML entities
+    text = text.replace(/&nbsp;/g, ' ')
+               .replace(/&amp;/g, '&')
+               .replace(/&lt;/g, '<')
+               .replace(/&gt;/g, '>')
+               .replace(/&quot;/g, '"')
+               .replace(/&#x27;/g, "'")
+               .replace(/&#39;/g, "'")
+               .replace(/&hellip;/g, '…');
+    // Collapse whitespace
+    return text.replace(/\s+/g, ' ').trim();
+  }
+
+  /**
    * Build excerpt with context around match
    */
   function buildExcerpt(content, terms) {
+    // Clean HTML first so excerpts are pure text
+    content = stripHtml(content);
     if (!content) return '';
 
     var bestIdx = -1;
