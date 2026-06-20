@@ -205,40 +205,40 @@ figure.highlight ::-webkit-scrollbar-thumb:hover {
 figure.highlight .keyword,
 figure.highlight .selector-tag,
 figure.highlight .doctag {
-  color: #a02050;
+  color: #ff2d55;
   font-weight: bold;
 }
 
 figure.highlight .string,
 figure.highlight .template-variable,
 figure.highlight .regexp {
-  color: #186838;
+  color: #2ecc71;
 }
 
 figure.highlight .comment,
 figure.highlight .quote {
-  color: #50604a;
+  color: #3498db;
   font-style: italic;
 }
 
 figure.highlight .type,
 figure.highlight .title.class_,
 figure.highlight .built_in {
-  color: #6a3cd6;
+  color: #9b59b6;
 }
 
 figure.highlight .number,
 figure.highlight .literal {
-  color: #1a55b0;
+  color: #f39c12;
 }
 
 figure.highlight .attr,
 figure.highlight .variable {
-  color: #8a4808;
+  color: #1abc9c;
 }
 
 figure.highlight .operator {
-  color: #a02050;
+  color: #ff2d55;
 }
 
 figure.highlight .punctuation {
@@ -247,7 +247,7 @@ figure.highlight .punctuation {
 
 figure.highlight .title,
 figure.highlight .title.function_ {
-  color: #6a3cd6;
+  color: #9b59b6;
 }
 
 figure.highlight .params {
@@ -255,7 +255,7 @@ figure.highlight .params {
 }
 
 figure.highlight .meta {
-  color: #1a55b0;
+  color: #f39c12;
 }
 
 /* Dark mode syntax highlighting */
