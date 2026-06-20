@@ -134,7 +134,7 @@ markdown_it_plus:
 
 # 站内搜索
 search:
-  path: search.xml          # 或 search.json，根据主题需要
+  path: /search.xml          # 或 search.json，根据主题需要（绝对路径，避免文章页 404）
   field: post
   content: true
   format: html              # 重要：很多主题需要这个
