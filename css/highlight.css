@@ -212,7 +212,7 @@ figure.highlight .doctag {
 figure.highlight .string,
 figure.highlight .template-variable,
 figure.highlight .regexp {
-  color: #006633;
+  color: #1a1a1a;
 }
 
 figure.highlight .comment,
