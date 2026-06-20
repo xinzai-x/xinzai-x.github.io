@@ -841,8 +841,8 @@ html {
 .post-content h2 {
   font-size: var(--font-size-h2);
   font-weight: 700;
-  padding-left: 14px;
-  border-left: 4px solid var(--accent-primary);
+  padding-bottom: 0.4em;
+  border-bottom: 2px solid var(--accent-primary);
 }
 .post-content h3 {
   font-size: var(--font-size-h3);
