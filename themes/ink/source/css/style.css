@@ -1334,17 +1334,6 @@ figure.highlight .code pre {
 .toc-body ol {
   list-style: none;
   padding-left: 0;
-  counter-reset: toc-counter;
-}
-
-.toc-body ol > li {
-  counter-increment: toc-counter;
-}
-
-.toc-body ol > li > a::before {
-  content: counter(toc-counter) ". ";
-  color: var(--accent-primary);
-  font-weight: 600;
 }
 
 .toc-body > ol {
