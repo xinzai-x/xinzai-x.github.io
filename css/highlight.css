@@ -205,57 +205,57 @@ figure.highlight ::-webkit-scrollbar-thumb:hover {
 figure.highlight .keyword,
 figure.highlight .selector-tag,
 figure.highlight .doctag {
-  color: #ff6b81;
+  color: #a02050;
   font-weight: bold;
 }
 
 figure.highlight .string,
 figure.highlight .template-variable,
 figure.highlight .regexp {
-  color: #2ecc71;
+  color: #186838;
 }
 
 figure.highlight .comment,
 figure.highlight .quote {
-  color: #5dade2;
+  color: #50604a;
   font-style: italic;
 }
 
 figure.highlight .type,
 figure.highlight .title.class_,
 figure.highlight .built_in {
-  color: #b07ce8;
+  color: #6a3cd6;
 }
 
 figure.highlight .number,
 figure.highlight .literal {
-  color: #f39c12;
+  color: #1a55b0;
 }
 
 figure.highlight .attr,
 figure.highlight .variable {
-  color: #1abc9c;
+  color: #8a4808;
 }
 
 figure.highlight .operator {
-  color: #ff6b81;
+  color: #a02050;
 }
 
 figure.highlight .punctuation {
-  color: #c0c0c0;
+  color: #5a4a3a;
 }
 
 figure.highlight .title,
 figure.highlight .title.function_ {
-  color: #b07ce8;
+  color: #6a3cd6;
 }
 
 figure.highlight .params {
-  color: #c0c0c0;
+  color: #5a4a3a;
 }
 
 figure.highlight .meta {
-  color: #f39c12;
+  color: #1a55b0;
 }
 
 /* Dark mode syntax highlighting */
