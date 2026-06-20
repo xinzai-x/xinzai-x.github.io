@@ -408,7 +408,7 @@
         btn.addEventListener('click', () => {
           const code = block.querySelector('.code pre') || block.querySelector('pre');
           if (!code) return;
-          const text = code.textContent;
+          const text = code.innerText;
           navigator.clipboard.writeText(text).then(() => {
             btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> 已复制!';
             btn.classList.add('copied');
