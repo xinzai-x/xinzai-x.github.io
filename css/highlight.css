@@ -186,63 +186,63 @@ figure.highlight ::-webkit-scrollbar-thumb:hover {
 }
 
 /* =============================================
-   Syntax Highlighting Colors (Warm Palette)
+   Syntax Highlighting Colors (Dark Background)
    ============================================= */
 
 figure.highlight .keyword,
 figure.highlight .selector-tag,
 figure.highlight .doctag {
-  color: #8b3a3a;
+  color: #ff7b72;
   font-weight: bold;
 }
 
 figure.highlight .string,
 figure.highlight .template-variable,
 figure.highlight .regexp {
-  color: #4a6741;
+  color: #a5d6ff;
 }
 
 figure.highlight .comment,
 figure.highlight .quote {
-  color: #8a7e74;
+  color: #8b949e;
   font-style: italic;
 }
 
 figure.highlight .type,
 figure.highlight .title.class_,
 figure.highlight .built_in {
-  color: #6b4c2a;
+  color: #d2a8ff;
 }
 
 figure.highlight .number,
 figure.highlight .literal {
-  color: #b8860b;
+  color: #79c0ff;
 }
 
 figure.highlight .attr,
 figure.highlight .variable {
-  color: #a0522d;
+  color: #ffa657;
 }
 
 figure.highlight .operator {
-  color: #8b3a3a;
+  color: #ff7b72;
 }
 
 figure.highlight .punctuation {
-  color: #5a4a3a;
+  color: #c9d1d9;
 }
 
 figure.highlight .title,
 figure.highlight .title.function_ {
-  color: #6b4c2a;
+  color: #d2a8ff;
 }
 
 figure.highlight .params {
-  color: #5a4a3a;
+  color: #c9d1d9;
 }
 
 figure.highlight .meta {
-  color: #7a5a0e;
+  color: #79c0ff;
 }
 
 /* Dark mode syntax highlighting */
