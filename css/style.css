@@ -183,8 +183,27 @@ button {
 }
 
 ::selection {
-  background-color: var(--accent-light);
-  color: var(--text-primary);
+  background-color: var(--accent-primary);
+  color: var(--text-inverse);
+  text-shadow: none;
+}
+
+/* Dark mode: keep strong contrast on pure black bg */
+[data-theme="dark"] ::selection {
+  background-color: var(--accent-secondary);
+  color: #1a1814;
+}
+
+/* Firefox */
+::-moz-selection {
+  background-color: var(--accent-primary);
+  color: var(--text-inverse);
+  text-shadow: none;
+}
+
+[data-theme="dark"] ::-moz-selection {
+  background-color: var(--accent-secondary);
+  color: #1a1814;
 }
 
 /* Scrollbar gutter */
