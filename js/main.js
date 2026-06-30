@@ -457,14 +457,18 @@
   // External Links
   // =============================================
   const LinkManager = {
-    init() {
-      // Open ALL external links in new tab
+    processLinks() {
       document.querySelectorAll('a[href]').forEach(link => {
         if (link.hostname && link.hostname !== window.location.hostname) {
           link.setAttribute('target', '_blank');
           link.setAttribute('rel', 'noopener noreferrer');
         }
       });
+    },
+    init() {
+      this.processLinks();
+      // Re-process after encrypted post decryption
+      window.addEventListener('hexo-blog-decrypt', () => this.processLinks());
     }
   };
 
