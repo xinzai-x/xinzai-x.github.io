@@ -458,15 +458,8 @@
   // =============================================
   const LinkManager = {
     init() {
-      // Open external links in new tab
-      const selectors = [
-        '.post-content a',
-        '.page-content a',
-        '.links-content a',
-        '.post-card-excerpt a',
-        '.archive-link'
-      ];
-      document.querySelectorAll(selectors.join(', ')).forEach(link => {
+      // Open ALL external links in new tab
+      document.querySelectorAll('a[href]').forEach(link => {
         if (link.hostname && link.hostname !== window.location.hostname) {
           link.setAttribute('target', '_blank');
           link.setAttribute('rel', 'noopener noreferrer');
