@@ -13,6 +13,12 @@ password:
 2. cxx + cc switch方式（启用ccx和cc switch）（以接入mimo和deepseek为例）
 3. codex++ 方式（启用codex++）（以接入deepseek为例）
 
+> [!NOTE]
+>
+> 本文已经完结，后续不再更新，由于本人感觉codex并没有想象中那么好用，已经不使用了，所以后续有新的玩法也不再更新。
+
+
+
 # 下载安装
 
 &ensp;&ensp;&ensp;&ensp;下载需要安装的软件，采用哪种方式下载对应软件即可，codex以及cc switch正常安装软件双击后安装即可（`codex安装完成之后直接在任务栏退出，等配置完成后再重新启动`）ccx需要配置一下，下载链接：https://yun.139.com/shareweb/#/w/i/2v3EknaoDtT1f  提取码：9rly
@@ -160,7 +166,7 @@ APP_UI_LANGUAGE=zh-CN
 
 ## 单cc switch方式
 
-&ensp;&ensp;&ensp;&ensp;首先打开我们安装好的cc switch（安装默认下一步即可），切换至open ai，点击右侧`加号`添加配置。
+&ensp;&ensp;&ensp;&ensp;这种方法其实对于mimo是有点问题的，首先打开我们安装好的cc switch（安装默认下一步即可），切换至open ai，点击右侧`加号`添加配置。
 
 <img src="https://files.seeusercontent.com/2026/06/11/D3is/cc-switch.png" alt="单cc switch添加.png" style="zoom:50%;" />
 
@@ -303,27 +309,13 @@ APP_UI_LANGUAGE=zh-CN
 
 ## 插件问题
 
-&ensp;&ensp;&ensp;&ensp;解决控制电脑以及插件问题，复制：https://github.com/chen0416ccc-cpu/codex-windows-fast-patch-skill 根据这个修复codex插件无法使用问题。然后直接给ai修复即可，如果装完有浏览器插件或电脑控制的插件不能使用再修复一次即可（最好是完全访问权限直接让ai修）
-
-&ensp;&ensp;&ensp;&ensp;温馨提示：`浏览器必须是原生谷歌浏览器，运行必须是完全访问的权限`。
+> [!IMPORTANT]
+>
+> 使用第三方API是浏览器必须是原生谷歌浏览器，运行必须是完全访问的权限。以及采用下面这种方法可能会导致codex异常，谨慎使用。建议直接使用codex++。
 
 &ensp;&ensp;&ensp;&ensp;解决codex打开内置浏览器：`codex-windows-fast-patch` 技能中提到了类似的 `node_repl` 沙箱故障。根因：`config.toml` 中 `[windows] sandbox = "elevated"` 导致创建子进程时 `CreateProcessAsUserW` 失败（error 5）修改为 `sandbox = "unelevated"` 后，`node_repl` 内核正常启动。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+&ensp;&ensp;&ensp;&ensp;解决控制电脑以及插件问题，复制：https://github.com/chen0416ccc-cpu/codex-windows-fast-patch-skill 根据这个修复codex插件无法使用问题，切记不要重装codex，只修复插件问题。然后直接给ai修复即可，如果装完有浏览器插件或电脑控制的插件不能使用再修复一次即可（最好是完全访问权限直接让ai修）
 
 
 

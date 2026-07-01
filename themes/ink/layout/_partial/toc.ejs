@@ -1,5 +1,9 @@
-<% if (theme.toc && toc(page.content).length > 0) { %>
-  <div class="post-toc" id="post-toc">
+<% 
+  var tocContent = page.encrypt && page.origin ? page.origin : page.content;
+  var tocHtml = toc(tocContent, {list_number: true, max_depth: 3});
+  if (theme.toc && tocHtml.length > 0) {
+%>
+  <div class="post-toc<% if (page.encrypt) { %> toc-div-class<% } %>" id="post-toc"<% if (page.encrypt) { %> style="display:none"<% } %>>
     <div class="toc-header">
       <h4>目录</h4>
       <button class="toc-toggle" id="toc-toggle" aria-label="切换目录">
@@ -9,7 +13,7 @@
       </button>
     </div>
     <div class="toc-body" id="toc-body">
-      <%- toc(page.content, {list_number: true, max_depth: 3}) %>
+      <%- tocHtml %>
     </div>
   </div>
 <% } %>

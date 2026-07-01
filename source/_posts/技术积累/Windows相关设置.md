@@ -60,9 +60,7 @@ Windows Registry Editor Version 5.00
 
 ```plain
 Windows Registry Editor Version 5.00 
-
 [-HKEY_CURRENT_USER\Software\Classes\CLSID\{2aa9162e-c906-4dd9-ad0b-3d24a8eef5a0}] 
-
 [-HKEY_CURRENT_USER\Software\Classes\CLSID\{6480100b-5a83-4d1e-9f69-8ae5a88e9a33}]
 ```
 
@@ -98,13 +96,9 @@ reg add "HKLM\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\389595
 
 ```shell
 pushd "%~dp0"
-
 dir /b %SystemRoot%\servicing\Packages\*Hyper-V*.mum >hyper-v.txt
-
 for /f %%i in ('findstr /i . hyper-v.txt 2^>nul') do dism /online /norestart /add-package:"%SystemRoot%\servicing\Packages\%%i"
-
 del hyper-v.txt
-
 Dism /online /enable-feature /featurename:Microsoft-Hyper-V-All /LimitAccess /ALL
 ```
 
